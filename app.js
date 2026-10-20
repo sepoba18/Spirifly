@@ -4631,7 +4631,25 @@ function initFarmingEventsOnce() {
   farmingEventsInitialized = true;
 
   if (state.currentResin === undefined) {
-    state.currentResin = parseInt(localStorage.getItem("teyvat_resin_val") || "200", 10);
+    const savedResin = parseInt(localStorage.getItem("teyvat_resin_val") || "200", 10);
+    const savedTime = parseInt(localStorage.getItem("teyvat_resin_updated_time") || "0", 10);
+    if (savedTime > 0 && savedResin < 200) {
+      // Calcular resina regenerada naturalmente (1 punto cada 8 minutos = 480,000 ms)
+      const elapsedMs = Math.max(0, Date.now() - savedTime);
+      const generated = Math.floor(elapsedMs / (8 * 60 * 1000));
+      if (generated > 0) {
+        state.currentResin = Math.min(200, savedResin + generated);
+        // El tiempo base avanza los bloques de 8 minutos consumidos
+        const remainderMs = elapsedMs % (8 * 60 * 1000);
+        localStorage.setItem("teyvat_resin_val", state.currentResin);
+        localStorage.setItem("teyvat_resin_updated_time", Date.now() - remainderMs);
+      } else {
+        state.currentResin = savedResin;
+      }
+    } else {
+      state.currentResin = savedResin;
+      if (!savedTime) localStorage.setItem("teyvat_resin_updated_time", Date.now());
+    }
   }
   if (state.farmingCostTab === undefined) {
     state.farmingCostTab = "all";
@@ -4649,6 +4667,7 @@ function initFarmingEventsOnce() {
       const delta = parseInt(btn.dataset.resinDelta, 10) || 0;
       state.currentResin = Math.max(0, Math.min(200, (state.currentResin ?? 200) + delta));
       localStorage.setItem("teyvat_resin_val", state.currentResin);
+      localStorage.setItem("teyvat_resin_updated_time", Date.now());
       updateResinWidgetUI();
     });
   });
@@ -4661,12 +4680,14 @@ function initFarmingEventsOnce() {
       if (cur >= 60) {
         state.currentResin = Math.max(0, cur - 60);
         localStorage.setItem("teyvat_resin_val", state.currentResin);
+        localStorage.setItem("teyvat_resin_updated_time", Date.now());
         updateResinWidgetUI();
       } else {
         const add60 = confirm(`Tienes ${cur} de Resina (se requieren 60 para concentrar).\n\n¿Deseas consumir 1 Resina Frágil para restaurar +60?`);
         if (add60) {
           state.currentResin = Math.min(200, cur + 60);
           localStorage.setItem("teyvat_resin_val", state.currentResin);
+          localStorage.setItem("teyvat_resin_updated_time", Date.now());
           updateResinWidgetUI();
         }
       }
@@ -4683,6 +4704,7 @@ function initFarmingEventsOnce() {
         if (!isNaN(val)) {
           state.currentResin = Math.max(0, Math.min(200, val));
           localStorage.setItem("teyvat_resin_val", state.currentResin);
+          localStorage.setItem("teyvat_resin_updated_time", Date.now());
           updateResinWidgetUI();
         }
       }
@@ -4731,7 +4753,26 @@ function updateResinWidgetUI() {
   const elStatus = document.getElementById("seelieResinStatusText");
   const curKpi = document.getElementById("seelieCurResinKpi");
   const condKpi = document.getElementById("seelieCurCondKpi");
-  const cur = state.currentResin !== undefined ? state.currentResin : 200;
+
+  // Si hay resina menor a 200 y tiempo guardado, computar avance en tiempo real
+  const savedTime = parseInt(localStorage.getItem("teyvat_resin_updated_time") || "0", 10);
+  let cur = state.currentResin !== undefined ? state.currentResin : 200;
+  let remainingMsToNext = 8 * 60 * 1000;
+
+  if (savedTime > 0 && cur < 200) {
+    const elapsedMs = Math.max(0, Date.now() - savedTime);
+    const generated = Math.floor(elapsedMs / (8 * 60 * 1000));
+    const remainderMs = elapsedMs % (8 * 60 * 1000);
+    remainingMsToNext = (8 * 60 * 1000) - remainderMs;
+
+    if (generated > 0) {
+      cur = Math.min(200, cur + generated);
+      state.currentResin = cur;
+      localStorage.setItem("teyvat_resin_val", cur);
+      localStorage.setItem("teyvat_resin_updated_time", Date.now() - remainderMs);
+    }
+  }
+
   const t = (typeof I18N !== "undefined" && (I18N[state.lang] || I18N.es)) || {};
   const tf = t.farming || {};
 
@@ -4745,10 +4786,12 @@ function updateResinWidgetUI() {
       elStatus.style.color = "#94a3b8";
     } else {
       const deficit = 200 - cur;
-      const totalMinutes = deficit * 8;
+      // El primer punto recupera en remainingMsToNext, los (deficit - 1) restantes en 8 minutos cada uno
+      const totalRemainingMs = remainingMsToNext + ((deficit - 1) * 8 * 60 * 1000);
+      const totalMinutes = Math.ceil(totalRemainingMs / 60000);
       const hours = Math.floor(totalMinutes / 60);
       const mins = totalMinutes % 60;
-      const targetTime = new Date(Date.now() + totalMinutes * 60000);
+      const targetTime = new Date(Date.now() + totalRemainingMs);
       const timeStr = targetTime.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
 
       elStatus.innerHTML = `${escapeHtml(tf.recoversIn || "Completamente recuperada en")} <strong style="color:#60a5fa;margin:0 3px;">${hours}h ${mins}m</strong> (${timeStr})`;

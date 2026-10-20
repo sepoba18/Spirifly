@@ -644,12 +644,7 @@
 
       // API real de Google Drive (Multipart upload en appDataFolder)
       try {
-        const metadata = {
-          name: DRIVE_CONFIG.fileName,
-          parents: ["appDataFolder"]
-        };
-
-        // Buscar si ya existe el archivo
+        // Buscar si ya existe el archivo antes de decidir si es POST o PATCH
         const searchRes = await fetch(
           "https://www.googleapis.com/drive/v3/files?spaces=appDataFolder&q=name%3D'seelie_genshin_backup.json'&fields=files(id%2Cname)",
           { headers: { Authorization: `Bearer ${accessToken}` } }
@@ -668,9 +663,18 @@
 
         let endpoint = "https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart";
         let method = "POST";
+        let metadata = {
+          name: DRIVE_CONFIG.fileName,
+          parents: ["appDataFolder"]
+        };
+
         if (existingFile && existingFile.id) {
           endpoint = `https://www.googleapis.com/upload/drive/v3/files/${existingFile.id}?uploadType=multipart`;
           method = "PATCH";
+          // En PATCH no se debe reenviar parents: ["appDataFolder"] porque la API v3 devuelve 403 Forbidden
+          metadata = {
+            name: DRIVE_CONFIG.fileName
+          };
         }
 
         const boundary = "-------314159265358979323846";
