@@ -799,6 +799,9 @@ function initApp() {
       document.querySelector(`[data-tab="${hashTab}"]`).click();
     }
   });
+
+  // Inicializar tutorial interactivo
+  initInteractiveTutorial();
 }
 
 function setTextIfPresent(id, text) {
@@ -6070,3 +6073,94 @@ function calculateAdSenseSim() {
 }
 
 document.addEventListener("DOMContentLoaded", initApp);
+
+
+// =====================================================================
+// GUÍA RÁPIDA / TUTORIAL INTERACTIVO DE SPIRIFLY
+// =====================================================================
+function initInteractiveTutorial() {
+  const modal = document.getElementById("modalInteractiveTutorial");
+  if (!modal) return;
+
+  const totalSteps = 6;
+  let currentStep = 0;
+
+  const slides = modal.querySelectorAll(".tutorial-slide");
+  const chips = modal.querySelectorAll(".step-chip");
+  const stepCounter = document.getElementById("tutorialStepCounter");
+  const btnPrev = document.getElementById("btnTutorialPrev");
+  const btnNext = document.getElementById("btnTutorialNext");
+  const btnFinish = document.getElementById("btnTutorialFinish");
+  const btnSkip = document.getElementById("btnTutorialSkip");
+  const btnCloseX = document.getElementById("btnCloseTutorialX");
+  const btnOpenHeader = document.getElementById("btnOpenTutorialModal");
+
+  function updateTutorialStep(step) {
+    currentStep = Math.max(0, Math.min(totalSteps - 1, step));
+
+    slides.forEach((slide, idx) => {
+      slide.classList.toggle("active", idx === currentStep);
+    });
+
+    chips.forEach((chip, idx) => {
+      chip.classList.toggle("active", idx === currentStep);
+      chip.classList.toggle("completed", idx < currentStep);
+    });
+
+    if (stepCounter) stepCounter.textContent = `Paso ${currentStep + 1} de ${totalSteps}`;
+
+    if (btnPrev) btnPrev.style.display = currentStep > 0 ? "inline-flex" : "none";
+    if (btnNext && btnFinish) {
+      if (currentStep === totalSteps - 1) {
+        btnNext.style.display = "none";
+        btnFinish.style.display = "inline-flex";
+      } else {
+        btnNext.style.display = "inline-flex";
+        btnFinish.style.display = "none";
+      }
+    }
+  }
+
+  function openTutorial() {
+    updateTutorialStep(0);
+    modal.classList.add("open");
+  }
+
+  function closeTutorial() {
+    modal.classList.remove("open");
+    sessionStorage.setItem("spirifly_tut_dismissed", "true");
+  }
+
+  if (btnNext) btnNext.addEventListener("click", () => updateTutorialStep(currentStep + 1));
+  if (btnPrev) btnPrev.addEventListener("click", () => updateTutorialStep(currentStep - 1));
+
+  chips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      const step = parseInt(chip.dataset.step, 10);
+      updateTutorialStep(step);
+    });
+  });
+
+  if (btnFinish) btnFinish.addEventListener("click", closeTutorial);
+  if (btnSkip) btnSkip.addEventListener("click", closeTutorial);
+  if (btnCloseX) btnCloseX.addEventListener("click", closeTutorial);
+  if (btnOpenHeader) btnOpenHeader.addEventListener("click", openTutorial);
+
+  // Soporte para teclado (flechas y Escape)
+  document.addEventListener("keydown", (e) => {
+    if (!modal.classList.contains("open")) return;
+    if (e.key === "ArrowRight" && currentStep < totalSteps - 1) updateTutorialStep(currentStep + 1);
+    if (e.key === "ArrowLeft" && currentStep > 0) updateTutorialStep(currentStep - 1);
+    if (e.key === "Escape") closeTutorial();
+  });
+
+  // Requisito estricto: solo sale cuando detecte que NO hay una cuenta iniciada en Google
+  const isDriveLinked = localStorage.getItem("teyvat_drive_linked") === "true";
+  const dismissedThisSession = sessionStorage.getItem("spirifly_tut_dismissed") === "true";
+
+  if (!isDriveLinked && !dismissedThisSession) {
+    setTimeout(() => {
+      openTutorial();
+    }, 450);
+  }
+}

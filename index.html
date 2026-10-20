@@ -27,7 +27,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/ui/favicon-32x32.png?v=2" />
   <link rel="icon" type="image/png" sizes="16x16" href="assets/ui/favicon-16x16.png?v=2" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/ui/apple-touch-icon.png?v=2" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=2.7.1" />
   <!-- Script anti-flicker inmediato para evitar parpadeo al recargar pestañas -->
   <script>
     (function () {
@@ -59,6 +59,268 @@
       color: #ffffff !important;
       border-color: #3b82f6 !important;
     }
+  
+    /* Resin Bar Core Styles */
+    .seelie-resin-track {
+      width: 100%;
+      max-width: 420px;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.08) !important;
+      border-radius: 999px;
+      overflow: hidden;
+      position: relative;
+      margin: 0.35rem 0 0.55rem 0;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      display: block !important;
+    }
+    .seelie-resin-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #3b82f6, #60a5fa 60%, #fbbf24 100%);
+      border-radius: 999px;
+      transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease;
+      display: block !important;
+    }
+
+    /* Botón Guía en la barra superior */
+    .btn-guide-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      color: #93c5fd;
+      padding: 0.38rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-guide-pill:hover {
+      background: rgba(59, 130, 246, 0.25);
+      border-color: #60a5fa;
+      color: #ffffff;
+    }
+
+    /* Modal Tutorial Interactivo */
+    .tutorial-container {
+      width: 100%;
+      max-width: 860px;
+      max-height: 92vh;
+      background: #151922;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 18px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85);
+      overflow-y: auto;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .tutorial-container::-webkit-scrollbar { display: none; width: 0; height: 0; }
+
+    .tutorial-header {
+      padding: 1.15rem 1.6rem;
+      background: rgba(255, 255, 255, 0.02);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .tutorial-header .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+    .tutorial-header .step-counter {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #94a3b8;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+    }
+    .tutorial-close-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 1.4rem;
+      line-height: 1;
+      cursor: pointer;
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      transition: all 0.15s;
+      margin-left: 0.75rem;
+    }
+    .tutorial-close-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+    }
+
+    .stepper-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.75rem 1.25rem;
+      background: rgba(0, 0, 0, 0.25);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .stepper-nav::-webkit-scrollbar { display: none; width: 0; height: 0; }
+
+    .step-chip {
+      background: transparent;
+      border: 1px solid transparent;
+      color: #94a3b8;
+      padding: 0.35rem 0.65rem;
+      border-radius: 8px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .step-chip img { width: 15px; height: 15px; object-fit: contain; }
+    .step-chip:hover { background: rgba(255, 255, 255, 0.05); color: #f1f5f9; }
+    .step-chip.active { background: rgba(59, 130, 246, 0.15); border-color: rgba(59, 130, 246, 0.4); color: #93c5fd; }
+    .step-chip.completed { color: #22c55e; }
+
+    .tutorial-body {
+      padding: 1.8rem 1.75rem;
+      min-height: 410px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .tutorial-slide { display: none; animation: fadeInTutorial 0.25s ease forwards; }
+    .tutorial-slide.active { display: block; }
+    @keyframes fadeInTutorial {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .tutorial-slide-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.75rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+    }
+    .tutorial-slide-badge img { width: 14px; height: 14px; object-fit: contain; }
+    .tutorial-slide-h2 { font-size: 1.55rem; font-weight: 800; color: #ffffff; margin-bottom: 0.45rem; }
+    .tutorial-slide-desc { font-size: 0.95rem; line-height: 1.6; color: #cbd5e1; margin-bottom: 1.35rem; }
+
+    .tutorial-mockup-box {
+      background: #1e2634;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 1.15rem;
+      margin-bottom: 0.75rem;
+    }
+    .tutorial-feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.85rem;
+    }
+    .tutorial-feature-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 0.85rem 0.95rem;
+    }
+    .tutorial-feature-card h4 {
+      font-size: 0.9rem;
+      color: #fbbf24;
+      margin-bottom: 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .tutorial-feature-card h4 img { width: 17px; height: 17px; object-fit: contain; }
+    .tutorial-feature-card p { font-size: 0.81rem; color: #94a3b8; line-height: 1.45; }
+
+    .tutorial-mini-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.28rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      background: rgba(59, 130, 246, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #93c5fd;
+    }
+    .tutorial-mini-pill img { width: 13px; height: 13px; object-fit: contain; }
+
+    .tutorial-pity-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+    }
+    .tutorial-bar-track {
+      flex: 1;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+    .tutorial-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #3b82f6, #fbbf24);
+      width: 82%;
+      border-radius: 4px;
+    }
+
+    .tutorial-footer {
+      padding: 1.15rem 1.75rem;
+      background: rgba(0, 0, 0, 0.2);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .tutorial-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.55rem 1.25rem;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.18s;
+      border: 1px solid transparent;
+    }
+    .tutorial-btn img { width: 16px; height: 16px; object-fit: contain; }
+    .tutorial-btn-secondary { background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.12); color: #f1f5f9; }
+    .tutorial-btn-secondary:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.25); }
+    .tutorial-btn-primary { background: #3b82f6; border-color: #2563eb; color: #ffffff; box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35); }
+    .tutorial-btn-primary:hover { background: #2563eb; transform: translateY(-1px); }
+    .tutorial-btn-success { background: #16a34a; border-color: #15803d; color: #ffffff; box-shadow: 0 4px 14px rgba(22, 163, 74, 0.35); }
+    .tutorial-btn-success:hover { background: #15803d; transform: translateY(-1px); }
+    .tutorial-btn-ghost { background: transparent; color: #94a3b8; }
+    .tutorial-btn-ghost:hover { color: #f1f5f9; }
+
   </style>
   <!-- Google Analytics 4 (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3F1TQSWB0"></script>
@@ -98,6 +360,10 @@
 
       <div class="controls-right">
         <button class="ads-toggle-btn" id="adsToggleBtn" style="display:none;">Vista Anuncios AdSense: ON</button>
+        <button type="button" class="btn-guide-pill" id="btnOpenTutorialModal" title="Guía rápida de Spirifly">
+          <img src="assets/ui/icon_primogem.png" style="width:14px;height:14px;object-fit:contain;" alt="" />
+          <span>Guía</span>
+        </button>
         <button type="button" class="donate-btn" id="btnOpenDonateModal" title="Donación al proyecto Spirifly">
           <span>☕</span> <span id="lblDonateBtn">Donación</span>
         </button>
@@ -1194,8 +1460,8 @@
           </div>
 
           <!-- Barra de Progreso Visual de Resina -->
-          <div class="seelie-resin-track" title="Progreso de Resina Original (200 máx)">
-            <div class="seelie-resin-bar" id="seelieResinProgressBar" style="width: 100%;"></div>
+          <div class="seelie-resin-track" title="Progreso de Resina Original (200 máx)" style="width:100%;max-width:420px;height:8px;background:rgba(255,255,255,0.08);border-radius:999px;overflow:hidden;position:relative;margin:0.35rem 0 0.55rem 0;border:1px solid rgba(255,255,255,0.06);display:block;">
+            <div class="seelie-resin-bar" id="seelieResinProgressBar" style="width:100%;height:100%;background:linear-gradient(90deg,#3b82f6,#60a5fa 60%,#fbbf24 100%);border-radius:999px;transition:width 0.35s cubic-bezier(0.4,0,0.2,1),background 0.3s ease;display:block;"></div>
           </div>
 
           <!-- Botones de Ajuste Rápido de Resina: [-60] [-40] [-30] [-20] [-1] [+1] [+10] [+60] + Gota + Config -->
@@ -1835,7 +2101,321 @@
   <script src="gdrive_sync_engine.js?v=2.6.9"></script>
   <script src="xlsx.full.min.js"></script>
   <script src="wish_engine.js?v=2.6.9"></script>
-  <script src="app.js?v=2.7.0"></script>
+  <script src="app.js?v=2.7.1"></script>
+
+  <!-- ==============================================================
+       MODAL: GUÍA RÁPIDA / TUTORIAL INTERACTIVO DE SPIRIFLY
+       ============================================================== -->
+  <div id="modalInteractiveTutorial" class="seelie-modal-backdrop" role="dialog" aria-modal="true" style="z-index: 1200; padding: 1rem;">
+    <div class="tutorial-container">
+      <!-- Header -->
+      <div class="tutorial-header">
+        <div class="brand-title">
+          <img src="assets/ui/icon_primogem.png" alt="Spirifly" />
+          Spirifly <span style="color:#60a5fa;">Guía Rápida</span>
+        </div>
+        <div style="display:flex;align-items:center;">
+          <div class="step-counter" id="tutorialStepCounter">Paso 1 de 6</div>
+          <button type="button" class="tutorial-close-btn" id="btnCloseTutorialX" title="Cerrar Guía">&times;</button>
+        </div>
+      </div>
+
+      <!-- Stepper bar -->
+      <div class="stepper-nav" id="tutorialStepperNav">
+        <button type="button" class="step-chip active" data-step="0">
+          <img src="assets/ui/icon_primogem.png" alt="" />
+          1. Bienvenida
+        </button>
+        <button type="button" class="step-chip" data-step="1">
+          <img src="assets/weapon_types/sword.png" alt="" />
+          2. Personajes y Armas
+        </button>
+        <button type="button" class="step-chip" data-step="2">
+          <img src="assets/ui/resin.png" alt="" />
+          3. Farmeo Diario
+        </button>
+        <button type="button" class="step-chip" data-step="3">
+          <img src="assets/ui/tab_domain.png" alt="" />
+          4. Inventario
+        </button>
+        <button type="button" class="step-chip" data-step="4">
+          <img src="assets/ui/icon_intertwined.png" alt="" />
+          5. Deseos y Pity
+        </button>
+        <button type="button" class="step-chip" data-step="5">
+          <img src="assets/ui/user.svg" alt="" />
+          6. Multi-Cuenta & Nube
+        </button>
+      </div>
+
+      <!-- Body Slides -->
+      <div class="tutorial-body">
+
+        <!-- SLIDE 1: BIENVENIDA -->
+        <div class="tutorial-slide active" id="tut-slide-0">
+          <div>
+            <span class="tutorial-slide-badge" style="background:rgba(59,130,246,0.15);color:#93c5fd;">
+              <img src="assets/ui/sparkle.svg" alt="" />
+              Tu Suite Inteligente
+            </span>
+            <h2 class="tutorial-slide-h2">¡Bienvenido a Spirifly!</h2>
+            <p class="tutorial-slide-desc">
+              Spirifly es tu plataforma integral para optimizar cada minuto y cada resina en <strong>Genshin Impact</strong>. Diseñada para ser rápida, limpia y 100% privada con guardado local inmediato y sin pérdida de datos.
+            </p>
+            <div class="tutorial-feature-grid">
+              <div class="tutorial-feature-card">
+                <h4>
+                  <img src="assets/weapon_types/sword.png" alt="" />
+                  Planificación Real
+                </h4>
+                <p>Elige personajes y armas con metas de nivel y talentos personalizadas.</p>
+              </div>
+              <div class="tutorial-feature-card">
+                <h4>
+                  <img src="assets/ui/resin.png" alt="" />
+                  Farmeo al Día
+                </h4>
+                <p>Revisa qué dominios están abiertos hoy y cuánta resina te costará.</p>
+              </div>
+              <div class="tutorial-feature-card">
+                <h4>
+                  <img src="assets/ui/icon_intertwined.png" alt="" />
+                  Pity 5★ Oficial
+                </h4>
+                <p>Calcula Soft Pity, Hard Pity y Capturing Radiance con tu historial oficial.</p>
+              </div>
+              <div class="tutorial-feature-card">
+                <h4>
+                  <img src="assets/ui/user.svg" alt="" />
+                  Multi-Cuenta Real
+                </h4>
+                <p>Gestiona cuentas independientes con respaldo seguro en tu nube de Google Drive.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 2: PERSONAJES Y ARMAS -->
+        <div class="tutorial-slide" id="tut-slide-1">
+          <div>
+            <span class="tutorial-slide-badge" style="background:rgba(168,85,247,0.15);color:#d8b4fe;">
+              <img src="assets/weapon_types/sword.png" alt="" />
+              Personajes y Armas
+            </span>
+            <h2 class="tutorial-slide-h2">Planifica tus Ascensiones y Talentos</h2>
+            <p class="tutorial-slide-desc">
+              Configura las metas exactas para los personajes que quieres buildear. Spirifly calcula matemáticamente cada gema, libro de talento, material de jefe y mora requerida.
+            </p>
+            <div class="tutorial-mockup-box">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.9rem;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:0.75rem;">
+                <div style="display:flex;align-items:center;gap:0.75rem;">
+                  <div style="width:42px;height:42px;border-radius:8px;background:#1e3a8a;border:1px solid #3b82f6;display:flex;align-items:center;justify-content:center;">
+                    <img src="assets/elements/hydro.png" style="width:28px;height:28px;" alt="Hydro" />
+                  </div>
+                  <div>
+                    <div style="font-weight:800;font-size:1.05rem;color:#ffffff;display:flex;align-items:center;gap:0.4rem;">
+                      Furina 
+                      <span style="font-size:0.75rem;background:#1e3a8a;border:1px solid #3b82f6;padding:1px 6px;border-radius:4px;color:#93c5fd;display:inline-flex;align-items:center;gap:3px;">
+                        <img src="assets/elements/hydro.png" style="width:12px;height:12px;" alt="" /> Hydro 5★
+                      </span>
+                    </div>
+                    <div style="font-size:0.8rem;color:#fbbf24;font-weight:700;">Nv. 1/20 » 90/90 • Talentos: 1/1/1 » 9/10/10</div>
+                  </div>
+                </div>
+                <div class="tutorial-mini-pill">
+                  <img src="assets/ui/resin.png" alt="" />
+                  ~1.840 Resina
+                </div>
+              </div>
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+                <span style="font-size:0.78rem;background:rgba(255,255,255,0.06);padding:3px 8px;border-radius:6px;display:inline-flex;align-items:center;gap:4px;">
+                  <img src="assets/ui/tab_talent.png" style="width:14px;height:14px;" alt="" /> Libros Justicia: 114
+                </span>
+                <span style="font-size:0.78rem;background:rgba(255,255,255,0.06);padding:3px 8px;border-radius:6px;display:inline-flex;align-items:center;gap:4px;">
+                  <img src="assets/ui/tab_boss.png" style="width:14px;height:14px;" alt="" /> Gotas Boss: 46
+                </span>
+                <span style="font-size:0.78rem;background:rgba(255,255,255,0.06);padding:3px 8px;border-radius:6px;display:inline-flex;align-items:center;gap:4px;">
+                  <img src="assets/ui/local_specialty.png" style="width:14px;height:14px;" alt="" /> Lirios del Lago: 168
+                </span>
+                <span style="font-size:0.78rem;background:rgba(255,255,255,0.06);padding:3px 8px;border-radius:6px;color:#fbbf24;display:inline-flex;align-items:center;gap:4px;">
+                  <img src="assets/ui/mora.png" style="width:14px;height:14px;" alt="" /> Mora: 7.100.000
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 3: FARMEO DIARIO -->
+        <div class="tutorial-slide" id="tut-slide-2">
+          <div>
+            <span class="tutorial-slide-badge" style="background:rgba(34,197,94,0.15);color:#86efac;">
+              <img src="assets/ui/resin.png" alt="" />
+              Farmeo Inteligente
+            </span>
+            <h2 class="tutorial-slide-h2">Optimiza tu Resina y Horarios de Dominios</h2>
+            <p class="tutorial-slide-desc">
+              Nunca más entres a un dominio el día equivocado. El motor de Farmeo cruza tus personajes activos con el calendario semanal oficial de Teyvat.
+            </p>
+            <div class="tutorial-mockup-box">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;">
+                <span style="font-weight:700;color:#fbbf24;font-size:0.9rem;display:inline-flex;align-items:center;gap:5px;">
+                  <img src="assets/ui/resin.png" style="width:18px;height:18px;" alt="" />
+                  Resina Actual: 160 / 200
+                </span>
+                <span style="font-size:0.8rem;color:#94a3b8;display:inline-flex;align-items:center;gap:4px;">
+                  <img src="assets/ui/clock.svg" style="width:13px;height:13px;" alt="" />
+                  Llena a las 18:42 hrs (~5h 20m)
+                </span>
+              </div>
+              <div class="tutorial-bar-track" style="margin-bottom:1rem;">
+                <div class="tutorial-bar-fill" style="width:80%;"></div>
+              </div>
+              <div style="display:flex;align-items:center;gap:0.75rem;background:rgba(0,0,0,0.25);padding:0.75rem;border-radius:8px;border:1px solid rgba(255,255,255,0.08);">
+                <img src="assets/ui/tab_domain.png" style="width:32px;height:32px;object-fit:contain;" alt="Dominio" />
+                <div style="flex:1;">
+                  <div style="font-weight:700;font-size:0.88rem;color:#ffffff;">Dominio de Filosofías de la "Justicia" (Martes / Viernes / Domingo)</div>
+                  <div style="font-size:0.78rem;color:#38bdf8;">Abierto Hoy • Recomendado para: Furina, Neuvillette, Charlotte</div>
+                </div>
+                <span class="tutorial-mini-pill" style="border-color:#22c55e;color:#86efac;">
+                  <img src="assets/ui/resin.png" style="width:13px;height:13px;" alt="" />
+                  20 Resina
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 4: INVENTARIO -->
+        <div class="tutorial-slide" id="tut-slide-3">
+          <div>
+            <span class="tutorial-slide-badge" style="background:rgba(234,179,8,0.15);color:#fde047;">
+              <img src="assets/ui/tab_domain.png" alt="" />
+              Inventario en Tiempo Real
+            </span>
+            <h2 class="tutorial-slide-h2">Descuenta lo que ya Tienes en tu Mochila</h2>
+            <p class="tutorial-slide-desc">
+              En lugar de calcular materiales teóricos infinitos, anota tus existencias en la pestaña <strong>Inventario</strong>. Spirifly restará tus ítems reales y te dirá con exactitud matemática el déficit pendiente.
+            </p>
+            <div class="tutorial-feature-grid">
+              <div class="tutorial-feature-card">
+                <h4>
+                  <img src="assets/ui/refresh.svg" alt="" />
+                  Resta Inteligente
+                </h4>
+                <p>Si necesitas 46 materiales de boss y ya tienes 20, tu meta solo pedirá 26.</p>
+              </div>
+              <div class="tutorial-feature-card">
+                <h4>
+                  <img src="assets/ui/tab_gem.png" alt="" />
+                  Sintetizador Alquimia
+                </h4>
+                <p>Soporte para crafteo 3 a 1 de gemas y libros en mesas de síntesis.</p>
+              </div>
+              <div class="tutorial-feature-card">
+                <h4>
+                  <img src="assets/ui/resin.png" alt="" />
+                  Ahorro de Resina
+                </h4>
+                <p>Visualiza en vivo cómo disminuye el costo de resina a medida que recolectas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 5: DESEOS Y PITY -->
+        <div class="tutorial-slide" id="tut-slide-4">
+          <div>
+            <span class="tutorial-slide-badge" style="background:rgba(59,130,246,0.15);color:#93c5fd;">
+              <img src="assets/ui/icon_intertwined.png" alt="" />
+              Contador de Deseos
+            </span>
+            <h2 class="tutorial-slide-h2">Rastreador Oficial de Pity 5★ y Garantías</h2>
+            <p class="tutorial-slide-desc">
+              Importa tus tiradas en 1 solo clic con nuestro script oficial de PowerShell (PC) o mediante archivos de historial en Excel / JSON (.xlsx, .json). 100% privado y seguro.
+            </p>
+            <div class="tutorial-mockup-box">
+              <div class="tutorial-pity-bar" style="margin-bottom:0.75rem;">
+                <span style="font-weight:800;color:#ffffff;font-size:0.95rem;display:inline-flex;align-items:center;gap:6px;">
+                  <img src="assets/ui/icon_intertwined.png" style="width:20px;height:20px;" alt="" />
+                  Banner Promocional
+                </span>
+                <div class="tutorial-bar-track">
+                  <div class="tutorial-bar-fill" style="width:78%;background:linear-gradient(90deg, #3b82f6, #f59e0b);"></div>
+                </div>
+                <span style="font-size:0.85rem;font-weight:800;color:#f59e0b;">Pity 74 (Soft Pity)</span>
+              </div>
+              <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
+                <span class="tutorial-mini-pill" style="border-color:#22c55e;color:#86efac;">
+                  <img src="assets/ui/check.svg" style="width:12px;height:12px;" alt="" />
+                  100% Garantizado
+                </span>
+                <span class="tutorial-mini-pill">
+                  <img src="assets/ui/sparkle.svg" style="width:12px;height:12px;" alt="" />
+                  Capturing Radiance (~55%)
+                </span>
+                <span class="tutorial-mini-pill">
+                  <img src="assets/weapon_types/sword.png" style="width:12px;height:12px;" alt="" />
+                  Senda Divina (1 Punto)
+                </span>
+                <span class="tutorial-mini-pill">
+                  <img src="assets/ui/clipboard.svg" style="width:12px;height:12px;" alt="" />
+                  1.179 Tiradas Registradas
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 6: MULTI-CUENTA Y DRIVE -->
+        <div class="tutorial-slide" id="tut-slide-5">
+          <div>
+            <span class="tutorial-slide-badge" style="background:rgba(56,189,248,0.15);color:#7dd3fc;">
+              <img src="assets/ui/user.svg" alt="" />
+              Multi-Cuenta & Google Drive
+            </span>
+            <h2 class="tutorial-slide-h2">Aislamiento Total y Respaldo en la Nube</h2>
+            <p class="tutorial-slide-desc">
+              ¿Juegas en varias cuentas a la vez? Con Spirifly cada cuenta vive en un universo aislado: personajes, inventario, resina y deseos independientes por UID.
+            </p>
+            <div class="tutorial-mockup-box">
+              <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;flex-wrap:wrap;">
+                <span style="font-size:0.85rem;font-weight:700;color:#fbbf24;">Tus Cuentas:</span>
+                <button type="button" class="tutorial-mini-pill" style="background:#2563eb;color:#ffffff;border:none;">
+                  <img src="assets/ui/check.svg" style="width:12px;height:12px;" alt="" />
+                  Seba (UID: 601976801)
+                </button>
+                <button type="button" class="tutorial-mini-pill" style="background:rgba(255,255,255,0.06);color:#cbd5e1;border:none;">
+                  seba 2 (UID: 705554443)
+                </button>
+                <button type="button" class="tutorial-mini-pill" style="background:rgba(59,130,246,0.12);color:#93c5fd;border:none;">
+                  + Agregar Cuenta
+                </button>
+              </div>
+              <p style="font-size:0.82rem;color:#94a3b8;line-height:1.5;display:flex;align-items:flex-start;gap:6px;">
+                <img src="assets/ui/globe.svg" style="width:16px;height:16px;margin-top:2px;flex-shrink:0;" alt="" />
+                <span><strong>Sincronización en la Nube:</strong> Conecta tu cuenta en la pestaña <em>Sincronización</em> para respaldar automáticamente en tu propio almacenamiento de Google Drive y mantener tus dispositivos al día sin compartir datos con terceros.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Controls -->
+      <div class="tutorial-footer">
+        <button type="button" class="tutorial-btn tutorial-btn-ghost" id="btnTutorialSkip">Saltar Guía</button>
+        <div style="display:flex;gap:0.6rem;">
+          <button type="button" class="tutorial-btn tutorial-btn-secondary" id="btnTutorialPrev" style="display:none;">&larr; Anterior</button>
+          <button type="button" class="tutorial-btn tutorial-btn-primary" id="btnTutorialNext">Siguiente &rarr;</button>
+          <button type="button" class="tutorial-btn tutorial-btn-success" id="btnTutorialFinish" style="display:none;">
+            <img src="assets/ui/icon_primogem.png" style="width:16px;height:16px;" alt="" />
+            ¡Comenzar a Usar Spirifly!
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>
