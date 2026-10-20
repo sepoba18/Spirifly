@@ -2,7 +2,7 @@ Add-Type -AssemblyName System.Web
 
 Write-Host "==========================================================" -ForegroundColor Cyan
 Write-Host "       Spirifly - Extractor Oficial de Deseos             " -ForegroundColor Yellow
-Write-Host "       100% Seguro, Local, Directo y Sin Bloqueos         " -ForegroundColor Cyan
+Write-Host "       100% Seguro, Local, Directo y Oficial              " -ForegroundColor Cyan
 Write-Host "==========================================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -152,125 +152,15 @@ if (-not $validUrl) {
     return
 }
 
-# -------------------------------------------------------------------------
-# 3. DESCARGA DIRECTA DE TIRADAS (0% CORS, 100% SEGURO Y PRIVADO)
-# -------------------------------------------------------------------------
-Write-Host "[+] Enlace de sesion valido verificado con HoYoverse!" -ForegroundColor Green
-Write-Host "`nDescargando historial de deseos directamente desde HoYoverse..." -ForegroundColor Cyan
+# Copiar el enlace oficial directamente al portapapeles
+Set-Clipboard -Value $validUrl
 
-$baseUri = [System.UriBuilder]::New($validUrl)
-$baseUri.Path = "gacha_info/api/getGachaLog"
-$baseUri.Host = $apiHost
-$baseUri.Fragment = ""
-
-$banners = @(
-    @{ Key = "301"; Name = "Personaje Promocional" },
-    @{ Key = "302"; Name = "Gachapon de Armas" },
-    @{ Key = "200"; Name = "Gachapon Permanente" },
-    @{ Key = "500"; Name = "Busqueda de las Cronicas" }
-)
-
-$allWishes = [System.Collections.Generic.List[PSObject]]::new()
-$detectedUid = $null
-
-foreach ($b in $banners) {
-    $bKey = $b.Key
-    $bName = $b.Name
-    $lastEndId = "0"
-    $countThisBanner = 0
-
-    Write-Host -NoNewline "  -> [$bName]: " -ForegroundColor Gray
-
-    while ($true) {
-        $q = [System.Web.HttpUtility]::ParseQueryString($baseUri.Query)
-        $q["gacha_type"] = $bKey
-        $q["size"] = "20"
-        $q["end_id"] = $lastEndId
-        $q["lang"] = "es-es"
-        $baseUri.Query = $q.ToString()
-
-        $fetchUrl = $baseUri.Uri.AbsoluteUri
-
-        try {
-            $wc = New-Object System.Net.WebClient
-            $wc.Encoding = [System.Text.Encoding]::UTF8
-            $rawJson = $wc.DownloadString($fetchUrl)
-            $resp = $rawJson | ConvertFrom-Json
-        } catch {
-            Write-Host " [Aviso de red: $($_.Exception.Message)]" -ForegroundColor Yellow
-            break
-        }
-
-        if ($resp.retcode -ne 0) {
-            break
-        }
-
-        $list = $resp.data.list
-        if (-not $list -or $list.Count -eq 0) {
-            break
-        }
-
-        foreach ($item in $list) {
-            $allWishes.Add($item)
-            $countThisBanner++
-            if (-not $detectedUid -and $item.uid) { $detectedUid = $item.uid }
-        }
-
-        $lastEndId = $list[-1].id
-        Write-Host -NoNewline "$countThisBanner... " -ForegroundColor DarkYellow
-        Start-Sleep -Milliseconds 220
-    }
-
-    Write-Host "Total: $countThisBanner tiradas." -ForegroundColor Green
-}
-
-$activeUid = if ($detectedUid) { $detectedUid } else { "601976801" }
-
-# Formatear UIGF v4.0 Universal
-$uigfData = [ordered]@{
-    info = [ordered]@{
-        uid = $activeUid
-        lang = "es-es"
-        export_app = "Spirifly"
-        export_app_version = "v2.0.0"
-        uigf_version = "v4.0"
-        export_time = (Get-Date -Format "yyyy-MM-dd HH:mm:ss")
-        total_wishes = $allWishes.Count
-    }
-    list = $allWishes
-}
-
-$jsonOutput = $uigfData | ConvertTo-Json -Depth 5 -Compress
-
-# Guardar copia de respaldo en el Escritorio
-$desktopPath = [Environment]::GetFolderPath("Desktop")
-$desktopFile = Join-Path $desktopPath "deseos_genshin_$activeUid.json"
-try {
-    $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
-    [System.IO.File]::WriteAllText($desktopFile, ($uigfData | ConvertTo-Json -Depth 5), $utf8NoBom)
-    $hasSavedDesktop = $true
-} catch {
-    $hasSavedDesktop = $false
-}
-
-# Copiar al portapapeles
-Set-Clipboard -Value $jsonOutput
-
+Write-Host "`n========================================================" -ForegroundColor Cyan
+Write-Host " [OK] ¡Enlace de deseos obtenido exitosamente!" -ForegroundColor Green
+Write-Host " [OK] Copiado automaticamente al portapapeles." -ForegroundColor Green
+Write-Host "========================================================" -ForegroundColor Cyan
+Write-Host "`nEnlace listo para pegar en Spirifly:`n" -ForegroundColor Yellow
+Write-Host $validUrl -ForegroundColor Gray
 Write-Host ""
-Write-Host "==========================================================" -ForegroundColor Green
-Write-Host "  ¡DESCARGA EXITOSA: $($allWishes.Count) TIRADAS ENCONTRADAS!     " -ForegroundColor Green
-Write-Host "==========================================================" -ForegroundColor Green
-if ($hasSavedDesktop) {
-    Write-Host "[OK] Respaldo guardado en tu Escritorio: $desktopFile" -ForegroundColor Cyan
-}
-Write-Host "[OK] ¡Tiradas copiadas automaticamente a tu portapapeles!" -ForegroundColor Green
-Write-Host ""
-Write-Host "==========================================================" -ForegroundColor Cyan
-Write-Host "  PASO FINAL EN TU NAVEGADOR                              " -ForegroundColor Yellow
-Write-Host "==========================================================" -ForegroundColor Cyan
-Write-Host "1. Vuelve a Spirifly en tu navegador." -ForegroundColor White
-Write-Host "2. En el Paso 4, haz clic en el boton 'Pegar' (o pulsa Ctrl + V)." -ForegroundColor White
-Write-Host "3. Haz clic en 'Importar Deseos'." -ForegroundColor White
-Write-Host "   (Tambien puedes arrastrar el archivo de tu Escritorio)." -ForegroundColor Gray
-Write-Host "==========================================================" -ForegroundColor Cyan
+Write-Host "Pega el enlace en Spirifly (Paso 4) y haz clic en 'Importar Deseos'." -ForegroundColor White
 Write-Host ""

@@ -4391,7 +4391,20 @@ async function handleWishUrlImport() {
         params.set("lang", "es-es");
 
         const targetUrl = `${baseApi}?${params.toString()}`;
-        const res = await fetch(targetUrl);
+        
+        // Proxy CORS nativo en Cloudflare (/api/corsproxy), idéntico al mecanismo de Paimon.moe
+        const isSpiriflyOrigin = window.location.hostname.includes("spirifly.app");
+        const proxyEndpoint = isSpiriflyOrigin
+          ? `/api/corsproxy?url=${encodeURIComponent(targetUrl)}`
+          : `https://spirifly.app/api/corsproxy?url=${encodeURIComponent(targetUrl)}`;
+
+        let res;
+        try {
+          res = await fetch(proxyEndpoint);
+        } catch (proxyErr) {
+          res = await fetch(targetUrl);
+        }
+
         if (!res.ok) {
           throw new Error(`Error HTTP ${res.status} al conectar con HoYoverse.`);
         }
