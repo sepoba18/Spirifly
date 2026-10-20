@@ -5839,10 +5839,44 @@ async function renderProfileManager() {
     const activeUid = state.activeWishUid || WishEngine.getActiveAccountUid() || "default";
     const activeProfile = profiles.find((p) => p.uid === activeUid) || profiles[0] || { uid: activeUid, name: `UID: ${activeUid}`, server: "América" };
 
+    // Obtener nombre de la cuenta activa (ej: "Seba")
+    let customAccountName = "";
+    if (typeof AccountManager !== "undefined") {
+      const activeAccId = AccountManager.getActiveAccountId();
+      const names = AccountManager.getAccountNamesMap();
+      if (names && names[activeAccId]) {
+        customAccountName = String(names[activeAccId]).trim();
+      }
+    }
+    if (!customAccountName) {
+      try {
+        const storedNames = JSON.parse(localStorage.getItem("accountNames") || "{}");
+        const activeAccId = localStorage.getItem("account") || "main";
+        if (storedNames && storedNames[activeAccId]) {
+          customAccountName = String(storedNames[activeAccId]).trim();
+        }
+      } catch (e) {}
+    }
+
     // 1. Actualizar el indicador del perfil activo en el header del contador de deseos
     const lblName = document.getElementById("lblActiveProfileName");
     if (lblName) {
-      lblName.textContent = `UID: ${activeProfile.uid} (${activeProfile.server})`;
+      const hasValidUid = activeProfile.uid && activeProfile.uid !== "default";
+      if (customAccountName) {
+        if (hasValidUid) {
+          lblName.innerHTML = `<span style="color:#ffffff;font-weight:700;">${escapeHtml(customAccountName)}</span> <span style="opacity:0.85;font-size:0.8rem;font-weight:500;">(UID: ${escapeHtml(activeProfile.uid)} &bull; ${escapeHtml(activeProfile.server)})</span>`;
+        } else {
+          lblName.innerHTML = `<span style="color:#ffffff;font-weight:700;">${escapeHtml(customAccountName)}</span> <span style="opacity:0.85;font-size:0.8rem;font-weight:500;">(${escapeHtml(activeProfile.server)})</span>`;
+        }
+      } else {
+        lblName.textContent = `UID: ${activeProfile.uid} (${activeProfile.server})`;
+      }
+    }
+
+    const btnGoProfiles = document.getElementById("btnGoToProfiles");
+    if (btnGoProfiles) {
+      const tooltipName = customAccountName || `UID ${activeProfile.uid}`;
+      btnGoProfiles.title = `${pm.activeAcc}: ${tooltipName} — Clic para ver y cambiar cuentas`;
     }
 
     // 2. Poblar el dropdown de perfiles en el panel de Drive (estrictamente por UID)
@@ -5852,7 +5886,8 @@ async function renderProfileManager() {
         const isSel = p.uid === activeProfile.uid ? "selected" : "";
         const safeUid = escapeHtml(p.uid);
         const safeServer = escapeHtml(p.server);
-        return `<option value="${safeUid}" ${isSel}>UID: ${safeUid} — ${pm.srvLbl} ${safeServer}</option>`;
+        const prefix = customAccountName ? `${escapeHtml(customAccountName)} — ` : "";
+        return `<option value="${safeUid}" ${isSel}>${prefix}UID: ${safeUid} — ${pm.srvLbl} ${safeServer}</option>`;
       }).join("");
     }
 
@@ -5868,9 +5903,10 @@ async function renderProfileManager() {
       const totalWishes = (state.rawWishes || []).length;
       const safeActiveUid = escapeHtml(activeProfile.uid);
       const safeActiveServer = escapeHtml(activeProfile.server);
+      const accBadge = customAccountName ? `<strong style="color:#ffffff;margin-right:6px;">${escapeHtml(customAccountName)}</strong> &bull; ` : "";
       summaryBox.innerHTML = `
         <div class="chart-stat-pill" style="padding:0.4rem 0.8rem;background:rgba(59,130,246,0.12);border-color:rgba(59,130,246,0.3);color:#93c5fd;display:inline-flex;align-items:center;gap:4px;">
-          <img src="assets/ui/user.svg" class="seelie-inline-icon" alt="" /> ${pm.activeAcc} <strong style="color:#ffffff;font-family:Consolas,monospace;">UID ${safeActiveUid}</strong>
+          <img src="assets/ui/user.svg" class="seelie-inline-icon" alt="" /> ${accBadge}${pm.activeAcc} <strong style="color:#ffffff;font-family:Consolas,monospace;">UID ${safeActiveUid}</strong>
         </div>
         <div class="chart-stat-pill" style="padding:0.4rem 0.8rem;display:inline-flex;align-items:center;gap:4px;">
           <img src="assets/ui/globe.svg" class="seelie-inline-icon" alt="" /> ${pm.srvLbl}: <strong style="color:#ffffff;">${safeActiveServer}</strong>

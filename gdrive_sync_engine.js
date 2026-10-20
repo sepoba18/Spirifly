@@ -267,6 +267,9 @@
       names[targetId] = newName.trim();
       localStorage.setItem("accountNames", JSON.stringify(names));
       renderMultiAccountUI();
+      if (typeof renderProfileManager === "function") {
+        try { renderProfileManager(); } catch (e) {}
+      }
     }
 
     /**
