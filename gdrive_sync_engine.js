@@ -578,6 +578,7 @@
           if (tokenResponse && tokenResponse.access_token) {
             const token = tokenResponse.access_token;
             localStorage.setItem("gdrive_access_token", token);
+            localStorage.setItem("gdrive_token_timestamp", String(Date.now()));
             localStorage.setItem("teyvat_drive_linked", "true");
 
             // Obtener email del usuario autenticado
@@ -609,6 +610,68 @@
     return _gisTokenClient;
   }
 
+  let _isRefreshingToken = false;
+
+  function requestSilentTokenRefresh() {
+    if (localStorage.getItem("teyvat_drive_linked") !== "true") return;
+    if (_isRefreshingToken) return;
+    _isRefreshingToken = true;
+
+    let attempts = 0;
+    function pollGIS() {
+      if (typeof google !== "undefined" && google.accounts && google.accounts.oauth2) {
+        const client = initGoogleTokenClient();
+        if (client) {
+          try {
+            console.log("🔄 Renovando sesión de Google Drive silenciosamente...");
+            client.requestAccessToken({ prompt: "" });
+          } catch (e) {
+            console.warn("[Google Drive] No se pudo renovar token:", e);
+          } finally {
+            setTimeout(() => { _isRefreshingToken = false; }, 3000);
+          }
+        } else {
+          _isRefreshingToken = false;
+        }
+      } else if (attempts < 30) {
+        attempts++;
+        setTimeout(pollGIS, 250);
+      } else {
+        _isRefreshingToken = false;
+      }
+    }
+    pollGIS();
+  }
+
+  function triggerAutomaticDriveStartup() {
+    if (localStorage.getItem("teyvat_drive_linked") === "true") {
+      const token = localStorage.getItem("gdrive_access_token");
+      const tokenTime = parseInt(localStorage.getItem("gdrive_token_timestamp") || "0", 10);
+      const isFresh = token && (Date.now() - tokenTime < 50 * 60 * 1000);
+
+      if (isFresh) {
+        GoogleDriveSyncEngine.syncWithDrive().catch(() => {
+          requestSilentTokenRefresh();
+        });
+      } else {
+        requestSilentTokenRefresh();
+      }
+    }
+  }
+
+  // Sincronizacion automatica al volver a la pestana de Spirifly
+  if (typeof window !== "undefined") {
+    window.addEventListener("focus", () => {
+      if (localStorage.getItem("teyvat_drive_linked") === "true") {
+        const lastSync = parseInt(localStorage.getItem("gdrive_last_focus_sync") || "0", 10);
+        if (Date.now() - lastSync > 60000) {
+          localStorage.setItem("gdrive_last_focus_sync", String(Date.now()));
+          triggerAutomaticDriveStartup();
+        }
+      }
+    });
+  }
+
   function connectGoogleDrive() {
     if (typeof google === "undefined" || !google.accounts || !google.accounts.oauth2) {
       if (typeof showSynthToast === "function") {
@@ -632,6 +695,7 @@
       } catch (e) {}
     }
     localStorage.removeItem("gdrive_access_token");
+    localStorage.removeItem("gdrive_token_timestamp");
     localStorage.setItem("teyvat_drive_linked", "false");
     localStorage.removeItem("teyvat_drive_email");
     localStorage.removeItem("teyvat_last_sync");
@@ -821,9 +885,10 @@
         );
         if (searchRes.status === 401) {
           localStorage.removeItem("gdrive_access_token");
-          renderMultiAccountUI();
-          if (typeof showSynthToast === "function") {
-            showSynthToast("⚠️ La sesión de Google expiró. Vuelve a hacer clic en 'Conectar con Google Drive'.");
+          if (localStorage.getItem("teyvat_drive_linked") === "true") {
+            requestSilentTokenRefresh();
+          } else {
+            renderMultiAccountUI();
           }
           return payload;
         }
@@ -915,9 +980,10 @@
         );
         if (searchRes.status === 401) {
           localStorage.removeItem("gdrive_access_token");
-          renderMultiAccountUI();
-          if (typeof showSynthToast === "function") {
-            showSynthToast("⚠️ La sesión de Google expiró. Vuelve a hacer clic en 'Conectar con Google Drive'.");
+          if (localStorage.getItem("teyvat_drive_linked") === "true") {
+            requestSilentTokenRefresh();
+          } else {
+            renderMultiAccountUI();
           }
           return;
         }
@@ -1197,8 +1263,7 @@
     const btnSyncNow = document.getElementById("btnSyncDriveNow");
 
     const savedEmail = localStorage.getItem("teyvat_drive_email") || "";
-    const hasToken = !!localStorage.getItem("gdrive_access_token");
-    const isLinked = localStorage.getItem("teyvat_drive_linked") === "true" && hasToken;
+    const isLinked = localStorage.getItem("teyvat_drive_linked") === "true";
     const lastSync = localStorage.getItem("teyvat_last_sync") || "--";
     const autoResolve = localStorage.getItem("gdrive_auto_resolve_conflict") !== "false";
 
@@ -1568,17 +1633,13 @@
       document.addEventListener("DOMContentLoaded", () => {
         renderMultiAccountUI();
         bindUIEvents();
-        // Sincronización silenciosa inicial con Google Drive si hay sesión activa
-        if (localStorage.getItem("gdrive_access_token")) {
-          GoogleDriveSyncEngine.syncWithDrive().catch(() => {});
-        }
+        // Sincronización automática inmediata al entrar a la web
+        triggerAutomaticDriveStartup();
       });
     } else {
       renderMultiAccountUI();
       bindUIEvents();
-      if (localStorage.getItem("gdrive_access_token")) {
-        GoogleDriveSyncEngine.syncWithDrive().catch(() => {});
-      }
+      triggerAutomaticDriveStartup();
     }
   }
 

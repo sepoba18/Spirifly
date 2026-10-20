@@ -249,7 +249,7 @@ const state = {
   showAds: true,
   autoResolveConflict: true,
   lastSyncTime: localStorage.getItem("teyvat_last_sync") || formatNow(),
-  driveLinked: localStorage.getItem("teyvat_drive_linked") === "true" && Boolean(localStorage.getItem("gdrive_access_token")),
+  driveLinked: localStorage.getItem("teyvat_drive_linked") === "true",
   userEmail: localStorage.getItem("teyvat_drive_email") || "",
   wishData: safeParseLocal("teyvat_wish_data", null) || JSON.parse(JSON.stringify(DEFAULT_WISH_DATA)),
   activeWishBanner: localStorage.getItem("teyvat_active_wish_banner") || "character",
