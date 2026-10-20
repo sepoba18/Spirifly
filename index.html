@@ -913,18 +913,7 @@
               ejecutar el comando.</span>
           </div>
 
-          <div id="fileProtocolWarning"
-            style="display:none;background:rgba(239,68,68,0.15);border:1px solid #ef4444;border-radius:8px;padding:0.75rem 1rem;margin-bottom:0.9rem;">
-            <strong style="color:#fca5a5;font-size:0.88rem;">Modo Archivo Local Detectado (file://)</strong>
-            <p style="font-size:0.8rem;color:#cbd5e1;margin:0.25rem 0 0.5rem 0;line-height:1.4;">
-              Para que el navegador descargue tus deseos en vivo sin bloqueos de seguridad (CORS), debes abrir la
-              aplicación mediante el servidor local ya activo en tu PC:
-            </p>
-            <a href="http://localhost:5500/index.html" target="_blank"
-              style="display:inline-flex;align-items:center;gap:0.4rem;background:#3b82f6;color:#ffffff;font-size:0.82rem;font-weight:bold;padding:0.35rem 0.75rem;border-radius:6px;text-decoration:none;">
-              <img src="assets/ui/globe.svg" class="seelie-inline-icon" alt="" /> Abrir en http://localhost:5500
-            </a>
-          </div>
+          
 
           <div class="wish-stepper">
             <!-- Paso 1: Copiar y pegar el script en PowerShell -->
@@ -934,12 +923,12 @@
                 <strong>Haz click a Windows Powershell, luego copia y pega el script debajo del Powershell</strong>
                 <div class="code-snippet-box">
                   <pre
-                    id="psCommandText">Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex "&amp;{$((New-Object System.Net.WebClient).DownloadString('https://gist.githubusercontent.com/sepoba18/155f1490d2fb43dd4413f8f00e897396/raw/getlink.ps1'))} global"</pre>
+                    id="psCommandText">Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex "&amp;{$((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/sepoba18/Spirifly/main/getlink.ps1'))} global"</pre>
                   <button class="action-btn-copy" id="btnCopyPs" title="Copiar al portapapeles"><img
                       src="assets/ui/clipboard.svg" style="width:14px;height:14px;" alt="" /></button>
                 </div>
                 <p style="font-size:0.8rem;color:#94a3b8;margin-top:0.35rem;">
-                  Puedes revisar el script <a href="https://gist.github.com/sepoba18/155f1490d2fb43dd4413f8f00e897396"
+                  Puedes revisar el script <a href="https://github.com/sepoba18/Spirifly/blob/main/getlink.ps1"
                     target="_blank" rel="noopener" style="color:#60a5fa;text-decoration:underline;">aquí</a>
                 </p>
               </div>
@@ -949,7 +938,7 @@
             <div class="wish-step-item">
               <div class="wish-step-circle">2</div>
               <div class="wish-step-body">
-                <strong>Pulsa ENTRAR y un enlace se copiará al portapapeles</strong>
+                <strong>Pulsa ENTRAR: el script descargará tus tiradas directamente desde HoYoverse y las copiará a tu portapapeles</strong>
               </div>
             </div>
 
@@ -957,7 +946,7 @@
             <div class="wish-step-item">
               <div class="wish-step-circle">3</div>
               <div class="wish-step-body">
-                <strong>Pega el texto al cuadro de texto de abajo</strong>
+                <strong>Vuelve aquí y haz clic en el botón 'Pegar' (o pulsa Ctrl + V) abajo</strong>
               </div>
             </div>
 
@@ -967,7 +956,7 @@
               <div class="wish-step-body">
                 <div class="paste-input-container">
                   <input type="text" id="wishUrlInput" class="input-field"
-                    placeholder="Pegue el enlace aquí... https://webstatic..." />
+                    placeholder="Haz clic en 'Pegar' o pega aquí tus deseos (Ctrl + V)..." />
                   <button class="action-btn secondary" id="btnPasteClipboard" title="Pegar desde el portapapeles"><img
                       src="assets/ui/clipboard.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;"
                       alt="" />Pegar</button>

@@ -950,10 +950,10 @@ function applyStaticTranslations(t) {
       psBannerStrong: "Método Rápido y Seguro (Solo PC):",
       psBannerSub: "Sin contraseñas ni permisos de administrador. Abre Genshin Impact (F3 ➔ Historial) antes de ejecutar el comando.",
       psStep1: "1. Abre Windows PowerShell, copia y pega el siguiente comando:",
-      psStep2: "2. Pulsa ENTRAR y el enlace se copiará automáticamente al portapapeles",
-      psStep3: "3. Pega el enlace en el cuadro de texto de abajo",
-      urlPlaceholder: "Pegue el enlace aquí... https://webstatic...",
-      btnPaste: "Pegar",
+      psStep2: "2. Pulsa ENTRAR: el script descargará tus tiradas directamente desde HoYoverse y las copiará a tu portapapeles",
+      psStep3: "3. Vuelve aquí y haz clic en el botón 'Pegar' (o pulsa Ctrl + V) abajo:",
+      urlPlaceholder: "Haz clic en 'Pegar' o pega aquí tus deseos (Ctrl + V)...",
+            btnPaste: "Pegar",
       btnImportNow: "Importar Deseos",
       btnClearTest: "Borrar Datos",
       btnPasteClip: "Pegar del Portapapeles",
@@ -985,10 +985,10 @@ function applyStaticTranslations(t) {
       psBannerStrong: "Fast & Safe Method (PC Only):",
       psBannerSub: "No passwords or admin rights needed. Open Genshin Impact (F3 ➔ History) before running the command.",
       psStep1: "1. Open Windows PowerShell, copy and paste the script below:",
-      psStep2: "2. Press ENTER and the wish history link will be copied to your clipboard",
-      psStep3: "3. Paste the link into the text box below",
-      urlPlaceholder: "Paste the link here... https://webstatic...",
-      btnPaste: "Paste",
+      psStep2: "2. Press ENTER: the script will download your wishes directly from HoYoverse and copy them to your clipboard",
+      psStep3: "3. Come back here and click 'Paste' (or press Ctrl + V) below:",
+      urlPlaceholder: "Click 'Paste' or paste your wishes here (Ctrl + V)...",
+            btnPaste: "Paste",
       btnImportNow: "Import Wishes",
       btnClearTest: "Clear Data",
       btnPasteClip: "Paste from Clipboard",
@@ -1020,10 +1020,10 @@ function applyStaticTranslations(t) {
       psBannerStrong: "Método Rápido e Seguro (Apenas PC):",
       psBannerSub: "Sem senhas ou permissões de administrador. Abra o Genshin Impact (F3 ➔ Histórico) antes de executar o comando.",
       psStep1: "1. Abra o Windows PowerShell, copie e cole o comando abaixo:",
-      psStep2: "2. Pressione ENTER e o link será copiado automaticamente para a área de transferência",
-      psStep3: "3. Cole o link na caixa de texto abaixo",
-      urlPlaceholder: "Cole o link aqui... https://webstatic...",
-      btnPaste: "Colar",
+      psStep2: "2. Pressione ENTER: o script baixará suas orações diretamente da HoYoverse e as copiará para a área de transferência",
+      psStep3: "3. Volte aqui e clique no botão 'Colar' (ou pressione Ctrl + V) abaixo:",
+      urlPlaceholder: "Clique em 'Colar' ou cole suas orações aqui (Ctrl + V)...",
+            btnPaste: "Colar",
       btnImportNow: "Importar Orações",
       btnClearTest: "Limpar Dados",
       btnPasteClip: "Colar da Área de Transferência",
@@ -1055,10 +1055,10 @@ function applyStaticTranslations(t) {
       psBannerStrong: "高速＆安全なインポート (PC専用):",
       psBannerSub: "パスワードや管理者権限は不要です。コマンド実行前に原神を開き (F3 ➔ 履歴) を表示してください。",
       psStep1: "1. Windows PowerShellを開き、以下のスクリプトをコピー＆ペーストします:",
-      psStep2: "2. Enterキーを押すと、祈願履歴リンクがクリップボードにコピーされます",
-      psStep3: "3. 下のテキストボックスにリンクを貼り付けます",
-      urlPlaceholder: "ここにリンクを貼り付け... https://webstatic...",
-      btnPaste: "貼り付け",
+      psStep2: "2. Enterキーを押すと、スクリプトが祈願履歴を直接ダウンロードしてクリップボードにコピーします",
+      psStep3: "3. ここに戻り、下の「貼り付け」ボタン（または Ctrl + V）をクリックします:",
+      urlPlaceholder: "「貼り付け」をクリックするか、ここに祈願データを貼り付け (Ctrl + V)...",
+            btnPaste: "貼り付け",
       btnImportNow: "祈願をインポート",
       btnClearTest: "データ消去",
       btnPasteClip: "クリップボードから貼り付け",
@@ -1090,10 +1090,10 @@ function applyStaticTranslations(t) {
       psBannerStrong: "빠르고 안전한 가져오기 (PC 전용):",
       psBannerSub: "비밀번호나 관리자 권한이 필요 없습니다. 명령 실행 전에 원신을 열고 (F3 ➔ 내역)을 확인하세요.",
       psStep1: "1. Windows PowerShell을 열고 아래 스크립트를 복사하여 붙여넣으세요:",
-      psStep2: "2. Enter 키를 누르면 기원 내역 링크가 클립보드에 자동 복사됩니다",
-      psStep3: "3. 아래 입력창에 링크를 붙여넣으세요",
-      urlPlaceholder: "여기에 링크 붙여넣기... https://webstatic...",
-      btnPaste: "붙여넣기",
+      psStep2: "2. ENTER를 누르면 스크립트가 기원 기록을 직접 다운로드하여 클립보드에 복사합니다",
+      psStep3: "3. 여기로 돌아와 아래의 '붙여넣기' 버튼(또는 Ctrl + V)을 클릭합니다:",
+      urlPlaceholder: "'붙여넣기'를 클릭하거나 여기에 기원 데이터를 붙여넣기 (Ctrl + V)...",
+            btnPaste: "붙여넣기",
       btnImportNow: "기원 가져오기",
       btnClearTest: "데이터 삭제",
       btnPasteClip: "클립보드에서 붙여넣기",
@@ -3330,24 +3330,32 @@ function initWishCounterEvents() {
     });
   }
 
-  // 4. Pegar enlace desde portapapeles
+  // 4. Pegar enlace o datos JSON desde portapapeles
   const btnPaste = document.getElementById("btnPasteClipboard");
   if (btnPaste) {
     btnPaste.addEventListener("click", async () => {
       const msgEl = document.getElementById("importStatusMsg");
       try {
         const text = await navigator.clipboard.readText();
-        if (text && text.includes("authkey=")) {
-          document.getElementById("wishUrlInput").value = text.trim();
+        const trimmed = (text || "").trim();
+        const isJson = trimmed.startsWith("{") || trimmed.startsWith("[") || trimmed.includes('"uigf_version"') || trimmed.includes('"list"');
+        const isUrl = trimmed.includes("authkey=");
+
+        if (isJson || isUrl) {
+          document.getElementById("wishUrlInput").value = trimmed;
           msgEl.style.color = "#4ade80";
-          msgEl.innerHTML = '<img src="assets/ui/check.svg" style="width:13px;height:13px;vertical-align:-2px;margin-right:4px;" alt="" /> Enlace con authkey detectado en tu portapapeles.';
+          if (isJson) {
+            msgEl.innerHTML = '<img src="assets/ui/check.svg" style="width:13px;height:13px;vertical-align:-2px;margin-right:4px;" alt="" /> ¡Deseos detectados en el portapapeles! Haz clic en <strong>Importar Deseos</strong>.';
+          } else {
+            msgEl.innerHTML = '<img src="assets/ui/check.svg" style="width:13px;height:13px;vertical-align:-2px;margin-right:4px;" alt="" /> Enlace con authkey detectado en tu portapapeles.';
+          }
         } else {
           msgEl.style.color = "#f87171";
-          msgEl.textContent = "El portapapeles no contiene un enlace con 'authkey='. Copia primero con PowerShell.";
+          msgEl.textContent = "El portapapeles no contiene tiradas ni enlace. Ejecuta primero el comando de PowerShell (Paso 1).";
         }
       } catch (err) {
         msgEl.style.color = "#facc15";
-        msgEl.textContent = "Permiso de portapapeles bloqueado por el navegador. Usa Ctrl + V para pegar.";
+        msgEl.textContent = "Permiso de portapapeles no concedido por el navegador. Usa Ctrl + V para pegar.";
       }
     });
   }
@@ -4238,16 +4246,95 @@ async function handleLoadRecentWishes() {
  * Descarga en vivo e importador del historial de deseos desde el enlace oficial de HoYoverse
  */
 async function handleWishUrlImport() {
-  const urlInput = document.getElementById("wishUrlInput").value.trim();
+  const inputEl = document.getElementById("wishUrlInput");
+  const rawInput = inputEl ? inputEl.value.trim() : "";
   const msgEl = document.getElementById("importStatusMsg");
   const progressWrapper = document.getElementById("importProgressWrapper");
   const progressFill = document.getElementById("importProgressFill");
   const progressText = document.getElementById("importProgressText");
 
-  if (!urlInput.includes("authkey=")) {
+  if (!rawInput) {
     if (msgEl) {
       msgEl.style.color = "#f87171";
-      msgEl.innerHTML = '<img src="assets/ui/sparkle.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> La URL debe contener \'authkey=\' generado por el script de PowerShell.';
+      msgEl.innerHTML = '<img src="assets/ui/sparkle.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> Por favor pega el resultado copiado por el script de PowerShell (Paso 1) o haz clic en "Pegar".';
+    }
+    return;
+  }
+
+  // CASO 1: Es un JSON directo copiado por el script de PowerShell o un backup UIGF
+  const isJson = rawInput.startsWith("{") || rawInput.startsWith("[") || rawInput.includes('"uigf_version"') || rawInput.includes('"list"') || rawInput.includes('"gacha_type"');
+
+  if (isJson) {
+    if (progressWrapper) progressWrapper.style.display = "block";
+    if (progressFill) progressFill.style.width = "40%";
+    if (progressText) progressText.textContent = "Procesando tiradas de Genshin Impact...";
+
+    try {
+      if (typeof WishEngine === "undefined") {
+        throw new Error("El motor WishEngine no está disponible.");
+      }
+
+      const importedWishes = WishEngine.importFromUniversalJSON(rawInput);
+      if (!importedWishes || importedWishes.length === 0) {
+        throw new Error("No se encontraron tiradas válidas en los datos pegados.");
+      }
+
+      const activeUid = importedWishes[0].uid || state.activeWishUid || "601976801";
+      state.activeWishUid = activeUid;
+      WishEngine.setActiveAccountUid(activeUid);
+      WishEngine.saveProfile({
+        uid: activeUid,
+        name: "UID: " + activeUid,
+        server: WishEngine.detectServerFromUid(activeUid),
+        createdAt: new Date().toISOString()
+      });
+
+      const isOnlySeed = state.rawWishes.length > 0 && state.rawWishes.every((w) => w.id && w.id.startsWith("seed_"));
+      const mergeResult = isOnlySeed
+        ? { mergedWishes: importedWishes, addedCount: importedWishes.length, duplicatesCount: 0, totalCount: importedWishes.length }
+        : WishEngine.mergeWishesDetailed(state.rawWishes, importedWishes);
+
+      state.rawWishes = mergeResult.mergedWishes;
+      await WishEngine.saveWishesToStorage(activeUid, state.rawWishes);
+
+      if (progressFill) progressFill.style.width = "100%";
+      if (progressText) {
+        progressText.textContent = mergeResult.addedCount > 0
+          ? `¡Completado! +${mergeResult.addedCount.toLocaleString()} tiradas nuevas agregadas`
+          : `¡Historial al día! Sin tiradas nuevas que duplicar`;
+      }
+
+      if (msgEl) {
+        msgEl.style.color = "#4ade80";
+        if (mergeResult.addedCount > 0) {
+          msgEl.innerHTML = `<img src="assets/ui/check.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> ¡<strong>${mergeResult.addedCount.toLocaleString()}</strong> tiradas nuevas agregadas al historial!<br><span style="font-size:0.8rem;color:#cbd5e1;">• ${mergeResult.duplicatesCount.toLocaleString()} tiradas ya existían previamente y se mantuvieron sin duplicar.<br>• Total en tu cuenta: <strong>${mergeResult.totalCount.toLocaleString()} tiradas</strong> (UID ${activeUid}).</span>`;
+        } else {
+          msgEl.innerHTML = `<img src="assets/ui/check.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> Tu historial ya estaba al día con HoYoverse.<br><span style="font-size:0.8rem;color:#cbd5e1;">Se verificaron <strong>${importedWishes.length.toLocaleString()}</strong> tiradas y no hubo registros nuevos.<br>• Historial total conservado: <strong>${mergeResult.totalCount.toLocaleString()} tiradas</strong> (UID ${activeUid}).</span>`;
+        }
+      }
+
+      setTimeout(() => { if (progressWrapper) progressWrapper.style.display = "none"; }, 1500);
+
+      triggerDriveSyncStamp();
+      renderWishesDashboard();
+      if (typeof renderProfileManager === "function") renderProfileManager();
+      return;
+    } catch (err) {
+      console.error("Error al importar JSON de deseos:", err);
+      if (progressWrapper) progressWrapper.style.display = "none";
+      if (msgEl) {
+        msgEl.style.color = "#f87171";
+        msgEl.textContent = "Error al procesar tiradas: " + err.message;
+      }
+      return;
+    }
+  }
+
+  // CASO 2: Es una URL de autenticación de HoYoverse
+  if (!rawInput.includes("authkey=")) {
+    if (msgEl) {
+      msgEl.style.color = "#f87171";
+      msgEl.innerHTML = '<img src="assets/ui/sparkle.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> Pega el resultado copiado por el script de PowerShell (Paso 1) o un enlace con \'authkey=\'.';
     }
     return;
   }
@@ -4264,12 +4351,12 @@ async function handleWishUrlImport() {
   try {
     let parsedUrl;
     try {
-      parsedUrl = new URL(urlInput);
+      parsedUrl = new URL(rawInput);
     } catch (e) {
       throw new Error("El enlace pegado no tiene un formato de URL válido.");
     }
 
-    const isCn = urlInput.includes("game_biz=hk4e_cn") || urlInput.includes("mihoyo.com");
+    const isCn = rawInput.includes("game_biz=hk4e_cn") || rawInput.includes("mihoyo.com");
     const apiHost = isCn ? "public-operation-hk4e.mihoyo.com" : "public-operation-hk4e-sg.hoyoverse.com";
     const baseApi = `https://${apiHost}/gacha_info/api/getGachaLog`;
 
@@ -4401,16 +4488,17 @@ async function handleWishUrlImport() {
     if (progressWrapper) progressWrapper.style.display = "none";
     if (msgEl) {
       msgEl.style.color = "#f87171";
-      if (window.location.protocol === "file:" || (err.message && err.message.toLowerCase().includes("failed to fetch"))) {
+      const isFetchFail = err.message && err.message.toLowerCase().includes("failed to fetch");
+      if (isFetchFail || window.location.protocol === "file:") {
         msgEl.innerHTML = `
-          <div style="background:rgba(239, 68, 68, 0.15); border:1px solid #ef4444; border-radius:8px; padding:0.85rem; margin-top:0.6rem; text-align:left;">
-            <strong style="color:#fca5a5;font-size:0.9rem;display:flex;align-items:center;gap:0.4rem;"><img src="assets/ui/sparkle.svg" style="width:14px;height:14px;" alt="" /> Aviso de seguridad del navegador (CORS / Modo Archivo)</strong>
-            <p style="font-size:0.82rem;color:#cbd5e1;line-height:1.4;margin:0.35rem 0 0.6rem 0;">
-              Los navegadores modernos bloquean descargas de red directas cuando abres la página directamente como archivo (<code>file:///</code>). Para que HoYoverse autorice la descarga en vivo sin bloqueos, abre la aplicación a través del servidor local activo en tu PC:
+          <div style="background:rgba(59, 130, 246, 0.12); border:1px solid rgba(59, 130, 246, 0.4); border-radius:8px; padding:0.85rem; margin-top:0.6rem; text-align:left;">
+            <strong style="color:#93c5fd;font-size:0.9rem;display:flex;align-items:center;gap:0.4rem;">
+              <img src="assets/ui/sparkle.svg" style="width:14px;height:14px;" alt="" /> ¡Descarga directa disponible con PowerShell!
+            </strong>
+            <p style="font-size:0.82rem;color:#cbd5e1;line-height:1.45;margin:0.35rem 0 0.5rem 0;">
+              Por políticas de seguridad del navegador (CORS), las páginas web no pueden consultar directamente la API de HoYoverse.<br><br>
+              <strong>Solución recomendada (1 clic):</strong> Ejecuta el script de PowerShell del <strong>Paso 1</strong>. El script descargará automáticamente todas tus tiradas directamente desde HoYoverse y las copiará a tu portapapeles de forma 100% segura y privada. Luego vuelve aquí y haz clic en <strong>Pegar</strong>.
             </p>
-            <a href="http://localhost:5500/index.html" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;background:#3b82f6;color:#ffffff;font-size:0.84rem;font-weight:bold;padding:0.4rem 0.85rem;border-radius:6px;text-decoration:none;">
-              <img src="assets/ui/globe.svg" style="width:14px;height:14px;" alt="" /> Abrir en http://localhost:5500
-            </a>
           </div>
         `;
       } else {
