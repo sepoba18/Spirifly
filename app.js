@@ -523,6 +523,12 @@ function initApp() {
   document.querySelectorAll(".nav-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       state.activeTab = btn.dataset.tab;
+      try {
+        localStorage.setItem("spirifly_active_tab", state.activeTab);
+      } catch (e) {}
+      if (history.replaceState) {
+        history.replaceState(null, null, `#${state.activeTab}`);
+      }
       document.querySelectorAll(".nav-btn").forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
       document.querySelectorAll(".tool-section").forEach((sec) => {
@@ -532,6 +538,14 @@ function initApp() {
         renderVisualInventory();
       } else if (state.activeTab === "farming") {
         renderFarming();
+      } else if (state.activeTab === "wishes") {
+        renderWishesDashboard();
+      } else if (state.activeTab === "theory") {
+        renderTheorycraft();
+      } else if (state.activeTab === "planner") {
+        if (typeof renderCharacterWeaponPlanner === "function") {
+          renderCharacterWeaponPlanner();
+        }
       }
     });
   });
@@ -721,9 +735,22 @@ function initApp() {
   renderAll();
 
   const initialHash = (window.location.hash || "").replace("#", "").replace("sec-", "");
-  if (initialHash && document.querySelector(`[data-tab="${initialHash}"]`)) {
-    document.querySelector(`[data-tab="${initialHash}"]`).click();
+  let tabToActivate = initialHash;
+  if (!tabToActivate) {
+    try {
+      tabToActivate = localStorage.getItem("spirifly_active_tab");
+    } catch (e) {}
   }
+  if (tabToActivate && document.querySelector(`[data-tab="${tabToActivate}"]`)) {
+    document.querySelector(`[data-tab="${tabToActivate}"]`).click();
+  }
+
+  window.addEventListener("hashchange", () => {
+    const hashTab = (window.location.hash || "").replace("#", "").replace("sec-", "");
+    if (hashTab && hashTab !== state.activeTab && document.querySelector(`[data-tab="${hashTab}"]`)) {
+      document.querySelector(`[data-tab="${hashTab}"]`).click();
+    }
+  });
 }
 
 function setTextIfPresent(id, text) {
