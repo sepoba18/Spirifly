@@ -539,6 +539,26 @@
         }
       });
 
+      // Incluir también los deseos (wish tracker) y perfiles en el backup de Google Drive
+      try {
+        const wishAccounts = JSON.parse(localStorage.getItem("teyvat_wish_accounts_v1") || "[]");
+        payload.wishAccounts = wishAccounts;
+        payload.activeWishUid = localStorage.getItem("teyvat_active_wish_uid") || "default";
+        payload.wishProfiles = JSON.parse(localStorage.getItem("teyvat_wish_profiles_v1") || "[]");
+        payload.wishesData = {};
+
+        wishAccounts.forEach((wUid) => {
+          const rawWishes = localStorage.getItem("teyvat_wishes_" + wUid);
+          if (rawWishes) {
+            try {
+              payload.wishesData[wUid] = JSON.parse(rawWishes);
+            } catch (e) {}
+          }
+        });
+      } catch (e) {
+        console.warn("Fallo al serializar deseos para Google Drive:", e);
+      }
+
       return payload;
     }
 
@@ -567,6 +587,31 @@
 
       if (remotePayload.settings && typeof remotePayload.settings.autoResolveConflict === "boolean") {
         localStorage.setItem("gdrive_auto_resolve_conflict", String(remotePayload.settings.autoResolveConflict));
+      }
+
+      // Restaurar también los deseos (wish tracker) y perfiles desde Google Drive
+      try {
+        if (Array.isArray(remotePayload.wishAccounts)) {
+          localStorage.setItem("teyvat_wish_accounts_v1", JSON.stringify(remotePayload.wishAccounts));
+        }
+        if (remotePayload.activeWishUid) {
+          localStorage.setItem("teyvat_active_wish_uid", remotePayload.activeWishUid);
+        }
+        if (Array.isArray(remotePayload.wishProfiles)) {
+          localStorage.setItem("teyvat_wish_profiles_v1", JSON.stringify(remotePayload.wishProfiles));
+        }
+        if (remotePayload.wishesData && typeof remotePayload.wishesData === "object") {
+          Object.entries(remotePayload.wishesData).forEach(([wUid, wList]) => {
+            if (Array.isArray(wList)) {
+              localStorage.setItem("teyvat_wishes_" + wUid, JSON.stringify(wList));
+              if (typeof WishEngine !== "undefined" && typeof WishEngine.saveWishesToStorage === "function") {
+                WishEngine.saveWishesToStorage(wUid, wList).catch(() => {});
+              }
+            }
+          });
+        }
+      } catch (e) {
+        console.warn("Fallo al restaurar deseos desde Google Drive:", e);
       }
 
       const active = AccountManager.getActiveAccountId();
@@ -1314,10 +1359,17 @@
       document.addEventListener("DOMContentLoaded", () => {
         renderMultiAccountUI();
         bindUIEvents();
+        // Sincronización silenciosa inicial con Google Drive si hay sesión activa
+        if (localStorage.getItem("gdrive_access_token")) {
+          GoogleDriveSyncEngine.syncWithDrive().catch(() => {});
+        }
       });
     } else {
       renderMultiAccountUI();
       bindUIEvents();
+      if (localStorage.getItem("gdrive_access_token")) {
+        GoogleDriveSyncEngine.syncWithDrive().catch(() => {});
+      }
     }
   }
 

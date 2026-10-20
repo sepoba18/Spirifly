@@ -339,10 +339,23 @@ function updateSyncDisplay() {
   }
 }
 
+let _driveAutoSyncTimeout = null;
+
 function triggerDriveSyncStamp() {
   state.lastSyncTime = formatNow();
   localStorage.setItem("teyvat_last_sync", state.lastSyncTime);
   updateSyncDisplay();
+
+  // Subida automática en segundo plano hacia Google Drive si la sesión está conectada
+  const token = localStorage.getItem("gdrive_access_token");
+  if (token && typeof GoogleDriveSyncEngine !== "undefined" && typeof GoogleDriveSyncEngine.uploadLocalPayloadToDrive === "function") {
+    if (_driveAutoSyncTimeout) clearTimeout(_driveAutoSyncTimeout);
+    _driveAutoSyncTimeout = setTimeout(() => {
+      GoogleDriveSyncEngine.uploadLocalPayloadToDrive().catch((err) => {
+        console.warn("Fallo en sincronización automática con Google Drive:", err);
+      });
+    }, 1500);
+  }
 }
 
 function getDefaultTopCurrency() {

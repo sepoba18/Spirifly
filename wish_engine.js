@@ -1036,6 +1036,15 @@
     const safeUid = String(uid || 'default');
     registerAccountUid(safeUid);
 
+    // Guardado dual garantizado: Siempre guardamos en localStorage para persistencia instantánea y sync Drive
+    const storageKey = 'teyvat_wishes_' + safeUid;
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(wishes));
+      localStorage.setItem(ACTIVE_UID_KEY, safeUid);
+    } catch (err) {
+      console.warn('Advertencia al escribir fallback en localStorage:', err);
+    }
+
     const db = await openIndexedDB();
     if (db) {
       return new Promise(function (resolve, reject) {
@@ -1049,15 +1058,7 @@
         tx.onerror = function (err) { reject(err); };
       });
     } else {
-      // Fallback a localStorage
-      const storageKey = 'teyvat_wishes_' + safeUid;
-      try {
-        localStorage.setItem(storageKey, JSON.stringify(wishes));
-        return true;
-      } catch (err) {
-        console.error('Error al guardar en localStorage:', err);
-        return false;
-      }
+      return true;
     }
   }
 
@@ -1066,6 +1067,7 @@
    */
   async function loadWishesFromStorage(uid) {
     const safeUid = String(uid || getActiveAccountUid() || 'default');
+    const storageKey = 'teyvat_wishes_' + safeUid;
     const db = await openIndexedDB();
 
     if (db) {
@@ -1076,14 +1078,33 @@
         const req = index.getAll(safeUid);
         req.onsuccess = function (e) {
           const items = e.target.result || [];
-          resolve(sortWishesAscending(items));
+          if (items.length > 0) {
+            resolve(sortWishesAscending(items));
+          } else {
+            // Si IndexedDB devolvió vacío, intentar recuperar desde localStorage
+            const raw = localStorage.getItem(storageKey);
+            if (raw) {
+              try {
+                const parsed = JSON.parse(raw);
+                if (Array.isArray(parsed) && parsed.length > 0) {
+                  // Re-poblar IndexedDB en segundo plano
+                  saveWishesToStorage(safeUid, parsed).catch(function () {});
+                  return resolve(sortWishesAscending(parsed));
+                }
+              } catch (e) {}
+            }
+            resolve([]);
+          }
         };
         req.onerror = function () {
+          const raw = localStorage.getItem(storageKey);
+          if (raw) {
+            try { return resolve(sortWishesAscending(JSON.parse(raw))); } catch (e) {}
+          }
           resolve([]);
         };
       });
     } else {
-      const storageKey = 'teyvat_wishes_' + safeUid;
       const raw = localStorage.getItem(storageKey);
       if (raw) {
         try {
