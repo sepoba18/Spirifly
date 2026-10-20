@@ -189,13 +189,15 @@
     /**
      * Cambia la cuenta activa y recarga reactivamente el estado de la aplicación
      */
-    static switchAccount(targetId) {
+    static switchAccount(targetId, skipPersist = false) {
       const accounts = this.getAccountsList();
       if (!accounts.includes(targetId)) return;
 
       const currentActive = this.getActiveAccountId();
-      // Guardar el estado actual antes de cambiar
-      this.persistCurrentActiveData(currentActive);
+      // Guardar el estado actual antes de cambiar SOLO si es entre cuentas distintas y no se omitió
+      if (!skipPersist && currentActive !== targetId) {
+        this.persistCurrentActiveData(currentActive);
+      }
 
       // Cambiar clave global
       localStorage.setItem("account", targetId);
@@ -218,6 +220,7 @@
         } catch (e) {
           state.activePlans = [];
         }
+        localStorage.setItem("teyvat_active_plans_v4", JSON.stringify(state.activePlans));
 
         // Cargar inventario de la nueva cuenta
         const rawInv = localStorage.getItem(`${targetId}-inventory`);
@@ -227,6 +230,7 @@
         } catch (e) {
           state.realOwned = Object.assign({}, typeof DEFAULT_SEELIE_OWNED !== "undefined" ? DEFAULT_SEELIE_OWNED : {});
         }
+        localStorage.setItem("teyvat_real_owned_v1", JSON.stringify(state.realOwned));
 
         // Cargar ajustes (AR, WL, Servidor)
         state.accountSettings = getActiveAccountSettings();
@@ -237,6 +241,15 @@
       if (typeof renderVisualInventory === "function") renderVisualInventory();
       if (typeof renderFarming === "function") renderFarming();
       if (typeof renderTopCurrencySection === "function") renderTopCurrencySection();
+      if (typeof renderWishesDashboard === "function") {
+        try { Promise.resolve(renderWishesDashboard()).catch(() => {}); } catch (e) {}
+      }
+      if (typeof renderProfileManager === "function") {
+        try { renderProfileManager(); } catch (e) {}
+      }
+      if (typeof renderTheorycraft === "function") {
+        try { renderTheorycraft(); } catch (e) {}
+      }
 
       renderMultiAccountUI();
       if (typeof showSynthToast === "function") {
@@ -625,7 +638,7 @@
       }
 
       const active = AccountManager.getActiveAccountId();
-      AccountManager.switchAccount(active);
+      AccountManager.switchAccount(active, true);
 
       // Re-renderizar Deseos, Perfiles y Theorycraft si están activos o presentes
       if (typeof renderWishesDashboard === "function") {
