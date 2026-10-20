@@ -505,39 +505,49 @@
       const accountNames = AccountManager.getAccountNamesMap();
       const autoResolve = localStorage.getItem("gdrive_auto_resolve_conflict") !== "false";
 
+      let hasRealLocalData = false;
+      const dataObj = {};
+      accounts.forEach((acc) => {
+        try {
+          const inv = JSON.parse(localStorage.getItem(`${acc}-inventory`) || "{}");
+          dataObj[`${acc}-inventory`] = inv;
+          if (Object.keys(inv).length > 0) hasRealLocalData = true;
+        } catch (e) {
+          dataObj[`${acc}-inventory`] = {};
+        }
+        try {
+          const goals = JSON.parse(localStorage.getItem(`${acc}-goals`) || "[]");
+          dataObj[`${acc}-goals`] = goals;
+          if (goals.length > 0) hasRealLocalData = true;
+        } catch (e) {
+          dataObj[`${acc}-goals`] = [];
+        }
+        try {
+          dataObj[`${acc}-settings`] = JSON.parse(localStorage.getItem(`${acc}-settings`) || "{}");
+        } catch (e) {
+          dataObj[`${acc}-settings`] = {};
+        }
+        try {
+          dataObj[`${acc}-resin`] = JSON.parse(localStorage.getItem(`${acc}-resin`) || "{}");
+        } catch (e) {
+          dataObj[`${acc}-resin`] = {};
+        }
+      });
+
+      // Si el dispositivo está vacío (sin items ni metas), usar timestamp epoch para que la nube siempre gane
+      const savedEditTime = localStorage.getItem("teyvat_data_last_modified");
+      const effectiveLastUpdate = savedEditTime || (hasRealLocalData ? new Date().toISOString() : "1970-01-01T00:00:00.000Z");
+
       const payload = {
         version: 2,
-        lastUpdate: new Date().toISOString(),
+        lastUpdate: effectiveLastUpdate,
         accounts,
         accountNames,
-        data: {},
+        data: dataObj,
         settings: {
           autoResolveConflict: autoResolve
         }
       };
-
-      accounts.forEach((acc) => {
-        try {
-          payload.data[`${acc}-inventory`] = JSON.parse(localStorage.getItem(`${acc}-inventory`) || "{}");
-        } catch (e) {
-          payload.data[`${acc}-inventory`] = {};
-        }
-        try {
-          payload.data[`${acc}-goals`] = JSON.parse(localStorage.getItem(`${acc}-goals`) || "[]");
-        } catch (e) {
-          payload.data[`${acc}-goals`] = [];
-        }
-        try {
-          payload.data[`${acc}-settings`] = JSON.parse(localStorage.getItem(`${acc}-settings`) || "{}");
-        } catch (e) {
-          payload.data[`${acc}-settings`] = {};
-        }
-        try {
-          payload.data[`${acc}-resin`] = JSON.parse(localStorage.getItem(`${acc}-resin`) || "{}");
-        } catch (e) {
-          payload.data[`${acc}-resin`] = {};
-        }
-      });
 
       // Incluir también los deseos (wish tracker) y perfiles en el backup de Google Drive
       try {
@@ -616,6 +626,17 @@
 
       const active = AccountManager.getActiveAccountId();
       AccountManager.switchAccount(active);
+
+      // Re-renderizar Deseos, Perfiles y Theorycraft si están activos o presentes
+      if (typeof renderWishesDashboard === "function") {
+        try { Promise.resolve(renderWishesDashboard()).catch(() => {}); } catch (e) {}
+      }
+      if (typeof renderProfileManager === "function") {
+        try { renderProfileManager(); } catch (e) {}
+      }
+      if (typeof renderTheorycraft === "function") {
+        try { renderTheorycraft(); } catch (e) {}
+      }
 
       const lastStamp = remotePayload.lastUpdate || new Date().toISOString();
       localStorage.setItem("teyvat_last_sync", formatSyncDate(new Date(lastStamp)));
@@ -778,6 +799,23 @@
       const conflictInfo = ConflictDetector.evaluate(localPayload, remotePayload);
       const autoResolve = localStorage.getItem("gdrive_auto_resolve_conflict") !== "false";
 
+      // PROTECCIÓN DE DATOS PARA DISPOSITIVOS NUEVOS / MÓVILES:
+      // Si la nube tiene datos pero el dispositivo local está vacío o tiene menos del 50% de tamaño,
+      // siempre prevalece la nube para no borrar los datos del usuario en un nuevo navegador.
+      const remoteHasData = (remotePayload.data && Object.keys(remotePayload.data).length > 0) ||
+                            (remotePayload.wishAccounts && remotePayload.wishAccounts.length > 0) ||
+                            (remotePayload.wishesData && Object.keys(remotePayload.wishesData).length > 0);
+
+      const localHasRealContent = (localPayload.data && Object.values(localPayload.data).some(v => (Array.isArray(v) ? v.length > 0 : Object.keys(v || {}).length > 0))) ||
+                                  (localPayload.wishAccounts && localPayload.wishAccounts.length > 0) ||
+                                  (localPayload.wishesData && Object.keys(localPayload.wishesData).length > 0);
+
+      if (!localHasRealContent && remoteHasData) {
+        console.log("📥 Dispositivo nuevo o sin datos locales detectado. Restaurando datos desde Google Drive...");
+        this.applyRemotePayload(remotePayload);
+        return;
+      }
+
       // Si no hay discrepancia significativa de timestamps (< 2 segundos)
       const diffMs = Math.abs(conflictInfo.localTime.getTime() - conflictInfo.remoteTime.getTime());
       if (diffMs < 2000) {
@@ -791,6 +829,13 @@
 
       // Si auto-resolver está activo, gana la versión más reciente
       if (autoResolve) {
+        if (conflictInfo.smallerBrowserWarning && remoteHasData) {
+          // El navegador local tiene sospechosamente menos datos que la nube
+          console.warn("⚠️ Advertencia de seguridad: El navegador local es significativamente menor que la nube. Restaurando nube...");
+          this.applyRemotePayload(remotePayload);
+          return;
+        }
+
         if (conflictInfo.driveIsOlder) {
           // Local es más nuevo -> sube a Drive
           return this.uploadLocalPayloadToDrive();
