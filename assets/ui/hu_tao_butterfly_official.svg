@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Resplandor espiritual de fuego cálido -->
+    <filter id="spiritGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="glow" />
+      <feComposite in="SourceGraphic" in2="glow" operator="over" />
+    </filter>
+
+    <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Gradiente de Trazo Caligráfico (Naranja ámbar a melocotón brillante de Hu Tao) -->
+    <linearGradient id="huTaoLineGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff7b39" />
+      <stop offset="35%" stop-color="#ffa05e" />
+      <stop offset="70%" stop-color="#ffbe88" />
+      <stop offset="100%" stop-color="#ffe2c4" />
+    </linearGradient>
+
+    <!-- Resplandor translúcido interior de las alas -->
+    <radialGradient id="wingInnerGlowLeft" cx="45%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#ff9a52" stop-opacity="0.85" />
+      <stop offset="60%" stop-color="#e6511e" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#942600" stop-opacity="0.0" />
+    </radialGradient>
+
+    <radialGradient id="wingInnerGlowRight" cx="55%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#ffaa66" stop-opacity="0.85" />
+      <stop offset="60%" stop-color="#e6511e" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#942600" stop-opacity="0.0" />
+    </radialGradient>
+
+    <!-- Gradiente de aura espiritual difusa de fondo -->
+    <radialGradient id="ambientAura" cx="50%" cy="50%" r="48%">
+      <stop offset="0%" stop-color="#ff7328" stop-opacity="0.32" />
+      <stop offset="50%" stop-color="#d93800" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#0b0e14" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Aura mística difusa en el fondo -->
+  <circle cx="256" cy="256" r="230" fill="url(#ambientAura)" />
+
+  <g id="huTaoButterflyGroup" filter="url(#subtleGlow)">
+    <!-- ================= RELLENOS LUMINOSOS INTERIORES ================= -->
+    <!-- Ala Superior Izquierda (Relleno translúcido cálido) -->
+    <path d="M 230,265 
+             C 175,285 95,295 55,235 
+             C 42,215 50,185 85,155 
+             C 140,110 205,170 235,240 Z" 
+          fill="url(#wingInnerGlowLeft)" />
+
+    <!-- Ala Superior Derecha (Relleno translúcido cálido) -->
+    <path d="M 285,255 
+             C 320,185 365,100 420,70 
+             C 445,55 465,70 460,105 
+             C 450,165 375,235 305,275 Z" 
+          fill="url(#wingInnerGlowRight)" />
+
+    <!-- ================= CHISPAS / POLVO ESPIRITUAL (PUNTOS BRILLANTES) ================= -->
+    <g fill="#ffe9d2" filter="url(#spiritGlow)">
+      <!-- Chispas en el ala izquierda -->
+      <circle cx="115" cy="205" r="2.2" opacity="0.9" />
+      <circle cx="135" cy="180" r="1.8" opacity="0.8" />
+      <circle cx="160" cy="225" r="2.5" opacity="0.95" />
+      <circle cx="185" cy="245" r="2.0" opacity="0.85" />
+      <circle cx="105" cy="235" r="1.5" opacity="0.75" />
+      <circle cx="145" cy="210" r="3.0" opacity="0.95" />
+
+      <!-- Chispas en el ala derecha -->
+      <circle cx="340" cy="220" r="2.8" opacity="0.95" />
+      <circle cx="370" cy="180" r="2.2" opacity="0.85" />
+      <circle cx="395" cy="140" r="2.5" opacity="0.9" />
+      <circle cx="410" cy="110" r="1.8" opacity="0.8" />
+      <circle cx="355" cy="245" r="2.0" opacity="0.75" />
+      <circle cx="375" cy="210" r="3.2" opacity="1" />
+    </g>
+
+    <!-- ================= SILUETA Y LÍNEAS CALIGRÁFICAS PRINCIPALES ================= -->
+    <!-- Ala Superior Izquierda (Curva abierta de llama) -->
+    <path d="M 245,268 
+             C 210,285 140,295 90,268 
+             C 65,255 45,232 46,202 
+             C 48,172 70,148 102,132 
+             C 122,122 145,124 162,138 
+             C 175,148 182,165 198,174 
+             C 212,182 228,176 242,165 
+             C 236,182 232,205 235,228 
+             C 238,248 244,260 245,268 Z" 
+          fill="none" stroke="url(#huTaoLineGrad)" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Ala Superior Derecha (Llama alta ascendente con punta estilizada) -->
+    <path d="M 270,252 
+             C 292,205 328,145 372,98 
+             C 395,72 422,50 445,55 
+             C 458,58 466,72 462,95 
+             C 455,140 422,190 380,230 
+             C 350,258 318,274 290,280 
+             C 285,270 278,260 270,252 Z" 
+          fill="none" stroke="url(#huTaoLineGrad)" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Ala Inferior Izquierda (Espiral en gota / corazón taoísta) -->
+    <path d="M 235,275 
+             C 215,290 190,312 182,338 
+             C 172,370 188,410 220,422 
+             C 242,430 262,410 258,382 
+             C 255,360 238,348 224,354 
+             C 212,360 210,378 220,388 
+             C 225,392 232,390 234,384" 
+          fill="none" stroke="url(#huTaoLineGrad)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Ala Inferior Derecha (Espiral ruyi hacia la derecha) -->
+    <path d="M 292,282 
+             C 318,295 348,315 365,335 
+             C 388,362 390,392 372,408 
+             C 355,422 328,418 318,392 
+             C 310,372 322,352 340,352 
+             C 354,352 362,364 358,376" 
+          fill="none" stroke="url(#huTaoLineGrad)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cúspide central del cuerpo / Vuelo espiritual -->
+    <path d="M 242,260 L 260,238 L 278,258 L 260,288 Z" 
+          fill="url(#huTaoLineGrad)" filter="url(#spiritGlow)" />
+  </g>
+</svg>

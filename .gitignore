@@ -1,0 +1,22 @@
+# Respaldos y archivos de desarrollo temporal
+*.bak*
+*.tmp
+test_*.png
+test_logo_*.html
+
+# Certificados y llaves locales (Seguridad estricta)
+*.pem
+*.key
+*.cert
+
+# Archivos de depuración y JSONs de datos de prueba
+deseos_recientes.json
+paimonmoe_wishes_uigf.json
+
+# Servidor temporal de pruebas
+https_server.py
+
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini

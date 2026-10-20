@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spirifly — Genshin Impact Farming, Inventory & Wish Tracker</title>
+  <meta name="description"
+    content="Spirifly: All-in-One Genshin Impact Hub synced with Google Drive. Visual Inventory Items & Flowers with Smart Synthesis (Seelie.me), Character & Weapon Talent Level Planner, Wish Counter (Paimon.moe) & Theorycrafting." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- Barra Superior -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-logo-wrap">
+          <img src="assets/ui/logo_spirifly.jpg" alt="Spirifly Logo" class="brand-logo-img" style="border-radius:8px;box-shadow:0 0 12px rgba(255,140,66,0.4);" />
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">Spirifly</span>
+        </div>
+      </div>
+
+      <nav class="nav-tabs">
+        <button class="nav-btn active" data-tab="planner" id="navPlanner">Personajes y Armas</button>
+        <button class="nav-btn" data-tab="farming" id="navFarming">Farmeo</button>
+        <button class="nav-btn" data-tab="inventory" id="navInventory">Inventario</button>
+        <button class="nav-btn" data-tab="wishes" id="navWishes">Contador de Deseos</button>
+        <button class="nav-btn" data-tab="theory" id="navTheory">Builds</button>
+        <button class="nav-btn" data-tab="sync" id="navSync">Configuración</button>
+      </nav>
+
+      <div class="controls-right">
+        <button class="ads-toggle-btn" id="adsToggleBtn" style="display:none;">Vista Anuncios AdSense: ON</button>
+        <button type="button" class="donate-btn" id="btnOpenDonateModal" title="Donación al proyecto Teyvat Companion">
+          <span>☕</span> <span id="lblDonateBtn">Donación</span>
+        </button>
+        <select id="langSelect" class="lang-select" aria-label="Seleccionar idioma">
+          <option value="es">Español</option>
+          <option value="en">English</option>
+          <option value="pt">Português</option>
+          <option value="ja">日本語 (Japan)</option>
+          <option value="ko">한국어 (Korea)</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <h1 id="heroTitle">Ecosistema Integral Genshin Impact: Personajes, Inventario Inteligente y Theorycraft</h1>
+    </section>
+
+    <!-- Slot AdSense #1: Leaderboard Superior -->
+    <aside class="ad-slot" aria-label="Advertisement">
+      <span class="ad-badge">Google AdSense • Slot #1 Header</span>
+      <strong class="ad-title">Espacio Google AdSense (Vinculado a tu cuenta Google)</strong>
+      <span class="ad-sub">Bloque adaptable de alto RPM (728x90 Desktop / 320x100 Mobile)</span>
+    </aside>
+
+    <!-- ==========================================================
+         PESTAÑA 1: INVENTARIO VISUAL (RÉPLICA EXACTA DE SEELIE.ME)
+         ========================================================== -->
+    <section id="sec-inventory" class="tool-section">
+      <!-- Barra Superior de Navegación del Inventario: Título + Pestañas de Categoría con Iconos + Acciones -->
+      <div class="seelie-inv-header">
+        <div class="seelie-inv-title-strip">
+          <h2 class="seelie-inv-title" id="invTitle">Inventario</h2>
+          <div class="seelie-inv-tabs" id="seelieInvTabs"></div>
+        </div>
+
+        <div class="seelie-inv-actions">
+          <div class="seelie-inv-search-wrap">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+            <input type="search" id="invSearchInput" class="seelie-inv-search-input" placeholder="Buscar material..." />
+          </div>
+          <button type="button" class="seelie-inv-filter-btn" id="btnToggleOnlyNeeded"
+            title="Ver solo materiales necesarios para tus personajes y armas en progreso">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+              <circle cx="12" cy="12" r="10" />
+              <circle cx="12" cy="12" r="6" />
+              <circle cx="12" cy="12" r="2" />
+            </svg>
+            <span>Solo Necesarios</span>
+            <span class="seelie-filter-badge" id="neededMatsBadge">0</span>
+          </button>
+          <button type="button" class="seelie-inv-icon-btn" id="btnSmartSynthAll"
+            title="Sintetizar Excedentes Seguros (Alquimia 3:1 protegiendo metas activas)">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M10 2v7.5L5 18a2 2 0 0 0 1.7 3h10.6A2 2 0 0 0 19 18l-5-8.5V2h-4Z" />
+              <path d="M8.5 13h7" />
+            </svg>
+          </button>
+          <button type="button" class="seelie-inv-icon-btn" id="btnInvHelpModal"
+            title="Ayuda e instrucciones del inventario">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 16v-4" />
+              <path d="M12 8h.01" />
+            </svg>
+          </button>
+          <a href="https://act.hoyolab.com/ys/app/interactive-map/index.html" target="_blank" rel="noopener"
+            class="seelie-inv-icon-btn" id="btnHoyolabMap" title="Mapa Oficial HoYoLAB">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21" />
+              <line x1="9" x2="9" y1="3" y2="18" />
+              <line x1="15" x2="15" y1="6" y2="21" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Feedback de Síntesis -->
+      <div id="synthFeedbackMsg" class="seelie-inv-toast" style="display:none;"></div>
+
+      <!-- Barra Superior de Recursos Principales: 3 Filas como en Seelie.me -->
+      <div class="seelie-top-currency-container" id="seelieTopResources"></div>
+
+      <!-- Matriz Visual Completa de 508 Materiales Oficiales -->
+      <div class="seelie-matrix-container" id="seelieMatrix"></div>
+    </section>
+
+    <!-- ==========================================================
+         PESTAÑA PRINCIPAL: PERSONAJES (RÉPLICA EXACTA DE SEELIE.ME)
+         ========================================================== -->
+    <section id="sec-planner" class="tool-section active">
+      <!-- Cabecera idéntica a Seelie.me: Título "Personajes" + Botón "Agregar" + Botón "Sync" -->
+      <div class="seelie-char-topbar">
+        <div class="seelie-char-title-group">
+          <h2>Personajes y Armas</h2>
+          <button class="seelie-btn-add" id="btnOpenRosterModal" title="Agregar personaje del catálogo">+
+            Personaje</button>
+          <button class="seelie-btn-add seelie-btn-add-weapon" id="btnOpenWeaponRosterModal"
+            title="Agregar arma independiente del catálogo">+ Arma</button>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:0.65rem;flex-wrap:wrap;">
+          <div class="seelie-resin-pill" id="valPlannerResin"
+            title="Resina Original estimada restante para tus personajes activos">
+            <img src="assets/ui/resin.png" alt="Resina" style="width:18px;height:18px;object-fit:contain;" /> 0 • 0 días
+          </div>
+          <div class="seelie-resin-pill" id="valPlannerDays"
+            style="background:#1e293b;border:1px solid rgba(255,255,255,0.12);"
+            title="Equivalente en Resina Concentrada">
+            <img src="assets/ui/condensed_resin.png" alt="Concentrada"
+              style="width:18px;height:18px;object-fit:contain;" /> 0 Concentradas
+          </div>
+        </div>
+      </div>
+
+      <!-- Barra de Filtros Seelie.me con Iconos Reales del Juego (5★ 4★ | 7 Elementos | 5 Tipos de Arma | Buscar) -->
+      <div class="seelie-filter-strip" id="mainCharFilterBar">
+        <span class="seelie-filter-lbl">FILTRAR</span>
+        <button class="seelie-icon-filter seelie-star-filter-5" data-main-rar="5" title="5 Estrellas">
+          <span>5</span>
+          <svg viewBox="0 0 24 24">
+            <path d="M12 1.5 L14.8 9.2 L22.5 12 L14.8 14.8 L12 22.5 L9.2 14.8 L1.5 12 L9.2 9.2 Z" />
+          </svg>
+        </button>
+        <button class="seelie-icon-filter seelie-star-filter-4" data-main-rar="4" title="4 Estrellas">
+          <span>4</span>
+          <svg viewBox="0 0 24 24">
+            <path d="M12 1.5 L14.8 9.2 L22.5 12 L14.8 14.8 L12 22.5 L9.2 14.8 L1.5 12 L9.2 9.2 Z" />
+          </svg>
+        </button>
+        <button class="seelie-icon-filter seelie-star-filter-3" data-main-rar="3" title="3 Estrellas">
+          <span>3</span>
+          <svg viewBox="0 0 24 24">
+            <path d="M12 1.5 L14.8 9.2 L22.5 12 L14.8 14.8 L12 22.5 L9.2 14.8 L1.5 12 L9.2 9.2 Z" />
+          </svg>
+        </button>
+
+        <div class="seelie-filter-divider"></div>
+
+        <button class="seelie-icon-filter" data-main-el="Anemo" title="Anemo"><img src="assets/elements/anemo.png"
+            alt="Anemo" /></button>
+        <button class="seelie-icon-filter" data-main-el="Cryo" title="Cryo"><img src="assets/elements/cryo.png"
+            alt="Cryo" /></button>
+        <button class="seelie-icon-filter" data-main-el="Dendro" title="Dendro"><img src="assets/elements/dendro.png"
+            alt="Dendro" /></button>
+        <button class="seelie-icon-filter" data-main-el="Electro" title="Electro"><img src="assets/elements/electro.png"
+            alt="Electro" /></button>
+        <button class="seelie-icon-filter" data-main-el="Geo" title="Geo"><img src="assets/elements/geo.png"
+            alt="Geo" /></button>
+        <button class="seelie-icon-filter" data-main-el="Hydro" title="Hydro"><img src="assets/elements/hydro.png"
+            alt="Hydro" /></button>
+        <button class="seelie-icon-filter" data-main-el="Pyro" title="Pyro"><img src="assets/elements/pyro.png"
+            alt="Pyro" /></button>
+
+        <div class="seelie-filter-divider"></div>
+
+        <button class="seelie-icon-filter" data-main-wp="Sword" title="Espada Ligera"><img
+            src="assets/weapon_types/sword.png" alt="Espada Ligera" /></button>
+        <button class="seelie-icon-filter" data-main-wp="Claymore" title="Mandoble"><img
+            src="assets/weapon_types/claymore.png" alt="Mandoble" /></button>
+        <button class="seelie-icon-filter" data-main-wp="Polearm" title="Lanza"><img
+            src="assets/weapon_types/polearm.png" alt="Lanza" /></button>
+        <button class="seelie-icon-filter" data-main-wp="Bow" title="Arco"><img src="assets/weapon_types/bow.png"
+            alt="Arco" /></button>
+        <button class="seelie-icon-filter" data-main-wp="Catalyst" title="Catalizador"><img
+            src="assets/weapon_types/catalyst.png" alt="Catalizador" /></button>
+
+        <div class="seelie-filter-divider"></div>
+
+        <input type="search" id="mainCharSearchInput" class="seelie-search-box" placeholder="Buscar..."
+          style="max-width:220px;" />
+        <button class="chip-btn" id="btnResetMainCharFilters"
+          style="font-size:0.75rem;padding:0.34rem 0.65rem;">Limpiar</button>
+      </div>
+
+      <!-- Cuadrícula Limpia y Ordenada de Personajes Configurados -->
+      <div class="seelie-active-chars-grid" id="plannerCardsGrid"></div>
+
+      <!-- ========================================================
+           MODAL 1: CATÁLOGO DE 122 PERSONAJES OFICIALES EN 5 COLUMNAS
+           ======================================================== -->
+      <div class="seelie-modal-backdrop" id="seelieRosterModal">
+        <div class="seelie-roster-dialog" role="dialog" aria-label="Seleccionar Personaje">
+          <div class="seelie-roster-header">
+            <button class="seelie-modal-close" id="btnCloseRosterModal" title="Cerrar">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M18 6 6 18M6 6l12 12" />
+              </svg>
+            </button>
+
+            <div class="seelie-filter-lbl" style="margin-bottom:0.45rem;">FILTRAR</div>
+
+            <!-- Fila 1 de Filtros del Modal: 7 Elementos Oficiales + 5 Tipos de Arma Oficiales -->
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.38rem;margin-bottom:0.55rem;">
+              <button class="seelie-icon-filter" data-mod-el="Anemo" title="Anemo"><img src="assets/elements/anemo.png"
+                  alt="Anemo" /></button>
+              <button class="seelie-icon-filter" data-mod-el="Cryo" title="Cryo"><img src="assets/elements/cryo.png"
+                  alt="Cryo" /></button>
+              <button class="seelie-icon-filter" data-mod-el="Dendro" title="Dendro"><img
+                  src="assets/elements/dendro.png" alt="Dendro" /></button>
+              <button class="seelie-icon-filter" data-mod-el="Electro" title="Electro"><img
+                  src="assets/elements/electro.png" alt="Electro" /></button>
+              <button class="seelie-icon-filter" data-mod-el="Geo" title="Geo"><img src="assets/elements/geo.png"
+                  alt="Geo" /></button>
+              <button class="seelie-icon-filter" data-mod-el="Hydro" title="Hydro"><img src="assets/elements/hydro.png"
+                  alt="Hydro" /></button>
+              <button class="seelie-icon-filter" data-mod-el="Pyro" title="Pyro"><img src="assets/elements/pyro.png"
+                  alt="Pyro" /></button>
+
+              <div class="seelie-filter-divider"></div>
+
+              <button class="seelie-icon-filter" data-mod-wp="Sword" title="Espada Ligera"><img
+                  src="assets/weapon_types/sword.png" alt="Espada Ligera" /></button>
+              <button class="seelie-icon-filter" data-mod-wp="Claymore" title="Mandoble"><img
+                  src="assets/weapon_types/claymore.png" alt="Mandoble" /></button>
+              <button class="seelie-icon-filter" data-mod-wp="Polearm" title="Lanza"><img
+                  src="assets/weapon_types/polearm.png" alt="Lanza" /></button>
+              <button class="seelie-icon-filter" data-mod-wp="Bow" title="Arco"><img src="assets/weapon_types/bow.png"
+                  alt="Arco" /></button>
+              <button class="seelie-icon-filter" data-mod-wp="Catalyst" title="Catalizador"><img
+                  src="assets/weapon_types/catalyst.png" alt="Catalizador" /></button>
+            </div>
+
+            <!-- Fila 2 de Filtros del Modal: 5★ | 4★ | Ojo (Ocultar agregados) | Buscador -->
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.42rem;">
+              <button class="seelie-icon-filter seelie-star-filter-5" data-mod-rar="5" title="5 Estrellas">
+                <span>5</span>
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 1.5 L14.8 9.2 L22.5 12 L14.8 14.8 L12 22.5 L9.2 14.8 L1.5 12 L9.2 9.2 Z" />
+                </svg>
+              </button>
+              <button class="seelie-icon-filter seelie-star-filter-4" data-mod-rar="4" title="4 Estrellas">
+                <span>4</span>
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 1.5 L14.8 9.2 L22.5 12 L14.8 14.8 L12 22.5 L9.2 14.8 L1.5 12 L9.2 9.2 Z" />
+                </svg>
+              </button>
+
+              <div class="seelie-filter-divider"></div>
+
+              <button class="seelie-icon-filter" id="btnToggleHideAddedChars"
+                title="Mostrar/Ocultar personajes ya agregados">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </button>
+
+              <input type="search" id="rosterModalSearch" class="seelie-search-box" placeholder="Buscar..." />
+            </div>
+          </div>
+
+          <!-- Cuadrícula de 5 Columnas con todos los personajes oficiales en Español ordenados A-Z -->
+          <div class="seelie-roster-grid-5" id="rosterModalGrid"></div>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           MODAL 1B: CATÁLOGO OFICIAL DE ARMAS (4★ Y 5★ MEJORABLES)
+           ======================================================== -->
+      <div class="seelie-modal-backdrop" id="seelieWeaponRosterModal">
+        <div class="seelie-roster-dialog" role="dialog" aria-label="Seleccionar Arma">
+          <div class="seelie-roster-header">
+            <button class="seelie-modal-close" id="btnCloseWeaponRosterModal" title="Cerrar">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M18 6 6 18M6 6l12 12" />
+              </svg>
+            </button>
+
+            <div class="seelie-filter-lbl" style="margin-bottom:0.45rem;">FILTRAR ARMAS</div>
+            <div class="seelie-filter-strip" id="weaponRosterFilterBar"
+              style="padding:0;background:transparent;border:none;">
+              <button class="seelie-icon-filter seelie-star-filter-5" data-weap-rar="5" title="5 Estrellas">
+                <span>5</span>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 1.5 L14.8 9.2 L22.5 12 L14.8 14.8 L12 22.5 L9.2 14.8 L1.5 12 L9.2 9.2 Z" />
+                </svg>
+              </button>
+              <button class="seelie-icon-filter seelie-star-filter-4" data-weap-rar="4" title="4 Estrellas">
+                <span>4</span>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 1.5 L14.8 9.2 L22.5 12 L14.8 14.8 L12 22.5 L9.2 14.8 L1.5 12 L9.2 9.2 Z" />
+                </svg>
+              </button>
+              <button class="seelie-icon-filter seelie-star-filter-3" data-weap-rar="3" title="3 Estrellas">
+                <span>3</span>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 1.5 L14.8 9.2 L22.5 12 L14.8 14.8 L12 22.5 L9.2 14.8 L1.5 12 L9.2 9.2 Z" />
+                </svg>
+              </button>
+
+              <button class="seelie-icon-filter" data-weap-type="Sword" title="Espada Ligera"><img
+                  src="assets/weapon_types/sword.png" alt="Espada" /></button>
+              <button class="seelie-icon-filter" data-weap-type="Claymore" title="Mandoble"><img
+                  src="assets/weapon_types/claymore.png" alt="Mandoble" /></button>
+              <button class="seelie-icon-filter" data-weap-type="Polearm" title="Lanza"><img
+                  src="assets/weapon_types/polearm.png" alt="Lanza" /></button>
+              <button class="seelie-icon-filter" data-weap-type="Bow" title="Arco"><img
+                  src="assets/weapon_types/bow.png" alt="Arco" /></button>
+              <button class="seelie-icon-filter" data-weap-type="Catalyst" title="Catalizador"><img
+                  src="assets/weapon_types/catalyst.png" alt="Catalizador" /></button>
+
+              <input type="search" id="weaponRosterModalSearch" class="seelie-search-box"
+                placeholder="Buscar arma..." />
+            </div>
+          </div>
+
+          <!-- Cuadrícula de Armas oficiales en Español -->
+          <div class="seelie-roster-grid-5" id="weaponRosterModalGrid"></div>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           MODAL 2: CONFIGURACIÓN DEL PERSONAJE CON 14 NIVELES Y TALENTOS REALES
+           ======================================================== -->
+      <div class="seelie-modal-backdrop" id="seelieCharConfigModal">
+        <div class="seelie-config-dialog" role="dialog" aria-label="Configurar Personaje">
+          <!-- Cabecera con Tarjeta de Presentación (Namecard), Botón Atrás (<), Avatar, Nombre, Papelera, Check Activo y Cerrar -->
+          <div class="seelie-config-banner" id="cfgModalBanner">
+            <div class="seelie-config-banner-left">
+              <button class="seelie-circle-icon-btn" id="btnCfgBackToRoster" title="Volver al catálogo de personajes">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="m15 18-6-6 6-6" />
+                </svg>
+              </button>
+              <div class="seelie-config-avatar" id="cfgModalAvatarWrap">
+                <img id="cfgModalAvatarImg" src="" alt="" />
+                <span class="seelie-el-corner" id="cfgModalElBadge"><img src="assets/elements/hydro.png" alt=""
+                    style="width:18px;height:18px;object-fit:contain;" /></span>
+              </div>
+              <div style="display:flex;align-items:center;gap:0.55rem;">
+                <span class="seelie-config-charname" id="cfgModalCharName">AINO</span>
+                <button class="seelie-circle-icon-btn" id="btnCfgDeleteChar" title="Eliminar personaje de mi lista"
+                  style="width:30px;height:30px;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div style="display:flex;align-items:center;gap:0.5rem;">
+              <button class="seelie-active-check-btn" id="btnCfgToggleActive"
+                title="Activar/Desactivar personaje en el cálculo de materiales">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+              </button>
+              <button class="seelie-circle-icon-btn" id="btnCfgCloseModal" title="Cerrar">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M18 6 6 18M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Fila Notas + Selector de Constelación (< C0 >) + Estrella Favorito + Cloud -->
+          <div class="seelie-notes-const-row">
+            <input type="text" id="cfgModalNotes" class="seelie-notes-input" placeholder="Notas" />
+
+            <div class="seelie-const-stepper" title="Seleccionar Constelación (C0 a C6)">
+              <button type="button" id="btnConstPrev">❮</button>
+              <span id="cfgModalConstVal">C0</span>
+              <button type="button" id="btnConstNext">❯</button>
+            </div>
+
+            <button class="seelie-icon-filter" id="btnCfgToggleStar" title="Marcar como favorito">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 1.5 L14.8 9.2 L22.5 12 L14.8 14.8 L12 22.5 L9.2 14.8 L1.5 12 L9.2 9.2 Z" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- 3 Pestañas Internas: NIVEL | TALENTOS | ARMA -->
+          <div class="seelie-modal-tabs">
+            <button class="seelie-modal-tab-btn active" data-cfgtab="level">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"
+                style="vertical-align:-2px;margin-right:4px;">
+                <path d="M12 1.5 L14.8 9.2 L22.5 12 L14.8 14.8 L12 22.5 L9.2 14.8 L1.5 12 L9.2 9.2 Z" />
+              </svg>
+              NIVEL
+            </button>
+            <button class="seelie-modal-tab-btn" data-cfgtab="talents">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                style="vertical-align:-2px;margin-right:4px;">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+              </svg>
+              TALENTOS
+            </button>
+            <button class="seelie-modal-tab-btn" data-cfgtab="weapon">
+              <img src="assets/weapon_types/sword.png" alt=""
+                style="width:16px;height:16px;vertical-align:-3px;margin-right:4px;" />
+              ARMA
+            </button>
+          </div>
+
+          <!-- Cuerpo Dinámico del Modal -->
+          <div class="seelie-modal-body">
+            <!-- Sub-pestaña 1: NIVEL (Con Popover Circular de 14 Estados Con/Sin Ascensión) -->
+            <div id="cfgTabPane-level" class="cfg-tab-pane" style="position:relative;">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.45rem;">
+                <div class="seelie-blue-section-bar" style="flex:1;margin-bottom:0;">NIVEL</div>
+                <span id="cfgModalArLimitBadge"
+                  style="display:none;font-size:0.75rem;padding:2px 8px;border-radius:6px;background:rgba(245,158,11,0.14);color:#fbbf24;border:1px solid rgba(245,158,11,0.35);font-weight:700;margin-right:0.6rem;"></span>
+                <label
+                  style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.78rem;font-weight:700;color:#cbd5e1;cursor:pointer;">
+                  <input type="checkbox" id="cfgIncludeLevelCheck" checked
+                    style="accent-color:#3b82f6;width:15px;height:15px;cursor:pointer;" />
+                  Incluir mejora de Nivel
+                </label>
+              </div>
+
+              <!-- Selectores ocultos sincronizados para compatibilidad -->
+              <select id="cfgCharCurPhase" style="display:none;"></select>
+              <select id="cfgCharTarPhase" style="display:none;"></select>
+
+              <div class="seelie-dual-selector-row">
+                <div class="seelie-level-trigger-box" id="btnOpenCurCharLvlPopover"
+                  title="Haz clic para elegir el Nivel Actual (con o sin ascensión)">
+                  <span class="seelie-level-trigger-lbl">Actual</span>
+                  <div class="seelie-level-circle-preview" id="previewCurCharLvlCircle"></div>
+                  <div class="seelie-phase-chips" id="cfgCurPhaseQuickChips" style="display:none;"></div>
+                </div>
+
+                <div style="font-size:1.6rem;font-weight:900;color:#94a3b8;">»</div>
+
+                <div class="seelie-level-trigger-box" id="btnOpenTarCharLvlPopover"
+                  title="Haz clic para elegir el Nivel Objetivo (con o sin ascensión)">
+                  <span class="seelie-level-trigger-lbl">Objetivo</span>
+                  <div class="seelie-level-circle-preview" id="previewTarCharLvlCircle"></div>
+                  <div class="seelie-phase-chips" id="cfgTarPhaseQuickChips" style="display:none;"></div>
+                </div>
+              </div>
+
+              <!-- Popover de 14 Círculos idéntico a la captura de Seelie.me (Niveles sin ascensión vs Niveles ascendidos con estrella brillante) -->
+              <div class="seelie-14-popover" id="charLevel14Popover">
+                <div class="seelie-14-popover-header">
+                  <span class="seelie-14-popover-title" id="charLevel14PopoverTitle">Seleccionar Nivel Actual</span>
+                  <button type="button" class="seelie-circle-icon-btn" id="btnCloseCharLvlPopover"
+                    style="width:26px;height:26px;">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <path d="M18 6 6 18M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+                <div style="font-size:0.72rem;color:#94a3b8;text-align:center;margin-bottom:0.55rem;">
+                  Estrella tenue = Sin ascender &nbsp;•&nbsp; <strong style="color:#ffffff;">Estrella blanca brillante =
+                    Ascendido (✦)</strong>
+                </div>
+                <div class="seelie-14-grid" id="charLevel14Grid"></div>
+              </div>
+
+              <div id="cfgModalMaterialsPreview" style="margin-top:0.65rem;"></div>
+            </div>
+
+            <!-- Sub-pestaña 2: TALENTOS (Con iconos y nombres reales del personaje en Español + selección individual) -->
+            <div id="cfgTabPane-talents" class="cfg-tab-pane" style="display:none;">
+              <div class="seelie-blue-section-bar">TALENTOS DEL PERSONAJE (ACTUAL » OBJETIVO)</div>
+              <div id="cfgTalentsRowsContainer" style="display:flex;flex-direction:column;gap:0.65rem;"></div>
+              <div
+                style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.85rem;justify-content:center;align-items:center;">
+                <span style="font-size:0.74rem;color:#94a3b8;margin-right:0.25rem;">Presets rápidos:</span>
+                <button type="button" class="seelie-phase-chip" data-talpreset="1,1,1">1 / 1 / 1</button>
+                <button type="button" class="seelie-phase-chip" data-talpreset="1,8,8">1 / 8 / 8</button>
+                <button type="button" class="seelie-phase-chip" data-talpreset="6,9,9">6 / 9 / 9</button>
+                <button type="button" class="seelie-phase-chip" data-talpreset="1,10,10">1 / 10 / 10</button>
+                <button type="button" class="seelie-phase-chip" data-talpreset="10,10,10"
+                  style="display:inline-flex;align-items:center;gap:0.25rem;">
+                  10 / 10 / 10
+                  <img src="https://gi.yatta.moe/assets/UI/UI_ItemIcon_104319.png" alt="Corona"
+                    style="width:15px;height:15px;object-fit:contain;" />
+                </button>
+              </div>
+              <div id="cfgTalentMaterialsPreview" style="margin-top:0.8rem;"></div>
+            </div>
+
+            <!-- Sub-pestaña 3: ARMA (Con catálogo real de armas del tipo del personaje + 14 estados de nivel/ascensión) -->
+            <div id="cfgTabPane-weapon" class="cfg-tab-pane" style="display:none;position:relative;">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.45rem;">
+                <div class="seelie-blue-section-bar" style="flex:1;margin-bottom:0;">ARMA EQUIPADA Y SUBIDA DE NIVEL
+                </div>
+                <label
+                  style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.78rem;font-weight:700;color:#cbd5e1;margin-left:0.75rem;cursor:pointer;">
+                  <input type="checkbox" id="cfgIncludeWeaponCheck" checked
+                    style="accent-color:#3b82f6;width:15px;height:15px;cursor:pointer;" />
+                  Incluir mejora de Arma
+                </label>
+              </div>
+
+              <div
+                style="display:grid;grid-template-columns:auto 1fr auto;gap:0.6rem;align-items:center;margin-bottom:0.8rem;">
+                <div id="cfgWeaponIconPreviewWrap"
+                  style="width:46px;height:46px;border-radius:10px;background:#1e293b;border:1px solid rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center;overflow:hidden;">
+                  <img id="cfgWeaponIconPreview" src="assets/weapon_types/sword.png" alt="Arma"
+                    style="width:40px;height:40px;object-fit:contain;" />
+                </div>
+                <div id="cfgWeaponNameLabel" class="weapon-name-label"></div>
+                <div class="seelie-const-stepper" title="Refinamiento del Arma (R1 a R5)">
+                  <button type="button" id="btnWeapRefPrev">❮</button>
+                  <span id="cfgWeapRefVal">R1</span>
+                  <button type="button" id="btnWeapRefNext">❯</button>
+                </div>
+              </div>
+
+              <div id="cfgWeaponGrid" class="weapon-icon-grid"></div>
+              <div id="cfgWeaponFullMats" class="weapon-full-mats"></div>
+
+              <!-- Selectores ocultos sincronizados para compatibilidad -->
+              <select id="cfgWeapCurPhase" style="display:none;"></select>
+              <select id="cfgWeapTarPhase" style="display:none;"></select>
+
+              <div class="seelie-dual-selector-row">
+                <div class="seelie-level-trigger-box" id="btnOpenCurWeapLvlPopover"
+                  title="Haz clic para elegir el Nivel Actual del Arma (con o sin ascensión)">
+                  <span class="seelie-level-trigger-lbl">Nivel Actual del Arma</span>
+                  <div class="seelie-level-circle-preview" id="previewCurWeapLvlCircle"></div>
+                </div>
+
+                <div style="font-size:1.6rem;font-weight:900;color:#94a3b8;">»</div>
+
+                <div class="seelie-level-trigger-box" id="btnOpenTarWeapLvlPopover"
+                  title="Haz clic para elegir el Nivel Objetivo del Arma (con o sin ascensión)">
+                  <span class="seelie-level-trigger-lbl">Nivel Objetivo del Arma</span>
+                  <div class="seelie-level-circle-preview" id="previewTarWeapLvlCircle"></div>
+                </div>
+              </div>
+
+              <!-- Popover de 14 Círculos para el Arma -->
+              <div class="seelie-14-popover" id="weapLevel14Popover">
+                <div class="seelie-14-popover-header">
+                  <span class="seelie-14-popover-title" id="weapLevel14PopoverTitle">Seleccionar Nivel del Arma</span>
+                  <button type="button" class="seelie-circle-icon-btn" id="btnCloseWeapLvlPopover"
+                    style="width:26px;height:26px;">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <path d="M18 6 6 18M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+                <div style="font-size:0.72rem;color:#94a3b8;text-align:center;margin-bottom:0.55rem;">
+                  Estrella tenue = Sin ascender &nbsp;•&nbsp; <strong style="color:#ffffff;">Estrella blanca brillante =
+                    Ascendido (✦)</strong>
+                </div>
+                <div class="seelie-14-grid" id="weapLevel14Grid"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pie del Modal idéntico a la Foto 1: Botón ?, Píldora PERSONAJE, Píldora TOTAL, Botón Guardar (Verde) y Botón Subir/Consumir (Morado) -->
+          <div class="seelie-config-footer">
+            <button type="button" class="seelie-circle-icon-btn" id="btnCfgHelp"
+              title="El botón verde guarda la meta del personaje. El botón morado (↑) descuenta los materiales de tu inventario cuando ya lo subiste en el juego.">?</button>
+
+            <div class="seelie-resin-pills-wrap">
+              <div class="seelie-resin-pill-box">
+                <small>PERSONAJE</small>
+                <div class="seelie-resin-pill" id="cfgModalCharResinPill">
+                  <img src="assets/ui/resin.png" alt="Resina" style="width:16px;height:16px;object-fit:contain;" /> None
+                  required
+                </div>
+              </div>
+              <div class="seelie-resin-pill-box">
+                <small>TOTAL</small>
+                <div class="seelie-resin-pill" id="cfgModalTotalResinPill">
+                  <img src="assets/ui/resin.png" alt="Resina" style="width:16px;height:16px;object-fit:contain;" /> 0 •
+                  0 días
+                </div>
+              </div>
+            </div>
+
+            <div class="seelie-footer-actions">
+              <button type="button" class="seelie-fab-save" id="btnCfgSaveChar"
+                title="Guardar configuración del personaje">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                  <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
+                  <polyline points="17 21 17 13 7 13 7 21" />
+                  <polyline points="7 3 7 8 15 8" />
+                </svg>
+              </button>
+              <button type="button" class="seelie-fab-levelup" id="btnCfgConsumeLevelUp"
+                title="¡Ya lo subí en el juego! Descontar materiales usados del inventario y actualizar nivel actual">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8">
+                  <path d="M12 19V5M5 12l7-7 7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           MODAL 2B: CONFIGURACIÓN DE ARMA INDEPENDIENTE (14 NIVELES)
+           ======================================================== -->
+      <div class="seelie-modal-backdrop" id="seelieSoloWeaponConfigModal">
+        <div class="seelie-config-dialog" role="dialog" aria-label="Configurar Arma">
+          <div class="seelie-config-banner" id="soloWeapModalBanner">
+            <div class="seelie-config-banner-left">
+              <button class="seelie-circle-icon-btn" id="btnSoloWeapBackToRoster" title="Volver al catálogo de armas">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="m15 18-6-6 6-6" />
+                </svg>
+              </button>
+              <div class="seelie-config-avatar" id="soloWeapModalAvatarWrap">
+                <img id="soloWeapModalAvatarImg" src="" alt="" />
+              </div>
+              <div class="seelie-config-char-title">
+                <h3 id="soloWeapModalName">ARMA</h3>
+                <span id="soloWeapModalRarityBadge" style="font-size:0.75rem;font-weight:800;color:#fcd34d;"></span>
+              </div>
+              <button class="seelie-circle-icon-btn" id="btnSoloWeapDelete" title="Eliminar arma del planificador">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                </svg>
+              </button>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.5rem;">
+              <button class="seelie-active-check-btn" id="btnSoloWeapToggleActive"
+                title="Activar/Desactivar arma del cálculo">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+              </button>
+              <button class="seelie-circle-icon-btn" id="btnSoloWeapClose" title="Cerrar y guardar cambios">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M18 6 6 18M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="seelie-modal-body">
+            <!-- Notas + Refinamiento (R1 a R5) -->
+            <div class="seelie-notes-const-row">
+              <input type="text" id="soloWeapNotes" class="seelie-notes-input" placeholder="Notas sobre esta arma..." />
+              <div class="seelie-const-stepper" title="Refinamiento del Arma (R1 a R5)">
+                <button type="button" id="btnSoloWeapRefPrev">❮</button>
+                <span id="soloWeapRefVal">R1</span>
+                <button type="button" id="btnSoloWeapRefNext">❯</button>
+              </div>
+            </div>
+
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.45rem;">
+              <div class="seelie-blue-section-bar" style="flex:1;margin-bottom:0;">MEJORA DE NIVEL Y ASCENSIÓN</div>
+              <span id="soloWeapArLimitBadge"
+                style="display:none;font-size:0.75rem;padding:2px 8px;border-radius:6px;background:rgba(245,158,11,0.14);color:#fbbf24;border:1px solid rgba(245,158,11,0.35);font-weight:700;"></span>
+            </div>
+            <div class="seelie-dual-selector-row">
+              <div class="seelie-level-trigger-box" id="btnOpenCurSoloWeapLvlPopover" title="Nivel Actual del Arma">
+                <span class="seelie-level-trigger-lbl">Nivel Actual del Arma</span>
+                <div class="seelie-level-circle-preview" id="previewCurSoloWeapLvlCircle"></div>
+              </div>
+              <div style="font-size:1.6rem;font-weight:900;color:#94a3b8;">»</div>
+              <div class="seelie-level-trigger-box" id="btnOpenTarSoloWeapLvlPopover" title="Nivel Objetivo del Arma">
+                <span class="seelie-level-trigger-lbl">Nivel Objetivo del Arma</span>
+                <div class="seelie-level-circle-preview" id="previewTarSoloWeapLvlCircle"></div>
+              </div>
+            </div>
+
+            <!-- Popover de 14 Círculos para el Arma Suelta -->
+            <div class="seelie-14-popover" id="soloWeapLevel14Popover">
+              <div class="seelie-14-popover-header">
+                <span class="seelie-14-popover-title" id="soloWeapLevel14PopoverTitle">Seleccionar Nivel del Arma</span>
+                <button type="button" class="seelie-circle-icon-btn" id="btnCloseSoloWeapLvlPopover"
+                  style="width:26px;height:26px;">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M18 6 6 18M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              <div class="seelie-14-legend">
+                <span>Estrella tenue = Sin ascender</span>
+                <span>•</span>
+                <span style="font-weight:800;color:#ffffff;">Estrella blanca brillante = Ascendido (✦)</span>
+              </div>
+              <div class="seelie-14-grid" id="soloWeapLevel14Grid"></div>
+            </div>
+
+            <!-- Materiales requeridos en vivo con inputs editables de lo que tienes -->
+            <div id="soloWeapModalMaterialsPreview" style="margin-top:0.8rem;"></div>
+          </div>
+
+          <!-- Footer idéntico: Resina Arma vs Total + Guardar + Subir nivel -->
+          <div class="seelie-config-footer">
+            <div class="seelie-resin-pills-wrap">
+              <div class="seelie-resin-pill-box">
+                <small>ARMA</small>
+                <div class="seelie-resin-pill" id="soloWeapModalCharResinPill">
+                  <img src="assets/ui/resin.png" alt="Resina" style="width:16px;height:16px;object-fit:contain;" /> 0 •
+                  0 días
+                </div>
+              </div>
+              <div class="seelie-resin-pill-box">
+                <small>TOTAL</small>
+                <div class="seelie-resin-pill" id="soloWeapModalTotalResinPill">
+                  <img src="assets/ui/resin.png" alt="Resina" style="width:16px;height:16px;object-fit:contain;" /> 0 •
+                  0 días
+                </div>
+              </div>
+            </div>
+
+            <div class="seelie-footer-actions">
+              <button type="button" class="seelie-fab-save" id="btnSoloWeapSave" title="Guardar configuración del arma">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                  <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
+                  <polyline points="17 21 17 13 7 13 7 21" />
+                  <polyline points="7 3 7 8 15 8" />
+                </svg>
+              </button>
+              <button type="button" class="seelie-fab-levelup" id="btnSoloWeapConsumeLevelUp"
+                title="¡Ya la subí en el juego! Descontar materiales usados del inventario y actualizar nivel actual">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8">
+                  <path d="M12 19V5M5 12l7-7 7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         PESTAÑA 3: GUÍAS & BUILDS META DE PERSONAJES
+         ========================================================== -->
+    <section id="sec-theory" class="tool-section">
+      <div class="section-header">
+        <div>
+          <h2>Guías &amp; Builds Meta de Personajes</h2>
+          <p>Consulta el equipamiento óptimo (armas BiS y F2P, artefactos recomendados, estadísticas clave), prioridad
+            de talentos y mejores equipos.</p>
+        </div>
+      </div>
+
+      <div class="toolbar" style="flex-direction:column;align-items:stretch;gap:0.75rem;">
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:0.75rem;">
+          <div class="element-buttons" id="tcElementButtons"></div>
+          <input type="search" id="tcSearch" class="input-field" style="max-width:340px;"
+            placeholder="Buscar personaje (Furina, Hu Tao, Kazuha, Raiden)..." />
+        </div>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.45rem;">
+          <span style="font-size:0.78rem;color:var(--text-muted);font-weight:700;margin-right:0.25rem;">Rol:</span>
+          <div id="tcRoleButtons" style="display:flex;flex-wrap:wrap;gap:0.4rem;"></div>
+        </div>
+      </div>
+
+      <div id="tcCardsContainer"></div>
+    </section>
+
+    <!-- ==========================================================
+         PESTAÑA 4: CONTADOR DE DESEOS E HISTORIAL
+         ========================================================== -->
+    <section id="sec-wishes" class="tool-section">
+      <div class="section-header">
+        <div>
+          <h2 id="wishesMainTitle">Contador de Deseos e Historial 5★</h2>
+          <p id="wishesMainSub">Mecánicas oficiales 5.x: Soft Pity, Hard Pity, Capturing Radiance (~55%), Senda Divina
+            (1 Punto) y sincronización segura multi-cuenta.</p>
+        </div>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;">
+          <button class="active-profile-pill" id="btnGoToProfiles"
+            title="Ver y cambiar perfiles en el panel de Configuración">
+            <img src="assets/ui/user.svg" style="width:14px;height:14px;" alt="Perfil" />
+            <span id="lblProfilePrefix" style="color:var(--text-muted);font-size:0.78rem;">Perfil:</span>
+            <strong id="lblActiveProfileName" style="color:#93c5fd;">Cuenta Principal</strong>
+            <img src="assets/ui/gear.svg" style="width:12px;height:12px;" alt="" />
+          </button>
+          <button class="action-btn" id="btnToggleImport"><img src="assets/ui/icon_intertwined.png"
+              style="width:16px;height:16px;vertical-align:-2px;margin-right:4px;" alt="" /> <span
+              id="lblBtnImportWishes">Importar Deseos</span></button>
+          <button class="action-btn secondary" id="btnExportJson"><img src="assets/ui/clipboard.svg"
+              style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> <span
+              id="lblBtnExportWishes">Exportar Backup</span></button>
+          <button class="action-btn danger" id="btnHeaderClearWishes"
+            style="background:rgba(239, 68, 68, 0.15);border:1px solid rgba(239, 68, 68, 0.4);color:#fca5a5;"
+            title="Borrar datos de deseos importados"><img src="assets/ui/trash.svg"
+              style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> <span
+              id="lblBtnClearWishes">Borrar Deseos</span></button>
+        </div>
+      </div>
+
+      <!-- Drawer de Importación con Stepper Guiado de 4 Pasos -->
+      <div id="importDrawer" class="import-drawer">
+        <div class="import-drawer-tabs">
+          <button class="import-tab-btn active" id="tabImportPs" data-import-tab="powershell"><img
+              src="assets/ui/bolt.svg" class="seelie-inline-icon" alt="" /> <span id="lblTabImportPs">PowerShell Rápido
+              (PC)</span></button>
+          <button class="import-tab-btn" id="tabImportJson" data-import-tab="json"><img src="assets/ui/clipboard.svg"
+              style="width:14px;height:14px;" class="seelie-inline-icon" alt="" /> <span id="lblTabImportJson">Archivo
+              Excel / JSON</span></button>
+          <button class="import-tab-btn" id="tabImportManual" data-import-tab="manual"><img src="assets/ui/sparkle.svg"
+              class="seelie-inline-icon" alt="" /> <span id="lblTabImportManual">Registro Manual 5★</span></button>
+          <button class="import-drawer-close" id="btnCloseImportDrawer" title="Cerrar cajón">✕</button>
+        </div>
+
+        <!-- Modo 1: Stepper PowerShell -->
+        <div class="import-tab-content" id="importPanelPs">
+          <div class="stepper-banner-info">
+            <strong style="color:var(--gold-bright);display:inline-flex;align-items:center;gap:4px;"><img
+                src="assets/ui/sparkle.svg" class="seelie-inline-icon" alt="" /> Método Rápido y Seguro (Solo
+              PC):</strong>
+            <span>Sin contraseñas ni permisos de administrador. Abre Genshin Impact (<kbd>F3</kbd> ➔ Historial) antes de
+              ejecutar el comando.</span>
+          </div>
+
+          <div id="fileProtocolWarning"
+            style="display:none;background:rgba(239,68,68,0.15);border:1px solid #ef4444;border-radius:8px;padding:0.75rem 1rem;margin-bottom:0.9rem;">
+            <strong style="color:#fca5a5;font-size:0.88rem;">Modo Archivo Local Detectado (file://)</strong>
+            <p style="font-size:0.8rem;color:#cbd5e1;margin:0.25rem 0 0.5rem 0;line-height:1.4;">
+              Para que el navegador descargue tus deseos en vivo sin bloqueos de seguridad (CORS), debes abrir la
+              aplicación mediante el servidor local ya activo en tu PC:
+            </p>
+            <a href="http://localhost:5500/index.html" target="_blank"
+              style="display:inline-flex;align-items:center;gap:0.4rem;background:#3b82f6;color:#ffffff;font-size:0.82rem;font-weight:bold;padding:0.35rem 0.75rem;border-radius:6px;text-decoration:none;">
+              <img src="assets/ui/globe.svg" class="seelie-inline-icon" alt="" /> Abrir en http://localhost:5500
+            </a>
+          </div>
+
+          <div class="wish-stepper">
+            <!-- Paso 1: Copiar y pegar el script en PowerShell -->
+            <div class="wish-step-item">
+              <div class="wish-step-circle">1</div>
+              <div class="wish-step-body">
+                <strong>Haz click a Windows Powershell, luego copia y pega el script debajo del Powershell</strong>
+                <div class="code-snippet-box">
+                  <pre
+                    id="psCommandText">Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex "&amp;{$((New-Object System.Net.WebClient).DownloadString('https://gist.githubusercontent.com/sepoba18/155f1490d2fb43dd4413f8f00e897396/raw/getlink.ps1'))} global"</pre>
+                  <button class="action-btn-copy" id="btnCopyPs" title="Copiar al portapapeles"><img
+                      src="assets/ui/clipboard.svg" style="width:14px;height:14px;" alt="" /></button>
+                </div>
+                <p style="font-size:0.8rem;color:#94a3b8;margin-top:0.35rem;">
+                  Puedes revisar el script <a href="https://gist.github.com/sepoba18/155f1490d2fb43dd4413f8f00e897396"
+                    target="_blank" rel="noopener" style="color:#60a5fa;text-decoration:underline;">aquí</a>
+                </p>
+              </div>
+            </div>
+
+            <!-- Paso 2: Presionar Enter -->
+            <div class="wish-step-item">
+              <div class="wish-step-circle">2</div>
+              <div class="wish-step-body">
+                <strong>Pulsa ENTRAR y un enlace se copiará al portapapeles</strong>
+              </div>
+            </div>
+
+            <!-- Paso 3: Pegar el enlace -->
+            <div class="wish-step-item">
+              <div class="wish-step-circle">3</div>
+              <div class="wish-step-body">
+                <strong>Pega el texto al cuadro de texto de abajo</strong>
+              </div>
+            </div>
+
+            <!-- Paso 4: Campo de texto y botón de importar -->
+            <div class="wish-step-item">
+              <div class="wish-step-circle outline">4</div>
+              <div class="wish-step-body">
+                <div class="paste-input-container">
+                  <input type="text" id="wishUrlInput" class="input-field"
+                    placeholder="Pegue el enlace aquí... https://webstatic..." />
+                  <button class="action-btn secondary" id="btnPasteClipboard" title="Pegar desde el portapapeles"><img
+                      src="assets/ui/clipboard.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;"
+                      alt="" />Pegar</button>
+                  <button class="action-btn" id="btnParseWishUrl"><img src="assets/ui/icon_intertwined.png"
+                      style="width:16px;height:16px;vertical-align:-2px;margin-right:4px;" alt="" />Importar
+                    Deseos</button>
+                  <button class="action-btn danger" id="btnDevClearWishes"
+                    title="Borrar datos importados para hacer pruebas"><img src="assets/ui/trash.svg"
+                      style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" />Borrar Datos
+                    (Pruebas)</button>
+                </div>
+                <div id="importProgressWrapper" class="import-progress-wrapper" style="display:none;margin-top:0.7rem;">
+                  <div class="import-progress-bar">
+                    <div class="import-progress-fill" id="importProgressFill" style="width:0%;"></div>
+                  </div>
+                  <span id="importProgressText" class="import-progress-text"
+                    style="font-size:0.82rem;color:#93c5fd;display:block;margin-top:0.35rem;">Conectando con la API de
+                    HoYoverse...</span>
+                </div>
+                <p id="importStatusMsg" class="status-msg" style="margin-top:0.5rem;"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modo 2: Archivo Excel (.xlsx) / JSON / CSV -->
+        <div class="import-tab-content" id="importPanelJson" style="display:none;">
+          <div class="json-dropzone" id="jsonDropzone">
+            <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="17 8 12 3 7 8" />
+              <line x1="12" y1="3" x2="12" y2="15" />
+            </svg>
+            <p id="lblDropzoneTitle"><strong>Arrastra aquí tu archivo Excel (.xlsx / .xls) o respaldo JSON</strong></p>
+            <span id="lblDropzoneSub" style="font-size:0.75rem;color:var(--text-muted);">Compatible con archivos Excel
+              (.xlsx), JSON y CSV</span>
+            <input type="file" id="jsonFileInput" accept=".xlsx,.xls,.json,.uigf,.csv" style="display:none;" />
+            <button class="action-btn secondary" id="btnBrowseJson" style="margin-top:0.8rem;">Examinar
+              archivo...</button>
+          </div>
+
+          <div style="margin-top:1.2rem;border-top:1px dashed var(--border-color);padding-top:1rem;">
+            <label for="csvPasteInput" id="lblCsvPaste"
+              style="font-size:0.8rem;color:var(--text-muted);display:block;margin-bottom:0.4rem;">O pega aquí el texto
+              / CSV de tu historial:</label>
+            <textarea id="csvPasteInput" class="input-field" rows="3"
+              placeholder="Pega aquí las filas copiadas (ej: Type,Name,Time,Rarity,Pity,#Roll...)"></textarea>
+            <div style="margin-top:0.5rem;display:flex;justify-content:flex-end;gap:0.5rem;">
+              <button class="action-btn secondary" id="btnPasteTextClipboard"><img src="assets/ui/clipboard.svg"
+                  style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" />Pegar del
+                Portapapeles</button>
+              <button class="action-btn" id="btnProcessCsvPaste"><img src="assets/ui/sparkle.svg"
+                  style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" />Procesar Texto
+                Copiado</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modo 3: Registro Manual -->
+        <div class="import-tab-content" id="importPanelManual" style="display:none;">
+          <div class="manual-input-grid">
+            <div class="form-group">
+              <label for="manualBanner">Banner</label>
+              <select id="manualBanner" class="input-field">
+                <option value="character">Personaje Promocional (301/400)</option>
+                <option value="weapon">Gachapón Armas (302)</option>
+                <option value="standard">Permanente / Estándar (200)</option>
+                <option value="chronicled">Búsqueda de las Crónicas (500)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="manualCharName">Nombre del 5★</label>
+              <input type="text" id="manualCharName" class="input-field" placeholder="Ej: Mavuika / Citlali / Skirk" />
+            </div>
+            <div class="form-group">
+              <label for="manualCharPity">Pity (Tirada en que salió)</label>
+              <input type="number" id="manualCharPity" class="input-field" min="1" max="90" value="76" />
+            </div>
+            <div class="form-group">
+              <label for="manualWon5050">Condición 50/50</label>
+              <select id="manualWon5050" class="input-field">
+                <option value="won">Ganado 50/50</option>
+                <option value="lost">Perdido (Permanente)</option>
+                <option value="guaranteed">Garantizado previo</option>
+                <option value="radiance">Luz Capturada (5.0+)</option>
+              </select>
+            </div>
+          </div>
+          <div style="margin-top:0.8rem;text-align:right;">
+            <button class="action-btn" id="btnAddManual5"><img src="assets/ui/sparkle.svg"
+                style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" />Añadir al
+              Historial</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pestañas de Banners (Selector Activo) -->
+      <div class="wish-banner-nav" id="wishBannerNav">
+        <button class="wish-banner-tab active" data-banner="character">
+          <span class="wb-icon"><img src="assets/ui/icon_intertwined.png"
+              style="width:26px;height:26px;object-fit:contain;" alt="Personaje" /></span>
+          <div class="wb-text">
+            <span class="wb-title">Personaje Promocional</span>
+            <span class="wb-subtitle" id="wbBadgeChar">Pity: -- | 50/50</span>
+          </div>
+        </button>
+        <button class="wish-banner-tab" data-banner="weapon">
+          <span class="wb-icon"><img src="assets/weapon_types/sword.png"
+              style="width:26px;height:26px;object-fit:contain;" alt="Arma" /></span>
+          <div class="wb-text">
+            <span class="wb-title">Armas Promocionales</span>
+            <span class="wb-subtitle" id="wbBadgeWeap">Pity: -- | 75/25</span>
+          </div>
+        </button>
+        <button class="wish-banner-tab" data-banner="standard">
+          <span class="wb-icon"><img src="assets/ui/icon_acquaint.png"
+              style="width:26px;height:26px;object-fit:contain;" alt="Permanente" /></span>
+          <div class="wb-text">
+            <span class="wb-title">Deseo Permanente</span>
+            <span class="wb-subtitle" id="wbBadgeStd">Pity: -- | Hard: 90</span>
+          </div>
+        </button>
+        <button class="wish-banner-tab" data-banner="chronicled">
+          <span class="wb-icon"><img src="assets/ui/clipboard.svg" style="width:24px;height:24px;object-fit:contain;"
+              alt="Crónicas" /></span>
+          <div class="wb-text">
+            <span class="wb-title">Búsqueda de las Crónicas</span>
+            <span class="wb-subtitle" id="wbBadgeChr">Pity: -- | 1 Punto</span>
+          </div>
+        </button>
+      </div>
+
+      <!-- Tarjetas KPI del Banner Activo -->
+      <div class="wish-kpi-grid" id="wishKpiGrid"></div>
+
+      <!-- Analítica: Histograma de Suerte y Gráfico Mensual -->
+      <div class="wish-analytics-grid">
+        <div class="paimon-card" id="cardLuckDistribution">
+          <div class="paimon-card-header">
+            <span style="display:inline-flex;align-items:center;gap:5px;"><img src="assets/ui/sparkle.svg"
+                class="seelie-inline-icon" alt="" /> Distribución de Suerte (Pity Histórico)</span>
+            <small style="font-size:0.74rem;color:var(--text-muted);">Tirada en que salió cada 5★</small>
+          </div>
+          <div id="wishLuckHistogram" class="wish-histogram"></div>
+        </div>
+
+        <div class="paimon-card" id="cardMonthlyTrend">
+          <div class="paimon-card-header">
+            <span style="display:inline-flex;align-items:center;gap:5px;"><img src="assets/ui/calendar.svg"
+                class="seelie-inline-icon" alt="" /> Tiradas y Deseos por Mes</span>
+            <span style="font-size:0.74rem;color:var(--text-muted);">5★ / 4★ / 3★</span>
+          </div>
+          <div id="wishMonthlyChartContainer"></div>
+        </div>
+      </div>
+
+      <!-- Vitrina de 5★ Obtenidos (Showcase) -->
+      <div class="paimon-card" style="margin-bottom:1.1rem;">
+        <div class="paimon-card-header">
+          <span style="display:inline-flex;align-items:center;gap:5px;"><img src="assets/ui/icon_primogem.png"
+              style="width:18px;height:18px;" alt="" /> Registro Cronológico de 5★ Obtenidos</span>
+          <span id="wish5CountBadge" style="font-size:0.8rem;color:var(--gold-bright);font-weight:700;">0
+            obtenidos</span>
+        </div>
+        <div class="history-pills" id="wish5StarShowcase"></div>
+      </div>
+
+      <!-- Tabla Completa de Tiradas Filtrable y Paginada -->
+      <div class="paimon-card" style="margin-bottom:1.5rem;">
+        <div class="wish-table-toolbar">
+          <div class="wish-table-title">
+            <span style="font-weight:800;font-size:0.98rem;display:inline-flex;align-items:center;gap:5px;"><img
+                src="assets/ui/clipboard.svg" class="seelie-inline-icon" alt="" /> Registro Completo de Tiradas</span>
+            <span id="wishTableCount" style="font-size:0.78rem;color:var(--text-muted);">(0 registros)</span>
+          </div>
+          <div class="wish-table-filters">
+            <input type="text" id="wishSearchInput" class="input-field" placeholder="Buscar por nombre..."
+              style="width:170px;padding:0.35rem 0.6rem;font-size:0.8rem;" />
+            <select id="wishRarityFilter" class="input-field"
+              style="width:auto;padding:0.35rem 0.6rem;font-size:0.8rem;">
+              <option value="ALL">Todas las rarezas</option>
+              <option value="5">Solo 5★ (Dorado)</option>
+              <option value="4">Solo 4★ (Morado)</option>
+              <option value="3">Solo 3★ (Azul)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="wish-table-responsive">
+          <table class="wish-data-table">
+            <thead>
+              <tr>
+                <th style="width:60px;"># Pity</th>
+                <th style="width:75px;">Rareza</th>
+                <th>Nombre</th>
+                <th style="width:100px;">Tipo</th>
+                <th style="width:160px;">Fecha y Hora</th>
+                <th style="width:140px;text-align:right;">Mecánica</th>
+              </tr>
+            </thead>
+            <tbody id="wishTableBody"></tbody>
+          </table>
+        </div>
+
+        <!-- Paginador de Tabla -->
+        <div class="wish-pagination-bar">
+          <button class="action-btn secondary btn-sm" id="btnWishPagePrev">❮ Anterior</button>
+          <span id="wishPageIndicator" style="font-size:0.82rem;font-weight:700;color:var(--text-muted);">Página 1 de
+            1</span>
+          <button class="action-btn secondary btn-sm" id="btnWishPageNext">Siguiente ❯</button>
+        </div>
+      </div>
+
+      <!-- Contenedores legados ocultos para preservar compatibilidad con código existente -->
+      <div id="paimonTopRow" style="display:none;"></div>
+      <div id="paimonMidRow" style="display:none;"></div>
+      <div id="paimonBotRow" style="display:none;"></div>
+    </section>
+
+
+    <!-- ==========================================================
+         PESTAÑA 2: PLANIFICADOR DE FARMEO & RESINA (RÉPLICA EXACTA DE SEELIE.ME)
+         ========================================================== -->
+    <section id="sec-farming" class="tool-section">
+      <!-- 1. WIDGET SUPERIOR DE RESINA SEELIE.ME -->
+      <div class="seelie-resin-hero-card">
+        <div class="seelie-resin-hero-left">
+          <!-- Contador interactivo de Resina Actual: 200 / 200 -->
+          <div class="seelie-resin-main-row">
+            <img src="assets/ui/resin.png" alt="Resina Original" class="seelie-resin-moon-icon" />
+            <div class="seelie-resin-numbers">
+              <span id="seelieCurResinVal">200</span>
+              <span class="seelie-resin-max-sep">/ 200</span>
+            </div>
+          </div>
+
+          <!-- Botones de Ajuste Rápido de Resina: [-60] [-40] [-30] [-20] [-1] [+1] [+10] [+60] + Gota + Config -->
+          <div class="seelie-resin-quick-btns">
+            <button type="button" class="seelie-btn-resin-adjust" data-resin-delta="-60">-60</button>
+            <button type="button" class="seelie-btn-resin-adjust" data-resin-delta="-40">-40</button>
+            <button type="button" class="seelie-btn-resin-adjust" data-resin-delta="-30">-30</button>
+            <button type="button" class="seelie-btn-resin-adjust" data-resin-delta="-20">-20</button>
+            <button type="button" class="seelie-btn-resin-adjust" data-resin-delta="-1">-1</button>
+            <button type="button" class="seelie-btn-resin-adjust" data-resin-delta="1">+1</button>
+            <button type="button" class="seelie-btn-resin-adjust" data-resin-delta="10">+10</button>
+            <button type="button" class="seelie-btn-resin-adjust" data-resin-delta="60">+60</button>
+            <button type="button" class="seelie-btn-resin-icon" id="btnSeelieCondensedResin"
+              title="Fabricar Resina Concentrada (-60 ✦)">
+              <img src="assets/ui/condensed_resin.png" class="btn-cond-icon-img" alt="Concentrada" />
+            </button>
+            <button type="button" class="seelie-btn-resin-icon" id="btnSeelieResinSettings"
+              title="Configurar Resina Actual exacta">
+              <img src="assets/ui/gear.svg" style="width:16px;height:16px;display:block;margin:auto;"
+                alt="Configurar" />
+            </button>
+          </div>
+
+          <!-- Texto de Estado de Recuperación de Resina -->
+          <div class="seelie-resin-status-text" id="seelieResinStatusText">
+            Límite máx. de Resina original alcanzado
+          </div>
+        </div>
+
+        <div class="seelie-resin-hero-right">
+          <!-- Panel de Resumen de Resina Original & Resina Concentrada -->
+          <div class="seelie-resin-kpi-card" id="seelieResinCalcBox">
+            <div class="seelie-kpi-row">
+              <span class="seelie-kpi-title">Resina Inmediata Disponible:</span>
+              <div class="seelie-kpi-items">
+                <span class="seelie-kpi-pill kpi-resin" title="Resina Original que tienes en este momento">
+                  <img src="assets/ui/resin.png" class="kpi-icon" alt="Resina" />
+                  <strong id="seelieCurResinKpi">200</strong> Resina
+                </span>
+                <span class="seelie-kpi-pill kpi-cond"
+                  title="Resinas Concentradas que puedes fabricar hoy con tu resina actual (60 ✦ c/u)">
+                  <img src="assets/ui/condensed_resin.png" class="kpi-icon" alt="Concentrada" />
+                  <strong id="seelieCurCondKpi">3</strong> Concentradas fabricables
+                </span>
+              </div>
+            </div>
+
+            <div class="seelie-kpi-row seelie-kpi-plan-row">
+              <span class="seelie-kpi-title">Demanda Total Requerida en tu Plan:</span>
+              <div class="seelie-kpi-items">
+                <span class="seelie-kpi-pill kpi-resin-plan"
+                  title="Total de Resina Original que demanda tu plan de personajes y armas">
+                  <img src="assets/ui/resin.png" class="kpi-icon" alt="Resina Requerida" />
+                  <strong id="seeliePlanResinKpi">0</strong> Resina Total
+                </span>
+                <span class="seelie-kpi-pill kpi-cond-plan"
+                  title="Equivalencia total en Resinas Concentradas (60 ✦ c/u)">
+                  <img src="assets/ui/condensed_resin.png" class="kpi-icon" alt="Concentrada Requerida" />
+                  <strong id="seeliePlanCondKpi">0</strong> Concentradas
+                </span>
+                <span class="seelie-kpi-pill kpi-days" title="Tiempo de recarga natural estimado a 180 resina al día">
+                  <img src="assets/ui/clock.svg" class="seelie-inline-icon" alt="Tiempo" /> <strong
+                    id="seeliePlanDaysKpi">0 días</strong>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fila Horizontal de Avatares Circulares del Plan Activo para Filtrar -->
+          <div class="seelie-char-avatar-bar" id="seelieCharAvatarBar"></div>
+        </div>
+      </div>
+
+      <!-- 2. BARRA DE SELECCIÓN DE DÍAS (LUNES A DOMINGO / HOY / TODOS) -->
+      <div class="seelie-day-filter-container">
+        <div class="seelie-day-filter-header">
+          <div class="seelie-day-filter-title">
+            <img src="assets/ui/calendar.svg" class="seelie-inline-icon" alt="Calendario" />
+            <span>Filtrar por Día de Rotación de Dominios:</span>
+          </div>
+          <div class="seelie-day-current-text" id="seelieCurrentDayText">
+            Hoy es <strong id="seelieTodayName">Lunes</strong>
+          </div>
+        </div>
+        <div class="seelie-day-pills" id="seelieDayPills">
+          <button type="button" class="seelie-day-pill active" data-day-filter="today">
+            <span class="day-dot-active"></span> <img src="assets/ui/bolt.svg" class="seelie-inline-icon" alt="Hoy" />
+            Hoy (<span id="btnTodayLabel">Lunes</span>)
+          </button>
+          <button type="button" class="seelie-day-pill" data-day-filter="1">Lunes</button>
+          <button type="button" class="seelie-day-pill" data-day-filter="2">Martes</button>
+          <button type="button" class="seelie-day-pill" data-day-filter="3">Miércoles</button>
+          <button type="button" class="seelie-day-pill" data-day-filter="4">Jueves</button>
+          <button type="button" class="seelie-day-pill" data-day-filter="5">Viernes</button>
+          <button type="button" class="seelie-day-pill" data-day-filter="6">Sábado</button>
+          <button type="button" class="seelie-day-pill" data-day-filter="0">Domingo (Todos)</button>
+          <button type="button" class="seelie-day-pill" data-day-filter="all"><img src="assets/ui/globe.svg"
+              class="seelie-inline-icon" alt="Todos" /> Ver Todos los Días</button>
+        </div>
+      </div>
+
+      <!-- 3. BARRA DE PESTAÑAS DE COSTE DE RESINA SEELIE.ME -->
+      <div class="seelie-cost-tabs" id="seelieCostTabs">
+        <button type="button" class="seelie-cost-tab active" data-seelie-tab="all">Toda</button>
+        <button type="button" class="seelie-cost-tab" data-seelie-tab="0">
+          <img src="assets/ui/resin.png" class="seelie-tab-resin-icon zero" alt="0" /> 0 (Sin Resina)
+        </button>
+        <button type="button" class="seelie-cost-tab" data-seelie-tab="20">
+          <img src="assets/ui/resin.png" class="seelie-tab-resin-icon" alt="20" /> 20
+        </button>
+        <button type="button" class="seelie-cost-tab" data-seelie-tab="40">
+          <img src="assets/ui/resin.png" class="seelie-tab-resin-icon" alt="40" /> 40
+        </button>
+        <button type="button" class="seelie-cost-tab" data-seelie-tab="60">
+          <img src="assets/ui/resin.png" class="seelie-tab-resin-icon" alt="60" /> 60
+        </button>
+        <button type="button" class="seelie-cost-tab" data-seelie-tab="schedule"><img src="assets/ui/calendar.svg"
+            class="seelie-inline-icon" alt="Calendario" /> <span id="lblTabSchedule">Calendario Semanal</span></button>
+      </div>
+
+      <!-- 4. CONTENEDOR DE SECCIONES COLAPSABLES DE FARMEO (TODA / 0 / 20 / 40 / 60) -->
+      <div id="seelieFarmingSectionsContainer"></div>
+
+      <!-- 4. VISTA DE CALENDARIO SEMANAL (SE ACTIVA CON LA PESTAÑA SCHEDULE) -->
+      <div id="seelieScheduleView" style="display:none;">
+        <div class="card" style="margin-bottom:1.5rem;">
+          <div
+            style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.8rem;margin-bottom:1rem;">
+            <div>
+              <h3 id="lblScheduleTitle" style="color:var(--gold-bright);margin:0;font-size:1.15rem;"><img
+                  src="assets/ui/calendar.svg" class="seelie-inline-icon" style="width:20px;height:20px;"
+                  alt="Calendario" /> Calendario Semanal de Dominios Oficial de Teyvat</h3>
+              <p id="lblScheduleSub" style="margin:0.25rem 0 0 0;font-size:0.85rem;color:var(--text-muted);">
+                Dominios de cada día de la semana separados por cuánta Resina piden (20 ✦, 40 ✦ o 30/60 ✦).
+              </p>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;">
+              <span id="lblFilterResin" style="font-size:0.8rem;color:var(--text-muted);font-weight:700;">Filtrar
+                Resina:</span>
+              <div id="resinCostFilterButtons" class="day-buttons">
+                <button class="chip-btn active" data-resin-filter="all">Todos los Costes</button>
+                <button class="chip-btn" data-resin-filter="20">20 ✦ Dominios</button>
+                <button class="chip-btn" data-resin-filter="40">40 ✦ Jefes de Mundo</button>
+                <button class="chip-btn" data-resin-filter="30">30/60 ✦ Jefes Semanales</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Botones de Días: Lunes a Domingo -->
+          <div class="toolbar" style="margin-bottom:1.2rem;">
+            <div class="day-buttons" id="dayButtons"></div>
+          </div>
+
+          <!-- Contenedor de Dominios agrupado por Resina -->
+          <div id="farmingDomainsByResinContainer" style="display:grid;gap:1.5rem;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         PESTAÑA 7: SINCRONIZACIÓN GOOGLE DRIVE & GESTIÓN DE CUENTAS
+         ========================================================== -->
+    <section id="sec-sync" class="tool-section">
+      <div class="section-header">
+        <div>
+          <h2 id="syncMainTitle">Gestión de Cuentas &amp; Sincronización Google Drive</h2>
+          <p id="syncMainSub">Administra múltiples cuentas de Genshin Impact de forma independiente y sincroniza tus
+            datos privados en Google Drive.</p>
+        </div>
+      </div>
+
+      <!-- 1. BARRA MULTI-CUENTA ESTILO SEELIE CON PÍLDORAS DIRECTAS -->
+      <div class="seelie-account-bar">
+        <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;flex:1;">
+          <span
+            style="font-size:0.88rem;font-weight:800;color:var(--gold-bright);display:inline-flex;align-items:center;gap:0.4rem;">
+            <img src="assets/ui/user.svg" style="width:16px;height:16px;" alt="" />
+            Cuentas:
+          </span>
+          <!-- Lista de botones/píldoras de cuentas interactivas de cambio rápido -->
+          <div id="accountPillsContainer" style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;"></div>
+          <!-- Selector select sincronizado para compatibilidad -->
+          <select id="selActiveAccount" class="seelie-account-select" style="display:none;"
+            title="Cambiar cuenta activa"></select>
+          <button type="button" class="action-btn" id="btnOpenAddAccountModal"
+            title="Crear una nueva cuenta de forma rápida">
+            <img src="assets/ui/sparkle.svg" style="width:14px;height:14px;margin-right:4px;" alt="" /> + Agregar Cuenta
+          </button>
+        </div>
+        <div class="seelie-account-controls">
+          <button type="button" class="action-btn secondary" id="btnRenameAccount"
+            title="Renombrar la cuenta seleccionada">
+            <img src="assets/ui/clipboard.svg" style="width:14px;height:14px;margin-right:4px;" alt="" /> Rebautizar
+          </button>
+          <button type="button" class="action-btn secondary" id="btnDeleteAccount" title="Eliminar cuenta">
+            <img src="assets/ui/trash.svg" style="width:14px;height:14px;margin-right:4px;" alt="" /> Borrar
+          </button>
+          <span style="width:1px;height:24px;background:rgba(255,255,255,0.12);margin:0 0.2rem;"></span>
+          <button type="button" class="action-btn secondary" id="btnExportAccountJson"
+            title="Descargar copia de seguridad en JSON de esta cuenta">
+            <img src="assets/ui/share.svg" style="width:14px;height:14px;margin-right:4px;" alt="" /> Exportar
+          </button>
+          <button type="button" class="action-btn secondary" id="btnImportAccountJson"
+            title="Restaurar copia de respaldo en esta cuenta">
+            <img src="assets/ui/refresh.svg" style="width:14px;height:14px;margin-right:4px;" alt="" /> Importar
+          </button>
+          <input type="file" id="fileImportAccountJson" accept=".json" style="display:none;" />
+        </div>
+      </div>
+
+      <!-- 2. CONFIGURACIONES DE LA CUENTA ACTIVA (AR, MUNDO Y SERVIDOR) -->
+      <div class="seelie-settings-grid">
+        <div class="seelie-settings-card">
+          <label for="inputAccountAR">Nivel de Aventura (AR 1 - 60):</label>
+          <input type="number" id="inputAccountAR" class="input-field" min="1" max="60" value="60"
+            style="font-weight:800;font-size:1.05rem;" />
+        </div>
+
+        <div class="seelie-settings-card">
+          <label for="selAccountWL">Nivel de Mundo (WL):</label>
+          <select id="selAccountWL" class="input-field" style="font-weight:700;">
+            <option value="0">Mundo 0</option>
+            <option value="1">Mundo 1</option>
+            <option value="2">Mundo 2</option>
+            <option value="3">Mundo 3</option>
+            <option value="4">Mundo 4</option>
+            <option value="5">Mundo 5</option>
+            <option value="6">Mundo 6</option>
+            <option value="7">Mundo 7</option>
+            <option value="8">Mundo 8</option>
+            <option value="9" selected>Mundo 9</option>
+          </select>
+        </div>
+
+        <div class="seelie-settings-card">
+          <label for="selAccountServer">Servidor Oficial (Reset diario 04:00 AM):</label>
+          <select id="selAccountServer" class="input-field" style="font-weight:700;">
+            <option value="america" selected>América (UTC-5 / Reset 09:00 UTC)</option>
+            <option value="europe">Europa (UTC+1 / Reset 03:00 UTC)</option>
+            <option value="asia">Asia (UTC+8 / Reset 20:00 UTC)</option>
+            <option value="tw_hk_mo">TW / HK / MO (UTC+8 / Reset 20:00 UTC)</option>
+          </select>
+          <div class="seelie-server-clock">
+            <span>Hora Servidor:</span>
+            <strong id="serverClockDisplay">--:--:--</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. CONFIGURACIÓN DE GOOGLE DRIVE & TOGGLE AUTO RESOLVE CONFLICT -->
+      <div class="gdrive-sync-card" id="gdriveAccountCard">
+        <div
+          style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.75rem;margin-bottom:0.75rem;">
+          <p id="syncDriveDesc" style="font-size:0.9rem;margin:0;flex:1;min-width:260px;line-height:1.5;">
+            Guarda y sincroniza tu inventario, personajes, armas y deseos de forma privada en tu propia cuenta de
+            <strong>Google Drive</strong> sin intermediarios.
+          </p>
+          <div class="gdrive-sync-status-badge" id="gdriveAutoSyncStatus" style="margin:0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.2">
+              <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+              <polyline points="9 11 12 14 22 4" />
+            </svg>
+            <span id="lblDriveStatusBadge">Google Drive</span>
+          </div>
+        </div>
+
+        <!-- Panel de Estado y Acciones de Google Drive -->
+        <div
+          style="background:rgba(0,0,0,0.26);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:1rem;margin:0.75rem 0;">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.85rem;">
+            <div>
+              <div
+                style="font-size:0.78rem;color:var(--text-muted);font-weight:700;text-transform:uppercase;letter-spacing:0.4px;">
+                Cuenta de Google Drive:</div>
+              <div
+                style="font-size:1.02rem;font-weight:800;color:#ffffff;margin-top:0.25rem;display:flex;align-items:center;gap:0.45rem;">
+                <svg width="18" height="18" viewBox="0 0 87.3 78">
+                  <path d="m6.6 66.85 3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8h-27.5c0 1.55.4 3.1 1.2 4.5z"
+                    fill="#0066da" />
+                  <path d="m43.65 25-13.75-23.8c-1.35.8-2.5 1.9-3.3 3.3l-25.4 44c-.8 1.4-1.2 2.95-1.2 4.5h27.5z"
+                    fill="#00ac47" />
+                  <path
+                    d="m73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5h-27.502l5.852 11.5z"
+                    fill="#ea4335" />
+                  <path d="m43.65 25 13.75-23.8c-1.35-.8-2.9-1.2-4.5-1.2h-18.5c-1.6 0-3.15.45-4.5 1.2z"
+                    fill="#00832d" />
+                  <path d="m59.8 53h-32.3l-13.75 23.8c1.35.8 2.9 1.2 4.5 1.2h50.8c1.6 0 3.15-.45 4.5-1.2z"
+                    fill="#2684fc" />
+                  <path
+                    d="m73.4 26.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3l-13.75 23.8 16.15 28h27.45c0-1.55-.4-3.1-1.2-4.5z"
+                    fill="#ffba00" />
+                </svg>
+                <span id="lblCurrentDriveEmail">usuario@gmail.com</span>
+              </div>
+              <div
+                style="font-size:0.84rem;margin-top:0.35rem;display:flex;align-items:center;gap:0.35rem;flex-wrap:wrap;">
+                <span style="color:var(--text-muted);">Estado:</span>
+                <strong id="lblDriveSyncStateText"
+                  style="color:#4ade80;display:inline-flex;align-items:center;gap:0.25rem;">
+                  <img src="assets/ui/check.svg" style="width:14px;height:14px;" alt="" /> Sincronizado con Google Drive
+                </strong>
+                <span style="color:var(--text-muted);margin-left:0.4rem;" id="seelieSyncTimestamp">Última
+                  sincronización: --</span>
+              </div>
+            </div>
+
+            <div style="display:flex;gap:0.55rem;flex-wrap:wrap;align-items:center;" id="driveAccountActionBtns">
+              <button type="button" class="action-btn" id="btnConnectGoogleDrive"
+                style="background:#2563eb;color:#ffffff;border:1px solid #3b82f6;display:inline-flex;align-items:center;gap:0.4rem;font-weight:700;">
+                <svg width="15" height="15" viewBox="0 0 24 24">
+                  <path
+                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                    fill="#4285F4" />
+                  <path
+                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                    fill="#34A853" />
+                  <path
+                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
+                    fill="#FBBC05" />
+                  <path
+                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
+                    fill="#EA4335" />
+                </svg>
+                <span>Conectar con Google Drive</span>
+              </button>
+              <button type="button" class="action-btn" id="btnSyncDriveNow" title="Forzar sincronización inmediata">
+                <img src="assets/ui/refresh.svg" style="width:14px;height:14px;margin-right:4px;" alt="" />
+                <span>Sincronizar Ahora</span>
+              </button>
+              <button type="button" class="action-btn secondary" id="btnDisconnectGoogleDrive"
+                style="color:#f87171;border-color:rgba(248,113,113,0.3);" title="Desconectar cuenta de Google">
+                <span>Desconectar</span>
+              </button>
+              <button type="button" class="action-btn secondary" id="btnTestConflictModal"
+                title="Simula un conflicto entre la nube y el navegador para probar el modal">
+                <img src="assets/ui/sparkle.svg" style="width:14px;height:14px;margin-right:4px;" alt="" />
+                <span>Probar Modal de Conflicto</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toggle Auto Resolve Conflict con Tooltip explicativo -->
+        <div
+          style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;margin-top:0.85rem;">
+          <div class="toggle-switch" id="toggleConflictSwitch"
+            title="Si está activo, ante diferencias de versión se selecciona automáticamente la copia más reciente. Si está apagado, se muestra el modal comparativo.">
+            <div class="switch-pill" id="conflictSwitchPill"></div>
+            <span id="lblAutoResolveConflict" style="color:#ffffff;">Auto resolve conflict (Resolver conflictos de
+              sincronización automáticamente)</span>
+          </div>
+          <span style="font-size:0.78rem;color:var(--text-muted);">
+            * Si está desactivado, el modal comparativo te permite elegir entre Google Drive y el Navegador Local.
+          </span>
+        </div>
+      </div>
+
+      <div class="calc-layout">
+        <div class="card">
+          <h3 style="color:var(--gold-bright);margin-bottom:0.6rem;display:flex;align-items:center;gap:0.45rem;"><img
+              src="assets/ui/icon_primogem.png" style="width:20px;height:20px;" alt="" /> Simulador de Ingresos en tu
+            Cuenta de Google AdSense</h3>
+          <div class="form-group">
+            <label for="simPageviews">Visitas mensuales estimadas: <strong id="pvDisplay"
+                style="color:var(--gold-bright);">50,000</strong></label>
+            <input type="range" id="simPageviews" min="5000" max="500000" step="5000" value="50000"
+              style="width:100%;margin-top:0.4rem;" />
+          </div>
+          <div class="form-group">
+            <label for="simMarket">Mercado principal del tráfico</label>
+            <select id="simMarket" class="input-field">
+              <option value="2.2">Latinoamérica / España (~$2.20 USD / 1k vistas)</option>
+              <option value="3.5">Brasil + LatAm (~$3.50 USD / 1k vistas)</option>
+              <option value="7.5" selected>Mix Internacional 5 Idiomas (ES+EN+PT+JA+KO) (~$7.50 USD / 1k)</option>
+              <option value="12.0">EE.UU. / Japón / Corea (~$12.00 USD / 1k vistas)</option>
+            </select>
+          </div>
+        </div>
+        <div class="card">
+          <div class="stat-box-grid">
+            <div class="stat-box"><span class="val" id="valEstMonthly">$375 USD</span><span class="lbl">Ingreso Mensual
+                Estimado</span></div>
+            <div class="stat-box"><span class="val" id="valEstYearly">$4,500 USD</span><span class="lbl">Ingreso Anual
+                Estimado</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slot AdSense #2: Inferior -->
+    <aside class="ad-slot" aria-label="Advertisement">
+      <span class="ad-badge">Google AdSense • Slot #2 Footer Banner</span>
+      <strong class="ad-title">Espacio Google AdSense (Vinculado a tu cuenta Google)</strong>
+      <span class="ad-sub">Anuncio Multiplex / In-Article de alta retención</span>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <p>Spirifly no está afiliado ni respaldado por HoYoverse (Cognosphere Pte., Ltd.). Todos los activos de
+      juego son propiedad de sus respectivos dueños.</p>
+    <div class="footer-links">
+      <a href="privacy.html" target="_blank">Privacy Policy</a>
+      <a href="terms.html" target="_blank">Terms of Service</a>
+      <a href="cookies.html" target="_blank">Cookie Policy</a>
+      <a href="#donar" id="footerDonateLink" style="color:var(--gold);font-weight:700;">☕ Donación</a>
+      <a href="https://act.hoyolab.com/ys/app/interactive-map/index.html" target="_blank" rel="noopener">HoYoLAB
+        Interactive Map</a>
+    </div>
+  </footer>
+
+  <!-- MODAL DE CONFLICTO DE SINCRONIZACIÓN GOOGLE DRIVE (PIXEL-PERFECT SEELIE) -->
+  <div id="modalSyncConflict" class="seelie-modal-backdrop" role="dialog" aria-modal="true">
+    <div class="seelie-conflict-dialog">
+      <div class="seelie-conflict-header">
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.4rem;">
+          <svg width="28" height="28" viewBox="0 0 87.3 78">
+            <path d="m6.6 66.85 3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8h-27.5c0 1.55.4 3.1 1.2 4.5z"
+              fill="#0066da" />
+            <path d="m43.65 25-13.75-23.8c-1.35.8-2.5 1.9-3.3 3.3l-25.4 44c-.8 1.4-1.2 2.95-1.2 4.5h27.5z"
+              fill="#00ac47" />
+            <path
+              d="m73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5h-27.502l5.852 11.5z"
+              fill="#ea4335" />
+            <path d="m43.65 25 13.75-23.8c-1.35-.8-2.9-1.2-4.5-1.2h-18.5c-1.6 0-3.15.45-4.5 1.2z" fill="#00832d" />
+            <path d="m59.8 53h-32.3l-13.75 23.8c1.35.8 2.9 1.2 4.5 1.2h50.8c1.6 0 3.15-.45 4.5-1.2z" fill="#2684fc" />
+            <path d="m73.4 26.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3l-13.75 23.8 16.15 28h27.45c0-1.55-.4-3.1-1.2-4.5z"
+              fill="#ffba00" />
+          </svg>
+          <h3 id="lblConflictModalTitle">Tus datos locales entran en conflicto con los datos de Google Drive</h3>
+        </div>
+        <p id="lblConflictModalSub">Se detectó una discrepancia entre la copia en la nube y los datos de este navegador.
+          Elige qué versión deseas conservar:</p>
+      </div>
+
+      <div class="seelie-conflict-cards">
+        <!-- Tarjeta 1: Google Drive -->
+        <div class="seelie-conflict-card" id="cardConflictDrive">
+          <div class="seelie-conflict-card-top">
+            <div class="seelie-conflict-source">
+              <svg width="20" height="20" viewBox="0 0 87.3 78">
+                <path d="m6.6 66.85 3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8h-27.5c0 1.55.4 3.1 1.2 4.5z"
+                  fill="#0066da" />
+                <path d="m43.65 25-13.75-23.8c-1.35.8-2.5 1.9-3.3 3.3l-25.4 44c-.8 1.4-1.2 2.95-1.2 4.5h27.5z"
+                  fill="#00ac47" />
+                <path
+                  d="m73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5h-27.502l5.852 11.5z"
+                  fill="#ea4335" />
+                <path d="m43.65 25 13.75-23.8c-1.35-.8-2.9-1.2-4.5-1.2h-18.5c-1.6 0-3.15.45-4.5 1.2z" fill="#00832d" />
+                <path d="m59.8 53h-32.3l-13.75 23.8c1.35.8 2.9 1.2 4.5 1.2h50.8c1.6 0 3.15-.45 4.5-1.2z"
+                  fill="#2684fc" />
+                <path d="m73.4 26.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3l-13.75 23.8 16.15 28h27.45c0-1.55-.4-3.1-1.2-4.5z"
+                  fill="#ffba00" />
+              </svg>
+              <span>Datos de Google Drive</span>
+            </div>
+            <div class="seelie-conflict-meta">
+              <span class="seelie-age-badge older" id="badgeDriveAge">MÁS VIEJO</span>
+              <span class="seelie-size-badge" id="badgeDriveSize">0.00 KB</span>
+            </div>
+          </div>
+          <div class="seelie-conflict-card-body">
+            <div class="seelie-conflict-date-row">
+              <span class="date-lbl">Última modificación:</span>
+              <strong class="date-val" id="valDriveDate">--</strong>
+            </div>
+            <div class="seelie-conflict-warning" id="warnDriveSmaller" style="display:none;">
+              ⚠️ Ten cuidado, este archivo es más de un 10% más pequeño que tus datos actuales (posible pérdida de
+              personajes o inventario).
+            </div>
+          </div>
+          <div class="seelie-conflict-card-footer">
+            <button type="button" class="btn-conflict-action btn-drive-action" id="btnChooseDriveData">
+              Usar datos de Google Drive
+            </button>
+          </div>
+        </div>
+
+        <!-- Tarjeta 2: Navegador Local -->
+        <div class="seelie-conflict-card" id="cardConflictLocal">
+          <div class="seelie-conflict-card-top">
+            <div class="seelie-conflict-source">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="14" x="2" y="3" rx="2" />
+                <line x1="8" x2="16" y1="21" y2="21" />
+                <line x1="12" x2="12" y1="17" y2="21" />
+              </svg>
+              <span>Datos del navegador local</span>
+            </div>
+            <div class="seelie-conflict-meta">
+              <span class="seelie-age-badge newer" id="badgeLocalAge">MÁS NUEVO</span>
+              <span class="seelie-size-badge" id="badgeLocalSize">0.00 KB</span>
+            </div>
+          </div>
+          <div class="seelie-conflict-card-body">
+            <div class="seelie-conflict-date-row">
+              <span class="date-lbl">Última modificación:</span>
+              <strong class="date-val" id="valLocalDate">--</strong>
+            </div>
+            <div class="seelie-conflict-warning" id="warnLocalSmaller" style="display:none;">
+              ⚠️ Ten cuidado, este archivo local es más de un 10% más pequeño que la copia en la nube.
+            </div>
+          </div>
+          <div class="seelie-conflict-card-footer">
+            <button type="button" class="btn-conflict-action btn-local-action" id="btnChooseLocalData">
+              Usar datos del navegador local
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DE CREAR NUEVA CUENTA RÁPIDA -->
+  <div id="modalAddAccount" class="seelie-modal-backdrop" role="dialog" aria-modal="true">
+    <div class="seelie-dialog-small">
+      <h3 style="color:#60a5fa;display:flex;align-items:center;gap:0.45rem;">
+        <img src="assets/ui/sparkle.svg" style="width:18px;height:18px;" alt="" />
+        Nueva Cuenta
+      </h3>
+      <p>Ingresa un nombre o identificador para tu nueva cuenta (ej. <em>Secundaria</em>, <em>América F2P</em> o tu
+        UID):</p>
+      <input type="text" id="inputNewAccountName" class="input-field" placeholder="Nombre de la cuenta (ej. Secundaria)"
+        maxlength="32" style="width:100%;font-weight:700;font-size:1rem;margin-bottom:0.4rem;" />
+      <div class="dialog-actions">
+        <button type="button" class="action-btn secondary" id="btnCancelAddAccount">Cancelar</button>
+        <button type="button" class="action-btn" id="btnConfirmAddAccount">Crear Cuenta</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DE REBAUTIZAR CUENTA -->
+  <div id="modalRenameAccount" class="seelie-modal-backdrop" role="dialog" aria-modal="true">
+    <div class="seelie-dialog-small">
+      <h3>Rebautizar Cuenta</h3>
+      <p>Asigna un nombre descriptivo para identificar esta cuenta en el selector:</p>
+      <input type="text" id="inputRenameAccountName" class="input-field"
+        placeholder="Nombre de la cuenta (ej. Principal, Secundaria, FreeToPlay)" maxlength="32"
+        style="width:100%;font-weight:700;" />
+      <div class="dialog-actions">
+        <button type="button" class="action-btn secondary" id="btnCancelRenameAccount">Cancelar</button>
+        <button type="button" class="action-btn" id="btnConfirmRenameAccount">Guardar Nombre</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DE CONFIRMACIÓN DE BORRADO DE CUENTA -->
+  <div id="modalDeleteAccount" class="seelie-modal-backdrop" role="dialog" aria-modal="true">
+    <div class="seelie-dialog-small">
+      <h3 style="color:#f87171;">Eliminar Cuenta</h3>
+      <p id="lblDeleteAccountPrompt">¿Estás seguro de que deseas eliminar permanentemente esta cuenta? Todos sus
+        objetivos, inventario y configuraciones se borrarán.</p>
+      <div class="dialog-actions">
+        <button type="button" class="action-btn secondary" id="btnCancelDeleteAccount">Cancelar</button>
+        <button type="button" class="action-btn danger" id="btnConfirmDeleteAccount"
+          style="background:#dc2626;color:#ffffff;">Eliminar Definitivamente</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DE DONACIONES Y APOYO AL PROYECTO -->
+  <div class="seelie-modal-backdrop" id="seelieDonateModal" role="dialog" aria-modal="true">
+    <div class="seelie-roster-dialog" style="max-width:480px;padding:2rem;" role="dialog"
+      aria-label="Apoyar el Proyecto">
+      <div class="seelie-roster-header" style="justify-content:space-between;margin-bottom:1.25rem;">
+        <div style="display:flex;align-items:center;gap:0.6rem;">
+          <span style="font-size:1.6rem;">☕</span>
+          <h2 style="font-size:1.3rem;font-weight:800;color:#ffffff;margin:0;" id="donateModalTitle">Apoyar Spirifly</h2>
+        </div>
+        <button class="seelie-modal-close" id="btnCloseDonateModal" title="Cerrar">✕</button>
+      </div>
+      <p style="color:#94a3b8;font-size:0.92rem;line-height:1.6;margin-bottom:1.5rem;" id="donateModalDesc">
+        <strong>Spirifly</strong> es un proyecto independiente desarrollado para toda la comunidad de Genshin
+        Impact.
+        Es 100% gratuito, libre de suscripciones obligatorias y sin muros de pago.
+        Si la calculadora y planificador te han sido útiles, puedes invitarnos un café para ayudar a cubrir los costos
+        de servidores y desarrollo.
+      </p>
+
+      <div style="display:flex;flex-direction:column;gap:0.85rem;">
+        <a href="https://ko-fi.com/sepoba" target="_blank" rel="noopener" class="donate-platform-btn kofi"
+          id="linkDonateKofi">
+          <span style="font-size:1.2rem;">☕</span>
+          <div style="flex:1;text-align:left;">
+            <div style="font-weight:700;color:#ffffff;font-size:1.05rem;">Ko-fi</div>
+          </div>
+        </a>
+
+        <a href="https://paypal.me/Sepoba" target="_blank" rel="noopener" class="donate-platform-btn paypal"
+          id="linkDonatePaypal">
+          <span style="font-size:1.2rem;">💳</span>
+          <div style="flex:1;text-align:left;">
+            <div style="font-weight:700;color:#ffffff;font-size:1.05rem;">PayPal</div>
+          </div>
+        </a>
+      </div>
+
+      <div style="margin-top:1.5rem;text-align:center;font-size:0.78rem;color:#64748b;" id="donateModalFooter">
+        ¡Muchas gracias por apoyar este proyecto hecho por y para la comunidad!
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="data_real_genshin.js"></script>
+  <script src="data_builds.js"></script>
+  <script src="i18n_dictionary.js"></script>
+  <script src="planner_real.js"></script>
+  <script src="farming_engine.js"></script>
+  <!-- Google Identity Services (GIS) para OAuth 2.0 y Google Drive API -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="gdrive_sync_engine.js"></script>
+  <script src="xlsx.full.min.js"></script>
+  <script src="wish_engine.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

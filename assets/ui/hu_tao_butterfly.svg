@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Filtro de resplandor espiritual de fuego -->
+    <filter id="flameGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#ff3366" flood-opacity="0.35" />
+    </filter>
+
+    <!-- Gradiente de Fuego Carmesí a Dorado Ámbar (Alas Principales) -->
+    <linearGradient id="fireWingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd166" />
+      <stop offset="25%" stop-color="#ff6b35" />
+      <stop offset="65%" stop-color="#ff3366" />
+      <stop offset="100%" stop-color="#9d0208" />
+    </linearGradient>
+
+    <!-- Gradiente de Pétalo de Flor de Ciruelo -->
+    <linearGradient id="plumPetalGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d90429" />
+      <stop offset="50%" stop-color="#ff4d6d" />
+      <stop offset="100%" stop-color="#ffb3c1" />
+    </linearGradient>
+
+    <!-- Gradiente del Cuerpo Espectral -->
+    <linearGradient id="spiritBodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffe6a7" />
+      <stop offset="35%" stop-color="#ff5400" />
+      <stop offset="80%" stop-color="#590d22" />
+      <stop offset="100%" stop-color="#2b0914" />
+    </linearGradient>
+
+    <!-- Gradiente de Alas Inferiores -->
+    <linearGradient id="lowerWingGrad" x1="30%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff7b00" />
+      <stop offset="55%" stop-color="#e01e37" />
+      <stop offset="100%" stop-color="#6f1d1b" />
+    </linearGradient>
+
+    <!-- Destello Central -->
+    <radialGradient id="coreGlow" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+      <stop offset="40%" stop-color="#ffd166" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#ff3366" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <g filter="url(#softShadow)">
+    <!-- ================= ALA SUPERIOR IZQUIERDA ================= -->
+    <g id="upperWingLeft">
+      <!-- Capa Base / Silueta Exterior Flotante -->
+      <path d="M 256,230 
+               C 230,170 170,90 100,75 
+               C 65,68 35,95 45,135 
+               C 55,175 90,215 135,245 
+               C 175,270 220,275 256,270 Z" 
+            fill="url(#fireWingGrad)" opacity="0.95" />
+
+      <!-- Llama Plumífero Superior (Puntas de llama de Hu Tao) -->
+      <path d="M 256,220 
+               C 220,150 160,80 115,70 
+               C 95,65 75,78 80,102 
+               C 88,140 130,185 180,218 
+               C 215,240 240,242 256,240 Z" 
+            fill="url(#plumPetalGrad)" />
+
+      <!-- Llama interior ardiente -->
+      <path d="M 256,215 
+               C 210,165 165,115 130,110 
+               C 115,108 105,120 110,135 
+               C 120,168 160,205 205,225 
+               C 230,236 248,235 256,230 Z" 
+            fill="#ffd166" opacity="0.8" />
+
+      <!-- Pétalo de flor de ciruelo en el ala -->
+      <circle cx="118" cy="148" r="6" fill="#ffffff" opacity="0.85" filter="url(#flameGlow)" />
+      <circle cx="152" cy="182" r="4.5" fill="#ffd166" opacity="0.75" />
+    </g>
+
+    <!-- ================= ALA SUPERIOR DERECHA (SIMÉTRICA) ================= -->
+    <g id="upperWingRight">
+      <!-- Capa Base / Silueta Exterior Flotante -->
+      <path d="M 256,230 
+               C 282,170 342,90 412,75 
+               C 447,68 477,95 467,135 
+               C 457,175 422,215 377,245 
+               C 337,270 292,275 256,270 Z" 
+            fill="url(#fireWingGrad)" opacity="0.95" />
+
+      <!-- Llama Plumífero Superior -->
+      <path d="M 256,220 
+               C 292,150 352,80 397,70 
+               C 417,65 437,78 432,102 
+               C 424,140 382,185 332,218 
+               C 297,240 272,242 256,240 Z" 
+            fill="url(#plumPetalGrad)" />
+
+      <!-- Llama interior ardiente -->
+      <path d="M 256,215 
+               C 302,165 347,115 382,110 
+               C 397,108 407,120 402,135 
+               C 392,168 352,205 307,225 
+               C 282,236 264,235 256,230 Z" 
+            fill="#ffd166" opacity="0.8" />
+
+      <!-- Pétalo de flor de ciruelo en el ala -->
+      <circle cx="394" cy="148" r="6" fill="#ffffff" opacity="0.85" filter="url(#flameGlow)" />
+      <circle cx="360" cy="182" r="4.5" fill="#ffd166" opacity="0.75" />
+    </g>
+
+    <!-- ================= ALA INFERIOR IZQUIERDA ================= -->
+    <g id="lowerWingLeft">
+      <path d="M 256,270 
+               C 215,280 145,290 120,340 
+               C 102,375 120,418 155,420 
+               C 185,422 225,385 242,345 
+               C 250,325 254,295 256,270 Z" 
+            fill="url(#lowerWingGrad)" />
+
+      <path d="M 256,275 
+               C 225,295 170,315 152,352 
+               C 142,374 152,398 172,398 
+               C 194,398 224,365 242,335 
+               C 248,318 253,292 256,275 Z" 
+            fill="url(#plumPetalGrad)" opacity="0.85" />
+
+      <!-- Chispas espectrales -->
+      <circle cx="165" cy="385" r="3.5" fill="#ffd166" opacity="0.9" />
+    </g>
+
+    <!-- ================= ALA INFERIOR DERECHA ================= -->
+    <g id="lowerWingRight">
+      <path d="M 256,270 
+               C 297,280 367,290 392,340 
+               C 410,375 392,418 357,420 
+               C 327,422 287,385 270,345 
+               C 262,325 258,295 256,270 Z" 
+            fill="url(#lowerWingGrad)" />
+
+      <path d="M 256,275 
+               C 287,295 342,315 360,352 
+               C 370,374 360,398 340,398 
+               C 318,398 288,365 270,335 
+               C 264,318 259,292 256,275 Z" 
+            fill="url(#plumPetalGrad)" opacity="0.85" />
+
+      <!-- Chispas espectrales -->
+      <circle cx="347" cy="385" r="3.5" fill="#ffd166" opacity="0.9" />
+    </g>
+
+    <!-- ================= ANTENAS ESPIRITUALES ================= -->
+    <!-- Antena Izquierda -->
+    <path d="M 252,210 
+             C 242,165 220,120 185,95 
+             C 178,90 172,96 178,102 
+             C 198,122 215,155 230,195 Z" 
+          fill="#ffd166" filter="url(#flameGlow)" />
+    <circle cx="180" cy="95" r="4.5" fill="#ffffff" filter="url(#flameGlow)" />
+
+    <!-- Antena Derecha -->
+    <path d="M 260,210 
+             C 270,165 292,120 327,95 
+             C 334,90 340,96 334,102 
+             C 314,122 297,155 282,195 Z" 
+          fill="#ffd166" filter="url(#flameGlow)" />
+    <circle cx="332" cy="95" r="4.5" fill="#ffffff" filter="url(#flameGlow)" />
+
+    <!-- ================= CUERPO CENTRAL DE OBSIDIANA Y FUEGO ================= -->
+    <!-- Núcleo ardiente de la mariposa -->
+    <path d="M 256,190 
+             C 264,205 268,235 266,275 
+             C 264,315 258,360 256,385 
+             C 254,360 248,315 246,275 
+             C 244,235 248,205 256,190 Z" 
+          fill="url(#spiritBodyGrad)" />
+
+    <!-- Cabeza espiritual -->
+    <circle cx="256" cy="205" r="8" fill="#ffd166" />
+    <circle cx="256" cy="205" r="4" fill="#ffffff" />
+
+    <!-- Resplandor central -->
+    <ellipse cx="256" cy="255" rx="32" ry="48" fill="url(#coreGlow)" />
+
+    <!-- Estela de brasas de Hu Tao (chispas flotantes) -->
+    <circle cx="256" cy="415" r="3.5" fill="#ffd166" opacity="0.9" filter="url(#flameGlow)" />
+    <circle cx="252" cy="440" r="2.5" fill="#ff6b35" opacity="0.75" />
+    <circle cx="260" cy="460" r="1.8" fill="#ff3366" opacity="0.6" />
+  </g>
+</svg>
