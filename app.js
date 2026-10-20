@@ -4276,7 +4276,7 @@ async function handleLoadRecentWishes() {
     if (progressWrapper) progressWrapper.style.display = "none";
     if (msgEl) {
       msgEl.style.color = "#f87171";
-      msgEl.innerHTML = `<img src="assets/ui/sparkle.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> ${err.message}<br><span style="font-size:0.75rem;color:#94a3b8;">Si abres la web directamente como archivo local (file://), arrastra <strong>deseos_recientes.json</strong> o <strong>deseos_genshin_601976801.json</strong> desde tu Escritorio a la pestaña de Archivos.</span>`;
+      msgEl.innerHTML = `<img src="assets/ui/sparkle.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> ${err.message}<br><span style="font-size:0.75rem;color:#94a3b8;">Si abres la web directamente como archivo local (file://), arrastra <strong>deseos_recientes.json</strong> o <strong>deseos_genshin_backup.json</strong> desde tu Escritorio a la pestaña de Archivos.</span>`;
     }
   }
 }
@@ -4318,7 +4318,7 @@ async function handleWishUrlImport() {
         throw new Error("No se encontraron tiradas válidas en los datos pegados.");
       }
 
-      const activeUid = importedWishes[0].uid || state.activeWishUid || "601976801";
+      const activeUid = importedWishes[0].uid || state.activeWishUid || "";
       state.activeWishUid = activeUid;
       WishEngine.setActiveAccountUid(activeUid);
       WishEngine.saveProfile({
