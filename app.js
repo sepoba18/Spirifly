@@ -4541,7 +4541,7 @@ async function handlePasteCsvImport() {
   if (!text) {
     if (msgEl) {
       msgEl.style.color = "#f87171";
-      msgEl.innerHTML = '<img src="assets/ui/sparkle.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> Por favor pega el texto copiado de Paimon.moe en el cuadro de texto.';
+      msgEl.innerHTML = '<img src="assets/ui/sparkle.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> Por favor pega el texto o CSV de tu historial en el cuadro de texto.';
     }
     return;
   }
@@ -5807,7 +5807,7 @@ async function handleSwitchProfile(newUid) {
 async function handleRenameActiveProfileUid() {
   if (typeof WishEngine === "undefined") return;
   const currentUid = state.activeWishUid;
-  const initialVal = (currentUid === "PaimonMoe_User" || currentUid === "default") ? "" : currentUid;
+  const initialVal = (currentUid === "PaimonMoe_User" || currentUid === "Spirifly_User" || currentUid === "default") ? "" : currentUid;
 
   const inputUid = prompt("Ingresa tu UID oficial de Genshin Impact (9 dígitos):", initialVal);
   if (!inputUid) return;

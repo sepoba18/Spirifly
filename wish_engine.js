@@ -554,13 +554,13 @@
         rawList.push(normalizeWishItem(item, ''));
       });
     }
-    // Caso D: Backup global de Teyvat Companion Pro con propiedad 'allWishes' o 'wishData'
+    // Caso D: Backup global con propiedad 'allWishes' o 'wishData'
     else if (parsed && parsed.allWishes && Array.isArray(parsed.allWishes)) {
       parsed.allWishes.forEach(function (item) {
         rawList.push(normalizeWishItem(item, ''));
       });
     } else {
-      throw new Error('Formato de deseos desconocido. Asegúrate de que sea un archivo UIGF v4.0, Excel o Paimon.moe.');
+      throw new Error('Formato de deseos desconocido. Asegúrate de que sea un archivo UIGF v4.0, Excel o CSV de historial.');
     }
 
     // Filtrar y eliminar duplicados por 'id'
@@ -627,7 +627,7 @@
         const id = 'pm_' + gacha + '_' + cleanTime + '_' + rollNum + '_' + idx;
 
         rawList.push({
-          uid: 'PaimonMoe_User',
+          uid: 'Spirifly_User',
           gacha_type: gacha,
           item_id: '',
           count: '1',
@@ -725,7 +725,7 @@
       const id = 'csv_' + gacha + '_' + cleanTime + '_' + rollVal + '_' + i;
 
       rawList.push({
-        uid: 'PaimonMoe_User',
+        uid: 'Spirifly_User',
         gacha_type: gacha,
         item_id: '',
         count: '1',

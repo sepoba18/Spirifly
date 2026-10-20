@@ -4,9 +4,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spirifly — Genshin Impact Farming, Inventory & Wish Tracker</title>
+  <title>Spirifly — Genshin Impact Farming, Inventory, Wish Tracker &amp; Builds</title>
   <meta name="description"
-    content="Spirifly: All-in-One Genshin Impact Hub synced with Google Drive. Visual Inventory Items & Flowers with Smart Synthesis (Seelie.me), Character & Weapon Talent Level Planner, Wish Counter (Paimon.moe) & Theorycrafting." />
+    content="Spirifly: All-in-One Genshin Impact Hub synced with Google Drive. Visual Inventory with Smart Synthesis, Character &amp; Weapon Planner, Real-time Farming, Wish Counter &amp; Character Builds." />
+
+  <!-- Open Graph / Meta / Instagram / WhatsApp / Discord / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Spirifly — Genshin Impact Farming, Inventory &amp; Wish Tracker" />
+  <meta property="og:description"
+    content="All-in-One Genshin Impact Hub synced with Google Drive. Visual Inventory, Smart Synthesis, Material Planner, Real-time Farming, Wish Counter and Character Builds." />
+  <meta property="og:image" content="https://sepoba18.github.io/Spirifly/assets/ui/logo_spirifly.jpg" />
+  <meta property="og:url" content="https://sepoba18.github.io/Spirifly/" />
+  <meta property="og:site_name" content="Spirifly" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Spirifly — Genshin Impact Farming, Inventory &amp; Wish Tracker" />
+  <meta name="twitter:description"
+    content="All-in-One Genshin Impact Hub synced with Google Drive. Visual Inventory, Smart Synthesis, Material Planner, Real-time Farming, Wish Counter and Character Builds." />
+  <meta name="twitter:image" content="https://sepoba18.github.io/Spirifly/assets/ui/logo_spirifly.jpg" />
   <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/ui/favicon-32x32.png?v=2" />
   <link rel="icon" type="image/png" sizes="16x16" href="assets/ui/favicon-16x16.png?v=2" />
@@ -82,7 +98,7 @@
 
       <div class="controls-right">
         <button class="ads-toggle-btn" id="adsToggleBtn" style="display:none;">Vista Anuncios AdSense: ON</button>
-        <button type="button" class="donate-btn" id="btnOpenDonateModal" title="Donación al proyecto Teyvat Companion">
+        <button type="button" class="donate-btn" id="btnOpenDonateModal" title="Donación al proyecto Spirifly">
           <span>☕</span> <span id="lblDonateBtn">Donación</span>
         </button>
         <select id="langSelect" class="lang-select" aria-label="Seleccionar idioma">
@@ -99,7 +115,7 @@
   <main class="container">
     <!-- Hero -->
     <section class="hero">
-      <h1 id="heroTitle">Ecosistema Integral Genshin Impact: Personajes, Inventario Inteligente y Theorycraft</h1>
+      <h1 id="heroTitle">Ecosistema Integral Genshin Impact: Personajes, Inventario Inteligente y Builds</h1>
     </section>
 
     <!-- Slot AdSense #1: Leaderboard Superior -->
@@ -116,7 +132,7 @@
     </aside>
 
     <!-- ==========================================================
-         PESTAÑA 1: INVENTARIO VISUAL (RÉPLICA EXACTA DE SEELIE.ME)
+         PESTAÑA 1: INVENTARIO VISUAL
          ========================================================== -->
     <section id="sec-inventory" class="tool-section">
       <!-- Barra Superior de Navegación del Inventario: Título + Pestañas de Categoría con Iconos + Acciones -->
@@ -173,7 +189,7 @@
       <!-- Feedback de Síntesis -->
       <div id="synthFeedbackMsg" class="seelie-inv-toast" style="display:none;"></div>
 
-      <!-- Barra Superior de Recursos Principales: 3 Filas como en Seelie.me -->
+      <!-- Barra Superior de Recursos Principales: 3 Filas -->
       <div class="seelie-top-currency-container" id="seelieTopResources"></div>
 
       <!-- Matriz Visual Completa de 508 Materiales Oficiales -->
@@ -181,10 +197,10 @@
     </section>
 
     <!-- ==========================================================
-         PESTAÑA PRINCIPAL: PERSONAJES (RÉPLICA EXACTA DE SEELIE.ME)
+         PESTAÑA PRINCIPAL: PERSONAJES
          ========================================================== -->
     <section id="sec-planner" class="tool-section">
-      <!-- Cabecera idéntica a Seelie.me: Título "Personajes" + Botón "Agregar" + Botón "Sync" -->
+      <!-- Cabecera: Título "Personajes" + Botón "Agregar" + Botón "Sync" -->
       <div class="seelie-char-topbar">
         <div class="seelie-char-title-group">
           <h2>Personajes y Armas</h2>
@@ -208,7 +224,7 @@
         </div>
       </div>
 
-      <!-- Barra de Filtros Seelie.me con Iconos Reales del Juego (5★ 4★ | 7 Elementos | 5 Tipos de Arma | Buscar) -->
+      <!-- Barra de Filtros con Iconos Reales del Juego (5★ 4★ | 7 Elementos | 5 Tipos de Arma | Buscar) -->
       <div class="seelie-filter-strip" id="mainCharFilterBar">
         <span class="seelie-filter-lbl">FILTRAR</span>
         <button class="seelie-icon-filter seelie-star-filter-5" data-main-rar="5" title="5 Estrellas">
@@ -527,7 +543,7 @@
                 </div>
               </div>
 
-              <!-- Popover de 14 Círculos idéntico a la captura de Seelie.me (Niveles sin ascensión vs Niveles ascendidos con estrella brillante) -->
+              <!-- Popover de 14 Círculos (Niveles sin ascensión vs Niveles ascendidos con estrella brillante) -->
               <div class="seelie-14-popover" id="charLevel14Popover">
                 <div class="seelie-14-popover-header">
                   <span class="seelie-14-popover-title" id="charLevel14PopoverTitle">Seleccionar Nivel Actual</span>
@@ -1173,10 +1189,10 @@
 
 
     <!-- ==========================================================
-         PESTAÑA 2: PLANIFICADOR DE FARMEO & RESINA (RÉPLICA EXACTA DE SEELIE.ME)
+         PESTAÑA 2: PLANIFICADOR DE FARMEO & RESINA
          ========================================================== -->
     <section id="sec-farming" class="tool-section">
-      <!-- 1. WIDGET SUPERIOR DE RESINA SEELIE.ME -->
+      <!-- 1. WIDGET SUPERIOR DE RESINA -->
       <div class="seelie-resin-hero-card">
         <div class="seelie-resin-hero-left">
           <!-- Contador interactivo de Resina Actual: 200 / 200 -->
@@ -1287,7 +1303,7 @@
         </div>
       </div>
 
-      <!-- 3. BARRA DE PESTAÑAS DE COSTE DE RESINA SEELIE.ME -->
+      <!-- 3. BARRA DE PESTAÑAS DE COSTE DE RESINA -->
       <div class="seelie-cost-tabs" id="seelieCostTabs">
         <button type="button" class="seelie-cost-tab active" data-seelie-tab="all">Toda</button>
         <button type="button" class="seelie-cost-tab" data-seelie-tab="0">
@@ -1357,7 +1373,7 @@
         </div>
       </div>
 
-      <!-- 1. BARRA MULTI-CUENTA ESTILO SEELIE CON PÍLDORAS DIRECTAS -->
+      <!-- 1. BARRA MULTI-CUENTA CON PÍLDORAS DIRECTAS -->
       <div class="seelie-account-bar">
         <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;flex:1;">
           <span
@@ -1602,7 +1618,7 @@
     </div>
   </footer>
 
-  <!-- MODAL DE CONFLICTO DE SINCRONIZACIÓN GOOGLE DRIVE (PIXEL-PERFECT SEELIE) -->
+  <!-- MODAL DE CONFLICTO DE SINCRONIZACIÓN GOOGLE DRIVE -->
   <div id="modalSyncConflict" class="seelie-modal-backdrop" role="dialog" aria-modal="true">
     <div class="seelie-conflict-dialog">
       <div class="seelie-conflict-header">

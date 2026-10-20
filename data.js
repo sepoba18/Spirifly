@@ -3,7 +3,7 @@ const ICON_CDN = "https://enka.network/ui/";
 const I18N = {
   es: {
     siteTitle: "Spirifly — Personajes, Inventario, Deseos y Builds",
-    heroTitle: "Ecosistema Integral Genshin Impact: Personajes, Inventario Inteligente y Theorycraft",
+    heroTitle: "Ecosistema Integral Genshin Impact: Personajes, Farmeo, Inventario y Builds",
     donateBtn: "Donación",
     adsToggle: "Vista Anuncios AdSense",
     adPlaceholderTitle: "Espacio Google AdSense (Vinculado a tu cuenta Google)",
@@ -170,7 +170,7 @@ const I18N = {
   },
   en: {
     siteTitle: "Spirifly — Characters, Inventory, Wishes & Builds",
-    heroTitle: "All-in-One Genshin Impact Hub: Characters, Smart Inventory & Theorycrafting",
+    heroTitle: "All-in-One Genshin Impact Hub: Characters, Smart Inventory & Builds",
     donateBtn: "Donation",
     adsToggle: "Preview AdSense Slots",
     adPlaceholderTitle: "Google AdSense Slot (Linked to your Google Account)",
@@ -337,7 +337,7 @@ const I18N = {
   },
   pt: {
     siteTitle: "Spirifly — Personagens, Inventário, Tiros e Builds",
-    heroTitle: "Ecossistema Genshin Impact: Personagens, Inventário Inteligente e Theorycraft",
+    heroTitle: "Ecossistema Genshin Impact: Personagens, Inventário Inteligente e Builds",
     donateBtn: "Apoiar",
     adsToggle: "Ver Espaços AdSense",
     adPlaceholderTitle: "Espaço Google AdSense (Vinculado à sua conta Google)",
@@ -504,7 +504,7 @@ const I18N = {
   },
   ja: {
     siteTitle: "Spirifly — キャラ育成・インベントリ・祈願履歴・ビルド",
-    heroTitle: "原神オールインワン拠点：キャラクター育成・スマートインベントリ・理論値ビルド",
+    heroTitle: "原神オールインワン拠点：キャラクター育成・スマートインベントリ・ビルドガイド",
     donateBtn: "支援する",
     adsToggle: "AdSense広告枠を表示",
     adPlaceholderTitle: "Google AdSense 広告枠（Googleアカウント連携）",
@@ -671,7 +671,7 @@ const I18N = {
   },
   ko: {
     siteTitle: "Spirifly — 캐릭터 육성, 인벤토리, 기원 카운터 & 빌드",
-    heroTitle: "원신 올인원 허브: 캐릭터 육성, 스마트 인벤토리 & 시어리크래프팅",
+    heroTitle: "원신 올인원 허브: 캐릭터 육성, 스마트 인벤토리 & 빌드 가이드",
     donateBtn: "후원하기",
     adsToggle: "AdSense 광고 보기",
     adPlaceholderTitle: "Google AdSense 광고 슬롯",
@@ -838,7 +838,7 @@ const I18N = {
   }
 };
 
-// RECURSOS SUPERIORES DEL INVENTARIO (Idéntico a la barra superior de la captura 3 de Seelie.me)
+// RECURSOS SUPERIORES DEL INVENTARIO
 const TOP_CURRENCY_ITEMS = [
   { id: "mora", name: "Mora", rarity: 3, icon: `${ICON_CDN}UI_ItemIcon_202.png`, fallback: "🪙", owned: 0 },
   { id: "dust_azoth", name: "Polvo de Azoth", rarity: 2, icon: `${ICON_CDN}UI_ItemIcon_104201.png`, fallback: "🧪", owned: 0 },
@@ -953,7 +953,7 @@ const INVENTORY_ITEMS = [
   { id: "loc_chrysanthemum", family: null, tier: 1, rarity: 1, cat: "local", name: "Crisantemo Resplandeciente (Natlan)", icon: `${ICON_CDN}UI_ItemIcon_101248.png`, owned: 0 }
 ];
 
-// PLANIFICADOR DE PERSONAJES Y ARMAS SEELIE.ME (Con requisitos por tier para que la Síntesis Inteligente proteja los materiales bajos)
+// PLANIFICADOR DE PERSONAJES Y ARMAS (Con requisitos por tier para que la Síntesis Inteligente proteja los materiales bajos)
 const DEFAULT_PLANNER_ITEMS = [
   {
     id: "plan_furina",
@@ -1037,7 +1037,7 @@ const DEFAULT_PLANNER_ITEMS = [
   }
 ];
 
-// CATALOGO DISPONIBLE PARA AÑADIR AL PLANIFICADOR SEELIE.ME
+// CATALOGO DISPONIBLE PARA AÑADIR AL PLANIFICADOR
 const CATALOG_TEMPLATES = {
   "Arlecchino": {
     type: "character", element: "Pyro", icon: `${ICON_CDN}UI_AvatarIcon_Arlecchino.png`,
@@ -1113,7 +1113,7 @@ const DEFAULT_WISH_DATA = {
   }
 };
 
-// DATOS PROFUNDOS DE THEORYCRAFTING CON SEPARACIÓN POR TIPO DE ESCALADO (HP / ATQ / DEF / EM)
+// DATOS PROFUNDOS DE BUILDS META CON SEPARACIÓN POR TIPO DE ESCALADO (HP / ATQ / DEF / EM)
 const THEORYCRAFT_DB = [
   {
     id: "furina",
