@@ -1,3 +1,32 @@
+
+function loadActiveAccountResin() {
+  const activeAcc = (typeof AccountManager !== "undefined") ? AccountManager.getActiveAccountId() : (localStorage.getItem("account") || "main");
+  try {
+    const raw = localStorage.getItem(`${activeAcc}-resin`);
+    if (raw) {
+      const d = JSON.parse(raw);
+      if (typeof d === "object" && d !== null) {
+        return { val: d.val !== undefined ? Number(d.val) : 200, updated: d.updated ? Number(d.updated) : Date.now() };
+      }
+    }
+  } catch (e) {}
+  if (activeAcc === "main") {
+    const legacyVal = parseInt(localStorage.getItem("teyvat_resin_val") || "200", 10);
+    const legacyTime = parseInt(localStorage.getItem("teyvat_resin_updated_time") || "0", 10);
+    return { val: !isNaN(legacyVal) ? legacyVal : 200, updated: legacyTime > 0 ? legacyTime : Date.now() };
+  }
+  return { val: 200, updated: Date.now() };
+}
+
+function saveActiveAccountResin(val, updatedTime) {
+  const activeAcc = (typeof AccountManager !== "undefined") ? AccountManager.getActiveAccountId() : (localStorage.getItem("account") || "main");
+  const data = { val: Math.max(0, Math.min(200, val)), updated: updatedTime || Date.now() };
+  localStorage.setItem(`${activeAcc}-resin`, JSON.stringify(data));
+  if (activeAcc === "main") {
+    localStorage.setItem("teyvat_resin_val", data.val);
+    localStorage.setItem("teyvat_resin_updated_time", data.updated);
+  }
+}
 /* =====================================================================
    METADATA DEL INVENTARIO OFICIAL SEELIE (508 MATERIALES + RECURSOS)
    ===================================================================== */
@@ -26,7 +55,7 @@ function safeParseLocal(key, fallback) {
 
 function getInitialRealOwned() {
   const activeAcc = (typeof AccountManager !== "undefined") ? AccountManager.getActiveAccountId() : (localStorage.getItem("account") || "main");
-  const saved = safeParseLocal(`${activeAcc}-inventory`, null) || safeParseLocal("teyvat_real_owned_v1", null);
+  const saved = safeParseLocal(`${activeAcc}-inventory`, null) || (activeAcc === "main" ? safeParseLocal("teyvat_real_owned_v1", null) : null);
   if (saved && typeof saved === "object" && Object.keys(saved).length > 0) {
     if (saved["223"] !== undefined && saved["113021"] === undefined) {
       saved["113021"] = saved["223"];
@@ -232,12 +261,12 @@ const state = {
   topCurrency: safeParseLocal("teyvat_top_currency", null) || getDefaultTopCurrency(),
   activePlans: (function() {
     const activeAcc = (typeof AccountManager !== "undefined") ? AccountManager.getActiveAccountId() : (localStorage.getItem("account") || "main");
-    const raw = safeParseLocal(`${activeAcc}-goals`, null) || safeParseLocal("teyvat_active_plans_v4", null);
+    const raw = safeParseLocal(`${activeAcc}-goals`, null) || (activeAcc === "main" ? safeParseLocal("teyvat_active_plans_v4", null) : []);
     if (Array.isArray(raw)) {
       const isDemoSet = raw.length <= 3 && raw.some(p => p.key === "Aino" || p.uid === "plan_aino_1");
       if (isDemoSet) {
         localStorage.setItem(`${activeAcc}-goals`, "[]");
-        localStorage.removeItem("teyvat_active_plans_v4");
+        if (activeAcc === "main") localStorage.removeItem("teyvat_active_plans_v4");
         return [];
       }
       return raw;
@@ -2059,7 +2088,9 @@ function initSeelieCharacterSystem() {
 function savePlansToStorage() {
   const activeAcc = (typeof AccountManager !== "undefined") ? AccountManager.getActiveAccountId() : (localStorage.getItem("account") || "main");
   localStorage.setItem(`${activeAcc}-goals`, JSON.stringify(state.activePlans));
-  localStorage.setItem("teyvat_active_plans_v4", JSON.stringify(state.activePlans));
+  if (activeAcc === "main") {
+    localStorage.setItem("teyvat_active_plans_v4", JSON.stringify(state.activePlans));
+  }
   try { triggerDriveSyncStamp(); } catch (e) { console.error(e); }
   try { renderCharacterWeaponPlanner(); } catch (e) { console.error(e); }
   try { renderVisualInventory(); } catch (e) { console.error(e); }
@@ -3608,14 +3639,16 @@ function getSeedWishesFromDefaultData() {
 async function renderWishesDashboard() {
   if (!document.getElementById("sec-wishes")) return;
 
-  // 1. Cargar deseos crudos si aún no están en memoria
-  if (!state.rawWishes || state.rawWishes.length === 0) {
-    if (typeof WishEngine !== "undefined") {
+  // 1. Cargar deseos crudos estrictamente para el UID de la cuenta activa
+  if (typeof WishEngine !== "undefined") {
+    if (state.activeWishUid && state.activeWishUid !== "default") {
       let stored = await WishEngine.loadWishesFromStorage(state.activeWishUid);
       state.rawWishes = stored || [];
     } else {
       state.rawWishes = [];
     }
+  } else {
+    state.rawWishes = [];
   }
 
   // 2. Procesar con WishEngine
@@ -4784,24 +4817,22 @@ function initFarmingEventsOnce() {
   farmingEventsInitialized = true;
 
   if (state.currentResin === undefined) {
-    const savedResin = parseInt(localStorage.getItem("teyvat_resin_val") || "200", 10);
-    const savedTime = parseInt(localStorage.getItem("teyvat_resin_updated_time") || "0", 10);
+    const rData = loadActiveAccountResin();
+    const savedResin = rData.val;
+    const savedTime = rData.updated;
     if (savedTime > 0 && savedResin < 200) {
-      // Calcular resina regenerada naturalmente (1 punto cada 8 minutos = 480,000 ms)
       const elapsedMs = Math.max(0, Date.now() - savedTime);
       const generated = Math.floor(elapsedMs / (8 * 60 * 1000));
       if (generated > 0) {
         state.currentResin = Math.min(200, savedResin + generated);
-        // El tiempo base avanza los bloques de 8 minutos consumidos
         const remainderMs = elapsedMs % (8 * 60 * 1000);
-        localStorage.setItem("teyvat_resin_val", state.currentResin);
-        localStorage.setItem("teyvat_resin_updated_time", Date.now() - remainderMs);
+        saveActiveAccountResin(state.currentResin, Date.now() - remainderMs);
       } else {
         state.currentResin = savedResin;
       }
     } else {
       state.currentResin = savedResin;
-      if (!savedTime) localStorage.setItem("teyvat_resin_updated_time", Date.now());
+      if (!savedTime) saveActiveAccountResin(state.currentResin, Date.now());
     }
   }
   if (state.farmingCostTab === undefined) {
@@ -4819,8 +4850,7 @@ function initFarmingEventsOnce() {
     btn.addEventListener("click", () => {
       const delta = parseInt(btn.dataset.resinDelta, 10) || 0;
       state.currentResin = Math.max(0, Math.min(200, (state.currentResin ?? 200) + delta));
-      localStorage.setItem("teyvat_resin_val", state.currentResin);
-      localStorage.setItem("teyvat_resin_updated_time", Date.now());
+      saveActiveAccountResin(state.currentResin, Date.now());
       updateResinWidgetUI();
     });
   });
@@ -4832,15 +4862,13 @@ function initFarmingEventsOnce() {
       const cur = state.currentResin ?? 200;
       if (cur >= 60) {
         state.currentResin = Math.max(0, cur - 60);
-        localStorage.setItem("teyvat_resin_val", state.currentResin);
-        localStorage.setItem("teyvat_resin_updated_time", Date.now());
+        saveActiveAccountResin(state.currentResin, Date.now());
         updateResinWidgetUI();
       } else {
         const add60 = confirm(`Tienes ${cur} de Resina (se requieren 60 para concentrar).\n\n¿Deseas consumir 1 Resina Frágil para restaurar +60?`);
         if (add60) {
           state.currentResin = Math.min(200, cur + 60);
-          localStorage.setItem("teyvat_resin_val", state.currentResin);
-          localStorage.setItem("teyvat_resin_updated_time", Date.now());
+          saveActiveAccountResin(state.currentResin, Date.now());
           updateResinWidgetUI();
         }
       }
@@ -4856,8 +4884,7 @@ function initFarmingEventsOnce() {
         const val = parseInt(input.trim(), 10);
         if (!isNaN(val)) {
           state.currentResin = Math.max(0, Math.min(200, val));
-          localStorage.setItem("teyvat_resin_val", state.currentResin);
-          localStorage.setItem("teyvat_resin_updated_time", Date.now());
+          saveActiveAccountResin(state.currentResin, Date.now());
           updateResinWidgetUI();
         }
       }
@@ -4908,8 +4935,9 @@ function updateResinWidgetUI() {
   const condKpi = document.getElementById("seelieCurCondKpi");
 
   // Si hay resina menor a 200 y tiempo guardado, computar avance en tiempo real
-  const savedTime = parseInt(localStorage.getItem("teyvat_resin_updated_time") || "0", 10);
-  let cur = state.currentResin !== undefined ? state.currentResin : 200;
+  const rData = loadActiveAccountResin();
+  const savedTime = rData.updated;
+  let cur = state.currentResin !== undefined ? state.currentResin : rData.val;
   let remainingMsToNext = 8 * 60 * 1000;
 
   if (savedTime > 0 && cur < 200) {

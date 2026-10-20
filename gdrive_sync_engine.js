@@ -257,62 +257,80 @@
       const effectiveUid = targetUid || "default";
       localStorage.setItem("teyvat_active_wish_uid", effectiveUid);
 
-      // Sincronizar estado global si existe (app.js)
+      // Sincronizar estado global de forma aislada e independiente
       if (typeof state !== "undefined") {
         state.account = targetId;
         state.activeWishUid = effectiveUid;
+        state.rawWishes = []; // Limpieza de memoria inmediata
 
-        // Cargar objetivos / planes de la nueva cuenta
+        // 1. Cargar objetivos / planes aislados de esta cuenta
         const rawGoals = localStorage.getItem(`${targetId}-goals`);
         try {
-          const parsed = rawGoals ? JSON.parse(rawGoals) : [];
+          const parsed = rawGoals ? JSON.parse(rawGoals) : (targetId === "main" ? JSON.parse(localStorage.getItem("teyvat_active_plans_v4") || "[]") : []);
           const isDemoSet = Array.isArray(parsed) && parsed.length <= 3 && parsed.some(p => p.key === "Aino" || p.uid === "plan_aino_1");
           if (isDemoSet) {
             state.activePlans = [];
             localStorage.setItem(`${targetId}-goals`, "[]");
           } else {
-            state.activePlans = parsed;
+            state.activePlans = Array.isArray(parsed) ? parsed : [];
           }
         } catch (e) {
           state.activePlans = [];
         }
-        localStorage.setItem("teyvat_active_plans_v4", JSON.stringify(state.activePlans));
+        if (targetId === "main") {
+          localStorage.setItem("teyvat_active_plans_v4", JSON.stringify(state.activePlans));
+        }
 
-        // Cargar inventario de la nueva cuenta
+        // 2. Cargar inventario aislado de esta cuenta
         const rawInv = localStorage.getItem(`${targetId}-inventory`);
         try {
-          const invData = rawInv ? JSON.parse(rawInv) : {};
+          const invData = rawInv ? JSON.parse(rawInv) : (targetId === "main" ? JSON.parse(localStorage.getItem("teyvat_real_owned_v1") || "{}") : {});
           state.realOwned = Object.assign({}, typeof DEFAULT_SEELIE_OWNED !== "undefined" ? DEFAULT_SEELIE_OWNED : {}, invData);
         } catch (e) {
           state.realOwned = Object.assign({}, typeof DEFAULT_SEELIE_OWNED !== "undefined" ? DEFAULT_SEELIE_OWNED : {});
         }
-        localStorage.setItem("teyvat_real_owned_v1", JSON.stringify(state.realOwned));
+        if (targetId === "main") {
+          localStorage.setItem("teyvat_real_owned_v1", JSON.stringify(state.realOwned));
+        }
 
-        // Cargar ajustes (AR, WL, Servidor)
+        // 3. Cargar ajustes (AR, WL, Servidor)
         state.accountSettings = getActiveAccountSettings();
+
+        // 4. Cargar resina aislada de esta cuenta
+        if (typeof loadActiveAccountResin === "function") {
+          const rData = loadActiveAccountResin();
+          state.currentResin = rData.val;
+        }
+      }
+
+      // 5. Cargar deseos aislados de esta cuenta
+      if (typeof WishEngine !== "undefined") {
+        WishEngine.setActiveAccountUid(effectiveUid);
+        const p = (effectiveUid && effectiveUid !== "default")
+          ? WishEngine.loadWishesFromStorage(effectiveUid)
+          : Promise.resolve([]);
+
+        p.then((wishes) => {
+          if (typeof state !== "undefined") state.rawWishes = wishes || [];
+          if (typeof renderWishesDashboard === "function") {
+            try { Promise.resolve(renderWishesDashboard()).catch(() => {}); } catch (e) {}
+          }
+          if (typeof renderProfileManager === "function") {
+            try { renderProfileManager(); } catch (e) {}
+          }
+        }).catch(() => {
+          if (typeof state !== "undefined") state.rawWishes = [];
+        });
+      } else if (typeof renderWishesDashboard === "function") {
+        try { Promise.resolve(renderWishesDashboard()).catch(() => {}); } catch (e) {}
       }
 
       // Re-renderizar interfaces
       if (typeof renderCharacterWeaponPlanner === "function") renderCharacterWeaponPlanner();
       if (typeof renderVisualInventory === "function") renderVisualInventory();
       if (typeof renderFarming === "function") renderFarming();
+      if (typeof updateResinWidgetUI === "function") updateResinWidgetUI();
       if (typeof renderTopCurrencySection === "function") renderTopCurrencySection();
-      if (typeof WishEngine !== "undefined") {
-        WishEngine.setActiveAccountUid(effectiveUid);
-        if (typeof state !== "undefined") {
-          WishEngine.loadWishesFromStorage(effectiveUid).then((wishes) => {
-            state.rawWishes = wishes || [];
-            if (typeof renderWishesDashboard === "function") {
-              try { Promise.resolve(renderWishesDashboard()).catch(() => {}); } catch (e) {}
-            }
-            if (typeof renderProfileManager === "function") {
-              try { renderProfileManager(); } catch (e) {}
-            }
-          }).catch(() => {});
-        }
-      } else if (typeof renderWishesDashboard === "function") {
-        try { Promise.resolve(renderWishesDashboard()).catch(() => {}); } catch (e) {}
-      }
       if (typeof renderProfileManager === "function") {
         try { renderProfileManager(); } catch (e) {}
       }
@@ -466,12 +484,18 @@
       if (typeof state === "undefined") return;
       if (state.activePlans) {
         localStorage.setItem(`${accId}-goals`, JSON.stringify(state.activePlans));
-        // Mantener compatibilidad retroactiva
-        localStorage.setItem("teyvat_active_plans_v4", JSON.stringify(state.activePlans));
+        if (accId === "main") {
+          localStorage.setItem("teyvat_active_plans_v4", JSON.stringify(state.activePlans));
+        }
       }
       if (state.realOwned) {
         localStorage.setItem(`${accId}-inventory`, JSON.stringify(state.realOwned));
-        localStorage.setItem("teyvat_real_owned_v1", JSON.stringify(state.realOwned));
+        if (accId === "main") {
+          localStorage.setItem("teyvat_real_owned_v1", JSON.stringify(state.realOwned));
+        }
+      }
+      if (typeof saveActiveAccountResin === "function" && state.currentResin !== undefined) {
+        saveActiveAccountResin(state.currentResin, Date.now());
       }
     }
   }

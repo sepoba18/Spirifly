@@ -650,7 +650,9 @@ function getRealOwned(matId) {
 function saveRealOwned() {
   const activeAcc = (typeof AccountManager !== "undefined") ? AccountManager.getActiveAccountId() : "main";
   localStorage.setItem(`${activeAcc}-inventory`, JSON.stringify(state.realOwned));
-  localStorage.setItem("teyvat_real_owned_v1", JSON.stringify(state.realOwned));
+  if (activeAcc === "main") {
+    localStorage.setItem("teyvat_real_owned_v1", JSON.stringify(state.realOwned));
+  }
   if (typeof triggerDriveSyncStamp === "function") {
     triggerDriveSyncStamp();
   }
