@@ -967,6 +967,10 @@
       let remotePayload = null;
 
       if (!accessToken) {
+        if (localStorage.getItem("teyvat_drive_linked") === "true") {
+          connectGoogleDrive();
+          return;
+        }
         if (typeof showSynthToast === "function") {
           showSynthToast("Modo local activo. Conecta Google Drive para sincronizar.");
         }
