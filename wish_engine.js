@@ -763,12 +763,10 @@
     'garrote del debate': 'garrote del debate',
     'cool steel': 'hoja fria',
     'hoja fria': 'hoja fria',
-    'hoja fría': 'hoja fria',
     'harbinger of dawn': 'espada del alba',
     'espada del alba': 'espada del alba',
     'magic guide': 'guia magica',
     'guia magica': 'guia magica',
-    'guía mágica': 'guia magica',
     'thrilling tales of dragon slayers': 'cuentos de cazadores de dragones',
     'cuentos de cazadores de dragones': 'cuentos de cazadores de dragones',
     'emerald orb': 'orbe esmeralda',
@@ -779,20 +777,90 @@
     'gran espada sangrienta': 'gran espada sangrienta',
     'ferrous shadow': 'sombra ferrea',
     'sombra ferrea': 'sombra ferrea',
-    'sombra férrea': 'sombra ferrea',
-    'skyrider sword': 'espada de jinete del viento',
-    'espada de jinete del viento': 'espada de jinete del viento',
-    'raven bow': 'arco del cuervo',
-    'arco del cuervo': 'arco del cuervo',
+    'skyrider sword': 'espada surcacielos',
+    'espada de jinete del viento': 'espada surcacielos',
+    'espada surcacielos': 'espada surcacielos',
+    'raven bow': 'arco de cuervo',
+    'arco del cuervo': 'arco de cuervo',
+    'arco de cuervo': 'arco de cuervo',
     'sharpshooter\'s oath': 'juramento del arquero',
     'sharpshooters oath': 'juramento del arquero',
     'juramento del arquero': 'juramento del arquero',
     'slingshot': 'tirachinas',
     'tirachinas': 'tirachinas',
 
+    // Armas 4★
+    'the stringless': 'ultimo acorde',
+    'ultimo acorde': 'ultimo acorde',
+    'sacrificial fragments': 'memorias de sacrificios',
+    'memorias de sacrificios': 'memorias de sacrificios',
+    'favonius codex': 'codice de favonius',
+    'codice de favonius': 'codice de favonius',
+    'lion\'s roar': 'rugido del leon',
+    'lions roar': 'rugido del leon',
+    'rugido del leon': 'rugido del leon',
+    'eye of perception': 'ojo de la perspicacia',
+    'ojo de la perspicacia': 'ojo de la perspicacia',
+    'sacrificial bow': 'arco del sacrificio',
+    'arco del sacrificio': 'arco del sacrificio',
+    'favonius lance': 'lanza de favonius',
+    'lanza de favonius': 'lanza de favonius',
+    'dragon\'s bane': 'perdicion del dragon',
+    'dragons bane': 'perdicion del dragon',
+    'perdicion del dragon': 'perdicion del dragon',
+    'favonius sword': 'espada de favonius',
+    'espada de favonius': 'espada de favonius',
+    'rainslasher': 'segadora de la lluvia',
+    'segadora de la lluvia': 'segadora de la lluvia',
+    'the widsith': 'sinfonia de los merodeadores',
+    'sinfonia de los merodeadores': 'sinfonia de los merodeadores',
+    'favonius greatsword': 'gran espada de favonius',
+    'gran espada de favonius': 'gran espada de favonius',
+    'favonius warbow': 'arco de favonius',
+    'arco de favonius': 'arco de favonius',
+    'the flute': 'flauta',
+    'flauta': 'flauta',
+    'sacrificial greatsword': 'gran espada de sacrificio',
+    'gran espada de sacrificio': 'gran espada de sacrificio',
+    'sacrificial sword': 'espada de sacrificio',
+    'espada de sacrificio': 'espada de sacrificio',
+    'the bell': 'espada del tiempo',
+    'espada del tiempo': 'espada del tiempo',
+    'winter\'s heavy heart': 'corazon del invierno',
+    'winters heavy heart': 'corazon del invierno',
+    'corazon del invierno': 'corazon del invierno',
+    'windblume ode': 'estribillo del viento',
+    'breezeborne refrain': 'estribillo del viento',
+    'estribillo del viento': 'estribillo del viento',
+    'new bough': 'nueva rama',
+    'nueva rama': 'nueva rama',
+
     // Personajes y variantes de escritura
     'sacarosa': 'sucrose',
     'sucrose': 'sucrose',
+    'barbara': 'barbara',
+    'bárbara': 'barbara',
+    'faruzan': 'faruzan',
+    'faruzán': 'faruzan',
+    'freminet': 'freminet',
+    'fréminet': 'freminet',
+    'ifa': 'ifa',
+    'ifá': 'ifa',
+    'alyosha': 'aliosha',
+    'aliosha': 'aliosha',
+    'columbina': 'colombina',
+    'colombina': 'colombina',
+    'linnea': 'linnea',
+    'linnéa': 'linnea',
+    'lan yan': 'lan yan',
+    'lanyan': 'lan yan',
+    'iansan': 'iansan',
+    'iansán': 'iansan',
+    'nefer': 'nefer',
+    'néfer': 'nefer',
+    'escoffier': 'escoffier',
+    'alrecchino': 'arlecchino',
+    'arrecchino': 'arlecchino',
     'alhacen': 'alhaitham',
     'alhacén': 'alhaitham',
     'alhaitham': 'alhaitham',
@@ -804,9 +872,15 @@
     'tighnari': 'tighnari',
     'keching': 'keqing',
     'keqing': 'keqing',
+    'xingchiu': 'xingqiu',
+    'xingqiu': 'xingqiu',
+    'ninguang': 'ningguang',
+    'ningguang': 'ningguang',
     'mizuki': 'yumemizuki mizuki',
     'mizuki yumemizuki': 'yumemizuki mizuki',
-    'yumemizuki mizuki': 'yumemizuki mizuki'
+    'yumemizuki mizuki': 'yumemizuki mizuki',
+    'skyward pride': 'orgullo celestial',
+    'orgullo celestial': 'orgullo celestial'
   };
 
   function getCanonicalGachaType(gachaType) {
@@ -818,7 +892,8 @@
   function getCanonicalItemName(name) {
     if (!name) return '';
     const clean = String(name).trim().toLowerCase()
-      .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/['’]/g, '');
     return NAME_CANON_MAP[clean] || clean;
   }
 
@@ -903,78 +978,85 @@
       };
     }
 
-    // 1. Indexar los deseos existentes
+    // 1. Indexar los deseos existentes en cubetas por banner y marca de tiempo
     const sortedExisting = sortWishesAscending(existing);
     const existingOfficialIds = new Set();
-    const existingSignatures = new Map(); // fullSig -> índice en mergedList
-    const existingOrdinalTracker = new Map(); // groupKey -> count
+    const timeBuckets = new Map(); // bucketKey -> Array of { item, matched: bool }
     const mergedList = [];
 
     for (let i = 0; i < sortedExisting.length; i++) {
       const item = Object.assign({}, sortedExisting[i]);
-      if (isOfficialHoYoId(item.id)) {
-        existingOfficialIds.add(String(item.id));
+      const idStr = String(item.id || '').trim();
+      if (isOfficialHoYoId(idStr)) {
+        existingOfficialIds.add(idStr);
       }
 
       const gacha = getCanonicalGachaType(item.gacha_type);
       const timeStr = String(item.time || '').trim();
-      const canonName = getCanonicalItemName(item.name);
-      const groupKey = `${gacha}|${timeStr}|${canonName}`;
+      const bucketKey = `${gacha}|${timeStr}`;
 
-      const currOrdinal = (existingOrdinalTracker.get(groupKey) || 0) + 1;
-      existingOrdinalTracker.set(groupKey, currOrdinal);
-
-      const fullSig = `${groupKey}|${currOrdinal}`;
-      existingSignatures.set(fullSig, mergedList.length);
-
+      if (!timeBuckets.has(bucketKey)) {
+        timeBuckets.set(bucketKey, []);
+      }
+      timeBuckets.get(bucketKey).push({ item: item, matched: false });
       mergedList.push(item);
     }
 
     // 2. Procesar incoming wishes (ordenados cronológicamente)
     const sortedIncoming = sortWishesAscending(incoming);
-    const incomingOrdinalTracker = new Map();
     let addedCount = 0;
     let duplicatesCount = 0;
 
     for (let i = 0; i < sortedIncoming.length; i++) {
       const newItem = Object.assign({}, sortedIncoming[i]);
+      const idStr = String(newItem.id || '').trim();
+      const hasOfficial = isOfficialHoYoId(idStr);
+
+      // A) Coincidencia directa por ID oficial de HoYoverse
+      if (hasOfficial && existingOfficialIds.has(idStr)) {
+        duplicatesCount++;
+        continue;
+      }
+
       const gacha = getCanonicalGachaType(newItem.gacha_type);
       const timeStr = String(newItem.time || '').trim();
-      const canonName = getCanonicalItemName(newItem.name);
-      const groupKey = `${gacha}|${timeStr}|${canonName}`;
+      const bucketKey = `${gacha}|${timeStr}`;
 
-      const currOrdinal = (incomingOrdinalTracker.get(groupKey) || 0) + 1;
-      incomingOrdinalTracker.set(groupKey, currOrdinal);
+      const bucket = timeBuckets.get(bucketKey);
+      let matchedEntry = null;
 
-      const fullSig = `${groupKey}|${currOrdinal}`;
+      if (bucket && bucket.length > 0) {
+        const incomingCanon = getCanonicalItemName(newItem.name);
 
-      // A) ¿Coincide por ID oficial de HoYoverse?
-      if (isOfficialHoYoId(newItem.id) && existingOfficialIds.has(String(newItem.id))) {
-        duplicatesCount++;
-        continue;
+        // Prioridad 1: Coincidencia por nombre canónico (resuelve nombres inglés/español)
+        let idx = bucket.findIndex(e => !e.matched && getCanonicalItemName(e.item.name) === incomingCanon);
+
+        // Prioridad 2: Respaldo por rareza (rank_type) en el mismo segundo de la multi-tirada
+        if (idx === -1) {
+          idx = bucket.findIndex(e => !e.matched && String(e.item.rank_type) === String(newItem.rank_type));
+        }
+
+        if (idx !== -1) {
+          matchedEntry = bucket[idx];
+          matchedEntry.matched = true;
+        }
       }
 
-      // B) ¿Coincide por Firma Semántica (Banner + Timestamp al segundo + Nombre + Ordinal de multi)?
-      if (existingSignatures.has(fullSig)) {
-        const existingIdx = existingSignatures.get(fullSig);
-        const existingItem = mergedList[existingIdx];
-
-        // Si el existente tenía ID sintético y el entrante tiene ID oficial de HoYoverse, lo enriquecemos
-        if (!isOfficialHoYoId(existingItem.id) && isOfficialHoYoId(newItem.id)) {
-          existingItem.id = String(newItem.id);
-          existingOfficialIds.add(String(newItem.id));
+      if (matchedEntry) {
+        // Enriquecer el registro existente con el ID oficial de HoYoverse si antes era sintético
+        if (hasOfficial && !isOfficialHoYoId(matchedEntry.item.id)) {
+          matchedEntry.item.id = idStr;
+          existingOfficialIds.add(idStr);
         }
         duplicatesCount++;
-        continue;
+      } else {
+        // C) Es una tirada NUEVA: Agregarla
+        if (hasOfficial) {
+          existingOfficialIds.add(idStr);
+        }
+        mergedList.push(newItem);
+        addedCount++;
       }
-
-      // C) Es una tirada NUEVA: Agregarla
-      mergedList.push(newItem);
-      if (isOfficialHoYoId(newItem.id)) {
-        existingOfficialIds.add(String(newItem.id));
-      }
-      existingSignatures.set(fullSig, mergedList.length - 1);
-      addedCount++;
     }
 
     const finalSorted = sortWishesAscending(mergedList);
@@ -1365,6 +1447,7 @@
     importFromUniversalJSON: importFromUniversalJSON,
     importFromPaimonMoeXLSX: importFromPaimonMoeXLSX,
     importFromPaimonMoeCSV: importFromPaimonMoeCSV,
+    deduplicateWishes: deduplicateWishes,
     mergeWishes: mergeWishes,
     mergeWishesDetailed: mergeWishesDetailed,
 
