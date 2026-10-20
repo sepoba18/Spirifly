@@ -12,6 +12,38 @@
   <link rel="icon" type="image/png" sizes="16x16" href="assets/ui/favicon-16x16.png?v=2" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/ui/apple-touch-icon.png?v=2" />
   <link rel="stylesheet" href="styles.css" />
+  <!-- Script anti-flicker inmediato para evitar parpadeo al recargar pestañas -->
+  <script>
+    (function () {
+      try {
+        var hash = (window.location.hash || "").replace("#", "").replace("sec-", "");
+        var tab = hash || localStorage.getItem("spirifly_active_tab") || "planner";
+        var valid = ["planner", "farming", "inventory", "wishes", "theory", "sync"];
+        if (valid.indexOf(tab) === -1) tab = "planner";
+        document.documentElement.setAttribute("data-active-tab", tab);
+      } catch (e) { }
+    })();
+  </script>
+  <style>
+    html[data-active-tab="planner"] #sec-planner,
+    html[data-active-tab="farming"] #sec-farming,
+    html[data-active-tab="inventory"] #sec-inventory,
+    html[data-active-tab="wishes"] #sec-wishes,
+    html[data-active-tab="theory"] #sec-theory,
+    html[data-active-tab="sync"] #sec-sync {
+      display: block !important;
+    }
+    html[data-active-tab="planner"] [data-tab="planner"],
+    html[data-active-tab="farming"] [data-tab="farming"],
+    html[data-active-tab="inventory"] [data-tab="inventory"],
+    html[data-active-tab="wishes"] [data-tab="wishes"],
+    html[data-active-tab="theory"] [data-tab="theory"],
+    html[data-active-tab="sync"] [data-tab="sync"] {
+      background: #2563eb !important;
+      color: #ffffff !important;
+      border-color: #3b82f6 !important;
+    }
+  </style>
   <!-- Google Analytics 4 (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3F1TQSWB0"></script>
   <script>
@@ -40,7 +72,7 @@
       </div>
 
       <nav class="nav-tabs">
-        <button class="nav-btn active" data-tab="planner" id="navPlanner">Personajes y Armas</button>
+        <button class="nav-btn" data-tab="planner" id="navPlanner">Personajes y Armas</button>
         <button class="nav-btn" data-tab="farming" id="navFarming">Farmeo</button>
         <button class="nav-btn" data-tab="inventory" id="navInventory">Inventario</button>
         <button class="nav-btn" data-tab="wishes" id="navWishes">Contador de Deseos</button>
@@ -151,7 +183,7 @@
     <!-- ==========================================================
          PESTAÑA PRINCIPAL: PERSONAJES (RÉPLICA EXACTA DE SEELIE.ME)
          ========================================================== -->
-    <section id="sec-planner" class="tool-section active">
+    <section id="sec-planner" class="tool-section">
       <!-- Cabecera idéntica a Seelie.me: Título "Personajes" + Botón "Agregar" + Botón "Sync" -->
       <div class="seelie-char-topbar">
         <div class="seelie-char-title-group">
@@ -1767,14 +1799,14 @@
   <script src="data_real_genshin.js"></script>
   <script src="data_builds.js"></script>
   <script src="i18n_dictionary.js"></script>
-  <script src="planner_real.js?v=2.6.1"></script>
-  <script src="farming_engine.js?v=2.6.1"></script>
+  <script src="planner_real.js?v=2.6.2"></script>
+  <script src="farming_engine.js?v=2.6.2"></script>
   <!-- Google Identity Services (GIS) para OAuth 2.0 y Google Drive API -->
   <script src="https://accounts.google.com/gsi/client" async defer></script>
-  <script src="gdrive_sync_engine.js?v=2.6.1"></script>
+  <script src="gdrive_sync_engine.js?v=2.6.2"></script>
   <script src="xlsx.full.min.js"></script>
-  <script src="wish_engine.js?v=2.6.1"></script>
-  <script src="app.js?v=2.6.1"></script>
+  <script src="wish_engine.js?v=2.6.2"></script>
+  <script src="app.js?v=2.6.2"></script>
 </body>
 
 </html>

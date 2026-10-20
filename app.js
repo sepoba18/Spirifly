@@ -195,7 +195,16 @@ const IS_ADMIN_VIEW = new URLSearchParams(window.location.search).get("admin") =
 
 const state = {
   lang: localStorage.getItem("teyvat_lang") || "es",
-  activeTab: "planner",
+  activeTab: (() => {
+    try {
+      const hash = (window.location.hash || "").replace("#", "").replace("sec-", "");
+      const tab = hash || localStorage.getItem("spirifly_active_tab") || "planner";
+      const valid = ["planner", "farming", "inventory", "wishes", "theory", "sync"];
+      return valid.includes(tab) ? tab : "planner";
+    } catch (e) {
+      return "planner";
+    }
+  })(),
   invCategory: "all",
   invSearch: "",
   invOnlyNeeded: Boolean(safeParseLocal("teyvat_inv_only_needed", false)),
@@ -520,6 +529,15 @@ function initApp() {
     renderAll();
   });
 
+  // Sincronizar estado visual de navegación inicial sin parpadeos
+  document.querySelectorAll(".nav-btn").forEach((b) => {
+    b.classList.toggle("active", b.dataset.tab === state.activeTab);
+  });
+  document.querySelectorAll(".tool-section").forEach((sec) => {
+    sec.classList.toggle("active", sec.id === `sec-${state.activeTab}`);
+  });
+  document.documentElement.setAttribute("data-active-tab", state.activeTab);
+
   document.querySelectorAll(".nav-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       state.activeTab = btn.dataset.tab;
@@ -529,6 +547,7 @@ function initApp() {
       if (history.replaceState) {
         history.replaceState(null, null, `#${state.activeTab}`);
       }
+      document.documentElement.setAttribute("data-active-tab", state.activeTab);
       document.querySelectorAll(".nav-btn").forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
       document.querySelectorAll(".tool-section").forEach((sec) => {
@@ -734,15 +753,15 @@ function initApp() {
   loadCharacterRecommendedStats(state.tcCharKey);
   renderAll();
 
-  const initialHash = (window.location.hash || "").replace("#", "").replace("sec-", "");
-  let tabToActivate = initialHash;
-  if (!tabToActivate) {
-    try {
-      tabToActivate = localStorage.getItem("spirifly_active_tab");
-    } catch (e) {}
-  }
-  if (tabToActivate && document.querySelector(`[data-tab="${tabToActivate}"]`)) {
-    document.querySelector(`[data-tab="${tabToActivate}"]`).click();
+  // Renderizado específico según la pestaña activa inicial
+  if (state.activeTab === "inventory") {
+    renderVisualInventory();
+  } else if (state.activeTab === "farming") {
+    renderFarming();
+  } else if (state.activeTab === "wishes") {
+    renderWishesDashboard();
+  } else if (state.activeTab === "theory") {
+    renderTheorycraft();
   }
 
   window.addEventListener("hashchange", () => {
