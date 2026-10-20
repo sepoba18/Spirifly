@@ -1717,10 +1717,17 @@
         <img src="assets/ui/sparkle.svg" style="width:18px;height:18px;" alt="" />
         Nueva Cuenta
       </h3>
-      <p>Ingresa un nombre o identificador para tu nueva cuenta (ej. <em>Secundaria</em>, <em>América F2P</em> o tu
-        UID):</p>
-      <input type="text" id="inputNewAccountName" class="input-field" placeholder="Nombre de la cuenta (ej. Secundaria)"
-        maxlength="32" style="width:100%;font-weight:700;font-size:1rem;margin-bottom:0.4rem;" />
+      <p style="font-size:0.86rem;color:var(--text-muted);margin-bottom:0.85rem;">Ingresa el nombre y el UID del juego para aislar metas, inventario y deseos de forma independiente:</p>
+      <div style="margin-bottom:0.75rem;">
+        <label style="display:block;font-size:0.78rem;font-weight:700;color:var(--gold-bright);margin-bottom:0.25rem;">Nombre de la Cuenta:</label>
+        <input type="text" id="inputNewAccountName" class="input-field" placeholder="Nombre de la cuenta (ej. Secundaria, América F2P)"
+          maxlength="32" style="width:100%;font-weight:700;font-size:0.95rem;" />
+      </div>
+      <div style="margin-bottom:1.1rem;">
+        <label style="display:block;font-size:0.78rem;font-weight:700;color:var(--gold-bright);margin-bottom:0.25rem;">UID de Genshin Impact (opcional):</label>
+        <input type="text" id="inputNewAccountUid" class="input-field" placeholder="UID del juego (ej. 601976801 o dejar en blanco)"
+          maxlength="12" style="width:100%;font-weight:700;font-size:0.95rem;font-family:Consolas,monospace;" />
+      </div>
       <div class="dialog-actions">
         <button type="button" class="action-btn secondary" id="btnCancelAddAccount">Cancelar</button>
         <button type="button" class="action-btn" id="btnConfirmAddAccount">Crear Cuenta</button>
@@ -1728,17 +1735,29 @@
     </div>
   </div>
 
-  <!-- MODAL DE REBAUTIZAR CUENTA -->
+  <!-- MODAL DE EDITAR / REBAUTIZAR CUENTA -->
   <div id="modalRenameAccount" class="seelie-modal-backdrop" role="dialog" aria-modal="true">
     <div class="seelie-dialog-small">
-      <h3>Rebautizar Cuenta</h3>
-      <p>Asigna un nombre descriptivo para identificar esta cuenta en el selector:</p>
-      <input type="text" id="inputRenameAccountName" class="input-field"
-        placeholder="Nombre de la cuenta (ej. Principal, Secundaria, FreeToPlay)" maxlength="32"
-        style="width:100%;font-weight:700;" />
+      <h3 style="color:#60a5fa;display:flex;align-items:center;gap:0.45rem;">
+        <img src="assets/ui/clipboard.svg" style="width:18px;height:18px;" alt="" />
+        Editar Cuenta
+      </h3>
+      <p style="font-size:0.86rem;color:var(--text-muted);margin-bottom:0.85rem;">Actualiza el nombre descriptivo y el UID asignado a esta cuenta:</p>
+      <div style="margin-bottom:0.75rem;">
+        <label style="display:block;font-size:0.78rem;font-weight:700;color:var(--gold-bright);margin-bottom:0.25rem;">Nombre de la Cuenta:</label>
+        <input type="text" id="inputRenameAccountName" class="input-field"
+          placeholder="Nombre de la cuenta (ej. Principal, Secundaria)" maxlength="32"
+          style="width:100%;font-weight:700;font-size:0.95rem;" />
+      </div>
+      <div style="margin-bottom:1.1rem;">
+        <label style="display:block;font-size:0.78rem;font-weight:700;color:var(--gold-bright);margin-bottom:0.25rem;">UID de Genshin Impact:</label>
+        <input type="text" id="inputRenameAccountUid" class="input-field"
+          placeholder="UID del juego (ej. 601976801 o dejar en blanco)" maxlength="12"
+          style="width:100%;font-weight:700;font-size:0.95rem;font-family:Consolas,monospace;" />
+      </div>
       <div class="dialog-actions">
         <button type="button" class="action-btn secondary" id="btnCancelRenameAccount">Cancelar</button>
-        <button type="button" class="action-btn" id="btnConfirmRenameAccount">Guardar Nombre</button>
+        <button type="button" class="action-btn" id="btnConfirmRenameAccount">Guardar Cambios</button>
       </div>
     </div>
   </div>
@@ -1808,10 +1827,10 @@
   <script src="farming_engine.js?v=2.6.5"></script>
   <!-- Google Identity Services (GIS) para OAuth 2.0 y Google Drive API -->
   <script src="https://accounts.google.com/gsi/client" async defer></script>
-  <script src="gdrive_sync_engine.js?v=2.6.6"></script>
+  <script src="gdrive_sync_engine.js?v=2.6.7"></script>
   <script src="xlsx.full.min.js"></script>
-  <script src="wish_engine.js?v=2.6.6"></script>
-  <script src="app.js?v=2.6.6"></script>
+  <script src="wish_engine.js?v=2.6.7"></script>
+  <script src="app.js?v=2.6.7"></script>
 </body>
 
 </html>

@@ -4203,9 +4203,12 @@ async function handleLoadRecentWishes() {
       throw new Error("El archivo 'deseos_recientes.json' no contiene tiradas.");
     }
 
-    let fileUid = importedWishes[0].uid || state.activeWishUid || "601976801";
+    let fileUid = importedWishes[0].uid || state.activeWishUid || "default";
     state.activeWishUid = fileUid;
     WishEngine.setActiveAccountUid(fileUid);
+    if (typeof AccountManager !== "undefined" && fileUid !== "default") {
+      AccountManager.setAccountUid(AccountManager.getActiveAccountId(), fileUid);
+    }
 
     // Auto-registrar perfil con UID oficial y servidor detectado
     WishEngine.saveProfile({
@@ -4442,8 +4445,11 @@ async function handleWishUrlImport() {
       throw new Error("No se encontraron tiradas en los últimos 6 meses en tu historial.");
     }
 
-    const activeUid = detectedUid || state.activeWishUid || "601976801";
+    const activeUid = detectedUid || state.activeWishUid || "default";
     state.activeWishUid = activeUid;
+    if (typeof AccountManager !== "undefined" && activeUid !== "default") {
+      AccountManager.setAccountUid(AccountManager.getActiveAccountId(), activeUid);
+    }
     if (typeof WishEngine !== "undefined") {
       WishEngine.setActiveAccountUid(activeUid);
       WishEngine.saveProfile({
@@ -5839,14 +5845,16 @@ async function renderProfileManager() {
     const activeUid = state.activeWishUid || WishEngine.getActiveAccountUid() || "default";
     const activeProfile = profiles.find((p) => p.uid === activeUid) || profiles[0] || { uid: activeUid, name: `UID: ${activeUid}`, server: "América" };
 
-    // Obtener nombre de la cuenta activa (ej: "Seba")
+    // Obtener nombre y UID de la cuenta activa
     let customAccountName = "";
+    let assignedAccountUid = "";
     if (typeof AccountManager !== "undefined") {
       const activeAccId = AccountManager.getActiveAccountId();
       const names = AccountManager.getAccountNamesMap();
       if (names && names[activeAccId]) {
         customAccountName = String(names[activeAccId]).trim();
       }
+      assignedAccountUid = AccountManager.getAccountUid(activeAccId);
     }
     if (!customAccountName) {
       try {
@@ -5855,21 +5863,32 @@ async function renderProfileManager() {
         if (storedNames && storedNames[activeAccId]) {
           customAccountName = String(storedNames[activeAccId]).trim();
         }
+        const storedUids = JSON.parse(localStorage.getItem("accountUids") || "{}");
+        if (storedUids && storedUids[activeAccId]) {
+          assignedAccountUid = String(storedUids[activeAccId]).trim();
+        }
       } catch (e) {}
     }
+
+    const effectiveUid = assignedAccountUid || (activeProfile.uid !== "default" ? activeProfile.uid : "") || "";
+    const hasValidUid = !!effectiveUid;
+    const serverName = hasValidUid ? WishEngine.detectServerFromUid(effectiveUid) : (activeProfile.server || "América");
 
     // 1. Actualizar el indicador del perfil activo en el header del contador de deseos
     const lblName = document.getElementById("lblActiveProfileName");
     if (lblName) {
-      const hasValidUid = activeProfile.uid && activeProfile.uid !== "default";
       if (customAccountName) {
         if (hasValidUid) {
-          lblName.innerHTML = `<span style="color:#ffffff;font-weight:700;">${escapeHtml(customAccountName)}</span> <span style="opacity:0.85;font-size:0.8rem;font-weight:500;">(UID: ${escapeHtml(activeProfile.uid)} &bull; ${escapeHtml(activeProfile.server)})</span>`;
+          lblName.innerHTML = `<span style="color:#ffffff;font-weight:700;">${escapeHtml(customAccountName)}</span> <span style="opacity:0.85;font-size:0.8rem;font-weight:500;">(UID: ${escapeHtml(effectiveUid)} &bull; ${escapeHtml(serverName)})</span>`;
         } else {
-          lblName.innerHTML = `<span style="color:#ffffff;font-weight:700;">${escapeHtml(customAccountName)}</span> <span style="opacity:0.85;font-size:0.8rem;font-weight:500;">(${escapeHtml(activeProfile.server)})</span>`;
+          lblName.innerHTML = `<span style="color:#ffffff;font-weight:700;">${escapeHtml(customAccountName)}</span> <span style="opacity:0.65;font-size:0.8rem;font-weight:500;">(Sin UID)</span>`;
         }
       } else {
-        lblName.textContent = `UID: ${activeProfile.uid} (${activeProfile.server})`;
+        if (hasValidUid) {
+          lblName.textContent = `UID: ${effectiveUid} (${serverName})`;
+        } else {
+          lblName.textContent = "Cuenta Principal (Sin UID)";
+        }
       }
     }
 

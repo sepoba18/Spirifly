@@ -93,6 +93,33 @@
       return { main: "Principal" };
     }
 
+    static getAccountUidsMap() {
+      try {
+        const uids = JSON.parse(localStorage.getItem("accountUids"));
+        if (uids && typeof uids === "object") return uids;
+      } catch (e) {}
+      return {};
+    }
+
+    static getAccountUid(accId) {
+      if (!accId) return "";
+      const uids = this.getAccountUidsMap();
+      return (uids && uids[accId]) ? String(uids[accId]).trim() : "";
+    }
+
+    static setAccountUid(accId, uid) {
+      if (!accId) return;
+      const uids = this.getAccountUidsMap();
+      const cleanUid = String(uid || "").trim();
+      uids[accId] = cleanUid;
+      localStorage.setItem("accountUids", JSON.stringify(uids));
+      if (accId === this.getActiveAccountId()) {
+        const effectiveUid = cleanUid || "default";
+        localStorage.setItem("teyvat_active_wish_uid", effectiveUid);
+        if (typeof state !== "undefined") state.activeWishUid = effectiveUid;
+      }
+    }
+
     /**
      * Inicializa y migra de forma segura los datos heredados a 'main'
      */
@@ -113,6 +140,15 @@
       if (!names.main) {
         names.main = "Principal";
         localStorage.setItem("accountNames", JSON.stringify(names));
+      }
+
+      let uids = this.getAccountUidsMap();
+      if (!uids.main) {
+        const currentActiveUid = localStorage.getItem("teyvat_active_wish_uid");
+        if (currentActiveUid && currentActiveUid !== "default") {
+          uids.main = currentActiveUid;
+          localStorage.setItem("accountUids", JSON.stringify(uids));
+        }
       }
 
       // Migración no destructiva desde claves legacy a 'main-*'
@@ -147,9 +183,10 @@
     /**
      * Agrega una nueva cuenta con autoindexación (account-1, account-2...)
      */
-    static addAccount(customName) {
+    static addAccount(customName, customUid) {
       const accounts = this.getAccountsList();
       const names = this.getAccountNamesMap();
+      const uids = this.getAccountUidsMap();
 
       let nextIndex = 1;
       const existingIndices = accounts
@@ -166,8 +203,21 @@
       const chosenName = (customName && customName.trim()) ? customName.trim() : `Cuenta ${nextIndex}`;
       names[newId] = chosenName;
 
+      const cleanUid = String(customUid || "").trim();
+      uids[newId] = cleanUid;
+
+      if (cleanUid && typeof WishEngine !== "undefined") {
+        WishEngine.saveProfile({
+          uid: cleanUid,
+          name: "UID: " + cleanUid,
+          server: WishEngine.detectServerFromUid(cleanUid),
+          createdAt: new Date().toISOString()
+        });
+      }
+
       localStorage.setItem("accounts", JSON.stringify(accounts));
       localStorage.setItem("accountNames", JSON.stringify(names));
+      localStorage.setItem("accountUids", JSON.stringify(uids));
 
       // Inicializar datos predeterminados para la nueva cuenta
       localStorage.setItem(`${newId}-settings`, JSON.stringify(DEFAULT_SETTINGS));
@@ -202,9 +252,15 @@
       // Cambiar clave global
       localStorage.setItem("account", targetId);
 
+      // Obtener el UID asignado a esta cuenta específica
+      const targetUid = this.getAccountUid(targetId);
+      const effectiveUid = targetUid || "default";
+      localStorage.setItem("teyvat_active_wish_uid", effectiveUid);
+
       // Sincronizar estado global si existe (app.js)
       if (typeof state !== "undefined") {
         state.account = targetId;
+        state.activeWishUid = effectiveUid;
 
         // Cargar objetivos / planes de la nueva cuenta
         const rawGoals = localStorage.getItem(`${targetId}-goals`);
@@ -241,7 +297,20 @@
       if (typeof renderVisualInventory === "function") renderVisualInventory();
       if (typeof renderFarming === "function") renderFarming();
       if (typeof renderTopCurrencySection === "function") renderTopCurrencySection();
-      if (typeof renderWishesDashboard === "function") {
+      if (typeof WishEngine !== "undefined") {
+        WishEngine.setActiveAccountUid(effectiveUid);
+        if (typeof state !== "undefined") {
+          WishEngine.loadWishesFromStorage(effectiveUid).then((wishes) => {
+            state.rawWishes = wishes || [];
+            if (typeof renderWishesDashboard === "function") {
+              try { Promise.resolve(renderWishesDashboard()).catch(() => {}); } catch (e) {}
+            }
+            if (typeof renderProfileManager === "function") {
+              try { renderProfileManager(); } catch (e) {}
+            }
+          }).catch(() => {});
+        }
+      } else if (typeof renderWishesDashboard === "function") {
         try { Promise.resolve(renderWishesDashboard()).catch(() => {}); } catch (e) {}
       }
       if (typeof renderProfileManager === "function") {
@@ -261,11 +330,47 @@
     /**
      * Rebautiza la cuenta seleccionada
      */
-    static renameAccount(targetId, newName) {
+    static renameAccount(targetId, newName, newUid) {
       if (!newName || !newName.trim()) return;
       const names = this.getAccountNamesMap();
+      const uids = this.getAccountUidsMap();
+
       names[targetId] = newName.trim();
       localStorage.setItem("accountNames", JSON.stringify(names));
+
+      if (newUid !== undefined) {
+        const cleanUid = String(newUid || "").trim();
+        uids[targetId] = cleanUid;
+        localStorage.setItem("accountUids", JSON.stringify(uids));
+
+        if (cleanUid && typeof WishEngine !== "undefined") {
+          WishEngine.saveProfile({
+            uid: cleanUid,
+            name: "UID: " + cleanUid,
+            server: WishEngine.detectServerFromUid(cleanUid),
+            createdAt: new Date().toISOString()
+          });
+        }
+
+        if (targetId === this.getActiveAccountId()) {
+          const effectiveUid = cleanUid || "default";
+          localStorage.setItem("teyvat_active_wish_uid", effectiveUid);
+          if (typeof state !== "undefined") state.activeWishUid = effectiveUid;
+          if (typeof WishEngine !== "undefined") {
+            WishEngine.setActiveAccountUid(effectiveUid);
+            WishEngine.loadWishesFromStorage(effectiveUid).then((wishes) => {
+              if (typeof state !== "undefined") state.rawWishes = wishes || [];
+              if (typeof renderWishesDashboard === "function") {
+                try { Promise.resolve(renderWishesDashboard()).catch(() => {}); } catch(e) {}
+              }
+              if (typeof renderProfileManager === "function") {
+                try { renderProfileManager(); } catch(e) {}
+              }
+            }).catch(() => {});
+          }
+        }
+      }
+
       renderMultiAccountUI();
       if (typeof renderProfileManager === "function") {
         try { renderProfileManager(); } catch (e) {}
@@ -559,6 +664,7 @@
         lastUpdate: effectiveLastUpdate,
         accounts,
         accountNames,
+        accountUids: AccountManager.getAccountUidsMap(),
         data: dataObj,
         settings: {
           autoResolveConflict: autoResolve
@@ -601,6 +707,9 @@
       }
       if (remotePayload.accountNames) {
         localStorage.setItem("accountNames", JSON.stringify(remotePayload.accountNames));
+      }
+      if (remotePayload.accountUids) {
+        localStorage.setItem("accountUids", JSON.stringify(remotePayload.accountUids));
       }
 
       Object.entries(remotePayload.data).forEach(([key, val]) => {
@@ -1139,11 +1248,13 @@
       });
     }
 
+    const inputNewAccUid = document.getElementById("inputNewAccountUid");
     if (btnConfirmAdd && modalAdd) {
       btnConfirmAdd.addEventListener("click", () => {
         const val = inputNewAcc ? inputNewAcc.value.trim() : "";
+        const uidVal = inputNewAccUid ? inputNewAccUid.value.trim() : "";
         modalAdd.classList.remove("open");
-        AccountManager.addAccount(val);
+        AccountManager.addAccount(val, uidVal);
       });
     }
 
@@ -1169,18 +1280,25 @@
     const modalRename = document.getElementById("modalRenameAccount");
     const inputRename = document.getElementById("inputRenameAccountName");
 
+    const inputRenameUid = document.getElementById("inputRenameAccountUid");
     if (btnRename && modalRename) {
       btnRename.addEventListener("click", () => {
         const active = AccountManager.getActiveAccountId();
         const names = AccountManager.getAccountNamesMap();
+        const uids = AccountManager.getAccountUidsMap();
         if (inputRename) {
           inputRename.value = names[active] || (active === "main" ? "Principal" : active);
-          modalRename.classList.add("open");
-          setTimeout(() => {
+        }
+        if (inputRenameUid) {
+          inputRenameUid.value = uids[active] || "";
+        }
+        modalRename.classList.add("open");
+        setTimeout(() => {
+          if (inputRename) {
             inputRename.focus();
             inputRename.select();
-          }, 60);
-        }
+          }
+        }, 60);
       });
     }
 
@@ -1190,8 +1308,10 @@
     if (btnConfirmRename && modalRename) {
       btnConfirmRename.addEventListener("click", () => {
         const active = AccountManager.getActiveAccountId();
-        if (inputRename && inputRename.value.trim()) {
-          AccountManager.renameAccount(active, inputRename.value.trim());
+        const newName = inputRename ? inputRename.value.trim() : "";
+        const newUid = inputRenameUid ? inputRenameUid.value.trim() : "";
+        if (newName) {
+          AccountManager.renameAccount(active, newName, newUid);
         }
         modalRename.classList.remove("open");
       });
