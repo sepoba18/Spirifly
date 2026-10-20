@@ -4961,6 +4961,17 @@ function updateResinWidgetUI() {
   if (curKpi) curKpi.textContent = cur;
   if (condKpi) condKpi.textContent = Math.min(5, Math.floor(cur / 60));
 
+  const elProgressBar = document.getElementById("seelieResinProgressBar");
+  if (elProgressBar) {
+    const pct = Math.max(0, Math.min(100, (cur / 200) * 100));
+    elProgressBar.style.width = `${pct}%`;
+    if (cur >= 200) {
+      elProgressBar.style.background = "linear-gradient(90deg, #3b82f6, #fbbf24 75%, #ef4444 100%)";
+    } else {
+      elProgressBar.style.background = "linear-gradient(90deg, #3b82f6, #60a5fa 60%, #fbbf24 100%)";
+    }
+  }
+
   if (elStatus) {
     if (cur >= 200) {
       elStatus.innerHTML = `<span>${escapeHtml(tf.maxResinReached || "Límite máx. de Resina original alcanzado")}</span>`;
