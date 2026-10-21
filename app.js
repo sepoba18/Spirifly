@@ -1358,9 +1358,16 @@ function renderInventoryHeaderTabs() {
   const catTrans = (t.inventory && t.inventory.cats) || {};
 
   INVENTORY_CATEGORIES.forEach((cat) => {
+    const neededFamilies = new Set();
+    REAL_INVENTORY_ITEMS.forEach((it) => {
+      if (reqMap && (reqMap[it.id] || 0) > 0 && it.family) {
+        neededFamilies.add(it.family);
+      }
+    });
+
     let pool = REAL_INVENTORY_ITEMS;
     if (state.invOnlyNeeded) {
-      pool = pool.filter((i) => (reqMap && (reqMap[i.id] || 0) > 0));
+      pool = pool.filter((i) => (reqMap && (reqMap[i.id] || 0) > 0) || (i.family && neededFamilies.has(i.family)));
     }
     const count = cat.key === "all"
       ? pool.length
@@ -1621,7 +1628,18 @@ function updateOnlyNeededButton() {
   if (!btn) return;
 
   const reqMap = getRequiredMaterialsMap();
-  const totalNeededCount = REAL_INVENTORY_ITEMS.filter((i) => (reqMap && (reqMap[i.id] || 0) > 0)).length;
+  const neededFamilies = new Set();
+  REAL_INVENTORY_ITEMS.forEach((i) => {
+    if (reqMap && (reqMap[i.id] || 0) > 0) {
+      if (i.family) neededFamilies.add(i.family);
+    }
+  });
+
+  const totalNeededCount = REAL_INVENTORY_ITEMS.filter((i) => {
+    const directNeeded = (reqMap && (reqMap[i.id] || 0) > 0);
+    const familyNeeded = i.family && neededFamilies.has(i.family);
+    return directNeeded || familyNeeded;
+  }).length;
 
   if (badge) {
     badge.textContent = totalNeededCount;
@@ -1645,12 +1663,25 @@ function renderInventoryMatrix() {
   const reqMap = getRequiredMaterialsMap();
   const usersMap = getMaterialUsersMap();
 
-  const totalNeededInAll = REAL_INVENTORY_ITEMS.filter((item) => (reqMap && (reqMap[item.id] || 0) > 0)).length;
+  const neededFamilies = new Set();
+  REAL_INVENTORY_ITEMS.forEach((i) => {
+    if (reqMap && (reqMap[i.id] || 0) > 0) {
+      if (i.family) neededFamilies.add(i.family);
+    }
+  });
+
+  const isItemNeeded = (item) => {
+    const directNeeded = (reqMap && (reqMap[item.id] || 0) > 0);
+    const familyNeeded = item.family && neededFamilies.has(item.family);
+    return directNeeded || familyNeeded;
+  };
+
+  const totalNeededInAll = REAL_INVENTORY_ITEMS.filter((item) => isItemNeeded(item)).length;
 
   const filteredItems = REAL_INVENTORY_ITEMS.filter((item) => {
     const matchesCat = state.invCategory === "all" || item.cat === state.invCategory;
     const matchesSearch = !state.invSearch || item.name.toLowerCase().includes(state.invSearch);
-    const matchesNeeded = !state.invOnlyNeeded || ((reqMap && (reqMap[item.id] || 0) > 0));
+    const matchesNeeded = !state.invOnlyNeeded || isItemNeeded(item);
     return matchesCat && matchesSearch && matchesNeeded;
   });
 
@@ -3164,10 +3195,18 @@ function renderTheorycraft() {
       }).join("");
     }
 
-    // Main Stats
-    const sands = trBuildStr(ch.mainStats?.sands || "ATQ% / Recarga%");
-    const goblet = trBuildStr(ch.mainStats?.goblet || `Bono Daño ${ch.element}%`);
-    const circlet = trBuildStr(ch.mainStats?.circlet || "Prob. Crítica / Daño Crítico");
+    // Main Stats con soporte para mainStats y statPriority, y fallback inteligente por tipo de escalado
+    const mStats = ch.mainStats || ch.statPriority || {};
+    const defaultSands = (ch.scalingType === "HP" || ch.scalingType === "Vida")
+      ? "Vida%"
+      : ((ch.scalingType === "DEF" || ch.scalingType === "Defensa")
+        ? "DEF%"
+        : ((ch.scalingType === "EM" || ch.scalingType === "Maestría Elemental")
+          ? "Maestría Elemental"
+          : "ATQ%"));
+    const sands = trBuildStr(mStats.sands || defaultSands);
+    const goblet = trBuildStr(mStats.goblet || (mStats.cup) || `Bono Daño ${ch.element}%`);
+    const circlet = trBuildStr(mStats.circlet || (mStats.crown) || "Prob. Crítica / Daño Crítico");
 
     // Substats Priority
     let substatsHtml = "";
@@ -3180,17 +3219,25 @@ function renderTheorycraft() {
     // Talent Priority
     const talentPrio = trBuildStr(ch.talentPriority || "Habilidad Elemental (E) > Definitiva (Q) > Ataques Normales");
 
-    // Benchmarks
+    // Benchmarks (con soporte seguro para benchmarks y recommendedPanel)
     let benchmarksHtml = "";
-    if (ch.benchmarks) {
+    const bmData = ch.benchmarks || ch.recommendedPanel;
+    if (bmData) {
+      const bHp = bmData.hp || bmData.VIDA || bmData.HP || 'Cualquiera';
+      const bAtk = bmData.atk || bmData.ATQ || bmData.ATK || 'Base';
+      const bDef = bmData.def || bmData.DEF || bmData.DEFENSA || 'Base';
+      const bEm = bmData.em || bmData.EM || bmData.MAESTRÍA || bmData.MAESTRIA || '0';
+      const bEr = bmData.er || bmData.RECARGA || bmData.ER || '120%';
+      const bCrit = bmData.crit || bmData.CRÍTICOS || bmData.CRÍTICO || bmData['DAÑO CRÍTICO'] || '60/120';
+
       benchmarksHtml = `
         <div class="tc-benchmarks-list">
-          <div class="tc-bm-pill"><div class="tc-bm-lbl">${escapeHtml(tc.bmHp)}</div><div class="tc-bm-val">${trBuildStr(ch.benchmarks.hp || 'Cualquiera')}</div></div>
-          <div class="tc-bm-pill"><div class="tc-bm-lbl">${escapeHtml(tc.bmAtk)}</div><div class="tc-bm-val">${trBuildStr(ch.benchmarks.atk || 'Base')}</div></div>
-          <div class="tc-bm-pill"><div class="tc-bm-lbl">${escapeHtml(tc.bmDef)}</div><div class="tc-bm-val">${trBuildStr(ch.benchmarks.def || 'Base')}</div></div>
-          <div class="tc-bm-pill"><div class="tc-bm-lbl">${escapeHtml(tc.bmEm)}</div><div class="tc-bm-val">${trBuildStr(ch.benchmarks.em || '0')}</div></div>
-          <div class="tc-bm-pill"><div class="tc-bm-lbl">${escapeHtml(tc.bmEr)}</div><div class="tc-bm-val">${trBuildStr(ch.benchmarks.er || '120%')}</div></div>
-          <div class="tc-bm-pill"><div class="tc-bm-lbl">CRIT Rate/DMG</div><div class="tc-bm-val">${trBuildStr(ch.benchmarks.crit || '60/120')}</div></div>
+          <div class="tc-bm-pill"><div class="tc-bm-lbl">${escapeHtml(tc.bmHp)}</div><div class="tc-bm-val">${trBuildStr(bHp)}</div></div>
+          <div class="tc-bm-pill"><div class="tc-bm-lbl">${escapeHtml(tc.bmAtk)}</div><div class="tc-bm-val">${trBuildStr(bAtk)}</div></div>
+          <div class="tc-bm-pill"><div class="tc-bm-lbl">${escapeHtml(tc.bmDef)}</div><div class="tc-bm-val">${trBuildStr(bDef)}</div></div>
+          <div class="tc-bm-pill"><div class="tc-bm-lbl">${escapeHtml(tc.bmEm)}</div><div class="tc-bm-val">${trBuildStr(bEm)}</div></div>
+          <div class="tc-bm-pill"><div class="tc-bm-lbl">${escapeHtml(tc.bmEr)}</div><div class="tc-bm-val">${trBuildStr(bEr)}</div></div>
+          <div class="tc-bm-pill"><div class="tc-bm-lbl">CRIT Rate/DMG</div><div class="tc-bm-val">${trBuildStr(bCrit)}</div></div>
         </div>
       `;
     }

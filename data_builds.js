@@ -74,22 +74,32 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Itto Mono Geo",
-        "comp": "Arataki Itto • Gorou • Albedo • Zhongli"
+        "comp": "Arataki Itto • Gorou • Albedo • Zhongli",
+        "members": [
+          "Arataki Itto",
+          "Gorou",
+          "Albedo",
+          "Zhongli"
+        ]
       },
       {
         "name": "Hu Tao Double Geo Clásico",
-        "comp": "Hu Tao • Xingqiu • Albedo • Zhongli"
+        "comp": "Hu Tao • Xingqiu • Albedo • Zhongli",
+        "members": [
+          "Hu Tao",
+          "Xingqiu",
+          "Albedo",
+          "Zhongli"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 16200,
-      "atk": 1250,
-      "def": 2600,
-      "em": 0,
-      "cr": 72,
-      "cd": 150,
-      "er": 115,
-      "dmgBonus": 90
+      "hp": "16,000",
+      "atk": "1,200",
+      "def": "2,400 – 2,800 DEF",
+      "em": "0",
+      "er": "110% ER",
+      "crit": "70%+ CR / 140%+ CD"
     },
     "baseStats": {
       "hp90": 13226,
@@ -159,6 +169,12 @@ const CHARACTER_BUILDS_DB = [
           780
         ]
       }
+    },
+    "statPriority": {
+      "sands": "DEF%",
+      "goblet": "Bono Daño Geo%",
+      "circlet": "DEF% o Prob. Crítica / Daño Crítico",
+      "substats": "1. DEF% y DEF Plana (2,400 – 2,800 DEF) > 2. Prob. Crítica / Daño Crítico (1:2) > 3. Recarga de Energía%"
     }
   },
   {
@@ -242,22 +258,32 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Alhaitham Quickbloom (Top Meta)",
-        "comp": "Alhaitham • Nahida • Yelan / Xingqiu • Kuki Shinobu"
+        "comp": "Alhaitham • Nahida • Yelan • Xingqiu",
+        "members": [
+          "Alhaitham",
+          "Nahida",
+          "Yelan",
+          "Xingqiu"
+        ]
       },
       {
         "name": "Alhaitham Pure Spread",
-        "comp": "Alhaitham • Yae Miko • Nahida • Zhongli"
+        "comp": "Alhaitham • Yae Miko • Nahida • Zhongli",
+        "members": [
+          "Alhaitham",
+          "Yae Miko",
+          "Nahida",
+          "Zhongli"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 18500,
-      "atk": 1420,
-      "def": 810,
-      "em": 380,
-      "cr": 76,
-      "cd": 185,
-      "er": 130,
-      "dmgBonus": 105
+      "hp": "18,000",
+      "atk": "1,300 – 1,500 ATQ",
+      "def": "800",
+      "em": "350 – 450 EM",
+      "er": "125% – 135% ER",
+      "crit": "75%+ CR / 170%+ CD"
     },
     "baseStats": {
       "hp90": 13348,
@@ -327,6 +353,12 @@ const CHARACTER_BUILDS_DB = [
           285.6
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Maestría Elemental",
+      "goblet": "Bono Daño Dendro%",
+      "circlet": "Prob. Crítica% / Daño Crítico%",
+      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. Maestría Elemental (250 – 400 EM) > 3. Recarga de Energía% (120% – 135% ER) > 4. ATQ%"
     }
   },
   {
@@ -399,22 +431,32 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Mono Geo Clásico",
-        "comp": "Arataki Itto • Gorou • Albedo / Chiori • Zhongli"
+        "comp": "Arataki Itto • Gorou • Albedo • Chiori",
+        "members": [
+          "Arataki Itto",
+          "Gorou",
+          "Albedo",
+          "Chiori"
+        ]
       },
       {
         "name": "Itto-Furina Core",
-        "comp": "Arataki Itto • Gorou • Furina • Chiori / Bennett"
+        "comp": "Arataki Itto • Gorou • Furina • Chiori",
+        "members": [
+          "Arataki Itto",
+          "Gorou",
+          "Furina",
+          "Chiori"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 18500,
-      "atk": 1250,
-      "def": 2550,
-      "em": 0,
-      "cr": 75,
-      "cd": 175,
-      "er": 135,
-      "dmgBonus": 90
+      "hp": "18,000",
+      "atk": "Panel Base: 1,200 (Buff Q: 4,000+)",
+      "def": "2,300 – 2,700 DEF",
+      "em": "0",
+      "er": "130% – 140% ER",
+      "crit": "75%+ CR / 160%+ CD"
     },
     "baseStats": {
       "hp90": 12858,
@@ -484,6 +526,12 @@ const CHARACTER_BUILDS_DB = [
           122.4
         ]
       }
+    },
+    "statPriority": {
+      "sands": "DEF%",
+      "goblet": "Bono Daño Geo%",
+      "circlet": "Prob. Crítica% / Daño Crítico%",
+      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. DEF% > 3. Recarga de Energía% (125% – 140% ER) > 4. ATQ%"
     }
   },
   {
@@ -562,26 +610,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Arlecchino Vape",
-        "comp": "Arlecchino • Yelan • Bennett • Kazuha / Zhongli"
+        "comp": "Arlecchino • Yelan • Bennett • Kazuha",
+        "members": [
+          "Arlecchino",
+          "Yelan",
+          "Bennett",
+          "Kazuha"
+        ]
       },
       {
         "name": "Arlecchino Overload",
-        "comp": "Arlecchino • Chevreuse • Fischl • Bennett"
+        "comp": "Arlecchino • Chevreuse • Fischl • Bennett",
+        "members": [
+          "Arlecchino",
+          "Chevreuse",
+          "Fischl",
+          "Bennett"
+        ]
       },
       {
         "name": "Arlecchino Mono Pyro",
-        "comp": "Arlecchino • Bennett • Xiangling • Kazuha"
+        "comp": "Arlecchino • Bennett • Xiangling • Kazuha",
+        "members": [
+          "Arlecchino",
+          "Bennett",
+          "Xiangling",
+          "Kazuha"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 18200,
-      "atk": 2300,
-      "def": 780,
-      "em": 110,
-      "cr": 78,
-      "cd": 195,
-      "er": 115,
-      "dmgBonus": 105
+      "hp": "18,000",
+      "atk": "2,100 – 2,400 ATQ",
+      "def": "800",
+      "em": "80 – 160 EM",
+      "er": "110% – 125% ER",
+      "crit": "75%+ CR / 180%+ CD"
     },
     "baseStats": {
       "hp90": 13103,
@@ -651,6 +715,12 @@ const CHARACTER_BUILDS_DB = [
           787.1
         ]
       }
+    },
+    "statPriority": {
+      "sands": "ATQ% (o EM en Vaporizado)",
+      "goblet": "Bono Daño Pyro%",
+      "circlet": "Prob. Crítica% / Daño Crítico%",
+      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% > 3. Maestría Elemental (80 – 160 EM) > 4. Recarga de Energía (100% – 120%)"
     }
   },
   {
@@ -717,31 +787,47 @@ const CHARACTER_BUILDS_DB = [
       "def": "700",
       "em": "0",
       "er": "165% – 190% ER",
-      "crit": "Cualquiera"
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "metaTeams": [
       {
         "name": "Neuvillette Hypercarry",
-        "comp": "Neuvillette • Furina • Kazuha • Baizhu"
+        "comp": "Neuvillette • Furina • Kazuha • Baizhu",
+        "members": [
+          "Neuvillette",
+          "Furina",
+          "Kazuha",
+          "Baizhu"
+        ]
       },
       {
         "name": "Alhaitham Spread",
-        "comp": "Alhaitham • Yae Miko • Nahida • Baizhu"
+        "comp": "Alhaitham • Yae Miko • Nahida • Baizhu",
+        "members": [
+          "Alhaitham",
+          "Yae Miko",
+          "Nahida",
+          "Baizhu"
+        ]
       },
       {
         "name": "Cyno Quickbloom",
-        "comp": "Cyno • Furina • Nahida • Baizhu"
+        "comp": "Cyno • Furina • Nahida • Baizhu",
+        "members": [
+          "Cyno",
+          "Furina",
+          "Nahida",
+          "Baizhu"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 50500,
-      "atk": 1150,
-      "def": 720,
-      "em": 0,
-      "cr": 25,
-      "cd": 65,
-      "er": 175,
-      "dmgBonus": 30
+      "hp": "48,000 – 52,000 HP",
+      "atk": "1,100",
+      "def": "700",
+      "em": "0",
+      "er": "165% – 190% ER",
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "baseStats": {
       "hp90": 13348,
@@ -811,6 +897,12 @@ const CHARACTER_BUILDS_DB = [
           11.7
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Vida% o Recarga ER%",
+      "goblet": "Vida%",
+      "circlet": "Vida% o Bono de Curación%",
+      "substats": "1. Vida% y Vida Plana (Meta estricto: 50,000 HP para tope pasiva A4) > 2. Recarga de Energía% (160% - 190% ER) > 3. Prob. Crítica (con Favonius)"
     }
   },
   {
@@ -889,22 +981,32 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Taser Clásico",
-        "comp": "Sucrose • Xingqiu • Beidou • Fischl"
+        "comp": "Sucrose • Xingqiu • Beidou • Fischl",
+        "members": [
+          "Sucrose",
+          "Xingqiu",
+          "Beidou",
+          "Fischl"
+        ]
       },
       {
         "name": "Neuvillette Taser F2P",
-        "comp": "Neuvillette • Beidou • Fischl • Kazuha"
+        "comp": "Neuvillette • Beidou • Fischl • Kazuha",
+        "members": [
+          "Neuvillette",
+          "Beidou",
+          "Fischl",
+          "Kazuha"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 18200,
-      "atk": 1750,
-      "def": 760,
-      "em": 80,
-      "cr": 68,
-      "cd": 150,
-      "er": 190,
-      "dmgBonus": 95
+      "hp": "18,000",
+      "atk": "1,600 – 1,900 ATQ",
+      "def": "750",
+      "em": "50 – 100 EM",
+      "er": "180% – 200% ER",
+      "crit": "65%+ CR / 140%+ CD"
     },
     "baseStats": {
       "hp90": 13050,
@@ -974,6 +1076,12 @@ const CHARACTER_BUILDS_DB = [
           203.9
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Recarga de Energía% o ATQ%",
+      "goblet": "Bono Daño Electro%",
+      "circlet": "Prob. Crítica% / Daño Crítico%",
+      "substats": "1. Recarga de Energía% (180% - 200% ER) > 2. Prob. Crítica / Daño Crítico (1:2) > 3. ATQ% > 4. Maestría Elemental"
     }
   },
   {
@@ -1047,31 +1155,47 @@ const CHARACTER_BUILDS_DB = [
       "def": "750",
       "em": "0",
       "er": "220% – 260% ER",
-      "crit": "Cualquiera"
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "metaTeams": [
       {
         "name": "National Team",
-        "comp": "Xiangling • Xingqiu • Bennett • Kazuha / Raiden"
+        "comp": "Xiangling • Xingqiu • Bennett • Kazuha",
+        "members": [
+          "Xiangling",
+          "Xingqiu",
+          "Bennett",
+          "Kazuha"
+        ]
       },
       {
         "name": "Hypercarry Buffer",
-        "comp": "Mavuika / Arlecchino / Navia • Bennett • Furina • Zhongli"
+        "comp": "Mavuika • Arlecchino • Navia • Bennett",
+        "members": [
+          "Mavuika",
+          "Arlecchino",
+          "Navia",
+          "Bennett"
+        ]
       },
       {
         "name": "Sunfire Jean Core",
-        "comp": "Jean • Bennett • Furina • Raiden"
+        "comp": "Jean • Bennett • Furina • Raiden",
+        "members": [
+          "Jean",
+          "Bennett",
+          "Furina",
+          "Raiden"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 31000,
-      "atk": 1350,
-      "def": 780,
-      "em": 40,
-      "cr": 35,
-      "cd": 80,
-      "er": 245,
-      "dmgBonus": 40
+      "hp": "28,000 – 34,000 HP",
+      "atk": "700 – 865 ATQ Base",
+      "def": "750",
+      "em": "0",
+      "er": "220% – 260% ER",
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "baseStats": {
       "hp90": 12397,
@@ -1141,6 +1265,12 @@ const CHARACTER_BUILDS_DB = [
           140.4
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Recarga de Energía%",
+      "goblet": "Vida%",
+      "circlet": "Bono de Curación% o Vida%",
+      "substats": "1. Recarga de Energía% (220% - 250% ER) > 2. Vida% y Vida Plana > 3. Prob. Crítica (si usa Favonius) > ❌ ATQ% en artefactos NO aumenta el buff de su Q"
     }
   },
   {
@@ -1203,31 +1333,41 @@ const CHARACTER_BUILDS_DB = [
     "talentPriority": "Habilidad Elemental (E) = Definitiva (Q) >>> Ataques Normales",
     "benchmarks": {
       "hp": "30,000 – 35,000 HP",
-      "atk": "Ignorar",
-      "def": "Cualquiera",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
       "em": "0 – 100 EM",
       "er": "140% – 160% ER",
-      "crit": "Ignorar"
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "metaTeams": [
       {
         "name": "Nilou Bloom F2P",
-        "comp": "Nilou • Viajero Dendro • Collei • Bárbara"
+        "comp": "Nilou • Viajero Dendro • Collei • Bárbara",
+        "members": [
+          "Nilou",
+          "Viajero Dendro",
+          "Collei",
+          "Bárbara"
+        ]
       },
       {
         "name": "Freeze Principiante",
-        "comp": "Kaeya • Rosaria • Bárbara • Sacarosa"
+        "comp": "Kaeya • Rosaria • Bárbara • Sacarosa",
+        "members": [
+          "Kaeya",
+          "Rosaria",
+          "Bárbara",
+          "Sacarosa"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 32000,
-      "atk": 980,
-      "def": 650,
-      "em": 80,
-      "cr": 15,
-      "cd": 60,
-      "er": 150,
-      "dmgBonus": 30
+      "hp": "30,000 – 35,000 HP",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "0 – 100 EM",
+      "er": "140% – 160% ER",
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "baseStats": {
       "hp90": 9787,
@@ -1297,6 +1437,12 @@ const CHARACTER_BUILDS_DB = [
           37.4
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Vida%",
+      "goblet": "Vida%",
+      "circlet": "Bono de Curación% o Vida%",
+      "substats": "1. Vida% > 2. Recarga de Energía% > 3. Maestría Elemental (en Bloom)"
     }
   },
   {
@@ -1368,22 +1514,32 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Nilou Bloom con Yaoyao",
-        "comp": "Nilou • Nahida • Candace (C6) • Yaoyao"
+        "comp": "Nilou • Nahida • Candace • Yaoyao",
+        "members": [
+          "Nilou",
+          "Nahida",
+          "Candace",
+          "Yaoyao"
+        ]
       },
       {
         "name": "Arlecchino Hydro Infusion",
-        "comp": "Arlecchino • Candace • Kazuha • Bennett"
+        "comp": "Arlecchino • Candace • Kazuha • Bennett",
+        "members": [
+          "Arlecchino",
+          "Candace",
+          "Kazuha",
+          "Bennett"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 37500,
-      "atk": 1250,
-      "def": 720,
-      "em": 40,
-      "cr": 45,
-      "cd": 90,
-      "er": 195,
-      "dmgBonus": 40
+      "hp": "35,000 – 40,000 HP",
+      "atk": "1,200",
+      "def": "700",
+      "em": "0",
+      "er": "190% – 210% ER",
+      "crit": "40%+ CR"
     },
     "baseStats": {
       "hp90": 10875,
@@ -1453,6 +1609,12 @@ const CHARACTER_BUILDS_DB = [
           15.6
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Vida% o Recarga de Energía%",
+      "goblet": "Vida%",
+      "circlet": "Vida% o Prob. Crítica (con Favonius)",
+      "substats": "1. Recarga de Energía% (180% - 210%) > 2. Vida% > 3. Prob. Crítica (para Favonius)"
     }
   },
   {
@@ -1519,31 +1681,47 @@ const CHARACTER_BUILDS_DB = [
       "def": "700",
       "em": "0",
       "er": "150% ER",
-      "crit": "Cualquiera"
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "metaTeams": [
       {
         "name": "Arlecchino Overload",
-        "comp": "Arlecchino • Chevreuse • Fischl • Bennett"
+        "comp": "Arlecchino • Chevreuse • Fischl • Bennett",
+        "members": [
+          "Arlecchino",
+          "Chevreuse",
+          "Fischl",
+          "Bennett"
+        ]
       },
       {
         "name": "Raiden Overload",
-        "comp": "Raiden Shogun • Chevreuse • Sara • Bennett"
+        "comp": "Raiden Shogun • Chevreuse • Sara • Bennett",
+        "members": [
+          "Raiden Shogun",
+          "Chevreuse",
+          "Sara",
+          "Bennett"
+        ]
       },
       {
         "name": "Clorinde Overload",
-        "comp": "Clorinde • Chevreuse • Fischl • Thoma"
+        "comp": "Clorinde • Chevreuse • Fischl • Thoma",
+        "members": [
+          "Clorinde",
+          "Chevreuse",
+          "Fischl",
+          "Thoma"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 40200,
-      "atk": 1150,
-      "def": 700,
-      "em": 0,
-      "cr": 25,
-      "cd": 70,
-      "er": 155,
-      "dmgBonus": 30
+      "hp": "40,000 HP (Exacto o más)",
+      "atk": "1,100",
+      "def": "700",
+      "em": "0",
+      "er": "150% ER",
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "baseStats": {
       "hp90": 11956,
@@ -1613,6 +1791,12 @@ const CHARACTER_BUILDS_DB = [
           526.3
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Vida% o Recarga ER%",
+      "goblet": "Vida%",
+      "circlet": "Vida% o Bono de Curación%",
+      "substats": "1. Vida% y Vida Plana (Meta estricto: 40,000 HP) > 2. Recarga de Energía% (140% - 160%) > 3. Prob. Crítica (con Favonius)"
     }
   },
   {
@@ -1691,26 +1875,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Navia + Chiori Geo Core",
-        "comp": "Navia • Chiori • Furina • Bennett"
+        "comp": "Navia • Chiori • Furina • Bennett",
+        "members": [
+          "Navia",
+          "Chiori",
+          "Furina",
+          "Bennett"
+        ]
       },
       {
         "name": "Itto Mono Geo",
-        "comp": "Arataki Itto • Gorou • Chiori • Zhongli"
+        "comp": "Arataki Itto • Gorou • Chiori • Zhongli",
+        "members": [
+          "Arataki Itto",
+          "Gorou",
+          "Chiori",
+          "Zhongli"
+        ]
       },
       {
         "name": "Noelle Hypercarry",
-        "comp": "Noelle • Furina • Chiori • Gorou"
+        "comp": "Noelle • Furina • Chiori • Gorou",
+        "members": [
+          "Noelle",
+          "Furina",
+          "Chiori",
+          "Gorou"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 16500,
-      "atk": 1350,
-      "def": 2450,
-      "em": 0,
-      "cr": 76,
-      "cd": 180,
-      "er": 115,
-      "dmgBonus": 105
+      "hp": "16,000",
+      "atk": "1,300",
+      "def": "2,200 – 2,600+ DEF",
+      "em": "0",
+      "er": "110% – 120% ER",
+      "crit": "75%+ CR / 160%+ CD"
     },
     "baseStats": {
       "hp90": 11438,
@@ -1780,6 +1980,12 @@ const CHARACTER_BUILDS_DB = [
           946.4
         ]
       }
+    },
+    "statPriority": {
+      "sands": "DEF%",
+      "goblet": "Bono Daño Geo%",
+      "circlet": "Prob. Crítica% / Daño Crítico%",
+      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. DEF% > 3. ATQ% > 4. Recarga de Energía (110% - 120%)"
     }
   },
   {
@@ -1852,31 +2058,47 @@ const CHARACTER_BUILDS_DB = [
       "def": "750",
       "em": "850 – 1,000 EM",
       "er": "160% – 180% ER",
-      "crit": "Cualquiera"
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "metaTeams": [
       {
         "name": "Mavuika Melt Core",
-        "comp": "Mavuika • Citlali • Bennett • Xilonen"
+        "comp": "Mavuika • Citlali • Bennett • Xilonen",
+        "members": [
+          "Mavuika",
+          "Citlali",
+          "Bennett",
+          "Xilonen"
+        ]
       },
       {
         "name": "Arlecchino Melt",
-        "comp": "Arlecchino • Citlali • Bennett • Kazuha"
+        "comp": "Arlecchino • Citlali • Bennett • Kazuha",
+        "members": [
+          "Arlecchino",
+          "Citlali",
+          "Bennett",
+          "Kazuha"
+        ]
       },
       {
         "name": "Gaming Melt",
-        "comp": "Gaming • Xianyun • Citlali • Bennett"
+        "comp": "Gaming • Xianyun • Citlali • Bennett",
+        "members": [
+          "Gaming",
+          "Xianyun",
+          "Citlali",
+          "Bennett"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 17500,
-      "atk": 1250,
-      "def": 760,
-      "em": 920,
-      "cr": 35,
-      "cd": 70,
-      "er": 170,
-      "dmgBonus": 45
+      "hp": "17,000",
+      "atk": "1,200",
+      "def": "750",
+      "em": "850 – 1,000 EM",
+      "er": "160% – 180% ER",
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "baseStats": {
       "hp90": 11200,
@@ -1946,6 +2168,12 @@ const CHARACTER_BUILDS_DB = [
           424.8
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Maestría Elemental",
+      "goblet": "Maestría Elemental",
+      "circlet": "Maestría Elemental (o Prob. CR con Favonius)",
+      "substats": "1. Maestría Elemental (Meta: 800 – 1,000 EM) > 2. Recarga de Energía% (150% - 170% ER) > 3. Prob. Crítica (para Favonius)"
     }
   },
   {
@@ -2024,26 +2252,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Clorinde Aggravate",
-        "comp": "Clorinde • Nahida • Fischl • Zhongli / Kazuha"
+        "comp": "Clorinde • Nahida • Fischl • Zhongli",
+        "members": [
+          "Clorinde",
+          "Nahida",
+          "Fischl",
+          "Zhongli"
+        ]
       },
       {
         "name": "Clorinde Overload con Chevreuse",
-        "comp": "Clorinde • Chevreuse • Fischl • Thoma"
+        "comp": "Clorinde • Chevreuse • Fischl • Thoma",
+        "members": [
+          "Clorinde",
+          "Chevreuse",
+          "Fischl",
+          "Thoma"
+        ]
       },
       {
         "name": "Clorinde Quickbloom",
-        "comp": "Clorinde • Furina • Nahida • Baizhu"
+        "comp": "Clorinde • Furina • Nahida • Baizhu",
+        "members": [
+          "Clorinde",
+          "Furina",
+          "Nahida",
+          "Baizhu"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 18200,
-      "atk": 2150,
-      "def": 810,
-      "em": 110,
-      "cr": 78,
-      "cd": 205,
-      "er": 120,
-      "dmgBonus": 105
+      "hp": "18,000",
+      "atk": "2,000 – 2,300 ATQ",
+      "def": "800",
+      "em": "80 – 150 EM",
+      "er": "115% – 125% ER",
+      "crit": "75%+ CR / 190%+ CD"
     },
     "baseStats": {
       "hp90": 12956,
@@ -2113,6 +2357,12 @@ const CHARACTER_BUILDS_DB = [
           288.9
         ]
       }
+    },
+    "statPriority": {
+      "sands": "ATQ%",
+      "goblet": "Bono Daño Electro%",
+      "circlet": "Daño Crítico% (o Prob. CR)",
+      "substats": "1. Daño Crítico / Prob. Crítica (tope 80% con pasiva de ascensión) > 2. ATQ% > 3. Maestría Elemental (80 – 160 EM en Aggravate) > 4. Recarga de Energía%"
     }
   },
   {
@@ -2185,22 +2435,32 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Diluc Plunge Vape",
-        "comp": "Diluc • Xianyun • Furina • Bennett"
+        "comp": "Diluc • Xianyun • Furina • Bennett",
+        "members": [
+          "Diluc",
+          "Xianyun",
+          "Furina",
+          "Bennett"
+        ]
       },
       {
         "name": "Diluc Vape Clásico",
-        "comp": "Diluc • Xingqiu • Yelan • Bennett"
+        "comp": "Diluc • Xingqiu • Yelan • Bennett",
+        "members": [
+          "Diluc",
+          "Xingqiu",
+          "Yelan",
+          "Bennett"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 18200,
-      "atk": 2200,
-      "def": 810,
-      "em": 140,
-      "cr": 76,
-      "cd": 175,
-      "er": 120,
-      "dmgBonus": 94.6
+      "hp": "18,000",
+      "atk": "2,000 – 2,400 ATQ",
+      "def": "800",
+      "em": "120 – 180 EM",
+      "er": "115% – 125% ER",
+      "crit": "75%+ CR / 160%+ CD"
     },
     "baseStats": {
       "hp90": 12981,
@@ -2270,6 +2530,12 @@ const CHARACTER_BUILDS_DB = [
           433.3
         ]
       }
+    },
+    "statPriority": {
+      "sands": "ATQ% o Maestría Elemental",
+      "goblet": "Bono Daño Pyro%",
+      "circlet": "Prob. Crítica% / Daño Crítico%",
+      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. Maestría Elemental (120 – 180 EM) > 3. ATQ% > 4. Recarga de Energía%"
     }
   },
   {
@@ -2348,22 +2614,32 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Eula Superconduct Premium",
-        "comp": "Eula • Raiden Shogun • Rosaria (C6) • Bennett / Zhongli"
+        "comp": "Eula • Raiden Shogun • Rosaria • Bennett",
+        "members": [
+          "Eula",
+          "Raiden Shogun",
+          "Rosaria",
+          "Bennett"
+        ]
       },
       {
         "name": "Eula-Furina Core",
-        "comp": "Eula • Furina • Raiden Shogun • Mika (C6)"
+        "comp": "Eula • Furina • Raiden Shogun • Mika",
+        "members": [
+          "Eula",
+          "Furina",
+          "Raiden Shogun",
+          "Mika"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 19200,
-      "atk": 2400,
-      "def": 820,
-      "em": 0,
-      "cr": 72,
-      "cd": 175,
-      "er": 135,
-      "dmgBonus": 125
+      "hp": "19,000",
+      "atk": "2,200 – 2,600 ATQ",
+      "def": "800",
+      "em": "0",
+      "er": "130% – 145% ER",
+      "crit": "70%+ CR / 160%+ CD"
     },
     "baseStats": {
       "hp90": 13226,
@@ -2433,6 +2709,12 @@ const CHARACTER_BUILDS_DB = [
           855.5
         ]
       }
+    },
+    "statPriority": {
+      "sands": "ATQ%",
+      "goblet": "Bono Daño Físico%",
+      "circlet": "Prob. Crítica% / Daño Crítico%",
+      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% > 3. Recarga de Energía% (130% – 145% ER) > 4. DEF%"
     }
   },
   {
@@ -2504,22 +2786,32 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Xiao Hypercarry (FFXX)",
-        "comp": "Xiao • Faruzan • Xianyun • Furina"
+        "comp": "Xiao • Faruzan • Xianyun • Furina",
+        "members": [
+          "Xiao",
+          "Faruzan",
+          "Xianyun",
+          "Furina"
+        ]
       },
       {
         "name": "Wanderer Hypercarry",
-        "comp": "Wanderer • Faruzan • Bennett • Zhongli"
+        "comp": "Wanderer • Faruzan • Bennett • Zhongli",
+        "members": [
+          "Wanderer",
+          "Faruzan",
+          "Bennett",
+          "Zhongli"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 16500,
-      "atk": 1450,
-      "def": 720,
-      "em": 0,
-      "cr": 55,
-      "cd": 110,
-      "er": 250,
-      "dmgBonus": 50
+      "hp": "16,000",
+      "atk": "1,400",
+      "def": "700",
+      "em": "0",
+      "er": "230% – 270% ER",
+      "crit": "50%+ CR"
     },
     "baseStats": {
       "hp90": 9570,
@@ -2589,6 +2881,12 @@ const CHARACTER_BUILDS_DB = [
           800
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Recarga de Energía%",
+      "goblet": "Bono Daño Anemo% o ATQ%",
+      "circlet": "Prob. Crítica% (para Favonius) o Daño Crítico",
+      "substats": "1. Recarga de Energía% (250%+ en C0-C5 / 200%+ en C6) > 2. Prob. Crítica (para Favonius) > 3. ATQ% y Crítico"
     }
   },
   {
@@ -2667,26 +2965,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Aggravate Machine",
-        "comp": "Alhaitham / Keqing • Fischl • Nahida • Zhongli / Kazuha"
+        "comp": "Alhaitham • Keqing • Fischl • Nahida",
+        "members": [
+          "Alhaitham",
+          "Keqing",
+          "Fischl",
+          "Nahida"
+        ]
       },
       {
         "name": "Arlecchino Overload",
-        "comp": "Arlecchino • Chevreuse • Fischl • Bennett"
+        "comp": "Arlecchino • Chevreuse • Fischl • Bennett",
+        "members": [
+          "Arlecchino",
+          "Chevreuse",
+          "Fischl",
+          "Bennett"
+        ]
       },
       {
         "name": "Taser Clásico",
-        "comp": "Sucrose • Xingqiu • Beidou • Fischl"
+        "comp": "Sucrose • Xingqiu • Beidou • Fischl",
+        "members": [
+          "Sucrose",
+          "Xingqiu",
+          "Beidou",
+          "Fischl"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 16200,
-      "atk": 2100,
-      "def": 710,
-      "em": 120,
-      "cr": 76,
-      "cd": 175,
-      "er": 120,
-      "dmgBonus": 105
+      "hp": "16,000",
+      "atk": "1,900 – 2,300 ATQ",
+      "def": "700",
+      "em": "100 – 160 EM",
+      "er": "115% – 125% ER",
+      "crit": "75%+ CR / 160%+ CD"
     },
     "baseStats": {
       "hp90": 9189,
@@ -2756,6 +3070,12 @@ const CHARACTER_BUILDS_DB = [
           441.3
         ]
       }
+    },
+    "statPriority": {
+      "sands": "ATQ%",
+      "goblet": "Bono Daño Electro%",
+      "circlet": "Prob. Crítica% / Daño Crítico%",
+      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% > 3. Maestría Elemental (80 – 160 EM en Aggravate) > 4. Recarga de Energía (115% – 125% ER)"
     }
   },
   {
@@ -2831,7 +3151,7 @@ const CHARACTER_BUILDS_DB = [
     "benchmarks": {
       "hp": "36,000 – 40,000 HP",
       "atk": "Ignorar (Base baja)",
-      "def": "Cualquiera",
+      "def": "Base (~750 - 850 DEF)",
       "em": "0 – 80 EM",
       "er": "160% – 200% ER",
       "crit": "75%+ CR / 160%+ CD"
@@ -2839,26 +3159,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Neuvillette Hypercarry",
-        "comp": "Neuvillette • Furina • Kazuha • Xilonen"
+        "comp": "Neuvillette • Furina • Kazuha • Xilonen",
+        "members": [
+          "Neuvillette",
+          "Furina",
+          "Kazuha",
+          "Xilonen"
+        ]
       },
       {
         "name": "Arlecchino Vape",
-        "comp": "Arlecchino • Furina • Yelan • Bennett"
+        "comp": "Arlecchino • Furina • Yelan • Bennett",
+        "members": [
+          "Arlecchino",
+          "Furina",
+          "Yelan",
+          "Bennett"
+        ]
       },
       {
         "name": "Alhaitham Quickbloom",
-        "comp": "Alhaitham • Furina • Nahida • Kuki Shinobu"
+        "comp": "Alhaitham • Furina • Nahida • Kuki Shinobu",
+        "members": [
+          "Alhaitham",
+          "Furina",
+          "Nahida",
+          "Kuki Shinobu"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 39500,
-      "atk": 1150,
-      "def": 820,
-      "em": 80,
-      "cr": 82,
-      "cd": 195,
-      "er": 175,
-      "dmgBonus": 145
+      "hp": "36,000 – 40,000 HP",
+      "atk": "Ignorar (Base baja)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "0 – 80 EM",
+      "er": "160% – 200% ER",
+      "crit": "75%+ CR / 160%+ CD"
     },
     "baseStats": {
       "hp90": 15307,
@@ -2928,6 +3264,12 @@ const CHARACTER_BUILDS_DB = [
           24.2
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Vida% (con arma ER) o Recarga ER% (con arma de daño)",
+      "goblet": "Bono Daño Hydro% o Vida%",
+      "circlet": "Prob. Crítica% / Daño Crítico%",
+      "substats": "1. Recarga de Energía% (hasta 160% - 200%) > 2. Prob. Crítica / Daño Crítico (Ratio 1:2) > 3. Vida% (hasta 40,000 HP) > ❌ ATQ y DEF son estadísticas muertas"
     }
   },
   {
@@ -3000,22 +3342,32 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Gaming Plunge Vape",
-        "comp": "Gaming • Xianyun • Furina • Bennett"
+        "comp": "Gaming • Xianyun • Furina • Bennett",
+        "members": [
+          "Gaming",
+          "Xianyun",
+          "Furina",
+          "Bennett"
+        ]
       },
       {
         "name": "Gaming Melt Nuke",
-        "comp": "Gaming • Xianyun • Rosaria • Bennett"
+        "comp": "Gaming • Xianyun • Rosaria • Bennett",
+        "members": [
+          "Gaming",
+          "Xianyun",
+          "Rosaria",
+          "Bennett"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 19500,
-      "atk": 2050,
-      "def": 760,
-      "em": 180,
-      "cr": 62,
-      "cd": 195,
-      "er": 130,
-      "dmgBonus": 105
+      "hp": "19,000",
+      "atk": "1,900 – 2,200 ATQ",
+      "def": "750",
+      "em": "150 – 220 EM",
+      "er": "125% – 140% ER",
+      "crit": "60% CR / 180%+ CD"
     },
     "baseStats": {
       "hp90": 11419,
@@ -3085,6 +3437,12 @@ const CHARACTER_BUILDS_DB = [
           787.1
         ]
       }
+    },
+    "statPriority": {
+      "sands": "ATQ% o Maestría Elemental",
+      "goblet": "Bono Daño Pyro%",
+      "circlet": "Daño Crítico% (o Prob. CR)",
+      "substats": "1. Daño Crítico / Prob. Crítica (tope 64% CR con Cazador) > 2. Maestría Elemental (120 – 200 EM) > 3. ATQ% > 4. Recarga (120% – 135% ER)"
     }
   },
   {
@@ -3163,26 +3521,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Ganyu Melt Clásico",
-        "comp": "Ganyu • Xiangling • Bennett • Zhongli"
+        "comp": "Ganyu • Xiangling • Bennett • Zhongli",
+        "members": [
+          "Ganyu",
+          "Xiangling",
+          "Bennett",
+          "Zhongli"
+        ]
       },
       {
         "name": "Ganyu Burn-Melt con Nahida",
-        "comp": "Ganyu • Nahida • Bennett • Dehya"
+        "comp": "Ganyu • Nahida • Bennett • Dehya",
+        "members": [
+          "Ganyu",
+          "Nahida",
+          "Bennett",
+          "Dehya"
+        ]
       },
       {
         "name": "Morgana Freeze",
-        "comp": "Ganyu • Mona • Venti • Diona"
+        "comp": "Ganyu • Mona • Venti • Diona",
+        "members": [
+          "Ganyu",
+          "Mona",
+          "Venti",
+          "Diona"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 16500,
-      "atk": 2300,
-      "def": 720,
-      "em": 210,
-      "cr": 68,
-      "cd": 220,
-      "er": 115,
-      "dmgBonus": 105
+      "hp": "16,000",
+      "atk": "2,100 – 2,500 ATQ",
+      "def": "700",
+      "em": "180 – 250 EM (en Melt)",
+      "er": "110% – 125% ER",
+      "crit": "65%+ CR / 210%+ CD"
     },
     "baseStats": {
       "hp90": 9797,
@@ -3252,6 +3626,12 @@ const CHARACTER_BUILDS_DB = [
           148.7
         ]
       }
+    },
+    "statPriority": {
+      "sands": "ATQ% (en Freeze) o Maestría Elemental (en Melt)",
+      "goblet": "Bono Daño Cryo%",
+      "circlet": "Daño Crítico% (o Prob. CR)",
+      "substats": "1. Daño Crítico / Prob. Crítica (1:2) > 2. ATQ% > 3. Maestría Elemental (150 – 250 EM en Melt) > 4. Recarga de Energía%"
     }
   },
   {
@@ -3281,6 +3661,18 @@ const CHARACTER_BUILDS_DB = [
         "rarity": 4,
         "type": "Alternativa",
         "note": "Recarga de energía y reseteo de E."
+      },
+      {
+        "name": "Elegía del Fin (Elegy for the End)",
+        "rarity": 5,
+        "type": "Opción 5★",
+        "note": "+Recarga y +100 EM / +20% ATQ para todo el equipo."
+      },
+      {
+        "name": "Desvanecimiento del Crepúsculo",
+        "rarity": 4,
+        "type": "Opción Evento",
+        "note": "+30.6% Recarga de Energía."
       }
     ],
     "bestArtifacts": [
@@ -3317,22 +3709,32 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Itto Mono Geo",
-        "comp": "Arataki Itto • Gorou • Chiori / Albedo • Zhongli"
+        "comp": "Arataki Itto • Gorou • Chiori • Albedo",
+        "members": [
+          "Arataki Itto",
+          "Gorou",
+          "Chiori",
+          "Albedo"
+        ]
       },
       {
         "name": "Noelle Hypercarry",
-        "comp": "Noelle • Gorou • Furina • Chiori"
+        "comp": "Noelle • Gorou • Furina • Chiori",
+        "members": [
+          "Noelle",
+          "Gorou",
+          "Furina",
+          "Chiori"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 15500,
-      "atk": 1050,
-      "def": 1850,
-      "em": 0,
-      "cr": 58,
-      "cd": 90,
-      "er": 225,
-      "dmgBonus": 40
+      "hp": "15,000",
+      "atk": "1,000",
+      "def": "1,800+ DEF",
+      "em": "0",
+      "er": "210% – 240% ER",
+      "crit": "55%+ CR"
     },
     "baseStats": {
       "hp90": 9570,
@@ -3402,6 +3804,12 @@ const CHARACTER_BUILDS_DB = [
           129.8
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Recarga de Energía%",
+      "goblet": "DEF%",
+      "circlet": "Prob. Crítica% (para Favonius)",
+      "substats": "1. Recarga de Energía% (200% - 230% ER) > 2. Prob. Crítica (para Favonius) > 3. DEF%"
     }
   },
   {
@@ -3486,26 +3894,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Hu Tao Double Hydro",
-        "comp": "Hu Tao • Xingqiu • Yelan • Zhongli"
+        "comp": "Hu Tao • Xingqiu • Yelan • Zhongli",
+        "members": [
+          "Hu Tao",
+          "Xingqiu",
+          "Yelan",
+          "Zhongli"
+        ]
       },
       {
         "name": "Hu Tao Plunge con Xianyun",
-        "comp": "Hu Tao • Xianyun • Furina • Yelan"
+        "comp": "Hu Tao • Xianyun • Furina • Yelan",
+        "members": [
+          "Hu Tao",
+          "Xianyun",
+          "Furina",
+          "Yelan"
+        ]
       },
       {
         "name": "Hu Tao VV Vape",
-        "comp": "Hu Tao • Kazuha • Yelan • Bennett / Thoma"
+        "comp": "Hu Tao • Kazuha • Yelan • Bennett",
+        "members": [
+          "Hu Tao",
+          "Kazuha",
+          "Yelan",
+          "Bennett"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 33500,
-      "atk": 1250,
-      "def": 840,
-      "em": 210,
-      "cr": 76,
-      "cd": 210,
-      "er": 110,
-      "dmgBonus": 94.6
+      "hp": "30,000 – 35,000 HP",
+      "atk": "Buff E: 3,000+ ATQ",
+      "def": "850",
+      "em": "180 – 250 EM",
+      "er": "100% – 115% ER",
+      "crit": "75%+ CR / 180%+ CD"
     },
     "baseStats": {
       "hp90": 15552,
@@ -3575,6 +3999,12 @@ const CHARACTER_BUILDS_DB = [
           728.1
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Vida% o Maestría Elemental (si tiene <150 EM)",
+      "goblet": "Bono Daño Pyro%",
+      "circlet": "Prob. Crítica% / Daño Crítico%",
+      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. Maestría Elemental (150 – 250 EM) > 3. Vida% (hasta 30,000 – 35,000 HP) > 4. ATQ% > ❌ ATQ Plano y DEF son muy débiles"
     }
   },
   {
@@ -3646,22 +4076,32 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Furina Core Healer",
-        "comp": "Jean • Furina • Neuvillette / Yelan • Raiden"
+        "comp": "Jean • Furina • Neuvillette • Yelan",
+        "members": [
+          "Jean",
+          "Furina",
+          "Neuvillette",
+          "Yelan"
+        ]
       },
       {
         "name": "Sunfire Clásico",
-        "comp": "Jean • Bennett • Xingqiu • Raiden"
+        "comp": "Jean • Bennett • Xingqiu • Raiden",
+        "members": [
+          "Jean",
+          "Bennett",
+          "Xingqiu",
+          "Raiden"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 19500,
-      "atk": 2100,
-      "def": 810,
-      "em": 0,
-      "cr": 52,
-      "cd": 105,
-      "er": 185,
-      "dmgBonus": 40
+      "hp": "19,000",
+      "atk": "1,900 – 2,300 ATQ",
+      "def": "800",
+      "em": "0",
+      "er": "175% – 195% ER",
+      "crit": "50%+ CR"
     },
     "baseStats": {
       "hp90": 14695,
@@ -3731,6 +4171,12 @@ const CHARACTER_BUILDS_DB = [
           533.4
         ]
       }
+    },
+    "statPriority": {
+      "sands": "ATQ% o Recarga de Energía%",
+      "goblet": "ATQ% o Bono Daño Anemo%",
+      "circlet": "Bono de Curación% o Prob. Crítica (con Favonius)",
+      "substats": "1. Recarga de Energía% (170% - 190% ER) > 2. ATQ% > 3. Prob. Crítica (para Favonius)"
     }
   },
   {
@@ -3779,6 +4225,16 @@ const CHARACTER_BUILDS_DB = [
         "set": "Sombra Verde Esmeralda / Viridescent Venerer (4 piezas)",
         "type": "BiS Obligatorio",
         "bonus": "-40% Resistencia Elemental al elemento que hace Torbellino (el debuff más fuerte del juego)."
+      },
+      {
+        "set": "Instructor (4 piezas)",
+        "type": "Soporte Reacciones",
+        "bonus": "+120 de Maestría Elemental a todo el equipo al activar una reacción elemental."
+      },
+      {
+        "set": "2p Maestría Elemental + 2p Maestría Elemental",
+        "type": "Transición F2P",
+        "bonus": "+160 de Maestría Elemental pasiva para maximizar el bono elemental transferido."
       }
     ],
     "mainStats": {
@@ -3798,31 +4254,47 @@ const CHARACTER_BUILDS_DB = [
       "def": "800",
       "em": "950 – 1,050 EM",
       "er": "160% – 190% ER",
-      "crit": "Cualquiera"
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "metaTeams": [
       {
         "name": "International Team",
-        "comp": "Tartaglia • Xiangling • Kazuha • Bennett"
+        "comp": "Tartaglia • Xiangling • Kazuha • Bennett",
+        "members": [
+          "Tartaglia",
+          "Xiangling",
+          "Kazuha",
+          "Bennett"
+        ]
       },
       {
         "name": "Neuvillette Hyper",
-        "comp": "Neuvillette • Furina • Kazuha • Xilonen"
+        "comp": "Neuvillette • Furina • Kazuha • Xilonen",
+        "members": [
+          "Neuvillette",
+          "Furina",
+          "Kazuha",
+          "Xilonen"
+        ]
       },
       {
         "name": "Raiden Hypercarry",
-        "comp": "Raiden Shogun • Sara • Kazuha • Bennett"
+        "comp": "Raiden Shogun • Sara • Kazuha • Bennett",
+        "members": [
+          "Raiden Shogun",
+          "Sara",
+          "Kazuha",
+          "Bennett"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 19500,
-      "atk": 1250,
-      "def": 810,
-      "em": 980,
-      "cr": 35,
-      "cd": 70,
-      "er": 175,
-      "dmgBonus": 60
+      "hp": "19,000",
+      "atk": "1,200",
+      "def": "800",
+      "em": "950 – 1,050 EM",
+      "er": "160% – 190% ER",
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "baseStats": {
       "hp90": 13348,
@@ -3892,6 +4364,12 @@ const CHARACTER_BUILDS_DB = [
           557
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Maestría Elemental (o Recarga si falta ER)",
+      "goblet": "Maestría Elemental",
+      "circlet": "Maestría Elemental (o Prob. CR con Favonius)",
+      "substats": "1. Maestría Elemental (Meta: 900 – 1,000 EM) > 2. Recarga de Energía% (160% - 190% ER) > 3. Prob. Crítica (si lleva Favonius)"
     }
   },
   {
@@ -3940,6 +4418,16 @@ const CHARACTER_BUILDS_DB = [
         "set": "Nómada del Invierno / Blizzard Strayer (4 piezas)",
         "type": "BiS Obligatorio",
         "bonus": "+15% Bono Cryo y hasta +40% Prob. Crítica contra enemigos congelados (+55% con consonancia Cryo)."
+      },
+      {
+        "set": "Cazador Sombrío (4 piezas)",
+        "type": "BiS con Furina",
+        "bonus": "+36% Prob. Crítica pasiva con fluctuaciones de vida en equipos con Furina."
+      },
+      {
+        "set": "Reminiscencia de la Purificación (4 piezas)",
+        "type": "Alternativa Nuke",
+        "bonus": "+18% ATQ y +50% Daño de Ataques Normales y Cargados."
       }
     ],
     "mainStats": {
@@ -3965,26 +4453,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Ayaka Permafrost Clásico",
-        "comp": "Ayaka • Shenhe • Kazuha • Kokomi"
+        "comp": "Ayaka • Shenhe • Kazuha • Kokomi",
+        "members": [
+          "Ayaka",
+          "Shenhe",
+          "Kazuha",
+          "Kokomi"
+        ]
       },
       {
         "name": "Ayaka Freeze F2P",
-        "comp": "Ayaka • Rosaria • Sucrose • Bárbara / Xingqiu"
+        "comp": "Ayaka • Rosaria • Sucrose • Bárbara",
+        "members": [
+          "Ayaka",
+          "Rosaria",
+          "Sucrose",
+          "Bárbara"
+        ]
       },
       {
         "name": "Ayaka-Furina Core",
-        "comp": "Ayaka • Furina • Kazuha • Charlotte"
+        "comp": "Ayaka • Furina • Kazuha • Charlotte",
+        "members": [
+          "Ayaka",
+          "Furina",
+          "Kazuha",
+          "Charlotte"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 18200,
-      "atk": 2250,
-      "def": 810,
-      "em": 20,
-      "cr": 42,
-      "cd": 255,
-      "er": 138,
-      "dmgBonus": 115
+      "hp": "18,000",
+      "atk": "2,100 – 2,400 ATQ",
+      "def": "800",
+      "em": "0",
+      "er": "135% – 145% ER",
+      "crit": "40% CR / 240%+ CD"
     },
     "baseStats": {
       "hp90": 12858,
@@ -4054,6 +4558,12 @@ const CHARACTER_BUILDS_DB = [
           238.4
         ]
       }
+    },
+    "statPriority": {
+      "sands": "ATQ%",
+      "goblet": "Bono Daño Cryo%",
+      "circlet": "Daño Crítico%",
+      "substats": "1. Daño Crítico (Meta: 220% – 270%+ CD) > 2. ATQ% (2,000 – 2,300 ATQ) > 3. Recarga de Energía% (130% - 145% con Amenoma / 140%+ sin Amenoma) > 4. Prob. Crítica (tope 35% - 45% con Nómada)"
     }
   },
   {
@@ -4132,26 +4642,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Ayato Hypercarry",
-        "comp": "Ayato • Yun Jin • Kazuha • Bennett"
+        "comp": "Ayato • Yun Jin • Kazuha • Bennett",
+        "members": [
+          "Ayato",
+          "Yun Jin",
+          "Kazuha",
+          "Bennett"
+        ]
       },
       {
         "name": "Ayato Burgeon",
-        "comp": "Ayato • Nahida • Thoma • Baizhu"
+        "comp": "Ayato • Nahida • Thoma • Baizhu",
+        "members": [
+          "Ayato",
+          "Nahida",
+          "Thoma",
+          "Baizhu"
+        ]
       },
       {
         "name": "Ayato Soup",
-        "comp": "Ayato • Fischl • Bennett • Kazuha"
+        "comp": "Ayato • Fischl • Bennett • Kazuha",
+        "members": [
+          "Ayato",
+          "Fischl",
+          "Bennett",
+          "Kazuha"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 21500,
-      "atk": 2050,
-      "def": 780,
-      "em": 60,
-      "cr": 78,
-      "cd": 175,
-      "er": 130,
-      "dmgBonus": 85
+      "hp": "20,000 – 23,000 HP",
+      "atk": "1,900 – 2,200 ATQ",
+      "def": "750",
+      "em": "0 – 80 EM",
+      "er": "125% – 140% ER",
+      "crit": "75%+ CR / 160%+ CD"
     },
     "baseStats": {
       "hp90": 13715,
@@ -4221,6 +4747,12 @@ const CHARACTER_BUILDS_DB = [
           156.9
         ]
       }
+    },
+    "statPriority": {
+      "sands": "ATQ%",
+      "goblet": "Bono Daño Hydro%",
+      "circlet": "Prob. Crítica% / Daño Crítico%",
+      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% > 3. Recarga de Energía% (120% - 135%) > 4. Vida%"
     }
   },
   {
@@ -4299,22 +4831,32 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Keqing Aggravate Clásico",
-        "comp": "Keqing • Fischl • Nahida / Baizhu • Kazuha"
+        "comp": "Keqing • Fischl • Nahida • Baizhu",
+        "members": [
+          "Keqing",
+          "Fischl",
+          "Nahida",
+          "Baizhu"
+        ]
       },
       {
         "name": "Keqing Quickbloom",
-        "comp": "Keqing • Furina • Nahida • Baizhu"
+        "comp": "Keqing • Furina • Nahida • Baizhu",
+        "members": [
+          "Keqing",
+          "Furina",
+          "Nahida",
+          "Baizhu"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 17500,
-      "atk": 2050,
-      "def": 780,
-      "em": 140,
-      "cr": 78,
-      "cd": 185,
-      "er": 118,
-      "dmgBonus": 96.6
+      "hp": "17,000",
+      "atk": "1,900 – 2,200 ATQ",
+      "def": "750",
+      "em": "120 – 180 EM",
+      "er": "115% ER",
+      "crit": "75%+ CR / 175%+ CD"
     },
     "baseStats": {
       "hp90": 13103,
@@ -4384,6 +4926,12 @@ const CHARACTER_BUILDS_DB = [
           401.4
         ]
       }
+    },
+    "statPriority": {
+      "sands": "ATQ% o Maestría Elemental",
+      "goblet": "Bono Daño Electro%",
+      "circlet": "Prob. Crítica% / Daño Crítico%",
+      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% > 3. Maestría Elemental (100 – 180 EM) > 4. Recarga de Energía%"
     }
   },
   {
@@ -4462,26 +5010,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Kinich Burning-Burgeon",
-        "comp": "Kinich • Mavuika • Emilie • Bennett"
+        "comp": "Kinich • Mavuika • Emilie • Bennett",
+        "members": [
+          "Kinich",
+          "Mavuika",
+          "Emilie",
+          "Bennett"
+        ]
       },
       {
         "name": "Kinich Vape-Burgeon",
-        "comp": "Kinich • Furina • Xiangling • Bennett"
+        "comp": "Kinich • Furina • Xiangling • Bennett",
+        "members": [
+          "Kinich",
+          "Furina",
+          "Xiangling",
+          "Bennett"
+        ]
       },
       {
         "name": "Kinich F2P",
-        "comp": "Kinich • Xiangling • Bennett • Dehya"
+        "comp": "Kinich • Xiangling • Bennett • Dehya",
+        "members": [
+          "Kinich",
+          "Xiangling",
+          "Bennett",
+          "Dehya"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 18200,
-      "atk": 2350,
-      "def": 790,
-      "em": 80,
-      "cr": 58,
-      "cd": 235,
-      "er": 125,
-      "dmgBonus": 115
+      "hp": "18,000",
+      "atk": "2,200 – 2,500 ATQ",
+      "def": "800",
+      "em": "60 – 120 EM",
+      "er": "120% – 135% ER",
+      "crit": "55% CR / 230%+ CD"
     },
     "baseStats": {
       "hp90": 12858,
@@ -4551,6 +5115,12 @@ const CHARACTER_BUILDS_DB = [
           327.1
         ]
       }
+    },
+    "statPriority": {
+      "sands": "ATQ%",
+      "goblet": "Bono Daño Dendro%",
+      "circlet": "Daño Crítico% (o Prob. CR)",
+      "substats": "1. Daño Crítico / Prob. Crítica (tope 60% CR con Obsidiana) > 2. ATQ% > 3. Recarga de Energía% (120% – 130% ER) > 4. Maestría Elemental"
     }
   },
   {
@@ -4633,26 +5203,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Alhaitham Quickbloom",
-        "comp": "Alhaitham • Nahida • Xingqiu / Yelan • Kuki Shinobu"
+        "comp": "Alhaitham • Nahida • Xingqiu • Yelan",
+        "members": [
+          "Alhaitham",
+          "Nahida",
+          "Xingqiu",
+          "Yelan"
+        ]
       },
       {
         "name": "Nahida Hyperbloom F2P",
-        "comp": "Nahida • Xingqiu • Kuki Shinobu • Yelan / Fischl"
+        "comp": "Nahida • Xingqiu • Kuki Shinobu • Yelan",
+        "members": [
+          "Nahida",
+          "Xingqiu",
+          "Kuki Shinobu",
+          "Yelan"
+        ]
       },
       {
         "name": "Ayato Hyperbloom",
-        "comp": "Ayato • Nahida • Kuki Shinobu • Kazuha"
+        "comp": "Ayato • Nahida • Kuki Shinobu • Kazuha",
+        "members": [
+          "Ayato",
+          "Nahida",
+          "Kuki Shinobu",
+          "Kazuha"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 26500,
-      "atk": 1150,
-      "def": 760,
-      "em": 990,
-      "cr": 20,
-      "cd": 65,
-      "er": 120,
-      "dmgBonus": 30
+      "hp": "24,000 – 30,000 HP",
+      "atk": "1,100",
+      "def": "750",
+      "em": "950 – 1,050 EM",
+      "er": "115% ER",
+      "crit": "Ignorar (Hyperbloom no hace crítico salvo Nahida C2)"
     },
     "baseStats": {
       "hp90": 12288,
@@ -4722,6 +5308,12 @@ const CHARACTER_BUILDS_DB = [
           7.7
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Maestría Elemental",
+      "goblet": "Maestría Elemental",
+      "circlet": "Maestría Elemental",
+      "substats": "1. Maestría Elemental (Meta estricto: 950 – 1,050 EM) > 2. Vida% y Vida Plana (para mayor curación pasiva) > 3. Recarga de Energía%"
     }
   },
   {
@@ -4788,31 +5380,47 @@ const CHARACTER_BUILDS_DB = [
       "def": "750",
       "em": "0",
       "er": "135% – 150% ER",
-      "crit": "Cualquiera"
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "metaTeams": [
       {
         "name": "Wanderer Escudo Freeze",
-        "comp": "Wanderer • Faruzan • Layla • Xingqiu / Yelan"
+        "comp": "Wanderer • Faruzan • Layla • Xingqiu",
+        "members": [
+          "Wanderer",
+          "Faruzan",
+          "Layla",
+          "Xingqiu"
+        ]
       },
       {
         "name": "Hu Tao Melt Escudo",
-        "comp": "Hu Tao • Xingqiu • Layla • Yelan"
+        "comp": "Hu Tao • Xingqiu • Layla • Yelan",
+        "members": [
+          "Hu Tao",
+          "Xingqiu",
+          "Layla",
+          "Yelan"
+        ]
       },
       {
         "name": "Ganyu Melt Escudo",
-        "comp": "Ganyu • Xiangling • Bennett • Layla"
+        "comp": "Ganyu • Xiangling • Bennett • Layla",
+        "members": [
+          "Ganyu",
+          "Xiangling",
+          "Bennett",
+          "Layla"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 42000,
-      "atk": 1150,
-      "def": 760,
-      "em": 0,
-      "cr": 35,
-      "cd": 70,
-      "er": 140,
-      "dmgBonus": 30
+      "hp": "38,000 – 45,000 HP",
+      "atk": "1,100",
+      "def": "750",
+      "em": "0",
+      "er": "135% – 150% ER",
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "baseStats": {
       "hp90": 11092,
@@ -4882,6 +5490,12 @@ const CHARACTER_BUILDS_DB = [
           9.8
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Vida%",
+      "goblet": "Vida%",
+      "circlet": "Vida% (o Prob. CR con Favonius)",
+      "substats": "1. Vida% y Vida Plana (Meta: 38,000 – 44,000 HP) > 2. Recarga de Energía% (130% - 150% ER) > 3. Prob. Crítica (para Favonius)"
     }
   },
   {
@@ -4961,26 +5575,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Mavuika Melt Nuke",
-        "comp": "Mavuika • Citlali • Bennett • Xilonen"
+        "comp": "Mavuika • Citlali • Bennett • Xilonen",
+        "members": [
+          "Mavuika",
+          "Citlali",
+          "Bennett",
+          "Xilonen"
+        ]
       },
       {
         "name": "Mualani-Mavuika Core",
-        "comp": "Mualani • Mavuika • Xilonen • Emilie / Furina"
+        "comp": "Mualani • Mavuika • Xilonen • Emilie",
+        "members": [
+          "Mualani",
+          "Mavuika",
+          "Xilonen",
+          "Emilie"
+        ]
       },
       {
         "name": "Kinich Burning-Burgeon",
-        "comp": "Kinich • Mavuika • Emilie • Bennett"
+        "comp": "Kinich • Mavuika • Emilie • Bennett",
+        "members": [
+          "Kinich",
+          "Mavuika",
+          "Emilie",
+          "Bennett"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 18500,
-      "atk": 2350,
-      "def": 820,
-      "em": 210,
-      "cr": 58,
-      "cd": 240,
-      "er": 100,
-      "dmgBonus": 120
+      "hp": "18,000",
+      "atk": "2,200 – 2,600+ ATQ",
+      "def": "800",
+      "em": "180 – 260 EM",
+      "er": "100% (No usa energía)",
+      "crit": "55% CR / 230%+ CD"
     },
     "baseStats": {
       "hp90": 12552,
@@ -5050,6 +5680,12 @@ const CHARACTER_BUILDS_DB = [
           1624.4
         ]
       }
+    },
+    "statPriority": {
+      "sands": "ATQ% o Maestría Elemental (en Melt con Bennett)",
+      "goblet": "Bono Daño Pyro%",
+      "circlet": "Daño Crítico% (o Prob. CR)",
+      "substats": "1. Daño Crítico > 2. Prob. Crítica (tope 60% en panel con Obsidiana) > 3. ATQ% > 4. Maestría Elemental (150-250 EM) > ❌ ER% es 100% inútil"
     }
   },
   {
@@ -5128,26 +5764,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Morgana Permafrost Clásico",
-        "comp": "Ganyu • Mona • Venti • Diona"
+        "comp": "Ganyu • Mona • Venti • Diona",
+        "members": [
+          "Ganyu",
+          "Mona",
+          "Venti",
+          "Diona"
+        ]
       },
       {
         "name": "Freeze Premium",
-        "comp": "Ayaka • Mona • Kazuha • Diona"
+        "comp": "Ayaka • Mona • Kazuha • Diona",
+        "members": [
+          "Ayaka",
+          "Mona",
+          "Kazuha",
+          "Diona"
+        ]
       },
       {
         "name": "Nuke Showcase",
-        "comp": "Hu Tao / Bennett • Mona • Kazuha • Sucrose"
+        "comp": "Hu Tao • Bennett • Mona • Kazuha",
+        "members": [
+          "Hu Tao",
+          "Bennett",
+          "Mona",
+          "Kazuha"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 17800,
-      "atk": 1550,
-      "def": 680,
-      "em": 90,
-      "cr": 62,
-      "cd": 135,
-      "er": 230,
-      "dmgBonus": 95
+      "hp": "17,000",
+      "atk": "1,400 – 1,700 ATQ",
+      "def": "650",
+      "em": "50 – 120 EM",
+      "er": "210% – 250% ER",
+      "crit": "60%+ CR / 120%+ CD"
     },
     "baseStats": {
       "hp90": 10409,
@@ -5217,6 +5869,12 @@ const CHARACTER_BUILDS_DB = [
           939.3
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Recarga de Energía%",
+      "goblet": "Bono Daño Hydro% o ATQ%",
+      "circlet": "Prob. Crítica% / Daño Crítico%",
+      "substats": "1. Recarga de Energía% (200% - 240% ER) > 2. Prob. Crítica (para activar Favonius) > 3. Daño Crítico > 4. ATQ%"
     }
   },
   {
@@ -5286,8 +5944,8 @@ const CHARACTER_BUILDS_DB = [
     "talentPriority": "Habilidad Elemental (E) >>> Definitiva (Q) >>> Ataques Normales",
     "benchmarks": {
       "hp": "35,000 – 42,000 HP",
-      "atk": "Ignorar",
-      "def": "Cualquiera",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
       "em": "180 – 260 EM",
       "er": "100% – 115% ER",
       "crit": "50% CR / 240%+ CD"
@@ -5295,26 +5953,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Mualani Vape con Mavuika",
-        "comp": "Mualani • Mavuika • Xilonen • Sucrose"
+        "comp": "Mualani • Mavuika • Xilonen • Sucrose",
+        "members": [
+          "Mualani",
+          "Mavuika",
+          "Xilonen",
+          "Sucrose"
+        ]
       },
       {
         "name": "Mualani Burn-Vape",
-        "comp": "Mualani • Xiangling • Emilie • Zhongli"
+        "comp": "Mualani • Xiangling • Emilie • Zhongli",
+        "members": [
+          "Mualani",
+          "Xiangling",
+          "Emilie",
+          "Zhongli"
+        ]
       },
       {
         "name": "Mualani F2P",
-        "comp": "Mualani • Xiangling • Lynette • Dehya"
+        "comp": "Mualani • Xiangling • Lynette • Dehya",
+        "members": [
+          "Mualani",
+          "Xiangling",
+          "Lynette",
+          "Dehya"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 38200,
-      "atk": 1120,
-      "def": 730,
-      "em": 210,
-      "cr": 55,
-      "cd": 245,
-      "er": 110,
-      "dmgBonus": 115
+      "hp": "35,000 – 42,000 HP",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "180 – 260 EM",
+      "er": "100% – 115% ER",
+      "crit": "50% CR / 240%+ CD"
     },
     "baseStats": {
       "hp90": 15185,
@@ -5384,6 +6058,12 @@ const CHARACTER_BUILDS_DB = [
           100.5
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Vida% o Maestría Elemental",
+      "goblet": "Bono Daño Hydro%",
+      "circlet": "Daño Crítico% (o Vida% si ya supera 50% CR)",
+      "substats": "1. Daño Crítico (con Códice de Obsidiana) > 2. Vida% (hasta 35,000+ HP) > 3. Maestría Elemental (150 – 250 EM) > 4. Prob. Crítica (tope 60%)"
     }
   },
   {
@@ -5462,26 +6142,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Alhaitham Quickbloom",
-        "comp": "Alhaitham • Nahida • Xingqiu / Yelan • Kuki Shinobu"
+        "comp": "Alhaitham • Nahida • Xingqiu • Yelan",
+        "members": [
+          "Alhaitham",
+          "Nahida",
+          "Xingqiu",
+          "Yelan"
+        ]
       },
       {
         "name": "Nilou Bountiful Bloom",
-        "comp": "Nilou • Nahida • Kokomi • Baizhu / Collei"
+        "comp": "Nilou • Nahida • Kokomi • Baizhu",
+        "members": [
+          "Nilou",
+          "Nahida",
+          "Kokomi",
+          "Baizhu"
+        ]
       },
       {
         "name": "Cyno / Clorinde Quickbloom",
-        "comp": "Cyno / Clorinde • Nahida • Furina • Baizhu"
+        "comp": "Cyno • Clorinde • Nahida • Furina",
+        "members": [
+          "Cyno",
+          "Clorinde",
+          "Nahida",
+          "Furina"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 16500,
-      "atk": 1250,
-      "def": 720,
-      "em": 920,
-      "cr": 55,
-      "cd": 140,
-      "er": 130,
-      "dmgBonus": 85
+      "hp": "16,000",
+      "atk": "1,200",
+      "def": "700",
+      "em": "850 – 1,000 EM",
+      "er": "125% – 135% ER",
+      "crit": "50%+ CR / 130%+ CD"
     },
     "baseStats": {
       "hp90": 10349,
@@ -5551,6 +6247,12 @@ const CHARACTER_BUILDS_DB = [
           47.2
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Maestría Elemental",
+      "goblet": "Maestría Elemental o Bono Daño Dendro%",
+      "circlet": "Maestría Elemental o Prob. Crítica%",
+      "substats": "1. Maestría Elemental (Meta: 800 – 1,000 EM) > 2. Prob. Crítica / Daño Crítico (A4 otorga hasta +24% CR y +80% Daño en Tri-Karma) > 3. Recarga de Energía% (120% – 135%) > 4. ATQ%"
     }
   },
   {
@@ -5629,26 +6331,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Navia Double Pyro",
-        "comp": "Navia • Zhongli / Chiori • Bennett • Xiangling"
+        "comp": "Navia • Zhongli • Chiori • Bennett",
+        "members": [
+          "Navia",
+          "Zhongli",
+          "Chiori",
+          "Bennett"
+        ]
       },
       {
         "name": "Navia-Furina Core",
-        "comp": "Navia • Furina • Xilonen • Bennett"
+        "comp": "Navia • Furina • Xilonen • Bennett",
+        "members": [
+          "Navia",
+          "Furina",
+          "Xilonen",
+          "Bennett"
+        ]
       },
       {
         "name": "Navia Plunge",
-        "comp": "Navia • Xianyun • Furina • Chiori"
+        "comp": "Navia • Xianyun • Furina • Chiori",
+        "members": [
+          "Navia",
+          "Xianyun",
+          "Furina",
+          "Chiori"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 18500,
-      "atk": 2450,
-      "def": 820,
-      "em": 40,
-      "cr": 78,
-      "cd": 190,
-      "er": 130,
-      "dmgBonus": 115
+      "hp": "18,000",
+      "atk": "2,200 – 2,600 ATQ",
+      "def": "800",
+      "em": "0",
+      "er": "125% – 135% ER",
+      "crit": "75%+ CR / 170%+ CD"
     },
     "baseStats": {
       "hp90": 12648,
@@ -5718,6 +6436,12 @@ const CHARACTER_BUILDS_DB = [
           177
         ]
       }
+    },
+    "statPriority": {
+      "sands": "ATQ%",
+      "goblet": "Bono Daño Geo%",
+      "circlet": "Prob. Crítica% / Daño Crítico%",
+      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% > 3. Recarga de Energía% (120% – 135% ER) > 4. DEF%"
     }
   },
   {
@@ -5792,8 +6516,8 @@ const CHARACTER_BUILDS_DB = [
     "talentPriority": "Ataque Normal/Cargado (NA) >>> Habilidad Elemental (E) = Definitiva (Q)",
     "benchmarks": {
       "hp": "38,000 – 45,000 HP",
-      "atk": "Ignorar",
-      "def": "Cualquiera",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
       "em": "0 – 80 EM",
       "er": "115% – 130% ER",
       "crit": "60% CR / 240%+ CD"
@@ -5801,26 +6525,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Neuvillette Hyper Solo Carry",
-        "comp": "Neuvillette • Furina • Kazuha • Baizhu"
+        "comp": "Neuvillette • Furina • Kazuha • Baizhu",
+        "members": [
+          "Neuvillette",
+          "Furina",
+          "Kazuha",
+          "Baizhu"
+        ]
       },
       {
         "name": "Neuvillette Taser F2P",
-        "comp": "Neuvillette • Fischl • Beidou • Sucrose"
+        "comp": "Neuvillette • Fischl • Beidou • Sucrose",
+        "members": [
+          "Neuvillette",
+          "Fischl",
+          "Beidou",
+          "Sucrose"
+        ]
       },
       {
         "name": "Neuvillette Vaporize",
-        "comp": "Neuvillette • Xiangling • Kazuha • Zhongli"
+        "comp": "Neuvillette • Xiangling • Kazuha • Zhongli",
+        "members": [
+          "Neuvillette",
+          "Xiangling",
+          "Kazuha",
+          "Zhongli"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 41200,
-      "atk": 1100,
-      "def": 780,
-      "em": 40,
-      "cr": 62,
-      "cd": 265,
-      "er": 120,
-      "dmgBonus": 125
+      "hp": "38,000 – 45,000 HP",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "0 – 80 EM",
+      "er": "115% – 130% ER",
+      "crit": "60% CR / 240%+ CD"
     },
     "baseStats": {
       "hp90": 14695,
@@ -5890,6 +6630,12 @@ const CHARACTER_BUILDS_DB = [
           47.3
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Vida%",
+      "goblet": "Bono Daño Hydro% o Vida% (con Furina + Kazuha)",
+      "circlet": "Daño Crítico% (o Prob. CR si falta)",
+      "substats": "1. Prob. Crítica (tope 64% con Cazador) / Daño Crítico > 2. Vida% (hasta 40,000+ HP) > 3. Recarga de Energía% (110% - 130%) > ❌ ATQ% no tiene ningún impacto"
     }
   },
   {
@@ -5952,31 +6698,41 @@ const CHARACTER_BUILDS_DB = [
     "talentPriority": "Habilidad Elemental (E) = Definitiva (Q) >>> Ataques Normales",
     "benchmarks": {
       "hp": "65,000 – 74,400 HP",
-      "atk": "Ignorar",
-      "def": "Cualquiera",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
       "em": "200 – 400 EM",
       "er": "130% – 150% ER",
-      "crit": "Ignorar"
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "metaTeams": [
       {
         "name": "Nilou Superbloom Premium",
-        "comp": "Nilou • Nahida • Kokomi • Baizhu / Alhaitham"
+        "comp": "Nilou • Nahida • Kokomi • Baizhu",
+        "members": [
+          "Nilou",
+          "Nahida",
+          "Kokomi",
+          "Baizhu"
+        ]
       },
       {
         "name": "Nilou Bloom F2P",
-        "comp": "Nilou • Viajero Dendro • Collei • Bárbara"
+        "comp": "Nilou • Viajero Dendro • Collei • Bárbara",
+        "members": [
+          "Nilou",
+          "Viajero Dendro",
+          "Collei",
+          "Bárbara"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 72500,
-      "atk": 1100,
-      "def": 740,
-      "em": 320,
-      "cr": 25,
-      "cd": 75,
-      "er": 135,
-      "dmgBonus": 45
+      "hp": "65,000 – 74,400 HP",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "200 – 400 EM",
+      "er": "130% – 150% ER",
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "baseStats": {
       "hp90": 15185,
@@ -6046,6 +6802,12 @@ const CHARACTER_BUILDS_DB = [
           52.5
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Vida%",
+      "goblet": "Vida%",
+      "circlet": "Vida%",
+      "substats": "1. Vida% y Vida Plana (Meta: acercarse lo más posible a 74,444 HP) > 2. Maestría Elemental > 3. Recarga de Energía%"
     }
   },
   {
@@ -6124,22 +6886,32 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Noelle-Furina Hypercarry",
-        "comp": "Noelle • Furina • Chiori / Albedo • Gorou"
+        "comp": "Noelle • Furina • Chiori • Albedo",
+        "members": [
+          "Noelle",
+          "Furina",
+          "Chiori",
+          "Albedo"
+        ]
       },
       {
         "name": "Noelle Triple Hydro",
-        "comp": "Noelle • Furina • Yelan • Xingqiu"
+        "comp": "Noelle • Furina • Yelan • Xingqiu",
+        "members": [
+          "Noelle",
+          "Furina",
+          "Yelan",
+          "Xingqiu"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 18500,
-      "atk": 1250,
-      "def": 2450,
-      "em": 0,
-      "cr": 72,
-      "cd": 170,
-      "er": 140,
-      "dmgBonus": 90
+      "hp": "18,000",
+      "atk": "Base 1,200 (Buff Q: 4,000+)",
+      "def": "2,200 – 2,600 DEF",
+      "em": "0",
+      "er": "135% – 145% ER",
+      "crit": "70%+ CR / 160%+ CD"
     },
     "baseStats": {
       "hp90": 12071,
@@ -6209,6 +6981,12 @@ const CHARACTER_BUILDS_DB = [
           85
         ]
       }
+    },
+    "statPriority": {
+      "sands": "DEF%",
+      "goblet": "Bono Daño Geo%",
+      "circlet": "Prob. Crítica% / Daño Crítico%",
+      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. DEF% > 3. Recarga de Energía% (130% - 145% ER) > 4. ATQ%"
     }
   },
   {
@@ -6287,26 +7065,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Raiden National (Rational)",
-        "comp": "Raiden Shogun • Xiangling • Xingqiu / Yelan • Bennett"
+        "comp": "Raiden Shogun • Xiangling • Xingqiu • Yelan",
+        "members": [
+          "Raiden Shogun",
+          "Xiangling",
+          "Xingqiu",
+          "Yelan"
+        ]
       },
       {
         "name": "Raiden Hypercarry",
-        "comp": "Raiden Shogun • Sara (C6) • Kazuha • Bennett"
+        "comp": "Raiden Shogun • Sara • Kazuha • Bennett",
+        "members": [
+          "Raiden Shogun",
+          "Sara",
+          "Kazuha",
+          "Bennett"
+        ]
       },
       {
         "name": "Raiden Hyperbloom (EM)",
-        "comp": "Raiden (Full EM) • Nahida • Xingqiu • Baizhu"
+        "comp": "Raiden • Nahida • Xingqiu • Baizhu",
+        "members": [
+          "Raiden",
+          "Nahida",
+          "Xingqiu",
+          "Baizhu"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 19500,
-      "atk": 1950,
-      "def": 820,
-      "em": 60,
-      "cr": 68,
-      "cd": 155,
-      "er": 270,
-      "dmgBonus": 125
+      "hp": "19,000",
+      "atk": "1,800 – 2,200 ATQ",
+      "def": "800",
+      "em": "0 – 80 EM",
+      "er": "250% – 280% ER",
+      "crit": "65%+ CR / 150%+ CD"
     },
     "baseStats": {
       "hp90": 12907,
@@ -6376,6 +7170,12 @@ const CHARACTER_BUILDS_DB = [
           850.8
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Recarga de Energía% (con La Captura) o ATQ% (con Luz del Segador)",
+      "goblet": "Bono Daño Electro% o ATQ%",
+      "circlet": "Prob. Crítica% / Daño Crítico%",
+      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. Recarga de Energía% (250% - 280% ER) > 3. ATQ% > 4. Maestría Elemental"
     }
   },
   {
@@ -6454,26 +7254,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Nilou Bountiful Bloom",
-        "comp": "Nilou • Nahida • Kokomi • Alhaitham / Collei"
+        "comp": "Nilou • Nahida • Kokomi • Alhaitham",
+        "members": [
+          "Nilou",
+          "Nahida",
+          "Kokomi",
+          "Alhaitham"
+        ]
       },
       {
         "name": "Ayaka Permafrost",
-        "comp": "Ayaka • Shenhe • Kazuha • Kokomi (con TTDS + Tenacidad)"
+        "comp": "Ayaka • Shenhe • Kazuha • Kokomi",
+        "members": [
+          "Ayaka",
+          "Shenhe",
+          "Kazuha",
+          "Kokomi"
+        ]
       },
       {
         "name": "Sukokomon",
-        "comp": "Kokomi • Xiangling • Fischl • Sucrose"
+        "comp": "Kokomi • Xiangling • Fischl • Sucrose",
+        "members": [
+          "Kokomi",
+          "Xiangling",
+          "Fischl",
+          "Sucrose"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 38500,
-      "atk": 1150,
-      "def": 680,
-      "em": 80,
-      "cr": -100,
-      "cd": 50,
-      "er": 160,
-      "dmgBonus": 75
+      "hp": "35,000 – 42,000 HP",
+      "atk": "1,100",
+      "def": "700",
+      "em": "0 – 100 EM",
+      "er": "150% – 170% ER",
+      "crit": "-100% CR (Ignorar)"
     },
     "baseStats": {
       "hp90": 13471,
@@ -6543,6 +7359,12 @@ const CHARACTER_BUILDS_DB = [
           10.3
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Vida% o Recarga de Energía%",
+      "goblet": "Vida% o Bono Daño Hydro%",
+      "circlet": "Bono de Curación%",
+      "substats": "1. Bono de Curación (Pasiva A4 convierte cura en daño) > 2. Vida% > 3. Recarga de Energía% (140% - 160%) > ❌ El Crítico es matemáticamente inútil"
     }
   },
   {
@@ -6615,27 +7437,37 @@ const CHARACTER_BUILDS_DB = [
       "def": "800",
       "em": "0",
       "er": "175% – 200% ER",
-      "crit": "Cualquiera"
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "metaTeams": [
       {
         "name": "Ayaka Mono Cryo / Freeze",
-        "comp": "Ayaka • Shenhe • Kazuha • Kokomi"
+        "comp": "Ayaka • Shenhe • Kazuha • Kokomi",
+        "members": [
+          "Ayaka",
+          "Shenhe",
+          "Kazuha",
+          "Kokomi"
+        ]
       },
       {
         "name": "Wriothesley Freeze",
-        "comp": "Wriothesley • Shenhe • Furina • Jean / Charlotte"
+        "comp": "Wriothesley • Shenhe • Furina • Jean",
+        "members": [
+          "Wriothesley",
+          "Shenhe",
+          "Furina",
+          "Jean"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 17500,
-      "atk": 3650,
-      "def": 810,
-      "em": 0,
-      "cr": 35,
-      "cd": 70,
-      "er": 185,
-      "dmgBonus": 30
+      "hp": "17,000",
+      "atk": "3,400 – 4,000+ ATQ",
+      "def": "800",
+      "em": "0",
+      "er": "175% – 200% ER",
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "baseStats": {
       "hp90": 12993,
@@ -6705,6 +7537,12 @@ const CHARACTER_BUILDS_DB = [
           17.7
         ]
       }
+    },
+    "statPriority": {
+      "sands": "ATQ% o Recarga de Energía%",
+      "goblet": "ATQ%",
+      "circlet": "ATQ% (o Prob. CR con Favonius)",
+      "substats": "1. Recarga de Energía% (170% - 200% ER) > 2. ATQ% y ATQ Plano (Meta: 3,400 – 4,000 ATQ) > 3. Prob. Crítica (si usa Favonius)"
     }
   },
   {
@@ -6766,31 +7604,41 @@ const CHARACTER_BUILDS_DB = [
     "talentPriority": "Habilidad Elemental (E) >>> Definitiva (Q) >>> Ataques Básicos",
     "benchmarks": {
       "hp": "58,000 – 65,000 HP",
-      "atk": "Ignorar",
-      "def": "Cualquiera",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
       "em": "0",
       "er": "140% – 160% ER",
-      "crit": "Ignorar"
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "metaTeams": [
       {
         "name": "Furina + Sigewinne Core",
-        "comp": "Furina • Sigewinne • Kazuha • Nahida / Raiden"
+        "comp": "Furina • Sigewinne • Kazuha • Nahida",
+        "members": [
+          "Furina",
+          "Sigewinne",
+          "Kazuha",
+          "Nahida"
+        ]
       },
       {
         "name": "Navia Geo-Hydro",
-        "comp": "Navia • Chiori • Furina • Sigewinne"
+        "comp": "Navia • Chiori • Furina • Sigewinne",
+        "members": [
+          "Navia",
+          "Chiori",
+          "Furina",
+          "Sigewinne"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 62500,
-      "atk": 1100,
-      "def": 620,
-      "em": 0,
-      "cr": 20,
-      "cd": 70,
-      "er": 150,
-      "dmgBonus": 40
+      "hp": "58,000 – 65,000 HP",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "0",
+      "er": "140% – 160% ER",
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "baseStats": {
       "hp90": 13348,
@@ -6860,6 +7708,12 @@ const CHARACTER_BUILDS_DB = [
           4.2
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Vida%",
+      "goblet": "Vida%",
+      "circlet": "Vida% (o Bono Curación)",
+      "substats": "1. Vida% y Vida Plana (Meta: 65,000 HP para tope del buff) > 2. Recarga de Energía% (140% - 160%)"
     }
   },
   {
@@ -6902,6 +7756,11 @@ const CHARACTER_BUILDS_DB = [
         "set": "Sombra Verde Esmeralda (4 piezas)",
         "type": "BiS Obligatorio",
         "bonus": "-40% RES Elemental para multiplicar el daño del equipo."
+      },
+      {
+        "set": "Instructor (4 piezas)",
+        "type": "Soporte de Reacciones",
+        "bonus": "+120 de Maestría Elemental a todos los miembros del equipo al causar una reacción elemental."
       }
     ],
     "mainStats": {
@@ -6920,31 +7779,47 @@ const CHARACTER_BUILDS_DB = [
       "def": "700",
       "em": "850 – 950 EM",
       "er": "150% – 170% ER",
-      "crit": "Cualquiera"
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "metaTeams": [
       {
         "name": "National Team F2P",
-        "comp": "Xiangling • Xingqiu • Bennett • Sucrose"
+        "comp": "Xiangling • Xingqiu • Bennett • Sucrose",
+        "members": [
+          "Xiangling",
+          "Xingqiu",
+          "Bennett",
+          "Sucrose"
+        ]
       },
       {
         "name": "Taser Clásico",
-        "comp": "Sucrose (Driver) • Xingqiu • Beidou • Fischl"
+        "comp": "Sucrose • Xingqiu • Beidou • Fischl",
+        "members": [
+          "Sucrose",
+          "Xingqiu",
+          "Beidou",
+          "Fischl"
+        ]
       },
       {
         "name": "Hu Tao VV Vape",
-        "comp": "Hu Tao • Xingqiu • Sucrose • Thoma"
+        "comp": "Hu Tao • Xingqiu • Sucrose • Thoma",
+        "members": [
+          "Hu Tao",
+          "Xingqiu",
+          "Sucrose",
+          "Thoma"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 16500,
-      "atk": 1150,
-      "def": 710,
-      "em": 910,
-      "cr": 25,
-      "cd": 60,
-      "er": 160,
-      "dmgBonus": 45
+      "hp": "16,000",
+      "atk": "1,100",
+      "def": "700",
+      "em": "850 – 950 EM",
+      "er": "150% – 170% ER",
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "baseStats": {
       "hp90": 9274,
@@ -7014,6 +7889,12 @@ const CHARACTER_BUILDS_DB = [
           313.9
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Maestría Elemental",
+      "goblet": "Maestría Elemental",
+      "circlet": "Maestría Elemental",
+      "substats": "1. Maestría Elemental (Meta: 800 – 950 EM) > 2. Recarga de Energía% (140% - 160% ER)"
     }
   },
   {
@@ -7092,22 +7973,32 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "International Team (Top Meta)",
-        "comp": "Tartaglia • Xiangling • Kazuha • Bennett"
+        "comp": "Tartaglia • Xiangling • Kazuha • Bennett",
+        "members": [
+          "Tartaglia",
+          "Xiangling",
+          "Kazuha",
+          "Bennett"
+        ]
       },
       {
         "name": "Childe Fireworks (Electrocharge)",
-        "comp": "Tartaglia • Fischl • Beidou • Bennett"
+        "comp": "Tartaglia • Fischl • Beidou • Bennett",
+        "members": [
+          "Tartaglia",
+          "Fischl",
+          "Beidou",
+          "Bennett"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 19200,
-      "atk": 2050,
-      "def": 810,
-      "em": 120,
-      "cr": 78,
-      "cd": 170,
-      "er": 125,
-      "dmgBonus": 90.4
+      "hp": "18,000",
+      "atk": "1,900 – 2,200 ATQ",
+      "def": "800",
+      "em": "100 – 160 EM",
+      "er": "120% – 135% ER",
+      "crit": "75%+ CR / 160%+ CD"
     },
     "baseStats": {
       "hp90": 13103,
@@ -7177,6 +8068,12 @@ const CHARACTER_BUILDS_DB = [
           985.3
         ]
       }
+    },
+    "statPriority": {
+      "sands": "ATQ%",
+      "goblet": "Bono Daño Hydro%",
+      "circlet": "Prob. Crítica% / Daño Crítico%",
+      "substats": "1. Prob. Crítica (esencial para aplicar Riptide en golpes críticos) > 2. Daño Crítico > 3. ATQ% > 4. Maestría Elemental (100 - 150 EM en Vaporize)"
     }
   },
   {
@@ -7243,27 +8140,37 @@ const CHARACTER_BUILDS_DB = [
       "def": "750",
       "em": "800 – 900 EM",
       "er": "190% – 220% ER",
-      "crit": "Cualquiera"
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "metaTeams": [
       {
         "name": "Ayato Burgeon",
-        "comp": "Ayato • Nahida • Thoma • Baizhu"
+        "comp": "Ayato • Nahida • Thoma • Baizhu",
+        "members": [
+          "Ayato",
+          "Nahida",
+          "Thoma",
+          "Baizhu"
+        ]
       },
       {
         "name": "Alhaitham Burgeon",
-        "comp": "Alhaitham • Xingqiu • Thoma • Baizhu"
+        "comp": "Alhaitham • Xingqiu • Thoma • Baizhu",
+        "members": [
+          "Alhaitham",
+          "Xingqiu",
+          "Thoma",
+          "Baizhu"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 22500,
-      "atk": 1150,
-      "def": 760,
-      "em": 840,
-      "cr": 25,
-      "cd": 60,
-      "er": 200,
-      "dmgBonus": 40
+      "hp": "22,000",
+      "atk": "1,100",
+      "def": "750",
+      "em": "800 – 900 EM",
+      "er": "190% – 220% ER",
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "baseStats": {
       "hp90": 10331,
@@ -7333,6 +8240,12 @@ const CHARACTER_BUILDS_DB = [
           123.2
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Maestría Elemental o Recarga ER%",
+      "goblet": "Maestría Elemental",
+      "circlet": "Maestría Elemental",
+      "substats": "1. Recarga de Energía% (180% - 210% ER crucial) > 2. Maestría Elemental (800 – 950 EM) > 3. Vida% (para mayor escudo)"
     }
   },
   {
@@ -7410,26 +8323,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Wanderer Hypercarry",
-        "comp": "Wanderer • Faruzan (C6) • Bennett • Zhongli"
+        "comp": "Wanderer • Faruzan • Bennett • Zhongli",
+        "members": [
+          "Wanderer",
+          "Faruzan",
+          "Bennett",
+          "Zhongli"
+        ]
       },
       {
         "name": "Wanderer-Furina Core",
-        "comp": "Wanderer • Faruzan • Furina • Mika / Charlotte"
+        "comp": "Wanderer • Faruzan • Furina • Mika",
+        "members": [
+          "Wanderer",
+          "Faruzan",
+          "Furina",
+          "Mika"
+        ]
       },
       {
         "name": "Wanderer Taser",
-        "comp": "Wanderer • Xingqiu • Yelan • Fischl"
+        "comp": "Wanderer • Xingqiu • Yelan • Fischl",
+        "members": [
+          "Wanderer",
+          "Xingqiu",
+          "Yelan",
+          "Fischl"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 16500,
-      "atk": 2250,
-      "def": 720,
-      "em": 40,
-      "cr": 80,
-      "cd": 190,
-      "er": 120,
-      "dmgBonus": 105
+      "hp": "16,000",
+      "atk": "2,000 – 2,400 ATQ",
+      "def": "700",
+      "em": "0 – 80 EM",
+      "er": "115% – 125% ER",
+      "crit": "75%+ CR / 180%+ CD"
     },
     "baseStats": {
       "hp90": 10164,
@@ -7499,6 +8428,12 @@ const CHARACTER_BUILDS_DB = [
           312.2
         ]
       }
+    },
+    "statPriority": {
+      "sands": "ATQ%",
+      "goblet": "Bono Daño Anemo%",
+      "circlet": "Prob. Crítica% / Daño Crítico%",
+      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% > 3. Recarga de Energía% (110% – 125% ER)"
     }
   },
   {
@@ -7541,6 +8476,11 @@ const CHARACTER_BUILDS_DB = [
         "set": "Sombra Verde Esmeralda (4 piezas)",
         "type": "BiS Obligatorio",
         "bonus": "-40% RES Elemental al elemento absorbido en su agujero negro."
+      },
+      {
+        "set": "Emblema del Destino (4 piezas)",
+        "type": "Opción Sub-DPS Burst",
+        "bonus": "+20% Recarga de Energía y aumenta el daño de la Definitiva hasta un 75% según la Recarga."
       }
     ],
     "mainStats": {
@@ -7560,27 +8500,37 @@ const CHARACTER_BUILDS_DB = [
       "def": "700",
       "em": "800 – 950 EM",
       "er": "165% – 180% ER",
-      "crit": "Cualquiera"
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "metaTeams": [
       {
         "name": "Morgana Clásico",
-        "comp": "Ganyu • Mona • Venti • Diona"
+        "comp": "Ganyu • Mona • Venti • Diona",
+        "members": [
+          "Ganyu",
+          "Mona",
+          "Venti",
+          "Diona"
+        ]
       },
       {
         "name": "Ayaka Freeze AoE",
-        "comp": "Ayaka • Shenhe • Venti • Kokomi"
+        "comp": "Ayaka • Shenhe • Venti • Kokomi",
+        "members": [
+          "Ayaka",
+          "Shenhe",
+          "Venti",
+          "Kokomi"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 17500,
-      "atk": 1350,
-      "def": 720,
-      "em": 850,
-      "cr": 35,
-      "cd": 75,
-      "er": 175,
-      "dmgBonus": 45
+      "hp": "17,000",
+      "atk": "1,300",
+      "def": "700",
+      "em": "800 – 950 EM",
+      "er": "165% – 180% ER",
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "baseStats": {
       "hp90": 10531,
@@ -7650,6 +8600,12 @@ const CHARACTER_BUILDS_DB = [
           80.2
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Maestría Elemental (o Recarga ER%)",
+      "goblet": "Maestría Elemental",
+      "circlet": "Maestría Elemental",
+      "substats": "1. Maestría Elemental (700 – 900 EM) > 2. Recarga de Energía% (150% - 170% ER) > 3. Prob. Crítica (si usa Favonius)"
     }
   },
   {
@@ -7728,26 +8684,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Wriothesley Burn-Melt",
-        "comp": "Wriothesley • Nahida • Thoma • Bennett"
+        "comp": "Wriothesley • Nahida • Thoma • Bennett",
+        "members": [
+          "Wriothesley",
+          "Nahida",
+          "Thoma",
+          "Bennett"
+        ]
       },
       {
         "name": "Wriothesley Freeze con Furina",
-        "comp": "Wriothesley • Furina • Shenhe • Jean / Charlotte"
+        "comp": "Wriothesley • Furina • Shenhe • Jean",
+        "members": [
+          "Wriothesley",
+          "Furina",
+          "Shenhe",
+          "Jean"
+        ]
       },
       {
         "name": "Wriothesley Hyper",
-        "comp": "Wriothesley • Shenhe • Kazuha • Bennett"
+        "comp": "Wriothesley • Shenhe • Kazuha • Bennett",
+        "members": [
+          "Wriothesley",
+          "Shenhe",
+          "Kazuha",
+          "Bennett"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 18500,
-      "atk": 2250,
-      "def": 790,
-      "em": 120,
-      "cr": 62,
-      "cd": 225,
-      "er": 120,
-      "dmgBonus": 105
+      "hp": "18,000",
+      "atk": "2,000 – 2,400 ATQ",
+      "def": "800",
+      "em": "100 – 160 EM (en Melt)",
+      "er": "115% – 125% ER",
+      "crit": "60% CR / 210%+ CD"
     },
     "baseStats": {
       "hp90": 12858,
@@ -7817,6 +8789,12 @@ const CHARACTER_BUILDS_DB = [
           269.7
         ]
       }
+    },
+    "statPriority": {
+      "sands": "ATQ% o Maestría Elemental (en Melt)",
+      "goblet": "Bono Daño Cryo%",
+      "circlet": "Daño Crítico% (o Prob. CR)",
+      "substats": "1. Daño Crítico / Prob. Crítica (tope 64% con Cazador) > 2. ATQ% > 3. Maestría Elemental (100 – 180 EM en Melt) > 4. Recarga de Energía%"
     }
   },
   {
@@ -7895,26 +8873,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Raiden National (Rational)",
-        "comp": "Raiden Shogun • Xiangling • Xingqiu • Bennett"
+        "comp": "Raiden Shogun • Xiangling • Xingqiu • Bennett",
+        "members": [
+          "Raiden Shogun",
+          "Xiangling",
+          "Xingqiu",
+          "Bennett"
+        ]
       },
       {
         "name": "International Team",
-        "comp": "Tartaglia • Xiangling • Kazuha • Bennett"
+        "comp": "Tartaglia • Xiangling • Kazuha • Bennett",
+        "members": [
+          "Tartaglia",
+          "Xiangling",
+          "Kazuha",
+          "Bennett"
+        ]
       },
       {
         "name": "Sukokomon",
-        "comp": "Kokomi • Xiangling • Fischl • Sucrose"
+        "comp": "Kokomi • Xiangling • Fischl • Sucrose",
+        "members": [
+          "Kokomi",
+          "Xiangling",
+          "Fischl",
+          "Sucrose"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 18500,
-      "atk": 1550,
-      "def": 740,
-      "em": 220,
-      "cr": 68,
-      "cd": 150,
-      "er": 205,
-      "dmgBonus": 110
+      "hp": "18,000",
+      "atk": "1,400 – 1,700 ATQ",
+      "def": "750",
+      "em": "180 – 260 EM",
+      "er": "190% – 220% ER",
+      "crit": "65%+ CR / 140%+ CD"
     },
     "baseStats": {
       "hp90": 10875,
@@ -7984,6 +8978,12 @@ const CHARACTER_BUILDS_DB = [
           280.8
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Recarga de Energía% o ATQ%",
+      "goblet": "Bono Daño Pyro%",
+      "circlet": "Prob. Crítica% / Daño Crítico%",
+      "substats": "1. Recarga de Energía% (180% - 220% ER) > 2. Prob. Crítica / Daño Crítico (1:2) > 3. Maestría Elemental (150 – 250 EM) > 4. ATQ%"
     }
   },
   {
@@ -8056,31 +9056,47 @@ const CHARACTER_BUILDS_DB = [
       "def": "750",
       "em": "0",
       "er": "175% – 210% ER",
-      "crit": "Cualquiera"
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "metaTeams": [
       {
         "name": "Xiao Plunge Premium",
-        "comp": "Xiao • Xianyun • Faruzan • Furina"
+        "comp": "Xiao • Xianyun • Faruzan • Furina",
+        "members": [
+          "Xiao",
+          "Xianyun",
+          "Faruzan",
+          "Furina"
+        ]
       },
       {
         "name": "Gaming Plunge Vape",
-        "comp": "Gaming • Xianyun • Furina • Bennett"
+        "comp": "Gaming • Xianyun • Furina • Bennett",
+        "members": [
+          "Gaming",
+          "Xianyun",
+          "Furina",
+          "Bennett"
+        ]
       },
       {
         "name": "Hu Tao Plunge",
-        "comp": "Hu Tao • Xianyun • Furina • Yelan"
+        "comp": "Hu Tao • Xianyun • Furina • Yelan",
+        "members": [
+          "Hu Tao",
+          "Xianyun",
+          "Furina",
+          "Yelan"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 17500,
-      "atk": 3850,
-      "def": 740,
-      "em": 0,
-      "cr": 30,
-      "cd": 70,
-      "er": 190,
-      "dmgBonus": 40
+      "hp": "17,000",
+      "atk": "3,500 – 4,200 ATQ",
+      "def": "750",
+      "em": "0",
+      "er": "175% – 210% ER",
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "baseStats": {
       "hp90": 10409,
@@ -8150,6 +9166,12 @@ const CHARACTER_BUILDS_DB = [
           469.4
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Recarga de Energía% o ATQ%",
+      "goblet": "ATQ%",
+      "circlet": "ATQ% (o Bono de Curación)",
+      "substats": "1. Recarga de Energía% (170% - 200% ER) > 2. ATQ% y ATQ Plano (Meta: acercarse a 4,000+ ATQ) > 3. Prob. Crítica (si usa Favonius)"
     }
   },
   {
@@ -8227,22 +9249,32 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "FFXX (Equipo Definitivo de Xiao)",
-        "comp": "Xiao • Xianyun • Faruzan (C6) • Furina"
+        "comp": "Xiao • Xianyun • Faruzan • Furina",
+        "members": [
+          "Xiao",
+          "Xianyun",
+          "Faruzan",
+          "Furina"
+        ]
       },
       {
         "name": "Xiao Geo Bros",
-        "comp": "Xiao • Faruzan • Zhongli • Bennett"
+        "comp": "Xiao • Faruzan • Zhongli • Bennett",
+        "members": [
+          "Xiao",
+          "Faruzan",
+          "Zhongli",
+          "Bennett"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 18200,
-      "atk": 2350,
-      "def": 820,
-      "em": 0,
-      "cr": 78,
-      "cd": 195,
-      "er": 130,
-      "dmgBonus": 110
+      "hp": "18,000",
+      "atk": "2,100 – 2,500 ATQ",
+      "def": "800",
+      "em": "0",
+      "er": "125% – 135% ER",
+      "crit": "75%+ CR / 180%+ CD"
     },
     "baseStats": {
       "hp90": 12720,
@@ -8312,6 +9344,12 @@ const CHARACTER_BUILDS_DB = [
           112.3
         ]
       }
+    },
+    "statPriority": {
+      "sands": "ATQ%",
+      "goblet": "Bono Daño Anemo% (o ATQ% con Furina + Xianyun)",
+      "circlet": "Prob. Crítica% / Daño Crítico%",
+      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% > 3. Recarga de Energía% (120% – 135% ER)"
     }
   },
   {
@@ -8389,26 +9427,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Neuvillette Hypercarry",
-        "comp": "Neuvillette • Furina • Xilonen • Kazuha"
+        "comp": "Neuvillette • Furina • Xilonen • Kazuha",
+        "members": [
+          "Neuvillette",
+          "Furina",
+          "Xilonen",
+          "Kazuha"
+        ]
       },
       {
         "name": "Mavuika Melt Core",
-        "comp": "Mavuika • Citlali • Xilonen • Bennett"
+        "comp": "Mavuika • Citlali • Xilonen • Bennett",
+        "members": [
+          "Mavuika",
+          "Citlali",
+          "Xilonen",
+          "Bennett"
+        ]
       },
       {
         "name": "Navia Geo-Bomb",
-        "comp": "Navia • Xilonen • Furina • Bennett"
+        "comp": "Navia • Xilonen • Furina • Bennett",
+        "members": [
+          "Navia",
+          "Xilonen",
+          "Furina",
+          "Bennett"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 18500,
-      "atk": 1150,
-      "def": 3150,
-      "em": 40,
-      "cr": 52,
-      "cd": 110,
-      "er": 175,
-      "dmgBonus": 45
+      "hp": "18,000",
+      "atk": "1,100",
+      "def": "2,800 – 3,300+ DEF",
+      "em": "0",
+      "er": "165% – 190% ER",
+      "crit": "50%+ CR (con Favonius)"
     },
     "baseStats": {
       "hp90": 12405,
@@ -8478,6 +9532,12 @@ const CHARACTER_BUILDS_DB = [
           220.9
         ]
       }
+    },
+    "statPriority": {
+      "sands": "DEF%",
+      "goblet": "DEF%",
+      "circlet": "Bono de Curación% o DEF% (o Prob. CR con Favonius)",
+      "substats": "1. DEF% y DEF Plana (Meta: 3,200 DEF con arma 5★ / 2,800+ F2P) > 2. Recarga de Energía% (160% - 190% ER) > 3. Prob. Crítica (si usa Favonius)"
     }
   },
   {
@@ -8556,26 +9616,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "National Team Clásico",
-        "comp": "Xiangling • Xingqiu • Bennett • Sucrose"
+        "comp": "Xiangling • Xingqiu • Bennett • Sucrose",
+        "members": [
+          "Xiangling",
+          "Xingqiu",
+          "Bennett",
+          "Sucrose"
+        ]
       },
       {
         "name": "Hu Tao Double Hydro",
-        "comp": "Hu Tao • Xingqiu • Yelan • Zhongli"
+        "comp": "Hu Tao • Xingqiu • Yelan • Zhongli",
+        "members": [
+          "Hu Tao",
+          "Xingqiu",
+          "Yelan",
+          "Zhongli"
+        ]
       },
       {
         "name": "Hyperbloom F2P",
-        "comp": "Nahida • Xingqiu • Kuki Shinobu • Alhaitham"
+        "comp": "Nahida • Xingqiu • Kuki Shinobu • Alhaitham",
+        "members": [
+          "Nahida",
+          "Xingqiu",
+          "Kuki Shinobu",
+          "Alhaitham"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 19500,
-      "atk": 1650,
-      "def": 780,
-      "em": 80,
-      "cr": 65,
-      "cd": 140,
-      "er": 205,
-      "dmgBonus": 86.6
+      "hp": "18,000 – 20,000 HP",
+      "atk": "1,500 – 1,800 ATQ",
+      "def": "750",
+      "em": "50 – 100 EM",
+      "er": "190% – 220% ER",
+      "crit": "60%+ CR / 130%+ CD"
     },
     "baseStats": {
       "hp90": 10222,
@@ -8645,6 +9721,12 @@ const CHARACTER_BUILDS_DB = [
           135.7
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Recarga de Energía% o ATQ%",
+      "goblet": "Bono Daño Hydro%",
+      "circlet": "Prob. Crítica% / Daño Crítico%",
+      "substats": "1. Recarga de Energía% (180% - 210% con Sacrificio R3+) > 2. Prob. Crítica / Daño Crítico > 3. ATQ% > 4. Maestría Elemental"
     }
   },
   {
@@ -8723,26 +9805,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Alhaitham Quickbloom",
-        "comp": "Alhaitham • Yae Miko • Nahida • Kokomi / Zhongli"
+        "comp": "Alhaitham • Yae Miko • Nahida • Kokomi",
+        "members": [
+          "Alhaitham",
+          "Yae Miko",
+          "Nahida",
+          "Kokomi"
+        ]
       },
       {
         "name": "Tighnari Spread Dual Carry",
-        "comp": "Tighnari • Yae Miko • Nahida • Zhongli"
+        "comp": "Tighnari • Yae Miko • Nahida • Zhongli",
+        "members": [
+          "Tighnari",
+          "Yae Miko",
+          "Nahida",
+          "Zhongli"
+        ]
       },
       {
         "name": "Yae-Raiden Core",
-        "comp": "Raiden Shogun • Yae Miko • Kazuha • Bennett"
+        "comp": "Raiden Shogun • Yae Miko • Kazuha • Bennett",
+        "members": [
+          "Raiden Shogun",
+          "Yae Miko",
+          "Kazuha",
+          "Bennett"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 16500,
-      "atk": 2050,
-      "def": 720,
-      "em": 160,
-      "cr": 78,
-      "cd": 195,
-      "er": 135,
-      "dmgBonus": 110
+      "hp": "16,000",
+      "atk": "1,900 – 2,200 ATQ",
+      "def": "700",
+      "em": "120 – 180 EM",
+      "er": "130% – 145% ER",
+      "crit": "75%+ CR / 180%+ CD"
     },
     "baseStats": {
       "hp90": 10372,
@@ -8812,6 +9910,12 @@ const CHARACTER_BUILDS_DB = [
           552.2
         ]
       }
+    },
+    "statPriority": {
+      "sands": "ATQ% o Maestría Elemental",
+      "goblet": "Bono Daño Electro%",
+      "circlet": "Prob. Crítica% / Daño Crítico%",
+      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% > 3. Maestría Elemental (100 – 180 EM en Aggravate) > 4. Recarga de Energía% (130% – 145%)"
     }
   },
   {
@@ -8881,8 +9985,8 @@ const CHARACTER_BUILDS_DB = [
     "talentPriority": "Definitiva (Q) > Habilidad Elemental (E) >>> Ataques Normales",
     "benchmarks": {
       "hp": "32,000 – 36,000 HP",
-      "atk": "Ignorar",
-      "def": "Cualquiera",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
       "em": "0 – 60 EM",
       "er": "180% – 210% ER",
       "crit": "70%+ CR / 150%+ CD"
@@ -8890,26 +9994,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Hu Tao Double Hydro",
-        "comp": "Hu Tao • Xingqiu • Yelan • Zhongli"
+        "comp": "Hu Tao • Xingqiu • Yelan • Zhongli",
+        "members": [
+          "Hu Tao",
+          "Xingqiu",
+          "Yelan",
+          "Zhongli"
+        ]
       },
       {
         "name": "Alhaitham Hyperbloom",
-        "comp": "Alhaitham • Nahida • Yelan • Kuki Shinobu"
+        "comp": "Alhaitham • Nahida • Yelan • Kuki Shinobu",
+        "members": [
+          "Alhaitham",
+          "Nahida",
+          "Yelan",
+          "Kuki Shinobu"
+        ]
       },
       {
         "name": "Raiden National",
-        "comp": "Raiden Shogun • Yelan • Xiangling • Bennett"
+        "comp": "Raiden Shogun • Yelan • Xiangling • Bennett",
+        "members": [
+          "Raiden Shogun",
+          "Yelan",
+          "Xiangling",
+          "Bennett"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 34500,
-      "atk": 1180,
-      "def": 640,
-      "em": 50,
-      "cr": 76,
-      "cd": 185,
-      "er": 195,
-      "dmgBonus": 110
+      "hp": "32,000 – 36,000 HP",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "0 – 60 EM",
+      "er": "180% – 210% ER",
+      "crit": "70%+ CR / 150%+ CD"
     },
     "baseStats": {
       "hp90": 14450,
@@ -8979,6 +10099,12 @@ const CHARACTER_BUILDS_DB = [
           10.4
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Recarga de Energía% (con Aqua) o Vida% (con Favonius)",
+      "goblet": "Bono Daño Hydro%",
+      "circlet": "Prob. Crítica% / Daño Crítico%",
+      "substats": "1. Recarga de Energía% (180% - 220% en C0) > 2. Prob. Crítica / Daño Crítico (1:2) > 3. Vida% (hasta 35,000 HP) > ❌ ATQ% no hace nada"
     }
   },
   {
@@ -9057,26 +10183,42 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Yoimiya Vape",
-        "comp": "Yoimiya • Yelan • Xingqiu • Zhongli"
+        "comp": "Yoimiya • Yelan • Xingqiu • Zhongli",
+        "members": [
+          "Yoimiya",
+          "Yelan",
+          "Xingqiu",
+          "Zhongli"
+        ]
       },
       {
         "name": "Yoimiya Overload con Chevreuse",
-        "comp": "Yoimiya • Chevreuse • Fischl • Bennett"
+        "comp": "Yoimiya • Chevreuse • Fischl • Bennett",
+        "members": [
+          "Yoimiya",
+          "Chevreuse",
+          "Fischl",
+          "Bennett"
+        ]
       },
       {
         "name": "Yoimiya Monopyro",
-        "comp": "Yoimiya • Bennett • Yun Jin • Zhongli"
+        "comp": "Yoimiya • Bennett • Yun Jin • Zhongli",
+        "members": [
+          "Yoimiya",
+          "Bennett",
+          "Yun Jin",
+          "Zhongli"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 17200,
-      "atk": 2250,
-      "def": 740,
-      "em": 110,
-      "cr": 80,
-      "cd": 185,
-      "er": 110,
-      "dmgBonus": 96.6
+      "hp": "17,000",
+      "atk": "2,000 – 2,400 ATQ",
+      "def": "750",
+      "em": "80 – 160 EM",
+      "er": "100% – 115% ER",
+      "crit": "75%+ CR / 170%+ CD"
     },
     "baseStats": {
       "hp90": 10164,
@@ -9146,6 +10288,12 @@ const CHARACTER_BUILDS_DB = [
           287.9
         ]
       }
+    },
+    "statPriority": {
+      "sands": "ATQ% (o EM en Vaporizado)",
+      "goblet": "Bono Daño Pyro%",
+      "circlet": "Prob. Crítica% / Daño Crítico%",
+      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% > 3. Maestría Elemental (80 – 150 EM) > 4. Recarga (baja prioridad con Reminiscencia)"
     }
   },
   {
@@ -9223,31 +10371,47 @@ const CHARACTER_BUILDS_DB = [
       "def": "750",
       "em": "0",
       "er": "130% ER",
-      "crit": "Cualquiera"
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "metaTeams": [
       {
         "name": "Hu Tao Double Hydro",
-        "comp": "Hu Tao • Xingqiu • Yelan • Zhongli"
+        "comp": "Hu Tao • Xingqiu • Yelan • Zhongli",
+        "members": [
+          "Hu Tao",
+          "Xingqiu",
+          "Yelan",
+          "Zhongli"
+        ]
       },
       {
         "name": "Navia Geo Bros",
-        "comp": "Navia • Zhongli • Bennett • Xiangling"
+        "comp": "Navia • Zhongli • Bennett • Xiangling",
+        "members": [
+          "Navia",
+          "Zhongli",
+          "Bennett",
+          "Xiangling"
+        ]
       },
       {
         "name": "Tighnari Spread",
-        "comp": "Tighnari • Yae Miko • Nahida • Zhongli"
+        "comp": "Tighnari • Yae Miko • Nahida • Zhongli",
+        "members": [
+          "Tighnari",
+          "Yae Miko",
+          "Nahida",
+          "Zhongli"
+        ]
       }
     ],
     "recommendedPanel": {
-      "hp": 52000,
-      "atk": 1250,
-      "def": 780,
-      "em": 0,
-      "cr": 35,
-      "cd": 70,
-      "er": 135,
-      "dmgBonus": 28.8
+      "hp": "45,000 – 54,000 HP",
+      "atk": "1,200",
+      "def": "750",
+      "em": "0",
+      "er": "130% ER",
+      "crit": "40%+ CR (con Favonius) / No req."
     },
     "baseStats": {
       "hp90": 14695,
@@ -9317,6 +10481,12 @@ const CHARACTER_BUILDS_DB = [
           1062
         ]
       }
+    },
+    "statPriority": {
+      "sands": "Vida%",
+      "goblet": "Vida% (o Bono Geo en Híbrido)",
+      "circlet": "Vida% (o Prob. CR con Favonius)",
+      "substats": "1. Vida% y Vida Plana > 2. Recarga de Energía% (si se usa la Definitiva) > 3. Prob. Crítica (para Favonius)"
     }
   },
   {
@@ -9394,7 +10564,8 @@ const CHARACTER_BUILDS_DB = [
           "Columbina",
           "Kaedehara Kazuha",
           "Bennett"
-        ]
+        ],
+        "comp": "Arlecchino • Columbina • Kaedehara Kazuha • Bennett"
       },
       {
         "name": "Columbina Freeze Control",
@@ -9403,7 +10574,8 @@ const CHARACTER_BUILDS_DB = [
           "Columbina",
           "Shenhe",
           "Kaedehara Kazuha"
-        ]
+        ],
+        "comp": "Kamisato Ayaka • Columbina • Shenhe • Kaedehara Kazuha"
       },
       {
         "name": "Columbina Hyperbloom",
@@ -9411,8 +10583,9 @@ const CHARACTER_BUILDS_DB = [
           "Nahida",
           "Columbina",
           "Kuki Shinobu",
-          "Alhacén (Alhaitham)"
-        ]
+          "Alhacén"
+        ],
+        "comp": "Nahida • Columbina • Kuki Shinobu • Alhacén"
       }
     ],
     "statPriority": {
@@ -9420,6 +10593,14 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Hydro% o Vida%",
       "circlet": "Prob. Crítica o Daño Crítico",
       "substats": "Vida% > Recarga de Energía% > Prob. Crítica > Daño Crítico > Maestría Elemental"
+    },
+    "benchmarks": {
+      "hp": "38,000 – 42,000 HP",
+      "atk": "1,000 – 1,200 ATQ",
+      "def": "750 DEF",
+      "em": "120 – 180 EM",
+      "er": "160% – 180% ER",
+      "crit": "70%+ CR / 150%+ CD"
     }
   },
   {
@@ -9464,65 +10645,66 @@ const CHARACTER_BUILDS_DB = [
         "bonus": "Aumenta masivamente el daño de Conducto Estelar y Crítico."
       },
       {
-        "set": "Compañía Dorada (4 piezas)",
-        "type": "Alternativa Off-Field",
-        "bonus": "+70% Daño de Habilidad Elemental."
+        "set": "Final del Gladeador (4 piezas)",
+        "type": "Alternativa 4p",
+        "bonus": "Hasta 36% Daño Infligido extra."
       }
     ],
     "mainStats": {
       "sands": "ATQ%",
-      "goblet": "ATQ% o Bono Daño Cryo%",
+      "goblet": "ATQ%",
       "circlet": "Daño Crítico o Prob. Crítica"
     },
     "substatsPriority": [
-      "1. DEF% y DEF Plana (2,400 – 3,000 DEF)",
-      "2. Prob. Crítica / Daño Crítico (1:2)",
+      "1. Prob. Crítica / Daño Crítico (1:2 - 70%+ / 160%+)",
+      "2. ATQ% y ATQ Plano (2,100 – 2,400 ATQ)",
       "3. Recarga de Energía% (130% – 150% ER)",
-      "4. ATQ%"
+      "4. Maestría Elemental (60 – 100 EM)"
     ],
     "recommendedPanel": {
       "hp": "18,000 HP",
-      "atk": "1,200 ATQ",
-      "def": "2,600 – 3,000 DEF",
-      "em": "50 – 80 EM",
+      "atk": "2,100 – 2,400 ATQ",
+      "def": "Base (~800 DEF)",
+      "em": "60 – 100 EM",
       "er": "130% – 150% ER",
-      "crit": "65%+ CR / 140%+ CD"
+      "crit": "70%+ CR / 150%+ CD"
     },
-    "talentPriority": "Habilidad Elemental (E) > Definitiva (Q) >>> Ataques Normales",
+    "talentPriority": "Ataques Normales > Definitiva (Q) >>> Habilidad Elemental (E)",
     "metaTeams": [
       {
-        "name": "Fatui Automation Superconduct",
+        "name": "Superconduct Premium",
         "members": [
           "Sandrone",
-          "Arlecchino",
-          "Raiden Shogun",
-          "Zhongli"
-        ]
+          "Odette",
+          "Qiqi",
+          "Yae Miko"
+        ],
+        "comp": "Sandrone • Odette • Qiqi • Yae Miko"
       },
       {
-        "name": "Sandrone Freeze Fortress",
-        "members": [
-          "Wriothesley",
-          "Sandrone",
-          "Furina",
-          "Shenhe"
-        ]
-      },
-      {
-        "name": "Sandrone Melt Nuke",
+        "name": "Sandrone F2P",
         "members": [
           "Sandrone",
-          "Xiangling",
-          "Bennett",
-          "Kaedehara Kazuha"
-        ]
+          "Diona",
+          "Beidou",
+          "Aliyosha"
+        ],
+        "comp": "Sandrone • Diona • Beidou • Aliyosha"
       }
     ],
     "statPriority": {
-      "sands": "ATQ% o Recarga de Energía%",
-      "goblet": "Bono Daño Cryo% o ATQ%",
+      "sands": "ATQ%",
+      "goblet": "ATQ%",
       "circlet": "Prob. Crítica o Daño Crítico",
-      "substats": "Recarga de Energía% > Daño Crítico > Prob. Crítica > ATQ% > Maestría Elemental"
+      "substats": "Daño Crítico > Prob. Crítica > ATQ% > Recarga de Energía% > Maestría Elemental"
+    },
+    "benchmarks": {
+      "hp": "18,000 HP",
+      "atk": "2,100 – 2,400 ATQ",
+      "def": "Base (~800 DEF)",
+      "em": "60 – 100 EM",
+      "er": "130% – 150% ER",
+      "crit": "70%+ CR / 150%+ CD"
     }
   },
   {
@@ -9606,7 +10788,8 @@ const CHARACTER_BUILDS_DB = [
           "Furina",
           "Mavuika",
           "Shenhe"
-        ]
+        ],
+        "comp": "Chasca • Furina • Mavuika • Shenhe"
       },
       {
         "name": "Chasca Electro-Charged Swirl",
@@ -9615,9 +10798,24 @@ const CHARACTER_BUILDS_DB = [
           "Ororon",
           "Furina",
           "Bennett"
-        ]
+        ],
+        "comp": "Chasca • Ororon • Furina • Bennett"
       }
-    ]
+    ],
+    "benchmarks": {
+      "hp": "18,000 HP",
+      "atk": "2,100 – 2,400 ATQ",
+      "def": "750 DEF",
+      "em": "100 – 160 EM",
+      "er": "120% – 130% ER",
+      "crit": "70%+ CR / 180%+ CD"
+    },
+    "statPriority": {
+      "sands": "ATQ%",
+      "goblet": "Bono Daño Anemo% o ATQ%",
+      "circlet": "Daño Crítico% o Prob. Crítica%",
+      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% (1,900 – 2,300 ATQ) > 3. Recarga de Energía% (120% ER) > 4. Maestría Elemental"
+    }
   },
   {
     "id": "ororon",
@@ -9694,7 +10892,8 @@ const CHARACTER_BUILDS_DB = [
           "Ororon",
           "Furina",
           "Xilonen"
-        ]
+        ],
+        "comp": "Chasca • Ororon • Furina • Xilonen"
       },
       {
         "name": "Ororon Overload Blitz",
@@ -9703,9 +10902,24 @@ const CHARACTER_BUILDS_DB = [
           "Ororon",
           "Chevreuse",
           "Xiangling"
-        ]
+        ],
+        "comp": "Clorinde • Ororon • Chevreuse • Xiangling"
       }
-    ]
+    ],
+    "benchmarks": {
+      "hp": "17,000 HP",
+      "atk": "1,800 ATQ",
+      "def": "700 DEF",
+      "em": "100 – 160 EM",
+      "er": "180% – 200% ER",
+      "crit": "60%+ CR / 130%+ CD"
+    },
+    "statPriority": {
+      "sands": "ATQ% o Recarga de Energía%",
+      "goblet": "Bono Daño Electro%",
+      "circlet": "Prob. Crítica% o Daño Crítico%",
+      "substats": "1. Recarga de Energía% (170% – 200% ER) > 2. Prob. Crítica / Daño Crítico (1:2) > 3. ATQ% (1,600 – 1,900 ATQ) > 4. Maestría Elemental"
+    }
   },
   {
     "id": "emilie",
@@ -9788,7 +11002,8 @@ const CHARACTER_BUILDS_DB = [
           "Emilie",
           "Xiangling",
           "Bennett"
-        ]
+        ],
+        "comp": "Kinich • Emilie • Xiangling • Bennett"
       },
       {
         "name": "Emilie Burn-Melt Ganyu",
@@ -9797,7 +11012,8 @@ const CHARACTER_BUILDS_DB = [
           "Emilie",
           "Dehya",
           "Bennett"
-        ]
+        ],
+        "comp": "Ganyu • Emilie • Dehya • Bennett"
       },
       {
         "name": "Emilie Burn-Vape Wriothesley",
@@ -9806,9 +11022,24 @@ const CHARACTER_BUILDS_DB = [
           "Emilie",
           "Thoma",
           "Bennett"
-        ]
+        ],
+        "comp": "Wriothesley • Emilie • Thoma • Bennett"
       }
-    ]
+    ],
+    "benchmarks": {
+      "hp": "18,000 HP",
+      "atk": "2,200 – 2,500 ATQ",
+      "def": "800 DEF",
+      "em": "100 – 150 EM",
+      "er": "130% – 150% ER",
+      "crit": "75%+ CR / 170%+ CD"
+    },
+    "statPriority": {
+      "sands": "ATQ%",
+      "goblet": "Bono Daño Dendro%",
+      "circlet": "Prob. Crítica% o Daño Crítico%",
+      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% (2,000 – 2,400 ATQ) > 3. Recarga de Energía% (130% – 150% ER) > 4. Maestría Elemental (80 – 140 EM)"
+    }
   },
   {
     "id": "sethos",
@@ -9885,7 +11116,8 @@ const CHARACTER_BUILDS_DB = [
           "Nahida",
           "Fischl",
           "Zhongli"
-        ]
+        ],
+        "comp": "Sethos • Nahida • Fischl • Zhongli"
       },
       {
         "name": "Sethos Quickbloom",
@@ -9894,9 +11126,24 @@ const CHARACTER_BUILDS_DB = [
           "Furina",
           "Baizhu",
           "Nahida"
-        ]
+        ],
+        "comp": "Sethos • Furina • Baizhu • Nahida"
       }
-    ]
+    ],
+    "benchmarks": {
+      "hp": "16,000 HP",
+      "atk": "1,400 ATQ",
+      "def": "650 DEF",
+      "em": "350 – 450 EM",
+      "er": "120% – 130% ER",
+      "crit": "70%+ CR / 160%+ CD"
+    },
+    "statPriority": {
+      "sands": "Maestría Elemental",
+      "goblet": "Bono Daño Electro%",
+      "circlet": "Prob. Crítica% o Daño Crítico%",
+      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. Maestría Elemental (300 – 450 EM) > 3. ATQ% (1,300 – 1,600 ATQ) > 4. Recarga de Energía% (120% ER)"
+    }
   },
   {
     "id": "kachina",
@@ -9972,7 +11219,8 @@ const CHARACTER_BUILDS_DB = [
           "Kachina",
           "Xiangling",
           "Furina"
-        ]
+        ],
+        "comp": "Mualani • Kachina • Xiangling • Furina"
       },
       {
         "name": "Kachina Navia Geo Core",
@@ -9981,9 +11229,24 @@ const CHARACTER_BUILDS_DB = [
           "Kachina",
           "Xiangling",
           "Bennett"
-        ]
+        ],
+        "comp": "Navia • Kachina • Xiangling • Bennett"
       }
-    ]
+    ],
+    "benchmarks": {
+      "hp": "17,000 HP",
+      "atk": "950 ATQ",
+      "def": "2,200 – 2,600 DEF",
+      "em": "50 EM",
+      "er": "180% – 200% ER",
+      "crit": "40%+ CR"
+    },
+    "statPriority": {
+      "sands": "DEF% o Recarga de Energía%",
+      "goblet": "DEF% o Bono Daño Geo%",
+      "circlet": "DEF% o Prob. Crítica% (Favonius)",
+      "substats": "1. DEF% y DEF Plana (2,000 – 2,500 DEF) > 2. Recarga de Energía% (170% – 200% ER) > 3. Prob. Crítica (40%+ si usa Favonius)"
+    }
   },
   {
     "id": "iansan",
@@ -10060,7 +11323,8 @@ const CHARACTER_BUILDS_DB = [
           "Iansan",
           "Chevreuse",
           "Bennett"
-        ]
+        ],
+        "comp": "Mavuika • Iansan • Chevreuse • Bennett"
       },
       {
         "name": "Iansan Aggravate",
@@ -10069,9 +11333,24 @@ const CHARACTER_BUILDS_DB = [
           "Iansan",
           "Nahida",
           "Zhongli"
-        ]
+        ],
+        "comp": "Kinich • Iansan • Nahida • Zhongli"
       }
-    ]
+    ],
+    "benchmarks": {
+      "hp": "17,500 HP",
+      "atk": "1,900 ATQ",
+      "def": "750 DEF",
+      "em": "100 EM",
+      "er": "170% – 190% ER",
+      "crit": "65%+ CR / 140%+ CD"
+    },
+    "statPriority": {
+      "sands": "ATQ% o Recarga de Energía%",
+      "goblet": "Bono Daño Electro%",
+      "circlet": "Prob. Crítica% o Daño Crítico%",
+      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. Recarga de Energía% (160% – 190% ER) > 3. ATQ% (1,700 – 2,100 ATQ) > 4. Maestría Elemental"
+    }
   },
   {
     "id": "lyney",
@@ -10147,7 +11426,8 @@ const CHARACTER_BUILDS_DB = [
           "Xiangling",
           "Bennett",
           "Kaedehara Kazuha"
-        ]
+        ],
+        "comp": "Lyney • Xiangling • Bennett • Kaedehara Kazuha"
       },
       {
         "name": "Lyney Shielded Pyro",
@@ -10156,9 +11436,24 @@ const CHARACTER_BUILDS_DB = [
           "Zhongli",
           "Bennett",
           "Xiangling"
-        ]
+        ],
+        "comp": "Lyney • Zhongli • Bennett • Xiangling"
       }
-    ]
+    ],
+    "benchmarks": {
+      "hp": "18,000 HP",
+      "atk": "2,200 – 2,500 ATQ",
+      "def": "750 DEF",
+      "em": "50 EM",
+      "er": "120% – 130% ER",
+      "crit": "65%+ CR / 220%+ CD"
+    },
+    "statPriority": {
+      "sands": "ATQ%",
+      "goblet": "Bono Daño Pyro%",
+      "circlet": "Daño Crítico%",
+      "substats": "1. Daño Crítico% y Prob. Crítica% (1:2) > 2. ATQ% (2,100 – 2,500 ATQ) > 3. Recarga de Energía% (120% – 130% ER)"
+    }
   },
   {
     "id": "lynette",
@@ -10234,7 +11529,8 @@ const CHARACTER_BUILDS_DB = [
           "Xingqiu",
           "Bennett",
           "Lynette"
-        ]
+        ],
+        "comp": "Xiangling • Xingqiu • Bennett • Lynette"
       },
       {
         "name": "Lynette Fontaine Freeze",
@@ -10243,9 +11539,24 @@ const CHARACTER_BUILDS_DB = [
           "Furina",
           "Charlotte",
           "Lynette"
-        ]
+        ],
+        "comp": "Freminet • Furina • Charlotte • Lynette"
       }
-    ]
+    ],
+    "benchmarks": {
+      "hp": "17,000 HP",
+      "atk": "1,500 ATQ",
+      "def": "700 DEF",
+      "em": "100 – 180 EM",
+      "er": "190% – 210% ER",
+      "crit": "55%+ CR / 120%+ CD"
+    },
+    "statPriority": {
+      "sands": "Recarga de Energía% o ATQ%",
+      "goblet": "Bono Daño Anemo%",
+      "circlet": "Prob. Crítica% o Daño Crítico%",
+      "substats": "1. Recarga de Energía% (180% – 210% ER) > 2. Prob. Crítica / Daño Crítico (1:2) > 3. ATQ% y Maestría Elemental"
+    }
   },
   {
     "id": "cyno",
@@ -10257,70 +11568,91 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Polearm",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Cyno.png",
-    "tier": "T0 Quickbloom Carry",
-    "role": "Hypercarry Electro de Sumeru • Postura de Chacal y Maestro de Sobreflorecimiento",
+    "tier": "T0 Quickbloom / Stellar-Conduct Carry",
+    "role": "General Mahamatra • Hipercarry Electro y Conducción Estelar (Rework V6.6+)",
     "roleCategory": "main_dps",
     "scalingType": "EM",
-    "scalingLabel": "Escalado por Maestría Elemental (EM) & ATQ en Modo Chacal",
+    "scalingLabel": "Escala con Maestría Elemental (EM), ATQ y Conducción Estelar",
     "bestWeapons": [
       {
         "name": "Báculo de las Arenas Escarlatas (Staff of the Scarlet Sands)",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+44.1% Prob. Crítica y conversión colosal de Maestría a ATQ%."
+        "type": "BiS Firma Oficial",
+        "note": "+44.1% Prob. Crítica y colosal conversión de Maestría Elemental a ATQ."
       },
       {
-        "name": "Báculo de Homa / Halcón de Jade",
+        "name": "Halcón de Jade / Báculo de Homa",
         "rarity": 5,
         "type": "Opciones 5★",
-        "note": "Estadísticas críticas masivas."
+        "note": "Estadísticas críticas masivas y escalado general de daño."
+      },
+      {
+        "name": "Balada de los Fiordos",
+        "rarity": 4,
+        "type": "BiS Pase de Batalla",
+        "note": "+27.6% Prob. Crítica y +240 de Maestría Elemental con 3 elementos distintos."
       },
       {
         "name": "Borla Blanca R5",
         "rarity": 3,
         "type": "BiS F2P Dios",
-        "note": "+23.4% Prob. Crítica y +48% Daño en todos sus golpes de garra."
+        "note": "+23.4% Prob. Crítica y +48% daño en todos sus ataques normales de garra."
       },
       {
-        "name": "Balada de los Fiordos / Perdición del Dragón",
+        "name": "Lanza Cruzada de Kitain / Perdición del Dragón",
         "rarity": 4,
-        "type": "Opciones 4★",
-        "note": "Maestría y Crítico en equipos de Reacciones."
+        "type": "Opciones Forja F2P",
+        "note": "Maestría elemental y recarga pasiva continua."
       }
     ],
     "bestArtifacts": [
       {
+        "set": "Desencanto en las Sombras Profundas (4 piezas)",
+        "type": "BiS Oficial Rework V6.6+",
+        "bonus": "+18% ATQ, +80% Daño Superconductor / +40% Conducción Estelar y +16% Prob. Crítica contra enemigos afectados."
+      },
+      {
         "set": "Furia del Trueno (4 piezas)",
-        "type": "BiS Rotaciones Rápidas",
-        "bonus": "-0.8s CD en E al activar reacciones, permitiendo dobles garras por ventana."
+        "type": "BiS Rotaciones Clásicas",
+        "bonus": "-0.8s TdE en Habilidad Elemental al activar reacciones Electro, duplicando lanzamientos de garra."
       },
       {
         "set": "Sueños Áureos (4 piezas)",
-        "type": "BiS Daño Puro",
-        "bonus": "+Hasta 230 de Maestría Elemental y +14% ATQ continuo."
+        "type": "BiS Quickbloom Tradicional",
+        "bonus": "+Hasta 230 de Maestría Elemental y +14% ATQ continuo en equipos de Sobreflorecimiento."
       }
     ],
     "mainStats": {
-      "sands": "Maestría Elemental",
+      "sands": "Maestría Elemental (o ATQ% con nuevo set)",
       "goblet": "Bono Daño Electro%",
       "circlet": "Prob. Crítica% o Daño Crítico%"
     },
     "substatsPriority": [
       "1. Prob. Crítica / Daño Crítico (1:2)",
-      "2. Recarga de Energía% (130% – 140% ER con Furia / 160% sin Furia)",
-      "3. Maestría Elemental (300 – 450 EM)",
+      "2. Maestría Elemental (300 – 450 EM)",
+      "3. Recarga de Energía% (120% – 135% tras el buff)",
       "4. ATQ%"
     ],
     "recommendedPanel": {
-      "hp": "19,000 HP",
-      "atk": "1,400 – 1,600 ATQ",
-      "def": "850 DEF",
+      "hp": "18,500 - 20,000 HP",
+      "atk": "1,450 – 1,700 ATQ",
+      "def": "800 - 900 DEF",
       "em": "350 – 500 EM",
-      "er": "130% – 140% ER (con 4TF)",
+      "er": "120% – 135% ER",
       "crit": "75%+ CR / 180%+ CD"
     },
     "talentPriority": "Definitiva (Q - Pacto Chacal) = Habilidad Elemental (E) >>> Básicos",
     "metaTeams": [
+      {
+        "name": "Cyno Stellar-Conduct Overdrive",
+        "members": [
+          "Cyno",
+          "Sandrone",
+          "Yae Miko",
+          "Escoffier"
+        ],
+        "comp": "Cyno • Sandrone • Yae Miko • Escoffier"
+      },
       {
         "name": "Cyno Quickbloom Premium",
         "members": [
@@ -10328,7 +11660,8 @@ const CHARACTER_BUILDS_DB = [
           "Nahida",
           "Furina",
           "Baizhu"
-        ]
+        ],
+        "comp": "Cyno • Nahida • Furina • Baizhu"
       },
       {
         "name": "Cyno Aggravate Lightning",
@@ -10337,9 +11670,24 @@ const CHARACTER_BUILDS_DB = [
           "Fischl",
           "Nahida",
           "Zhongli"
-        ]
+        ],
+        "comp": "Cyno • Fischl • Nahida • Zhongli"
       }
-    ]
+    ],
+    "benchmarks": {
+      "hp": "18,500 - 20,000 HP",
+      "atk": "1,450 – 1,700 ATQ",
+      "def": "800 - 900 DEF",
+      "em": "350 – 500 EM",
+      "er": "120% – 135% ER",
+      "crit": "75%+ CR / 180%+ CD"
+    },
+    "statPriority": {
+      "sands": "Maestría Elemental (o ATQ%)",
+      "goblet": "Bono Daño Electro%",
+      "circlet": "Prob. Crítica% o Daño Crítico%",
+      "substats": "Crit > EM > ER% > ATQ%"
+    }
   },
   {
     "id": "dehya",
@@ -10421,7 +11769,8 @@ const CHARACTER_BUILDS_DB = [
           "Dehya",
           "Nahida",
           "Bennett"
-        ]
+        ],
+        "comp": "Ganyu • Dehya • Nahida • Bennett"
       },
       {
         "name": "Dehya Burgeon Core",
@@ -10430,9 +11779,24 @@ const CHARACTER_BUILDS_DB = [
           "Neuvillette",
           "Nahida",
           "Baizhu"
-        ]
+        ],
+        "comp": "Dehya • Neuvillette • Nahida • Baizhu"
       }
-    ]
+    ],
+    "benchmarks": {
+      "hp": "36,000 – 42,000 HP",
+      "atk": "1,500 ATQ",
+      "def": "800 DEF",
+      "em": "100 – 200 EM (800+ en Burgeon)",
+      "er": "180% – 200% ER",
+      "crit": "60%+ CR / 120%+ CD"
+    },
+    "statPriority": {
+      "sands": "Vida% o Maestría Elemental (Burgeon) o ER%",
+      "goblet": "Bono Daño Pyro% o Vida% o EM",
+      "circlet": "Prob. Crítica% o Vida% o EM",
+      "substats": "1. Vida% y Vida Plana (35,000 – 42,000 HP) > 2. Recarga de Energía% (170% – 200% ER) > 3. Prob. Crítica / Daño Crítico (1:2) > 4. Maestría Elemental"
+    }
   },
   {
     "id": "klee",
@@ -10509,7 +11873,8 @@ const CHARACTER_BUILDS_DB = [
           "Xiangling",
           "Bennett",
           "Kaedehara Kazuha"
-        ]
+        ],
+        "comp": "Klee • Xiangling • Bennett • Kaedehara Kazuha"
       },
       {
         "name": "Klee Burgeon Cannon",
@@ -10518,9 +11883,24 @@ const CHARACTER_BUILDS_DB = [
           "Furina",
           "Nahida",
           "Baizhu"
-        ]
+        ],
+        "comp": "Klee • Furina • Nahida • Baizhu"
       }
-    ]
+    ],
+    "benchmarks": {
+      "hp": "17,000 HP",
+      "atk": "2,100 – 2,400 ATQ",
+      "def": "750 DEF",
+      "em": "120 – 180 EM",
+      "er": "120% – 130% ER",
+      "crit": "70%+ CR / 160%+ CD"
+    },
+    "statPriority": {
+      "sands": "ATQ%",
+      "goblet": "Bono Daño Pyro%",
+      "circlet": "Prob. Crítica% o Daño Crítico%",
+      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% (1,900 – 2,300 ATQ) > 3. Maestría Elemental (100 – 160 EM) > 4. Recarga de Energía% (120% ER)"
+    }
   },
   {
     "id": "charlotte",
@@ -10596,7 +11976,8 @@ const CHARACTER_BUILDS_DB = [
           "Furina",
           "Charlotte",
           "Kaedehara Kazuha"
-        ]
+        ],
+        "comp": "Wriothesley • Furina • Charlotte • Kaedehara Kazuha"
       },
       {
         "name": "Charlotte Neuvillette Freeze",
@@ -10605,9 +11986,24 @@ const CHARACTER_BUILDS_DB = [
           "Furina",
           "Charlotte",
           "Kaedehara Kazuha"
-        ]
+        ],
+        "comp": "Neuvillette • Furina • Charlotte • Kaedehara Kazuha"
       }
-    ]
+    ],
+    "benchmarks": {
+      "hp": "16,500 HP",
+      "atk": "1,900 – 2,200 ATQ",
+      "def": "700 DEF",
+      "em": "50 EM",
+      "er": "210% – 240% ER",
+      "crit": "45%+ CR"
+    },
+    "statPriority": {
+      "sands": "Recarga de Energía% o ATQ%",
+      "goblet": "ATQ%",
+      "circlet": "Bono Curación% o Prob. Crítica% (Favonius)",
+      "substats": "1. Recarga de Energía% (200% – 240% ER) > 2. ATQ% (1,800 – 2,200 ATQ) > 3. Prob. Crítica (si usa Favonius)"
+    }
   },
   {
     "id": "kirara",
@@ -10688,7 +12084,8 @@ const CHARACTER_BUILDS_DB = [
           "Fischl",
           "Kirara",
           "Kaedehara Kazuha"
-        ]
+        ],
+        "comp": "Clorinde • Fischl • Kirara • Kaedehara Kazuha"
       },
       {
         "name": "Kirara Nilou Bloom",
@@ -10697,9 +12094,24 @@ const CHARACTER_BUILDS_DB = [
           "Nahida",
           "Kirara",
           "Sangonomiya Kokomi"
-        ]
+        ],
+        "comp": "Nilou • Nahida • Kirara • Sangonomiya Kokomi"
       }
-    ]
+    ],
+    "benchmarks": {
+      "hp": "42,000 – 48,000 HP",
+      "atk": "1,100 ATQ",
+      "def": "750 DEF",
+      "em": "80 EM",
+      "er": "150% – 170% ER",
+      "crit": "35%+ CR"
+    },
+    "statPriority": {
+      "sands": "Vida%",
+      "goblet": "Vida%",
+      "circlet": "Vida% o Prob. Crítica (Favonius)",
+      "substats": "1. Vida% y Vida Plana (38,000 – 48,000 HP) > 2. Recarga de Energía% (140% – 160% ER) > 3. Prob. Crítica (para Favonius)"
+    }
   },
   {
     "id": "yaoyao",
@@ -10772,11 +12184,12 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Yaoyao Alhaitham Quicken",
         "members": [
-          "Alhacén (Alhaitham)",
+          "Alhacén",
           "Yae Miko",
           "Fischl",
           "Yaoyao"
-        ]
+        ],
+        "comp": "Alhacén • Yae Miko • Fischl • Yaoyao"
       },
       {
         "name": "Yaoyao Nilou Bloom",
@@ -10785,9 +12198,24 @@ const CHARACTER_BUILDS_DB = [
           "Nahida",
           "Xingqiu",
           "Yaoyao"
-        ]
+        ],
+        "comp": "Nilou • Nahida • Xingqiu • Yaoyao"
       }
-    ]
+    ],
+    "benchmarks": {
+      "hp": "35,000 – 40,000 HP",
+      "atk": "1,050 ATQ",
+      "def": "750 DEF",
+      "em": "100 EM",
+      "er": "170% – 190% ER",
+      "crit": "30% CR"
+    },
+    "statPriority": {
+      "sands": "Vida% o Recarga de Energía%",
+      "goblet": "Vida%",
+      "circlet": "Bono de Curación% o Vida%",
+      "substats": "1. Vida% y Vida Plana (34,000 – 40,000 HP) > 2. Recarga de Energía% (160% – 190% ER) > 3. Maestría Elemental > 4. Prob. Crítica (Favonius)"
+    }
   },
   {
     "id": "yanfei",
@@ -10864,7 +12292,8 @@ const CHARACTER_BUILDS_DB = [
           "Xingqiu",
           "Yelan",
           "Bennett"
-        ]
+        ],
+        "comp": "Yanfei • Xingqiu • Yelan • Bennett"
       },
       {
         "name": "Yanfei Overload Driver",
@@ -10873,9 +12302,24 @@ const CHARACTER_BUILDS_DB = [
           "Chevreuse",
           "Fischl",
           "Beidou"
-        ]
+        ],
+        "comp": "Yanfei • Chevreuse • Fischl • Beidou"
       }
-    ]
+    ],
+    "benchmarks": {
+      "hp": "17,000 HP",
+      "atk": "1,900 – 2,200 ATQ",
+      "def": "750 DEF",
+      "em": "150 – 220 EM",
+      "er": "130% – 140% ER",
+      "crit": "70%+ CR / 150%+ CD"
+    },
+    "statPriority": {
+      "sands": "ATQ% o EM",
+      "goblet": "Bono Daño Pyro%",
+      "circlet": "Prob. Crítica% o Daño Crítico%",
+      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% (1,800 – 2,200 ATQ) > 3. Maestría Elemental (120 – 200 EM) > 4. Recarga de Energía% (130% ER)"
+    }
   },
   {
     "id": "aino",
@@ -10931,9 +12375,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Maestría Elemental > Recarga de Energía% > Prob. Crítica > Daño Crítico"
     },
     "benchmarks": {
-      "EM": "800 - 1,000 EM",
-      "RECARGA": "160% - 180% ER",
-      "VIDA": "18,000"
+      "hp": "18,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "800 - 1,000 EM",
+      "er": "160% - 180% ER",
+      "crit": "60%+ CR / 120%+ CD"
     },
     "metaTeams": [
       {
@@ -10943,7 +12390,8 @@ const CHARACTER_BUILDS_DB = [
           "Mualani",
           "Furina",
           "Xilonen"
-        ]
+        ],
+        "comp": "Aino • Mualani • Furina • Xilonen"
       },
       {
         "name": "Nod-Krai Overburn",
@@ -10952,13 +12400,28 @@ const CHARACTER_BUILDS_DB = [
           "Kinich",
           "Xiangling",
           "Bennett"
-        ]
+        ],
+        "comp": "Aino • Kinich • Xiangling • Bennett"
       }
     ],
     "mainStats": {
       "sands": "Maestría Elemental",
       "goblet": "Maestría Elemental",
       "circlet": "Prob. Crítica / Maestría Elemental"
+    },
+    "substatsPriority": [
+      "1. Maestría Elemental",
+      "2. Recarga de Energía%",
+      "3. Prob. Crítica",
+      "4. Daño Crítico"
+    ],
+    "recommendedPanel": {
+      "hp": "18,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "800 - 1,000 EM",
+      "er": "160% - 180% ER",
+      "crit": "60%+ CR / 120%+ CD"
     }
   },
   {
@@ -11023,9 +12486,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Prob. Crítica > Daño Crítico > ATQ% > Recarga de Energía% > EM"
     },
     "benchmarks": {
-      "ATQ": "2,000 - 2,300",
-      "CRÍTICOS": "75%+ CR / 170%+ CD",
-      "RECARGA": "130% - 140%"
+      "hp": "17,000 - 19,000",
+      "atk": "2,000 - 2,300",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "130% - 140%",
+      "crit": "75%+ CR / 170%+ CD"
     },
     "metaTeams": [
       {
@@ -11035,7 +12501,8 @@ const CHARACTER_BUILDS_DB = [
           "Nahida",
           "Fischl",
           "Xilonen"
-        ]
+        ],
+        "comp": "Flins • Nahida • Fischl • Xilonen"
       },
       {
         "name": "Flins Electro-Charged",
@@ -11044,9 +12511,30 @@ const CHARACTER_BUILDS_DB = [
           "Furina",
           "Yelan",
           "Jean"
-        ]
+        ],
+        "comp": "Flins • Furina • Yelan • Jean"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Prob. Crítica",
+      "2. Daño Crítico",
+      "3. ATQ%",
+      "4. Recarga de Energía%",
+      "5. EM"
+    ],
+    "mainStats": {
+      "sands": "ATQ% o Recarga de Energía",
+      "goblet": "Bono Daño Electro%",
+      "circlet": "Prob. Crítica o Daño Crítico"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 19,000",
+      "atk": "2,000 - 2,300",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "130% - 140%",
+      "crit": "75%+ CR / 170%+ CD"
+    }
   },
   {
     "id": "lauma",
@@ -11110,9 +12598,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Maestría Elemental > Recarga de Energía% > Prob. Crítica > Daño Crítico"
     },
     "benchmarks": {
-      "EM": "850 - 1,000 EM",
-      "RECARGA": "160% ER",
-      "VIDA": "20,000"
+      "hp": "20,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "850 - 1,000 EM",
+      "er": "160% ER",
+      "crit": "60%+ CR / 120%+ CD"
     },
     "metaTeams": [
       {
@@ -11122,7 +12613,8 @@ const CHARACTER_BUILDS_DB = [
           "Raiden",
           "Furina",
           "Alhacén"
-        ]
+        ],
+        "comp": "Lauma • Raiden • Furina • Alhacén"
       },
       {
         "name": "Lauma Nilou Bloom",
@@ -11131,9 +12623,29 @@ const CHARACTER_BUILDS_DB = [
           "Nilou",
           "Kokomi",
           "Nahida"
-        ]
+        ],
+        "comp": "Lauma • Nilou • Kokomi • Nahida"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Maestría Elemental",
+      "2. Recarga de Energía%",
+      "3. Prob. Crítica",
+      "4. Daño Crítico"
+    ],
+    "mainStats": {
+      "sands": "Maestría Elemental o Recarga de Energía",
+      "goblet": "Maestría Elemental o Bono Daño Dendro%",
+      "circlet": "Maestría Elemental o Prob. Crítica"
+    },
+    "recommendedPanel": {
+      "hp": "20,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "850 - 1,000 EM",
+      "er": "160% ER",
+      "crit": "60%+ CR / 120%+ CD"
+    }
   },
   {
     "id": "alyosha",
@@ -11189,9 +12701,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Recarga de Energía% > Prob. Crítica > ATQ% > Daño Crítico"
     },
     "benchmarks": {
-      "RECARGA": "220% - 250% ER",
-      "ATQ": "2,000 ATQ",
-      "CRÍTICO": "55%+ CR"
+      "hp": "17,000 - 19,000",
+      "atk": "2,000 ATQ",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "220% - 250% ER",
+      "crit": "55%+ CR"
     },
     "metaTeams": [
       {
@@ -11201,7 +12716,8 @@ const CHARACTER_BUILDS_DB = [
           "Eula",
           "Raiden",
           "Zhongli"
-        ]
+        ],
+        "comp": "Alyosha • Eula • Raiden • Zhongli"
       },
       {
         "name": "Snezhnaya Freeze Control",
@@ -11210,13 +12726,28 @@ const CHARACTER_BUILDS_DB = [
           "Ayaka",
           "Furina",
           "Kazuha"
-        ]
+        ],
+        "comp": "Alyosha • Ayaka • Furina • Kazuha"
       }
     ],
     "mainStats": {
       "sands": "ATQ% o Recarga de Energía",
       "goblet": "ATQ%",
       "circlet": "ATQ% o Prob. Crítica"
+    },
+    "substatsPriority": [
+      "1. Recarga de Energía%",
+      "2. Prob. Crítica",
+      "3. ATQ%",
+      "4. Daño Crítico"
+    ],
+    "recommendedPanel": {
+      "hp": "17,000 - 19,000",
+      "atk": "2,000 ATQ",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "220% - 250% ER",
+      "crit": "55%+ CR"
     }
   },
   {
@@ -11273,9 +12804,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Prob. Crítica > Daño Crítico > ATQ% > Maestría Elemental > Recarga"
     },
     "benchmarks": {
-      "ATQ": "1,900 - 2,200",
-      "CRÍTICOS": "70%+ CR / 180%+ CD",
-      "RECARGA": "125%"
+      "hp": "17,000 - 19,000",
+      "atk": "1,900 - 2,200",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "125%",
+      "crit": "70%+ CR / 180%+ CD"
     },
     "metaTeams": [
       {
@@ -11285,7 +12819,8 @@ const CHARACTER_BUILDS_DB = [
           "Faruzan",
           "Furina",
           "Bennett"
-        ]
+        ],
+        "comp": "Vesna • Faruzan • Furina • Bennett"
       },
       {
         "name": "Vesna National Hyper",
@@ -11294,13 +12829,29 @@ const CHARACTER_BUILDS_DB = [
           "Xiangling",
           "Xingqiu",
           "Bennett"
-        ]
+        ],
+        "comp": "Vesna • Xiangling • Xingqiu • Bennett"
       }
     ],
     "mainStats": {
       "sands": "ATQ%",
       "goblet": "ATQ% o Bono Daño Anemo%",
       "circlet": "Prob. Crítica o Daño Crítico"
+    },
+    "substatsPriority": [
+      "1. Prob. Crítica",
+      "2. Daño Crítico",
+      "3. ATQ%",
+      "4. Maestría Elemental",
+      "5. Recarga"
+    ],
+    "recommendedPanel": {
+      "hp": "17,000 - 19,000",
+      "atk": "1,900 - 2,200",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "125%",
+      "crit": "70%+ CR / 180%+ CD"
     }
   },
   {
@@ -11357,9 +12908,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Vida% > Recarga de Energía% > Vida Plana > Prob. Crítica (Favonius)"
     },
     "benchmarks": {
-      "VIDA": "38,000 - 45,000 HP",
-      "RECARGA": "170% - 190% ER",
-      "CURA": "6,500+ por tick"
+      "hp": "38,000 - 45,000 HP (Cura: 6,500+ por tick)",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "0",
+      "er": "170% - 190% ER",
+      "crit": "60%+ CR / 120%+ CD"
     },
     "metaTeams": [
       {
@@ -11369,7 +12923,8 @@ const CHARACTER_BUILDS_DB = [
           "Vodyanitsa",
           "Shenhe",
           "Kazuha"
-        ]
+        ],
+        "comp": "Ayaka • Vodyanitsa • Shenhe • Kazuha"
       },
       {
         "name": "Vodyanitsa Vaporize",
@@ -11378,13 +12933,28 @@ const CHARACTER_BUILDS_DB = [
           "Vodyanitsa",
           "Yelan",
           "Bennett"
-        ]
+        ],
+        "comp": "Arlecchino • Vodyanitsa • Yelan • Bennett"
       }
     ],
     "mainStats": {
       "sands": "Vida%",
       "goblet": "Vida%",
       "circlet": "Vida%"
+    },
+    "substatsPriority": [
+      "1. Vida%",
+      "2. Recarga de Energía%",
+      "3. Vida Plana",
+      "4. Prob. Crítica (Favonius)"
+    ],
+    "recommendedPanel": {
+      "hp": "38,000 - 45,000 HP (Cura: 6,500+ por tick)",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "0",
+      "er": "170% - 190% ER",
+      "crit": "60%+ CR / 120%+ CD"
     }
   },
   {
@@ -11398,7 +12968,7 @@ const CHARACTER_BUILDS_DB = [
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_SkirkNew.png",
     "tier": "T0 Void Sword DPS",
-    "role": "Maestra del Abismo • Hipercarry Cryo/Abisal de Daño Cataclísmico",
+    "role": "Maestra del Abismo • Hipercarry Cryo de Daño Cataclísmico",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
     "scalingLabel": "Escala con ATQ%, Daño Crítico y Multiplicador del Vacío",
@@ -11426,53 +12996,99 @@ const CHARACTER_BUILDS_DB = [
         "rarity": 4,
         "type": "Pase de Batalla",
         "note": "+40% Daño a Normales/Cargados y auto-cura."
+      },
+      {
+        "name": "Vado del Río Ceniciento",
+        "rarity": 4,
+        "type": "Opción F2P Pesca",
+        "note": "+16% Prob. Crítica en Habilidad Elemental."
       }
     ],
     "bestArtifacts": [
       {
         "set": "Finale of the Deep Galleries (4 piezas)",
-        "note": "BiS Oficial: +Daño Crítico y penetración de armadura abisal."
-      },
-      {
-        "set": "Nómada del Invierno (4 piezas)",
-        "note": "+40% Prob. Crítica contra enemigos congelados."
+        "type": "BiS Oficial Indiscutible",
+        "bonus": "Con 0 de Energía Elemental, +60% Daño de Ataques Normales y +60% Daño de Definitiva. (No consume ni requiere energía)."
       },
       {
         "set": "Cazador Sombrío (4 piezas)",
-        "note": "+36% Prob. Crítica si fluctúa su vida."
+        "type": "BiS con Furina",
+        "bonus": "+36% Prob. Crítica permanente con fluctuaciones de vida de Furina."
+      },
+      {
+        "set": "Nómada del Invierno (4 piezas)",
+        "type": "Alternativa Permafrost",
+        "bonus": "+40% Prob. Crítica contra enemigos congelados en composiciones Freeze."
       }
     ],
     "statPriority": {
       "sands": "ATQ%",
       "goblet": "Bono Daño Cryo%",
       "circlet": "Daño Crítico o Prob. Crítica",
-      "substats": "Daño Crítico > Prob. Crítica > ATQ% > Recarga de Energía% > EM"
+      "substats": "Daño Crítico > Prob. Crítica > ATQ%"
     },
     "benchmarks": {
-      "ATQ": "2,200 - 2,500",
-      "CRÍTICOS": "75%+ CR / 220%+ CD",
-      "RECARGA": "120%"
+      "hp": "17,500 - 19,500 HP",
+      "atk": "2,300 - 2,600 ATQ",
+      "def": "750 - 850 DEF",
+      "em": "0 (No requerida)",
+      "er": "100% (Base estricta - El set BiS exige 0 Energía)",
+      "crit": "75%+ CR / 220%+ CD"
     },
     "metaTeams": [
       {
-        "name": "Skirk Abyssal Freeze",
+        "name": "Skirk Abyssal Freeze (Top Meta)",
         "members": [
           "Skirk",
+          "Escoffier",
           "Furina",
-          "Shenhe",
-          "Kazuha"
-        ]
+          "Shenhe"
+        ],
+        "comp": "Skirk • Escoffier • Furina • Shenhe"
       },
       {
-        "name": "Skirk Melt Obliteration",
+        "name": "Skirk Mono Cryo Cataclysm",
         "members": [
           "Skirk",
-          "Xiangling",
-          "Bennett",
-          "Kazuha"
-        ]
+          "Shenhe",
+          "Kazuha",
+          "Citlali"
+        ],
+        "comp": "Skirk • Shenhe • Kazuha • Citlali"
+      },
+      {
+        "name": "Skirk Permafrost F2P",
+        "members": [
+          "Skirk",
+          "Xingqiu",
+          "Rosaria",
+          "Dahlia"
+        ],
+        "comp": "Skirk • Xingqiu • Rosaria • Dahlia"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Daño Crítico",
+      "2. Prob. Crítica",
+      "3. ATQ%",
+      "4. ATQ Plano",
+      "✕ Recarga de Energía (Inútil: El set BiS exige tener 0 Energía Elemental)",
+      "✕ Maestría Elemental (Inútil: En Permafrost/Mono Cryo no genera daño)"
+    ],
+    "mainStats": {
+      "sands": "ATQ%",
+      "goblet": "Bono Daño Cryo%",
+      "circlet": "Daño Crítico o Prob. Crítica"
+    },
+    "recommendedPanel": {
+      "hp": "17,500 - 19,500 HP",
+      "atk": "2,300 - 2,600 ATQ",
+      "def": "750 - 850 DEF",
+      "em": "0 (No requerida)",
+      "er": "100% (Base estricta - El set BiS exige 0 Energía)",
+      "crit": "75%+ CR / 220%+ CD"
+    },
+    "talentPriority": "Definitiva (Q) = Habilidad Elemental (E) > Ataque Normal"
   },
   {
     "id": "durin",
@@ -11536,9 +13152,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Prob. Crítica > Daño Crítico > ATQ% > Maestría Elemental > Recarga"
     },
     "benchmarks": {
-      "ATQ": "2,100",
-      "CRÍTICOS": "70%+ CR / 180%+ CD",
-      "EM": "150 - 250 EM"
+      "hp": "17,000 - 19,000",
+      "atk": "2,100",
+      "def": "Base (~750)",
+      "em": "150 - 250 EM",
+      "er": "120% ER",
+      "crit": "70%+ CR / 180%+ CD"
     },
     "metaTeams": [
       {
@@ -11548,7 +13167,8 @@ const CHARACTER_BUILDS_DB = [
           "Furina",
           "Yelan",
           "Xilonen"
-        ]
+        ],
+        "comp": "Durin • Furina • Yelan • Xilonen"
       },
       {
         "name": "Durin Melt Core",
@@ -11557,9 +13177,30 @@ const CHARACTER_BUILDS_DB = [
           "Wriothesley",
           "Shenhe",
           "Bennett"
-        ]
+        ],
+        "comp": "Durin • Wriothesley • Shenhe • Bennett"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Prob. Crítica",
+      "2. Daño Crítico",
+      "3. ATQ%",
+      "4. Maestría Elemental",
+      "5. Recarga"
+    ],
+    "mainStats": {
+      "sands": "ATQ% o Maestría Elemental",
+      "goblet": "Bono Daño Pyro%",
+      "circlet": "Prob. Crítica o Daño Crítico"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 19,000",
+      "atk": "2,100",
+      "def": "Base (~750)",
+      "em": "150 - 250 EM",
+      "er": "120% ER",
+      "crit": "70%+ CR / 180%+ CD"
+    }
   },
   {
     "id": "varka",
@@ -11623,9 +13264,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Prob. Crítica > Daño Crítico > ATQ% > Recarga de Energía% > EM"
     },
     "benchmarks": {
-      "ATQ": "2,300 - 2,600",
-      "CRÍTICOS": "75%+ CR / 180%+ CD",
-      "RECARGA": "130%"
+      "hp": "17,000 - 19,000",
+      "atk": "2,300 - 2,600",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "130%",
+      "crit": "75%+ CR / 180%+ CD"
     },
     "metaTeams": [
       {
@@ -11635,7 +13279,8 @@ const CHARACTER_BUILDS_DB = [
           "Faruzan",
           "Furina",
           "Bennett"
-        ]
+        ],
+        "comp": "Varka • Faruzan • Furina • Bennett"
       },
       {
         "name": "Varka Hexerei Cleave",
@@ -11644,9 +13289,30 @@ const CHARACTER_BUILDS_DB = [
           "Xilonen",
           "Yelan",
           "Zhongli"
-        ]
+        ],
+        "comp": "Varka • Xilonen • Yelan • Zhongli"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Prob. Crítica",
+      "2. Daño Crítico",
+      "3. ATQ%",
+      "4. Recarga de Energía%",
+      "5. EM"
+    ],
+    "mainStats": {
+      "sands": "ATQ%",
+      "goblet": "Bono Daño Anemo%",
+      "circlet": "Prob. Crítica o Daño Crítico"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 19,000",
+      "atk": "2,300 - 2,600",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "130%",
+      "crit": "75%+ CR / 180%+ CD"
+    }
   },
   {
     "id": "ifa",
@@ -11700,8 +13366,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Maestría Elemental > Recarga de Energía% > Vida%"
     },
     "benchmarks": {
-      "EM": "800+ EM",
-      "RECARGA": "160%"
+      "hp": "17,000 - 20,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "800+ EM",
+      "er": "160%",
+      "crit": "60%+ CR / 120%+ CD"
     },
     "metaTeams": [
       {
@@ -11711,9 +13381,38 @@ const CHARACTER_BUILDS_DB = [
           "Chasca",
           "Ifa",
           "Bennett"
-        ]
+        ],
+        "comp": "Mavuika • Chasca • Ifa • Bennett"
+      },
+      {
+        "name": "Ifa National Anemo Driver",
+        "members": [
+          "Ifa",
+          "Xiangling",
+          "Xingqiu",
+          "Bennett"
+        ],
+        "comp": "Ifa • Xiangling • Xingqiu • Bennett"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Maestría Elemental",
+      "2. Recarga de Energía%",
+      "3. Vida%"
+    ],
+    "mainStats": {
+      "sands": "Maestría Elemental",
+      "goblet": "Maestría Elemental",
+      "circlet": "Maestría Elemental"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 20,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "800+ EM",
+      "er": "160%",
+      "crit": "60%+ CR / 120%+ CD"
+    }
   },
   {
     "id": "lan_yan",
@@ -11767,8 +13466,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "ATQ% > Recarga de Energía% > Prob. Crítica"
     },
     "benchmarks": {
-      "ATQ": "2,400+ ATQ",
-      "RECARGA": "180%"
+      "hp": "17,000 - 19,000",
+      "atk": "2,400+ ATQ",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "180%",
+      "crit": "60%+ CR / 120%+ CD"
     },
     "metaTeams": [
       {
@@ -11778,9 +13481,38 @@ const CHARACTER_BUILDS_DB = [
           "Faruzan",
           "Lan Yan",
           "Furina"
-        ]
+        ],
+        "comp": "Xiao • Faruzan • Lan Yan • Furina"
+      },
+      {
+        "name": "Lan Yan Hyperbloom Shielder",
+        "members": [
+          "Alhacén",
+          "Lan Yan",
+          "Nahida",
+          "Xingqiu"
+        ],
+        "comp": "Alhacén • Lan Yan • Nahida • Xingqiu"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. ATQ%",
+      "2. Recarga de Energía%",
+      "3. Prob. Crítica"
+    ],
+    "mainStats": {
+      "sands": "ATQ% o Recarga",
+      "goblet": "ATQ%",
+      "circlet": "ATQ%"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 19,000",
+      "atk": "2,400+ ATQ",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "180%",
+      "crit": "60%+ CR / 120%+ CD"
+    }
   },
   {
     "id": "illuga",
@@ -11809,6 +13541,18 @@ const CHARACTER_BUILDS_DB = [
         "rarity": 4,
         "type": "Forja Natlan",
         "note": "+DEF% masiva."
+      },
+      {
+        "name": "La Captura R5 (The Catch)",
+        "rarity": 4,
+        "type": "BiS F2P Pesca",
+        "note": "+45.9% Recarga y +32% Daño en Definitiva."
+      },
+      {
+        "name": "Balada de los Fiordos",
+        "rarity": 4,
+        "type": "Pase de Batalla",
+        "note": "+27.6% Prob. Crítica y Maestría Elemental."
       }
     ],
     "bestArtifacts": [
@@ -11828,8 +13572,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "DEF% > Recarga de Energía% > Maestría Elemental"
     },
     "benchmarks": {
-      "DEF": "2,500 DEF",
-      "RECARGA": "170%"
+      "hp": "16,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "2,500 DEF",
+      "em": "0",
+      "er": "170%",
+      "crit": "60%+ CR / 120%+ CD"
     },
     "metaTeams": [
       {
@@ -11839,9 +13587,38 @@ const CHARACTER_BUILDS_DB = [
           "Illuga",
           "Furina",
           "Bennett"
-        ]
+        ],
+        "comp": "Navia • Illuga • Furina • Bennett"
+      },
+      {
+        "name": "Illuga Spallation Crystal",
+        "members": [
+          "Illuga",
+          "Chiori",
+          "Furina",
+          "Bennett"
+        ],
+        "comp": "Illuga • Chiori • Furina • Bennett"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. DEF%",
+      "2. Recarga de Energía%",
+      "3. Maestría Elemental"
+    ],
+    "mainStats": {
+      "sands": "DEF% o Recarga",
+      "goblet": "DEF%",
+      "circlet": "DEF% o Prob. Crítica"
+    },
+    "recommendedPanel": {
+      "hp": "16,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "2,500 DEF",
+      "em": "0",
+      "er": "170%",
+      "crit": "60%+ CR / 120%+ CD"
+    }
   },
   {
     "id": "ineffa",
@@ -11895,9 +13672,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Prob. Crítica > Daño Crítico > ATQ% > EM > Recarga"
     },
     "benchmarks": {
-      "ATQ": "1,900",
-      "CRÍTICOS": "70%+ CR / 160%+ CD",
-      "EM": "150 EM"
+      "hp": "17,000 - 19,000",
+      "atk": "1,900",
+      "def": "Base (~750)",
+      "em": "150 EM",
+      "er": "120% ER",
+      "crit": "70%+ CR / 160%+ CD"
     },
     "metaTeams": [
       {
@@ -11907,9 +13687,40 @@ const CHARACTER_BUILDS_DB = [
           "Ineffa",
           "Nahida",
           "Zhongli"
-        ]
+        ],
+        "comp": "Alhacén • Ineffa • Nahida • Zhongli"
+      },
+      {
+        "name": "Ineffa Hyperbloom Battery",
+        "members": [
+          "Ineffa",
+          "Xingqiu",
+          "Nahida",
+          "Kuki Shinobu"
+        ],
+        "comp": "Ineffa • Xingqiu • Nahida • Kuki Shinobu"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Prob. Crítica",
+      "2. Daño Crítico",
+      "3. ATQ%",
+      "4. EM",
+      "5. Recarga"
+    ],
+    "mainStats": {
+      "sands": "ATQ% o EM",
+      "goblet": "Bono Daño Electro%",
+      "circlet": "Prob. Crítica o Daño Crítico"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 19,000",
+      "atk": "1,900",
+      "def": "Base (~750)",
+      "em": "150 EM",
+      "er": "120% ER",
+      "crit": "70%+ CR / 160%+ CD"
+    }
   },
   {
     "id": "linnea",
@@ -11965,8 +13776,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Prob. Crítica > Daño Crítico > DEF% > Recarga"
     },
     "benchmarks": {
-      "DEF": "2,600+ DEF",
-      "CRÍTICOS": "70%+ CR / 150%+ CD"
+      "hp": "16,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "2,600+ DEF",
+      "em": "0",
+      "er": "120% ER",
+      "crit": "70%+ CR / 150%+ CD"
     },
     "metaTeams": [
       {
@@ -11976,13 +13791,38 @@ const CHARACTER_BUILDS_DB = [
           "Linnea",
           "Gorou",
           "Zhongli"
-        ]
+        ],
+        "comp": "Itto • Linnea • Gorou • Zhongli"
+      },
+      {
+        "name": "Linnea Double Geo Core",
+        "members": [
+          "Navia",
+          "Linnea",
+          "Xiangling",
+          "Bennett"
+        ],
+        "comp": "Navia • Linnea • Xiangling • Bennett"
       }
     ],
     "mainStats": {
       "sands": "DEF%",
       "goblet": "DEF% o Bono Daño Geo%",
       "circlet": "Prob. Crítica o Daño Crítico"
+    },
+    "substatsPriority": [
+      "1. Prob. Crítica",
+      "2. Daño Crítico",
+      "3. DEF%",
+      "4. Recarga"
+    ],
+    "recommendedPanel": {
+      "hp": "16,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "2,600+ DEF",
+      "em": "0",
+      "er": "120% ER",
+      "crit": "70%+ CR / 150%+ CD"
     }
   },
   {
@@ -12037,8 +13877,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Maestría Elemental > Prob. Crítica > Daño Crítico > Recarga"
     },
     "benchmarks": {
-      "EM": "850+ EM",
-      "CRÍTICOS": "60%+ CR / 140%+ CD"
+      "hp": "17,000 - 20,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "850+ EM",
+      "er": "120% ER",
+      "crit": "60%+ CR / 140%+ CD"
     },
     "metaTeams": [
       {
@@ -12048,9 +13892,39 @@ const CHARACTER_BUILDS_DB = [
           "Nilou",
           "Kokomi",
           "Nahida"
-        ]
+        ],
+        "comp": "Nefer • Nilou • Kokomi • Nahida"
+      },
+      {
+        "name": "Nefer Hyperbloom Catalyze",
+        "members": [
+          "Nefer",
+          "Xingqiu",
+          "Raiden",
+          "Baizhu"
+        ],
+        "comp": "Nefer • Xingqiu • Raiden • Baizhu"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Maestría Elemental",
+      "2. Prob. Crítica",
+      "3. Daño Crítico",
+      "4. Recarga"
+    ],
+    "mainStats": {
+      "sands": "Maestría Elemental",
+      "goblet": "Maestría Elemental o Bono Dendro%",
+      "circlet": "Prob. Crítica o Daño Crítico"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 20,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "850+ EM",
+      "er": "120% ER",
+      "crit": "60%+ CR / 140%+ CD"
+    }
   },
   {
     "id": "odette",
@@ -12106,9 +13980,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Prob. Crítica > Daño Crítico > ATQ% > Recarga"
     },
     "benchmarks": {
-      "ATQ": "2,000",
-      "CRÍTICOS": "70%+ CR / 170%+ CD",
-      "RECARGA": "140%"
+      "hp": "17,000 - 19,000",
+      "atk": "2,000",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "140%",
+      "crit": "70%+ CR / 170%+ CD"
     },
     "metaTeams": [
       {
@@ -12118,13 +13995,38 @@ const CHARACTER_BUILDS_DB = [
           "Odette",
           "Furina",
           "Kazuha"
-        ]
+        ],
+        "comp": "Ayaka • Odette • Furina • Kazuha"
+      },
+      {
+        "name": "Odette Reverse Melt",
+        "members": [
+          "Odette",
+          "Xiangling",
+          "Bennett",
+          "Kazuha"
+        ],
+        "comp": "Odette • Xiangling • Bennett • Kazuha"
       }
     ],
     "mainStats": {
       "sands": "ATQ%",
       "goblet": "ATQ% o Bono Daño Cryo%",
       "circlet": "Prob. Crítica o Daño Crítico"
+    },
+    "substatsPriority": [
+      "1. Prob. Crítica",
+      "2. Daño Crítico",
+      "3. ATQ%",
+      "4. Recarga"
+    ],
+    "recommendedPanel": {
+      "hp": "17,000 - 19,000",
+      "atk": "2,000",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "140%",
+      "crit": "70%+ CR / 170%+ CD"
     }
   },
   {
@@ -12179,8 +14081,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "ATQ% > Recarga de Energía% > Maestría Elemental"
     },
     "benchmarks": {
-      "ATQ": "1,900",
-      "RECARGA": "170%"
+      "hp": "17,000 - 19,000",
+      "atk": "1,900",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "170%",
+      "crit": "60%+ CR / 120%+ CD"
     },
     "metaTeams": [
       {
@@ -12190,9 +14096,38 @@ const CHARACTER_BUILDS_DB = [
           "Prune",
           "Furina",
           "Bennett"
-        ]
+        ],
+        "comp": "Klee • Prune • Furina • Bennett"
+      },
+      {
+        "name": "Prune Electro Swirl Taser",
+        "members": [
+          "Prune",
+          "Yae Miko",
+          "Furina",
+          "Baizhu"
+        ],
+        "comp": "Prune • Yae Miko • Furina • Baizhu"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. ATQ%",
+      "2. Recarga de Energía%",
+      "3. Maestría Elemental"
+    ],
+    "mainStats": {
+      "sands": "ATQ% o Recarga",
+      "goblet": "Bono Daño Anemo%",
+      "circlet": "Prob. Crítica o ATQ%"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 19,000",
+      "atk": "1,900",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "170%",
+      "crit": "60%+ CR / 120%+ CD"
+    }
   },
   {
     "id": "varesa",
@@ -12246,8 +14181,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Prob. Crítica > Daño Crítico > ATQ% > EM > Recarga"
     },
     "benchmarks": {
-      "ATQ": "2,100",
-      "CRÍTICOS": "75%+ CR / 190%+ CD"
+      "hp": "17,000 - 19,000",
+      "atk": "2,100",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "120% ER",
+      "crit": "75%+ CR / 190%+ CD"
     },
     "metaTeams": [
       {
@@ -12257,9 +14196,40 @@ const CHARACTER_BUILDS_DB = [
           "Kazuha",
           "Sara",
           "Bennett"
-        ]
+        ],
+        "comp": "Varesa • Kazuha • Sara • Bennett"
+      },
+      {
+        "name": "Varesa Quickbloom Core",
+        "members": [
+          "Varesa",
+          "Nahida",
+          "Furina",
+          "Baizhu"
+        ],
+        "comp": "Varesa • Nahida • Furina • Baizhu"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Prob. Crítica",
+      "2. Daño Crítico",
+      "3. ATQ%",
+      "4. EM",
+      "5. Recarga"
+    ],
+    "mainStats": {
+      "sands": "ATQ% o EM",
+      "goblet": "Bono Daño Electro%",
+      "circlet": "Prob. Crítica o Daño Crítico"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 19,000",
+      "atk": "2,100",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "120% ER",
+      "crit": "75%+ CR / 190%+ CD"
+    }
   },
   {
     "id": "zibai",
@@ -12319,8 +14289,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Prob. Crítica > Daño Crítico > DEF% > Recarga"
     },
     "benchmarks": {
-      "DEF": "2,600 DEF",
-      "CRÍTICOS": "75%+ CR / 180%+ CD"
+      "hp": "16,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "2,600 DEF",
+      "em": "0",
+      "er": "120% ER",
+      "crit": "75%+ CR / 180%+ CD"
     },
     "metaTeams": [
       {
@@ -12330,9 +14304,39 @@ const CHARACTER_BUILDS_DB = [
           "Furina",
           "Xilonen",
           "Gorou"
-        ]
+        ],
+        "comp": "Zibai • Furina • Xilonen • Gorou"
+      },
+      {
+        "name": "Zibai Mono Geo Sunder",
+        "members": [
+          "Zibai",
+          "Navia",
+          "Zhongli",
+          "Bennett"
+        ],
+        "comp": "Zibai • Navia • Zhongli • Bennett"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Prob. Crítica",
+      "2. Daño Crítico",
+      "3. DEF%",
+      "4. Recarga"
+    ],
+    "mainStats": {
+      "sands": "DEF%",
+      "goblet": "Bono Daño Geo% o DEF%",
+      "circlet": "Prob. Crítica o Daño Crítico"
+    },
+    "recommendedPanel": {
+      "hp": "16,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "2,600 DEF",
+      "em": "0",
+      "er": "120% ER",
+      "crit": "75%+ CR / 180%+ CD"
+    }
   },
   {
     "id": "dahlia",
@@ -12386,8 +14390,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Vida% > Recarga de Energía% > Vida Plana"
     },
     "benchmarks": {
-      "VIDA": "32,000 HP",
-      "RECARGA": "180%"
+      "hp": "32,000 HP",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "0",
+      "er": "180%",
+      "crit": "60%+ CR / 120%+ CD"
     },
     "metaTeams": [
       {
@@ -12397,9 +14405,38 @@ const CHARACTER_BUILDS_DB = [
           "Yelan",
           "Dahlia",
           "Kazuha"
-        ]
+        ],
+        "comp": "Hu Tao • Yelan • Dahlia • Kazuha"
+      },
+      {
+        "name": "Dahlia Permafrost Core",
+        "members": [
+          "Ayaka",
+          "Dahlia",
+          "Kazuha",
+          "Shenhe"
+        ],
+        "comp": "Ayaka • Dahlia • Kazuha • Shenhe"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Vida%",
+      "2. Recarga de Energía%",
+      "3. Vida Plana"
+    ],
+    "mainStats": {
+      "sands": "Vida% o Recarga",
+      "goblet": "Vida%",
+      "circlet": "Vida% o Bono Curación"
+    },
+    "recommendedPanel": {
+      "hp": "32,000 HP",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "0",
+      "er": "180%",
+      "crit": "60%+ CR / 120%+ CD"
+    }
   },
   {
     "id": "escoffier",
@@ -12453,9 +14490,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Prob. Crítica > Daño Crítico > ATQ% > Recarga"
     },
     "benchmarks": {
-      "ATQ": "1,900",
-      "CRÍTICOS": "65%+ CR / 140%+ CD",
-      "RECARGA": "160%"
+      "hp": "17,000 - 19,000",
+      "atk": "1,900",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "160%",
+      "crit": "65%+ CR / 140%+ CD"
     },
     "metaTeams": [
       {
@@ -12465,9 +14505,39 @@ const CHARACTER_BUILDS_DB = [
           "Escoffier",
           "Furina",
           "Jean"
-        ]
+        ],
+        "comp": "Wriothesley • Escoffier • Furina • Jean"
+      },
+      {
+        "name": "Escoffier Abyssal Freeze",
+        "members": [
+          "Skirk",
+          "Escoffier",
+          "Furina",
+          "Shenhe"
+        ],
+        "comp": "Skirk • Escoffier • Furina • Shenhe"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Prob. Crítica",
+      "2. Daño Crítico",
+      "3. ATQ%",
+      "4. Recarga"
+    ],
+    "mainStats": {
+      "sands": "ATQ% o Recarga",
+      "goblet": "Bono Daño Cryo%",
+      "circlet": "Prob. Crítica o Daño Crítico"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 19,000",
+      "atk": "1,900",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "160%",
+      "crit": "65%+ CR / 140%+ CD"
+    }
   },
   {
     "id": "mizuki",
@@ -12508,6 +14578,11 @@ const CHARACTER_BUILDS_DB = [
       {
         "set": "Sombra Verde Esmeralda (4 piezas)",
         "note": "-40% Resistencia elemental enemiga."
+      },
+      {
+        "set": "Instructor (4 piezas)",
+        "type": "Soporte de Reacciones",
+        "bonus": "+120 de Maestría Elemental a todo el equipo al activar reacciones elementales."
       }
     ],
     "statPriority": {
@@ -12517,8 +14592,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Maestría Elemental > Recarga de Energía%"
     },
     "benchmarks": {
-      "EM": "850+ EM",
-      "RECARGA": "160%"
+      "hp": "17,000 - 20,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "850+ EM",
+      "er": "160%",
+      "crit": "60%+ CR / 120%+ CD"
     },
     "metaTeams": [
       {
@@ -12528,9 +14607,37 @@ const CHARACTER_BUILDS_DB = [
           "Xiangling",
           "Mizuki",
           "Bennett"
-        ]
+        ],
+        "comp": "Ayato • Xiangling • Mizuki • Bennett"
+      },
+      {
+        "name": "Mizuki Aggravate Swirl",
+        "members": [
+          "Keqing",
+          "Fischl",
+          "Mizuki",
+          "Nahida"
+        ],
+        "comp": "Keqing • Fischl • Mizuki • Nahida"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Maestría Elemental",
+      "2. Recarga de Energía%"
+    ],
+    "mainStats": {
+      "sands": "Maestría Elemental",
+      "goblet": "Maestría Elemental",
+      "circlet": "Maestría Elemental"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 20,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "850+ EM",
+      "er": "160%",
+      "crit": "60%+ CR / 120%+ CD"
+    }
   },
   {
     "id": "chongyun",
@@ -12590,9 +14697,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Prob. Crítica > Daño Crítico > ATQ% > Maestría Elemental > Recarga"
     },
     "benchmarks": {
-      "ATQ": "1,800 - 2,100",
-      "CRÍTICOS": "65%+ CR / 150%+ CD",
-      "RECARGA": "130%"
+      "hp": "17,000 - 19,000",
+      "atk": "1,800 - 2,100",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "130%",
+      "crit": "65%+ CR / 150%+ CD"
     },
     "metaTeams": [
       {
@@ -12602,7 +14712,8 @@ const CHARACTER_BUILDS_DB = [
           "Xiangling",
           "Xingqiu",
           "Bennett"
-        ]
+        ],
+        "comp": "Chongyun • Xiangling • Xingqiu • Bennett"
       },
       {
         "name": "Shenhe Chongyun Cryo Core",
@@ -12611,9 +14722,30 @@ const CHARACTER_BUILDS_DB = [
           "Shenhe",
           "Kazuha",
           "Kokomi"
-        ]
+        ],
+        "comp": "Chongyun • Shenhe • Kazuha • Kokomi"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Prob. Crítica",
+      "2. Daño Crítico",
+      "3. ATQ%",
+      "4. Maestría Elemental",
+      "5. Recarga"
+    ],
+    "mainStats": {
+      "sands": "ATQ% o Maestría Elemental",
+      "goblet": "Bono Daño Cryo%",
+      "circlet": "Prob. Crítica o Daño Crítico"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 19,000",
+      "atk": "1,800 - 2,100",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "130%",
+      "crit": "65%+ CR / 150%+ CD"
+    }
   },
   {
     "id": "diona",
@@ -12671,8 +14803,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Vida% > Recarga de Energía% > Vida Plana > Prob. Crítica (Favonius)"
     },
     "benchmarks": {
-      "VIDA": "30,000 - 35,000 HP",
-      "RECARGA": "180% - 200% ER"
+      "hp": "30,000 - 35,000 HP",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "0",
+      "er": "180% - 200% ER",
+      "crit": "60%+ CR / 120%+ CD"
     },
     "metaTeams": [
       {
@@ -12682,7 +14818,8 @@ const CHARACTER_BUILDS_DB = [
           "Diona",
           "Mona",
           "Kazuha"
-        ]
+        ],
+        "comp": "Ayaka • Diona • Mona • Kazuha"
       },
       {
         "name": "Eula Superconduct Battery",
@@ -12691,9 +14828,29 @@ const CHARACTER_BUILDS_DB = [
           "Diona",
           "Raiden",
           "Rosaria"
-        ]
+        ],
+        "comp": "Eula • Diona • Raiden • Rosaria"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Vida%",
+      "2. Recarga de Energía%",
+      "3. Vida Plana",
+      "4. Prob. Crítica (Favonius)"
+    ],
+    "mainStats": {
+      "sands": "Vida% o Recarga de Energía",
+      "goblet": "Vida%",
+      "circlet": "Vida% o Bono de Curación"
+    },
+    "recommendedPanel": {
+      "hp": "30,000 - 35,000 HP",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "0",
+      "er": "180% - 200% ER",
+      "crit": "60%+ CR / 120%+ CD"
+    }
   },
   {
     "id": "dori",
@@ -12747,8 +14904,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Recarga de Energía% > Vida% > Vida Plana"
     },
     "benchmarks": {
-      "RECARGA": "200% - 220% ER",
-      "VIDA": "30,000 HP"
+      "hp": "30,000 HP",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "0",
+      "er": "200% - 220% ER",
+      "crit": "60%+ CR / 120%+ CD"
     },
     "metaTeams": [
       {
@@ -12758,9 +14919,38 @@ const CHARACTER_BUILDS_DB = [
           "Dori",
           "Nahida",
           "Xingqiu"
-        ]
+        ],
+        "comp": "Alhacén • Dori • Nahida • Xingqiu"
+      },
+      {
+        "name": "Dori Aggravate Energy",
+        "members": [
+          "Keqing",
+          "Fischl",
+          "Nahida",
+          "Dori"
+        ],
+        "comp": "Keqing • Fischl • Nahida • Dori"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Recarga de Energía%",
+      "2. Vida%",
+      "3. Vida Plana"
+    ],
+    "mainStats": {
+      "sands": "Recarga de Energía o Vida%",
+      "goblet": "Vida%",
+      "circlet": "Bono de Curación o Vida%"
+    },
+    "recommendedPanel": {
+      "hp": "30,000 HP",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "0",
+      "er": "200% - 220% ER",
+      "crit": "60%+ CR / 120%+ CD"
+    }
   },
   {
     "id": "heizou",
@@ -12820,9 +15010,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Prob. Crítica > Daño Crítico > ATQ% > Maestría Elemental > Recarga"
     },
     "benchmarks": {
-      "ATQ": "1,900 - 2,200",
-      "CRÍTICOS": "70%+ CR / 160%+ CD",
-      "EM": "150 - 250 EM"
+      "hp": "17,000 - 19,000",
+      "atk": "1,900 - 2,200",
+      "def": "Base (~750)",
+      "em": "150 - 250 EM",
+      "er": "120% ER",
+      "crit": "70%+ CR / 160%+ CD"
     },
     "metaTeams": [
       {
@@ -12832,7 +15025,8 @@ const CHARACTER_BUILDS_DB = [
           "Fischl",
           "Beidou",
           "Xingqiu"
-        ]
+        ],
+        "comp": "Shikanoin Heizou • Fischl • Beidou • Xingqiu"
       },
       {
         "name": "Heizou National Punch",
@@ -12841,9 +15035,30 @@ const CHARACTER_BUILDS_DB = [
           "Xiangling",
           "Xingqiu",
           "Bennett"
-        ]
+        ],
+        "comp": "Shikanoin Heizou • Xiangling • Xingqiu • Bennett"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Prob. Crítica",
+      "2. Daño Crítico",
+      "3. ATQ%",
+      "4. Maestría Elemental",
+      "5. Recarga"
+    ],
+    "mainStats": {
+      "sands": "ATQ% o Maestría Elemental",
+      "goblet": "Bono Daño Anemo%",
+      "circlet": "Prob. Crítica o Daño Crítico"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 19,000",
+      "atk": "1,900 - 2,200",
+      "def": "Base (~750)",
+      "em": "150 - 250 EM",
+      "er": "120% ER",
+      "crit": "70%+ CR / 160%+ CD"
+    }
   },
   {
     "id": "kaeya",
@@ -12907,9 +15122,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Prob. Crítica > Daño Crítico > ATQ% > Recarga de Energía% > EM"
     },
     "benchmarks": {
-      "ATQ": "1,900",
-      "CRÍTICOS": "65%+ CR / 150%+ CD",
-      "RECARGA": "160% - 180%"
+      "hp": "17,000 - 19,000",
+      "atk": "1,900",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "160% - 180%",
+      "crit": "65%+ CR / 150%+ CD"
     },
     "metaTeams": [
       {
@@ -12919,7 +15137,8 @@ const CHARACTER_BUILDS_DB = [
           "Rosaria",
           "Xiangling",
           "Bennett"
-        ]
+        ],
+        "comp": "Kaeya • Rosaria • Xiangling • Bennett"
       },
       {
         "name": "Kaeya Freeze Skirmish",
@@ -12928,9 +15147,30 @@ const CHARACTER_BUILDS_DB = [
           "Chongyun",
           "Xingqiu",
           "Kazuha"
-        ]
+        ],
+        "comp": "Kaeya • Chongyun • Xingqiu • Kazuha"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Prob. Crítica",
+      "2. Daño Crítico",
+      "3. ATQ%",
+      "4. Recarga de Energía%",
+      "5. EM"
+    ],
+    "mainStats": {
+      "sands": "ATQ% o Recarga de Energía",
+      "goblet": "Bono Daño Cryo%",
+      "circlet": "Prob. Crítica o Daño Crítico"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 19,000",
+      "atk": "1,900",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "160% - 180%",
+      "crit": "65%+ CR / 150%+ CD"
+    }
   },
   {
     "id": "kaveh",
@@ -12994,8 +15234,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Recarga de Energía% > Maestría Elemental > ATQ% > Vida%"
     },
     "benchmarks": {
-      "EM": "750 - 900 EM",
-      "RECARGA": "180% - 200% ER"
+      "hp": "17,000 - 20,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "750 - 900 EM",
+      "er": "180% - 200% ER",
+      "crit": "60%+ CR / 120%+ CD"
     },
     "metaTeams": [
       {
@@ -13005,7 +15249,8 @@ const CHARACTER_BUILDS_DB = [
           "Nilou",
           "Xingqiu",
           "Nahida"
-        ]
+        ],
+        "comp": "Kaveh • Nilou • Xingqiu • Nahida"
       },
       {
         "name": "Kaveh Hyperbloom Shatter",
@@ -13014,9 +15259,29 @@ const CHARACTER_BUILDS_DB = [
           "Yelan",
           "Kuki Shinobu",
           "Baizhu"
-        ]
+        ],
+        "comp": "Kaveh • Yelan • Kuki Shinobu • Baizhu"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Recarga de Energía%",
+      "2. Maestría Elemental",
+      "3. ATQ%",
+      "4. Vida%"
+    ],
+    "mainStats": {
+      "sands": "Recarga de Energía o Maestría Elemental",
+      "goblet": "Maestría Elemental",
+      "circlet": "Maestría Elemental"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 20,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "750 - 900 EM",
+      "er": "180% - 200% ER",
+      "crit": "60%+ CR / 120%+ CD"
+    }
   },
   {
     "id": "lisa",
@@ -13080,8 +15345,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Recarga de Energía% > Prob. Crítica > Daño Crítico > ATQ% > EM"
     },
     "benchmarks": {
-      "RECARGA": "200% - 220% ER",
-      "CRÍTICOS": "60%+ CR / 130%+ CD"
+      "hp": "17,000 - 19,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "200% - 220% ER",
+      "crit": "60%+ CR / 130%+ CD"
     },
     "metaTeams": [
       {
@@ -13091,7 +15360,8 @@ const CHARACTER_BUILDS_DB = [
           "Lisa",
           "Kazuha",
           "Bennett"
-        ]
+        ],
+        "comp": "Raiden • Lisa • Kazuha • Bennett"
       },
       {
         "name": "Lisa Aggravate Scholar",
@@ -13100,9 +15370,30 @@ const CHARACTER_BUILDS_DB = [
           "Nahida",
           "Fischl",
           "Zhongli"
-        ]
+        ],
+        "comp": "Lisa • Nahida • Fischl • Zhongli"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Recarga de Energía%",
+      "2. Prob. Crítica",
+      "3. Daño Crítico",
+      "4. ATQ%",
+      "5. EM"
+    ],
+    "mainStats": {
+      "sands": "Recarga de Energía o ATQ%",
+      "goblet": "Bono Daño Electro%",
+      "circlet": "Prob. Crítica o Daño Crítico"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 19,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "200% - 220% ER",
+      "crit": "60%+ CR / 130%+ CD"
+    }
   },
   {
     "id": "mika",
@@ -13160,9 +15451,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Recarga de Energía% > Vida% > Prob. Crítica > Vida Plana"
     },
     "benchmarks": {
-      "RECARGA": "200% - 230% ER",
-      "VIDA": "32,000+ HP",
-      "CRÍTICO": "45%+ CR"
+      "hp": "32,000+ HP",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "0",
+      "er": "200% - 230% ER",
+      "crit": "45%+ CR"
     },
     "metaTeams": [
       {
@@ -13172,7 +15466,8 @@ const CHARACTER_BUILDS_DB = [
           "Mika",
           "Raiden",
           "Furina"
-        ]
+        ],
+        "comp": "Eula • Mika • Raiden • Furina"
       },
       {
         "name": "Razor Rainbow Physical",
@@ -13181,9 +15476,29 @@ const CHARACTER_BUILDS_DB = [
           "Mika",
           "Fischl",
           "Zhongli"
-        ]
+        ],
+        "comp": "Razor • Mika • Fischl • Zhongli"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Recarga de Energía%",
+      "2. Vida%",
+      "3. Prob. Crítica",
+      "4. Vida Plana"
+    ],
+    "mainStats": {
+      "sands": "Recarga de Energía o Vida%",
+      "goblet": "Vida%",
+      "circlet": "Bono de Curación o Prob. Crítica (Favonius)"
+    },
+    "recommendedPanel": {
+      "hp": "32,000+ HP",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "0",
+      "er": "200% - 230% ER",
+      "crit": "45%+ CR"
+    }
   },
   {
     "id": "ningguang",
@@ -13243,9 +15558,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Prob. Crítica > Daño Crítico > ATQ% > Recarga de Energía%"
     },
     "benchmarks": {
-      "ATQ": "1,900 - 2,200",
-      "CRÍTICOS": "70%+ CR / 160%+ CD",
-      "RECARGA": "125%"
+      "hp": "17,000 - 19,000",
+      "atk": "1,900 - 2,200",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "125%",
+      "crit": "70%+ CR / 160%+ CD"
     },
     "metaTeams": [
       {
@@ -13255,7 +15573,8 @@ const CHARACTER_BUILDS_DB = [
           "Zhongli",
           "Xiangling",
           "Bennett"
-        ]
+        ],
+        "comp": "Ningguang • Zhongli • Xiangling • Bennett"
       },
       {
         "name": "Ningguang Furina Hyper",
@@ -13264,9 +15583,29 @@ const CHARACTER_BUILDS_DB = [
           "Furina",
           "Xilonen",
           "Bennett"
-        ]
+        ],
+        "comp": "Ningguang • Furina • Xilonen • Bennett"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Prob. Crítica",
+      "2. Daño Crítico",
+      "3. ATQ%",
+      "4. Recarga de Energía%"
+    ],
+    "mainStats": {
+      "sands": "ATQ%",
+      "goblet": "Bono Daño Geo%",
+      "circlet": "Prob. Crítica o Daño Crítico"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 19,000",
+      "atk": "1,900 - 2,200",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "125%",
+      "crit": "70%+ CR / 160%+ CD"
+    }
   },
   {
     "id": "qiqi",
@@ -13320,9 +15659,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Recarga de Energía% > ATQ% > Prob. Crítica (Favonius)"
     },
     "benchmarks": {
-      "ATQ": "2,200 ATQ",
-      "RECARGA": "200% ER",
-      "CURA": "7,000+ por golpe de talismán"
+      "hp": "17,000 - 19,000 (Cura: 7,000+ por golpe de talismán)",
+      "atk": "2,200 ATQ",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "200% ER",
+      "crit": "60%+ CR / 120%+ CD"
     },
     "metaTeams": [
       {
@@ -13332,7 +15674,8 @@ const CHARACTER_BUILDS_DB = [
           "Furina",
           "Yelan",
           "Kazuha"
-        ]
+        ],
+        "comp": "Qiqi • Furina • Yelan • Kazuha"
       },
       {
         "name": "Qiqi Physical Taser",
@@ -13341,9 +15684,28 @@ const CHARACTER_BUILDS_DB = [
           "Fischl",
           "Beidou",
           "Xingqiu"
-        ]
+        ],
+        "comp": "Qiqi • Fischl • Beidou • Xingqiu"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Recarga de Energía%",
+      "2. ATQ%",
+      "3. Prob. Crítica (Favonius)"
+    ],
+    "mainStats": {
+      "sands": "Recarga de Energía o ATQ%",
+      "goblet": "ATQ%",
+      "circlet": "Bono de Curación o Prob. Crítica"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 19,000 (Cura: 7,000+ por golpe de talismán)",
+      "atk": "2,200 ATQ",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "200% ER",
+      "crit": "60%+ CR / 120%+ CD"
+    }
   },
   {
     "id": "razor",
@@ -13407,9 +15769,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Prob. Crítica > Daño Crítico > ATQ% > EM > Recarga"
     },
     "benchmarks": {
-      "ATQ": "2,200",
-      "CRÍTICOS": "70%+ CR / 150%+ CD",
-      "RECARGA": "120%"
+      "hp": "17,000 - 19,000",
+      "atk": "2,200",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "120%",
+      "crit": "70%+ CR / 150%+ CD"
     },
     "metaTeams": [
       {
@@ -13419,7 +15784,8 @@ const CHARACTER_BUILDS_DB = [
           "Bennett",
           "Xingqiu",
           "Nahida"
-        ]
+        ],
+        "comp": "Razor • Bennett • Xingqiu • Nahida"
       },
       {
         "name": "Razor Superconduct Clásico",
@@ -13428,9 +15794,30 @@ const CHARACTER_BUILDS_DB = [
           "Rosaria",
           "Fischl",
           "Zhongli"
-        ]
+        ],
+        "comp": "Razor • Rosaria • Fischl • Zhongli"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Prob. Crítica",
+      "2. Daño Crítico",
+      "3. ATQ%",
+      "4. EM",
+      "5. Recarga"
+    ],
+    "mainStats": {
+      "sands": "ATQ% (Físico) o EM (Rainbow)",
+      "goblet": "Bono Daño Físico% o EM",
+      "circlet": "Prob. Crítica o EM"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 19,000",
+      "atk": "2,200",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "120%",
+      "crit": "70%+ CR / 150%+ CD"
+    }
   },
   {
     "id": "rosaria",
@@ -13490,9 +15877,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Prob. Crítica > Daño Crítico > ATQ% > Recarga de Energía% > EM"
     },
     "benchmarks": {
-      "CRÍTICO": "80%+ CR (Transfiere 12-15% CR al equipo)",
-      "ATQ": "1,900",
-      "RECARGA": "150%"
+      "hp": "17,000 - 19,000",
+      "atk": "1,900",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "150%",
+      "crit": "80%+ CR (Transfiere 12-15% CR al equipo)"
     },
     "metaTeams": [
       {
@@ -13502,7 +15892,8 @@ const CHARACTER_BUILDS_DB = [
           "Xiangling",
           "Kaeya",
           "Bennett"
-        ]
+        ],
+        "comp": "Rosaria • Xiangling • Kaeya • Bennett"
       },
       {
         "name": "Eula Physical Resonance",
@@ -13511,9 +15902,30 @@ const CHARACTER_BUILDS_DB = [
           "Rosaria",
           "Raiden",
           "Zhongli"
-        ]
+        ],
+        "comp": "Eula • Rosaria • Raiden • Zhongli"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Prob. Crítica",
+      "2. Daño Crítico",
+      "3. ATQ%",
+      "4. Recarga de Energía%",
+      "5. EM"
+    ],
+    "mainStats": {
+      "sands": "ATQ% o Recarga de Energía",
+      "goblet": "Bono Daño Cryo%",
+      "circlet": "Prob. Crítica (Target 80-88% CR)"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 19,000",
+      "atk": "1,900",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "150%",
+      "crit": "80%+ CR (Transfiere 12-15% CR al equipo)"
+    }
   },
   {
     "id": "sara",
@@ -13573,8 +15985,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Recarga de Energía% > Prob. Crítica > Daño Crítico > ATQ%"
     },
     "benchmarks": {
-      "RECARGA": "200% - 220% ER",
-      "CRÍTICOS": "60%+ CR / 130%+ CD"
+      "hp": "17,000 - 19,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "200% - 220% ER",
+      "crit": "60%+ CR / 130%+ CD"
     },
     "metaTeams": [
       {
@@ -13584,7 +16000,8 @@ const CHARACTER_BUILDS_DB = [
           "Kujou Sara",
           "Kazuha",
           "Bennett"
-        ]
+        ],
+        "comp": "Raiden • Kujou Sara • Kazuha • Bennett"
       },
       {
         "name": "Keqing Aggravate Tengu",
@@ -13593,9 +16010,29 @@ const CHARACTER_BUILDS_DB = [
           "Kujou Sara",
           "Nahida",
           "Zhongli"
-        ]
+        ],
+        "comp": "Keqing • Kujou Sara • Nahida • Zhongli"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Recarga de Energía%",
+      "2. Prob. Crítica",
+      "3. Daño Crítico",
+      "4. ATQ%"
+    ],
+    "mainStats": {
+      "sands": "Recarga de Energía",
+      "goblet": "Bono Daño Electro%",
+      "circlet": "Prob. Crítica o Daño Crítico"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 19,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "200% - 220% ER",
+      "crit": "60%+ CR / 130%+ CD"
+    }
   },
   {
     "id": "sayu",
@@ -13655,8 +16092,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Recarga de Energía% > Maestría Elemental > ATQ%"
     },
     "benchmarks": {
-      "RECARGA": "180% - 200% ER",
-      "EM": "600+ EM"
+      "hp": "17,000 - 19,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750)",
+      "em": "600+ EM",
+      "er": "180% - 200% ER",
+      "crit": "60%+ CR / 120%+ CD"
     },
     "metaTeams": [
       {
@@ -13666,7 +16107,8 @@ const CHARACTER_BUILDS_DB = [
           "Fischl",
           "Beidou",
           "Xingqiu"
-        ]
+        ],
+        "comp": "Sayu • Fischl • Beidou • Xingqiu"
       },
       {
         "name": "Sayu Overworld Speed",
@@ -13675,9 +16117,28 @@ const CHARACTER_BUILDS_DB = [
           "Yelan",
           "Kazuha",
           "Furina"
-        ]
+        ],
+        "comp": "Sayu • Yelan • Kazuha • Furina"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Recarga de Energía%",
+      "2. Maestría Elemental",
+      "3. ATQ%"
+    ],
+    "mainStats": {
+      "sands": "Recarga de Energía o Maestría Elemental",
+      "goblet": "Maestría Elemental o ATQ%",
+      "circlet": "Maestría Elemental o Bono de Curación"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 19,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750)",
+      "em": "600+ EM",
+      "er": "180% - 200% ER",
+      "crit": "60%+ CR / 120%+ CD"
+    }
   },
   {
     "id": "tighnari",
@@ -13741,9 +16202,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Prob. Crítica > Daño Crítico > Maestría Elemental > ATQ% > Recarga"
     },
     "benchmarks": {
-      "EM": "300 - 450 EM",
-      "CRÍTICOS": "75%+ CR / 180%+ CD",
-      "ATQ": "1,400 - 1,600"
+      "hp": "17,000 - 20,000",
+      "atk": "1,400 - 1,600",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "300 - 450 EM",
+      "er": "120% ER",
+      "crit": "75%+ CR / 180%+ CD"
     },
     "metaTeams": [
       {
@@ -13753,7 +16217,8 @@ const CHARACTER_BUILDS_DB = [
           "Yae Miko",
           "Nahida",
           "Zhongli"
-        ]
+        ],
+        "comp": "Tighnari • Yae Miko • Nahida • Zhongli"
       },
       {
         "name": "Tighnari Fischl Core",
@@ -13762,9 +16227,30 @@ const CHARACTER_BUILDS_DB = [
           "Fischl",
           "Kazuha",
           "Kirara"
-        ]
+        ],
+        "comp": "Tighnari • Fischl • Kazuha • Kirara"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Prob. Crítica",
+      "2. Daño Crítico",
+      "3. Maestría Elemental",
+      "4. ATQ%",
+      "5. Recarga"
+    ],
+    "mainStats": {
+      "sands": "Maestría Elemental (EM)",
+      "goblet": "Bono Daño Dendro%",
+      "circlet": "Prob. Crítica o Daño Crítico"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 20,000",
+      "atk": "1,400 - 1,600",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "300 - 450 EM",
+      "er": "120% ER",
+      "crit": "75%+ CR / 180%+ CD"
+    }
   },
   {
     "id": "xinyan",
@@ -13824,9 +16310,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Daño Crítico > ATQ% > DEF% > Recarga de Energía%"
     },
     "benchmarks": {
-      "ATQ": "2,000",
-      "DAÑO CRÍTICO": "170%+ CD",
-      "DEF": "1,800"
+      "hp": "16,000",
+      "atk": "2,000",
+      "def": "1,800",
+      "em": "0",
+      "er": "120% ER",
+      "crit": "170%+ CD"
     },
     "metaTeams": [
       {
@@ -13836,7 +16325,8 @@ const CHARACTER_BUILDS_DB = [
           "Fischl",
           "Rosaria",
           "Bennett"
-        ]
+        ],
+        "comp": "Xinyan • Fischl • Rosaria • Bennett"
       },
       {
         "name": "Xinyan Spin-to-Win",
@@ -13845,9 +16335,29 @@ const CHARACTER_BUILDS_DB = [
           "Furina",
           "Mika",
           "Zhongli"
-        ]
+        ],
+        "comp": "Xinyan • Furina • Mika • Zhongli"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Daño Crítico",
+      "2. ATQ%",
+      "3. DEF%",
+      "4. Recarga de Energía%"
+    ],
+    "mainStats": {
+      "sands": "ATQ% o DEF%",
+      "goblet": "Bono Daño Físico%",
+      "circlet": "Daño Crítico (C2 garantiza 100% CR en Q)"
+    },
+    "recommendedPanel": {
+      "hp": "16,000",
+      "atk": "2,000",
+      "def": "1,800",
+      "em": "0",
+      "er": "120% ER",
+      "crit": "170%+ CD"
+    }
   },
   {
     "id": "yun_jin",
@@ -13901,9 +16411,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "DEF% > Recarga de Energía% > Prob. Crítica > DEF Plana"
     },
     "benchmarks": {
-      "DEF": "2,400 - 2,800 DEF",
-      "RECARGA": "200% - 220% ER",
-      "CRÍTICO": "50%+ CR"
+      "hp": "16,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "2,400 - 2,800 DEF",
+      "em": "0",
+      "er": "200% - 220% ER",
+      "crit": "50%+ CR"
     },
     "metaTeams": [
       {
@@ -13913,7 +16426,8 @@ const CHARACTER_BUILDS_DB = [
           "Yun Jin",
           "Yelan",
           "Zhongli"
-        ]
+        ],
+        "comp": "Yoimiya • Yun Jin • Yelan • Zhongli"
       },
       {
         "name": "Ayato Normal Slash",
@@ -13922,7 +16436,8 @@ const CHARACTER_BUILDS_DB = [
           "Yun Jin",
           "Kazuha",
           "Bennett"
-        ]
+        ],
+        "comp": "Ayato • Yun Jin • Kazuha • Bennett"
       },
       {
         "name": "Noelle Spin & Sunder",
@@ -13931,9 +16446,29 @@ const CHARACTER_BUILDS_DB = [
           "Yun Jin",
           "Gorou",
           "Furina"
-        ]
+        ],
+        "comp": "Noelle • Yun Jin • Gorou • Furina"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. DEF%",
+      "2. Recarga de Energía%",
+      "3. Prob. Crítica",
+      "4. DEF Plana"
+    ],
+    "mainStats": {
+      "sands": "DEF% o Recarga de Energía",
+      "goblet": "DEF%",
+      "circlet": "DEF% o Prob. Crítica (Favonius)"
+    },
+    "recommendedPanel": {
+      "hp": "16,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "2,400 - 2,800 DEF",
+      "em": "0",
+      "er": "200% - 220% ER",
+      "crit": "50%+ CR"
+    }
   },
   {
     "id": "aloy",
@@ -13974,6 +16509,11 @@ const CHARACTER_BUILDS_DB = [
       {
         "set": "Nómada del Invierno (2 piezas) + Ritual Nobleza (2 piezas)",
         "note": "+15% Cryo y +20% Burst."
+      },
+      {
+        "set": "Emblema del Destino (4 piezas)",
+        "type": "Opción Nuke Burst",
+        "bonus": "+20% Recarga de Energía y bono de daño colosal a su Definitiva Cryo."
       }
     ],
     "statPriority": {
@@ -13983,8 +16523,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Prob. Crítica > Daño Crítico > ATQ% > Recarga"
     },
     "benchmarks": {
-      "ATQ": "1,800",
-      "CRÍTICOS": "60%+ CR / 140%+ CD"
+      "hp": "17,000 - 19,000",
+      "atk": "1,800",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "120% ER",
+      "crit": "60%+ CR / 140%+ CD"
     },
     "metaTeams": [
       {
@@ -13994,9 +16538,39 @@ const CHARACTER_BUILDS_DB = [
           "Kazuha",
           "Xiangling",
           "Bennett"
-        ]
+        ],
+        "comp": "Aloy • Kazuha • Xiangling • Bennett"
+      },
+      {
+        "name": "Aloy Mono Cryo Strike",
+        "members": [
+          "Aloy",
+          "Shenhe",
+          "Kazuha",
+          "Diona"
+        ],
+        "comp": "Aloy • Shenhe • Kazuha • Diona"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Prob. Crítica",
+      "2. Daño Crítico",
+      "3. ATQ%",
+      "4. Recarga"
+    ],
+    "mainStats": {
+      "sands": "ATQ%",
+      "goblet": "Bono Daño Cryo%",
+      "circlet": "Prob. Crítica o Daño Crítico"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 19,000",
+      "atk": "1,800",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "120% ER",
+      "crit": "60%+ CR / 140%+ CD"
+    }
   },
   {
     "id": "amber",
@@ -14050,7 +16624,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Recarga de Energía% > Prob. Crítica > Maestría Elemental"
     },
     "benchmarks": {
-      "RECARGA": "180% - 200% ER"
+      "hp": "17,000 - 19,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "180% - 200% ER",
+      "crit": "60%+ CR / 120%+ CD"
     },
     "metaTeams": [
       {
@@ -14060,9 +16639,38 @@ const CHARACTER_BUILDS_DB = [
           "Xingqiu",
           "Amber",
           "Kazuha"
-        ]
+        ],
+        "comp": "Hu Tao • Xingqiu • Amber • Kazuha"
+      },
+      {
+        "name": "Amber Burgeon Bomber",
+        "members": [
+          "Amber",
+          "Nahida",
+          "Xingqiu",
+          "Zhongli"
+        ],
+        "comp": "Amber • Nahida • Xingqiu • Zhongli"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Recarga de Energía%",
+      "2. Prob. Crítica",
+      "3. Maestría Elemental"
+    ],
+    "mainStats": {
+      "sands": "Recarga de Energía o Maestría Elemental",
+      "goblet": "Bono Daño Pyro%",
+      "circlet": "Prob. Crítica"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 19,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "180% - 200% ER",
+      "crit": "60%+ CR / 120%+ CD"
+    }
   },
   {
     "id": "collei",
@@ -14116,8 +16724,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Recarga de Energía% > Prob. Crítica > ATQ% > Maestría Elemental"
     },
     "benchmarks": {
-      "RECARGA": "180% - 210% ER",
-      "CRÍTICO": "55%+ CR"
+      "hp": "17,000 - 19,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "180% - 210% ER",
+      "crit": "55%+ CR"
     },
     "metaTeams": [
       {
@@ -14125,9 +16737,10 @@ const CHARACTER_BUILDS_DB = [
         "members": [
           "Nilou",
           "Collei",
-          "Viajera (Dendro)",
+          "Viajera",
           "Kokomi"
-        ]
+        ],
+        "comp": "Nilou • Collei • Viajera • Kokomi"
       },
       {
         "name": "Keqing Aggravate Collei",
@@ -14136,9 +16749,29 @@ const CHARACTER_BUILDS_DB = [
           "Fischl",
           "Collei",
           "Zhongli"
-        ]
+        ],
+        "comp": "Keqing • Fischl • Collei • Zhongli"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Recarga de Energía%",
+      "2. Prob. Crítica",
+      "3. ATQ%",
+      "4. Maestría Elemental"
+    ],
+    "mainStats": {
+      "sands": "Recarga de Energía o ATQ%",
+      "goblet": "Bono Daño Dendro%",
+      "circlet": "Prob. Crítica"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 19,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "180% - 210% ER",
+      "crit": "55%+ CR"
+    }
   },
   {
     "id": "freminet",
@@ -14198,8 +16831,12 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Prob. Crítica > Daño Crítico > ATQ% > Recarga"
     },
     "benchmarks": {
-      "ATQ": "2,100",
-      "CRÍTICOS": "70%+ CR / 150%+ CD"
+      "hp": "17,000 - 19,000",
+      "atk": "2,100",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "120% ER",
+      "crit": "70%+ CR / 150%+ CD"
     },
     "metaTeams": [
       {
@@ -14209,7 +16846,8 @@ const CHARACTER_BUILDS_DB = [
           "Xingqiu",
           "Fischl",
           "Mika"
-        ]
+        ],
+        "comp": "Freminet • Xingqiu • Fischl • Mika"
       },
       {
         "name": "Freminet Furina Core",
@@ -14218,9 +16856,29 @@ const CHARACTER_BUILDS_DB = [
           "Furina",
           "Mika",
           "Kuki Shinobu"
-        ]
+        ],
+        "comp": "Freminet • Furina • Mika • Kuki Shinobu"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Prob. Crítica",
+      "2. Daño Crítico",
+      "3. ATQ%",
+      "4. Recarga"
+    ],
+    "mainStats": {
+      "sands": "ATQ%",
+      "goblet": "Bono Daño Físico%",
+      "circlet": "Prob. Crítica o Daño Crítico"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 19,000",
+      "atk": "2,100",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "120% ER",
+      "crit": "70%+ CR / 150%+ CD"
+    }
   },
   {
     "id": "traveler_anemo",
@@ -14261,6 +16919,11 @@ const CHARACTER_BUILDS_DB = [
       {
         "set": "Sombra Verde Esmeralda (4 piezas)",
         "note": "-40% Resistencia elemental enemiga."
+      },
+      {
+        "set": "Instructor (4 piezas)",
+        "type": "Soporte F2P",
+        "bonus": "+120 de Maestría Elemental a todo el equipo al activar un Torbellino."
       }
     ],
     "statPriority": {
@@ -14270,20 +16933,52 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Maestría Elemental > Recarga de Energía%"
     },
     "benchmarks": {
-      "EM": "700+ EM",
-      "RECARGA": "180%"
+      "hp": "17,000 - 20,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "700+ EM",
+      "er": "180%",
+      "crit": "60%+ CR / 120%+ CD"
     },
     "metaTeams": [
       {
         "name": "Anemo Swirl F2P",
         "members": [
-          "Viajero (Anemo)",
+          "Viajero",
           "Xiangling",
           "Xingqiu",
           "Bennett"
-        ]
+        ],
+        "comp": "Viajero • Xiangling • Xingqiu • Bennett"
+      },
+      {
+        "name": "Anemo VV Debuffer",
+        "members": [
+          "Keqing",
+          "Fischl",
+          "Viajero",
+          "Yaoyao"
+        ],
+        "comp": "Keqing • Fischl • Viajero • Yaoyao"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Maestría Elemental",
+      "2. Recarga de Energía%"
+    ],
+    "mainStats": {
+      "sands": "Recarga de Energía o EM",
+      "goblet": "Maestría Elemental o Bono Anemo%",
+      "circlet": "Maestría Elemental"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 20,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "700+ EM",
+      "er": "180%",
+      "crit": "60%+ CR / 120%+ CD"
+    }
   },
   {
     "id": "traveler_geo",
@@ -14343,20 +17038,54 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Prob. Crítica > Daño Crítico > ATQ% > Recarga"
     },
     "benchmarks": {
-      "ATQ": "1,900",
-      "CRÍTICOS": "65%+ CR / 140%+ CD"
+      "hp": "17,000 - 19,000",
+      "atk": "1,900",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "120% ER",
+      "crit": "65%+ CR / 140%+ CD"
     },
     "metaTeams": [
       {
         "name": "Geo Microwave Resonance",
         "members": [
           "Zhongli",
-          "Viajero (Geo)",
+          "Viajero",
           "Bennett",
           "Xiangling"
-        ]
+        ],
+        "comp": "Zhongli • Viajero • Bennett • Xiangling"
+      },
+      {
+        "name": "Mono Geo F2P",
+        "members": [
+          "Itto",
+          "Viajero",
+          "Gorou",
+          "Bennett"
+        ],
+        "comp": "Itto • Viajero • Gorou • Bennett"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Prob. Crítica",
+      "2. Daño Crítico",
+      "3. ATQ%",
+      "4. Recarga"
+    ],
+    "mainStats": {
+      "sands": "ATQ% o Recarga",
+      "goblet": "Bono Daño Geo%",
+      "circlet": "Prob. Crítica o Daño Crítico"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 19,000",
+      "atk": "1,900",
+      "def": "Base (~750)",
+      "em": "0",
+      "er": "120% ER",
+      "crit": "65%+ CR / 140%+ CD"
+    }
   },
   {
     "id": "traveler_electro",
@@ -14410,19 +17139,53 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Recarga de Energía% > Prob. Crítica > ATQ%"
     },
     "benchmarks": {
-      "RECARGA": "250%+ ER"
+      "hp": "16,000 - 19,000 HP",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "0",
+      "er": "250%+ ER",
+      "crit": "60%+ CR / 120%+ CD"
     },
     "metaTeams": [
       {
         "name": "Eula Electro Battery",
         "members": [
           "Eula",
-          "Viajero (Electro)",
+          "Viajero",
           "Diona",
           "Rosaria"
-        ]
+        ],
+        "comp": "Eula • Viajero • Diona • Rosaria"
+      },
+      {
+        "name": "Hyperbloom Electro Trigger",
+        "members": [
+          "Viajero",
+          "Nahida",
+          "Xingqiu",
+          "Baizhu"
+        ],
+        "comp": "Viajero • Nahida • Xingqiu • Baizhu"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Recarga de Energía%",
+      "2. Prob. Crítica",
+      "3. ATQ%"
+    ],
+    "mainStats": {
+      "sands": "Recarga de Energía",
+      "goblet": "Recarga de Energía o Bono Electro%",
+      "circlet": "Prob. Crítica (Favonius)"
+    },
+    "recommendedPanel": {
+      "hp": "16,000 - 19,000 HP",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "0",
+      "er": "250%+ ER",
+      "crit": "60%+ CR / 120%+ CD"
+    }
   },
   {
     "id": "traveler_dendro",
@@ -14486,29 +17249,54 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Recarga de Energía% > Prob. Crítica > Maestría Elemental > ATQ%"
     },
     "benchmarks": {
-      "RECARGA": "220% - 250% ER",
-      "CRÍTICO": "55%+ CR"
+      "hp": "17,000 - 20,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "0",
+      "er": "220% - 250% ER",
+      "crit": "55%+ CR"
     },
     "metaTeams": [
       {
         "name": "Hyperbloom F2P Starter",
         "members": [
-          "Viajero (Dendro)",
+          "Viajero",
           "Kuki Shinobu",
           "Xingqiu",
           "Fischl"
-        ]
+        ],
+        "comp": "Viajero • Kuki Shinobu • Xingqiu • Fischl"
       },
       {
         "name": "Nilou Bloom F2P",
         "members": [
           "Nilou",
-          "Viajero (Dendro)",
+          "Viajero",
           "Collei",
           "Kokomi"
-        ]
+        ],
+        "comp": "Nilou • Viajero • Collei • Kokomi"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Recarga de Energía%",
+      "2. Prob. Crítica",
+      "3. Maestría Elemental",
+      "4. ATQ%"
+    ],
+    "mainStats": {
+      "sands": "Recarga de Energía",
+      "goblet": "Bono Daño Dendro% o EM",
+      "circlet": "Prob. Crítica (Favonius)"
+    },
+    "recommendedPanel": {
+      "hp": "17,000 - 20,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "0",
+      "er": "220% - 250% ER",
+      "crit": "55%+ CR"
+    }
   },
   {
     "id": "traveler_hydro",
@@ -14562,20 +17350,53 @@ const CHARACTER_BUILDS_DB = [
       "substats": "Recarga de Energía% > Prob. Crítica > Vida%"
     },
     "benchmarks": {
-      "RECARGA": "190% ER",
-      "VIDA": "22,000"
+      "hp": "22,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "0",
+      "er": "190% ER",
+      "crit": "60%+ CR / 120%+ CD"
     },
     "metaTeams": [
       {
         "name": "Hydro Arkhe F2P",
         "members": [
-          "Viajero (Hydro)",
+          "Viajero",
           "Xiangling",
           "Bennett",
           "Kazuha"
-        ]
+        ],
+        "comp": "Viajero • Xiangling • Bennett • Kazuha"
+      },
+      {
+        "name": "Hydro Hyperbloom F2P",
+        "members": [
+          "Viajero",
+          "Nahida",
+          "Kuki Shinobu",
+          "Kazuha"
+        ],
+        "comp": "Viajero • Nahida • Kuki Shinobu • Kazuha"
       }
-    ]
+    ],
+    "substatsPriority": [
+      "1. Recarga de Energía%",
+      "2. Prob. Crítica",
+      "3. Vida%"
+    ],
+    "mainStats": {
+      "sands": "Recarga de Energía o Vida%",
+      "goblet": "Bono Daño Hydro%",
+      "circlet": "Prob. Crítica"
+    },
+    "recommendedPanel": {
+      "hp": "22,000",
+      "atk": "Base (~1,000 - 1,200 ATQ)",
+      "def": "Base (~750 - 850 DEF)",
+      "em": "0",
+      "er": "190% ER",
+      "crit": "60%+ CR / 120%+ CD"
+    }
   },
   {
     "id": "jahoda",
@@ -14647,13 +17468,39 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Varka / Durin Hexerei Core",
-        "comp": "Varka • Durin • Jahoda • Bennett"
+        "comp": "Varka • Durin • Jahoda • Bennett",
+        "members": [
+          "Varka",
+          "Durin",
+          "Jahoda",
+          "Bennett"
+        ]
       },
       {
         "name": "Aggravate / Electro-Charged Support",
-        "comp": "Clorinde • Fischl • Furina • Jahoda"
+        "comp": "Clorinde • Fischl • Furina • Jahoda",
+        "members": [
+          "Clorinde",
+          "Fischl",
+          "Furina",
+          "Jahoda"
+        ]
       }
-    ]
+    ],
+    "statPriority": {
+      "sands": "Recarga de Energía o ATQ%",
+      "goblet": "ATQ%",
+      "circlet": "ATQ%, Bono Curación o Prob. Crítica",
+      "substats": "1. Recarga de Energía% (180% – 200% ER) > 2. ATQ% > 3. Prob. Crítica (si usa Favonius) > 4. Maestría Elemental"
+    },
+    "recommendedPanel": {
+      "hp": "16,000+",
+      "atk": "1,800 – 2,200 ATQ",
+      "def": "700",
+      "em": "150+ EM",
+      "er": "180% – 200% ER",
+      "crit": "50%+ CR (Favonius)"
+    }
   },
   {
     "id": "lohen",
@@ -14724,13 +17571,39 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Lohen Hexerei Hypercarry",
-        "comp": "Lohen • Nicole • Escoffier • Furina"
+        "comp": "Lohen • Nicole • Escoffier • Furina",
+        "members": [
+          "Lohen",
+          "Nicole",
+          "Escoffier",
+          "Furina"
+        ]
       },
       {
         "name": "Lohen Reverse Melt",
-        "comp": "Lohen • Durin • Nicole • Bennett"
+        "comp": "Lohen • Durin • Nicole • Bennett",
+        "members": [
+          "Lohen",
+          "Durin",
+          "Nicole",
+          "Bennett"
+        ]
       }
-    ]
+    ],
+    "statPriority": {
+      "sands": "ATQ%",
+      "goblet": "Bono Daño Cryo%",
+      "circlet": "Daño Crítico o Prob. Crítica",
+      "substats": "1. Daño Crítico / Prob. Crítica (Ratio 1:2) > 2. ATQ% > 3. Recarga de Energía% (120% – 130%)"
+    },
+    "recommendedPanel": {
+      "hp": "18,000",
+      "atk": "2,100 – 2,500+ ATQ",
+      "def": "800",
+      "em": "0 – 100 EM",
+      "er": "120% – 130% ER",
+      "crit": "75%+ CR / 210%+ CD"
+    }
   },
   {
     "id": "nicole",
@@ -14801,13 +17674,39 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Hexenzirkel Core (Varka / Lohen)",
-        "comp": "Varka • Durin • Nicole • Bennett"
+        "comp": "Varka • Durin • Nicole • Bennett",
+        "members": [
+          "Varka",
+          "Durin",
+          "Nicole",
+          "Bennett"
+        ]
       },
       {
         "name": "Lohen Cryo Hexerei",
-        "comp": "Lohen • Nicole • Shenhe • Escoffier"
+        "comp": "Lohen • Nicole • Shenhe • Escoffier",
+        "members": [
+          "Lohen",
+          "Nicole",
+          "Shenhe",
+          "Escoffier"
+        ]
       }
-    ]
+    ],
+    "statPriority": {
+      "sands": "ATQ% o Recarga de Energía",
+      "goblet": "ATQ%",
+      "circlet": "ATQ%",
+      "substats": "1. ATQ% (Hasta alcanzar el tope de su bendición) > 2. Recarga de Energía% (160% – 180% ER) > 3. Prob. Crítica"
+    },
+    "recommendedPanel": {
+      "hp": "17,000+",
+      "atk": "2,800 – 3,400+ ATQ",
+      "def": "750",
+      "em": "0",
+      "er": "160% – 180% ER",
+      "crit": "50%+ CR"
+    }
   },
   {
     "id": "traveler_cryo",
@@ -14878,13 +17777,39 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Snezhnaya Stellar Freeze",
-        "comp": "Viajero (Cryo) • Odette • Vodyanitsa • Escoffier"
+        "comp": "Viajero • Odette • Vodyanitsa • Escoffier",
+        "members": [
+          "Viajero",
+          "Odette",
+          "Vodyanitsa",
+          "Escoffier"
+        ]
       },
       {
         "name": "Sandrone Stellar-Conduct",
-        "comp": "Sandrone • Viajero (Cryo) • Alyosha • Zhongli"
+        "comp": "Sandrone • Viajero • Alyosha • Zhongli",
+        "members": [
+          "Sandrone",
+          "Viajero",
+          "Alyosha",
+          "Zhongli"
+        ]
       }
-    ]
+    ],
+    "statPriority": {
+      "sands": "ATQ%",
+      "goblet": "ATQ% o Bono Daño Cryo%",
+      "circlet": "Daño Crítico o Prob. Crítica",
+      "substats": "1. Daño Crítico / Prob. Crítica > 2. ATQ% > 3. Recarga de Energía% (130% – 150%)"
+    },
+    "recommendedPanel": {
+      "hp": "16,500",
+      "atk": "1,900 – 2,200 ATQ",
+      "def": "750",
+      "em": "0",
+      "er": "135% ER",
+      "crit": "70%+ CR / 180%+ CD"
+    }
   },
   {
     "id": "traveler_pyro",
@@ -14956,14 +17881,41 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Kinich Burning / Burgeon",
-        "comp": "Kinich • Viajero (Pyro) • Émilie • Bennett"
+        "comp": "Kinich • Viajero • Émilie • Bennett",
+        "members": [
+          "Kinich",
+          "Viajero",
+          "Émilie",
+          "Bennett"
+        ]
       },
       {
         "name": "Mualani Forward Vaporize",
-        "comp": "Mualani • Viajero (Pyro) • Xilonen • Kazuha"
+        "comp": "Mualani • Viajero • Xilonen • Kazuha",
+        "members": [
+          "Mualani",
+          "Viajero",
+          "Xilonen",
+          "Kazuha"
+        ]
       }
-    ]
+    ],
+    "statPriority": {
+      "sands": "ATQ% o Recarga de Energía",
+      "goblet": "Bono Daño Pyro% o ATQ%",
+      "circlet": "Prob. Crítica o Daño Crítico",
+      "substats": "1. Recarga de Energía% (160%+ ER) > 2. Prob. Crítica / Daño Crítico > 3. ATQ% > 4. Maestría Elemental"
+    },
+    "recommendedPanel": {
+      "hp": "16,500",
+      "atk": "1,700 – 2,000 ATQ",
+      "def": "750",
+      "em": "100+ EM",
+      "er": "160% – 180% ER",
+      "crit": "65%+ CR / 140%+ CD"
+    }
   }
 ];
 
-if (typeof window !== 'undefined') { window.CHARACTER_BUILDS_DB = CHARACTER_BUILDS_DB; }
+if (typeof window !== "undefined") { window.CHARACTER_BUILDS_DB = CHARACTER_BUILDS_DB; }
+if (typeof module !== "undefined" && module.exports) { module.exports = { CHARACTER_BUILDS_DB }; }

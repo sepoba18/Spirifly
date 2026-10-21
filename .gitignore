@@ -1,5 +1,7 @@
 # Respaldos y archivos de desarrollo temporal
 *.bak*
+*.backup.*
+*.backup.js
 *.tmp
 test_*.png
 test_logo_*.html

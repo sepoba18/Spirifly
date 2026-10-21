@@ -610,51 +610,25 @@
     return _gisTokenClient;
   }
 
-  let _isRefreshingToken = false;
-
-  function requestSilentTokenRefresh() {
-    if (localStorage.getItem("teyvat_drive_linked") !== "true") return;
-    if (_isRefreshingToken) return;
-    _isRefreshingToken = true;
-
-    let attempts = 0;
-    function pollGIS() {
-      if (typeof google !== "undefined" && google.accounts && google.accounts.oauth2) {
-        const client = initGoogleTokenClient();
-        if (client) {
-          try {
-            console.log("🔄 Renovando sesión de Google Drive silenciosamente...");
-            client.requestAccessToken({ prompt: "" });
-          } catch (e) {
-            console.warn("[Google Drive] No se pudo renovar token:", e);
-          } finally {
-            setTimeout(() => { _isRefreshingToken = false; }, 3000);
-          }
-        } else {
-          _isRefreshingToken = false;
-        }
-      } else if (attempts < 30) {
-        attempts++;
-        setTimeout(pollGIS, 250);
-      } else {
-        _isRefreshingToken = false;
-      }
-    }
-    pollGIS();
-  }
-
+  /**
+   * Sincronización automática de inicio o cambio de pestaña.
+   * REGLA ESTRICTA (ESTÁNDAR SEELIE.ME): NUNCA abrir ventanas emergentes ni popups automáticamente.
+   * Si el token está vigente (< 58 min), sincroniza en silencio.
+   * Si el token caducó o no existe, mantiene el guardado local 100% activo sin interrumpir jamás al usuario.
+   */
   function triggerAutomaticDriveStartup() {
     if (localStorage.getItem("teyvat_drive_linked") === "true") {
       const token = localStorage.getItem("gdrive_access_token");
       const tokenTime = parseInt(localStorage.getItem("gdrive_token_timestamp") || "0", 10);
-      const isFresh = token && (Date.now() - tokenTime < 50 * 60 * 1000);
+      const isFresh = token && (Date.now() - tokenTime < 58 * 60 * 1000);
 
       if (isFresh) {
-        GoogleDriveSyncEngine.syncWithDrive().catch(() => {
-          requestSilentTokenRefresh();
+        GoogleDriveSyncEngine.syncWithDrive(false).catch((err) => {
+          console.warn("[Google Drive] Sincronización automática en segundo plano omitida:", err);
         });
       } else {
-        requestSilentTokenRefresh();
+        console.log("[Google Drive] Sesión en reposo. Modo local activo sin popups invasivos.");
+        renderMultiAccountUI();
       }
     }
   }
@@ -681,7 +655,12 @@
     }
     const client = initGoogleTokenClient();
     if (client) {
-      client.requestAccessToken({ prompt: "" });
+      const savedEmail = localStorage.getItem("teyvat_drive_email") || "";
+      const requestOptions = {};
+      if (savedEmail) {
+        requestOptions.login_hint = savedEmail;
+      }
+      client.requestAccessToken(requestOptions);
     }
   }
 
@@ -885,11 +864,7 @@
         );
         if (searchRes.status === 401) {
           localStorage.removeItem("gdrive_access_token");
-          if (localStorage.getItem("teyvat_drive_linked") === "true") {
-            requestSilentTokenRefresh();
-          } else {
-            renderMultiAccountUI();
-          }
+          renderMultiAccountUI();
           return payload;
         }
 
@@ -962,16 +937,20 @@
     /**
      * Descarga el payload de Google Drive y detecta conflictos
      */
-    static async syncWithDrive() {
+    static async syncWithDrive(isUserTriggered = false) {
       const accessToken = localStorage.getItem("gdrive_access_token");
       let remotePayload = null;
 
       if (!accessToken) {
         if (localStorage.getItem("teyvat_drive_linked") === "true") {
-          connectGoogleDrive();
+          if (isUserTriggered) {
+            connectGoogleDrive();
+          } else {
+            renderMultiAccountUI();
+          }
           return;
         }
-        if (typeof showSynthToast === "function") {
+        if (typeof showSynthToast === "function" && isUserTriggered) {
           showSynthToast("Modo local activo. Conecta Google Drive para sincronizar.");
         }
         return;
@@ -984,10 +963,9 @@
         );
         if (searchRes.status === 401) {
           localStorage.removeItem("gdrive_access_token");
-          if (localStorage.getItem("teyvat_drive_linked") === "true") {
-            requestSilentTokenRefresh();
-          } else {
-            renderMultiAccountUI();
+          renderMultiAccountUI();
+          if (isUserTriggered) {
+            connectGoogleDrive();
           }
           return;
         }
