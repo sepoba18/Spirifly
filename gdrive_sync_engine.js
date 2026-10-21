@@ -841,211 +841,179 @@
     /**
      * Sube el payload local a Google Drive (sobrescribiendo la nube)
      */
-    static async uploadLocalPayloadToDrive(token) {
-      const payload = this.getLocalPayload();
-      const accessToken = token || localStorage.getItem("gdrive_access_token");
-
-      if (!accessToken) {
-        localStorage.setItem("gdrive_mock_remote_payload", JSON.stringify(payload));
-        localStorage.setItem("teyvat_last_sync", formatSyncDate(new Date(payload.lastUpdate)));
-        renderMultiAccountUI();
-        if (typeof showSynthToast === "function") {
-          showSynthToast("💾 Datos guardados localmente. Conecta Google Drive para sincronizar en la nube.");
-        }
-        return payload;
-      }
-
-      // API real de Google Drive (Multipart upload en appDataFolder)
-      try {
-        // Buscar si ya existe el archivo antes de decidir si es POST o PATCH
-        const searchRes = await fetch(
-          "https://www.googleapis.com/drive/v3/files?spaces=appDataFolder&q=name%3D'seelie_genshin_backup.json'&fields=files(id%2Cname)",
-          { headers: { Authorization: `Bearer ${accessToken}` } }
-        );
-        if (searchRes.status === 401) {
-          localStorage.removeItem("gdrive_access_token");
-          renderMultiAccountUI();
-          return payload;
-        }
-
-        const searchData = await searchRes.json();
-        const existingFile = searchData.files && searchData.files[0];
-
-        let endpoint = "https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart";
-        let method = "POST";
-        let metadata = {
-          name: DRIVE_CONFIG.fileName,
-          parents: ["appDataFolder"]
-        };
-
-        if (existingFile && existingFile.id) {
-          endpoint = `https://www.googleapis.com/upload/drive/v3/files/${existingFile.id}?uploadType=multipart`;
-          method = "PATCH";
-          // En PATCH no se debe reenviar parents: ["appDataFolder"] porque la API v3 devuelve 403 Forbidden
-          metadata = {
-            name: DRIVE_CONFIG.fileName
-          };
-        }
-
-        const boundary = "-------314159265358979323846";
-        const delimiter = "\r\n--" + boundary + "\r\n";
-        const closeDelim = "\r\n--" + boundary + "--";
-
-        const multipartBody =
-          delimiter +
-          "Content-Type: application/json; charset=UTF-8\r\n\r\n" +
-          JSON.stringify(metadata) +
-          delimiter +
-          "Content-Type: application/json\r\n\r\n" +
-          JSON.stringify(payload) +
-          closeDelim;
-
-        const uploadRes = await fetch(endpoint, {
-          method,
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-            "Content-Type": `multipart/related; boundary=${boundary}`
-          },
-          body: multipartBody
-        });
-
-        if (uploadRes.status === 401) {
-          localStorage.removeItem("gdrive_access_token");
-          renderMultiAccountUI();
-          if (typeof showSynthToast === "function") {
-            showSynthToast("⚠️ La sesión de Google expiró. Vuelve a hacer clic en 'Conectar con Google Drive'.");
-          }
-          return payload;
-        }
-
-        if (!uploadRes.ok) throw new Error("Error HTTP al subir a Drive: " + uploadRes.status);
-
-        localStorage.setItem("teyvat_last_sync", formatSyncDate(new Date(payload.lastUpdate)));
-        renderMultiAccountUI();
-        if (typeof showSynthToast === "function") {
-          showSynthToast("✅ Datos subidos y sincronizados con Google Drive.");
-        }
-      } catch (err) {
-        console.error("Error al sincronizar con Google Drive:", err);
-        if (typeof showSynthToast === "function") {
-          showSynthToast("⚠️ Error al sincronizar con Google Drive: " + err.message);
-        }
+    static _validate(payload) {
+      if (!payload || typeof payload !== 'object' || Array.isArray(payload) ||
+          !payload.data || typeof payload.data !== 'object' || Array.isArray(payload.data)) {
+        throw new Error('La copia de Drive no tiene un formato válido. Se conservaron los datos.');
       }
       return payload;
     }
 
-    /**
-     * Descarga el payload de Google Drive y detecta conflictos
-     */
-    static async syncWithDrive(isUserTriggered = false) {
-      const accessToken = localStorage.getItem("gdrive_access_token");
-      let remotePayload = null;
-
-      if (!accessToken) {
-        if (localStorage.getItem("teyvat_drive_linked") === "true") {
-          if (isUserTriggered) {
-            connectGoogleDrive();
-          } else {
-            renderMultiAccountUI();
-          }
-          return;
-        }
-        if (typeof showSynthToast === "function" && isUserTriggered) {
-          showSynthToast("Modo local activo. Conecta Google Drive para sincronizar.");
-        }
-        return;
-      }
-
-      try {
-        const searchRes = await fetch(
-          "https://www.googleapis.com/drive/v3/files?spaces=appDataFolder&q=name%3D'seelie_genshin_backup.json'&fields=files(id%2Cname)",
-          { headers: { Authorization: `Bearer ${accessToken}` } }
-        );
-        if (searchRes.status === 401) {
-          localStorage.removeItem("gdrive_access_token");
-          renderMultiAccountUI();
-          if (isUserTriggered) {
-            connectGoogleDrive();
-          }
-          return;
-        }
-        const searchData = await searchRes.json();
-        if (searchData.files && searchData.files[0]) {
-          const fileId = searchData.files[0].id;
-          const contentRes = await fetch(`https://www.googleapis.com/drive/v3/files/${fileId}?alt=media`, {
-            headers: { Authorization: `Bearer ${accessToken}` }
-          });
-          if (contentRes.status === 401) {
-            localStorage.removeItem("gdrive_access_token");
-            renderMultiAccountUI();
-            return;
-          }
-          remotePayload = await contentRes.json();
-        }
-      } catch (e) {
-        console.warn("Fallo lectura remota Google Drive:", e);
-      }
-
-      const localPayload = this.getLocalPayload();
-
-      // Si no existe nada en la nube todavía, subimos local
-      if (!remotePayload) {
-        return this.uploadLocalPayloadToDrive();
-      }
-
-      const conflictInfo = ConflictDetector.evaluate(localPayload, remotePayload);
-      const autoResolve = localStorage.getItem("gdrive_auto_resolve_conflict") !== "false";
-
-      // PROTECCIÓN DE DATOS PARA DISPOSITIVOS NUEVOS / MÓVILES:
-      // Si la nube tiene datos pero el dispositivo local está vacío o tiene menos del 50% de tamaño,
-      // siempre prevalece la nube para no borrar los datos del usuario en un nuevo navegador.
-      const remoteHasData = (remotePayload.data && Object.keys(remotePayload.data).length > 0) ||
-                            (remotePayload.wishAccounts && remotePayload.wishAccounts.length > 0) ||
-                            (remotePayload.wishesData && Object.keys(remotePayload.wishesData).length > 0);
-
-      const localHasRealContent = (localPayload.data && Object.values(localPayload.data).some(v => (Array.isArray(v) ? v.length > 0 : Object.keys(v || {}).length > 0))) ||
-                                  (localPayload.wishAccounts && localPayload.wishAccounts.length > 0) ||
-                                  (localPayload.wishesData && Object.keys(localPayload.wishesData).length > 0);
-
-      if (!localHasRealContent && remoteHasData) {
-        console.log("📥 Dispositivo nuevo o sin datos locales detectado. Restaurando datos desde Google Drive...");
-        this.applyRemotePayload(remotePayload);
-        return;
-      }
-
-      // Si no hay discrepancia significativa de timestamps (< 2 segundos)
-      const diffMs = Math.abs(conflictInfo.localTime.getTime() - conflictInfo.remoteTime.getTime());
-      if (diffMs < 2000) {
-        localStorage.setItem("teyvat_last_sync", formatSyncDate(conflictInfo.localTime));
-        renderMultiAccountUI();
-        if (typeof showSynthToast === "function") {
-          showSynthToast("✅ Datos al día con Google Drive.");
-        }
-        return;
-      }
-
-      // Si auto-resolver está activo, gana la versión más reciente
-      if (autoResolve) {
-        if (conflictInfo.smallerBrowserWarning && remoteHasData) {
-          // El navegador local tiene sospechosamente menos datos que la nube
-          console.warn("⚠️ Advertencia de seguridad: El navegador local es significativamente menor que la nube. Restaurando nube...");
-          this.applyRemotePayload(remotePayload);
-          return;
-        }
-
-        if (conflictInfo.driveIsOlder) {
-          // Local es más nuevo -> sube a Drive
-          return this.uploadLocalPayloadToDrive();
-        } else {
-          // Remoto es más nuevo -> aplica remoto
-          this.applyRemotePayload(remotePayload);
-          return;
-        }
-      }
-
-      // Desplegar Modal de Conflicto Pixel-Perfect
-      openSyncConflictModal(localPayload, remotePayload, conflictInfo);
+    static async _fingerprint(payload) {
+      if (!payload) return null;
+      const clean = { ...payload };
+      delete clean.lastUpdate;
+      delete clean._sync;
+      const sort = value => Array.isArray(value) ? value.map(sort) :
+        value && typeof value === 'object' ? Object.fromEntries(Object.keys(value).sort().map(k => [k, sort(value[k])])) : value;
+      const bytes = new TextEncoder().encode(JSON.stringify(sort(clean)));
+      const digest = await globalThis.crypto.subtle.digest('SHA-256', bytes);
+      return Array.from(new Uint8Array(digest), b => b.toString(16).padStart(2, '0')).join('');
     }
+
+    static async _request(url, token, options = {}) {
+      const response = await fetch(url, {
+        ...options,
+        headers: { Authorization: `Bearer ${token}`, ...(options.headers || {}) },
+        signal: AbortSignal.timeout(30000)
+      });
+      if (!response.ok) {
+        if (response.status === 401) localStorage.removeItem('gdrive_access_token');
+        throw new Error(`Drive respondió HTTP ${response.status}. No se reemplazó la copia remota.`);
+      }
+      return response;
+    }
+
+    static async _readRemote(token) {
+      const query = encodeURIComponent(`name='${DRIVE_CONFIG.fileName}' and trashed=false`);
+      const search = await this._request(`https://www.googleapis.com/drive/v3/files?spaces=appDataFolder&q=${query}&fields=nextPageToken,files(id,name,version)&pageSize=100`, token);
+      const found = await search.json();
+      if (!Array.isArray(found.files) || found.nextPageToken || found.files.length > 1) {
+        throw new Error('Drive devolvió una lista ambigua o inválida. No se modificaron las copias.');
+      }
+      if (!found.files.length) return null;
+      const id = found.files[0].id;
+      const metadataResponse = await this._request(`https://www.googleapis.com/drive/v3/files/${id}?fields=id,version,modifiedTime`, token);
+      const metadata = await metadataResponse.json();
+      if (!metadata.id || !metadata.version) throw new Error('No se pudo comprobar la revisión de Drive.');
+      const media = await this._request(`https://www.googleapis.com/drive/v3/files/${id}?alt=media`, token);
+      const payload = this._validate(await media.json());
+      return { id, version: metadata.version, etag: metadataResponse.headers.get('ETag'), payload, fingerprint: await this._fingerprint(payload) };
+    }
+
+    static async _localSnapshot(payload, label) {
+      const key = `spirifly_recovery_${Date.now()}_${globalThis.crypto.randomUUID()}`;
+      if (typeof indexedDB === 'undefined') {
+        localStorage.setItem(key, JSON.stringify({ label, payload }));
+        return;
+      }
+      await new Promise((resolve, reject) => {
+        const open = indexedDB.open('spirifly_recovery_v1', 1);
+        open.onupgradeneeded = () => open.result.createObjectStore('snapshots', { keyPath: 'id' });
+        open.onerror = () => reject(new Error('No se pudo conservar la copia local de recuperación.'));
+        open.onsuccess = () => {
+          const db = open.result;
+          const transaction = db.transaction('snapshots', 'readwrite');
+          transaction.objectStore('snapshots').add({ id: key, label, payload, createdAt: new Date().toISOString() });
+          transaction.oncomplete = () => { db.close(); resolve(); };
+          transaction.onerror = () => { db.close(); reject(new Error('No se pudo guardar la versión anterior.')); };
+          transaction.onabort = transaction.onerror;
+        };
+      });
+    }
+
+    static async _snapshot(token, payload, parentHash) {
+      const fingerprint = await this._fingerprint(payload);
+      const boundary = `spirifly_${globalThis.crypto.randomUUID()}`;
+      const metadata = {
+        name: `spirifly_revision_${Date.now()}_${globalThis.crypto.randomUUID()}.json`,
+        parents: ['appDataFolder'],
+        appProperties: { parentHash: parentHash || 'root', contentHash: fingerprint }
+      };
+      const body = `--${boundary}\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n${JSON.stringify(metadata)}\r\n--${boundary}\r\nContent-Type: application/json\r\n\r\n${JSON.stringify(payload)}\r\n--${boundary}--`;
+      await this._request('https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart', token, {
+        method: 'POST', headers: { 'Content-Type': `multipart/related; boundary=${boundary}` }, body
+      });
+    }
+
+    static async uploadLocalPayloadToDrive(token, expectedFingerprint) {
+      const accessToken = token || localStorage.getItem('gdrive_access_token');
+      const payload = this._validate(this.getLocalPayload());
+      if (!accessToken) {
+        await this._localSnapshot(payload, 'Guardado local sin conexión');
+        if (typeof showSynthToast === 'function') showSynthToast('Datos guardados localmente. Conecta Drive para subirlos.');
+        return payload;
+      }
+      if (this._uploading) throw new Error('Ya hay una sincronización en curso.');
+      this._uploading = true;
+      try {
+        const remote = await this._readRemote(accessToken);
+        const base = expectedFingerprint === undefined ? localStorage.getItem('spirifly_sync_base_hash') : expectedFingerprint;
+        const localHash = await this._fingerprint(payload);
+        if (remote && remote.fingerprint === localHash) {
+          localStorage.setItem('spirifly_sync_base_hash', localHash);
+          return payload;
+        }
+        if (remote && remote.fingerprint !== base) {
+          openSyncConflictModal(payload, remote.payload, ConflictDetector.evaluate(payload, remote.payload));
+          return { conflict: true };
+        }
+        // Ambas versiones sobreviven aunque otra pestaña escriba en paralelo.
+        await this._localSnapshot(payload, 'Antes de subir');
+        if (remote) await this._snapshot(accessToken, remote.payload, 'preserved');
+        const parentHash = remote ? remote.fingerprint : null;
+        const next = { ...payload, _sync: { revision: globalThis.crypto.randomUUID(), parentHash, writtenAt: new Date().toISOString() } };
+        await this._snapshot(accessToken, next, parentHash);
+        const fresh = await this._readRemote(accessToken);
+        if ((fresh && fresh.fingerprint) !== (remote && remote.fingerprint) || (fresh && fresh.version) !== (remote && remote.version)) {
+          throw new Error('Otro dispositivo cambió Drive durante la subida. Tus cambios quedaron preservados; vuelve a sincronizar para resolver el conflicto.');
+        }
+        const boundary = `spirifly_${globalThis.crypto.randomUUID()}`;
+        const metadata = remote ? { name: DRIVE_CONFIG.fileName } : { name: DRIVE_CONFIG.fileName, parents: ['appDataFolder'] };
+        const body = `--${boundary}\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n${JSON.stringify(metadata)}\r\n--${boundary}\r\nContent-Type: application/json\r\n\r\n${JSON.stringify(next)}\r\n--${boundary}--`;
+        const headers = { 'Content-Type': `multipart/related; boundary=${boundary}` };
+        if (remote && remote.etag) headers['If-Match'] = remote.etag;
+        const endpoint = remote ? `https://www.googleapis.com/upload/drive/v3/files/${remote.id}?uploadType=multipart` : 'https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart';
+        await this._request(endpoint, accessToken, { method: remote ? 'PATCH' : 'POST', headers, body });
+        const verified = await this._readRemote(accessToken);
+        if (!verified || verified.fingerprint !== localHash) throw new Error('Drive cambió antes de confirmar. Las versiones se conservaron para recuperación.');
+        localStorage.setItem('spirifly_sync_base_hash', localHash);
+        localStorage.setItem('teyvat_last_sync', formatSyncDate(new Date()));
+        renderMultiAccountUI();
+        if (typeof showSynthToast === 'function') showSynthToast('Datos verificados en Google Drive; versiones anteriores conservadas.');
+        return payload;
+      } catch (error) {
+        if (typeof showSynthToast === 'function') showSynthToast(`No se completó la sincronización: ${error.message}`);
+        throw error;
+      } finally {
+        this._uploading = false;
+      }
+    }
+
+    static async syncWithDrive(isUserTriggered = false) {
+      const token = localStorage.getItem('gdrive_access_token');
+      if (!token) {
+        if (isUserTriggered) connectGoogleDrive();
+        return;
+      }
+      try {
+        const remote = await this._readRemote(token);
+        const local = this._validate(this.getLocalPayload());
+        const localHash = await this._fingerprint(local);
+        const base = localStorage.getItem('spirifly_sync_base_hash');
+        if (!remote) return this.uploadLocalPayloadToDrive(token, null);
+        if (remote.fingerprint === localHash) {
+          localStorage.setItem('spirifly_sync_base_hash', localHash);
+          localStorage.setItem('teyvat_last_sync', formatSyncDate(new Date()));
+          renderMultiAccountUI();
+          return;
+        }
+        const hasLocal = Object.values(local.data).some(v => v && Object.keys(v).length) ||
+          (local.wishAccounts || []).length || Object.keys(local.wishesData || {}).length;
+        if (!hasLocal || localHash === base) {
+          await this._localSnapshot(local, 'Antes de descargar');
+          this.applyRemotePayload(remote.payload);
+          localStorage.setItem('spirifly_sync_base_hash', await this._fingerprint(this.getLocalPayload()));
+          return;
+        }
+        if (remote.fingerprint === base) return this.uploadLocalPayloadToDrive(token, remote.fingerprint);
+        openSyncConflictModal(local, remote.payload, ConflictDetector.evaluate(local, remote.payload));
+      } catch (error) {
+        if (typeof showSynthToast === 'function') showSynthToast(`Drive no se pudo leer: ${error.message}`);
+        throw error;
+      }
+    }
+
   }
 
   // --- 7. MODAL DE RESOLUCIÓN DE CONFLICTOS (PIXEL-PERFECT SEELIE) ---
@@ -1106,17 +1074,20 @@
     _currentConflictState = null;
   }
 
-  function handleChooseDriveConflict() {
+  async function handleChooseDriveConflict() {
     if (!_currentConflictState) return;
     const remote = _currentConflictState.remotePayload;
+    await GoogleDriveSyncEngine._localSnapshot(GoogleDriveSyncEngine.getLocalPayload(), "Selección de Drive en conflicto");
     closeSyncConflictModal();
     GoogleDriveSyncEngine.applyRemotePayload(remote);
+    GoogleDriveSyncEngine._fingerprint(GoogleDriveSyncEngine.getLocalPayload()).then(hash => localStorage.setItem("spirifly_sync_base_hash", hash));
   }
 
-  function handleChooseLocalConflict() {
+  async function handleChooseLocalConflict() {
     if (!_currentConflictState) return;
+    const remoteHash = await GoogleDriveSyncEngine._fingerprint(_currentConflictState.remotePayload);
     closeSyncConflictModal();
-    GoogleDriveSyncEngine.uploadLocalPayloadToDrive();
+    try { await GoogleDriveSyncEngine.uploadLocalPayloadToDrive(undefined, remoteHash); } catch (error) { console.warn("Sincronización no completada"); }
   }
 
   /**

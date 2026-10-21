@@ -4589,12 +4589,12 @@ async function handleWishUrlImport() {
         // Proxy CORS nativo en Cloudflare (/api/corsproxy), idéntico al mecanismo de Paimon.moe
         const isSpiriflyOrigin = window.location.hostname.includes("spirifly.app");
         const proxyEndpoint = isSpiriflyOrigin
-          ? `/api/corsproxy?url=${encodeURIComponent(targetUrl)}`
-          : `https://spirifly.app/api/corsproxy?url=${encodeURIComponent(targetUrl)}`;
+          ? `/api/corsproxy`
+          : `https://spirifly.app/api/corsproxy`;
 
         let res;
         try {
-          res = await fetch(proxyEndpoint);
+          res = await fetch(proxyEndpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ url: targetUrl }) });
         } catch (proxyErr) {
           res = await fetch(targetUrl);
         }
