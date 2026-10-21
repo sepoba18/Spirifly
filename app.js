@@ -263,12 +263,6 @@ const state = {
     const activeAcc = (typeof AccountManager !== "undefined") ? AccountManager.getActiveAccountId() : (localStorage.getItem("account") || "main");
     const raw = safeParseLocal(`${activeAcc}-goals`, null) || (activeAcc === "main" ? safeParseLocal("teyvat_active_plans_v4", null) : []);
     if (Array.isArray(raw)) {
-      const isDemoSet = raw.length <= 3 && raw.some(p => p.key === "Aino" || p.uid === "plan_aino_1");
-      if (isDemoSet) {
-        localStorage.setItem(`${activeAcc}-goals`, "[]");
-        if (activeAcc === "main") localStorage.removeItem("teyvat_active_plans_v4");
-        return [];
-      }
       return raw;
     }
     return [];
@@ -377,21 +371,9 @@ function updateSyncDisplay() {
   }
 }
 
-let _driveAutoSyncTimeout = null;
-
 function triggerDriveSyncStamp() {
   localStorage.setItem("teyvat_data_last_modified", new Date().toISOString());
-
-  // Subida automática en segundo plano hacia Google Drive si la sesión está conectada
-  const token = localStorage.getItem("gdrive_access_token");
-  if (token && typeof GoogleDriveSyncEngine !== "undefined" && typeof GoogleDriveSyncEngine.uploadLocalPayloadToDrive === "function") {
-    if (_driveAutoSyncTimeout) clearTimeout(_driveAutoSyncTimeout);
-    _driveAutoSyncTimeout = setTimeout(() => {
-      GoogleDriveSyncEngine.syncWithDrive().catch((err) => {
-        console.warn("Fallo en sincronización automática con Google Drive:", err);
-      });
-    }, 1500);
-  }
+  if (typeof GoogleDriveSyncEngine !== "undefined") GoogleDriveSyncEngine.scheduleSync();
 }
 
 function getDefaultTopCurrency() {
@@ -552,6 +534,7 @@ function initApp() {
   langSelect.addEventListener("change", (e) => {
     state.lang = e.target.value;
     localStorage.setItem("teyvat_lang", state.lang);
+    triggerDriveSyncStamp();
     document.documentElement.lang = state.lang;
     renderAll();
   });
@@ -642,12 +625,9 @@ function initApp() {
         inputDriveEmail.focus();
         return;
       }
-      state.userEmail = val;
-      state.driveLinked = true;
       localStorage.setItem("teyvat_drive_email", val);
-      localStorage.setItem("teyvat_drive_linked", "true");
       driveFormBox.style.display = "none";
-      triggerDriveSyncStamp();
+      connectGoogleDrive();
     };
     btnSaveDriveEmail.addEventListener("click", saveEmailAction);
     inputDriveEmail.addEventListener("keydown", (ev) => {
@@ -656,16 +636,11 @@ function initApp() {
     });
   }
 
-  if (btnSyncDriveNow) {
-    btnSyncDriveNow.addEventListener("click", () => {
-      triggerDriveSyncStamp();
-    });
-  }
+  // The Drive engine owns the sync button; clicking it is not a data edit.
 
   if (btnUnlinkDrive) {
     btnUnlinkDrive.addEventListener("click", () => {
-      state.driveLinked = false;
-      localStorage.setItem("teyvat_drive_linked", "false");
+      disconnectGoogleDrive();
       if (driveFormBox) driveFormBox.style.display = "none";
       updateSyncDisplay();
     });
@@ -683,6 +658,7 @@ function initApp() {
     btnToggleNeeded.addEventListener("click", () => {
       state.invOnlyNeeded = !state.invOnlyNeeded;
       localStorage.setItem("teyvat_inv_only_needed", JSON.stringify(state.invOnlyNeeded));
+      triggerDriveSyncStamp();
       renderInventoryHeaderTabs();
       renderInventoryMatrix();
     });
@@ -4733,6 +4709,7 @@ async function handleDevClearWishes() {
   }
 
   state.rawWishes = [];
+  triggerDriveSyncStamp();
   cachedFullWishResults = null;
   state.wishTablePage = 1;
 
@@ -4982,14 +4959,13 @@ function initFarmingEventsOnce() {
       const generated = Math.floor(elapsedMs / (8 * 60 * 1000));
       if (generated > 0) {
         state.currentResin = Math.min(200, savedResin + generated);
-        const remainderMs = elapsedMs % (8 * 60 * 1000);
-        saveActiveAccountResin(state.currentResin, Date.now() - remainderMs);
+        // Derive regeneration without changing the persisted timer origin.
       } else {
         state.currentResin = savedResin;
       }
     } else {
       state.currentResin = savedResin;
-      if (!savedTime) saveActiveAccountResin(state.currentResin, Date.now());
+
     }
   }
   if (state.farmingCostTab === undefined) {
@@ -5008,6 +4984,7 @@ function initFarmingEventsOnce() {
       const delta = parseInt(btn.dataset.resinDelta, 10) || 0;
       state.currentResin = Math.max(0, Math.min(200, (state.currentResin ?? 200) + delta));
       saveActiveAccountResin(state.currentResin, Date.now());
+      triggerDriveSyncStamp();
       updateResinWidgetUI();
     });
   });
@@ -5020,12 +4997,14 @@ function initFarmingEventsOnce() {
       if (cur >= 60) {
         state.currentResin = Math.max(0, cur - 60);
         saveActiveAccountResin(state.currentResin, Date.now());
+        triggerDriveSyncStamp();
         updateResinWidgetUI();
       } else {
         const add60 = confirm(`Tienes ${cur} de Resina (se requieren 60 para concentrar).\n\n¿Deseas consumir 1 Resina Frágil para restaurar +60?`);
         if (add60) {
           state.currentResin = Math.min(200, cur + 60);
           saveActiveAccountResin(state.currentResin, Date.now());
+          triggerDriveSyncStamp();
           updateResinWidgetUI();
         }
       }
@@ -5042,6 +5021,7 @@ function initFarmingEventsOnce() {
         if (!isNaN(val)) {
           state.currentResin = Math.max(0, Math.min(200, val));
           saveActiveAccountResin(state.currentResin, Date.now());
+          triggerDriveSyncStamp();
           updateResinWidgetUI();
         }
       }
@@ -5094,7 +5074,7 @@ function updateResinWidgetUI() {
   // Si hay resina menor a 200 y tiempo guardado, computar avance en tiempo real
   const rData = loadActiveAccountResin();
   const savedTime = rData.updated;
-  let cur = state.currentResin !== undefined ? state.currentResin : rData.val;
+  let cur = rData.val;
   let remainingMsToNext = 8 * 60 * 1000;
 
   if (savedTime > 0 && cur < 200) {
@@ -5106,8 +5086,7 @@ function updateResinWidgetUI() {
     if (generated > 0) {
       cur = Math.min(200, cur + generated);
       state.currentResin = cur;
-      localStorage.setItem("teyvat_resin_val", cur);
-      localStorage.setItem("teyvat_resin_updated_time", Date.now() - remainderMs);
+      // Keep the persisted origin unchanged until the user edits resin.
     }
   }
 

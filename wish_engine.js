@@ -1122,6 +1122,7 @@
     const storageKey = 'teyvat_wishes_' + safeUid;
     try {
       localStorage.setItem(storageKey, JSON.stringify(wishes));
+      localStorage.removeItem('teyvat_wishes_cleared_' + safeUid);
       localStorage.setItem(ACTIVE_UID_KEY, safeUid);
     } catch (err) {
       console.warn('Advertencia al escribir fallback en localStorage:', err);
@@ -1132,10 +1133,16 @@
       return new Promise(function (resolve, reject) {
         const tx = db.transaction(STORE_NAME, 'readwrite');
         const store = tx.objectStore(STORE_NAME);
-        for (let i = 0; i < wishes.length; i++) {
-          const w = Object.assign({}, wishes[i], { uid: safeUid });
-          store.put(w);
-        }
+        // Replace this UID in one transaction, including deletions from a remote restore.
+        const existing = store.index('uid').openCursor(safeUid);
+        existing.onsuccess = function () {
+          const cursor = existing.result;
+          if (cursor) { cursor.delete(); cursor.continue(); return; }
+          for (let i = 0; i < wishes.length; i++) {
+            const w = Object.assign({}, wishes[i], { uid: safeUid });
+            store.put(w);
+          }
+        };
         tx.oncomplete = function () { resolve(true); };
         tx.onerror = function (err) { reject(err); };
       });
@@ -1150,6 +1157,11 @@
   async function loadWishesFromStorage(uid) {
     const safeUid = String(uid || getActiveAccountUid() || 'default');
     const storageKey = 'teyvat_wishes_' + safeUid;
+    const cached = localStorage.getItem(storageKey);
+    if (cached !== null) {
+      try { const list = JSON.parse(cached); if (Array.isArray(list)) return sortWishesAscending(list); } catch (_) {}
+    }
+    if (localStorage.getItem('teyvat_wishes_cleared_' + safeUid) === 'true') return [];
     const db = await openIndexedDB();
 
     if (db) {

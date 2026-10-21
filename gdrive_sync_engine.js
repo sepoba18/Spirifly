@@ -233,6 +233,7 @@
       }
 
       this.switchAccount(newId);
+      if (typeof triggerDriveSyncStamp === 'function') triggerDriveSyncStamp();
       return newId;
     }
 
@@ -267,13 +268,7 @@
         const rawGoals = localStorage.getItem(`${targetId}-goals`);
         try {
           const parsed = rawGoals ? JSON.parse(rawGoals) : (targetId === "main" ? JSON.parse(localStorage.getItem("teyvat_active_plans_v4") || "[]") : []);
-          const isDemoSet = Array.isArray(parsed) && parsed.length <= 3 && parsed.some(p => p.key === "Aino" || p.uid === "plan_aino_1");
-          if (isDemoSet) {
-            state.activePlans = [];
-            localStorage.setItem(`${targetId}-goals`, "[]");
-          } else {
-            state.activePlans = Array.isArray(parsed) ? parsed : [];
-          }
+          state.activePlans = Array.isArray(parsed) ? parsed : [];
         } catch (e) {
           state.activePlans = [];
         }
@@ -390,6 +385,7 @@
       }
 
       renderMultiAccountUI();
+      if (typeof triggerDriveSyncStamp === 'function') triggerDriveSyncStamp();
       if (typeof renderProfileManager === "function") {
         try { renderProfileManager(); } catch (e) {}
       }
@@ -415,8 +411,12 @@
       localStorage.setItem("accounts", JSON.stringify(accounts));
       localStorage.setItem("accountNames", JSON.stringify(names));
 
-      // Retornar siempre a 'main'
-      this.switchAccount("main");
+      const uids = this.getAccountUidsMap();
+      delete uids[targetId];
+      localStorage.setItem('accountUids', JSON.stringify(uids));
+      // Switch without persisting the account that was just deleted.
+      this.switchAccount("main", true);
+      if (typeof triggerDriveSyncStamp === 'function') triggerDriveSyncStamp();
     }
 
     /**
@@ -474,7 +474,8 @@
       if (data.resin) localStorage.setItem(`${accId}-resin`, JSON.stringify(data.resin));
 
       // Recargar cuenta activa
-      this.switchAccount(accId);
+      this.switchAccount(accId, true);
+      if (typeof triggerDriveSyncStamp === 'function') triggerDriveSyncStamp();
     }
 
     /**
@@ -516,6 +517,7 @@
     if (typeof state !== "undefined") {
       state.accountSettings = merged;
     }
+    if (typeof triggerDriveSyncStamp === 'function') triggerDriveSyncStamp();
     // Re-evaluar farming por posible cambio de servidor
     if (typeof renderFarming === "function") renderFarming();
   }
@@ -565,9 +567,11 @@
       _gisTokenClient = google.accounts.oauth2.initTokenClient({
         client_id: DRIVE_CONFIG.defaultClientId,
         scope: DRIVE_CONFIG.appDataScope,
+        error_callback: () => GoogleDriveSyncEngine.setStatus('auth', 'No se completó el acceso a Google. Pulsa Sincronizar ahora para reintentar.'),
         callback: async (tokenResponse) => {
           if (tokenResponse.error) {
-            console.error("Error en autorización de Google:", tokenResponse);
+            GoogleDriveSyncEngine.setStatus('auth');
+            console.error("Error en autorización de Google:", tokenResponse.error);
             if (typeof showSynthToast === "function") {
               showSynthToast("⚠️ Error en autorización de Google: " + (tokenResponse.error_description || tokenResponse.error));
             }
@@ -577,6 +581,7 @@
             const token = tokenResponse.access_token;
             localStorage.setItem("gdrive_access_token", token);
             localStorage.setItem("gdrive_token_timestamp", String(Date.now()));
+            localStorage.setItem("gdrive_token_expires_at", String(Date.now() + (Number(tokenResponse.expires_in) || 3600) * 1000 - 60000));
             localStorage.setItem("teyvat_drive_linked", "true");
 
             // Obtener email del usuario autenticado
@@ -600,7 +605,7 @@
             renderMultiAccountUI();
 
             // Sincronización inmediata al conectar
-            await GoogleDriveSyncEngine.syncWithDrive();
+            try { await GoogleDriveSyncEngine.syncWithDrive(); } catch (_) { /* Status displays the actionable error. */ }
           }
         }
       });
@@ -618,21 +623,22 @@
     if (localStorage.getItem("teyvat_drive_linked") === "true") {
       const token = localStorage.getItem("gdrive_access_token");
       const tokenTime = parseInt(localStorage.getItem("gdrive_token_timestamp") || "0", 10);
-      const isFresh = token && (Date.now() - tokenTime < 58 * 60 * 1000);
+      const isFresh = GoogleDriveSyncEngine.tokenIsFresh();
 
       if (isFresh) {
         GoogleDriveSyncEngine.syncWithDrive(false).catch((err) => {
           console.warn("[Google Drive] Sincronización automática en segundo plano omitida:", err);
         });
       } else {
-        console.log("[Google Drive] Sesión en reposo. Modo local activo sin popups invasivos.");
-        renderMultiAccountUI();
+        GoogleDriveSyncEngine.setStatus('auth');
       }
     }
   }
 
   // Sincronizacion automatica al volver a la pestana de Spirifly
   if (typeof window !== "undefined") {
+    window.addEventListener('online', triggerAutomaticDriveStartup);
+    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') triggerAutomaticDriveStartup(); });
     window.addEventListener("focus", () => {
       if (localStorage.getItem("teyvat_drive_linked") === "true") {
         const lastSync = parseInt(localStorage.getItem("gdrive_last_focus_sync") || "0", 10);
@@ -658,11 +664,13 @@
       if (savedEmail) {
         requestOptions.login_hint = savedEmail;
       }
+      GoogleDriveSyncEngine.setStatus('auth', 'Completa el acceso en la ventana de Google.');
       client.requestAccessToken(requestOptions);
     }
   }
 
   function disconnectGoogleDrive() {
+    clearTimeout(GoogleDriveSyncEngine._scheduled);
     const token = localStorage.getItem("gdrive_access_token");
     if (token && typeof google !== "undefined" && google.accounts && google.accounts.oauth2) {
       try {
@@ -673,6 +681,10 @@
     }
     localStorage.removeItem("gdrive_access_token");
     localStorage.removeItem("gdrive_token_timestamp");
+    localStorage.removeItem("gdrive_token_expires_at");
+    localStorage.removeItem("spirifly_sync_base_hash");
+    localStorage.removeItem("spirifly_sync_local_hash");
+    GoogleDriveSyncEngine.status = 'local';
     localStorage.setItem("teyvat_drive_linked", "false");
     localStorage.removeItem("teyvat_drive_email");
     localStorage.removeItem("teyvat_last_sync");
@@ -685,42 +697,39 @@
   class GoogleDriveSyncEngine {
     static getLocalPayload() {
       const activeId = AccountManager.getActiveAccountId();
-      AccountManager.persistCurrentActiveData(activeId);
+      // A snapshot must not mutate storage or reset timers.
 
       const accounts = AccountManager.getAccountsList();
       const accountNames = AccountManager.getAccountNamesMap();
       const autoResolve = localStorage.getItem("gdrive_auto_resolve_conflict") !== "false";
 
-      let hasRealLocalData = false;
       const dataObj = {};
       accounts.forEach((acc) => {
         try {
           const inv = JSON.parse(localStorage.getItem(`${acc}-inventory`) || "{}");
           dataObj[`${acc}-inventory`] = inv;
-          if (Object.keys(inv).length > 0) hasRealLocalData = true;
         } catch (e) {
-          dataObj[`${acc}-inventory`] = {};
+          throw new Error(`No se pudo leer inventory de ${acc}. Se conservó la copia de Drive.`);
         }
         try {
           const goals = JSON.parse(localStorage.getItem(`${acc}-goals`) || "[]");
           dataObj[`${acc}-goals`] = goals;
-          if (goals.length > 0) hasRealLocalData = true;
         } catch (e) {
-          dataObj[`${acc}-goals`] = [];
+          throw new Error(`No se pudo leer goals de ${acc}. Se conservó la copia de Drive.`);
         }
         try {
           dataObj[`${acc}-settings`] = JSON.parse(localStorage.getItem(`${acc}-settings`) || "{}");
         } catch (e) {
-          dataObj[`${acc}-settings`] = {};
+          throw new Error(`No se pudo leer settings de ${acc}. Se conservó la copia de Drive.`);
         }
         try {
           dataObj[`${acc}-resin`] = JSON.parse(localStorage.getItem(`${acc}-resin`) || "{}");
         } catch (e) {
-          dataObj[`${acc}-resin`] = {};
+          throw new Error(`No se pudo leer resin de ${acc}. Se conservó la copia de Drive.`);
         }
       });
 
-      // Si el dispositivo está vacío (sin items ni metas), usar timestamp epoch para que la nube siempre gane
+      // Reading a backup must not manufacture an edit timestamp.
       const savedEditTime = localStorage.getItem("teyvat_data_last_modified");
       const effectiveLastUpdate = savedEditTime || "1970-01-01T00:00:00.000Z";
 
@@ -748,14 +757,15 @@
 
         wishAccounts.forEach((wUid) => {
           const rawWishes = localStorage.getItem("teyvat_wishes_" + wUid);
+          if (!rawWishes) { payload.wishesData[wUid] = []; }
           if (rawWishes) {
             try {
               payload.wishesData[wUid] = JSON.parse(rawWishes);
-            } catch (e) {}
+            } catch (e) { throw new Error(`No se pudo leer el historial de deseos de ${wUid}.`); }
           }
         });
       } catch (e) {
-        console.warn("Fallo al serializar deseos para Google Drive:", e);
+        throw new Error('No se pudo preparar el historial de deseos. Se conservó la copia de Drive.');
       }
 
       return payload;
@@ -764,10 +774,8 @@
     /**
      * Aplica el payload descargado desde Google Drive sobrescribiendo el almacenamiento local
      */
-    static applyRemotePayload(remotePayload) {
-      if (!remotePayload || !remotePayload.data) {
-        throw new Error("Payload remoto inválido.");
-      }
+    static async applyRemotePayload(remotePayload) {
+      this._validate(remotePayload);
 
       if (Array.isArray(remotePayload.accounts)) {
         localStorage.setItem("accounts", JSON.stringify(remotePayload.accounts));
@@ -780,10 +788,6 @@
       }
 
       Object.entries(remotePayload.data).forEach(([key, val]) => {
-        if (key.endsWith("-goals") && Array.isArray(val)) {
-          const isDemo = val.length <= 3 && val.some(p => p.key === "Aino" || p.uid === "plan_aino_1");
-          if (isDemo) val = [];
-        }
         localStorage.setItem(key, JSON.stringify(val));
       });
 
@@ -791,7 +795,8 @@
         localStorage.setItem("gdrive_auto_resolve_conflict", String(remotePayload.settings.autoResolveConflict));
       }
 
-      // Restaurar también los deseos (wish tracker) y perfiles desde Google Drive
+      // Complete both stores before changing the active account or confirming sync.
+      const wishWrites = [];
       try {
         if (Array.isArray(remotePayload.wishAccounts)) {
           localStorage.setItem("teyvat_wish_accounts_v1", JSON.stringify(remotePayload.wishAccounts));
@@ -807,7 +812,7 @@
             if (Array.isArray(wList)) {
               localStorage.setItem("teyvat_wishes_" + wUid, JSON.stringify(wList));
               if (typeof WishEngine !== "undefined" && typeof WishEngine.saveWishesToStorage === "function") {
-                WishEngine.saveWishesToStorage(wUid, wList).catch(() => {});
+                wishWrites.push(WishEngine.saveWishesToStorage(wUid, wList));
               }
             }
           });
@@ -816,21 +821,29 @@
         console.warn("Fallo al restaurar deseos desde Google Drive:", e);
       }
 
+      await Promise.all(wishWrites);
       const preferenceKeys = ["teyvat_starred", "teyvat_active_wish_banner", "teyvat_inv_only_needed", "teyvat_lang"];
       preferenceKeys.forEach(key => {
         const value = remotePayload.preferences && remotePayload.preferences[key];
         if (typeof value === "string") localStorage.setItem(key, value);
+        else if (value === null) localStorage.removeItem(key);
       });
       if (remotePayload.lastUpdate) localStorage.setItem("teyvat_data_last_modified", remotePayload.lastUpdate);
       if (typeof state !== "undefined") {
-        state.starredChars = JSON.parse(localStorage.getItem("teyvat_starred") || "[]");
+        try { const stars = JSON.parse(localStorage.getItem("teyvat_starred") || "[]"); state.starredChars = Array.isArray(stars) ? stars : []; } catch (_) { state.starredChars = []; }
         state.activeWishBanner = localStorage.getItem("teyvat_active_wish_banner") || "character";
         state.invOnlyNeeded = localStorage.getItem("teyvat_inv_only_needed") === "true";
         state.lang = localStorage.getItem("teyvat_lang") || state.lang;
       }
       const accounts = AccountManager.getAccountsList();
       const current = AccountManager.getActiveAccountId();
-      const active = accounts.includes(remotePayload.activeAccount) ? remotePayload.activeAccount : (accounts.includes(current) ? current : accounts[0]);
+      const uidMap = AccountManager.getAccountUidsMap();
+      const uidAccount = accounts.find(id => uidMap[id] === remotePayload.activeWishUid);
+      const active = accounts.includes(remotePayload.activeAccount) ? remotePayload.activeAccount : (uidAccount || (accounts.includes(current) ? current : accounts[0]));
+      if (!uidMap[active] && remotePayload.activeWishUid && remotePayload.activeWishUid !== 'default') {
+        uidMap[active] = remotePayload.activeWishUid;
+        localStorage.setItem('accountUids', JSON.stringify(uidMap));
+      }
       AccountManager.switchAccount(active, true);
 
       // Re-renderizar Deseos, Perfiles y Theorycraft si están activos o presentes
@@ -844,7 +857,13 @@
         try { renderTheorycraft(); } catch (e) {}
       }
 
-      const lastStamp = remotePayload.lastUpdate || new Date().toISOString();
+      if (typeof applyStaticTranslations === "function" && typeof I18N !== "undefined") {
+        applyStaticTranslations(I18N[state.lang] || I18N.es);
+        document.documentElement.lang = state.lang;
+        const select = document.getElementById('langSelect');
+        if (select) select.value = state.lang;
+      }
+      const lastStamp = new Date().toISOString();
       localStorage.setItem("teyvat_last_sync", formatSyncDate(new Date(lastStamp)));
       renderMultiAccountUI();
       if (typeof showSynthToast === "function") {
@@ -860,12 +879,43 @@
           !payload.data || typeof payload.data !== 'object' || Array.isArray(payload.data)) {
         throw new Error('La copia de Drive no tiene un formato válido. Se conservaron los datos.');
       }
+      const accounts = Array.isArray(payload.accounts) ? payload.accounts : AccountManager.getAccountsList();
+      if (!accounts.length || accounts.some(id => typeof id !== 'string' || !id)) throw new Error('La lista de cuentas del respaldo no es válida.');
+      for (const [key, value] of Object.entries(payload.data)) {
+        if (!accounts.some(id => ['inventory','goals','settings','resin','custom_tasks'].some(domain => key === `${id}-${domain}`))) throw new Error('El respaldo contiene una clave de datos desconocida.');
+        if (!value || typeof value !== 'object' || (key.endsWith('-goals') ? !Array.isArray(value) : Array.isArray(value))) throw new Error('El respaldo contiene datos con formato incorrecto.');
+      }
+      if (payload.wishesData && Object.values(payload.wishesData).some(list => !Array.isArray(list))) throw new Error('El historial de deseos del respaldo no es válido.');
       return payload;
+    }
+
+    static async _legacyFingerprint(payload) {
+      const clean = { ...payload };
+      delete clean.lastUpdate;
+      delete clean._sync;
+      const sort = value => Array.isArray(value) ? value.map(sort) : value && typeof value === 'object' ? Object.fromEntries(Object.keys(value).sort().map(k => [k, sort(value[k])])) : value;
+      const digest = await globalThis.crypto.subtle.digest('SHA-256', new TextEncoder().encode(JSON.stringify(sort(clean))));
+      return Array.from(new Uint8Array(digest), b => b.toString(16).padStart(2, '0')).join('');
     }
 
     static async _fingerprint(payload) {
       if (!payload) return null;
-      const clean = { ...payload };
+      const clean = JSON.parse(JSON.stringify(payload));
+      // Compare content across backup versions and hydrated default values.
+      delete clean.version;
+      clean.preferences = Object.assign({teyvat_starred: "[]", teyvat_active_wish_banner: "character", teyvat_inv_only_needed: "false", teyvat_lang: "es"}, clean.preferences || {});
+      for (const [key, fallback] of Object.entries({teyvat_starred: "[]", teyvat_active_wish_banner: "character", teyvat_inv_only_needed: "false", teyvat_lang: "es"})) {
+        if (clean.preferences[key] == null) clean.preferences[key] = fallback;
+      }
+      for (const acc of clean.accounts || []) {
+        clean.data[`${acc}-inventory`] = Object.assign({}, typeof DEFAULT_SEELIE_OWNED !== "undefined" ? DEFAULT_SEELIE_OWNED : {}, clean.data[`${acc}-inventory`] || {});
+        clean.data[`${acc}-settings`] = Object.assign({}, DEFAULT_SETTINGS, clean.data[`${acc}-settings`] || {});
+        clean.data[`${acc}-goals`] = clean.data[`${acc}-goals`] || [];
+        clean.data[`${acc}-resin`] = clean.data[`${acc}-resin`] || {};
+      }
+      for (const list of Object.values(clean.wishesData || {})) {
+        if (Array.isArray(list)) list.forEach(wish => { delete wish.uid; });
+      }
       delete clean.lastUpdate;
       delete clean._sync;
       const sort = value => Array.isArray(value) ? value.map(sort) :
@@ -882,7 +932,13 @@
         signal: AbortSignal.timeout(30000)
       });
       if (!response.ok) {
-        if (response.status === 401) localStorage.removeItem('gdrive_access_token');
+        if (response.status === 401) {
+          localStorage.removeItem('gdrive_access_token');
+          this.setStatus('auth');
+          const error = new Error('La sesión de Google venció. Pulsa Sincronizar ahora para renovar el acceso.');
+          error.status = 401;
+          throw error;
+        }
         throw new Error(`Drive respondió HTTP ${response.status}. No se reemplazó la copia remota.`);
       }
       return response;
@@ -955,10 +1011,11 @@
         const base = expectedFingerprint === undefined ? localStorage.getItem('spirifly_sync_base_hash') : expectedFingerprint;
         const localHash = await this._fingerprint(payload);
         if (remote && remote.fingerprint === localHash) {
-          localStorage.setItem('spirifly_sync_base_hash', localHash);
+          await this.rememberBaseline(localHash, payload);
           return payload;
         }
         if (remote && remote.fingerprint !== base) {
+          this.setStatus('conflict');
           openSyncConflictModal(payload, remote.payload, ConflictDetector.evaluate(payload, remote.payload));
           return { conflict: true };
         }
@@ -981,12 +1038,16 @@
         await this._request(endpoint, accessToken, { method: remote ? 'PATCH' : 'POST', headers, body });
         const verified = await this._readRemote(accessToken);
         if (!verified || verified.fingerprint !== localHash) throw new Error('Drive cambió antes de confirmar. Las versiones se conservaron para recuperación.');
-        localStorage.setItem('spirifly_sync_base_hash', localHash);
-        localStorage.setItem('teyvat_last_sync', formatSyncDate(new Date()));
-        renderMultiAccountUI();
+        await this.rememberBaseline(localHash, payload);
+        if (localHash !== await this._fingerprint(this.getLocalPayload())) {
+          this._syncAgain = true;
+          localStorage.setItem('spirifly_sync_pending', 'true');
+          this.setStatus('pending');
+        }
         if (typeof showSynthToast === 'function') showSynthToast('Datos verificados en Google Drive; versiones anteriores conservadas.');
         return payload;
       } catch (error) {
+        this.setStatus(error.status === 401 ? 'auth' : 'error', error.message);
         if (typeof showSynthToast === 'function') showSynthToast(`No se completó la sincronización: ${error.message}`);
         throw error;
       } finally {
@@ -1003,40 +1064,96 @@
           if (key.endsWith("-goals")) return Array.isArray(value) && value.length > 0;
           if (key.endsWith("-inventory")) return Object.entries(value || {}).some(([id, amount]) => Number(amount) !== Number(defaults[id] || 0));
           if (key.endsWith("-settings")) return Object.entries(value || {}).some(([name, setting]) => setting !== DEFAULT_SETTINGS[name]);
+          if (key.endsWith("-resin")) return value && value.val !== undefined && Number(value.val) !== 200;
           return false;
-        }) || !!localStorage.getItem("teyvat_data_last_modified");
+        }) || localStorage.getItem('spirifly_sync_pending') === 'true';
     }
 
-    static async syncWithDrive(isUserTriggered = false) {
+    static setStatus(status, message = '') {
+      this.status = status;
+      this.statusMessage = message;
+      if (typeof document !== 'undefined') renderMultiAccountUI();
+    }
+
+    static tokenIsFresh() {
+      const expires = Number(localStorage.getItem('gdrive_token_expires_at')) || (Number(localStorage.getItem('gdrive_token_timestamp')) + 58 * 60 * 1000);
+      return !!localStorage.getItem('gdrive_access_token') && Date.now() < expires;
+    }
+
+    static async rememberBaseline(remoteHash, localPayload) {
+      const localHash = await this._fingerprint(localPayload || this.getLocalPayload());
+      localStorage.setItem('spirifly_sync_base_hash', remoteHash);
+      localStorage.setItem('spirifly_sync_local_hash', localHash);
+      if (localHash === await this._fingerprint(this.getLocalPayload())) localStorage.removeItem('spirifly_sync_pending');
+      localStorage.setItem('teyvat_last_sync', formatSyncDate(new Date()));
+      this.setStatus('synced');
+    }
+
+    static scheduleSync() {
+      localStorage.setItem('spirifly_sync_pending', 'true');
+      this.setStatus(this.tokenIsFresh() ? 'pending' : (localStorage.getItem('teyvat_drive_linked') === 'true' ? 'auth' : 'local'));
+      clearTimeout(this._scheduled);
+      if (this.tokenIsFresh()) this._scheduled = setTimeout(() => this.syncWithDrive().catch(() => {}), 1500);
+    }
+
+    static syncWithDrive(isUserTriggered = false) {
+      if (this.status === 'conflict' && !isUserTriggered) return Promise.resolve();
+      if (!this.tokenIsFresh()) {
+        this.setStatus(localStorage.getItem('teyvat_drive_linked') === 'true' ? 'auth' : 'local');
+        if (isUserTriggered) connectGoogleDrive();
+        return Promise.resolve();
+      }
+      if (this._syncTask) { this._syncAgain = true; return this._syncTask; }
+      const run = async () => {
+        do {
+          this._syncAgain = false;
+          await this._syncOnce(isUserTriggered);
+        } while (this._syncAgain && this.status !== 'conflict');
+      };
+      this._syncTask = run().finally(() => { this._syncTask = null; });
+      return this._syncTask;
+    }
+
+    static async _syncOnce(isUserTriggered = false) {
+      this.setStatus('syncing');
       const token = localStorage.getItem('gdrive_access_token');
       if (!token) {
         if (isUserTriggered) connectGoogleDrive();
         return;
       }
       try {
-        const remote = await this._readRemote(token);
         const local = this._validate(this.getLocalPayload());
+        const initialHash = await this._fingerprint(local);
+        const remote = await this._readRemote(token);
+        if (initialHash !== await this._fingerprint(this.getLocalPayload())) { this._syncAgain = true; return; }
         const localHash = await this._fingerprint(local);
         const base = localStorage.getItem('spirifly_sync_base_hash');
+        const localBase = localStorage.getItem('spirifly_sync_local_hash') || base;
         if (!remote) return this.uploadLocalPayloadToDrive(token, null);
         if (remote.fingerprint === localHash) {
-          localStorage.setItem('spirifly_sync_base_hash', localHash);
-          localStorage.setItem('teyvat_last_sync', formatSyncDate(new Date()));
-          renderMultiAccountUI();
+          await this.rememberBaseline(remote.fingerprint, local);
           return;
         }
         // Default settings, empty inventories and the placeholder UID are not user edits.
         const hasLocal = this.hasMeaningfulLocalData(local);
-        if (!hasLocal || localHash === base) {
+        const localUnchanged = localHash === localBase || (localBase && await this._legacyFingerprint(local) === localBase);
+        const remoteUnchanged = remote.fingerprint === base || (base && await this._legacyFingerprint(remote.payload) === base);
+        const autoResolve = localStorage.getItem('gdrive_auto_resolve_conflict') !== 'false';
+        const remoteNewerOnFirstConnect = !base && autoResolve && !localStorage.getItem('spirifly_sync_pending') && Date.parse(remote.payload.lastUpdate) > Date.parse(local.lastUpdate);
+        if (!hasLocal || (autoResolve && localUnchanged) || remoteNewerOnFirstConnect) {
           await this._localSnapshot(local, 'Antes de descargar');
-          this.applyRemotePayload(remote.payload);
-          localStorage.setItem('spirifly_sync_base_hash', await this._fingerprint(this.getLocalPayload()));
+          if (initialHash !== await this._fingerprint(this.getLocalPayload())) { this._syncAgain = true; return; }
+          await this.applyRemotePayload(remote.payload);
+          await this.rememberBaseline(remote.fingerprint);
           return;
         }
-        if (remote.fingerprint === base) return this.uploadLocalPayloadToDrive(token, remote.fingerprint);
+        if (remoteUnchanged && !localUnchanged) return this.uploadLocalPayloadToDrive(token, remote.fingerprint);
+        this.setStatus('conflict');
         openSyncConflictModal(local, remote.payload, ConflictDetector.evaluate(local, remote.payload));
       } catch (error) {
-        if (typeof showSynthToast === 'function') showSynthToast(`Drive no se pudo leer: ${error.message}`);
+        this.setStatus(error.status === 401 ? 'auth' : 'error', error.message);
+        if (error.status === 401 && isUserTriggered) connectGoogleDrive();
+        if (typeof showSynthToast === 'function') showSynthToast(error.message);
         throw error;
       }
     }
@@ -1106,8 +1223,8 @@
     const remote = _currentConflictState.remotePayload;
     await GoogleDriveSyncEngine._localSnapshot(GoogleDriveSyncEngine.getLocalPayload(), "Selección de Drive en conflicto");
     closeSyncConflictModal();
-    GoogleDriveSyncEngine.applyRemotePayload(remote);
-    GoogleDriveSyncEngine._fingerprint(GoogleDriveSyncEngine.getLocalPayload()).then(hash => localStorage.setItem("spirifly_sync_base_hash", hash));
+    await GoogleDriveSyncEngine.applyRemotePayload(remote);
+    await GoogleDriveSyncEngine.rememberBaseline(await GoogleDriveSyncEngine._fingerprint(remote));
   }
 
   async function handleChooseLocalConflict() {
@@ -1245,26 +1362,25 @@
     const savedEmail = localStorage.getItem("teyvat_drive_email") || "";
     const isLinked = localStorage.getItem("teyvat_drive_linked") === "true";
     const lastSync = localStorage.getItem("teyvat_last_sync") || "--";
+    const syncStatus = !isLinked ? 'local' : (!GoogleDriveSyncEngine.tokenIsFresh() ? 'auth' : GoogleDriveSyncEngine.status || (localStorage.getItem('spirifly_sync_pending') ? 'pending' : 'ready'));
+    const statusLabels = {local:'Guardado local', auth:'Renovar acceso a Google', ready:'Google Drive conectado', syncing:'Sincronizando…', pending:'Cambios pendientes de sincronizar', synced:'Sincronizado con Google Drive', conflict:'Revisa las dos versiones para continuar', error:'No se pudo sincronizar. Reintenta'};
+    if (typeof state !== 'undefined') {
+      state.driveLinked = isLinked;
+      state.userEmail = savedEmail;
+      state.lastSyncTime = lastSync;
+    }
     const autoResolve = localStorage.getItem("gdrive_auto_resolve_conflict") !== "false";
 
     if (emailEl) {
       emailEl.textContent = isLinked ? (savedEmail || "Cuenta de Google Conectada") : "Sin cuenta vinculada (Solo guardado local)";
     }
     if (stateEl) {
-      if (isLinked) {
-        stateEl.style.color = "#4ade80";
-        stateEl.innerHTML = `<img src="assets/ui/check.svg" style="width:14px;height:14px;" alt="" /> Sincronizado con Google Drive`;
-      } else {
-        stateEl.style.color = "#fbbf24";
-        stateEl.innerHTML = `<img src="assets/ui/lock.svg" style="width:14px;height:14px;" alt="" /> Desconectado de Google Drive (Guardado Local Activo)`;
-      }
+      stateEl.style.color = syncStatus === 'synced' ? '#4ade80' : '#fbbf24';
+      stateEl.textContent = statusLabels[syncStatus] || statusLabels.ready;
+      stateEl.title = GoogleDriveSyncEngine.statusMessage || '';
     }
-    if (statusBadge) {
-      statusBadge.textContent = isLinked ? "Drive: Conectado" : "Modo Local";
-    }
-    if (btnConnect) {
-      btnConnect.style.display = isLinked ? "none" : "inline-flex";
-    }
+    if (statusBadge) statusBadge.textContent = statusLabels[syncStatus] || statusLabels.ready;
+    if (btnConnect) btnConnect.style.display = !isLinked || syncStatus === 'auth' ? 'inline-flex' : 'none';
     if (btnDisconnect) {
       btnDisconnect.style.display = isLinked ? "inline-flex" : "none";
     }
@@ -1536,6 +1652,7 @@
         const current = localStorage.getItem("gdrive_auto_resolve_conflict") !== "false";
         const next = !current;
         localStorage.setItem("gdrive_auto_resolve_conflict", String(next));
+        if (typeof triggerDriveSyncStamp === 'function') triggerDriveSyncStamp();
         const pill = document.getElementById("conflictSwitchPill");
         if (pill) pill.style.background = next ? "#8b5cf6" : "#475569";
         if (typeof showSynthToast === "function") {
@@ -1575,7 +1692,7 @@
     const btnSyncNow = document.getElementById("btnSyncDriveNow");
     if (btnSyncNow) {
       btnSyncNow.addEventListener("click", () => {
-        GoogleDriveSyncEngine.syncWithDrive();
+        GoogleDriveSyncEngine.syncWithDrive(true).catch(() => {});
       });
     }
 
@@ -1585,6 +1702,10 @@
         triggerMockConflictTest(true);
       });
     }
+
+    setInterval(() => {
+      if (document.visibilityState === 'visible') triggerAutomaticDriveStartup();
+    }, 60000);
 
     // Inicializar reloj del servidor cada 5 segundos
     setInterval(() => {
@@ -1599,15 +1720,6 @@
   // --- 10. ARRANQUE AUTOMÁTICO ---
   function initEngine() {
     AccountManager.init();
-    // Limpieza automática preventiva de los 3 planes de prueba iniciales
-    ["main-goals", "teyvat_active_plans_v4"].forEach((k) => {
-      try {
-        const raw = localStorage.getItem(k);
-        if (raw && (raw.includes("plan_aino_1") || raw.includes('"key":"Aino"'))) {
-          localStorage.setItem(k, "[]");
-        }
-      } catch (e) {}
-    });
     if (typeof document === "undefined") return;
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", () => {
