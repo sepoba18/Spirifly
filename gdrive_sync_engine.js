@@ -1390,6 +1390,22 @@
     document.querySelectorAll('.section-drive-sync').forEach(button => {
       button.disabled = syncStatus === 'syncing';
       button.dataset.status = syncStatus;
+      const textEl = button.querySelector('.section-drive-text');
+      if (textEl) {
+        if (syncStatus === 'syncing') {
+          textEl.textContent = 'Sincronizando...';
+        } else if (syncStatus === 'synced') {
+          textEl.textContent = 'Sincronizado';
+        } else if (syncStatus === 'pending') {
+          textEl.textContent = 'Sincronizar';
+        } else if (syncStatus === 'conflict') {
+          textEl.textContent = 'Resolver conflicto';
+        } else if (syncStatus === 'error') {
+          textEl.textContent = 'Reintentar sync';
+        } else {
+          textEl.textContent = 'Sincronizar';
+        }
+      }
       button.title = `${statusLabels[syncStatus] || statusLabels.ready}. Sincronizar todos tus datos con Google Drive`;
     });
     if (btnConnect) btnConnect.style.display = !isLinked || syncStatus === 'auth' ? 'inline-flex' : 'none';
