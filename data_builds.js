@@ -13862,12 +13862,19 @@ const CHARACTER_BUILDS_DB = [
     ],
     "bestArtifacts": [
       {
-        "set": "Códice de Obsidiana (4 piezas)",
-        "note": "+40% Prob. Crítica en estado Nightsoul."
+        "set": "Flor del Paraíso Perdido (4 piezas)",
+        "type": "BiS Indiscutible Oficial",
+        "bonus": "Aumenta el Daño de Florecimiento, Sobreflorecimiento y Crepitar hasta un 140%."
       },
       {
-        "set": "Flor del Paraíso Perdido (4 piezas)",
-        "note": "+80% Daño a Florecimiento/Hiperflorecimiento."
+        "set": "Sueños Áureos (4 piezas)",
+        "type": "BiS Daño Puro",
+        "bonus": "Hasta +230 de Maestría Elemental y +14% ATQ continuo."
+      },
+      {
+        "set": "Recuerdos del Bosque (4 piezas)",
+        "type": "Opción Soporte / Shred",
+        "bonus": "+15% Daño Dendro y -30% RES Dendro en enemigos."
       }
     ],
     "statPriority": {
@@ -14274,12 +14281,19 @@ const CHARACTER_BUILDS_DB = [
     ],
     "bestArtifacts": [
       {
-        "set": "Códice de Obsidiana (4 piezas)",
-        "note": "+40% Prob. Crítica."
+        "set": "Cáscara de Sueños Opulentos (4 piezas)",
+        "type": "BiS Indiscutible Oficial",
+        "bonus": "Hasta +54% DEF y +24% Bono Daño Geo acumulable."
       },
       {
-        "set": "Cáscara de Sueños Opulentos (4 piezas)",
-        "note": "+DEF% y Bono Geo."
+        "set": "Murmullo del Bosque en la Noche Ecoica (4 piezas)",
+        "type": "BiS Cristalización",
+        "bonus": "Aumenta masivamente el daño tras recoger fragmentos de Cristalización."
+      },
+      {
+        "set": "Compañía Dorada (4 piezas)",
+        "type": "Alternativa Off-field",
+        "bonus": "+70% Daño a la Habilidad Elemental fuera de campo."
       }
     ],
     "statPriority": {
