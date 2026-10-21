@@ -10645,7 +10645,7 @@ const CHARACTER_BUILDS_DB = [
         "bonus": "Aumenta masivamente el daño de Conducto Estelar y Crítico."
       },
       {
-        "set": "Final del Gladeador (4 piezas)",
+        "set": "Final del Gladiador (4 piezas)",
         "type": "Alternativa 4p",
         "bonus": "Hasta 36% Daño Infligido extra."
       }

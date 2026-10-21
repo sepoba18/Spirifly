@@ -2627,48 +2627,61 @@ function getWeaponDisplayData(rawName, fallbackRarity = 5, charWeaponType = "Swo
 const ARTIFACT_SETS_ICONS = {
   // Sets 5★ Clásicos y Universales
   "gladiador": "https://enka.network/ui/UI_RelicIcon_15001_4.png", // Final del Gladiador
-  "orquesta": "https://enka.network/ui/UI_RelicIcon_15003_4.png", // Orquesta del Errante
+  "gladiator": "https://enka.network/ui/UI_RelicIcon_15001_4.png",
+  "gladeador": "https://enka.network/ui/UI_RelicIcon_15001_4.png",
+  "orquesta del errante": "https://enka.network/ui/UI_RelicIcon_15003_4.png", // Orquesta del Errante
+  "orquesta": "https://enka.network/ui/UI_RelicIcon_15003_4.png",
   "wanderer": "https://enka.network/ui/UI_RelicIcon_15003_4.png",
-  "nobleza": "https://enka.network/ui/UI_RelicIcon_15007_4.png", // Ritual Antiguo de la Nobleza
+  "ritual antiguo de la nobleza": "https://enka.network/ui/UI_RelicIcon_15007_4.png", // Ritual Antiguo de la Nobleza
+  "nobleza obligada": "https://enka.network/ui/UI_RelicIcon_15007_4.png",
+  "nobleza": "https://enka.network/ui/UI_RelicIcon_15007_4.png",
   "noblesse": "https://enka.network/ui/UI_RelicIcon_15007_4.png",
-  "caballeria": "https://enka.network/ui/UI_RelicIcon_15008_4.png", // Caballería Sanguinaria
+  "caballeria sanguinaria": "https://enka.network/ui/UI_RelicIcon_15008_4.png", // Caballería Sanguinaria
+  "caballeria": "https://enka.network/ui/UI_RelicIcon_15008_4.png",
   "bloodstained": "https://enka.network/ui/UI_RelicIcon_15008_4.png",
 
   // Sets Mondstadt & Liyue
-  "sombra verde": "https://enka.network/ui/UI_RelicIcon_15002_4.png", // Sombra Verde Esmeralda
+  "sombra verde esmeralda": "https://enka.network/ui/UI_RelicIcon_15002_4.png", // Sombra Verde Esmeralda
+  "sombra verde": "https://enka.network/ui/UI_RelicIcon_15002_4.png",
   "viridescent": "https://enka.network/ui/UI_RelicIcon_15002_4.png",
   "furia del trueno": "https://enka.network/ui/UI_RelicIcon_15005_4.png", // Furia del Trueno
   "thundering fury": "https://enka.network/ui/UI_RelicIcon_15005_4.png",
   "domador de truenos": "https://enka.network/ui/UI_RelicIcon_14002_4.png", // Domador de Truenos
   "thundersoother": "https://enka.network/ui/UI_RelicIcon_14002_4.png",
-  "bruja carmesi": "https://enka.network/ui/UI_RelicIcon_15006_4.png", // Bruja Carmesí en Llamas
+  "bruja carmesi en llamas": "https://enka.network/ui/UI_RelicIcon_15006_4.png", // Bruja Carmesí en Llamas
+  "bruja carmesi": "https://enka.network/ui/UI_RelicIcon_15006_4.png",
   "crimson witch": "https://enka.network/ui/UI_RelicIcon_15006_4.png",
-  "corredor de lava": "https://enka.network/ui/UI_RelicIcon_14003_4.png", // Virtuoso Corredor de Lava
+  "virtuoso corredor de lava": "https://enka.network/ui/UI_RelicIcon_14003_4.png", // Virtuoso Corredor de Lava
+  "corredor de lava": "https://enka.network/ui/UI_RelicIcon_14003_4.png",
   "lavawalker": "https://enka.network/ui/UI_RelicIcon_14003_4.png",
   "petra arcaica": "https://enka.network/ui/UI_RelicIcon_15014_4.png", // Petra Arcaica
   "archaic petra": "https://enka.network/ui/UI_RelicIcon_15014_4.png",
-  "meteorito": "https://enka.network/ui/UI_RelicIcon_15015_4.png", // Retroceso del Meteorito
-  "retroceso del meteorito": "https://enka.network/ui/UI_RelicIcon_15015_4.png",
+  "retroceso del meteorito": "https://enka.network/ui/UI_RelicIcon_15015_4.png", // Retroceso del Meteorito
+  "meteorito": "https://enka.network/ui/UI_RelicIcon_15015_4.png",
   "bolide": "https://enka.network/ui/UI_RelicIcon_15015_4.png",
   "doncella amada": "https://enka.network/ui/UI_RelicIcon_14004_4.png", // Doncella Amada
   "maiden": "https://enka.network/ui/UI_RelicIcon_14004_4.png",
 
   // Espinadragón & Inazuma
   "nomada del invierno": "https://enka.network/ui/UI_RelicIcon_14001_4.png", // Nómada del Invierno
+  "blizzard strayer": "https://enka.network/ui/UI_RelicIcon_14001_4.png",
   "blizzard": "https://enka.network/ui/UI_RelicIcon_14001_4.png",
   "corazon de las profundidades": "https://enka.network/ui/UI_RelicIcon_15016_4.png", // Corazón de las Profundidades
-  "profundidades": "https://enka.network/ui/UI_RelicIcon_15016_4.png",
   "heart of depth": "https://enka.network/ui/UI_RelicIcon_15016_4.png",
-  "tenacidad": "https://enka.network/ui/UI_RelicIcon_15017_4.png", // Tenacidad de la Geoarmada
+  "tenacidad de la geoarmada": "https://enka.network/ui/UI_RelicIcon_15017_4.png", // Tenacidad de la Geoarmada
+  "tenacidad": "https://enka.network/ui/UI_RelicIcon_15017_4.png",
   "millelith": "https://enka.network/ui/UI_RelicIcon_15017_4.png",
   "llamas albinas": "https://enka.network/ui/UI_RelicIcon_15018_4.png", // Llamas Albinas
   "llama albina": "https://enka.network/ui/UI_RelicIcon_15018_4.png",
   "pale flame": "https://enka.network/ui/UI_RelicIcon_15018_4.png",
-  "reminiscencia": "https://enka.network/ui/UI_RelicIcon_15019_4.png", // Reminiscencia de la Purificación
+  "reminiscencia de la purificacion": "https://enka.network/ui/UI_RelicIcon_15019_4.png", // Reminiscencia de la Purificación
+  "reminiscencia": "https://enka.network/ui/UI_RelicIcon_15019_4.png",
   "shimenawa": "https://enka.network/ui/UI_RelicIcon_15019_4.png",
   "emblema del destino": "https://enka.network/ui/UI_RelicIcon_15020_4.png", // Emblema del Destino
+  "emblema": "https://enka.network/ui/UI_RelicIcon_15020_4.png",
   "emblem": "https://enka.network/ui/UI_RelicIcon_15020_4.png",
-  "cascara de suenos": "https://enka.network/ui/UI_RelicIcon_15021_4.png", // Cáscara de Sueños Opulentos
+  "cascara de suenos opulentos": "https://enka.network/ui/UI_RelicIcon_15021_4.png", // Cáscara de Sueños Opulentos
+  "cascara de suenos": "https://enka.network/ui/UI_RelicIcon_15021_4.png",
   "opulent": "https://enka.network/ui/UI_RelicIcon_15021_4.png",
   "husk": "https://enka.network/ui/UI_RelicIcon_15021_4.png",
   "perla oceanica": "https://enka.network/ui/UI_RelicIcon_15022_4.png", // Perla Oceánica
@@ -2677,6 +2690,7 @@ const ARTIFACT_SETS_ICONS = {
 
   // Sima & Sumeru
   "deceso del cinabrio": "https://enka.network/ui/UI_RelicIcon_15023_4.png", // Deceso del Cinabrio
+  "cinabrio": "https://enka.network/ui/UI_RelicIcon_15023_4.png",
   "vermillion": "https://enka.network/ui/UI_RelicIcon_15023_4.png",
   "eco del sacrificio": "https://enka.network/ui/UI_RelicIcon_15024_4.png", // Eco del Sacrificio
   "echoes": "https://enka.network/ui/UI_RelicIcon_15024_4.png",
@@ -2686,63 +2700,87 @@ const ARTIFACT_SETS_ICONS = {
   "gilded": "https://enka.network/ui/UI_RelicIcon_15026_4.png",
   "pabellon del desierto": "https://enka.network/ui/UI_RelicIcon_15027_4.png", // Épica del Pabellón del Desierto
   "desert pavilion": "https://enka.network/ui/UI_RelicIcon_15027_4.png",
-  "flor olvidada del paraiso": "https://enka.network/ui/UI_RelicIcon_15028_4.png", // Flor Olvidada del Paraíso
+  "flor del paraiso perdido": "https://enka.network/ui/UI_RelicIcon_15028_4.png", // Flor del Paraíso Perdido
+  "flor olvidada del paraiso": "https://enka.network/ui/UI_RelicIcon_15028_4.png",
+  "paraiso perdido": "https://enka.network/ui/UI_RelicIcon_15028_4.png",
   "paradise lost": "https://enka.network/ui/UI_RelicIcon_15028_4.png",
   "sueno de la ninfa": "https://enka.network/ui/UI_RelicIcon_15029_4.png", // Sueño de la Ninfa
   "nymph": "https://enka.network/ui/UI_RelicIcon_15029_4.png",
-  "vurukasha": "https://enka.network/ui/UI_RelicIcon_15030_4.png", // Fulgor de Vurukasha
+  "fulgor de vurukasha": "https://enka.network/ui/UI_RelicIcon_15030_4.png", // Fulgor de Vurukasha
+  "vurukasha": "https://enka.network/ui/UI_RelicIcon_15030_4.png",
   "vourukasha": "https://enka.network/ui/UI_RelicIcon_15030_4.png",
 
   // Fontaine
-  "cazador fantasmal": "https://enka.network/ui/UI_RelicIcon_15031_4.png", // Cazador Fantasmal
-  "cazador sombrio": "https://enka.network/ui/UI_RelicIcon_15031_4.png",
+  "cazador sombrio": "https://enka.network/ui/UI_RelicIcon_15031_4.png", // Cazador Sombrío / Marechaussee
+  "cazador fantasmal": "https://enka.network/ui/UI_RelicIcon_15031_4.png",
   "marechaussee": "https://enka.network/ui/UI_RelicIcon_15031_4.png",
   "compania dorada": "https://enka.network/ui/UI_RelicIcon_15032_4.png", // Compañía Dorada
   "golden troupe": "https://enka.network/ui/UI_RelicIcon_15032_4.png",
-  "dias preteritos": "https://enka.network/ui/UI_RelicIcon_15033_4.png", // Canción de Días Pretéritos
+  "cancion de dias preteritos": "https://enka.network/ui/UI_RelicIcon_15033_4.png", // Canción de Días Pretéritos
+  "sonata de dias preteritos": "https://enka.network/ui/UI_RelicIcon_15033_4.png",
+  "dias preteritos": "https://enka.network/ui/UI_RelicIcon_15033_4.png",
   "son de antano": "https://enka.network/ui/UI_RelicIcon_15033_4.png",
   "song of days": "https://enka.network/ui/UI_RelicIcon_15033_4.png",
-  "murmullo del bosque": "https://enka.network/ui/UI_RelicIcon_15034_4.png", // Murmullo del Bosque Reverberante
+  "murmullo del bosque en la noche ecoica": "https://enka.network/ui/UI_RelicIcon_15034_4.png",
+  "murmullo del bosque reverberante": "https://enka.network/ui/UI_RelicIcon_15034_4.png",
+  "murmullo del bosque": "https://enka.network/ui/UI_RelicIcon_15034_4.png",
+  "noche ecoica": "https://enka.network/ui/UI_RelicIcon_15034_4.png",
   "nighttime whispers": "https://enka.network/ui/UI_RelicIcon_15034_4.png",
-  "armonia fantas": "https://enka.network/ui/UI_RelicIcon_15035_4.png", // Fragmento de la Armonía Fantasiosa
+  "fragmento de la armonia fantasmal": "https://enka.network/ui/UI_RelicIcon_15035_4.png", // Fragmento de la Armonía Fantasiosa
+  "armonia fantasmal": "https://enka.network/ui/UI_RelicIcon_15035_4.png",
+  "armonia fantas": "https://enka.network/ui/UI_RelicIcon_15035_4.png",
   "harmonic whimsy": "https://enka.network/ui/UI_RelicIcon_15035_4.png",
   "whimsy": "https://enka.network/ui/UI_RelicIcon_15035_4.png",
-  "suenos inacabados": "https://enka.network/ui/UI_RelicIcon_15036_4.png", // Ensoñación Inacabada / Sueños Inacabados
-  "ensonacion inacabada": "https://enka.network/ui/UI_RelicIcon_15036_4.png",
+  "ensonacion inacabada": "https://enka.network/ui/UI_RelicIcon_15036_4.png", // Ensoñación Inacabada
+  "suenos inacabados": "https://enka.network/ui/UI_RelicIcon_15036_4.png",
   "unfinished reverie": "https://enka.network/ui/UI_RelicIcon_15036_4.png",
   "reverie": "https://enka.network/ui/UI_RelicIcon_15036_4.png",
 
   // Natlan
-  "pergamino del heroe": "https://enka.network/ui/UI_RelicIcon_15037_4.png", // Pergamino del Héroe de la Ciudad de las Cenizas
+  "pergamino del heroe de la ciudad de las cenizas": "https://enka.network/ui/UI_RelicIcon_15037_4.png",
+  "pergamino del heroe": "https://enka.network/ui/UI_RelicIcon_15037_4.png",
   "cinder city": "https://enka.network/ui/UI_RelicIcon_15037_4.png",
   "hero of cinder": "https://enka.network/ui/UI_RelicIcon_15037_4.png",
   "codice de obsidiana": "https://enka.network/ui/UI_RelicIcon_15038_4.png", // Códice de Obsidiana
   "obsidian codex": "https://enka.network/ui/UI_RelicIcon_15038_4.png",
 
   // Sets Nuevos Oficiales (15039 - 15048: Nod-Krai, Snezhnaya & Hexerei)
-  "long night": "https://enka.network/ui/UI_RelicIcon_15039_4.png", // 15039 Juramento de la Noche / Long Night's Oath
+  "long night's oath": "https://enka.network/ui/UI_RelicIcon_15039_4.png",
+  "long night": "https://enka.network/ui/UI_RelicIcon_15039_4.png",
   "juramento de la noche": "https://enka.network/ui/UI_RelicIcon_15039_4.png",
-  "deep galleries": "https://enka.network/ui/UI_RelicIcon_15040_4.png", // 15040 Réquiem del Corredor / Finale of the Deep Galleries
+  "finale of the deep galleries": "https://enka.network/ui/UI_RelicIcon_15040_4.png",
   "finale of the deep": "https://enka.network/ui/UI_RelicIcon_15040_4.png",
+  "deep galleries": "https://enka.network/ui/UI_RelicIcon_15040_4.png",
   "requiem del corredor": "https://enka.network/ui/UI_RelicIcon_15040_4.png",
-  "sky's unveiling": "https://enka.network/ui/UI_RelicIcon_15041_4.png", // 15041 Noche de la Revelación del Cielo / Night of the Sky's Unveiling
+  "night of the sky's unveiling": "https://enka.network/ui/UI_RelicIcon_15041_4.png",
+  "sky's unveiling": "https://enka.network/ui/UI_RelicIcon_15041_4.png",
   "revelacion del cielo": "https://enka.network/ui/UI_RelicIcon_15041_4.png",
-  "silken moon": "https://enka.network/ui/UI_RelicIcon_15042_4.png", // 15042 Serenata de la Luna Tejida / Silken Moon's Serenade
-  "luna tejida": "https://enka.network/ui/UI_RelicIcon_15042_4.png",
+  "silken moon's serenade": "https://enka.network/ui/UI_RelicIcon_15042_4.png",
+  "serenata de la luna tejida": "https://enka.network/ui/UI_RelicIcon_15042_4.png",
   "serenata de la luna": "https://enka.network/ui/UI_RelicIcon_15042_4.png",
-  "aubade": "https://enka.network/ui/UI_RelicIcon_15043_4.png", // 15043 Alborada de la Estrella del Alba y la Luna / Aubade of Morningstar and Moon
+  "luna tejida": "https://enka.network/ui/UI_RelicIcon_15042_4.png",
+  "silken moon": "https://enka.network/ui/UI_RelicIcon_15042_4.png",
+  "aubade of morningstar and moon": "https://enka.network/ui/UI_RelicIcon_15043_4.png",
+  "aubade": "https://enka.network/ui/UI_RelicIcon_15043_4.png",
   "morningstar": "https://enka.network/ui/UI_RelicIcon_15043_4.png",
   "alborada de la estrella": "https://enka.network/ui/UI_RelicIcon_15043_4.png",
-  "rising winds": "https://enka.network/ui/UI_RelicIcon_15044_4.png", // 15044 Día de los Vientos Alzantes / A Day Carved From Rising Winds
+  "a day carved from rising winds": "https://enka.network/ui/UI_RelicIcon_15044_4.png",
+  "rising winds": "https://enka.network/ui/UI_RelicIcon_15044_4.png",
   "vientos alzantes": "https://enka.network/ui/UI_RelicIcon_15044_4.png",
-  "celestial gift": "https://enka.network/ui/UI_RelicIcon_15045_4.png", // 15045 Dádiva Celestial / Celestial Gift
+  "dia de los vientos alzantes": "https://enka.network/ui/UI_RelicIcon_15044_4.png",
+  "celestial gift": "https://enka.network/ui/UI_RelicIcon_15045_4.png",
   "dadiva celestial": "https://enka.network/ui/UI_RelicIcon_15045_4.png",
-  "disenchantment": "https://enka.network/ui/UI_RelicIcon_15046_4.png", // 15046 Desilusión Congelada en las Sombras / Disenchantment in Deep Shadows
-  "deep shadow": "https://enka.network/ui/UI_RelicIcon_15046_4.png",
+  "desencanto en las sombras profundas": "https://enka.network/ui/UI_RelicIcon_15046_4.png",
+  "desencanto en las sombras": "https://enka.network/ui/UI_RelicIcon_15046_4.png",
+  "desencanto": "https://enka.network/ui/UI_RelicIcon_15046_4.png",
+  "desilusion congelada en las sombras": "https://enka.network/ui/UI_RelicIcon_15046_4.png",
   "desilusion congelada": "https://enka.network/ui/UI_RelicIcon_15046_4.png",
-  "scarlet proof": "https://enka.network/ui/UI_RelicIcon_15047_4.png", // 15047 Testimonio Escarlata / Scarlet Proof
+  "disenchantment in deep shadows": "https://enka.network/ui/UI_RelicIcon_15046_4.png",
+  "disenchantment": "https://enka.network/ui/UI_RelicIcon_15046_4.png",
+  "deep shadow": "https://enka.network/ui/UI_RelicIcon_15046_4.png",
+  "scarlet proof": "https://enka.network/ui/UI_RelicIcon_15047_4.png",
   "testimonio escarlata": "https://enka.network/ui/UI_RelicIcon_15047_4.png",
-  "heart of the furnace": "https://enka.network/ui/UI_RelicIcon_15048_4.png", // 15048 Corazón Forjado / Heart of the Furnace
+  "heart of the furnace": "https://enka.network/ui/UI_RelicIcon_15048_4.png",
   "corazon forjado": "https://enka.network/ui/UI_RelicIcon_15048_4.png",
 
   // Sets 4★ Esenciales
@@ -2753,28 +2791,58 @@ const ARTIFACT_SETS_ICONS = {
 
 function getArtifactSetIcon(setName) {
   if (!setName) return "https://enka.network/ui/UI_RelicIcon_15001_4.png";
-  const clean = setName.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const clean = setName.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
 
-  // Búsqueda directa por palabras clave de set
+  // Si es un set combinado (2p + 2p), aislar el primer set principal para elegir su flor
+  const primaryPart = clean.includes("+") ? clean.split("+")[0].trim() : clean;
+
+  // 1. Buscar coincidencia en la parte primaria
+  let bestMatch = null;
+  let earliestIdx = Infinity;
+  let longestKeyLen = 0;
+
   for (const [k, v] of Object.entries(ARTIFACT_SETS_ICONS)) {
-    if (clean.includes(k)) return v;
+    const idx = primaryPart.indexOf(k);
+    if (idx !== -1) {
+      if (idx < earliestIdx || (idx === earliestIdx && k.length > longestKeyLen)) {
+        earliestIdx = idx;
+        longestKeyLen = k.length;
+        bestMatch = v;
+      }
+    }
   }
+  if (bestMatch) return bestMatch;
 
-  // Fallbacks inteligentes para combinaciones híbridas 2p + 2p
-  if (clean.includes("dendro")) return "https://enka.network/ui/UI_RelicIcon_15025_4.png"; // Recuerdos del Bosque
-  if (clean.includes("em") || clean.includes("maestria")) return "https://enka.network/ui/UI_RelicIcon_15026_4.png"; // Sueños Áureos
-  if (clean.includes("recarga") || clean.includes("er")) return "https://enka.network/ui/UI_RelicIcon_15020_4.png"; // Emblema del Destino
-  if (clean.includes("vida") || clean.includes("hp")) return "https://enka.network/ui/UI_RelicIcon_15017_4.png"; // Tenacidad de la Geoarmada
-  if (clean.includes("def")) return "https://enka.network/ui/UI_RelicIcon_15021_4.png"; // Cáscara de Sueños Opulentos
-  if (clean.includes("atq") || clean.includes("atk")) return "https://enka.network/ui/UI_RelicIcon_15001_4.png"; // Final del Gladiador
-  if (clean.includes("pyro")) return "https://enka.network/ui/UI_RelicIcon_15006_4.png"; // Bruja Carmesí
-  if (clean.includes("hydro")) return "https://enka.network/ui/UI_RelicIcon_15016_4.png"; // Corazón de las Profundidades
-  if (clean.includes("cryo")) return "https://enka.network/ui/UI_RelicIcon_14001_4.png"; // Nómada del Invierno
-  if (clean.includes("electro")) return "https://enka.network/ui/UI_RelicIcon_15005_4.png"; // Furia del Trueno
-  if (clean.includes("anemo")) return "https://enka.network/ui/UI_RelicIcon_15002_4.png"; // Sombra Verde Esmeralda
-  if (clean.includes("geo")) return "https://enka.network/ui/UI_RelicIcon_15014_4.png"; // Petra Arcaica
-  if (clean.includes("fisico") || clean.includes("physical")) return "https://enka.network/ui/UI_RelicIcon_15018_4.png"; // Llamas Albinas
-  if (clean.includes("curacion") || clean.includes("healing")) return "https://enka.network/ui/UI_RelicIcon_15022_4.png"; // Perla Oceánica
+  // 2. Si no hubo en primaryPart, buscar en toda la cadena
+  earliestIdx = Infinity;
+  longestKeyLen = 0;
+  for (const [k, v] of Object.entries(ARTIFACT_SETS_ICONS)) {
+    const idx = clean.indexOf(k);
+    if (idx !== -1) {
+      if (idx < earliestIdx || (idx === earliestIdx && k.length > longestKeyLen)) {
+        earliestIdx = idx;
+        longestKeyLen = k.length;
+        bestMatch = v;
+      }
+    }
+  }
+  if (bestMatch) return bestMatch;
+
+  // 3. Fallbacks seguros por palabras completas (regex con límites de palabra para evitar colisiones)
+  if (/\b(dendro)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_15025_4.png"; // Recuerdos del Bosque
+  if (/\b(em|maestria)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_15026_4.png"; // Sueños Áureos
+  if (/\b(recarga|er)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_15020_4.png"; // Emblema del Destino
+  if (/\b(vida|hp)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_15017_4.png"; // Tenacidad de la Geoarmada
+  if (/\b(def|defensa)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_15021_4.png"; // Cáscara de Sueños
+  if (/\b(atq|atk|ataque)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_15001_4.png"; // Gladiador
+  if (/\b(pyro)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_15006_4.png"; // Bruja Carmesí
+  if (/\b(hydro)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_15016_4.png"; // Corazón de las Profundidades
+  if (/\b(cryo)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_14001_4.png"; // Nómada del Invierno
+  if (/\b(electro)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_15005_4.png"; // Furia del Trueno
+  if (/\b(anemo)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_15002_4.png"; // Sombra Verde
+  if (/\b(geo)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_15014_4.png"; // Petra Arcaica
+  if (/\b(fisico|physical)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_15018_4.png"; // Llamas Albinas
+  if (/\b(curacion|healing)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_15022_4.png"; // Perla Oceánica
 
   return "https://enka.network/ui/UI_RelicIcon_15001_4.png";
 }
@@ -5527,7 +5595,7 @@ function renderSeelieArtifacts() {
       name: "Palacio de Guyun (Liyue)",
       resinCost: 20,
       sets: "Petra Arcaica / Retroceso del Meteorito",
-      icon: "https://enka.network/ui/UI_RelicIcon_15009_4.png",
+      icon: "https://enka.network/ui/UI_RelicIcon_15014_4.png",
       suitedChars: ["Zhongli", "Albedo", "Ninguang", "Navia"]
     },
     {
