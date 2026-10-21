@@ -1285,6 +1285,173 @@ body {
 .h-pill .p-num.high { color: var(--pity-red); font-weight: 900; }
 
 /* =========================================================
+   BANNER DE AVISO: BUILDS EN PROCESO DE PULIDO
+   ========================================================= */
+.theory-polishing-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(217, 119, 6, 0.05) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.38);
+  border-left: 4px solid #f59e0b;
+  border-radius: 12px;
+  padding: 0.95rem 1.15rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+}
+
+.theory-polishing-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 10% 20%, rgba(245, 158, 11, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.theory-polishing-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(245, 158, 11, 0.18);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  margin-top: 2px;
+}
+
+.theory-polishing-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.theory-polishing-title {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fef3c7;
+}
+
+.theory-polishing-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 999px;
+  background: rgba(245, 158, 11, 0.25);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.45);
+}
+
+.theory-polishing-desc {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.48;
+  color: #cbd5e1;
+}
+
+/* Floating Toast Notification al entrar a la sección de Builds */
+.theory-floating-toast {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: #171d2c;
+  color: #ffffff;
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  border-left: 4px solid #f59e0b;
+  border-radius: 10px;
+  padding: 0.8rem 1.1rem;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transform: translateY(-16px) scale(0.96);
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  max-width: 440px;
+}
+
+.theory-floating-toast.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.theory-floating-toast .theory-toast-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fbbf24;
+  flex-shrink: 0;
+}
+
+.theory-floating-toast .theory-toast-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.theory-floating-toast .theory-toast-body strong {
+  color: #fef3c7;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.theory-floating-toast .theory-toast-body span {
+  color: #94a3b8;
+  font-size: 0.81rem;
+  line-height: 1.35;
+}
+
+.theory-toast-close {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 0 0 0.5rem;
+  margin-left: auto;
+  transition: color 0.15s ease;
+}
+
+.theory-toast-close:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 560px) {
+  .theory-polishing-banner {
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+  .theory-floating-toast {
+    top: 16px;
+    right: 16px;
+    left: 16px;
+    max-width: none;
+  }
+}
+
+/* =========================================================
    THEORYCRAFTING PREMIUM UI (Separación por Escalado)
    ========================================================= */
 .tc-card {

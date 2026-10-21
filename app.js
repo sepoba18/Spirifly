@@ -590,6 +590,7 @@ function initApp() {
         renderWishesDashboard();
       } else if (state.activeTab === "theory") {
         renderTheorycraft();
+        showTheorycraftPolishingNotice();
       } else if (state.activeTab === "planner") {
         if (typeof renderCharacterWeaponPlanner === "function") {
           renderCharacterWeaponPlanner();
@@ -791,6 +792,7 @@ function initApp() {
     renderWishesDashboard();
   } else if (state.activeTab === "theory") {
     renderTheorycraft();
+    showTheorycraftPolishingNotice();
   }
 
   window.addEventListener("hashchange", () => {
@@ -2869,6 +2871,44 @@ function getCharacterTeammateAvatar(rawName) {
     if (k) return CHARACTER_CATALOG[k].icon;
   }
   return null;
+}
+
+function showTheorycraftPolishingNotice() {
+  let toast = document.getElementById("tcPolishingToast");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.id = "tcPolishingToast";
+    toast.className = "theory-floating-toast";
+    toast.setAttribute("role", "status");
+    document.body.appendChild(toast);
+  }
+  toast.innerHTML = `
+    <div class="theory-toast-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="8" x2="12" y2="12"></line>
+        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+      </svg>
+    </div>
+    <div class="theory-toast-body">
+      <strong>Sección en Proceso de Pulido</strong>
+      <span>Las builds, estadísticas y equipos recomendados están en optimización y testeo continuo.</span>
+    </div>
+    <button type="button" class="theory-toast-close" onclick="this.parentElement.classList.remove(\'visible\')" aria-label="Cerrar aviso">&times;</button>
+  `;
+  const banner = document.getElementById("theoryPolishingBanner");
+  if (banner) {
+    banner.style.transition = "box-shadow 0.3s ease";
+    banner.style.boxShadow = "0 0 20px rgba(245, 158, 11, 0.4)";
+    setTimeout(() => { if (banner) banner.style.boxShadow = ""; }, 1800);
+  }
+  requestAnimationFrame(() => {
+    toast.classList.add("visible");
+  });
+  clearTimeout(showTheorycraftPolishingNotice._timer);
+  showTheorycraftPolishingNotice._timer = setTimeout(() => {
+    if (toast) toast.classList.remove("visible");
+  }, 4800);
 }
 
 function renderTheorycraft() {
