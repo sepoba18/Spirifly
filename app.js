@@ -380,16 +380,14 @@ function updateSyncDisplay() {
 let _driveAutoSyncTimeout = null;
 
 function triggerDriveSyncStamp() {
-  state.lastSyncTime = formatNow();
-  localStorage.setItem("teyvat_last_sync", state.lastSyncTime);
-  updateSyncDisplay();
+  localStorage.setItem("teyvat_data_last_modified", new Date().toISOString());
 
   // Subida automática en segundo plano hacia Google Drive si la sesión está conectada
   const token = localStorage.getItem("gdrive_access_token");
   if (token && typeof GoogleDriveSyncEngine !== "undefined" && typeof GoogleDriveSyncEngine.uploadLocalPayloadToDrive === "function") {
     if (_driveAutoSyncTimeout) clearTimeout(_driveAutoSyncTimeout);
     _driveAutoSyncTimeout = setTimeout(() => {
-      GoogleDriveSyncEngine.uploadLocalPayloadToDrive().catch((err) => {
+      GoogleDriveSyncEngine.syncWithDrive().catch((err) => {
         console.warn("Fallo en sincronización automática con Google Drive:", err);
       });
     }, 1500);
@@ -3633,6 +3631,7 @@ function initWishCounterEvents() {
       tab.classList.add("active");
       state.activeWishBanner = tab.dataset.banner;
       localStorage.setItem("teyvat_active_wish_banner", state.activeWishBanner);
+      triggerDriveSyncStamp();
       state.wishTablePage = 1;
       renderWishesDashboard();
     });

@@ -494,9 +494,7 @@
           localStorage.setItem("teyvat_real_owned_v1", JSON.stringify(state.realOwned));
         }
       }
-      if (typeof saveActiveAccountResin === "function" && state.currentResin !== undefined) {
-        saveActiveAccountResin(state.currentResin, Date.now());
-      }
+      // Resin is persisted when edited; taking a backup must not reset its timer.
     }
   }
 
@@ -724,10 +722,12 @@
 
       // Si el dispositivo está vacío (sin items ni metas), usar timestamp epoch para que la nube siempre gane
       const savedEditTime = localStorage.getItem("teyvat_data_last_modified");
-      const effectiveLastUpdate = savedEditTime || (hasRealLocalData ? new Date().toISOString() : "1970-01-01T00:00:00.000Z");
+      const effectiveLastUpdate = savedEditTime || "1970-01-01T00:00:00.000Z";
 
       const payload = {
-        version: 2,
+        version: 3,
+        activeAccount: activeId,
+        preferences: Object.fromEntries(["teyvat_starred", "teyvat_active_wish_banner", "teyvat_inv_only_needed", "teyvat_lang"].map(key => [key, localStorage.getItem(key)])),
         lastUpdate: effectiveLastUpdate,
         accounts,
         accountNames,
@@ -816,7 +816,21 @@
         console.warn("Fallo al restaurar deseos desde Google Drive:", e);
       }
 
-      const active = AccountManager.getActiveAccountId();
+      const preferenceKeys = ["teyvat_starred", "teyvat_active_wish_banner", "teyvat_inv_only_needed", "teyvat_lang"];
+      preferenceKeys.forEach(key => {
+        const value = remotePayload.preferences && remotePayload.preferences[key];
+        if (typeof value === "string") localStorage.setItem(key, value);
+      });
+      if (remotePayload.lastUpdate) localStorage.setItem("teyvat_data_last_modified", remotePayload.lastUpdate);
+      if (typeof state !== "undefined") {
+        state.starredChars = JSON.parse(localStorage.getItem("teyvat_starred") || "[]");
+        state.activeWishBanner = localStorage.getItem("teyvat_active_wish_banner") || "character";
+        state.invOnlyNeeded = localStorage.getItem("teyvat_inv_only_needed") === "true";
+        state.lang = localStorage.getItem("teyvat_lang") || state.lang;
+      }
+      const accounts = AccountManager.getAccountsList();
+      const current = AccountManager.getActiveAccountId();
+      const active = accounts.includes(remotePayload.activeAccount) ? remotePayload.activeAccount : (accounts.includes(current) ? current : accounts[0]);
       AccountManager.switchAccount(active, true);
 
       // Re-renderizar Deseos, Perfiles y Theorycraft si están activos o presentes
@@ -980,6 +994,19 @@
       }
     }
 
+    static hasMeaningfulLocalData(payload) {
+      const defaults = typeof DEFAULT_SEELIE_OWNED !== "undefined" ? DEFAULT_SEELIE_OWNED : {};
+      return (payload.accounts || []).length > 1 ||
+        Object.values(payload.accountUids || {}).some(Boolean) ||
+        Object.values(payload.wishesData || {}).some(list => Array.isArray(list) && list.length > 0) ||
+        Object.entries(payload.data || {}).some(([key, value]) => {
+          if (key.endsWith("-goals")) return Array.isArray(value) && value.length > 0;
+          if (key.endsWith("-inventory")) return Object.entries(value || {}).some(([id, amount]) => Number(amount) !== Number(defaults[id] || 0));
+          if (key.endsWith("-settings")) return Object.entries(value || {}).some(([name, setting]) => setting !== DEFAULT_SETTINGS[name]);
+          return false;
+        }) || !!localStorage.getItem("teyvat_data_last_modified");
+    }
+
     static async syncWithDrive(isUserTriggered = false) {
       const token = localStorage.getItem('gdrive_access_token');
       if (!token) {
@@ -998,8 +1025,8 @@
           renderMultiAccountUI();
           return;
         }
-        const hasLocal = Object.values(local.data).some(v => v && Object.keys(v).length) ||
-          (local.wishAccounts || []).length || Object.keys(local.wishesData || {}).length;
+        // Default settings, empty inventories and the placeholder UID are not user edits.
+        const hasLocal = this.hasMeaningfulLocalData(local);
         if (!hasLocal || localHash === base) {
           await this._localSnapshot(local, 'Antes de descargar');
           this.applyRemotePayload(remote.payload);
