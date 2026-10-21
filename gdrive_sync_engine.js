@@ -1139,8 +1139,11 @@
         const localUnchanged = localHash === localBase || (localBase && await this._legacyFingerprint(local) === localBase);
         const remoteUnchanged = remote.fingerprint === base || (base && await this._legacyFingerprint(remote.payload) === base);
         const autoResolve = localStorage.getItem('gdrive_auto_resolve_conflict') !== 'false';
-        const remoteNewerOnFirstConnect = !base && autoResolve && !localStorage.getItem('spirifly_sync_pending') && Date.parse(remote.payload.lastUpdate) > Date.parse(local.lastUpdate);
-        if (!hasLocal || (autoResolve && localUnchanged) || remoteNewerOnFirstConnect) {
+        // Seelie downloads automatically only when Drive is newer and no local
+        // edits are waiting. Equal or older dates never select Drive by default.
+        const localPending = localStorage.getItem('spirifly_sync_pending') === 'true' || (!!localBase && !localUnchanged);
+        const remoteIsNewer = Date.parse(remote.payload.lastUpdate) > Date.parse(local.lastUpdate);
+        if ((!hasLocal && !localPending) || (autoResolve && !localPending && remoteIsNewer)) {
           await this._localSnapshot(local, 'Antes de descargar');
           if (initialHash !== await this._fingerprint(this.getLocalPayload())) { this._syncAgain = true; return; }
           await this.applyRemotePayload(remote.payload);
@@ -1380,6 +1383,15 @@
       stateEl.title = GoogleDriveSyncEngine.statusMessage || '';
     }
     if (statusBadge) statusBadge.textContent = statusLabels[syncStatus] || statusLabels.ready;
+    document.querySelectorAll('.section-drive-status').forEach(label => {
+      label.textContent = statusLabels[syncStatus] || statusLabels.ready;
+      label.title = GoogleDriveSyncEngine.statusMessage || `Última sincronización: ${lastSync}`;
+    });
+    document.querySelectorAll('.section-drive-sync').forEach(button => {
+      button.disabled = syncStatus === 'syncing';
+      button.dataset.status = syncStatus;
+      button.title = `${statusLabels[syncStatus] || statusLabels.ready}. Sincronizar todos tus datos con Google Drive`;
+    });
     if (btnConnect) btnConnect.style.display = !isLinked || syncStatus === 'auth' ? 'inline-flex' : 'none';
     if (btnDisconnect) {
       btnDisconnect.style.display = isLinked ? "inline-flex" : "none";
@@ -1397,6 +1409,11 @@
 
   // --- 9. EVENT LISTENERS Y VINCULACIÓN CON EL DOM ---
   function bindUIEvents() {
+    document.querySelectorAll('.section-drive-sync').forEach(button => {
+      button.addEventListener('click', () => {
+        GoogleDriveSyncEngine.syncWithDrive(true).catch(() => {});
+      });
+    });
     // Selector de cuenta activa
     const selAccount = document.getElementById("selActiveAccount");
     if (selAccount) {

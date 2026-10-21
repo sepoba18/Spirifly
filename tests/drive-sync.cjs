@@ -40,7 +40,8 @@ function device(drive) {
   c.triggerDriveSyncStamp = () => { storage.setItem('teyvat_data_last_modified', new Date().toISOString()); c.GoogleDriveSyncEngine.scheduleSync(); };
   return c;
 }
-function edit(c, value) { c.localStorage.setItem('main-inventory',JSON.stringify({mora:value})); c.state.realOwned={mora:value}; c.triggerDriveSyncStamp(); }
+let editTime = Date.now();
+function edit(c, value) { c.localStorage.setItem('main-inventory',JSON.stringify({mora:value})); c.state.realOwned={mora:value}; c.triggerDriveSyncStamp(); c.localStorage.setItem('teyvat_data_last_modified',new Date(++editTime).toISOString()); }
 let passed=0;
 async function test(name,fn) { await fn(); passed++; console.log('PASS '+name); }
 (async()=>{
@@ -52,7 +53,7 @@ async function test(name,fn) { await fn(); passed++; console.log('PASS '+name); 
  });
  await test('hydrated defaults keep separate remote/local baselines',async()=>{
    const d=new Drive(),pc=device(d); d.payload={version:2,accounts:['main'],accountNames:{main:'Principal'},data:{'main-inventory':{mora:10},'main-goals':[]},settings:{autoResolveConflict:true}};d.version=1;
-   await pc.GoogleDriveSyncEngine.syncWithDrive(); d.payload.data['main-inventory'].mora=20;d.version++;
+   await pc.GoogleDriveSyncEngine.syncWithDrive(); d.payload.data['main-inventory'].mora=20;d.payload.lastUpdate='2026-01-01T00:00:00.000Z';d.version++;
    await pc.GoogleDriveSyncEngine.syncWithDrive(); assert.equal(pc.state.realOwned.mora,20);assert.equal(d.writes,0);
    edit(pc,30);await pc.GoogleDriveSyncEngine.syncWithDrive();assert.equal(d.payload.data['main-inventory'].mora,30);
  });
@@ -93,7 +94,7 @@ async function test(name,fn) { await fn(); passed++; console.log('PASS '+name); 
    const d=new Drive(),c=device(d);edit(c,1);const before=c.localStorage.getItem('main-inventory');const one=await c.GoogleDriveSyncEngine._fingerprint(c.GoogleDriveSyncEngine.getLocalPayload());const two=await c.GoogleDriveSyncEngine._fingerprint(c.GoogleDriveSyncEngine.getLocalPayload());assert.equal(one,two);assert.equal(c.localStorage.getItem('main-inventory'),before);
  });
  await test('manual conflict preference requires confirmation before remote download',async()=>{
-   const d=new Drive(),a=device(d),b=device(d);edit(a,1);await a.GoogleDriveSyncEngine.syncWithDrive();await b.GoogleDriveSyncEngine.syncWithDrive();b.localStorage.setItem('gdrive_auto_resolve_conflict','false');await b.GoogleDriveSyncEngine.syncWithDrive();await a.GoogleDriveSyncEngine.syncWithDrive();edit(a,2);await a.GoogleDriveSyncEngine.syncWithDrive();await b.GoogleDriveSyncEngine.syncWithDrive();assert.equal(b.GoogleDriveSyncEngine.status,'conflict');assert.equal(b.state.realOwned.mora,1);
+   const d=new Drive(),a=device(d),b=device(d);edit(a,1);await a.GoogleDriveSyncEngine.syncWithDrive();await b.GoogleDriveSyncEngine.syncWithDrive();b.localStorage.setItem('gdrive_auto_resolve_conflict','false');d.payload.data['main-inventory'].mora=2;d.payload.lastUpdate=new Date(++editTime).toISOString();d.version++;await b.GoogleDriveSyncEngine.syncWithDrive();assert.equal(b.GoogleDriveSyncEngine.status,'conflict');assert.equal(b.state.realOwned.mora,1);
  });
  await test('legacy fingerprint migrates without blocking a local edit',async()=>{
    const d=new Drive(),a=device(d);edit(a,1);await a.GoogleDriveSyncEngine.syncWithDrive();const legacy=await a.GoogleDriveSyncEngine._legacyFingerprint(d.payload);a.localStorage.setItem('spirifly_sync_base_hash',legacy);a.localStorage.removeItem('spirifly_sync_local_hash');edit(a,2);await a.GoogleDriveSyncEngine.syncWithDrive();assert.equal(d.payload.data['main-inventory'].mora,2);
@@ -113,5 +114,18 @@ async function test(name,fn) { await fn(); passed++; console.log('PASS '+name); 
  await test('corrupt local inventory cannot overwrite a valid cloud backup',async()=>{
    const d=new Drive(),a=device(d);edit(a,500);await a.GoogleDriveSyncEngine.syncWithDrive();a.localStorage.setItem('main-inventory','{broken');await assert.rejects(a.GoogleDriveSyncEngine.syncWithDrive(),/conservó/);assert.equal(d.writes,1);assert.equal(d.payload.data['main-inventory'].mora,500);
  });
+ for (const relation of ['older','equal','newer','newer-pending']) {
+   await test(`Seelie date comparison: ${relation}`,async()=>{
+     const d=new Drive(),c=device(d);edit(c,10);await c.GoogleDriveSyncEngine.syncWithDrive();
+     const originalTime=Date.parse(d.payload.lastUpdate);
+     if(relation==='newer-pending') edit(c,30);
+     d.payload.data['main-inventory'].mora=20;
+     d.payload.lastUpdate=new Date(originalTime+(relation==='older'?-1000:relation==='equal'?0:10000)).toISOString();d.version++;
+     await c.GoogleDriveSyncEngine.syncWithDrive();
+     assert.equal(c.GoogleDriveSyncEngine.status,relation==='newer'?'synced':'conflict');
+     assert.equal(c.state.realOwned.mora,relation==='newer'?20:relation==='newer-pending'?30:10);
+     assert.equal(d.writes,1);
+   });
+ }
  console.log(`${passed} integration scenarios passed.`);
 })().catch(error=>{console.error(error);process.exitCode=1});
