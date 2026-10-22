@@ -557,6 +557,33 @@
   }
 
   // --- 6. AUTENTICACIÓN GOOGLE IDENTITY SERVICES (GIS) & SINCRONIZACIÓN CON GOOGLE DRIVE ---
+  // --- TOAST GLOBAL FLOTANTE PARA FEEDBACK INMEDIATO AL USUARIO ---
+  function showDriveToast(msg, type = "info") {
+    if (typeof showSynthToast === "function") {
+      try { showSynthToast(msg); } catch (_) {}
+    }
+    if (typeof document === "undefined" || !document.body) return;
+    try {
+      let toast = document.getElementById("spiriflyGlobalToast");
+      if (!toast) {
+        toast = document.createElement("div");
+        toast.id = "spiriflyGlobalToast";
+        document.body.appendChild(toast);
+      }
+      const icon = type === "success"
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>'
+        : type === "warning" || type === "error"
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>';
+      toast.innerHTML = `<span class="global-toast-icon">${icon}</span><span class="global-toast-msg">${msg}</span>`;
+      toast.className = `spirifly-global-toast visible toast-${type}`;
+      clearTimeout(showDriveToast._timer);
+      showDriveToast._timer = setTimeout(() => {
+        toast.classList.remove("visible");
+      }, 4200);
+    } catch (_) {}
+  }
+
   let _gisTokenClient = null;
 
   function initGoogleTokenClient() {
@@ -567,7 +594,10 @@
       _gisTokenClient = google.accounts.oauth2.initTokenClient({
         client_id: DRIVE_CONFIG.defaultClientId,
         scope: DRIVE_CONFIG.appDataScope,
-        error_callback: () => GoogleDriveSyncEngine.setStatus('auth', 'No se completó el acceso a Google. Pulsa Sincronizar ahora para reintentar.'),
+        error_callback: (err) => {
+          GoogleDriveSyncEngine.setStatus('auth', 'No se completó el acceso a Google. Pulsa Sincronizar ahora para reintentar.');
+          showDriveToast("⚠️ Ventana de Google cerrada o no completada. Reintenta pulsando Sincronizar.", "warning");
+        },
         callback: async (tokenResponse) => {
           if (tokenResponse.error) {
             GoogleDriveSyncEngine.setStatus('auth');
@@ -652,9 +682,7 @@
 
   function connectGoogleDrive() {
     if (typeof google === "undefined" || !google.accounts || !google.accounts.oauth2) {
-      if (typeof showSynthToast === "function") {
-        showSynthToast("Cargando servicios de Google... Reintenta en unos segundos.");
-      }
+      showDriveToast("Cargando servicios de Google... Reintenta en unos segundos.", "warning");
       return;
     }
     const client = initGoogleTokenClient();
@@ -665,7 +693,12 @@
         requestOptions.login_hint = savedEmail;
       }
       GoogleDriveSyncEngine.setStatus('auth', 'Completa el acceso en la ventana de Google.');
-      client.requestAccessToken(requestOptions);
+      try {
+        client.requestAccessToken(requestOptions);
+      } catch (err) {
+        console.error("Error al solicitar token de Google:", err);
+        showDriveToast("⚠️ Tu navegador bloqueó la ventana de Google. Permite las ventanas emergentes para sincronizar.", "warning");
+      }
     }
   }
 
@@ -1044,7 +1077,7 @@
           localStorage.setItem('spirifly_sync_pending', 'true');
           this.setStatus('pending');
         }
-        if (typeof showSynthToast === 'function') showSynthToast('Datos verificados en Google Drive; versiones anteriores conservadas.');
+        showDriveToast('✅ Sincronizado: Datos respaldados exitosamente en Google Drive.', 'success');
         return payload;
       } catch (error) {
         this.setStatus(error.status === 401 ? 'auth' : 'error', error.message);
@@ -1132,6 +1165,9 @@
         if (!remote) return this.uploadLocalPayloadToDrive(token, null);
         if (remote.fingerprint === localHash) {
           await this.rememberBaseline(remote.fingerprint, local);
+          if (isUserTriggered) {
+            showDriveToast("✅ Todo al día: Tu información ya está sincronizada con Google Drive.", "success");
+          }
           return;
         }
         // Default settings, empty inventories and the placeholder UID are not user edits.
@@ -1148,6 +1184,9 @@
           if (initialHash !== await this._fingerprint(this.getLocalPayload())) { this._syncAgain = true; return; }
           await this.applyRemotePayload(remote.payload);
           await this.rememberBaseline(remote.fingerprint);
+          if (isUserTriggered) {
+            showDriveToast("✅ Sincronizado: Datos actualizados exitosamente desde Google Drive.", "success");
+          }
           return;
         }
         if (remoteUnchanged && !localUnchanged) return this.uploadLocalPayloadToDrive(token, remote.fingerprint);
@@ -1426,8 +1465,29 @@
   // --- 9. EVENT LISTENERS Y VINCULACIÓN CON EL DOM ---
   function bindUIEvents() {
     document.querySelectorAll('.section-drive-sync').forEach(button => {
-      button.addEventListener('click', () => {
-        GoogleDriveSyncEngine.syncWithDrive(true).catch(() => {});
+      button.addEventListener('click', async (e) => {
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+        const isLinked = localStorage.getItem("teyvat_drive_linked") === "true";
+        if (!isLinked) {
+          showDriveToast("Conectando con Google Drive... Completa el acceso en la ventana emergente.", "info");
+          connectGoogleDrive();
+          return;
+        }
+        if (!GoogleDriveSyncEngine.tokenIsFresh()) {
+          showDriveToast("Renovando sesión con Google... Revisa la ventana emergente.", "info");
+          connectGoogleDrive();
+          return;
+        }
+        showDriveToast("Sincronizando con Google Drive...", "info");
+        try {
+          await GoogleDriveSyncEngine.syncWithDrive(true);
+        } catch (err) {
+          console.warn("[Google Drive] Error al sincronizar:", err);
+          showDriveToast(`No se pudo sincronizar: ${err.message || 'Error de conexión'}`, "error");
+        }
       });
     });
     // Selector de cuenta activa

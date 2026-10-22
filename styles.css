@@ -5442,3 +5442,70 @@ body {
     padding: 0.38rem 0.8rem;
   }
 }
+
+/* ==========================================================================
+   TOAST GLOBAL FLOTANTE SPIRIFLY (FEEDBACK MULTI-PESTAÑA)
+   ========================================================================== */
+.spirifly-global-toast {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 9999999;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(15, 23, 42, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 0.75rem 1.15rem;
+  color: #f8fafc;
+  font-size: 0.86rem;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(99, 102, 241, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transform: translateY(-20px) scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  max-width: 440px;
+}
+.spirifly-global-toast.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+.spirifly-global-toast.toast-success {
+  border-color: rgba(74, 222, 128, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(34, 197, 94, 0.25);
+}
+.spirifly-global-toast.toast-warning {
+  border-color: rgba(251, 191, 36, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(245, 158, 11, 0.25);
+}
+.spirifly-global-toast.toast-error {
+  border-color: rgba(248, 113, 113, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(239, 68, 68, 0.25);
+}
+.global-toast-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.global-toast-msg {
+  line-height: 1.4;
+}
+@media (max-width: 640px) {
+  .spirifly-global-toast {
+    top: auto;
+    bottom: 20px;
+    right: 16px;
+    left: 16px;
+    max-width: none;
+    transform: translateY(20px) scale(0.95);
+  }
+  .spirifly-global-toast.visible {
+    transform: translateY(0) scale(1);
+  }
+}
