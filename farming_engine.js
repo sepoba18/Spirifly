@@ -1,3 +1,18 @@
+// El día de farmeo cambia a las 04:00 del servidor de la cuenta activa.
+function getActiveServerDay(now = new Date()) {
+  let uid = typeof AccountManager !== "undefined"
+    ? AccountManager.getAccountUid(AccountManager.getActiveAccountId()) : "";
+  if (!uid && typeof state !== "undefined") uid = state.activeWishUid || "";
+  if (!uid && typeof WishEngine !== "undefined") uid = WishEngine.getActiveAccountUid() || "";
+  uid = String(uid).trim();
+  let offset;
+  if (/^6\d{8}$/.test(uid)) offset = -5;
+  else if (/^7\d{8}$/.test(uid)) offset = 1;
+  else if (/^[89]\d{8}$/.test(uid) || /^18\d{8}$/.test(uid)) offset = 8;
+  else return now.getDay();
+  return new Date(now.getTime() + (offset - 4) * 3600000).getUTCDay();
+}
+
 /* =====================================================================
    TEYVAT COMPANION PRO - MOTOR DE FARMEO & GASTO DE RESINA
    Gestiona el cálculo de materiales para personajes/armas seleccionados,
@@ -508,6 +523,134 @@ const FARMING_DOMAINS_REGISTRY = [
     matIds: ["114069", "114070", "114071", "114072"],
     icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114072.png",
     weaponsDesc: "Canción del Silencio, Astro del Destino, Garra de la Cazadora"
+  },
+
+  // Familias de armas posteriores a Natlan.
+  {
+      "id": "nodkrai_weap_artful_device",
+      "name": "Corte lunar perdida",
+      "region": "Nod-Krai",
+      "type": "weapon",
+      "resinCost": 20,
+      "days": [
+          1,
+          4,
+          0
+      ],
+      "familyKey": "artful_device",
+      "matName": "Instrumento misterioso",
+      "matIds": [
+          "114073",
+          "114074",
+          "114075",
+          "114076"
+      ],
+      "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114076.png"
+  },
+  {
+      "id": "nodkrai_weap_long_night",
+      "name": "Corte lunar perdida",
+      "region": "Nod-Krai",
+      "type": "weapon",
+      "resinCost": 20,
+      "days": [
+          2,
+          5,
+          0
+      ],
+      "familyKey": "long_night",
+      "matName": "Fuego de la larga noche",
+      "matIds": [
+          "114077",
+          "114078",
+          "114079",
+          "114080"
+      ],
+      "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114080.png"
+  },
+  {
+      "id": "nodkrai_weap_far_north",
+      "name": "Corte lunar perdida",
+      "region": "Nod-Krai",
+      "type": "weapon",
+      "resinCost": 20,
+      "days": [
+          3,
+          6,
+          0
+      ],
+      "familyKey": "far_north",
+      "matName": "Hijos del Lejano Norte",
+      "matIds": [
+          "114081",
+          "114082",
+          "114083",
+          "114084"
+      ],
+      "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114084.png"
+  },
+  {
+      "id": "snezhnaya_weap_pale_star",
+      "name": "Scars of Cursed Obsession",
+      "region": "Snezhnaya",
+      "type": "weapon",
+      "resinCost": 20,
+      "days": [
+          1,
+          4,
+          0
+      ],
+      "familyKey": "pale_star",
+      "matName": "Ejército de la Estrella Albina",
+      "matIds": [
+          "114085",
+          "114086",
+          "114087",
+          "114088"
+      ],
+      "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114088.png"
+  },
+  {
+      "id": "snezhnaya_weap_spiritual_nectar",
+      "name": "Scars of Cursed Obsession",
+      "region": "Snezhnaya",
+      "type": "weapon",
+      "resinCost": 20,
+      "days": [
+          2,
+          5,
+          0
+      ],
+      "familyKey": "spiritual_nectar",
+      "matName": "Néctar espiritual de la bodega",
+      "matIds": [
+          "114089",
+          "114090",
+          "114091",
+          "114092"
+      ],
+      "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114092.png"
+  },
+  {
+      "id": "snezhnaya_weap_frost_emperor",
+      "name": "Scars of Cursed Obsession",
+      "region": "Snezhnaya",
+      "type": "weapon",
+      "resinCost": 20,
+      "days": [
+          3,
+          6,
+          0
+      ],
+      "familyKey": "frost_emperor",
+      "matName": "Emperador de la escarcha",
+      "matIds": [
+          "114093",
+          "114094",
+          "114095",
+          "114096"
+      ],
+      "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114096.png"
   },
 
   // --- LÍNEAS LEY (20 ✦ RESINA) - TODOS LOS DÍAS ---

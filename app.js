@@ -5144,7 +5144,7 @@ function renderFarming() {
   const dayNames = Array.isArray(tf.days) && tf.days.length === 7
     ? tf.days
     : ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
-  const currentDayIdx = new Date().getDay();
+  const currentDayIdx = getActiveServerDay();
   const currentDayName = dayNames[currentDayIdx];
 
   const elTodayName = document.getElementById("seelieTodayName");
@@ -5272,7 +5272,7 @@ function renderSeelieFarmingSections(sections, activeFilterDay, currentDayIdx) {
   if (!container) return;
 
   if (typeof currentDayIdx === "undefined") {
-    currentDayIdx = new Date().getDay();
+    currentDayIdx = getActiveServerDay();
   }
 
   if (!sections || sections.length === 0) {
@@ -5398,7 +5398,7 @@ function renderSeelieFarmingSections(sections, activeFilterDay, currentDayIdx) {
 
 function renderSeelieSourceCard(card, currentDayIdx, activeFilterDay) {
   if (typeof currentDayIdx === "undefined") {
-    currentDayIdx = new Date().getDay();
+    currentDayIdx = getActiveServerDay();
   }
 
   const t = (typeof I18N !== "undefined" && (I18N[state.lang] || I18N.es)) || {};
