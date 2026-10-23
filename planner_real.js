@@ -1719,7 +1719,8 @@ function renderCharacterWeaponPlanner() {
         if (!plain.includes(search)) return;
       }
 
-      const reqs = computePlanRequirements(plan);
+      // Mostrar las metas incluso cuando el plan está pausado.
+    const reqs = computePlanRequirements({ ...plan, active: true });
       const weapResin = computeMissingResinForReqs(reqs);
       const bannerClass = wp.rarity >= 5 ? "weap-card-banner-5" : (wp.rarity === 4 ? "weap-card-banner-4" : "weap-card-banner-3");
 
@@ -1767,6 +1768,7 @@ function renderCharacterWeaponPlanner() {
           </div>
         </div>`;
 
+      bindPlannerCardPause(card, plan);
       card.querySelector("[data-open-solo-weap]").addEventListener("click", () => openSoloWeaponConfigModal(plan.key, false));
       card.querySelector("[data-edit-solo-weap]").addEventListener("click", () => openSoloWeaponConfigModal(plan.key, false));
       card.querySelector("[data-consume-idx]").addEventListener("click", (e) => {
@@ -1792,7 +1794,8 @@ function renderCharacterWeaponPlanner() {
       if (!plain.includes(search)) return;
     }
 
-    const reqs = computePlanRequirements(plan);
+    // Mostrar las metas incluso cuando el plan está pausado.
+    const reqs = computePlanRequirements({ ...plan, active: true });
     const charResin = computeMissingResinForReqs(reqs);
     const bannerGradient = ELEMENT_BANNERS[info.element] || ELEMENT_BANNERS.Hydro;
     const bannerBg = info.namecard
@@ -1866,6 +1869,7 @@ function renderCharacterWeaponPlanner() {
         </div>
       </div>`;
 
+    bindPlannerCardPause(card, plan);
     card.querySelector("[data-open-cfg]").addEventListener("click", () => openCharConfigModal(plan.key, false));
     card.querySelector("[data-edit-char]").addEventListener("click", () => openCharConfigModal(plan.key, false));
     card.querySelector("[data-consume-idx]").addEventListener("click", (e) => {
@@ -1882,4 +1886,25 @@ function renderCharacterWeaponPlanner() {
   const totalMissing = computeGlobalMissingResin();
   document.getElementById("valPlannerResin").innerHTML = resinPillHtml(totalMissing, false);
   document.getElementById("valPlannerDays").innerHTML = `${resinImgHtml(true, 18)} ${Math.ceil(totalMissing / 60)} ${escapeHtml(tp.condensedWord || "Concentradas")}`;
+}
+
+function bindPlannerCardPause(card, plan) {
+  const labels = {
+    es: ["Clic derecho para pausar el farmeo", "Pausado: clic derecho para reactivar"],
+    en: ["Right-click to pause farming", "Paused: right-click to resume"],
+    pt: ["Clique direito para pausar o farm", "Pausado: clique direito para reativar"],
+    ja: ["右クリックで周回を一時停止", "一時停止中: 右クリックで再開"],
+    ko: ["우클릭으로 파밍 일시 중지", "일시 중지됨: 우클릭으로 재개"]
+  };
+  card.title = (labels[state.lang] || labels.es)[plan.active === false ? 1 : 0];
+  card.addEventListener("contextmenu", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    const key = plan.key || plan.name;
+    const plans = (state.activePlans || []).filter((p) => (p.key || p.name) === key);
+    const active = !plans.some((p) => p.active !== false);
+    plans.forEach((p) => { p.active = active; });
+    if (!active && state.farmingCharFilter === key) state.farmingCharFilter = "all";
+    savePlansToStorage();
+  });
 }

@@ -1272,9 +1272,9 @@ const FarmingEngine = {
     const owned = state.realOwned || {};
     const matsMaster = (typeof REAL_MASTER_MATERIALS !== "undefined") ? REAL_MASTER_MATERIALS : {};
 
-    // 1. Barra de avatares de personajes/armas del plan activo
+    // Mantener visibles los planes pausados para poder reactivarlos.
     const activeCharList = [];
-    plans.forEach((p) => {
+    (state.activePlans || []).forEach((p) => {
       const key = p.key || p.name;
       if (!key) return;
       let icon = "";
@@ -1290,7 +1290,8 @@ const FarmingEngine = {
         key,
         name: key,
         icon,
-        isWeapon
+        isWeapon,
+        active: p.active !== false
       });
     });
 

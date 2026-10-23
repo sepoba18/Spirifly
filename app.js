@@ -5223,6 +5223,14 @@ function renderFarming() {
 }
 
 function renderFarmingCharAvatarBar(activeCharList) {
+  const pauseLabels = {
+    es: ["Clic derecho para pausar el farmeo", "Pausado: clic derecho para reactivar"],
+    en: ["Right-click to pause farming", "Paused: right-click to resume"],
+    pt: ["Clique direito para pausar o farm", "Pausado: clique direito para reativar"],
+    ja: ["右クリックで周回を一時停止", "一時停止中: 右クリックで再開"],
+    ko: ["우클릭으로 파밍 일시 중지", "일시 중지됨: 우클릭으로 재개"]
+  };
+  const pauseHint = pauseLabels[state.lang] || pauseLabels.es;
   const container = document.getElementById("seelieCharAvatarBar");
   if (!container) return;
 
@@ -5242,7 +5250,7 @@ function renderFarmingCharAvatarBar(activeCharList) {
     const isSelected = (currentFilter === ch.key);
     const fallback = ch.isWeapon ? "assets/weapon_types/sword.png" : "assets/elements/pyro.png";
     html += `
-      <div class="seelie-avatar-chip ${isSelected ? "active" : ""}" data-avatar-key="${escapeHtml(ch.key)}" title="Filtrar por ${escapeHtml(ch.name)}">
+      <div class="seelie-avatar-chip ${isSelected ? "active" : ""} ${ch.active === false ? "farming-paused" : ""}" data-avatar-key="${escapeHtml(ch.key)}" title="${escapeHtml(ch.name)} · ${escapeHtml(pauseHint[ch.active === false ? 1 : 0])}">
         <img src="${ch.icon || fallback}" alt="${escapeHtml(ch.name)}" onerror="this.src='${fallback}'" />
       </div>
     `;
@@ -5259,6 +5267,15 @@ function renderFarmingCharAvatarBar(activeCharList) {
   }
 
   container.querySelectorAll("[data-avatar-key]").forEach((chip) => {
+    chip.addEventListener("contextmenu", (event) => {
+      event.preventDefault();
+      const key = chip.dataset.avatarKey;
+      const plans = (state.activePlans || []).filter((p) => (p.key || p.name) === key);
+      const active = !plans.some((p) => p.active !== false);
+      plans.forEach((p) => { p.active = active; });
+      if (!active && state.farmingCharFilter === key) state.farmingCharFilter = "all";
+      savePlansToStorage();
+    });
     chip.addEventListener("click", () => {
       const k = chip.dataset.avatarKey;
       state.farmingCharFilter = (state.farmingCharFilter === k) ? "all" : k;

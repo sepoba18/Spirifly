@@ -4247,6 +4247,12 @@ body {
   transform: scale(1.08);
 }
 
+.seelie-avatar-chip.farming-paused {
+  opacity: 0.4;
+  filter: grayscale(1);
+  border-style: dashed;
+}
+
 .seelie-avatar-chip img {
   width: 100%;
   height: 100%;
