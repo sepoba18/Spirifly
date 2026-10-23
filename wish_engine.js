@@ -178,12 +178,12 @@
 
       const rank = String(wish.rank_type || '3');
       const itemType = wish.item_type || (rank === '5' && STANDARD_5STAR_WEAPONS.has(wish.name) ? 'Arma' : 'Personaje');
-      const monthKey = (wish.time || '2026-01').substring(0, 7);
+      const monthKey = /^\d{4}-(0[1-9]|1[0-2])(?:-|$)/.test(wish.time || '') ? wish.time.substring(0, 7) : null;
 
-      if (!monthlyStats[monthKey]) {
+      if (monthKey && !monthlyStats[monthKey]) {
         monthlyStats[monthKey] = { month: monthKey, pulls: 0, star5: 0, star4: 0, star3: 0 };
       }
-      monthlyStats[monthKey].pulls++;
+      if (monthKey) monthlyStats[monthKey].pulls++;
 
       const item = {
         id: wish.id || String(Date.now() + i),
@@ -203,9 +203,9 @@
       };
 
       if (rank === '3') {
-        monthlyStats[monthKey].star3++;
+        if (monthKey) monthlyStats[monthKey].star3++;
       } else if (rank === '4') {
-        monthlyStats[monthKey].star4++;
+        if (monthKey) monthlyStats[monthKey].star4++;
         item.pity = null; // En la vista de tabla, pity principal se enfoca en 5★
         item.pity4 = currentPity4;
         fourStarList.push({
@@ -216,7 +216,7 @@
         });
         currentPity4 = 0; // Reseteo de pity 4★
       } else if (rank === '5') {
-        monthlyStats[monthKey].star5++;
+        if (monthKey) monthlyStats[monthKey].star5++;
         const pityHit = currentPity5;
         item.pity = pityHit;
 
@@ -265,12 +265,8 @@
           const isStandardWeap = STANDARD_5STAR_WEAPONS.has(item.name);
           const isPromoWeap = !isStandardWeap;
 
-          if (fatePoints >= 1) {
-            // Senda divina cumplida: Garantizada
-            item.isGuaranteed = true;
-            item.isWon7525 = true;
-            fatePoints = 0;
-          } else if (isGuaranteed) {
+          // La Senda elegida no figura en el historial; solo inferimos el 75/25.
+          if (isGuaranteed) {
             item.isGuaranteed = true;
             item.isWon7525 = null;
             isGuaranteed = false;
@@ -283,7 +279,7 @@
               item.isWon7525 = false;
               lost7525Count++;
               isGuaranteed = true;
-              fatePoints = Math.min(1, fatePoints + 1);
+
             }
           }
         }
@@ -1241,6 +1237,7 @@
   function detectServerFromUid(uid) {
     const s = String(uid || '').trim();
     if (!s) return 'Global';
+    if (/^18\d{8}$/.test(s)) return 'Asia';
     const first = s.charAt(0);
     if (first === '6') return 'América';
     if (first === '7') return 'Europa';

@@ -668,6 +668,7 @@ function getMatKind(matId) {
   if (id === MORA_ID) return "mora";
   if (EXP_BOOK_IDS.includes(id)) return "exp";
   if (id === "104319") return "crown";
+  if (id === "113063") return "other";
   if (id.startsWith("1043")) return "book";
   if (id.startsWith("114")) return "wdomain";
   if (id.startsWith("113")) return rank >= 5 ? "weekly" : "boss";
@@ -675,29 +676,7 @@ function getMatKind(matId) {
 }
 
 function computeMissingResinForReqs(reqs) {
-  let moraDef = 0;
-  let expDef = 0;
-  let domainUnits = 0;
-  let bossDef = 0;
-  let weeklyDef = 0;
-  Object.entries(reqs).forEach(([matId, reqQty]) => {
-    const deficit = Math.max(0, reqQty - getRealOwned(matId));
-    if (deficit <= 0) return;
-    const kind = getMatKind(matId);
-    const rank = (getMat(matId) || { rank: 2 }).rank;
-    if (kind === "mora") moraDef += deficit;
-    else if (kind === "exp") expDef += deficit * EXP_BOOK_VALUE[matId];
-    else if (kind === "book" || kind === "wdomain") domainUnits += deficit * Math.pow(3, Math.max(0, rank - 2));
-    else if (kind === "boss") bossDef += deficit;
-    else if (kind === "weekly") weeklyDef += deficit;
-  });
-  let resin = 0;
-  resin += Math.ceil(moraDef / 60000) * 20;
-  resin += Math.ceil(expDef / 90000) * 20;
-  resin += Math.ceil(domainUnits / 20) * 20;
-  resin += Math.ceil(bossDef / 2.55) * 40;
-  resin += Math.ceil(weeklyDef / 1.5) * 30;
-  return resin;
+  return FarmingEngine.getSeelieFarmingData("all", reqs).totals.totalResin;
 }
 
 function computeGlobalMissingResin() {
@@ -1885,7 +1864,7 @@ function renderCharacterWeaponPlanner() {
 
   const totalMissing = computeGlobalMissingResin();
   document.getElementById("valPlannerResin").innerHTML = resinPillHtml(totalMissing, false);
-  document.getElementById("valPlannerDays").innerHTML = `${resinImgHtml(true, 18)} ${Math.ceil(totalMissing / 60)} ${escapeHtml(tp.condensedWord || "Concentradas")}`;
+  document.getElementById("valPlannerDays").innerHTML = `${resinImgHtml(true, 18)} ${FarmingEngine.getSeelieFarmingData("all").totals.condResin} ${escapeHtml(tp.condensedWord || "Concentradas")}`;
 }
 
 function bindPlannerCardPause(card, plan) {

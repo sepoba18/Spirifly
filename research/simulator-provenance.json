@@ -1,0 +1,371 @@
+{
+  "source": "https://github.com/theBowja/genshin-db",
+  "retrieved": "2026-10-23",
+  "files": [
+    {
+      "path": "src/data/stats/characters.json",
+      "sha": "a6c85350258f3da206b45a1619d732ff8e2e44c0",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/stats/characters.json"
+    },
+    {
+      "path": "src/data/stats/talents.json",
+      "sha": "36ed6ee699d7ed2c80a5cc29d61685b3c9441e95",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/stats/talents.json"
+    },
+    {
+      "path": "src/data/curve/characters.json",
+      "sha": "1eece994ce8a3eb6bed66e2bf29e29c487d10bbf",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/curve/characters.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/aino.json",
+      "sha": "9d0c4014bd504f3af4ee3723ca973605aee592b6",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/aino.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/aloy.json",
+      "sha": "ee011547ed0436b365bd49f006456df29fbfabf0",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/aloy.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/alyosha.json",
+      "sha": "35c230964a2bf963b630b2fb80d7e8f8aa6d0d2b",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/alyosha.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/amber.json",
+      "sha": "ce1211d45d005ed348b92a27149201b43aa329ab",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/amber.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/charlotte.json",
+      "sha": "ba107706f41a7e9a2ffe0780d990a5bb4affd87a",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/charlotte.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/chasca.json",
+      "sha": "60f621280303db5aabcab2a97e7fe5e47c3cc392",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/chasca.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/chongyun.json",
+      "sha": "1c287ba922646a1dcb1b570e5b65bdee1034c655",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/chongyun.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/collei.json",
+      "sha": "51bdec20213984a7d27418bba713e28ac3b0e753",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/collei.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/columbina.json",
+      "sha": "4312ef817f2d8d8a42b250b0a46c7394b0f7cdeb",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/columbina.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/cyno.json",
+      "sha": "9be45ab6757d173b46e4c00b30382c1f181f0377",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/cyno.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/dahlia.json",
+      "sha": "124d8506d475375ac8b887daaf1c2c01cb3e2d04",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/dahlia.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/dehya.json",
+      "sha": "148ec8c3b8790f297992bc6df54d6f6147482021",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/dehya.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/diona.json",
+      "sha": "15c316ec6dfaa18b9a82574931fe60bebdf3ec29",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/diona.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/dori.json",
+      "sha": "bd32b0485b1c44ebe73a52bd0cbf4cef843f02f1",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/dori.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/durin.json",
+      "sha": "6c4604bac06a75b1c9f9dba60e589294edfcfe18",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/durin.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/emilie.json",
+      "sha": "dbf2d4704a0b3706228c1209bdc650bb9b384963",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/emilie.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/escoffier.json",
+      "sha": "44f288518beca9b6ec95571cbf80519262dca094",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/escoffier.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/flins.json",
+      "sha": "b30d88b36fa9ba140bed0ba53add81c5ac6f35bb",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/flins.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/freminet.json",
+      "sha": "ba5cfa77a8da04c4054de06197bbcc06736b1473",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/freminet.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/iansan.json",
+      "sha": "0d3922d4e03c623f6255c7b312545fd0550c0e56",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/iansan.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/ifa.json",
+      "sha": "0cd98a213e5d22898167bb574b1994f891759200",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/ifa.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/illuga.json",
+      "sha": "5144ce07fabe53ac92e0e694bab8f5c2a85ea997",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/illuga.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/ineffa.json",
+      "sha": "707bce729d5e6f85c71dab511ae369d320abc6eb",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/ineffa.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/jahoda.json",
+      "sha": "677d97373c70e69965269400acaec8f8a71580f9",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/jahoda.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/kachina.json",
+      "sha": "04546905e4bf2b9c7f0c3adee8aec9c0c87a1f5b",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/kachina.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/kaeya.json",
+      "sha": "c9a66a66c161ff48c68d4654b4b645a520cc8b19",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/kaeya.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/kaveh.json",
+      "sha": "f9c33710dbf13e38d90a9a83187433225582147e",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/kaveh.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/kirara.json",
+      "sha": "f45d37ddf58cbad407e79ada829ba8d154481113",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/kirara.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/klee.json",
+      "sha": "fbb5f6cd68d8aa467e097839eed2a25bdcd0f969",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/klee.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/kujousara.json",
+      "sha": "da54a5f389ff7bca2cd720c23d3ac2d9003bec53",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/kujousara.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/lanyan.json",
+      "sha": "453974d794c70d3afbb5bc51caed911f3dc19f63",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/lanyan.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/lauma.json",
+      "sha": "3899be543bd094e0c5e5932da0efad89147abc50",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/lauma.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/linnea.json",
+      "sha": "5722d631c3c9af3ce078294cfb47328f36c33278",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/linnea.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/lisa.json",
+      "sha": "25af6c857c7424e398828e695d2f3564210ca13a",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/lisa.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/lohen.json",
+      "sha": "b13256a76c7c59b554e7c9fd91572b133ea7956a",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/lohen.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/lynette.json",
+      "sha": "3cb261d63d53dfaa0b2b8beb4a18a237431c9159",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/lynette.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/lyney.json",
+      "sha": "01b541004e33b0300dc6e9634044656b3e4d15c2",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/lyney.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/mika.json",
+      "sha": "374656f549e4f07765c259eb8419327d24a03521",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/mika.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/nefer.json",
+      "sha": "9b6712a1c985d3aa987b48d2dbdcba2dbd4a7f34",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/nefer.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/nicole.json",
+      "sha": "7f8acddde31b720ad3a9b7b5f5e6329b23112c45",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/nicole.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/ningguang.json",
+      "sha": "503ea37102b446b33b037f5fdc4c50dca2a3355f",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/ningguang.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/odette.json",
+      "sha": "50fb7caa998c758425393ad50943e7aff9216f3b",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/odette.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/ororon.json",
+      "sha": "cea14a5bfc0cf5477a158a828b454f42e1534f5f",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/ororon.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/prune.json",
+      "sha": "f075aedd8860d6dcedabb0787ddaa50070f9e2ab",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/prune.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/qiqi.json",
+      "sha": "d974e98f71e442ce8d5d6df688bf5e65273ff144",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/qiqi.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/razor.json",
+      "sha": "43efaddc86bd6f8a070d7c3480c26a1469b1f9f7",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/razor.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/rosaria.json",
+      "sha": "413d4c6759b08bcedd0ba9f0e21221390bd2baa8",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/rosaria.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/sandrone.json",
+      "sha": "609f299fe5b4577a2dbe7b88e945688768676bea",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/sandrone.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/sayu.json",
+      "sha": "de972f57a573ef1bd23cd21b304b8b961f3dfe59",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/sayu.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/sethos.json",
+      "sha": "8c8180ad7b8acc9521d2552de6704e6b70d462bd",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/sethos.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/shikanoinheizou.json",
+      "sha": "044c491398e0dffa8e8cb5020d39b964d91ec436",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/shikanoinheizou.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/skirk.json",
+      "sha": "40eaa8deb9d2e618255f48a3a9546d61bf56e88d",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/skirk.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/tighnari.json",
+      "sha": "563695c35e201c9a3b155e1c3dd2154b65d3183d",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/tighnari.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/traveleranemo.json",
+      "sha": "1a25375e6314e237e15423df20b92d2f4f2804b0",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/traveleranemo.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/travelercryo.json",
+      "sha": "33f1a2a94d5ce9e0222a7e62e1042ec3e8c2e444",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/travelercryo.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/travelerdendro.json",
+      "sha": "02c7921c3611625b42175ae0cbb7b85720bd45a7",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/travelerdendro.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/travelerelectro.json",
+      "sha": "644215f9e3a2d675218ff94bf102482fbab11e3f",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/travelerelectro.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/travelergeo.json",
+      "sha": "85a9ddfd63df78cd80199835de68d6348d5db7fb",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/travelergeo.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/travelerhydro.json",
+      "sha": "cab4183016a158a690bf6e45f3e7310076c88f5e",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/travelerhydro.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/travelerpyro.json",
+      "sha": "d69a79384c48dd4cb19c0574b6e70d1606b84a7b",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/travelerpyro.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/varesa.json",
+      "sha": "69fe5266771dc4186d4ae8581085c1bb52436af4",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/varesa.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/varka.json",
+      "sha": "f0442fec028773faca609325b7afd71bc24814b7",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/varka.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/vesna.json",
+      "sha": "b1fc2a1c41de9784d9bcd70ab843493a622929ee",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/vesna.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/vodyanitsa.json",
+      "sha": "1551f0bb9a4db52670567d49dd972a63b5132d5c",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/vodyanitsa.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/xinyan.json",
+      "sha": "1fac4ecdac72eca147a94fbc84ec7f352860e72a",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/xinyan.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/yanfei.json",
+      "sha": "67b48cd31c0afe4663464f90245b2b6ed76e8d51",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/yanfei.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/yaoyao.json",
+      "sha": "da308e36d96d4db127ae39cc522ed6e6bd7dec96",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/yaoyao.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/yumemizukimizuki.json",
+      "sha": "792574783d058ca55f8d31466b352257f7ae35aa",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/yumemizukimizuki.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/yunjin.json",
+      "sha": "a6acc688845163a5c69b2b184d70973230cd3b92",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/yunjin.json"
+    },
+    {
+      "path": "src/data/Spanish/talents/zibai.json",
+      "sha": "186e4fdae6172a73dc6b8436bea161fab4a8a06d",
+      "url": "https://github.com/theBowja/genshin-db/blob/main/src/data/Spanish/talents/zibai.json"
+    }
+  ]
+}

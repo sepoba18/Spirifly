@@ -29,13 +29,950 @@ const FARMING_DAYS_META = [
   { idx: 0, name: "Domingo", short: "Dom", rotGroup: 0, allOpen: true }
 ];
 
+// Fuentes comprobadas por ID de material; incluye recursos de misiones sin resina.
+const FARMING_ADDITIONAL_SOURCES = [
+  {
+    "id": "boss_anemo_hypostasis",
+    "name": "Hipóstasis Anemo",
+    "region": "Mondstadt",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Semilla de huracán",
+    "matIds": [
+      "113001"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113001.png",
+    "characters": [],
+    "sourceKey": "anemo_hypostasis",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_electro_hypostasis",
+    "name": "Hipóstasis Electro",
+    "region": "Mondstadt",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Prisma del relámpago",
+    "matIds": [
+      "113002"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113002.png",
+    "characters": [],
+    "sourceKey": "electro_hypostasis",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_geo_hypostasis",
+    "name": "Hipóstasis Geo",
+    "region": "Liyue",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Pilar de basalto",
+    "matIds": [
+      "113009"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113009.png",
+    "characters": [],
+    "sourceKey": "geo_hypostasis",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_cryo_regisvine",
+    "name": "Regisvid Cryo",
+    "region": "Mondstadt",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Núcleo de escarcha",
+    "matIds": [
+      "113010"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113010.png",
+    "characters": [],
+    "sourceKey": "cryo_regisvine",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_pyro_regisvine",
+    "name": "Regisvid Pyro",
+    "region": "Liyue",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Semilla de fuego eterno",
+    "matIds": [
+      "113011"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113011.png",
+    "characters": [],
+    "sourceKey": "pyro_regisvine",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_oceanid",
+    "name": "Oceánida",
+    "region": "Liyue",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Corazón purificador",
+    "matIds": [
+      "113012"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113012.png",
+    "characters": [],
+    "sourceKey": "oceanid",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_cryo_hypostasis",
+    "name": "Hipóstasis Cryo",
+    "region": "Mondstadt",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Flor cristalina",
+    "matIds": [
+      "113020"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113020.png",
+    "characters": [],
+    "sourceKey": "cryo_hypostasis",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_perpetual_mechanical_array",
+    "name": "Maquinaria Eterna",
+    "region": "Inazuma",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Corazón de la eternidad",
+    "matIds": [
+      "113023"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113023.png",
+    "characters": [],
+    "sourceKey": "perpetual_mechanical_array",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_pyro_hypostasis",
+    "name": "Hipóstasis Pyro",
+    "region": "Inazuma",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Perla abrasante",
+    "matIds": [
+      "113024"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113024.png",
+    "characters": [],
+    "sourceKey": "pyro_hypostasis",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_hydro_hypostasis",
+    "name": "Hipóstasis Hydro",
+    "region": "Inazuma",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Rocío del rechazo",
+    "matIds": [
+      "113028"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113028.png",
+    "characters": [],
+    "sourceKey": "hydro_hypostasis",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_golden_wolflord",
+    "name": "Rey Acechador Dorado",
+    "region": "Inazuma",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Cuerno del Rey Acechador",
+    "matIds": [
+      "113030"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113030.png",
+    "characters": [],
+    "sourceKey": "golden_wolflord",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_bathysmal_vishap",
+    "name": "Dragartos de las Profundidades",
+    "region": "Inazuma",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Pseudoaleta de dragón de las profundidades",
+    "matIds": [
+      "113031"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113031.png",
+    "characters": [],
+    "sourceKey": "bathysmal_vishap",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_jadeplume_terrorshroom",
+    "name": "Espantohongo Plumaverde",
+    "region": "Sumeru",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Picogancho fúngico",
+    "matIds": [
+      "113036"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113036.png",
+    "characters": [],
+    "sourceKey": "jadeplume_terrorshroom",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_electro_regisvine",
+    "name": "Regisvid Electro",
+    "region": "Sumeru",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Fruto atronador",
+    "matIds": [
+      "113037"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113037.png",
+    "characters": [],
+    "sourceKey": "electro_regisvine",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_aeonblight_drake",
+    "name": "Dragón Aciagoeterno",
+    "region": "Sumeru",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Resorte perpetuo",
+    "matIds": [
+      "113038"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113038.png",
+    "characters": [],
+    "sourceKey": "aeonblight_drake",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_semi_perpetual_control_matrix",
+    "name": "Algoritmo de Semi-Incesante Matriz de Observación Navegadora",
+    "region": "Sumeru",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Tetraedro guialuz",
+    "matIds": [
+      "113039"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113039.png",
+    "characters": [],
+    "sourceKey": "semi_perpetual_control_matrix",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_iniquitous_baptist",
+    "name": "Bautista Sacrílego",
+    "region": "Sumeru",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Aro sombrioeterno",
+    "matIds": [
+      "113045"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113045.png",
+    "characters": [],
+    "sourceKey": "iniquitous_baptist",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "quest_natlan_quests",
+    "name": "Misiones de Natlan",
+    "region": "Natlan",
+    "type": "quest",
+    "resinCost": 0,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Piedra angular piroastral",
+    "matIds": [
+      "113063"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113063.png",
+    "characters": [],
+    "sourceKey": "natlan_quests",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_tenebrous_papilla",
+    "name": "Cepa Abismática",
+    "region": "Natlan",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Mirada abismática",
+    "matIds": [
+      "113067"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113067.png",
+    "characters": [],
+    "sourceKey": "tenebrous_papilla",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "weekly_eroded_primal",
+    "name": "Señor del Fuego Primigenio Corroído",
+    "region": "Natlan",
+    "type": "weekly",
+    "resinCost": 60,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Cuerno corroído",
+    "matIds": [
+      "113068",
+      "113069",
+      "113070"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113068.png",
+    "characters": [],
+    "sourceKey": "eroded_primal",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_hermetic_spiritspeaker",
+    "name": "Asceta Espiritista",
+    "region": "Natlan",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Talismán de la tierra enigmática",
+    "matIds": [
+      "113071"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113071.png",
+    "characters": [],
+    "sourceKey": "hermetic_spiritspeaker",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "weekly_the_game_before_the_gate",
+    "name": "El juego ante la puerta",
+    "region": "Mondstadt",
+    "type": "weekly",
+    "resinCost": 60,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Muestra ascendida: Caballo",
+    "matIds": [
+      "113073",
+      "113074",
+      "113075"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113073.png",
+    "characters": [],
+    "sourceKey": "the_game_before_the_gate",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_overseer_device",
+    "name": "Autómata Fuentenigma - Máquina de control",
+    "region": "Natlan",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Acumulador de aire fuentenigma",
+    "matIds": [
+      "113076"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113076.png",
+    "characters": [],
+    "sourceKey": "overseer_device",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_knuckle_duckle",
+    "name": "Puñopato",
+    "region": "Nod-Krai",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Troquel de “estam-pato” de kuuvahki preciso",
+    "matIds": [
+      "113077"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113077.png",
+    "characters": [],
+    "sourceKey": "knuckle_duckle",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_radiant_moonfly",
+    "name": "Selenimariposa Radiante",
+    "region": "Nod-Krai",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Ala rutilante",
+    "matIds": [
+      "113078"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113078.png",
+    "characters": [],
+    "sourceKey": "radiant_moonfly",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_frostnight_herra",
+    "name": "Señor Nochescarcha",
+    "region": "Nod-Krai",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Asta radiante",
+    "matIds": [
+      "113079"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113079.png",
+    "characters": [],
+    "sourceKey": "frostnight_herra",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_mechanized_fortress",
+    "name": "Todoterreno Superpesado - Fortaleza mecánica",
+    "region": "Nod-Krai",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Núcleo kuuvahki de bucle militar",
+    "matIds": [
+      "113080"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113080.png",
+    "characters": [],
+    "sourceKey": "mechanized_fortress",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "weekly_the_doctor",
+    "name": "El Doctor (Hereje de la Falsa Luna)",
+    "region": "Nod-Krai",
+    "type": "weekly",
+    "resinCost": 60,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Máscara del doctor virtuoso",
+    "matIds": [
+      "113081",
+      "113082",
+      "113083"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113081.png",
+    "characters": [],
+    "sourceKey": "the_doctor",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_lord_of_the_hidden_depths",
+    "name": "Susurrador de Pesadillas de las Profundidades Insondables",
+    "region": "Nod-Krai",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Vestigio de las alas del terror",
+    "matIds": [
+      "113084"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113084.png",
+    "characters": [],
+    "sourceKey": "lord_of_the_hidden_depths",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_radiant_moongecko",
+    "name": "Selenogeco Radiante",
+    "region": "Nod-Krai",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Cola prismática cortada",
+    "matIds": [
+      "113085"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113085.png",
+    "characters": [],
+    "sourceKey": "radiant_moongecko",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_watcher_fallen_vigil",
+    "name": "Vigilante Celestecaído",
+    "region": "Mondstadt",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Pluma celestecaída",
+    "matIds": [
+      "113086"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113086.png",
+    "characters": [],
+    "sourceKey": "watcher_fallen_vigil",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "weekly_il_dottore",
+    "name": "Dottore (Campo restrictivo del nirvana universal)",
+    "region": "Sumeru",
+    "type": "weekly",
+    "resinCost": 60,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Resina falsa",
+    "matIds": [
+      "113087",
+      "113088",
+      "113089"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113087.png",
+    "characters": [],
+    "sourceKey": "il_dottore",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_immortal_construct",
+    "name": "Creación Derivada Inmortal",
+    "region": "Snezhnaya",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Rama florida inmortal no chamuscada",
+    "matIds": [
+      "113090"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113090.png",
+    "characters": [],
+    "sourceKey": "immortal_construct",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_chimeric_winged_lion",
+    "name": "León Quimérico Alado",
+    "region": "Snezhnaya",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Cola cercenada del surcacielos",
+    "matIds": [
+      "113091"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113091.png",
+    "characters": [],
+    "sourceKey": "chimeric_winged_lion",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_guardian_blade_of_drifting_snow",
+    "name": "Espadachina Protectora Surcanieves",
+    "region": "Snezhnaya",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Hombrera agrietada de la errabunda",
+    "matIds": [
+      "113092"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113092.png",
+    "characters": [],
+    "sourceKey": "guardian_blade_of_drifting_snow",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "snezhnaya_talent_charity",
+    "name": "Ruinas sagradas del desamparo",
+    "region": "Snezhnaya",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      1,
+      4,
+      0
+    ],
+    "familyKey": "charity",
+    "matName": "Libros de Amor",
+    "matIds": [
+      "104365",
+      "104366",
+      "104367"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104367.png",
+    "characters": [],
+    "sourceKey": "fallen_grace",
+    "source": "https://genshindb.com/es/dominios/snezhnaya"
+  },
+  {
+    "id": "snezhnaya_talent_fortitude",
+    "name": "Ruinas sagradas del desamparo",
+    "region": "Snezhnaya",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      2,
+      5,
+      0
+    ],
+    "familyKey": "fortitude",
+    "matName": "Libros de Tenacidad",
+    "matIds": [
+      "104368",
+      "104369",
+      "104370"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104370.png",
+    "characters": [],
+    "sourceKey": "fallen_grace",
+    "source": "https://genshindb.com/es/dominios/snezhnaya"
+  },
+  {
+    "id": "snezhnaya_talent_glory",
+    "name": "Ruinas sagradas del desamparo",
+    "region": "Snezhnaya",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      3,
+      6,
+      0
+    ],
+    "familyKey": "glory",
+    "matName": "Libros de Gloria",
+    "matIds": [
+      "104371",
+      "104372",
+      "104373"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104373.png",
+    "characters": [],
+    "sourceKey": "fallen_grace",
+    "source": "https://genshindb.com/es/dominios/snezhnaya"
+  }
+];
+
 // REGISTRO MAESTRO DE DOMINIOS Y FUENTES DE RESINA DE TEYVAT
 const FARMING_DOMAINS_REGISTRY = [
+  ...FARMING_ADDITIONAL_SOURCES,
+  { id: "boss_coppelia", name: "Suite Criocéfiro (Coppélia)", region: "Fontaine", type: "boss",
+    resinCost: 40, days: [0,1,2,3,4,5,6], matName: "Recambio mecánico de Coppélia",
+    matIds: ["113049"], icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113049.png", characters: [] },
+
+  ...[
+    ['moonlight', 'Luz lunar', 104356, 1],
+    ['elysium', 'Paraíso', 104359, 2],
+    ['vagrancy', 'Errancia', 104362, 3]
+  ].map(([key, label, base, day]) => ({
+    id: `nodkrai_talent_${key}`, name: 'Capital sin luz', region: 'Nod-Krai',
+    type: 'talent', resinCost: 20, days: [day, day + 3, 0], familyKey: key,
+    matName: `Libros de ${label}`, matIds: [base, base + 1, base + 2].map(String),
+    icon: `https://gi.yatta.moe/assets/UI/UI_ItemIcon_${base + 2}.png`, characters: []
+  })),
+
   // --- DOMINIOS DE TALENTO (20 ✦ RESINA) ---
-  // Mondstadt (Cañón de la Corona Brillante)
+  // Mondstadt (Cañón del olvido)
   {
     id: "mond_talent_freedom",
-    name: "Cañón de la Corona Brillante",
+    name: "Cañón del olvido",
     region: "Mondstadt",
     type: "talent",
     resinCost: 20,
@@ -48,7 +985,7 @@ const FARMING_DOMAINS_REGISTRY = [
   },
   {
     id: "mond_talent_resistance",
-    name: "Cañón de la Corona Brillante",
+    name: "Cañón del olvido",
     region: "Mondstadt",
     type: "talent",
     resinCost: 20,
@@ -61,7 +998,7 @@ const FARMING_DOMAINS_REGISTRY = [
   },
   {
     id: "mond_talent_ballad",
-    name: "Cañón de la Corona Brillante",
+    name: "Cañón del olvido",
     region: "Mondstadt",
     type: "talent",
     resinCost: 20,
@@ -196,10 +1133,10 @@ const FARMING_DOMAINS_REGISTRY = [
     characters: ["Collei", "Nilou", "Trotamundos", "Dehya", "Sethos"]
   },
 
-  // Fontaine (Campanario de la Calma Marina)
+  // Fontaine (Gloria póstuma albugínea)
   {
     id: "fontaine_talent_equity",
-    name: "Campanario de la Calma Marina",
+    name: "Gloria póstuma albugínea",
     region: "Fontaine",
     type: "talent",
     resinCost: 20,
@@ -212,7 +1149,7 @@ const FARMING_DOMAINS_REGISTRY = [
   },
   {
     id: "fontaine_talent_justice",
-    name: "Campanario de la Calma Marina",
+    name: "Gloria póstuma albugínea",
     region: "Fontaine",
     type: "talent",
     resinCost: 20,
@@ -225,7 +1162,7 @@ const FARMING_DOMAINS_REGISTRY = [
   },
   {
     id: "fontaine_talent_order",
-    name: "Campanario de la Calma Marina",
+    name: "Gloria póstuma albugínea",
     region: "Fontaine",
     type: "talent",
     resinCost: 20,
@@ -237,10 +1174,10 @@ const FARMING_DOMAINS_REGISTRY = [
     characters: ["Wriothesley", "Arlecchino", "Lynette", "Chevreuse", "Émilie"]
   },
 
-  // Natlan (Ruinas del Fuego Primigenio)
+  // Natlan (Ruinas de la Ignición)
   {
     id: "natlan_talent_contention",
-    name: "Ruinas del Fuego Primigenio",
+    name: "Ruinas de la Ignición",
     region: "Natlan",
     type: "talent",
     resinCost: 20,
@@ -253,7 +1190,7 @@ const FARMING_DOMAINS_REGISTRY = [
   },
   {
     id: "natlan_talent_kindling",
-    name: "Ruinas del Fuego Primigenio",
+    name: "Ruinas de la Ignición",
     region: "Natlan",
     type: "talent",
     resinCost: 20,
@@ -266,7 +1203,7 @@ const FARMING_DOMAINS_REGISTRY = [
   },
   {
     id: "natlan_talent_conflict",
-    name: "Ruinas del Fuego Primigenio",
+    name: "Ruinas de la Ignición",
     region: "Natlan",
     type: "talent",
     resinCost: 20,
@@ -682,7 +1619,7 @@ const FARMING_DOMAINS_REGISTRY = [
   // --- JEFES DE MUNDO (40 ✦ RESINA) - TODOS LOS DÍAS ---
   {
     id: "boss_tulpa",
-    name: "Tulpa del Placer",
+    name: "Tulpa Hidromimético",
     region: "Fontaine",
     type: "boss",
     resinCost: 40,
@@ -694,7 +1631,7 @@ const FARMING_DOMAINS_REGISTRY = [
   },
   {
     id: "boss_golem_legatus",
-    name: "Gólem Legatus / Estatua de Mármol",
+    name: "Gólem Legado",
     region: "Fontaine",
     type: "boss",
     resinCost: 40,
@@ -706,26 +1643,26 @@ const FARMING_DOMAINS_REGISTRY = [
   },
   {
     id: "boss_coppelius",
-    name: "Suite Crioceleste (Coppelius / Coppelia)",
+    name: "Suite Criocéfiro (Coppélius)",
     region: "Fontaine",
     type: "boss",
     resinCost: 40,
     days: [0, 1, 2, 3, 4, 5, 6],
     matName: "Recambio mecánico de suite",
-    matIds: ["113024"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113024.png",
+    matIds: ["113050"],
+    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113050.png",
     characters: ["Navia", "Lynette", "Fréminet"]
   },
   {
     id: "boss_emperor_fire",
-    name: "Emperador de Fuego Férreo",
+    name: "Emperador Piroacorazado",
     region: "Fontaine",
     type: "boss",
     resinCost: 40,
     days: [0, 1, 2, 3, 4, 5, 6],
     matName: "Resolución del juicio",
-    matIds: ["113025"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113025.png",
+    matIds: ["113051"],
+    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113051.png",
     characters: ["Lyney", "Chevreuse"]
   },
   {
@@ -736,73 +1673,73 @@ const FARMING_DOMAINS_REGISTRY = [
     resinCost: 40,
     days: [0, 1, 2, 3, 4, 5, 6],
     matName: "Dispositivo de gravedad",
-    matIds: ["113026"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113026.png",
+    matIds: ["113052"],
+    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113052.png",
     characters: ["Wriothesley"]
   },
   {
     id: "boss_millennial_seahorse",
-    name: "Caballito de Mar Milenario",
+    name: "Corcel de Mar Perlamilenario",
     region: "Fontaine",
     type: "boss",
     resinCost: 40,
     days: [0, 1, 2, 3, 4, 5, 6],
     matName: "Escala de caballito de mar",
-    matIds: ["113027"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113027.png",
+    matIds: ["113053"],
+    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113053.png",
     characters: ["Neuvillette"]
   },
   {
     id: "boss_natlan_yumkasaur",
-    name: "Glotón Yumkasaurio de la Montaña",
+    name: "Rey Yumkasaurio Glotón",
     region: "Natlan",
     type: "boss",
     resinCost: 40,
     days: [0, 1, 2, 3, 4, 5, 6],
     matName: "Corazón ignívomo",
-    matIds: ["113060"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113060.png",
+    matIds: ["113065"],
+    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113065.png",
     characters: ["Kinich"]
   },
   {
     id: "boss_natlan_lava_golem",
-    name: "Gólem de Lava de las Cumbres",
+    name: "Autómata Fuentenigma - Máquina configuracional",
     region: "Natlan",
     type: "boss",
     resinCost: 40,
     days: [0, 1, 2, 3, 4, 5, 6],
     matName: "Marca dorada de la cima",
-    matIds: ["113061"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113061.png",
+    matIds: ["113066"],
+    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113066.png",
     characters: ["Xilonen", "Mavuika"]
   },
   {
     id: "boss_natlan_qucusaur",
-    name: "Tiranocéfalo Qucusaurio de las Cenizas",
+    name: "Tirano Qucusaurio Aureoardiente",
     region: "Natlan",
     type: "boss",
     resinCost: 40,
     days: [0, 1, 2, 3, 4, 5, 6],
     matName: "Ojo del cielo ceniciento",
-    matIds: ["113062"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113062.png",
+    matIds: ["113064"],
+    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113064.png",
     characters: ["Chasca", "Citlalí"]
   },
   {
     id: "boss_natlan_kukusaur",
-    name: "Kukusaurio Acorazado",
+    name: "Magmadragón Candente",
     region: "Natlan",
     type: "boss",
     resinCost: 40,
     days: [0, 1, 2, 3, 4, 5, 6],
     matName: "Agallas secretas de las profundidades",
-    matIds: ["113063"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113063.png",
+    matIds: ["113072"],
+    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113072.png",
     characters: ["Mualani", "Ororon"]
   },
   {
     id: "boss_suanni",
-    name: "Suanni Solitario",
+    name: "Suanni Ermitaña",
     region: "Liyue",
     type: "boss",
     resinCost: 40,
@@ -814,14 +1751,14 @@ const FARMING_DOMAINS_REGISTRY = [
   },
   {
     id: "boss_setekh_wenut",
-    name: "Gusano de Setekh",
+    name: "Gusano de Sutej",
     region: "Sumeru",
     type: "boss",
     resinCost: 40,
     days: [0, 1, 2, 3, 4, 5, 6],
     matName: "Seudomartillo de arena",
-    matIds: ["113022"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113022.png",
+    matIds: ["113044"],
+    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113044.png",
     characters: ["Alhacén", "Mika"]
   },
   {
@@ -832,8 +1769,8 @@ const FARMING_DOMAINS_REGISTRY = [
     resinCost: 40,
     days: [0, 1, 2, 3, 4, 5, 6],
     matName: "Trepadora supresora",
-    matIds: ["113020"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113020.png",
+    matIds: ["113040"],
+    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113040.png",
     characters: ["Nahida", "Yaoyao"]
   },
   {
@@ -844,20 +1781,20 @@ const FARMING_DOMAINS_REGISTRY = [
     resinCost: 40,
     days: [0, 1, 2, 3, 4, 5, 6],
     matName: "Colmillo de la sombra rúbica",
-    matIds: ["113016"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113016.png",
+    matIds: ["113035"],
+    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113035.png",
     characters: ["Yelan", "Shikanoin Heizou", "Kuki Shinobu"]
   },
   {
     id: "boss_maguu_kenki",
-    name: "Maguu Kenki",
+    name: "Oni Espadachín",
     region: "Inazuma",
     type: "boss",
     resinCost: 40,
     days: [0, 1, 2, 3, 4, 5, 6],
     matName: "Engranaje marión",
-    matIds: ["113009"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113009.png",
+    matIds: ["113022"],
+    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113022.png",
     characters: ["Kaedehara Kazuha", "Sayu"]
   },
   {
@@ -868,8 +1805,8 @@ const FARMING_DOMAINS_REGISTRY = [
     resinCost: 40,
     days: [0, 1, 2, 3, 4, 5, 6],
     matName: "Rencor de la tempestad",
-    matIds: ["113013"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113013.png",
+    matIds: ["113029"],
+    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113029.png",
     characters: ["Shogun Raiden", "Kujou Sara"]
   },
   {
@@ -880,8 +1817,8 @@ const FARMING_DOMAINS_REGISTRY = [
     resinCost: 40,
     days: [0, 1, 2, 3, 4, 5, 6],
     matName: "Cuerno juvenil",
-    matIds: ["113007"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113007.png",
+    matIds: ["113016"],
+    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113016.png",
     characters: ["Xiao", "Hu Tao", "Yanfei"]
   },
 
@@ -906,8 +1843,8 @@ const FARMING_DOMAINS_REGISTRY = [
     resinCost: 30,
     days: [0, 1, 2, 3, 4, 5, 6],
     matName: "Materiales de Arlecchino",
-    matIds: ["113064", "113065", "113066"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113064.png",
+    matIds: ["113060", "113061", "113062"],
+    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113060.png",
     characters: ["Arlecchino", "Émilie", "Clorinde", "Sethos"]
   },
   {
@@ -954,8 +1891,8 @@ const FARMING_DOMAINS_REGISTRY = [
     resinCost: 30,
     days: [0, 1, 2, 3, 4, 5, 6],
     matName: "Materiales de La Signora",
-    matIds: ["113028", "113029", "113030"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113028.png",
+    matIds: ["113025", "113026", "113027"],
+    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113025.png",
     characters: ["Shogun Raiden", "Kujou Sara", "Sangonomiya Kokomi", "Thoma", "Arataki Itto", "Gorou", "Yelan"]
   },
   {
@@ -978,8 +1915,8 @@ const FARMING_DOMAINS_REGISTRY = [
     resinCost: 30,
     days: [0, 1, 2, 3, 4, 5, 6],
     matName: "Materiales de Tartaglia",
-    matIds: ["113011", "113012", "113013"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113011.png",
+    matIds: ["113013", "113014", "113015"],
+    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113013.png",
     characters: ["Xiao", "Ganyu", "Hu Tao", "Rosaria", "Zhongli", "Diona", "Xinyan"]
   },
   {
@@ -990,8 +1927,8 @@ const FARMING_DOMAINS_REGISTRY = [
     resinCost: 30,
     days: [0, 1, 2, 3, 4, 5, 6],
     matName: "Materiales de Andrius",
-    matIds: ["113004", "113005", "113006"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113004.png",
+    matIds: ["113006", "113007", "113008"],
+    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113006.png",
     characters: ["Venti", "Klee", "Mona", "Jean", "Diluc", "Qiqi", "Keching"]
   },
   {
@@ -1002,11 +1939,21 @@ const FARMING_DOMAINS_REGISTRY = [
     resinCost: 30,
     days: [0, 1, 2, 3, 4, 5, 6],
     matName: "Materiales de Dvalin",
-    matIds: ["113001", "113002", "113003"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113001.png",
+    matIds: ["113003", "113004", "113005"],
+    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113003.png",
     characters: ["Bennett", "Diluc", "Jean", "Bárbara", "Xiangling", "Razor"]
   }
 ];
+
+
+FARMING_DOMAINS_REGISTRY.forEach((domain) => {
+  if (domain.type === "weekly") domain.resinCost = 60;
+  domain.characters = REAL_CHARACTERS_DB.filter((character) => character.id !== 'custom' &&
+    [...Object.values(character.ascensionCosts || {}),
+      ...(character.talents || []).flatMap((talent) => Object.values(talent.costs || {}))]
+      .some((step) => domain.matIds.some((id) => (step.costItems || {})[id])))
+    .map((character) => character.name);
+});
 
 const FarmingEngine = {
   /**
@@ -1110,6 +2057,9 @@ const FarmingEngine = {
         } else {
           sourceName = "Dominio de Armas";
         }
+      } else if (idStr === "113063") {
+        cat = "world";
+        sourceName = "Misiones de Natlan";
       } else if (idStr.startsWith("113")) {
         const rank = matInfo.rank || 4;
         if (rank >= 5) {
@@ -1216,13 +2166,22 @@ const FarmingEngine = {
     activePlans.forEach((p) => {
       const planReq = (typeof computePlanRequirements === "function") ? computePlanRequirements(p) : {};
       Object.entries(planReq).forEach(([mid, qty]) => {
-        const cur = owned[mid] || 0;
-        const def = Math.max(0, qty - cur);
-        if (def > 0) {
+        if (qty > 0) {
           if (!neededMatIds.has(mid)) neededMatIds.set(mid, []);
-          neededMatIds.get(mid).push({ charName: p.key || p.name, deficit: def });
+          neededMatIds.get(mid).push({ charName: p.key || p.name, deficit: qty });
         }
       });
+    });
+
+    // Descontar el inventario una sola vez entre todos los planes.
+    neededMatIds.forEach((entries, mid) => {
+      let available = Math.max(0, Number(owned[mid]) || 0);
+      const missing = entries.map((entry) => {
+        const used = Math.min(available, entry.deficit);
+        available -= used;
+        return { ...entry, deficit: entry.deficit - used };
+      }).filter((entry) => entry.deficit > 0);
+      neededMatIds.set(mid, missing);
     });
 
     return FARMING_DOMAINS_REGISTRY.filter((dom) => {
@@ -1234,7 +2193,7 @@ const FarmingEngine = {
       if (costFilter && costFilter !== "all") {
         if (costFilter === "20" && dom.resinCost !== 20) return false;
         if (costFilter === "40" && dom.resinCost !== 40) return false;
-        if (costFilter === "30" && dom.resinCost !== 30) return false;
+        if ((costFilter === "30" || costFilter === "60") && dom.type !== "weekly") return false;
       }
       return true;
     }).map((dom) => {
@@ -1267,7 +2226,7 @@ const FarmingEngine = {
    * (Ninguno, 20, 40, 60) y tarjetas de fuentes/dominios con sus materiales, requerimientos,
    * déficit, equivalencia en runs/resina/concentradas/días y avatares de personajes/armas.
    */
-  getSeelieFarmingData(charFilter) {
+  getSeelieFarmingData(charFilter, requirements = null) {
     const plans = (state.activePlans || []).filter((p) => p.active !== false);
     const owned = state.realOwned || {};
     const matsMaster = (typeof REAL_MASTER_MATERIALS !== "undefined") ? REAL_MASTER_MATERIALS : {};
@@ -1301,10 +2260,10 @@ const FarmingEngine = {
       : plans;
 
     // 3. Acumular requerimientos y los personajes que usan cada material
-    const totalReqs = {};
+    const totalReqs = requirements ? { ...requirements } : {};
     const matUsers = {}; // matId -> Map de key -> { key, name, icon }
 
-    filteredPlans.forEach((p) => {
+    (requirements ? [] : filteredPlans).forEach((p) => {
       const planReq = (typeof computePlanRequirements === "function") ? computePlanRequirements(p) : {};
       const key = p.key || p.name;
       let icon = "";
@@ -1557,83 +2516,27 @@ const FarmingEngine = {
     }
 
     // Diccionario de familias de enemigos para nombres amigables
-    const ENEMY_FAMILIES = {
-      "112001": { title: "Slimes", subTitle: "Mundial" },
-      "112002": { title: "Slimes", subTitle: "Mundial" },
-      "112003": { title: "Slimes", subTitle: "Mundial" },
-      "112005": { title: "Hilichurls (Máscaras)", subTitle: "Mundial" },
-      "112006": { title: "Hilichurls (Máscaras)", subTitle: "Mundial" },
-      "112007": { title: "Hilichurls (Máscaras)", subTitle: "Mundial" },
-      "112008": { title: "Megafloras", subTitle: "Mundial" },
-      "112009": { title: "Megafloras", subTitle: "Mundial" },
-      "112010": { title: "Megafloras", subTitle: "Mundial" },
-      "112011": { title: "Samachurls", subTitle: "Mundial" },
-      "112012": { title: "Samachurls", subTitle: "Mundial" },
-      "112013": { title: "Samachurls", subTitle: "Mundial" },
-      "112014": { title: "Hilichurls Tiradores", subTitle: "Mundial" },
-      "112015": { title: "Hilichurls Tiradores", subTitle: "Mundial" },
-      "112016": { title: "Hilichurls Tiradores", subTitle: "Mundial" },
-      "112023": { title: "Magos del Abismo (Ramas)", subTitle: "Mundial" },
-      "112024": { title: "Magos del Abismo (Ramas)", subTitle: "Mundial" },
-      "112025": { title: "Magos del Abismo (Ramas)", subTitle: "Mundial" },
-      "112032": { title: "Soldados Fatui", subTitle: "Mundial" },
-      "112033": { title: "Soldados Fatui", subTitle: "Mundial" },
-      "112034": { title: "Soldados Fatui", subTitle: "Mundial" },
-      "112035": { title: "Ladrones de Tesoros", subTitle: "Liyue / Inazuma / Fontaine" },
-      "112036": { title: "Ladrones de Tesoros", subTitle: "Liyue / Inazuma / Fontaine" },
-      "112037": { title: "Ladrones de Tesoros", subTitle: "Liyue / Inazuma / Fontaine" },
-      "112038": { title: "Megafloras", subTitle: "Mundial" },
-      "112039": { title: "Megafloras", subTitle: "Mundial" },
-      "112040": { title: "Megafloras", subTitle: "Mundial" },
-      "112041": { title: "Guardias de las Ruinas", subTitle: "Mundial" },
-      "112042": { title: "Guardias de las Ruinas", subTitle: "Mundial" },
-      "112043": { title: "Guardias de las Ruinas", subTitle: "Mundial" },
-      "112044": { title: "Nobushi & Kairagi", subTitle: "Inazuma" },
-      "112045": { title: "Nobushi & Kairagi", subTitle: "Inazuma" },
-      "112046": { title: "Nobushi & Kairagi", subTitle: "Inazuma" },
-      "112047": { title: "Doncellas del Espejo", subTitle: "Inazuma / Fontaine" },
-      "112048": { title: "Doncellas del Espejo", subTitle: "Inazuma / Fontaine" },
-      "112049": { title: "Doncellas del Espejo", subTitle: "Inazuma / Fontaine" },
-      "112053": { title: "Espectros", subTitle: "Inazuma / Enkanomiya" },
-      "112054": { title: "Espectros", subTitle: "Inazuma / Enkanomiya" },
-      "112055": { title: "Espectros", subTitle: "Inazuma / Enkanomiya" },
-      "112056": { title: "Sabuesos del Cañón", subTitle: "Inazuma / Sumeru" },
-      "112057": { title: "Sabuesos del Cañón", subTitle: "Inazuma / Sumeru" },
-      "112058": { title: "Sabuesos del Cañón", subTitle: "Inazuma / Sumeru" },
-      "112059": { title: "Caballeros de la Serpiente Negra", subTitle: "Sima / Sumeru" },
-      "112060": { title: "Caballeros de la Serpiente Negra", subTitle: "Sima / Sumeru" },
-      "112061": { title: "Caballeros de la Serpiente Negra", subTitle: "Sima / Sumeru" },
-      "112062": { title: "Flotadores Hongos", subTitle: "Sumeru / Sima" },
-      "112063": { title: "Flotadores Hongos", subTitle: "Sumeru / Sima" },
-      "112064": { title: "Flotadores Hongos", subTitle: "Sumeru / Sima" },
-      "112065": { title: "Hongos Inactivos", subTitle: "Sumeru" },
-      "112066": { title: "Hongos Inactivos", subTitle: "Sumeru" },
-      "112067": { title: "Hongos Inactivos", subTitle: "Sumeru" },
-      "112068": { title: "Eremitas", subTitle: "Sumeru" },
-      "112069": { title: "Eremitas", subTitle: "Sumeru" },
-      "112070": { title: "Eremitas", subTitle: "Sumeru" },
-      "112071": { title: "Constructos Primigenios", subTitle: "Desierto de Sumeru" },
-      "112072": { title: "Constructos Primigenios", subTitle: "Desierto de Sumeru" },
-      "112073": { title: "Constructos Primigenios", subTitle: "Desierto de Sumeru" },
-      "112080": { title: "Mecabots de Fontaine", subTitle: "Fontaine" },
-      "112081": { title: "Mecabots de Fontaine", subTitle: "Fontaine" },
-      "112082": { title: "Mecabots de Fontaine", subTitle: "Fontaine" },
-      "112083": { title: "Engendros Fontamarinos", subTitle: "Aguas de Fontaine" },
-      "112084": { title: "Engendros Fontamarinos", subTitle: "Aguas de Fontaine" },
-      "112085": { title: "Engendros Fontamarinos", subTitle: "Aguas de Fontaine" },
-      "112086": { title: "Operativos Fatui", subTitle: "Fontaine" },
-      "112087": { title: "Operativos Fatui", subTitle: "Fontaine" },
-      "112088": { title: "Operativos Fatui", subTitle: "Fontaine" },
-      "112098": { title: "Saurios de Natlan", subTitle: "Natlan" },
-      "112099": { title: "Saurios de Natlan", subTitle: "Natlan" },
-      "112100": { title: "Saurios de Natlan", subTitle: "Natlan" },
-      "112101": { title: "Avatares de Lava", subTitle: "Natlan" },
-      "112102": { title: "Avatares de Lava", subTitle: "Natlan" },
-      "112103": { title: "Avatares de Lava", subTitle: "Natlan" },
-      "112104": { title: "Guerreros Saurios de Natlan", subTitle: "Natlan" },
-      "112105": { title: "Guerreros Saurios de Natlan", subTitle: "Natlan" },
-      "112106": { title: "Guerreros Saurios de Natlan", subTitle: "Natlan" }
+    const ENEMY_FAMILIES = {};
+    const enemyNames = {
+      112002: 'Slimes', 112005: 'Hilichurls (Máscaras)', 112008: 'Samachurls',
+      112011: 'Hilichurls Tiradores', 112014: 'Mitachurls y Lawachurls',
+      112020: 'Magos del Abismo (Ramas)', 112023: 'Guardias de las Ruinas',
+      112026: 'Magas de Cicin Fatui', 112029: 'Recaudadores Fatui',
+      112032: 'Soldados Fatui', 112035: 'Ladrones de Tesoros', 112038: 'Megafloras',
+      112041: 'Dragartos', 112044: 'Nobushi & Kairagi', 112047: 'Centinelas de las Ruinas',
+      112050: 'Doncellas del Espejo', 112053: 'Espectros', 112056: 'Sabuesos del Cañón',
+      112059: 'Caballeros de la Serpiente Negra', 112062: 'Hongos (esporas)',
+      112065: 'Hongos (activados o quemados)', 112068: 'Dragones de las Ruinas',
+      112071: 'Constructos Primigenios', 112074: 'Eremitas', 112077: 'Hilichurls Errabundos',
+      112080: 'Engendros Fontamarinos', 112083: 'Mecabots de Fontaine', 112086: 'Operativos Fatui'
     };
+    Object.values(matsMaster).filter((m) => m.id.startsWith('112')).forEach((m) => {
+      const base = 112002 + Math.floor((Number(m.id) - 112002) / 3) * 3;
+      ENEMY_FAMILIES[m.id] = {
+        title: enemyNames[base] || (matsMaster[String(base)] || m).name,
+        subTitle: 'Mundial', base
+      };
+    });
 
     Object.entries(totalReqs).forEach(([mid, reqQty]) => {
       const curOwned = owned[mid] || 0;
@@ -1696,8 +2599,8 @@ const FarmingEngine = {
             days: dom.days || [1, 4, 0]
           };
         } else {
-          sourceId = "talent_misc";
-          cardDef = { title: fe.talMiscTitle, subTitle: fe.talMiscSub, region: "Teyvat", tag: fe.tagTalent, tagType: "talent", cost: 20, order: 25, days: [1, 4, 0] };
+          sourceId = "talent_misc_" + Math.floor((Number(idStr) - 104365) / 3);
+          cardDef = { title: matInfo.name, subTitle: "Dominio y calendario pendientes de verificación", region: "Teyvat", tag: fe.tagTalent, tagType: "talent", cost: 20, order: 25, days: [] };
         }
       }
       // 5. Materiales de Armas (114xxx)
@@ -1730,6 +2633,13 @@ const FarmingEngine = {
           tagType: "specialty",
           cost: 0,
           order: 90
+        };
+      }
+      else if (idStr === "113063") {
+        sourceId = "quest_natlan";
+        cardDef = {
+          title: "Misiones de Natlan", subTitle: matInfo.name, region: "Natlan",
+          tag: fe.tagSpecialty, tagType: "specialty", cost: 0, order: 90
         };
       }
       // 7. Jefes Semanales (1130xx rank >= 5)
@@ -1799,7 +2709,7 @@ const FarmingEngine = {
       else if (idStr.startsWith("112")) {
         const fam = ENEMY_FAMILIES[idStr];
         if (fam) {
-          sourceId = "elite_" + fam.title.toLowerCase().replace(/[^a-z0-9]/g, "_");
+          sourceId = "elite_" + fam.base;
           cardDef = {
             title: trEnemyTitle(fam.title),
             subTitle: trEnemySub(fam.subTitle),
@@ -1936,16 +2846,16 @@ const FarmingEngine = {
       } else if (card.cost === 60 || card.tagType === "weekly") {
         card.cost = 60;
         const weeklyMat = card.items.find((it) => it.id.startsWith("113"));
-        const weekDef = weeklyMat ? weeklyMat.deficit : totalCardDeficit;
+        const weekDef = totalCardDeficit;
         card.runs = Math.ceil(weekDef / 2.4);
-        card.resin = card.runs * 30; // 30 resina con bono semanal
+        card.resin = card.runs * 60; // Costo habitual; el descuento depende de las 3 reclamaciones semanales.
       } else {
         card.runs = 0;
         card.resin = 0;
       }
 
       if (card.resin > 0) {
-        card.condResin = Math.ceil(card.resin / 60);
+        card.condResin = card.cost === 20 ? Math.ceil(card.resin / 60) : 0;
         card.daysNeeded = Math.ceil(card.resin / 180 * 10) / 10;
         card.days = card.daysNeeded;
         totalResinNeeded += card.resin;
@@ -1960,6 +2870,7 @@ const FarmingEngine = {
       }
 
       card.scheduleText = (function(days) {
+        if (days && days.length === 0) return "Calendario pendiente de verificación";
         if (!days || days.length >= 7) return fe.everyDay;
         const ordered = [1, 2, 3, 4, 5, 6, 0].filter((d) => days.includes(d));
         return ordered.map((d) => fe.dayNames[d]).join(" / ");
@@ -1990,7 +2901,7 @@ const FarmingEngine = {
     });
 
     const daysResin = Math.ceil(totalResinNeeded / 180 * 10) / 10;
-    const condResin = Math.ceil(totalResinNeeded / 60);
+    const condResin = Array.from(sourceCardsMap.values()).reduce((sum, card) => sum + card.condResin, 0);
 
     return {
       activeCharList,

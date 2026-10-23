@@ -104,37 +104,44 @@ const REAL_CHAR_EXP_STEPS = {
   "0": {
     "mora": 24200,
     "exp_104003": 6,
-    "exp_104002": 1
+    "exp_104002": 0,
+    "exp_104001": 1
   },
   "2": {
     "mora": 115800,
     "exp_104003": 28,
-    "exp_104002": 4
+    "exp_104002": 3,
+    "exp_104001": 4
   },
   "4": {
     "mora": 116000,
-    "exp_104003": 29,
-    "exp_104002": 0
+    "exp_104003": 28,
+    "exp_104002": 3,
+    "exp_104001": 5
   },
   "6": {
     "mora": 171000,
     "exp_104003": 42,
-    "exp_104002": 3
+    "exp_104002": 2,
+    "exp_104001": 5
   },
   "8": {
     "mora": 239200,
     "exp_104003": 59,
-    "exp_104002": 3
+    "exp_104002": 3,
+    "exp_104001": 1
   },
   "10": {
     "mora": 322400,
     "exp_104003": 80,
-    "exp_104002": 3
+    "exp_104002": 2,
+    "exp_104001": 2
   },
   "12": {
     "mora": 684800,
     "exp_104003": 171,
-    "exp_104002": 1
+    "exp_104002": 0,
+    "exp_104001": 4
   }
 };
 
@@ -166,6 +173,38 @@ const REAL_WEAP5_ORE_STEPS = {
   "12": {
     "mora": 371460,
     "ore_104013": 371
+  }
+};
+
+// EXP de armas de 3 estrellas: no usar la tabla de 4 estrellas.
+const REAL_WEAP3_ORE_STEPS = {
+  "0": {
+    "mora": 5348,
+    "ore_104013": 6
+  },
+  "2": {
+    "mora": 27400,
+    "ore_104013": 28
+  },
+  "4": {
+    "mora": 27635,
+    "ore_104013": 28
+  },
+  "6": {
+    "mora": 40815,
+    "ore_104013": 41
+  },
+  "8": {
+    "mora": 57163,
+    "ore_104013": 58
+  },
+  "10": {
+    "mora": 77013,
+    "ore_104013": 78
+  },
+  "12": {
+    "mora": 163448,
+    "ore_104013": 164
   }
 };
 
@@ -1291,7 +1330,7 @@ const REAL_MASTER_MATERIALS = {
     "id": "101268",
     "name": "Hierba invernal",
     "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101266.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101268.png"
   },
   "104356": {
     "id": "104356",

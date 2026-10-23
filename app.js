@@ -124,7 +124,7 @@ function buildRealInventoryItems() {
 
   // 3. Jefes de Mundo (113 rank 4)
   const m113 = Object.values(mats).filter((m) => parseInt(m.id) >= 113000 && parseInt(m.id) < 114000);
-  m113.filter((m) => m.rank < 5 && String(m.id) !== "113021").sort((a, b) => parseInt(a.id) - parseInt(b.id)).forEach((m) => {
+  m113.filter((m) => m.rank < 5 && String(m.id) !== "113021" && String(m.id) !== "113063").sort((a, b) => parseInt(a.id) - parseInt(b.id)).forEach((m) => {
     items.push({
       id: m.id,
       name: m.name,
@@ -136,8 +136,13 @@ function buildRealInventoryItems() {
     });
   });
 
+  if (mats["113063"]) {
+    const m = mats["113063"];
+    items.push({id: m.id, name: m.name, rarity: m.rank, cat: "local", family: null, tier: 1, icon: m.icon});
+  }
+
   // 4. Jefes Semanales (113 rank 5)
-  m113.filter((m) => m.rank >= 5).sort((a, b) => parseInt(a.id) - parseInt(b.id)).forEach((m) => {
+  m113.filter((m) => m.rank >= 5 && String(m.id) !== "113063").sort((a, b) => parseInt(a.id) - parseInt(b.id)).forEach((m) => {
     items.push({
       id: m.id,
       name: m.name,
@@ -2128,6 +2133,12 @@ function populateTheorycraftSimulatorSelect() {
   if (typeof CHARACTER_BUILDS_DB !== "undefined") {
     CHARACTER_BUILDS_DB.forEach((build) => {
       const charKey = build.name.es;
+      if (build.originalSource && CHARACTER_CATALOG[charKey]) {
+        Object.assign(CHARACTER_CATALOG[charKey], {
+          baseStats: build.baseStats, talentsData: build.talentsData,
+          originalSource: build.originalSource
+        });
+      }
       if (!CHARACTER_CATALOG[charKey]) {
         CHARACTER_CATALOG[charKey] = {
           id: build.id,
@@ -2160,14 +2171,19 @@ function loadCharacterRecommendedStats(charKey) {
   const ch = CHARACTER_CATALOG[charKey];
   if (!ch || !ch.recommendedPanel) return;
   const p = ch.recommendedPanel;
-  document.getElementById("tcSimHp").value = p.hp ?? 20000;
-  document.getElementById("tcSimAtk").value = p.atk ?? 2000;
-  document.getElementById("tcSimDef").value = p.def ?? 800;
-  document.getElementById("tcSimEm").value = p.em ?? 80;
-  document.getElementById("tcSimCr").value = p.cr ?? 70;
-  document.getElementById("tcSimCd").value = p.cd ?? 160;
-  document.getElementById("tcSimEr").value = p.er ?? 130;
-  document.getElementById("tcSimDmgBonus").value = p.dmgBonus ?? 80;
+  const panelNumber = (value, fallback) => {
+    if (typeof value === "number" && Number.isFinite(value)) return value;
+    const match = String(value ?? "").replace(/,/g, "").match(/-?\d+(?:\.\d+)?/);
+    return match ? Number(match[0]) : fallback;
+  };
+  document.getElementById("tcSimHp").value = panelNumber(p.hp, 20000);
+  document.getElementById("tcSimAtk").value = panelNumber(p.atk, 2000);
+  document.getElementById("tcSimDef").value = panelNumber(p.def, 800);
+  document.getElementById("tcSimEm").value = panelNumber(p.em, 80);
+  document.getElementById("tcSimCr").value = panelNumber(p.cr, 70);
+  document.getElementById("tcSimCd").value = panelNumber(p.cd, 160);
+  document.getElementById("tcSimEr").value = panelNumber(p.er, 130);
+  document.getElementById("tcSimDmgBonus").value = panelNumber(p.dmgBonus, 80);
 }
 
 function calculateFullCharacterTheorycraft() {
@@ -2176,6 +2192,21 @@ function calculateFullCharacterTheorycraft() {
   if (!ch) return;
 
   const charLv = parseInt(document.getElementById("tcSimCharLv")?.value || "90", 10);
+  if (!ch.baseStats || !ch.talentsData || charLv > 90) {
+    const message = charLv > 90
+      ? "Cálculo no disponible: faltan estadísticas y multiplicadores verificados para este nivel."
+      : "Cálculo no disponible: faltan estadísticas y talentos específicos de este personaje.";
+    document.getElementById("tcSimTalentsTableBody").innerHTML = `<tr><td colspan="5">${escapeHtml(message)}</td></tr>`;
+    document.getElementById("tcSimBaseInfo").textContent = message;
+    const title = document.getElementById("tcStellaTitle");
+    const desc = document.getElementById("tcStellaDesc");
+    const badge = document.getElementById("tcStellaDefBonus");
+    if (title) title.textContent = "Datos pendientes de verificación";
+    if (desc) desc.textContent = message;
+    if (badge) badge.textContent = "—";
+    document.getElementById("valCvScore").textContent = "—";
+    return;
+  }
   const hp = parseFloat(document.getElementById("tcSimHp").value || "20000");
   const atk = parseFloat(document.getElementById("tcSimAtk").value || "2000");
   const def = parseFloat(document.getElementById("tcSimDef").value || "850");
@@ -2293,6 +2324,23 @@ function calculateFullCharacterTheorycraft() {
 
   const rowsHtml = talentsList
     .map((tObj) => {
+      if (tObj.data.native) {
+        const {labels, parameters} = tObj.data.native;
+        return labels.map((label, index) => {
+          const [name, template = ""] = label.split("|");
+          const formatted = template.replace(/\{(param\d+):([^}]+)\}/g, (token, key, format) => {
+            const value = parameters[key]?.[tObj.lv - 1];
+            if (!Number.isFinite(value)) return "—";
+            const percent = format.includes("P");
+            const number = percent ? value * 100 : value;
+            return `${Number(number.toFixed(2)).toLocaleString(state.lang || 'es')}${percent ? "%" : ""}`;
+          }).replace(/<[^>]*>/g, "");
+          return `<tr><td><strong>${escapeHtml(tObj.data.name)}</strong><div>${escapeHtml(name)} · Nv. ${tObj.lv}</div></td><td>${escapeHtml(formatted)}</td><td colspan="3" title="Parámetro del talento; el daño final requiere su fórmula específica">${index === 0 ? "Parámetros del talento original" : "—"}</td></tr>`;
+        }).join("");
+      }
+      if (!["ATK", "HP", "DEF"].includes(tObj.data.scaleStat) || /\+|curaci|healing|escudo|shield/i.test(`${tObj.data.unit} ${tObj.data.name}`)) {
+        return `<tr><td>${escapeHtml(tObj.data.name)}</td><td colspan="4">Fórmula especial pendiente de verificación.</td></tr>`;
+      }
       const mvPct = tObj.data.mvByLevel[tObj.lv - 1] || tObj.data.mvByLevel[9];
       let statPool = effectiveAtk;
       if (tObj.data.scaleStat === "HP") statPool = effectiveHp;
@@ -2885,6 +2933,29 @@ function showTheorycraftPolishingNotice() {
   }, 4800);
 }
 
+function formatOriginalTalentAttribute(template, parameters, level, lang) {
+  return String(template || "").replace(/\{(param\d+):([^}]+)\}/g, (token, key, format) => {
+    const value = parameters[key]?.[level - 1];
+    if (!Number.isFinite(value)) return "—";
+    const percent = format.includes("P");
+    const number = percent ? value * 100 : value;
+    return `${Number(number.toFixed(2)).toLocaleString(lang || 'es')}${percent ? "%" : ""}`;
+  }).replace(/<[^>]*>/g, "");
+}
+
+function renderOriginalBuildFacts(build, level = 10) {
+  const stats = build.baseStats;
+  const rows = Object.values(build.talentsData || {}).filter(t => t.native).map(talent => {
+    const attributes = talent.native.labels.map(label => {
+      const [name, template] = label.split("|");
+      const value = formatOriginalTalentAttribute(template, talent.native.parameters, level, state.lang);
+      return `<tr><td style="padding:4px 10px 4px 0;">${escapeHtml(name)}</td><td style="padding:4px 0;">${escapeHtml(value)}</td></tr>`;
+    }).join("");
+    return `<h4 style="margin:12px 0 5px;">${escapeHtml(talent.name)} · Nv. ${level}</h4><table style="width:100%;font-size:0.78rem;"><tbody>${attributes}</tbody></table>`;
+  }).join("");
+  return `<p style="font-size:0.82rem;">Base Nv. 90: Vida ${stats.hp90.toLocaleString()} · ATQ ${stats.atk90} · DEF ${stats.def90}. Ascensión: +${escapeHtml(stats.ascVal)} ${escapeHtml(stats.ascStat)}.</p>${rows}<p style="font-size:0.75rem;color:var(--text-muted);margin-top:12px;">Los porcentajes son parámetros del talento; el daño final depende de la fórmula, equipo y enemigo. <a href="${escapeHtml(build.originalSource)}/blob/main/src/data/Spanish/talents/${escapeHtml(build.originalSourceKey)}.json" target="_blank" rel="noopener noreferrer">Consultar fuente</a>.</p>`;
+}
+
 function renderTheorycraft() {
   const container = document.getElementById("tcCardsContainer");
   if (!container) return;
@@ -3379,6 +3450,8 @@ function renderTheorycraft() {
         </div>
       </div>
 
+      ${ch.originalSource ? `<details class="tc-original-facts" style="padding:14px 18px;border-bottom:1px solid var(--border);"><summary style="cursor:pointer;font-weight:700;">Datos del juego: estadísticas base y talentos</summary><label style="display:block;margin:12px 0;">Nivel de talentos <select class="tc-original-level">${Array.from({length:13},(_,i)=>`<option value="${i+1}" ${i===9?'selected':''}>${i+1}</option>`).join('')}</select></label><div class="tc-original-values">${renderOriginalBuildFacts(ch)}</div></details>` : ""}
+
       <div class="tc-build-grid">
         <!-- COLUMNA 1: EQUIPAMIENTO ÓPTIMO (ARMAS Y ARTEFACTOS) -->
         <div>
@@ -3429,6 +3502,11 @@ function renderTheorycraft() {
       </div>
     `;
 
+    const originalLevel = card.querySelector('.tc-original-level');
+    if (originalLevel) originalLevel.addEventListener('change', () => {
+      const level = Math.max(1, Math.min(13, Number(originalLevel.value) || 10));
+      card.querySelector('.tc-original-values').innerHTML = renderOriginalBuildFacts(ch, level);
+    });
     container.appendChild(card);
   });
 }
@@ -3929,7 +4007,7 @@ async function renderWishesDashboard() {
   // 8. Gráfico Mensual SVG
   const chartEl = document.getElementById("wishMonthlyChartContainer");
   if (chartEl) {
-    chartEl.innerHTML = buildMonthlyChartSvg(stats.monthlyChart.length > 0 ? stats.monthlyChart : [{ month: "2026-10", pulls: stats.totalPulls }]);
+    chartEl.innerHTML = buildMonthlyChartSvg(stats.monthlyChart);
   }
 
   // 9. Vitrina de 5★
@@ -4216,7 +4294,7 @@ function buildMonthlyChartSvg(monthlyData) {
   const points = monthlyData.map((d, i) => {
     const x = padLeft + (i / Math.max(1, monthlyData.length - 1)) * plotW;
     const y = padTop + plotH - ((d.pulls || 0) / yMax) * plotH;
-    const parts = (d.month || "2026-01").split("-");
+    const parts = (d.month || "").split("-");
     const mLabel = (monthNames[parts[1]] || parts[1]) + "/" + (parts[0] ? parts[0].substring(2) : "");
     return {
       x, y,
@@ -5480,10 +5558,10 @@ function renderSeelieSourceCard(card, currentDayIdx, activeFilterDay) {
             <img src="assets/ui/resin.png" class="seelie-stat-icon" alt="Resina Original" />
             ${card.resin.toLocaleString()} ${escapeHtml(resinWord)}
           </span>
-          <span class="sub-item sub-cond" title="Equivalencia en Resinas Concentradas (60 ✦ c/u)">
+          ${card.cost === 20 ? `<span class="sub-item sub-cond" title="Equivalencia en Resinas Concentradas (60 ✦ c/u)">
             <img src="assets/ui/condensed_resin.png" class="seelie-stat-icon" alt="Resina Concentrada" />
             ${card.condResin} ${escapeHtml(tp.condensedWord || "Concentradas")}
-          </span>
+          </span>` : ""}
         </div>
         <div class="sub-days" title="Tiempo de recarga natural estimado a 180 resina al día">
           <img src="assets/ui/clock.svg" class="seelie-inline-icon" alt="Tiempo" /> ~${daysNum} ${escapeHtml(tf.daysWord || "días")}
@@ -5658,7 +5736,7 @@ function renderSeelieArtifacts() {
           <span class="farm-resin-cost-badge">${dom.resinCost} ✦</span>
         </div>
         <div style="display:flex;align-items:center;gap:0.6rem;margin:0.4rem 0;">
-          <img src="${dom.icon}" alt="Artefacto" style="width:38px;height:38px;object-fit:contain;border-radius:6px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.1);" onerror="this.src='https://enka.network/ui/UI_RelicIcon_15001_1.png'" />
+          <img src="${dom.icon}" alt="Artefacto" style="width:38px;height:38px;object-fit:contain;border-radius:6px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.1);" onerror="this.onerror=null;this.src='assets/ui/tab_domain.png'" />
           <div>
             <div style="font-weight:700;font-size:0.86rem;color:var(--text-main);">${escapeHtml(dom.sets)}</div>
             <div style="font-size:0.75rem;color:var(--gold-primary);">Abierto los 7 días (24/7)</div>
@@ -5826,7 +5904,7 @@ function renderFarmingWeeklyDomains() {
     if (d.type === "leylines") groups.leylines.items.push(d);
     else if (d.resinCost === 20) groups.resin20.items.push(d);
     else if (d.resinCost === 40) groups.resin40.items.push(d);
-    else if (d.resinCost === 30) groups.resin30.items.push(d);
+    else if (d.type === "weekly") groups.resin30.items.push(d);
   });
 
   const isSunday = dayIdx === 0;
@@ -5877,7 +5955,7 @@ function renderSingleDomainCard(dom) {
     `
     : "";
 
-  const resinBadgeClass = dom.resinCost === 40 ? "purple" : dom.resinCost === 30 ? "orange" : "";
+  const resinBadgeClass = dom.resinCost === 40 ? "purple" : dom.type === "weekly" ? "orange" : "";
   const daysText = dom.days && dom.days.length === 7 ? fd.everyDay247 : (dom.days ? dom.days.map(d => fd.daysShort[d]).join(" / ") : "");
 
   let contentHtml = "";

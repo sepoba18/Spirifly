@@ -17931,5 +17931,18 @@ const CHARACTER_BUILDS_DB = [
   }
 ];
 
+// Completar fichas sin recurrir a estadísticas ni talentos genéricos.
+if (typeof ORIGINAL_SIMULATOR_DATA !== "undefined") {
+  CHARACTER_BUILDS_DB.forEach((build) => {
+    const original = ORIGINAL_SIMULATOR_DATA.characters[build.id];
+    if (!original) return;
+    build.baseStats = original.baseStats;
+    build.talentsData = original.talentsData;
+    build.originalSource = ORIGINAL_SIMULATOR_DATA.source;
+    build.originalSourceKey = original.sourceKey;
+  });
+}
+
+
 if (typeof window !== "undefined") { window.CHARACTER_BUILDS_DB = CHARACTER_BUILDS_DB; }
 if (typeof module !== "undefined" && module.exports) { module.exports = { CHARACTER_BUILDS_DB }; }
