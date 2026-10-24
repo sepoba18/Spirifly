@@ -46,7 +46,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "????",
     "ko": "?? ??"
   },
-
   "11101": {
     "es": "Hoja Desafilada",
     "en": "Dull Blade",
@@ -3926,11 +3925,11 @@ const I18N_WEAPONS_RAW = {
     "ko": "붉은 달의 형상"
   },
   "semblante de la luna carmesí": {
-    "es": "Báculo de las Arenas Escarlatas",
-    "en": "Staff of the Scarlet Sands",
-    "pt": "Báculo das Areias Escarlates",
-    "ja": "赤砂の杖",
-    "ko": "적색 사막의 지팡이"
+    "es": "Semblante de la Luna Carmesí",
+    "en": "Crimson Moon's Semblance",
+    "pt": "Semblante da Lua Carmesim",
+    "ja": "赤月のシルエット",
+    "ko": "붉은 달의 형상"
   },
   "crimson moon's semblance": {
     "es": "Semblante de la Luna Carmesí",
@@ -4668,11 +4667,11 @@ const I18N_WEAPONS_RAW = {
     "ko": "방랑하는 저녁별"
   },
   "estrella errabunda": {
-    "es": "Ojo del Juramento",
-    "en": "Oathsworn Eye",
-    "pt": "Olho do Juramento",
-    "ja": "誓いの明瞳",
-    "ko": "맹세의 눈동자"
+    "es": "Estrella Errabunda",
+    "en": "Wandering Evenstar",
+    "pt": "Estrela Itinerante",
+    "ja": "彷徨える星",
+    "ko": "방랑하는 저녁별"
   },
   "wandering evenstar": {
     "es": "Estrella Errabunda",
@@ -4752,11 +4751,11 @@ const I18N_WEAPONS_RAW = {
     "ko": "순수한 달빛 물결"
   },
   "fluencia impoluta": {
-    "es": "Jade Sacrificial",
-    "en": "Sacrificial Jade",
-    "pt": "Sacrifício de Jade",
-    "ja": "古祠の瓏",
-    "ko": "제사의 옥"
+    "es": "Fluencia Impoluta",
+    "en": "Flowing Purity",
+    "pt": "Fluxo da Pureza",
+    "ja": "純水流華",
+    "ko": "순수한 달빛 물결"
   },
   "flowing purity": {
     "es": "Fluencia Impoluta",
@@ -7671,11 +7670,11 @@ const I18N_WEAPONS_RAW = {
     "ko": "사풍 원서"
   },
   "semblanza de la luna carmesí": {
-    "es": "Báculo de las Arenas Escarlatas",
-    "en": "Staff of the Scarlet Sands",
-    "pt": "Báculo das Areias Escarlates",
-    "ja": "赤砂の杖",
-    "ko": "적색 사막의 지팡이"
+    "es": "Semblante de la Luna Carmesí",
+    "en": "Crimson Moon's Semblance",
+    "pt": "Semblante da Lua Carmesim",
+    "ja": "赤月のシルエット",
+    "ko": "붉은 달의 형상"
   },
   "anillo de yaxche": {
     "es": "Laúd de la Luz Celestial",

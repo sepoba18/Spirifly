@@ -27,7 +27,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/ui/favicon-32x32.png?v=2" />
   <link rel="icon" type="image/png" sizes="16x16" href="assets/ui/favicon-16x16.png?v=2" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/ui/apple-touch-icon.png?v=2" />
-  <link rel="stylesheet" href="styles.css?v=2.10.2" />
+  <link rel="stylesheet" href="styles.css?v=2.10.6" />
   <!-- Script anti-flicker inmediato para evitar parpadeo al recargar pestañas -->
   <script>
     (function () {
@@ -327,6 +327,7 @@
     .tutorial-btn-ghost:hover { color: #f1f5f9; }
 
   </style>
+  <link rel="stylesheet" href="assets/tutorial.css?v=2.10.6" />
   <!-- Google Analytics 4 (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3F1TQSWB0"></script>
   <script>
@@ -1131,24 +1132,6 @@
           <h2>Guías &amp; Builds Meta de Personajes</h2>
           <p>Consulta el equipamiento óptimo (armas BiS y F2P, artefactos recomendados, estadísticas clave), prioridad
             de talentos y mejores equipos.</p>
-        </div>
-      </div>
-
-      <!-- Banner Informativo: Sección de Builds en Proceso de Pulido -->
-      <div class="theory-polishing-banner" id="theoryPolishingBanner" role="status">
-        <div class="theory-polishing-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-          </svg>
-        </div>
-        <div class="theory-polishing-content">
-          <div class="theory-polishing-title">
-            <span>Sección de Builds en Proceso de Pulido Continuo</span>
-            <span class="theory-polishing-badge">En optimización</span>
-          </div>
-          <p class="theory-polishing-desc">
-            Estamos revisando, testeando y actualizando minuciosamente las estadísticas recomendadas, sets de artefactos, armas y sinergias de equipos para cada personaje según las últimas versiones del juego. Agradecemos tu comprensión mientras afinamos cada detalle para ofrecerte la máxima precisión.
-          </p>
         </div>
       </div>
 
@@ -2155,334 +2138,248 @@
   </div>
 
   <script src="data.js?v=2.6.5"></script>
-  <script src="data_real_genshin.js?v=2.10.2"></script>
-  <script src="assets/data/simulator-original.js?v=2.10.2"></script>
-  <script src="data_builds.js?v=2.10.2"></script>
-  <script src="i18n_dictionary.js?v=2.6.5"></script>
-  <script src="planner_real.js?v=2.10.2"></script>
-  <script src="farming_engine.js?v=2.10.2"></script>
+  <script src="data_real_genshin.js?v=2.10.1"></script>
+  <script src="assets/data/simulator-original.js?v=2.10.1"></script>
+  <script src="data_builds.js?v=2.10.6"></script>
+  <script src="i18n_dictionary.js?v=2.10.6"></script>
+  <script src="planner_real.js?v=2.10.1"></script>
+  <script src="farming_engine.js?v=2.10.1"></script>
   <!-- Google Identity Services (GIS) para OAuth 2.0 y Google Drive API -->
   <script src="https://accounts.google.com/gsi/client" async defer></script>
   <script src="gdrive_sync_engine.js?v=2.9.2"></script>
   <script src="xlsx.full.min.js"></script>
-  <script src="wish_engine.js?v=2.10.2"></script>
-  <script src="app.js?v=2.10.2"></script>
+  <script src="wish_engine.js?v=2.10.1"></script>
+  <script src="assets/data/tutorial-i18n.js?v=2.10.6"></script>
+  <script src="app.js?v=2.10.6"></script>
 
   <!-- ==============================================================
        MODAL: GUÍA RÁPIDA / TUTORIAL INTERACTIVO DE SPIRIFLY
        ============================================================== -->
-  <div id="modalInteractiveTutorial" class="seelie-modal-backdrop" role="dialog" aria-modal="true" style="z-index: 1200; padding: 1rem;">
-    <div class="tutorial-container">
-      <!-- Header -->
-      <div class="tutorial-header">
-        <div class="tutorial-brand" style="display:flex;align-items:center;gap:0.75rem;">
-          <img src="assets/ui/logo_spirifly.jpg" alt="Spirifly Logo" style="width:36px;height:36px;border-radius:8px;object-fit:cover;box-shadow:0 0 10px rgba(255,140,66,0.4);flex-shrink:0;" />
-          <div style="display:flex;flex-direction:column;">
-            <span style="font-size:1.15rem;font-weight:900;background:linear-gradient(90deg, #fff7e0, #f5d996, #7dd3fc);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.15;">Spirifly</span>
-            <span style="font-size:0.74rem;font-weight:700;color:#60a5fa;letter-spacing:0.5px;text-transform:uppercase;">Guía Rápida</span>
-          </div>
-        </div>
-        <div style="display:flex;align-items:center;">
-          <div class="step-counter" id="tutorialStepCounter">Paso 1 de 6</div>
-          <button type="button" class="tutorial-close-btn" id="btnCloseTutorialX" title="Cerrar Guía">&times;</button>
-        </div>
-      </div>
-
-      <!-- Stepper bar -->
-      <div class="stepper-nav" id="tutorialStepperNav">
-        <button type="button" class="step-chip active" data-step="0">
-          <img src="assets/ui/icon_primogem.png" alt="" />
-          1. Bienvenida
-        </button>
-        <button type="button" class="step-chip" data-step="1">
-          <img src="assets/weapon_types/sword.png" alt="" />
-          2. Personajes y Armas
-        </button>
-        <button type="button" class="step-chip" data-step="2">
-          <img src="assets/ui/resin.png" alt="" />
-          3. Farmeo Diario
-        </button>
-        <button type="button" class="step-chip" data-step="3">
-          <img src="assets/ui/tab_domain.png" alt="" />
-          4. Inventario
-        </button>
-        <button type="button" class="step-chip" data-step="4">
-          <img src="assets/ui/icon_intertwined.png" alt="" />
-          5. Deseos y Pity
-        </button>
-        <button type="button" class="step-chip" data-step="5">
-          <img src="assets/ui/user.svg" alt="" />
-          6. Multi-Cuenta & Nube
-        </button>
-      </div>
-
-      <!-- Body Slides -->
-      <div class="tutorial-body">
-
-        <!-- SLIDE 1: BIENVENIDA -->
-        <div class="tutorial-slide active" id="tut-slide-0">
-          <div>
-            <span class="tutorial-slide-badge" style="background:rgba(59,130,246,0.15);color:#93c5fd;">
-              <img src="assets/ui/sparkle.svg" alt="" />
-              Tu Suite Inteligente
-            </span>
-            <h2 class="tutorial-slide-h2">¡Bienvenido a Spirifly!</h2>
-            <p class="tutorial-slide-desc">
-              Spirifly es tu plataforma integral para optimizar cada minuto y cada resina en <strong>Genshin Impact</strong>. Diseñada para ser rápida, limpia y 100% privada con guardado local inmediato y sin pérdida de datos.
-            </p>
-            <div class="tutorial-feature-grid">
-              <div class="tutorial-feature-card">
-                <h4>
-                  <img src="assets/weapon_types/sword.png" alt="" />
-                  Planificación Real
-                </h4>
-                <p>Elige personajes y armas con metas de nivel y talentos personalizadas.</p>
-              </div>
-              <div class="tutorial-feature-card">
-                <h4>
-                  <img src="assets/ui/resin.png" alt="" />
-                  Farmeo al Día
-                </h4>
-                <p>Revisa qué dominios están abiertos hoy y cuánta resina te costará.</p>
-              </div>
-              <div class="tutorial-feature-card">
-                <h4>
-                  <img src="assets/ui/icon_intertwined.png" alt="" />
-                  Pity 5★ Oficial
-                </h4>
-                <p>Calcula Soft Pity, Hard Pity y Capturing Radiance con tu historial oficial.</p>
-              </div>
-              <div class="tutorial-feature-card">
-                <h4>
-                  <img src="assets/ui/user.svg" alt="" />
-                  Multi-Cuenta Real
-                </h4>
-                <p>Gestiona cuentas independientes con respaldo seguro en tu nube de Google Drive.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- SLIDE 2: PERSONAJES Y ARMAS -->
-        <div class="tutorial-slide" id="tut-slide-1">
-          <div>
-            <span class="tutorial-slide-badge" style="background:rgba(168,85,247,0.15);color:#d8b4fe;">
-              <img src="assets/weapon_types/sword.png" alt="" />
-              Personajes y Armas
-            </span>
-            <h2 class="tutorial-slide-h2">Planifica tus Ascensiones y Talentos</h2>
-            <p class="tutorial-slide-desc">
-              Configura las metas exactas para los personajes que quieres buildear. Spirifly calcula matemáticamente cada gema, libro de talento, material de jefe y mora requerida.
-            </p>
-            <div class="tutorial-mockup-box">
-              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.9rem;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:0.75rem;">
-                <div style="display:flex;align-items:center;gap:0.75rem;">
-                  <div style="width:42px;height:42px;border-radius:8px;background:#1e3a8a;border:1px solid #3b82f6;display:flex;align-items:center;justify-content:center;">
-                    <img src="assets/elements/hydro.png" style="width:28px;height:28px;" alt="Hydro" />
-                  </div>
-                  <div>
-                    <div style="font-weight:800;font-size:1.05rem;color:#ffffff;display:flex;align-items:center;gap:0.4rem;">
-                      Furina 
-                      <span style="font-size:0.75rem;background:#1e3a8a;border:1px solid #3b82f6;padding:1px 6px;border-radius:4px;color:#93c5fd;display:inline-flex;align-items:center;gap:3px;">
-                        <img src="assets/elements/hydro.png" style="width:12px;height:12px;" alt="" /> Hydro 5★
-                      </span>
-                    </div>
-                    <div style="font-size:0.8rem;color:#fbbf24;font-weight:700;">Nv. 1/20 » 90/90 • Talentos: 1/1/1 » 9/10/10</div>
-                  </div>
-                </div>
-                <div class="tutorial-mini-pill">
-                  <img src="assets/ui/resin.png" alt="" />
-                  ~1.840 Resina
-                </div>
-              </div>
-              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
-                <span style="font-size:0.78rem;background:rgba(255,255,255,0.06);padding:3px 8px;border-radius:6px;display:inline-flex;align-items:center;gap:4px;">
-                  <img src="assets/ui/tab_talent.png" style="width:14px;height:14px;" alt="" /> Libros Justicia: 114
-                </span>
-                <span style="font-size:0.78rem;background:rgba(255,255,255,0.06);padding:3px 8px;border-radius:6px;display:inline-flex;align-items:center;gap:4px;">
-                  <img src="assets/ui/tab_boss.png" style="width:14px;height:14px;" alt="" /> Gotas Boss: 46
-                </span>
-                <span style="font-size:0.78rem;background:rgba(255,255,255,0.06);padding:3px 8px;border-radius:6px;display:inline-flex;align-items:center;gap:4px;">
-                  <img src="assets/ui/local_specialty.png" style="width:14px;height:14px;" alt="" /> Lirios del Lago: 168
-                </span>
-                <span style="font-size:0.78rem;background:rgba(255,255,255,0.06);padding:3px 8px;border-radius:6px;color:#fbbf24;display:inline-flex;align-items:center;gap:4px;">
-                  <img src="assets/ui/mora.png" style="width:14px;height:14px;" alt="" /> Mora: 7.100.000
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- SLIDE 3: FARMEO DIARIO -->
-        <div class="tutorial-slide" id="tut-slide-2">
-          <div>
-            <span class="tutorial-slide-badge" style="background:rgba(34,197,94,0.15);color:#86efac;">
-              <img src="assets/ui/resin.png" alt="" />
-              Farmeo Inteligente
-            </span>
-            <h2 class="tutorial-slide-h2">Optimiza tu Resina y Horarios de Dominios</h2>
-            <p class="tutorial-slide-desc">
-              Nunca más entres a un dominio el día equivocado. El motor de Farmeo cruza tus personajes activos con el calendario semanal oficial de Teyvat.
-            </p>
-            <div class="tutorial-mockup-box">
-              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;">
-                <span style="font-weight:700;color:#fbbf24;font-size:0.9rem;display:inline-flex;align-items:center;gap:5px;">
-                  <img src="assets/ui/resin.png" style="width:18px;height:18px;" alt="" />
-                  Resina Actual: 160 / 200
-                </span>
-                <span style="font-size:0.8rem;color:#94a3b8;display:inline-flex;align-items:center;gap:4px;">
-                  <img src="assets/ui/clock.svg" style="width:13px;height:13px;" alt="" />
-                  Llena a las 18:42 hrs (~5h 20m)
-                </span>
-              </div>
-              <div class="tutorial-bar-track" style="margin-bottom:1rem;">
-                <div class="tutorial-bar-fill" style="width:80%;"></div>
-              </div>
-              <div style="display:flex;align-items:center;gap:0.75rem;background:rgba(0,0,0,0.25);padding:0.75rem;border-radius:8px;border:1px solid rgba(255,255,255,0.08);">
-                <img src="assets/ui/tab_domain.png" style="width:32px;height:32px;object-fit:contain;" alt="Dominio" />
-                <div style="flex:1;">
-                  <div style="font-weight:700;font-size:0.88rem;color:#ffffff;">Dominio de Filosofías de la "Justicia" (Martes / Viernes / Domingo)</div>
-                  <div style="font-size:0.78rem;color:#38bdf8;">Abierto Hoy • Recomendado para: Furina, Neuvillette, Charlotte</div>
-                </div>
-                <span class="tutorial-mini-pill" style="border-color:#22c55e;color:#86efac;">
-                  <img src="assets/ui/resin.png" style="width:13px;height:13px;" alt="" />
-                  20 Resina
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- SLIDE 4: INVENTARIO -->
-        <div class="tutorial-slide" id="tut-slide-3">
-          <div>
-            <span class="tutorial-slide-badge" style="background:rgba(234,179,8,0.15);color:#fde047;">
-              <img src="assets/ui/tab_domain.png" alt="" />
-              Inventario en Tiempo Real
-            </span>
-            <h2 class="tutorial-slide-h2">Descuenta lo que ya Tienes en tu Mochila</h2>
-            <p class="tutorial-slide-desc">
-              En lugar de calcular materiales teóricos infinitos, anota tus existencias en la pestaña <strong>Inventario</strong>. Spirifly restará tus ítems reales y te dirá con exactitud matemática el déficit pendiente.
-            </p>
-            <div class="tutorial-feature-grid">
-              <div class="tutorial-feature-card">
-                <h4>
-                  <img src="assets/ui/refresh.svg" alt="" />
-                  Resta Inteligente
-                </h4>
-                <p>Si necesitas 46 materiales de boss y ya tienes 20, tu meta solo pedirá 26.</p>
-              </div>
-              <div class="tutorial-feature-card">
-                <h4>
-                  <img src="assets/ui/tab_gem.png" alt="" />
-                  Sintetizador Alquimia
-                </h4>
-                <p>Soporte para crafteo 3 a 1 de gemas y libros en mesas de síntesis.</p>
-              </div>
-              <div class="tutorial-feature-card">
-                <h4>
-                  <img src="assets/ui/resin.png" alt="" />
-                  Ahorro de Resina
-                </h4>
-                <p>Visualiza en vivo cómo disminuye el costo de resina a medida que recolectas.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- SLIDE 5: DESEOS Y PITY -->
-        <div class="tutorial-slide" id="tut-slide-4">
-          <div>
-            <span class="tutorial-slide-badge" style="background:rgba(59,130,246,0.15);color:#93c5fd;">
-              <img src="assets/ui/icon_intertwined.png" alt="" />
-              Contador de Deseos
-            </span>
-            <h2 class="tutorial-slide-h2">Rastreador Oficial de Pity 5★ y Garantías</h2>
-            <p class="tutorial-slide-desc">
-              Importa tus tiradas en 1 solo clic con nuestro script oficial de PowerShell (PC) o mediante archivos de historial en Excel / JSON (.xlsx, .json). 100% privado y seguro.
-            </p>
-            <div class="tutorial-mockup-box">
-              <div class="tutorial-pity-bar" style="margin-bottom:0.75rem;">
-                <span style="font-weight:800;color:#ffffff;font-size:0.95rem;display:inline-flex;align-items:center;gap:6px;">
-                  <img src="assets/ui/icon_intertwined.png" style="width:20px;height:20px;" alt="" />
-                  Banner Promocional
-                </span>
-                <div class="tutorial-bar-track">
-                  <div class="tutorial-bar-fill" style="width:78%;background:linear-gradient(90deg, #3b82f6, #f59e0b);"></div>
-                </div>
-                <span style="font-size:0.85rem;font-weight:800;color:#f59e0b;">Pity 74 (Soft Pity)</span>
-              </div>
-              <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
-                <span class="tutorial-mini-pill" style="border-color:#22c55e;color:#86efac;">
-                  <img src="assets/ui/check.svg" style="width:12px;height:12px;" alt="" />
-                  100% Garantizado
-                </span>
-                <span class="tutorial-mini-pill">
-                  <img src="assets/ui/sparkle.svg" style="width:12px;height:12px;" alt="" />
-                  Capturing Radiance (~55%)
-                </span>
-                <span class="tutorial-mini-pill">
-                  <img src="assets/weapon_types/sword.png" style="width:12px;height:12px;" alt="" />
-                  Senda Divina (1 Punto)
-                </span>
-                <span class="tutorial-mini-pill">
-                  <img src="assets/ui/clipboard.svg" style="width:12px;height:12px;" alt="" />
-                  1.179 Tiradas Registradas
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- SLIDE 6: MULTI-CUENTA Y DRIVE -->
-        <div class="tutorial-slide" id="tut-slide-5">
-          <div>
-            <span class="tutorial-slide-badge" style="background:rgba(56,189,248,0.15);color:#7dd3fc;">
-              <img src="assets/ui/user.svg" alt="" />
-              Multi-Cuenta & Google Drive
-            </span>
-            <h2 class="tutorial-slide-h2">Aislamiento Total y Respaldo en la Nube</h2>
-            <p class="tutorial-slide-desc">
-              ¿Juegas en varias cuentas a la vez? Con Spirifly cada cuenta vive en un universo aislado: personajes, inventario, resina y deseos independientes por UID.
-            </p>
-            <div class="tutorial-mockup-box">
-              <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;flex-wrap:wrap;">
-                <span style="font-size:0.85rem;font-weight:700;color:#fbbf24;">Tus Cuentas:</span>
-                <button type="button" class="tutorial-mini-pill" style="background:#2563eb;color:#ffffff;border:none;">
-                  <img src="assets/ui/check.svg" style="width:12px;height:12px;" alt="" />
-                  Cuenta Principal (UID: 600000000)
-                </button>
-                <button type="button" class="tutorial-mini-pill" style="background:rgba(255,255,255,0.06);color:#cbd5e1;border:none;">
-                  Cuenta Secundaria (UID: 700000000)
-                </button>
-                <button type="button" class="tutorial-mini-pill" style="background:rgba(59,130,246,0.12);color:#93c5fd;border:none;">
-                  + Agregar Cuenta
-                </button>
-              </div>
-              <p style="font-size:0.82rem;color:#94a3b8;line-height:1.5;display:flex;align-items:flex-start;gap:6px;">
-                <img src="assets/ui/globe.svg" style="width:16px;height:16px;margin-top:2px;flex-shrink:0;" alt="" />
-                <span><strong>Sincronización en la Nube:</strong> Conecta tu cuenta en la pestaña <em>Sincronización</em> para respaldar automáticamente en tu propio almacenamiento de Google Drive y mantener tus dispositivos al día sin compartir datos con terceros.</span>
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Footer Controls -->
-      <div class="tutorial-footer">
-        <button type="button" class="tutorial-btn tutorial-btn-ghost" id="btnTutorialSkip">Saltar Guía</button>
-        <div style="display:flex;gap:0.6rem;">
-          <button type="button" class="tutorial-btn tutorial-btn-secondary" id="btnTutorialPrev" style="display:none;">&larr; Anterior</button>
-          <button type="button" class="tutorial-btn tutorial-btn-primary" id="btnTutorialNext">Siguiente &rarr;</button>
-          <button type="button" class="tutorial-btn tutorial-btn-success" id="btnTutorialFinish" style="display:none;">
-            <img src="assets/ui/icon_primogem.png" style="width:16px;height:16px;" alt="" />
-            ¡Comenzar a Usar Spirifly!
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
+ <div aria-modal="true" class="seelie-modal-backdrop" id="modalInteractiveTutorial" role="dialog" style="z-index: 1200; padding: 1rem;">
+<div class="tutorial-container">
+<!-- Header -->
+<div class="tutorial-header">
+<div class="tutorial-brand" style="display:flex;align-items:center;gap:0.75rem;">
+<img alt="Spirifly Logo" src="assets/ui/logo_spirifly.jpg" style="width:36px;height:36px;border-radius:8px;object-fit:cover;box-shadow:0 0 10px rgba(255,140,66,0.4);flex-shrink:0;"/>
+<div style="display:flex;flex-direction:column;">
+<span style="font-size:1.15rem;font-weight:900;background:linear-gradient(90deg, #fff7e0, #f5d996, #7dd3fc);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.15;"><span data-tutorial="0">Spirifly</span></span>
+<span style="font-size:0.74rem;font-weight:700;color:#60a5fa;letter-spacing:0.5px;text-transform:uppercase;"><span data-tutorial="1">Guía Rápida</span></span>
+</div>
+</div>
+<div style="display:flex;align-items:center;">
+<div class="step-counter" id="tutorialStepCounter"><span data-tutorial="2">Paso 1 de 6</span></div>
+<button class="tutorial-close-btn" id="btnCloseTutorialX" title="Cerrar Guía" type="button"><span data-tutorial="3">×</span></button>
+</div>
+<div class="tutorial-language-row">
+<label for="tutorialLangSelect" id="tutorialLangLabel">Idioma</label>
+<select id="tutorialLangSelect" class="input-field">
+<option value="es">Español</option><option value="en">English</option><option value="pt">Português</option><option value="ja">日本語</option><option value="ko">한국어</option>
+</select>
+</div>
+</div>
+<!-- Stepper bar -->
+<div class="stepper-nav" id="tutorialStepperNav">
+<button class="step-chip active" data-step="0" type="button">
+<img alt="" src="assets/ui/icon_primogem.png"/><span data-tutorial="4">1. Bienvenida</span></button>
+<button class="step-chip" data-step="1" type="button">
+<img alt="" src="assets/weapon_types/sword.png"/><span data-tutorial="5">2. Personajes y Armas</span></button>
+<button class="step-chip" data-step="2" type="button">
+<img alt="" src="assets/ui/resin.png"/><span data-tutorial="6">3. Farmeo Diario</span></button>
+<button class="step-chip" data-step="3" type="button">
+<img alt="" src="assets/ui/tab_domain.png"/><span data-tutorial="7">4. Inventario</span></button>
+<button class="step-chip" data-step="4" type="button">
+<img alt="" src="assets/ui/icon_intertwined.png"/><span data-tutorial="8">5. Deseos y Pity</span></button>
+<button class="step-chip" data-step="5" type="button">
+<img alt="" src="assets/ui/user.svg"/><span data-tutorial="9">6. Multi-Cuenta &amp; Nube</span></button>
+</div>
+<!-- Body Slides -->
+<div class="tutorial-body">
+<!-- SLIDE 1: BIENVENIDA -->
+<div class="tutorial-slide active" id="tut-slide-0">
+<div>
+<span class="tutorial-slide-badge" style="background:rgba(59,130,246,0.15);color:#93c5fd;">
+<img alt="" src="assets/ui/sparkle.svg"/><span data-tutorial="10">Tus herramientas de planificación</span></span>
+<h2 class="tutorial-slide-h2"><span data-tutorial="11">¡Bienvenido a Spirifly!</span></h2>
+<p class="tutorial-slide-desc"><span data-tutorial="12">Spirifly te ayuda a organizar tu progreso y tu resina en </span><strong><span data-tutorial="13">Genshin Impact</span></strong><span data-tutorial="14">. Los cambios se guardan en este navegador, con respaldo opcional en Google Drive.</span></p>
+<div class="tutorial-feature-grid">
+<div class="tutorial-feature-card">
+<h4>
+<img alt="" src="assets/weapon_types/sword.png"/><span data-tutorial="15">Planificación Real</span></h4>
+<p><span data-tutorial="16">Elige personajes y armas con metas de nivel y talentos personalizadas.</span></p>
+</div>
+<div class="tutorial-feature-card">
+<h4>
+<img alt="" src="assets/ui/resin.png"/><span data-tutorial="17">Farmeo al Día</span></h4>
+<p><span data-tutorial="18">Revisa qué dominios están abiertos hoy y cuánta resina te costará.</span></p>
+</div>
+<div class="tutorial-feature-card">
+<h4>
+<img alt="" src="assets/ui/icon_intertwined.png"/><span data-tutorial="19">Contador de pity 5★</span></h4>
+<p><span data-tutorial="20">Consulta soft pity, hard pity y Capturing Radiance con tu historial de deseos.</span></p>
+</div>
+<div class="tutorial-feature-card">
+<h4>
+<img alt="" src="assets/ui/user.svg"/><span data-tutorial="21">Multi-Cuenta Real</span></h4>
+<p><span data-tutorial="22">Gestiona cuentas independientes con respaldo seguro en tu nube de Google Drive.</span></p>
+</div>
+</div>
+</div>
+</div>
+<!-- SLIDE 2: PERSONAJES Y ARMAS -->
+<div class="tutorial-slide" id="tut-slide-1">
+<div>
+<span class="tutorial-slide-badge" style="background:rgba(168,85,247,0.15);color:#d8b4fe;">
+<img alt="" src="assets/weapon_types/sword.png"/><span data-tutorial="23">Personajes y Armas</span></span>
+<h2 class="tutorial-slide-h2"><span data-tutorial="24">Planifica tus Ascensiones y Talentos</span></h2>
+<p class="tutorial-slide-desc"><span data-tutorial="25">Configura los niveles actuales y las metas de tus personajes y armas. Spirifly calcula las gemas, libros de talento, materiales de jefe y mora que te faltan.</span></p>
+<div class="tutorial-mockup-box">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.9rem;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:0.75rem;">
+<div style="display:flex;align-items:center;gap:0.75rem;">
+<div style="width:42px;height:42px;border-radius:8px;background:#1e3a8a;border:1px solid #3b82f6;display:flex;align-items:center;justify-content:center;">
+<img alt="Hydro" src="assets/elements/hydro.png" style="width:28px;height:28px;"/>
+</div>
+<div>
+<div style="font-weight:800;font-size:1.05rem;color:#ffffff;display:flex;align-items:center;gap:0.4rem;"><span data-tutorial="26">Furina</span><span style="font-size:0.75rem;background:#1e3a8a;border:1px solid #3b82f6;padding:1px 6px;border-radius:4px;color:#93c5fd;display:inline-flex;align-items:center;gap:3px;">
+<img alt="" src="assets/elements/hydro.png" style="width:12px;height:12px;"/><span data-tutorial="27">Hydro 5★</span></span>
+</div>
+<div style="font-size:0.8rem;color:#fbbf24;font-weight:700;"><span data-tutorial="28">Nv. 1/20 → 90/90 • Talentos: 1/1/1 → 9/10/10</span></div>
+</div>
+</div>
+<div class="tutorial-mini-pill">
+<img alt="" src="assets/ui/resin.png"/><span data-tutorial="29">Estimación de resina</span></div>
+</div>
+<div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+<span style="font-size:0.78rem;background:rgba(255,255,255,0.06);padding:3px 8px;border-radius:6px;display:inline-flex;align-items:center;gap:4px;">
+<img alt="" src="assets/ui/tab_talent.png" style="width:14px;height:14px;"/><span data-tutorial="30">Libros de talento</span></span>
+<span style="font-size:0.78rem;background:rgba(255,255,255,0.06);padding:3px 8px;border-radius:6px;display:inline-flex;align-items:center;gap:4px;">
+<img alt="" src="assets/ui/tab_boss.png" style="width:14px;height:14px;"/><span data-tutorial="31">Materiales de jefe: 46</span></span>
+<span style="font-size:0.78rem;background:rgba(255,255,255,0.06);padding:3px 8px;border-radius:6px;display:inline-flex;align-items:center;gap:4px;">
+<img alt="" src="assets/ui/local_specialty.png" style="width:14px;height:14px;"/><span data-tutorial="32">Especialidades locales: 168</span></span>
+<span style="font-size:0.78rem;background:rgba(255,255,255,0.06);padding:3px 8px;border-radius:6px;color:#fbbf24;display:inline-flex;align-items:center;gap:4px;">
+<img alt="" src="assets/ui/mora.png" style="width:14px;height:14px;"/><span data-tutorial="33">Mora</span></span>
+</div>
+</div>
+</div>
+</div>
+<!-- SLIDE 3: FARMEO DIARIO -->
+<div class="tutorial-slide" id="tut-slide-2">
+<div>
+<span class="tutorial-slide-badge" style="background:rgba(34,197,94,0.15);color:#86efac;">
+<img alt="" src="assets/ui/resin.png"/><span data-tutorial="34">Farmeo Inteligente</span></span>
+<h2 class="tutorial-slide-h2"><span data-tutorial="35">Optimiza tu Resina y Horarios de Dominios</span></h2>
+<p class="tutorial-slide-desc"><span data-tutorial="36">Consulta el calendario semanal de dominios y los materiales de tus planes activos. Filtra por día para organizar tus sesiones.</span></p>
+<div class="tutorial-mockup-box">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;">
+<span style="font-weight:700;color:#fbbf24;font-size:0.9rem;display:inline-flex;align-items:center;gap:5px;">
+<img alt="" src="assets/ui/resin.png" style="width:18px;height:18px;"/><span data-tutorial="37">Resina Actual: 160 / 200</span></span>
+<span style="font-size:0.8rem;color:#94a3b8;display:inline-flex;align-items:center;gap:4px;">
+<img alt="" src="assets/ui/clock.svg" style="width:13px;height:13px;"/><span data-tutorial="38">Llena a las 18:42 hrs (~5h 20m)</span></span>
+</div>
+<div class="tutorial-bar-track" style="margin-bottom:1rem;">
+<div class="tutorial-bar-fill" style="width:80%;"></div>
+</div>
+<div style="display:flex;align-items:center;gap:0.75rem;background:rgba(0,0,0,0.25);padding:0.75rem;border-radius:8px;border:1px solid rgba(255,255,255,0.08);">
+<img alt="Dominio" src="assets/ui/tab_domain.png" style="width:32px;height:32px;object-fit:contain;"/>
+<div style="flex:1;">
+<div style="font-weight:700;font-size:0.88rem;color:#ffffff;"><span data-tutorial="39">Dominio de talentos (martes / viernes / domingo)</span></div>
+<div style="font-size:0.78rem;color:#38bdf8;"><span data-tutorial="40">Disponible hoy • Recomendado para tus planes activos</span></div>
+</div>
+<span class="tutorial-mini-pill" style="border-color:#22c55e;color:#86efac;">
+<img alt="" src="assets/ui/resin.png" style="width:13px;height:13px;"/><span data-tutorial="41">20 Resina</span></span>
+</div>
+</div>
+</div>
+</div>
+<!-- SLIDE 4: INVENTARIO -->
+<div class="tutorial-slide" id="tut-slide-3">
+<div>
+<span class="tutorial-slide-badge" style="background:rgba(234,179,8,0.15);color:#fde047;">
+<img alt="" src="assets/ui/tab_domain.png"/><span data-tutorial="42">Inventario en Tiempo Real</span></span>
+<h2 class="tutorial-slide-h2"><span data-tutorial="43">Descuenta lo que ya Tienes en tu Mochila</span></h2>
+<p class="tutorial-slide-desc"><span data-tutorial="44">Registra tus materiales en </span><strong><span data-tutorial="45">Inventario</span></strong><span data-tutorial="46">. Spirifly los descuenta de tus planes para calcular lo que todavía falta.</span></p>
+<div class="tutorial-feature-grid">
+<div class="tutorial-feature-card">
+<h4>
+<img alt="" src="assets/ui/refresh.svg"/><span data-tutorial="47">Resta Inteligente</span></h4>
+<p><span data-tutorial="48">Si necesitas 46 materiales de boss y ya tienes 20, tu meta solo pedirá 26.</span></p>
+</div>
+<div class="tutorial-feature-card">
+<h4>
+<img alt="" src="assets/ui/tab_gem.png"/><span data-tutorial="49">Sintetizador Alquimia</span></h4>
+<p><span data-tutorial="50">Soporte para crafteo 3 a 1 de gemas y libros en mesas de síntesis.</span></p>
+</div>
+<div class="tutorial-feature-card">
+<h4>
+<img alt="" src="assets/ui/resin.png"/><span data-tutorial="51">Ahorro de Resina</span></h4>
+<p><span data-tutorial="52">Visualiza en vivo cómo disminuye el costo de resina a medida que recolectas.</span></p>
+</div>
+</div>
+</div>
+</div>
+<!-- SLIDE 5: DESEOS Y PITY -->
+<div class="tutorial-slide" id="tut-slide-4">
+<div>
+<span class="tutorial-slide-badge" style="background:rgba(59,130,246,0.15);color:#93c5fd;">
+<img alt="" src="assets/ui/icon_intertwined.png"/><span data-tutorial="53">Contador de Deseos</span></span>
+<h2 class="tutorial-slide-h2"><span data-tutorial="54">Consulta tu pity 5★ y tus garantías</span></h2>
+<p class="tutorial-slide-desc"><span data-tutorial="55">Importa tus deseos con el script de PowerShell para PC o con un archivo compatible de Excel / JSON (.xlsx, .json). También puedes leer esta guía en teléfono.</span></p>
+<div class="tutorial-mockup-box">
+<div class="tutorial-pity-bar" style="margin-bottom:0.75rem;">
+<span style="font-weight:800;color:#ffffff;font-size:0.95rem;display:inline-flex;align-items:center;gap:6px;">
+<img alt="" src="assets/ui/icon_intertwined.png" style="width:20px;height:20px;"/><span data-tutorial="56">Banner Promocional</span></span>
+<div class="tutorial-bar-track">
+<div class="tutorial-bar-fill" style="width:78%;background:linear-gradient(90deg, #3b82f6, #f59e0b);"></div>
+</div>
+<span style="font-size:0.85rem;font-weight:800;color:#f59e0b;"><span data-tutorial="57">Pity 74 (Soft Pity)</span></span>
+</div>
+<div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
+<span class="tutorial-mini-pill" style="border-color:#22c55e;color:#86efac;">
+<img alt="" src="assets/ui/check.svg" style="width:12px;height:12px;"/><span data-tutorial="58">100% Garantizado</span></span>
+<span class="tutorial-mini-pill">
+<img alt="" src="assets/ui/sparkle.svg" style="width:12px;height:12px;"/><span data-tutorial="59">Capturing Radiance</span></span>
+<span class="tutorial-mini-pill">
+<img alt="" src="assets/weapon_types/sword.png" style="width:12px;height:12px;"/><span data-tutorial="60">Senda Divina (1 Punto)</span></span>
+<span class="tutorial-mini-pill">
+<img alt="" src="assets/ui/clipboard.svg" style="width:12px;height:12px;"/><span data-tutorial="61">1.179 Tiradas Registradas</span></span>
+</div>
+</div>
+</div>
+</div>
+<!-- SLIDE 6: MULTI-CUENTA Y DRIVE -->
+<div class="tutorial-slide" id="tut-slide-5">
+<div>
+<span class="tutorial-slide-badge" style="background:rgba(56,189,248,0.15);color:#7dd3fc;">
+<img alt="" src="assets/ui/user.svg"/><span data-tutorial="62">Multi-Cuenta &amp; Google Drive</span></span>
+<h2 class="tutorial-slide-h2"><span data-tutorial="63">Aislamiento Total y Respaldo en la Nube</span></h2>
+<p class="tutorial-slide-desc"><span data-tutorial="64">¿Juegas en varias cuentas a la vez? Con Spirifly cada cuenta vive en un universo aislado: personajes, inventario, resina y deseos independientes por UID.</span></p>
+<div class="tutorial-mockup-box">
+<div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;flex-wrap:wrap;">
+<span style="font-size:0.85rem;font-weight:700;color:#fbbf24;"><span data-tutorial="65">Tus Cuentas:</span></span>
+<button class="tutorial-mini-pill" style="background:#2563eb;color:#ffffff;border:none;" type="button">
+<img alt="" src="assets/ui/check.svg" style="width:12px;height:12px;"/><span data-tutorial="66">Cuenta Principal (UID: 600000000)</span></button>
+<button class="tutorial-mini-pill" style="background:rgba(255,255,255,0.06);color:#cbd5e1;border:none;" type="button"><span data-tutorial="67">Cuenta Secundaria (UID: 700000000)</span></button>
+<button class="tutorial-mini-pill" style="background:rgba(59,130,246,0.12);color:#93c5fd;border:none;" type="button"><span data-tutorial="68">+ Agregar Cuenta</span></button>
+</div>
+<p style="font-size:0.82rem;color:#94a3b8;line-height:1.5;display:flex;align-items:flex-start;gap:6px;">
+<img alt="" src="assets/ui/globe.svg" style="width:16px;height:16px;margin-top:2px;flex-shrink:0;"/>
+<span><strong><span data-tutorial="69">Sincronización en la nube: </span></strong><span data-tutorial="70">Conecta tu cuenta en </span><em><span data-tutorial="71">Sincronización</span></em><span data-tutorial="72"> para respaldar tus datos en tu propio Google Drive y mantener tus dispositivos al día.</span></span>
+</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Controls -->
+<div class="tutorial-footer">
+<button class="tutorial-btn tutorial-btn-ghost" id="btnTutorialSkip" type="button"><span data-tutorial="73">Saltar Guía</span></button>
+<div style="display:flex;gap:0.6rem;">
+<button class="tutorial-btn tutorial-btn-secondary" id="btnTutorialPrev" style="display:none;" type="button"><span data-tutorial="74">← Anterior</span></button>
+<button class="tutorial-btn tutorial-btn-primary" id="btnTutorialNext" type="button"><span data-tutorial="75">Siguiente →</span></button>
+<button class="tutorial-btn tutorial-btn-success" id="btnTutorialFinish" style="display:none;" type="button">
+<img alt="" src="assets/ui/icon_primogem.png" style="width:16px;height:16px;"/><span data-tutorial="76">¡Comenzar a Usar Spirifly!</span></button>
+</div>
+</div>
+</div>
+</div>
 
 </body>
 

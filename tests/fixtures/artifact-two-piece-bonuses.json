@@ -1,0 +1,104 @@
+{
+  "wandererstroupe": {
+    "id": 15003,
+    "name": "Orquesta del Errante",
+    "effect2Pc": "Maestría Elemental +80 pts.",
+    "source": "https://raw.githubusercontent.com/theBowja/genshin-db/main/src/data/Spanish/artifacts/wandererstroupe.json"
+  },
+  "gildeddreams": {
+    "id": 15026,
+    "name": "Sueños Áureos",
+    "effect2Pc": "Maestría Elemental +80 pts.",
+    "source": "https://raw.githubusercontent.com/theBowja/genshin-db/main/src/data/Spanish/artifacts/gildeddreams.json"
+  },
+  "deepwoodmemories": {
+    "id": 15025,
+    "name": "Recuerdos del Bosque",
+    "effect2Pc": "Bono de Daño Dendro +15%.",
+    "source": "https://raw.githubusercontent.com/theBowja/genshin-db/main/src/data/Spanish/artifacts/deepwoodmemories.json"
+  },
+  "thunderingfury": {
+    "id": 15005,
+    "name": "Furia del Trueno",
+    "effect2Pc": "Bono de Daño Electro +15%.",
+    "source": "https://raw.githubusercontent.com/theBowja/genshin-db/main/src/data/Spanish/artifacts/thunderingfury.json"
+  },
+  "noblesseoblige": {
+    "id": 15007,
+    "name": "Ritual Antiguo de la Nobleza",
+    "effect2Pc": "Daño de Habilidad Definitiva +20%.",
+    "source": "https://raw.githubusercontent.com/theBowja/genshin-db/main/src/data/Spanish/artifacts/noblesseoblige.json"
+  },
+  "tenacityofthemillelith": {
+    "id": 15017,
+    "name": "Tenacidad de la Geoarmada",
+    "effect2Pc": "Vida +20%.",
+    "source": "https://raw.githubusercontent.com/theBowja/genshin-db/main/src/data/Spanish/artifacts/tenacityofthemillelith.json"
+  },
+  "vourukashasglow": {
+    "id": 15030,
+    "name": "Fulgor de Vurukasha",
+    "effect2Pc": "Vida +20%.",
+    "source": "https://raw.githubusercontent.com/theBowja/genshin-db/main/src/data/Spanish/artifacts/vourukashasglow.json"
+  },
+  "paleflame": {
+    "id": 15018,
+    "name": "Llamas Albinas",
+    "effect2Pc": "Daño Físico +25%.",
+    "source": "https://raw.githubusercontent.com/theBowja/genshin-db/main/src/data/Spanish/artifacts/paleflame.json"
+  },
+  "bloodstainedchivalry": {
+    "id": 15008,
+    "name": "Caballería Sanguinaria",
+    "effect2Pc": "Daño Físico +25%.",
+    "source": "https://raw.githubusercontent.com/theBowja/genshin-db/main/src/data/Spanish/artifacts/bloodstainedchivalry.json"
+  },
+  "emblemofseveredfate": {
+    "id": 15020,
+    "name": "Emblema del Destino",
+    "effect2Pc": "Recarga de Energía +20%.",
+    "source": "https://raw.githubusercontent.com/theBowja/genshin-db/main/src/data/Spanish/artifacts/emblemofseveredfate.json"
+  },
+  "theexile": {
+    "id": 10009,
+    "name": "Exiliado",
+    "effect2Pc": "Recarga de Energía +20%.",
+    "source": "https://raw.githubusercontent.com/theBowja/genshin-db/main/src/data/Spanish/artifacts/theexile.json"
+  },
+  "gladiatorsfinale": {
+    "id": 15001,
+    "name": "Final del Gladiador",
+    "effect2Pc": "ATQ +18%.",
+    "source": "https://raw.githubusercontent.com/theBowja/genshin-db/main/src/data/Spanish/artifacts/gladiatorsfinale.json"
+  },
+  "shimenawasreminiscence": {
+    "id": 15019,
+    "name": "Reminiscencia de la Purificación",
+    "effect2Pc": "ATQ +18%.",
+    "source": "https://raw.githubusercontent.com/theBowja/genshin-db/main/src/data/Spanish/artifacts/shimenawasreminiscence.json"
+  },
+  "goldentroupe": {
+    "id": 15032,
+    "name": "Compañía Dorada",
+    "effect2Pc": "Daño de Habilidad Elemental +20%.",
+    "source": "https://raw.githubusercontent.com/theBowja/genshin-db/main/src/data/Spanish/artifacts/goldentroupe.json"
+  },
+  "heartofdepth": {
+    "id": 15016,
+    "name": "Corazón de las Profundidades",
+    "effect2Pc": "Bono de Daño Hydro +15%.",
+    "source": "https://raw.githubusercontent.com/theBowja/genshin-db/main/src/data/Spanish/artifacts/heartofdepth.json"
+  },
+  "archaicpetra": {
+    "id": 15014,
+    "name": "Petra Arcaica",
+    "effect2Pc": "Bono de Daño Geo +15%.",
+    "source": "https://raw.githubusercontent.com/theBowja/genshin-db/main/src/data/Spanish/artifacts/archaicpetra.json"
+  },
+  "blizzardstrayer": {
+    "id": 14001,
+    "name": "Nómada del Invierno",
+    "effect2Pc": "Bono de Daño Cryo +15%.",
+    "source": "https://raw.githubusercontent.com/theBowja/genshin-db/main/src/data/Spanish/artifacts/blizzardstrayer.json"
+  }
+}

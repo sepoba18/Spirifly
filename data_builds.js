@@ -22,45 +22,59 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Habilidad E escala 100% con Defensa (DEF%)",
     "bestWeapons": [
       {
-        "name": "Huso de Cinabrio (Cinnabar Spindle)",
+        "name": "Huso de Cinabrio",
         "rarity": 4,
-        "type": "BiS Absoluto Evento",
-        "note": "Aumenta el daño de la Flor Solar según su DEF total."
+        "type": "Opción por rol",
+        "note": "Aumenta el daño de la Flor Solar según su DEF total.",
+        "weaponId": "11415",
+        "reviewedNote": false
       },
       {
-        "name": "Urakusugiri / Cortador de Jade",
+        "name": "Cortatelones de Urakusai",
         "rarity": 5,
-        "type": "Opciones 5★",
-        "note": "Stat-sticks de Crítico y DEF."
+        "type": "Opción por rol",
+        "note": "Stat-sticks de Crítico y DEF.",
+        "weaponId": "11514",
+        "reviewedNote": false
       },
       {
-        "name": "Espada del Alba (Harbinger of Dawn R5)",
+        "name": "Cortador de Jade Primordial",
+        "rarity": 5,
+        "type": "Opción por rol",
+        "note": "Stat-sticks de Crítico y DEF.",
+        "weaponId": "11505",
+        "reviewedNote": false
+      },
+      {
+        "name": "Espada del Alba",
         "rarity": 3,
-        "type": "Mejor F2P",
-        "note": "+28% CR y +46.9% CD gratis si se mantiene fuera de campo >90% HP."
+        "type": "Opción por rol",
+        "note": "+28% CR y +46.9% CD gratis si se mantiene fuera de campo >90% HP.",
+        "weaponId": "11301",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Compañía Dorada (4 piezas)",
-        "type": "BiS Flor Solar",
-        "bonus": "+70% Daño de Habilidad Elemental continuo fuera de campo."
+        "set": "Husk of Opulent Dreams (4 piezas)",
+        "type": "Según equipo y rol",
+        "bonus": "",
+        "reviewedBonus": false
       },
       {
-        "set": "Cáscara de Sueños Opulentos (4 piezas)",
-        "type": "Máxima DEF",
-        "bonus": "+54% DEF y +24% Bono Geo."
+        "set": "Golden Troupe (4 piezas)",
+        "type": "Según equipo y rol",
+        "bonus": "",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
       "sands": "DEF%",
-      "goblet": "Bono Daño Geo%",
-      "circlet": "DEF% o Prob. Crítica / Daño Crítico"
+      "goblet": "DEF% / Bono Geo",
+      "circlet": "Prob. Crítica / Daño Crítico"
     },
     "substatsPriority": [
-      "1. DEF% y DEF Plana (2,400 – 2,800 DEF)",
-      "2. Prob. Crítica / Daño Crítico (1:2)",
-      "3. Recarga de Energía%"
+      "Crítico > DEF%. Recarga solo si usa la definitiva."
     ],
     "talentPriority": "Habilidad Elemental (E - Flor Solar) >>> Definitiva (Q) >>> Ataques Normales",
     "benchmarks": {
@@ -172,9 +186,26 @@ const CHARACTER_BUILDS_DB = [
     },
     "statPriority": {
       "sands": "DEF%",
-      "goblet": "Bono Daño Geo%",
-      "circlet": "DEF% o Prob. Crítica / Daño Crítico",
-      "substats": "1. DEF% y DEF Plana (2,400 – 2,800 DEF) > 2. Prob. Crítica / Daño Crítico (1:2) > 3. Recarga de Energía%"
+      "goblet": "DEF% / Bono Geo",
+      "circlet": "Prob. Crítica / Daño Crítico",
+      "substats": "Crítico > DEF%. Recarga solo si usa la definitiva."
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/albedo-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Estadísticas contrastadas con la guía del rol indicado.",
+        "Sets contrastados; eliminadas alternativas que no benefician al daño principal de este rol."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -194,45 +225,72 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado Dual: Maestría Elemental (Mayor peso pasiva A4) + ATQ%",
     "bestWeapons": [
       {
-        "name": "Clorofilo Refulgente (Light of Foliar Incision)",
+        "name": "Clorofilo Refulgente",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+88.2% Daño Crítico, +4% CR y convierte Maestría Elemental en enorme daño plano para normales y E."
+        "type": "Opción por rol",
+        "note": "+88.2% Daño Crítico, +4% CR y convierte Maestría Elemental en enorme daño plano para normales y E.",
+        "weaponId": "11512",
+        "reviewedNote": false
       },
       {
-        "name": "Cortador de Jade Primordial / Reflejo de las Tinieblas",
+        "name": "Cortador de Jade Primordial",
         "rarity": 5,
-        "type": "Opciones 5★",
-        "note": "Stat-sticks de Crítico y ATQ masivos."
+        "type": "Opción por rol",
+        "note": "Stat-sticks de Crítico y ATQ masivos.",
+        "weaponId": "11505",
+        "reviewedNote": false
       },
       {
-        "name": "Espina de Hierro / Diluvio Florífero",
+        "name": "Reflejo de las Tinieblas",
+        "rarity": 5,
+        "type": "Opción por rol",
+        "note": "Stat-sticks de Crítico y ATQ masivos.",
+        "weaponId": "11509",
+        "reviewedNote": false
+      },
+      {
+        "name": "Espina de Hierro",
         "rarity": 4,
-        "type": "Mejores F2P",
-        "note": "Forja y evento gratuitos con +165 de Maestría Elemental y daño elemental."
+        "type": "Opción por rol",
+        "note": "Forja y evento gratuitos con +165 de Maestría Elemental y daño elemental.",
+        "weaponId": "11407",
+        "reviewedNote": false
       },
       {
-        "name": "Espada del Alba (Harbinger of Dawn R5)",
+        "name": "Diluvio Florífero",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Forja y evento gratuitos con +165 de Maestría Elemental y daño elemental.",
+        "weaponId": "11422",
+        "reviewedNote": false
+      },
+      {
+        "name": "Espada del Alba",
         "rarity": 3,
-        "type": "F2P 3★ Dios",
-        "note": "+28% CR y +46.9% CD si se mantiene >90% HP con escudos o curación de Kuki/Baizhu."
+        "type": "Opción por rol",
+        "note": "+28% CR y +46.9% CD si se mantiene >90% HP con escudos o curación de Kuki/Baizhu.",
+        "weaponId": "11301",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Sueños Áureos (4 piezas)",
         "type": "BiS Indiscutible",
-        "bonus": "+Hasta 230 de Maestría Elemental y +14% ATQ continuo en combate."
+        "bonus": "+Hasta 230 de Maestría Elemental y +14% ATQ continuo en combate.",
+        "reviewedBonus": false
       },
       {
         "set": "Recuerdos del Bosque (4 piezas)",
         "type": "Solo si va Solo Dendro",
-        "bonus": "-30% RES Dendro si ningún compañero del equipo puede llevar este set."
+        "bonus": "-30% RES Dendro si ningún compañero del equipo puede llevar este set.",
+        "reviewedBonus": false
       },
       {
         "set": "2p EM+80 + 2p Dendro+15%",
         "type": "Alternativa 2p+2p",
-        "bonus": "Excelente alternativa con buenos substats de crítico."
+        "bonus": "Excelente alternativa con buenos substats de crítico.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -258,12 +316,12 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Alhaitham Quickbloom (Top Meta)",
-        "comp": "Alhaitham • Nahida • Yelan • Xingqiu",
+        "comp": "Alhaitham • Nahida • Xingqiu • Kuki Shinobu",
         "members": [
           "Alhaitham",
           "Nahida",
-          "Yelan",
-          "Xingqiu"
+          "Xingqiu",
+          "Kuki Shinobu"
         ]
       },
       {
@@ -359,6 +417,22 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Dendro%",
       "circlet": "Prob. Crítica% / Daño Crítico%",
       "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. Maestría Elemental (250 – 400 EM) > 3. Recarga de Energía% (120% – 135% ER) > 4. ATQ%"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/alhaitham-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Añadido el detonador Electro ausente en Quickbloom."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -378,34 +452,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Definitiva Q convierte toda su DEF en ATQ gigantesco (4,000+ ATQ en combate)",
     "bestWeapons": [
       {
-        "name": "Espadón Cornirrojo (Redhorn Stonethresher)",
+        "name": "Espadón Cornirrojo",
         "rarity": 5,
-        "type": "BiS Absoluto",
-        "note": "+88.2% Daño Crítico, +28% DEF y enorme aumento de daño plano en normales y cargados."
+        "type": "Opción por rol",
+        "note": "+88.2% Daño Crítico, +28% DEF y enorme aumento de daño plano en normales y cargados.",
+        "weaponId": "12510",
+        "reviewedNote": false
       },
       {
         "name": "Médula de la Serpiente Marina",
         "rarity": 4,
-        "type": "Mejor 4★ Pase",
-        "note": "+Prob. Crítica y hasta +50% daño directo en sus golpes Kesagiri."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica y hasta +50% daño directo en sus golpes Kesagiri.",
+        "weaponId": "12409",
+        "reviewedNote": false
       },
       {
-        "name": "Sombra Blanca (Whiteblind R5)",
+        "name": "Sombra Blanca",
         "rarity": 4,
-        "type": "Mejor F2P Forja",
-        "note": "Forja accesible que aporta hasta +99.7% DEF total con acumulaciones."
+        "type": "Opción por rol",
+        "note": "Forja accesible que aporta hasta +99.7% DEF total con acumulaciones.",
+        "weaponId": "12407",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Cáscara de Sueños Opulentos (4 piezas)",
         "type": "BiS Indiscutible",
-        "bonus": "+54% DEF y +24% Bono Daño Geo continuo."
+        "bonus": "+54% DEF y +24% Bono Daño Geo continuo.",
+        "reviewedBonus": false
       },
       {
         "set": "Cazador Fantasmal (4 piezas)",
         "type": "BiS con Furina",
-        "bonus": "+36% Prob. Crítica si juega en equipo con Furina."
+        "bonus": "+36% Prob. Crítica si juega en equipo con Furina.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -532,6 +614,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Geo%",
       "circlet": "Prob. Crítica% / Daño Crítico%",
       "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. DEF% > 3. Recarga de Energía% (125% – 140% ER) > 4. ATQ%"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/itto-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -551,40 +647,66 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% & Multiplicador de Pacto Perpetuo",
     "bestWeapons": [
       {
-        "name": "Semblanza de la Luna Carmesí",
+        "name": "Semblante de la Luna Carmesí",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+Prob. Crítica, genera +25% de Pacto Perpetuo y hasta +36% de daño universal."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica, genera +25% de Pacto Perpetuo y hasta +36% de daño universal.",
+        "weaponId": "13512",
+        "reviewedNote": false
       },
       {
-        "name": "Halcón de Jade Primordial / Báculo de Homa",
+        "name": "Halcón de Jade",
         "rarity": 5,
-        "type": "Opciones 5★",
-        "note": "Stat-sticks excepcionales de Crítico y ATQ."
+        "type": "Opción por rol",
+        "note": "Stat-sticks excepcionales de Crítico y ATQ.",
+        "weaponId": "13505",
+        "reviewedNote": false
       },
       {
-        "name": "Balada de los Fiordos / Lanza del Duelo",
+        "name": "Báculo de Homa",
+        "rarity": 5,
+        "type": "Opción por rol",
+        "note": "Stat-sticks excepcionales de Crítico y ATQ.",
+        "weaponId": "13501",
+        "reviewedNote": false
+      },
+      {
+        "name": "Balada de los Fiordos",
         "rarity": 4,
-        "type": "Pase de Batalla",
-        "note": "+Prob. Crítica altísima; Balada otorga 120 EM en Vaporizado."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica altísima; Balada otorga 120 EM en Vaporizado.",
+        "weaponId": "13424",
+        "reviewedNote": false
       },
       {
-        "name": "Borla Blanca (White Tassel R5)",
+        "name": "Lanza del Duelo",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica altísima; Balada otorga 120 EM en Vaporizado.",
+        "weaponId": "13405",
+        "reviewedNote": false
+      },
+      {
+        "name": "Borla Blanca",
         "rarity": 3,
-        "type": "Mejor F2P",
-        "note": "Arma 3★ de cofre (+23.4% CR y +48% daño en Ataques Normales, compite con 4★)."
+        "type": "Opción por rol",
+        "note": "Arma 3★ de cofre (+23.4% CR y +48% daño en Ataques Normales, compite con 4★).",
+        "weaponId": "11312",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Fragmento de la Armonía Fantasmal (4 piezas)",
         "type": "BiS Indiscutible",
-        "bonus": "+54% Daño constante al aumentar o disminuir el Pacto Perpetuo."
+        "bonus": "+54% Daño constante al aumentar o disminuir el Pacto Perpetuo.",
+        "reviewedBonus": false
       },
       {
         "set": "Gladiador (4 piezas)",
         "type": "Alternativa Top",
-        "bonus": "+35% Daño en Ataques Normales (solo ~6% por detrás de Armonía)."
+        "bonus": "+35% Daño en Ataques Normales (solo ~6% por detrás de Armonía).",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -721,6 +843,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Pyro%",
       "circlet": "Prob. Crítica% / Daño Crítico%",
       "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% > 3. Maestría Elemental (80 – 160 EM) > 4. Recarga de Energía (100% – 120%)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/arlecchino-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -740,34 +876,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado 100% Vida Máxima (Tope Pasiva A4 en 50,000 HP: +100% Bloom, +40% Spread)",
     "bestWeapons": [
       {
-        "name": "Centelleo Jadecaído (Jadefall's Splendor)",
+        "name": "Centelleo Jadecaído",
         "rarity": 5,
-        "type": "BiS Firma",
-        "note": "49.6% Vida, restaura energía tras cada Definitiva y da Bono Elemental al equipo."
+        "type": "Opción por rol",
+        "note": "49.6% Vida, restaura energía tras cada Definitiva y da Bono Elemental al equipo.",
+        "weaponId": "14505",
+        "reviewedNote": false
       },
       {
-        "name": "Prototipo Ámbar (Prototype Amber R5)",
+        "name": "Prototipo Ámbar",
         "rarity": 4,
-        "type": "Mejor F2P (Idéntico a Firma)",
-        "note": "41.3% Vida + 18 de Energía devuelta + curación adicional grupal."
+        "type": "Opción por rol",
+        "note": "41.3% Vida + 18 de Energía devuelta + curación adicional grupal.",
+        "weaponId": "14406",
+        "reviewedNote": false
       },
       {
-        "name": "Cuentos de Cazadores de Dragones (TTDS R5)",
+        "name": "Cuentos de Cazadores de Dragones",
         "rarity": 3,
-        "type": "Opción Buffer ATQ",
-        "note": "35.2% Vida y +48% ATQ al DPS principal."
+        "type": "Opción por rol",
+        "note": "35.2% Vida y +48% ATQ al DPS principal.",
+        "weaponId": "11316",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Recuerdos del Bosque (4 piezas)",
         "type": "BiS Indiscutible",
-        "bonus": "-30% Resistencia Dendro a los enemigos para potenciar al carry Dendro o semillas."
+        "bonus": "-30% Resistencia Dendro a los enemigos para potenciar al carry Dendro o semillas.",
+        "reviewedBonus": false
       },
       {
         "set": "Perla Oceánica (4 piezas)",
         "type": "Alternativa Daño",
-        "bonus": "Convierte su gigantesca curación en daño físico de burbuja."
+        "bonus": "Convierte su gigantesca curación en daño físico de burbuja.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -903,6 +1047,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Vida%",
       "circlet": "Vida% o Bono de Curación%",
       "substats": "1. Vida% y Vida Plana (Meta estricto: 50,000 HP para tope pasiva A4) > 2. Recarga de Energía% (160% - 190% ER) > 3. Prob. Crítica (con Favonius)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/baizhu-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -922,40 +1080,50 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% y Multiplicadores Masivos de Descarga Rayo Q",
     "bestWeapons": [
       {
-        "name": "Lápida del Lobo (Wolf's Gravestone)",
+        "name": "Lápida del Lobo",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+ATQ% masivo y buff al equipo."
+        "type": "Opción por rol",
+        "note": "+ATQ% masivo y buff al equipo.",
+        "weaponId": "12502",
+        "reviewedNote": false
       },
       {
-        "name": "Médula de la Serpiente Marina (Serpent Spine)",
+        "name": "Médula de la Serpiente Marina",
         "rarity": 4,
-        "type": "BiS Pase",
-        "note": "+Prob. Crítica y hasta +50% daño."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica y hasta +50% daño.",
+        "weaponId": "12409",
+        "reviewedNote": false
       },
       {
-        "name": "Gran Espada de Favonius (Favonius Greatsword)",
+        "name": "Gran Espada de Favonius",
         "rarity": 4,
-        "type": "Batería F2P",
-        "note": "Soluciona costo de 80 energía."
+        "type": "Opción por rol",
+        "note": "Soluciona costo de 80 energía.",
+        "weaponId": "12401",
+        "reviewedNote": false
       },
       {
-        "name": "Rey del Mal (Akuoumaru)",
+        "name": "Rey del Mal",
         "rarity": 4,
-        "type": "Daño de Burst",
-        "note": "Escala con costo total de energía."
+        "type": "Opción por rol",
+        "note": "Escala con costo total de energía.",
+        "weaponId": "12416",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Emblema del Destino (4 piezas)",
         "type": "BiS Indiscutible",
-        "bonus": "Convierte su alta recarga en hasta +75% de daño en cada descarga de rayo de su Q."
+        "bonus": "Convierte su alta recarga en hasta +75% de daño en cada descarga de rayo de su Q.",
+        "reviewedBonus": false
       },
       {
         "set": "Furia del Trueno (2p) + Nobleza (2p)",
         "type": "Alternativa 2p+2p",
-        "bonus": "Buena opción con excelentes substats."
+        "bonus": "Buena opción con excelentes substats.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -1082,6 +1250,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Electro%",
       "circlet": "Prob. Crítica% / Daño Crítico%",
       "substats": "1. Recarga de Energía% (180% - 200% ER) > 2. Prob. Crítica / Daño Crítico (1:2) > 3. ATQ% > 4. Maestría Elemental"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/beidou-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -1101,40 +1283,58 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Buff Q escala SOLO con ATQ BASE (Arma + Nivel) • Curación escala con HP",
     "bestWeapons": [
       {
-        "name": "Hoja Afilada Celestial (Skyward Blade)",
+        "name": "Hoja Afilada Celestial",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "Alto ATQ Base (608) y +55.1% Recarga de Energía."
+        "type": "Opción por rol",
+        "note": "Alto ATQ Base (608) y +55.1% Recarga de Energía.",
+        "weaponId": "11502",
+        "reviewedNote": false
       },
       {
-        "name": "Aquila Favonia / Reflejo de las Tinieblas",
+        "name": "Aquila Favonia",
         "rarity": 5,
-        "type": "Máximo Buff",
-        "note": "ATQ Base máximo del juego (674) para el mayor buff posible."
+        "type": "Opción por rol",
+        "note": "ATQ Base máximo del juego (674) para el mayor buff posible.",
+        "weaponId": "11501",
+        "reviewedNote": false
       },
       {
-        "name": "Espada de Madera (Sapwood Blade)",
+        "name": "Reflejo de las Tinieblas",
+        "rarity": 5,
+        "type": "Opción por rol",
+        "note": "ATQ Base máximo del juego (674) para el mayor buff posible.",
+        "weaponId": "11509",
+        "reviewedNote": false
+      },
+      {
+        "name": "Espada de Madera",
         "rarity": 4,
-        "type": "Mejor F2P",
-        "note": "Forja de Sumeru: 565 ATQ Base alto y +30.6% Recarga de Energía."
+        "type": "Opción por rol",
+        "note": "Forja de Sumeru: 565 ATQ Base alto y +30.6% Recarga de Energía.",
+        "weaponId": "11417",
+        "reviewedNote": false
       },
       {
         "name": "Espada de Favonius",
         "rarity": 4,
-        "type": "Batería",
-        "note": "Genera partículas blancas adicionales para el equipo."
+        "type": "Opción por rol",
+        "note": "Genera partículas blancas adicionales para el equipo.",
+        "weaponId": "11401",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Nobleza Obligada (4 piezas)",
         "type": "BiS Indiscutible",
-        "bonus": "+20% ATQ adicional para todo el equipo tras activar su Definitiva."
+        "bonus": "+20% ATQ adicional para todo el equipo tras activar su Definitiva.",
+        "reviewedBonus": false
       },
       {
         "set": "Instructor (4 piezas)",
         "type": "Alternativa Reacciones",
-        "bonus": "+120 Maestría Elemental para equipos de Vaporizado o Derretido."
+        "bonus": "+120 Maestría Elemental para equipos de Vaporizado o Derretido.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -1169,14 +1369,14 @@ const CHARACTER_BUILDS_DB = [
         ]
       },
       {
-        "name": "Hypercarry Buffer",
-        "comp": "Mavuika • Arlecchino • Navia • Bennett",
+        "name": "Navia doble Pyro",
         "members": [
-          "Mavuika",
-          "Arlecchino",
           "Navia",
+          "Zhongli",
+          "Xiangling",
           "Bennett"
-        ]
+        ],
+        "comp": "Navia • Zhongli • Xiangling • Bennett"
       },
       {
         "name": "Sunfire Jean Core",
@@ -1271,6 +1471,22 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Vida%",
       "circlet": "Bono de Curación% o Vida%",
       "substats": "1. Recarga de Energía% (220% - 250% ER) > 2. Vida% y Vida Plana > 3. Prob. Crítica (si usa Favonius) > ❌ ATQ% en artefactos NO aumenta el buff de su Q"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/bennett-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Sustituidos tres DPS que competían por tiempo en campo."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -1290,34 +1506,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado 100% por Vida Máxima",
     "bestWeapons": [
       {
-        "name": "Cuento de Cazadores de Dragones (TTDS)",
+        "name": "Cuentos de Cazadores de Dragones",
         "rarity": 3,
-        "type": "BiS Soporte",
-        "note": "+48% ATQ para el carry y +35.2% Vida Máxima."
+        "type": "Opción por rol",
+        "note": "+48% ATQ para el carry y +35.2% Vida Máxima.",
+        "weaponId": "11316",
+        "reviewedNote": false
       },
       {
         "name": "Prototipo Ámbar",
         "rarity": 4,
-        "type": "F2P",
-        "note": "Cura adicional y recarga automática."
+        "type": "Opción por rol",
+        "note": "Cura adicional y recarga automática.",
+        "weaponId": "14406",
+        "reviewedNote": false
       },
       {
-        "name": "Memorias de Sacrificio",
+        "name": "Memorias de Sacrificios",
         "rarity": 4,
-        "type": "Nilou Bloom",
-        "note": "Reinicia su aro de agua E."
+        "type": "Opción por rol",
+        "note": "Reinicia su aro de agua E.",
+        "weaponId": "14403",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Doncella Amada (4 piezas)",
         "type": "Máxima Curación",
-        "bonus": "Multiplica toda la curación recibida por el equipo."
+        "bonus": "Multiplica toda la curación recibida por el equipo.",
+        "reviewedBonus": false
       },
       {
         "set": "Perla Oceánica (4 piezas)",
         "type": "Daño Pasivo",
-        "bonus": "Convierte su curación continua en burbujas de daño físico de hasta 30k."
+        "bonus": "Convierte su curación continua en burbujas de daño físico de hasta 30k.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -1443,6 +1667,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Vida%",
       "circlet": "Bono de Curación% o Vida%",
       "substats": "1. Vida% > 2. Recarga de Energía% > 3. Maestría Elemental (en Bloom)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/barbara-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -1464,32 +1702,40 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Lanza de Favonius",
         "rarity": 4,
-        "type": "BiS Batería",
-        "note": "Garantiza recarga constante para activar su Definitiva cada rotación."
+        "type": "Opción por rol",
+        "note": "Garantiza recarga constante para activar su Definitiva cada rotación.",
+        "weaponId": "13407",
+        "reviewedNote": false
       },
       {
-        "name": "La Captura (The Catch)",
+        "name": "La Captura",
         "rarity": 4,
-        "type": "F2P",
-        "note": "Recarga de energía y daño en su golpe de Definitiva."
+        "type": "Opción por rol",
+        "note": "Recarga de energía y daño en su golpe de Definitiva.",
+        "weaponId": "13415",
+        "reviewedNote": false
       },
       {
         "name": "Borla Negra",
         "rarity": 3,
-        "type": "Vida Pura",
-        "note": "+46.9% Vida Máxima para maximizar el buff de su pasiva A4."
+        "type": "Opción por rol",
+        "note": "+46.9% Vida Máxima para maximizar el buff de su pasiva A4.",
+        "weaponId": "11313",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Nobleza Obligada (4 piezas)",
         "type": "BiS Soporte",
-        "bonus": "+20% ATQ para todo el equipo tras activar su Definitiva."
+        "bonus": "+20% ATQ para todo el equipo tras activar su Definitiva.",
+        "reviewedBonus": false
       },
       {
         "set": "2p Vida+20% + 2p Vida+20%",
         "type": "Máximo Buff",
-        "bonus": "Maximiza su Vida Máxima para llevar el buff de normales al tope."
+        "bonus": "Maximiza su Vida Máxima para llevar el buff de normales al tope.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -1615,6 +1861,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Vida%",
       "circlet": "Vida% o Prob. Crítica (con Favonius)",
       "substats": "1. Recarga de Energía% (180% - 210%) > 2. Vida% > 3. Prob. Crítica (para Favonius)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/candace-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -1636,32 +1896,40 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Borla Negra",
         "rarity": 3,
-        "type": "BiS Vida F2P",
-        "note": "+46.9% Vida Máxima para alcanzar fácilmente los 40,000 HP."
+        "type": "Opción por rol",
+        "note": "+46.9% Vida Máxima para alcanzar fácilmente los 40,000 HP.",
+        "weaponId": "11313",
+        "reviewedNote": false
       },
       {
         "name": "Lanza de Favonius",
         "rarity": 4,
-        "type": "Batería",
-        "note": "Si ya alcanza 40,000 HP con artefactos, aporta partículas para el equipo."
+        "type": "Opción por rol",
+        "note": "Si ya alcanza 40,000 HP con artefactos, aporta partículas para el equipo.",
+        "weaponId": "13407",
+        "reviewedNote": false
       },
       {
         "name": "Retribución de la Justicia",
         "rarity": 4,
-        "type": "Forja Fontaine",
-        "note": "+Vida Máx y regenera energía al recibir curación."
+        "type": "Opción por rol",
+        "note": "+Vida Máx y regenera energía al recibir curación.",
+        "weaponId": "13425",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Nobleza Obligada (4 piezas)",
         "type": "BiS Soporte",
-        "bonus": "+20% ATQ acumulable al activar su Definitiva."
+        "bonus": "+20% ATQ acumulable al activar su Definitiva.",
+        "reviewedBonus": false
       },
       {
         "set": "2p Vida+20% + 2p Vida+20%",
         "type": "Fácil 40k HP",
-        "bonus": "+40% Vida Máxima para asegurar el bono máximo de la pasiva A4."
+        "bonus": "+40% Vida Máxima para asegurar el bono máximo de la pasiva A4.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -1797,6 +2065,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Vida%",
       "circlet": "Vida% o Bono de Curación%",
       "substats": "1. Vida% y Vida Plana (Meta estricto: 40,000 HP) > 2. Recarga de Energía% (140% - 160%) > 3. Prob. Crítica (con Favonius)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/chevreuse-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -1816,40 +2098,58 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado Dual: DEF% (Mayor peso) + ATQ%",
     "bestWeapons": [
       {
-        "name": "Urakusugiri",
+        "name": "Cortatelones de Urakusai",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+88.2% Daño Crítico, +DEF% y +48% Daño de Habilidad Elemental al hacer daño Geo."
+        "type": "Opción por rol",
+        "note": "+88.2% Daño Crítico, +DEF% y +48% Daño de Habilidad Elemental al hacer daño Geo.",
+        "weaponId": "11514",
+        "reviewedNote": false
       },
       {
-        "name": "Huso de Cinabrio (Cinnabar Spindle)",
+        "name": "Huso de Cinabrio",
         "rarity": 4,
-        "type": "BiS 4★ Evento",
-        "note": "Aumenta el daño de Habilidad Elemental según su DEF."
+        "type": "Opción por rol",
+        "note": "Aumenta el daño de Habilidad Elemental según su DEF.",
+        "weaponId": "11415",
+        "reviewedNote": false
       },
       {
-        "name": "Colmillo Lupino (Wolf-Fang)",
+        "name": "Colmillo Lupino",
         "rarity": 4,
-        "type": "Pase de Batalla",
-        "note": "+Prob. Crítica y daño en Habilidad Elemental."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica y daño en Habilidad Elemental.",
+        "weaponId": "11424",
+        "reviewedNote": false
       },
       {
-        "name": "Flauta de Ezpitzal / Espada del Alba",
+        "name": "Flauta de Ezpitzal",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Espada del Alba 3★ da +28% CR y +46.9% CD si se mantiene >90% HP.",
+        "weaponId": "11431",
+        "reviewedNote": false
+      },
+      {
+        "name": "Espada del Alba",
         "rarity": 3,
-        "type": "F2P",
-        "note": "Espada del Alba 3★ da +28% CR y +46.9% CD si se mantiene >90% HP."
+        "type": "Opción por rol",
+        "note": "Espada del Alba 3★ da +28% CR y +46.9% CD si se mantiene >90% HP.",
+        "weaponId": "11301",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Compañía Dorada (4 piezas)",
         "type": "BiS Indiscutible",
-        "bonus": "+70% Daño de Habilidad Elemental permanente para las muñecas Sode."
+        "bonus": "+70% Daño de Habilidad Elemental permanente para las muñecas Sode.",
+        "reviewedBonus": false
       },
       {
         "set": "Cáscara de Sueños Opulentos (4 piezas)",
         "type": "Alternativa Equilibrada",
-        "bonus": "+54% DEF y +24% Bono Daño Geo."
+        "bonus": "+54% DEF y +24% Bono Daño Geo.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -1986,6 +2286,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Geo%",
       "circlet": "Prob. Crítica% / Daño Crítico%",
       "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. DEF% > 3. ATQ% > 4. Recarga de Energía (110% - 120%)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/chiori-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -2005,40 +2319,50 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por Maestría Elemental (Escudo y Bonos escalan con EM)",
     "bestWeapons": [
       {
-        "name": "Starcaller's Watch",
+        "name": "Vigía de las Estrellas",
         "rarity": 5,
-        "type": "BiS Firma 5★",
-        "note": "Firma oficial de Citlali con bono Cryo y buff."
+        "type": "Opción por rol",
+        "note": "Firma oficial de Citlali con bono Cryo y buff.",
+        "weaponId": "14517",
+        "reviewedNote": false
       },
       {
-        "name": "Sinfonía de los Merodeadores (The Widsith)",
+        "name": "Sinfonía de los Merodeadores",
         "rarity": 4,
-        "type": "Opción Crítico",
-        "note": "+Daño Crítico y buff aleatorio."
+        "type": "Opción por rol",
+        "note": "+Daño Crítico y buff aleatorio.",
+        "weaponId": "14402",
+        "reviewedNote": false
       },
       {
-        "name": "Cuentos de Cazadores de Dragones (TTDS)",
+        "name": "Cuentos de Cazadores de Dragones",
         "rarity": 3,
-        "type": "BiS Buffer F2P",
-        "note": "+48% ATQ al carry principal."
+        "type": "Opción por rol",
+        "note": "+48% ATQ al carry principal.",
+        "weaponId": "11316",
+        "reviewedNote": false
       },
       {
-        "name": "Memorias de Sacrificio",
+        "name": "Memorias de Sacrificios",
         "rarity": 4,
-        "type": "Utilidad EM",
-        "note": "Reset de escudo/habilidad y alta EM."
+        "type": "Opción por rol",
+        "note": "Reset de escudo/habilidad y alta EM.",
+        "weaponId": "14403",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Pergamino del Héroe de la Ciudad de las Cenizas (4p)",
         "type": "BiS Indiscutible",
-        "bonus": "+40% Daño Elemental a los elementos que reaccionan con Noctámbulo."
+        "bonus": "+40% Daño Elemental a los elementos que reaccionan con Noctámbulo.",
+        "reviewedBonus": false
       },
       {
         "set": "Instructor (4 piezas)",
         "type": "Alternativa EM",
-        "bonus": "+120 Maestría Elemental para todo el equipo tras causar una reacción."
+        "bonus": "+120 Maestría Elemental para todo el equipo tras causar una reacción.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -2174,6 +2498,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Maestría Elemental",
       "circlet": "Maestría Elemental (o Prob. CR con Favonius)",
       "substats": "1. Maestría Elemental (Meta: 800 – 1,000 EM) > 2. Recarga de Energía% (150% - 170% ER) > 3. Prob. Crítica (para Favonius)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/citlali-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -2193,40 +2531,66 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% y Mecánica de Pacto Perpetuo (Bond of Life)",
     "bestWeapons": [
       {
-        "name": "Absolución (Absolution)",
+        "name": "Expiadora",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+44.1% Daño Crítico, +20% ATQ y hasta +48% Daño con fluctuaciones de Pacto Perpetuo."
+        "type": "Opción por rol",
+        "note": "+44.1% Daño Crítico, +20% ATQ y hasta +48% Daño con fluctuaciones de Pacto Perpetuo.",
+        "weaponId": "11515",
+        "reviewedNote": false
       },
       {
-        "name": "Reflejo de las Tinieblas / Cortador de Jade",
+        "name": "Reflejo de las Tinieblas",
         "rarity": 5,
-        "type": "Opciones 5★",
-        "note": "Stat-sticks excepcionales de Crítico."
+        "type": "Opción por rol",
+        "note": "Stat-sticks excepcionales de Crítico.",
+        "weaponId": "11509",
+        "reviewedNote": false
       },
       {
-        "name": "Espada Negra (The Black Sword)",
-        "rarity": 4,
-        "type": "Mejor 4★ Pase",
-        "note": "+Prob. Crítica y aumento directo a sus disparos y estocadas normales."
+        "name": "Cortador de Jade Primordial",
+        "rarity": 5,
+        "type": "Opción por rol",
+        "note": "Stat-sticks excepcionales de Crítico.",
+        "weaponId": "11505",
+        "reviewedNote": false
       },
       {
-        "name": "Vado del Río Ceniciento / Espada de Madera",
+        "name": "Espada Negra",
         "rarity": 4,
-        "type": "F2P",
-        "note": "Opciones F2P funcionales."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica y aumento directo a sus disparos y estocadas normales.",
+        "weaponId": "11409",
+        "reviewedNote": false
+      },
+      {
+        "name": "Vado del Río Ceniciento",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Opciones F2P funcionales.",
+        "weaponId": "11426",
+        "reviewedNote": false
+      },
+      {
+        "name": "Espada de Madera",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Opciones F2P funcionales.",
+        "weaponId": "11417",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Fragmento de la Armonía Fantasmal (4 piezas)",
         "type": "BiS Indiscutible",
-        "bonus": "+54% Daño constante al aumentar o consumir Pacto Perpetuo en cada disparo."
+        "bonus": "+54% Daño constante al aumentar o consumir Pacto Perpetuo en cada disparo.",
+        "reviewedBonus": false
       },
       {
         "set": "Furia del Trueno (4 piezas)",
         "type": "Alternativa Aggravate",
-        "bonus": "+15% Bono Electro y reduce el enfriamiento de su habilidad E para rotaciones continuas."
+        "bonus": "+15% Bono Electro y reduce el enfriamiento de su habilidad E para rotaciones continuas.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -2363,6 +2727,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Electro%",
       "circlet": "Daño Crítico% (o Prob. CR)",
       "substats": "1. Daño Crítico / Prob. Crítica (tope 80% con pasiva de ascensión) > 2. ATQ% > 3. Maestría Elemental (80 – 160 EM en Aggravate) > 4. Recarga de Energía%"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/clorinde-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -2382,34 +2760,50 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% y Maestría Elemental (Multiplicador de Plunge altísimo)",
     "bestWeapons": [
       {
-        "name": "Lápida del Lobo (Wolf's Gravestone)",
+        "name": "Lápida del Lobo",
         "rarity": 5,
-        "type": "BiS 5★ Icónico",
-        "note": "+ATQ% masivo para él y todo el equipo."
+        "type": "Opción por rol",
+        "note": "+ATQ% masivo para él y todo el equipo.",
+        "weaponId": "12502",
+        "reviewedNote": false
       },
       {
         "name": "Médula de la Serpiente Marina",
         "rarity": 4,
-        "type": "Mejor 4★ Pase",
-        "note": "+Prob. Crítica y hasta +50% daño directo."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica y hasta +50% daño directo.",
+        "weaponId": "12409",
+        "reviewedNote": false
       },
       {
-        "name": "Prototipo Arcaico / Floresbor",
+        "name": "Prototipo Arcaico",
         "rarity": 4,
-        "type": "Mejor F2P",
-        "note": "Opciones accesibles de forja y evento con buen ATQ y EM."
+        "type": "Opción por rol",
+        "note": "Opciones accesibles de forja y evento con buen ATQ y EM.",
+        "weaponId": "12406",
+        "reviewedNote": false
+      },
+      {
+        "name": "Espada Real del Bosque",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Opciones accesibles de forja y evento con buen ATQ y EM.",
+        "weaponId": "12417",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Bruja Carmesí en Llamas (4 piezas)",
         "type": "BiS Clásico",
-        "bonus": "+15% Bono Pyro y +15% Daño en Vaporizados continuos."
+        "bonus": "+15% Bono Pyro y +15% Daño en Vaporizados continuos.",
+        "reviewedBonus": false
       },
       {
         "set": "Cazador Fantasmal (4 piezas)",
         "type": "BiS con Furina",
-        "bonus": "+36% Prob. Crítica si se juega junto a Furina."
+        "bonus": "+36% Prob. Crítica si se juega junto a Furina.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -2536,6 +2930,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Pyro%",
       "circlet": "Prob. Crítica% / Daño Crítico%",
       "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. Maestría Elemental (120 – 180 EM) > 3. ATQ% > 4. Recarga de Energía%"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/diluc-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -2555,40 +2963,66 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% y Daño Físico (Acumula hasta 30 cargas con ataques normales)",
     "bestWeapons": [
       {
-        "name": "Oda de los Pinos (Song of Broken Pines)",
+        "name": "Oda de los Pinos",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "741 ATQ Base descomunal, +Daño Físico, +ATQ% y +12% Velocidad de Ataque para sacar más cargas en Q."
+        "type": "Opción por rol",
+        "note": "741 ATQ Base descomunal, +Daño Físico, +ATQ% y +12% Velocidad de Ataque para sacar más cargas en Q.",
+        "weaponId": "12503",
+        "reviewedNote": false
       },
       {
-        "name": "Lápida del Lobo / Espadón Cornirrojo",
+        "name": "Lápida del Lobo",
         "rarity": 5,
-        "type": "Opciones 5★",
-        "note": "Stat-sticks de ATQ y Daño Crítico."
+        "type": "Opción por rol",
+        "note": "Stat-sticks de ATQ y Daño Crítico.",
+        "weaponId": "12502",
+        "reviewedNote": false
+      },
+      {
+        "name": "Espadón Cornirrojo",
+        "rarity": 5,
+        "type": "Opción por rol",
+        "note": "Stat-sticks de ATQ y Daño Crítico.",
+        "weaponId": "12510",
+        "reviewedNote": false
       },
       {
         "name": "Médula de la Serpiente Marina",
         "rarity": 4,
-        "type": "Mejor 4★ Pase",
-        "note": "+Prob. Crítica y aumento universal de daño."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica y aumento universal de daño.",
+        "weaponId": "12409",
+        "reviewedNote": false
       },
       {
-        "name": "Argento Estelar de las Nieves / Prototipo Arcaico",
+        "name": "Argento Estelar de las Nieves",
         "rarity": 4,
-        "type": "Mejor F2P",
-        "note": "Forja accesible con Bono de Daño Físico."
+        "type": "Opción por rol",
+        "note": "Forja accesible con Bono de Daño Físico.",
+        "weaponId": "12411",
+        "reviewedNote": false
+      },
+      {
+        "name": "Prototipo Arcaico",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Forja accesible con Bono de Daño Físico.",
+        "weaponId": "12406",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Llamas Albinas (4 piezas)",
         "type": "BiS Indiscutible",
-        "bonus": "+50% Daño Físico y +18% ATQ permanente con 2 cargas de su habilidad E."
+        "bonus": "+50% Daño Físico y +18% ATQ permanente con 2 cargas de su habilidad E.",
+        "reviewedBonus": false
       },
       {
         "set": "2p Llamas Albinas + 2p Caballería Sanguinaria",
         "type": "Alternativa 2p+2p",
-        "bonus": "+50% Bono de Daño Físico incondicional."
+        "bonus": "+50% Bono de Daño Físico incondicional.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -2715,6 +3149,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Físico%",
       "circlet": "Prob. Crítica% / Daño Crítico%",
       "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% > 3. Recarga de Energía% (130% – 145% ER) > 4. DEF%"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/eula-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -2734,34 +3182,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Buff A4 escala según su ATQ Base • Requiere alta ER en C0-C5 (250%+)",
     "bestWeapons": [
       {
-        "name": "Elegía del Fin (Elegy for the End)",
+        "name": "Elegía del Fin",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "Batería y buff al equipo."
+        "type": "Opción por rol",
+        "note": "Batería y buff al equipo.",
+        "weaponId": "15503",
+        "reviewedNote": false
       },
       {
-        "name": "Arco de Favonius (Favonius Warbow)",
+        "name": "Arco de Favonius",
         "rarity": 4,
-        "type": "BiS F2P",
-        "note": "Indispensable antes de C6."
+        "type": "Opción por rol",
+        "note": "Indispensable antes de C6.",
+        "weaponId": "15401",
+        "reviewedNote": false
       },
       {
-        "name": "Arco del Sacrificio (Sacrificial Bow)",
+        "name": "Arco del Sacrificio",
         "rarity": 4,
-        "type": "Opción ER",
-        "note": "Doble uso de E para partículas."
+        "type": "Opción por rol",
+        "note": "Doble uso de E para partículas.",
+        "weaponId": "15403",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Tenacidad de la Geoarmada (4 piezas)",
         "type": "BiS en C6",
-        "bonus": "En C6 sus flechas de derrumbe activan Tenacidad de forma constante (+20% ATQ)."
+        "bonus": "En C6 sus flechas de derrumbe activan Tenacidad de forma constante (+20% ATQ).",
+        "reviewedBonus": false
       },
       {
         "set": "Emblema del Destino (2p) + Recarga (2p)",
         "type": "BiS en C0-C5",
-        "bonus": "Prioriza alcanzar los 250%+ de Recarga de Energía antes de C6."
+        "bonus": "Prioriza alcanzar los 250%+ de Recarga de Energía antes de C6.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -2887,6 +3343,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Anemo% o ATQ%",
       "circlet": "Prob. Crítica% (para Favonius) o Daño Crítico",
       "substats": "1. Recarga de Energía% (250%+ en C0-C5 / 200%+ en C6) > 2. Prob. Crítica (para Favonius) > 3. ATQ% y Crítico"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/faruzan-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -2906,40 +3376,66 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% y Maestría Elemental (La pasiva A4 no tiene ICD)",
     "bestWeapons": [
       {
-        "name": "Estrella Polar / Aqua Simulacra",
+        "name": "Estrella Invernal",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "Stat-sticks de Crítico y aumentos directos de daño elemental para Oz."
+        "type": "Opción por rol",
+        "note": "Stat-sticks de Crítico y aumentos directos de daño elemental para Oz.",
+        "weaponId": "15507",
+        "reviewedNote": false
       },
       {
-        "name": "Último Acorde (The Stringless R5)",
-        "rarity": 4,
-        "type": "BiS 4★ Indiscutible",
-        "note": "+165 Maestría Elemental y +48% Daño constante en Oz con su Habilidad Elemental."
+        "name": "Aqua Simulacra",
+        "rarity": 5,
+        "type": "Opción por rol",
+        "note": "Stat-sticks de Crítico y aumentos directos de daño elemental para Oz.",
+        "weaponId": "15508",
+        "reviewedNote": false
       },
       {
-        "name": "Cazador del Callejón / Vals de la Noche",
+        "name": "Último Acorde",
         "rarity": 4,
-        "type": "Opciones 4★",
-        "note": "Aumentan el daño mientras está fuera de campo."
+        "type": "Opción por rol",
+        "note": "+165 Maestría Elemental y +48% Daño constante en Oz con su Habilidad Elemental.",
+        "weaponId": "15402",
+        "reviewedNote": false
+      },
+      {
+        "name": "Cazador del Callejón",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Aumentan el daño mientras está fuera de campo.",
+        "weaponId": "15410",
+        "reviewedNote": false
+      },
+      {
+        "name": "Vals Nocturno",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Aumentan el daño mientras está fuera de campo.",
+        "weaponId": "15412",
+        "reviewedNote": false
       },
       {
         "name": "Prototipo Luz de Luna",
         "rarity": 4,
-        "type": "Mejor F2P",
-        "note": "Forja accesible con buen ATQ%."
+        "type": "Opción por rol",
+        "note": "Forja accesible con buen ATQ%.",
+        "weaponId": "15406",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Compañía Dorada (4 piezas)",
         "type": "BiS Absoluto",
-        "bonus": "+70% Daño de Habilidad Elemental continuo para Oz desde fuera de campo."
+        "bonus": "+70% Daño de Habilidad Elemental continuo para Oz desde fuera de campo.",
+        "reviewedBonus": false
       },
       {
         "set": "Furia del Trueno (2p) + ATQ+18% (2p)",
         "type": "Alternativa 2p+2p",
-        "bonus": "Opción transitoria con buenos substats de crítico."
+        "bonus": "Opción transitoria con buenos substats de crítico.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -3076,6 +3572,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Electro%",
       "circlet": "Prob. Crítica% / Daño Crítico%",
       "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% > 3. Maestría Elemental (80 – 160 EM en Aggravate) > 4. Recarga de Energía (115% – 125% ER)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/fischl-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -3097,43 +3607,54 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Fulgor de las Aguas Calmas",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "Mayor daño personal (+Críticos y Vida). Requiere reloj ER%."
+        "type": "Opción por rol",
+        "note": "Mayor daño personal (+Críticos y Vida). Requiere reloj ER%.",
+        "weaponId": "11513",
+        "reviewedNote": false
       },
       {
         "name": "Deseo Ponzoñoso",
         "rarity": 4,
-        "type": "Mejor 4★",
-        "note": "Batería ideal (+ER%) con +32% Daño y +12% CR en Habilidad Elemental."
+        "type": "Opción por rol",
+        "note": "Batería ideal (+ER%) con +32% Daño y +12% CR en Habilidad Elemental.",
+        "weaponId": "11413",
+        "reviewedNote": false
       },
       {
         "name": "Vado del Río Ceniciento",
         "rarity": 4,
-        "type": "Mejor F2P",
-        "note": "Gratis pescando en Fontaine (+Recarga de Energía y +Prob. CRIT en E)."
+        "type": "Opción por rol",
+        "note": "Gratis pescando en Fontaine (+Recarga de Energía y +Prob. CRIT en E).",
+        "weaponId": "11426",
+        "reviewedNote": false
       },
       {
         "name": "Espada de Favonius",
         "rarity": 4,
-        "type": "Utilidad",
-        "note": "Batería para todo el equipo en rotaciones de alta demanda de recarga."
+        "type": "Opción por rol",
+        "note": "Batería para todo el equipo en rotaciones de alta demanda de recarga.",
+        "weaponId": "11401",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Compañía Dorada (4 piezas)",
         "type": "BiS Indiscutible",
-        "bonus": "+70% Daño de Habilidad Elemental Off-Field continuo."
+        "bonus": "+70% Daño de Habilidad Elemental Off-Field continuo.",
+        "reviewedBonus": false
       },
       {
         "set": "Tenacidad de la Geoarmada (4 piezas)",
         "type": "Soporte Carry",
-        "bonus": "+20% ATQ continuo para el Hypercarry del equipo."
+        "bonus": "+20% ATQ continuo para el Hypercarry del equipo.",
+        "reviewedBonus": false
       },
       {
         "set": "2p Compañía Dorada + 2p Vida+20%",
         "type": "Alternativa 2p+2p",
-        "bonus": "Excelente consistencia si faltan piezas con buenos substats."
+        "bonus": "Excelente consistencia si faltan piezas con buenos substats.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -3270,6 +3791,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Hydro% o Vida%",
       "circlet": "Prob. Crítica% / Daño Crítico%",
       "substats": "1. Recarga de Energía% (hasta 160% - 200%) > 2. Prob. Crítica / Daño Crítico (Ratio 1:2) > 3. Vida% (hasta 40,000 HP) > ❌ ATQ y DEF son estadísticas muertas"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/furina-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -3289,34 +3824,58 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% y Multiplicador de Ataques Descendentes",
     "bestWeapons": [
       {
-        "name": "Médula de la Serpiente Marina (Serpent Spine)",
+        "name": "Médula de la Serpiente Marina",
         "rarity": 4,
-        "type": "BiS 4★",
-        "note": "+Prob. Crítica y hasta +50% daño directo en sus saltos descendentes."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica y hasta +50% daño directo en sus saltos descendentes.",
+        "weaponId": "12409",
+        "reviewedNote": false
       },
       {
-        "name": "Lápida del Lobo / Emblema del Mar de Juncos",
+        "name": "Lápida del Lobo",
         "rarity": 5,
-        "type": "Opciones 5★",
-        "note": "Stat-sticks de ATQ y Crítico."
+        "type": "Opción por rol",
+        "note": "Stat-sticks de ATQ y Crítico.",
+        "weaponId": "12502",
+        "reviewedNote": false
       },
       {
-        "name": "Floresbor / Sombra de la Marea",
+        "name": "Emblema del Mar de Juncos",
+        "rarity": 5,
+        "type": "Opción por rol",
+        "note": "Stat-sticks de ATQ y Crítico.",
+        "weaponId": "12511",
+        "reviewedNote": false
+      },
+      {
+        "name": "Espada Real del Bosque",
         "rarity": 4,
-        "type": "Mejores F2P",
-        "note": "Floresbor otorga +ATQ% y +110 EM; Sombra de la Marea rinde excelente con healers."
+        "type": "Opción por rol",
+        "note": "Floresbor otorga +ATQ% y +110 EM; Sombra de la Marea rinde excelente con healers.",
+        "weaponId": "12417",
+        "reviewedNote": false
+      },
+      {
+        "name": "Sombra de la Marea",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Floresbor otorga +ATQ% y +110 EM; Sombra de la Marea rinde excelente con healers.",
+        "weaponId": "12425",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Cazador Fantasmal (4 piezas)",
         "type": "BiS Absoluto",
-        "bonus": "+36% Prob. Crítica gratuita al perder y recuperar vida con sus saltos E."
+        "bonus": "+36% Prob. Crítica gratuita al perder y recuperar vida con sus saltos E.",
+        "reviewedBonus": false
       },
       {
         "set": "Bruja Carmesí en Llamas (4 piezas)",
         "type": "Alternativa Vape",
-        "bonus": "+15% Bono Pyro y +15% Daño en Vaporizados de salto descendente."
+        "bonus": "+15% Bono Pyro y +15% Daño en Vaporizados de salto descendente.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -3443,6 +4002,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Pyro%",
       "circlet": "Daño Crítico% (o Prob. CR)",
       "substats": "1. Daño Crítico / Prob. Crítica (tope 64% CR con Cazador) > 2. Maestría Elemental (120 – 200 EM) > 3. ATQ% > 4. Recarga (120% – 135% ER)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/gaming-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -3464,38 +4037,56 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Arco de Amos",
         "rarity": 5,
-        "type": "BiS 5★ Icónico",
-        "note": "+49.6% ATQ y hasta +52% de daño en Flechas Cargadas según tiempo de vuelo."
+        "type": "Opción por rol",
+        "note": "+49.6% ATQ y hasta +52% de daño en Flechas Cargadas según tiempo de vuelo.",
+        "weaponId": "15502",
+        "reviewedNote": false
       },
       {
-        "name": "La Primera Gran Magia / Aqua Simulacra",
+        "name": "El Primer Gran Número de Magia",
         "rarity": 5,
-        "type": "BiS 5★ Crítico",
-        "note": "+66.2% Daño Crítico y bono de daño cargado."
+        "type": "Opción por rol",
+        "note": "+66.2% Daño Crítico y bono de daño cargado.",
+        "weaponId": "15512",
+        "reviewedNote": false
       },
       {
-        "name": "Arco del Prototipo Crescendo (Prototype Crescent R5)",
-        "rarity": 4,
-        "type": "Mejor 4★ F2P",
-        "note": "Forja accesible: +72% ATQ al acertar en punto débil."
+        "name": "Aqua Simulacra",
+        "rarity": 5,
+        "type": "Opción por rol",
+        "note": "+66.2% Daño Crítico y bono de daño cargado.",
+        "weaponId": "15508",
+        "reviewedNote": false
       },
       {
-        "name": "Masacrademonios (Hamayumi R5)",
+        "name": "Prototipo Luz de Luna",
         "rarity": 4,
-        "type": "Mejor 4★ Melt",
-        "note": "Forja de Inazuma: +48% Daño en Ataques Cargados con la energía al 100%."
+        "type": "Opción por rol",
+        "note": "Forja accesible: +72% ATQ al acertar en punto débil.",
+        "weaponId": "15406",
+        "reviewedNote": false
+      },
+      {
+        "name": "Masacrademonios",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Forja de Inazuma: +48% Daño en Ataques Cargados con la energía al 100%.",
+        "weaponId": "15414",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Orquesta del Errante (4 piezas)",
         "type": "BiS Derretido (Melt)",
-        "bonus": "+80 Maestría Elemental y +35% Daño permanente en Ataques Cargados."
+        "bonus": "+80 Maestría Elemental y +35% Daño permanente en Ataques Cargados.",
+        "reviewedBonus": false
       },
       {
         "set": "Nómada del Invierno (4 piezas)",
         "type": "BiS Congelación (Freeze)",
-        "bonus": "+Hasta 40% Prob. Crítica contra enemigos congelados."
+        "bonus": "+Hasta 40% Prob. Crítica contra enemigos congelados.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -3632,6 +4223,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Cryo%",
       "circlet": "Daño Crítico% (o Prob. CR)",
       "substats": "1. Daño Crítico / Prob. Crítica (1:2) > 2. ATQ% > 3. Maestría Elemental (150 – 250 EM en Melt) > 4. Recarga de Energía%"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/ganyu-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -3653,38 +4258,48 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Arco de Favonius",
         "rarity": 4,
-        "type": "BiS Absoluto",
-        "note": "Genera partículas neutras para recargar las Definitivas de Itto y Noelle."
+        "type": "Opción por rol",
+        "note": "Genera partículas neutras para recargar las Definitivas de Itto y Noelle.",
+        "weaponId": "15401",
+        "reviewedNote": false
       },
       {
         "name": "Arco del Sacrificio",
         "rarity": 4,
-        "type": "Alternativa",
-        "note": "Recarga de energía y reseteo de E."
+        "type": "Opción por rol",
+        "note": "Recarga de energía y reseteo de E.",
+        "weaponId": "15403",
+        "reviewedNote": false
       },
       {
-        "name": "Elegía del Fin (Elegy for the End)",
+        "name": "Elegía del Fin",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "+Recarga y +100 EM / +20% ATQ para todo el equipo."
+        "type": "Opción por rol",
+        "note": "+Recarga y +100 EM / +20% ATQ para todo el equipo.",
+        "weaponId": "15503",
+        "reviewedNote": false
       },
       {
         "name": "Desvanecimiento del Crepúsculo",
         "rarity": 4,
-        "type": "Opción Evento",
-        "note": "+30.6% Recarga de Energía."
+        "type": "Opción por rol",
+        "note": "+30.6% Recarga de Energía.",
+        "weaponId": "15411",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Exiliado (4 piezas)",
         "type": "BiS Batería Equipo",
-        "bonus": "Restaura 2 puntos de energía a todo el equipo cada 2s tras usar su Definitiva."
+        "bonus": "Restaura 2 puntos de energía a todo el equipo cada 2s tras usar su Definitiva.",
+        "reviewedBonus": false
       },
       {
         "set": "Cáscara de Sueños Opulentos (4 piezas)",
         "type": "Alternativa DEF",
-        "bonus": "+54% DEF para aumentar su daño personal y curación en C4."
+        "bonus": "+54% DEF para aumentar su daño personal y curación en C4.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -3810,6 +4425,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "DEF%",
       "circlet": "Prob. Crítica% (para Favonius)",
       "substats": "1. Recarga de Energía% (200% - 230% ER) > 2. Prob. Crítica (para Favonius) > 3. DEF%"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/gorou-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -3831,43 +4460,54 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Báculo de Homa",
         "rarity": 5,
-        "type": "BiS Absoluto",
-        "note": "+66.2% Daño Crítico, +20% Vida Máx y enorme bono de ATQ bajo el 50% HP."
+        "type": "Opción por rol",
+        "note": "+66.2% Daño Crítico, +20% Vida Máx y enorme bono de ATQ bajo el 50% HP.",
+        "weaponId": "13501",
+        "reviewedNote": false
       },
       {
         "name": "Balada de los Fiordos",
         "rarity": 4,
-        "type": "Mejor 4★ Pase",
-        "note": "+27.6% Prob. Crítica y +120 a 240 de Maestría Elemental en equipos tri-elementales."
+        "type": "Opción por rol",
+        "note": "+27.6% Prob. Crítica y +120 a 240 de Maestría Elemental en equipos tri-elementales.",
+        "weaponId": "13424",
+        "reviewedNote": false
       },
       {
-        "name": "Perdición del Dragón (Dragon's Bane)",
+        "name": "Perdición del Dragón",
         "rarity": 4,
-        "type": "Mejor 4★ Gacha",
-        "note": "+221 Maestría Elemental y +36% Daño continuo contra enemigos con Hydro/Pyro."
+        "type": "Opción por rol",
+        "note": "+221 Maestría Elemental y +36% Daño continuo contra enemigos con Hydro/Pyro.",
+        "weaponId": "13401",
+        "reviewedNote": false
       },
       {
-        "name": "Borla Blanca (White Tassel R5)",
+        "name": "Borla Blanca",
         "rarity": 3,
-        "type": "F2P",
-        "note": "Stat-stick de Prob. Crítica gratuito."
+        "type": "Opción por rol",
+        "note": "Stat-stick de Prob. Crítica gratuito.",
+        "weaponId": "11312",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Bruja Carmesí en Llamas (4 piezas)",
         "type": "BiS Reacciones",
-        "bonus": "+15% Bono Pyro y +15% Daño en Vaporizados/Derretidos."
+        "bonus": "+15% Bono Pyro y +15% Daño en Vaporizados/Derretidos.",
+        "reviewedBonus": false
       },
       {
         "set": "Reminiscencia de la Purificación (4 piezas)",
         "type": "BiS Ataques Cargados",
-        "bonus": "+50% Daño en normales/cargados a cambio de 15 puntos de energía."
+        "bonus": "+50% Daño en normales/cargados a cambio de 15 puntos de energía.",
+        "reviewedBonus": false
       },
       {
         "set": "Cazador Fantasmal (4 piezas)",
         "type": "BiS con Furina",
-        "bonus": "+36% Prob. Crítica gratuita al jugarla con Furina."
+        "bonus": "+36% Prob. Crítica gratuita al jugarla con Furina.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -4005,6 +4645,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Pyro%",
       "circlet": "Prob. Crítica% / Daño Crítico%",
       "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. Maestría Elemental (150 – 250 EM) > 3. Vida% (hasta 30,000 – 35,000 HP) > 4. ATQ% > ❌ ATQ Plano y DEF son muy débiles"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/hu-tao-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -4026,32 +4680,48 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Espada de Favonius",
         "rarity": 4,
-        "type": "BiS Utilidad F2P",
-        "note": "Partículas de recarga constantes para lanzar su Definitiva cada rotación."
+        "type": "Opción por rol",
+        "note": "Partículas de recarga constantes para lanzar su Definitiva cada rotación.",
+        "weaponId": "11401",
+        "reviewedNote": false
       },
       {
         "name": "Espada Amenoma Gemela",
         "rarity": 4,
-        "type": "Mejor Forja",
-        "note": "+ATQ% para curación y regenera energía pasiva."
+        "type": "Opción por rol",
+        "note": "+ATQ% para curación y regenera energía pasiva.",
+        "weaponId": "11414",
+        "reviewedNote": false
       },
       {
-        "name": "Hoja Afilada Celestial / Aquila Favonia",
+        "name": "Hoja Afilada Celestial",
         "rarity": 5,
-        "type": "Opciones 5★",
-        "note": "Alto ATQ Base y recarga."
+        "type": "Opción por rol",
+        "note": "Alto ATQ Base y recarga.",
+        "weaponId": "11502",
+        "reviewedNote": false
+      },
+      {
+        "name": "Aquila Favonia",
+        "rarity": 5,
+        "type": "Opción por rol",
+        "note": "Alto ATQ Base y recarga.",
+        "weaponId": "11501",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Sombra Verde Esmeralda (4 piezas)",
         "type": "BiS Obligatorio",
-        "bonus": "-40% RES Elemental para potenciar al carry del equipo."
+        "bonus": "-40% RES Elemental para potenciar al carry del equipo.",
+        "reviewedBonus": false
       },
       {
         "set": "Nobleza Obligada (4 piezas)",
         "type": "Soporte ATQ",
-        "bonus": "+20% ATQ para todo el equipo si nadie más lo lleva."
+        "bonus": "+20% ATQ para todo el equipo si nadie más lo lleva.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -4177,6 +4847,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "ATQ% o Bono Daño Anemo%",
       "circlet": "Bono de Curación% o Prob. Crítica (con Favonius)",
       "substats": "1. Recarga de Energía% (170% - 190% ER) > 2. ATQ% > 3. Prob. Crítica (para Favonius)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/jean-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -4196,45 +4880,64 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por Maestría Elemental (1,000 EM = +40% Bono Daño Elemental al equipo)",
     "bestWeapons": [
       {
-        "name": "Juramento por la Libertad (Freedom-Sworn)",
+        "name": "Juramento por la Libertad",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+198 Maestría Elemental y buff de +20% ATQ y +16% daño en normales/cargados/descendentes."
+        "type": "Opción por rol",
+        "note": "+198 Maestría Elemental y buff de +20% ATQ y +16% daño en normales/cargados/descendentes.",
+        "weaponId": "11503",
+        "reviewedNote": false
       },
       {
-        "name": "Luz Lunar de Xifos (Xiphos' Moonlight)",
+        "name": "Luz Lunar de Xifos",
         "rarity": 4,
-        "type": "BiS 4★ Gacha",
-        "note": "Convierte su altísima EM en recarga de energía pasiva para él y todo el equipo."
+        "type": "Opción por rol",
+        "note": "Convierte su altísima EM en recarga de energía pasiva para él y todo el equipo.",
+        "weaponId": "11418",
+        "reviewedNote": false
       },
       {
         "name": "Espada de Favonius",
         "rarity": 4,
-        "type": "BiS Batería F2P",
-        "note": "Resuelve cualquier problema de recarga de energía con partículas blancas para el equipo."
+        "type": "Opción por rol",
+        "note": "Resuelve cualquier problema de recarga de energía con partículas blancas para el equipo.",
+        "weaponId": "11401",
+        "reviewedNote": false
       },
       {
-        "name": "Espina de Hierro / Diluvio Florífero",
+        "name": "Espina de Hierro",
         "rarity": 4,
-        "type": "Mejor F2P EM",
-        "note": "Forja accesible que aporta +165 de Maestría Elemental pura."
+        "type": "Opción por rol",
+        "note": "Forja accesible que aporta +165 de Maestría Elemental pura.",
+        "weaponId": "11407",
+        "reviewedNote": false
+      },
+      {
+        "name": "Diluvio Florífero",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Forja accesible que aporta +165 de Maestría Elemental pura.",
+        "weaponId": "11422",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Sombra Verde Esmeralda / Viridescent Venerer (4 piezas)",
         "type": "BiS Obligatorio",
-        "bonus": "-40% Resistencia Elemental al elemento que hace Torbellino (el debuff más fuerte del juego)."
+        "bonus": "-40% Resistencia Elemental al elemento que hace Torbellino (el debuff más fuerte del juego).",
+        "reviewedBonus": false
       },
       {
         "set": "Instructor (4 piezas)",
         "type": "Soporte Reacciones",
-        "bonus": "+120 de Maestría Elemental a todo el equipo al activar una reacción elemental."
+        "bonus": "+120 de Maestría Elemental a todo el equipo al activar una reacción elemental.",
+        "reviewedBonus": false
       },
       {
         "set": "2p Maestría Elemental + 2p Maestría Elemental",
         "type": "Transición F2P",
-        "bonus": "+160 de Maestría Elemental pasiva para maximizar el bono elemental transferido."
+        "bonus": "+160 de Maestría Elemental pasiva para maximizar el bono elemental transferido.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -4370,6 +5073,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Maestría Elemental",
       "circlet": "Maestría Elemental (o Prob. CR con Favonius)",
       "substats": "1. Maestría Elemental (Meta: 900 – 1,000 EM) > 2. Recarga de Energía% (160% - 190% ER) > 3. Prob. Crítica (si lleva Favonius)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/kazuha-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -4389,45 +5106,72 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% y Multiplicadores de Definitiva Soumetsu",
     "bestWeapons": [
       {
-        "name": "Reflejo de las Tinieblas (Mistsplitter Reforged)",
+        "name": "Reflejo de las Tinieblas",
         "rarity": 5,
-        "type": "BiS Absoluto 5★",
-        "note": "+44.1% Daño Crítico, 674 ATQ Base y hasta +40% Bono Daño Elemental con cargas."
+        "type": "Opción por rol",
+        "note": "+44.1% Daño Crítico, 674 ATQ Base y hasta +40% Bono Daño Elemental con cargas.",
+        "weaponId": "11509",
+        "reviewedNote": false
       },
       {
-        "name": "Espada Amenoma Gemela (Amenoma Kageuchi R5)",
+        "name": "Espada Amenoma Gemela",
         "rarity": 4,
-        "type": "BiS F2P Forja",
-        "note": "Forja accesible de Inazuma: restaura hasta 36 de energía, resolviendo toda su recarga."
+        "type": "Opción por rol",
+        "note": "Forja accesible de Inazuma: restaura hasta 36 de energía, resolviendo toda su recarga.",
+        "weaponId": "11414",
+        "reviewedNote": false
       },
       {
-        "name": "Cortador de Jade Primordial / Luna Ondulante",
+        "name": "Cortador de Jade Primordial",
         "rarity": 5,
-        "type": "Opciones 5★",
-        "note": "Stat-sticks de Crítico y ATQ."
+        "type": "Opción por rol",
+        "note": "Stat-sticks de Crítico y ATQ.",
+        "weaponId": "11505",
+        "reviewedNote": false
       },
       {
-        "name": "Espada Negra / Vado del Río Ceniciento",
+        "name": "Luna Ondulante de Futsu",
+        "rarity": 5,
+        "type": "Opción por rol",
+        "note": "Stat-sticks de Crítico y ATQ.",
+        "weaponId": "11510",
+        "reviewedNote": false
+      },
+      {
+        "name": "Espada Negra",
         "rarity": 4,
-        "type": "Opciones 4★",
-        "note": "Alternativas viables."
+        "type": "Opción por rol",
+        "note": "Alternativas viables.",
+        "weaponId": "11409",
+        "reviewedNote": false
+      },
+      {
+        "name": "Vado del Río Ceniciento",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Alternativas viables.",
+        "weaponId": "11426",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Nómada del Invierno / Blizzard Strayer (4 piezas)",
         "type": "BiS Obligatorio",
-        "bonus": "+15% Bono Cryo y hasta +40% Prob. Crítica contra enemigos congelados (+55% con consonancia Cryo)."
+        "bonus": "+15% Bono Cryo y hasta +40% Prob. Crítica contra enemigos congelados (+55% con consonancia Cryo).",
+        "reviewedBonus": false
       },
       {
         "set": "Cazador Sombrío (4 piezas)",
         "type": "BiS con Furina",
-        "bonus": "+36% Prob. Crítica pasiva con fluctuaciones de vida en equipos con Furina."
+        "bonus": "+36% Prob. Crítica pasiva con fluctuaciones de vida en equipos con Furina.",
+        "reviewedBonus": false
       },
       {
         "set": "Reminiscencia de la Purificación (4 piezas)",
         "type": "Alternativa Nuke",
-        "bonus": "+18% ATQ y +50% Daño de Ataques Normales y Cargados."
+        "bonus": "+18% ATQ y +50% Daño de Ataques Normales y Cargados.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -4564,6 +5308,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Cryo%",
       "circlet": "Daño Crítico%",
       "substats": "1. Daño Crítico (Meta: 220% – 270%+ CD) > 2. ATQ% (2,000 – 2,300 ATQ) > 3. Recarga de Energía% (130% - 145% con Amenoma / 140%+ sin Amenoma) > 4. Prob. Crítica (tope 35% - 45% con Nómada)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/ayaka-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -4585,38 +5343,64 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Luna Ondulante de Futsu",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+Prob. Crítica, Bono Daño Elemental y +40% Daño en Ataques Normales."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica, Bono Daño Elemental y +40% Daño en Ataques Normales.",
+        "weaponId": "11510",
+        "reviewedNote": false
       },
       {
-        "name": "Cortador de Jade Primordial / Reflejo de las Tinieblas",
+        "name": "Cortador de Jade Primordial",
         "rarity": 5,
-        "type": "Opciones 5★",
-        "note": "Jade Cutter sinergiza a la perfección con su vida y ATQ."
+        "type": "Opción por rol",
+        "note": "Jade Cutter sinergiza a la perfección con su vida y ATQ.",
+        "weaponId": "11505",
+        "reviewedNote": false
+      },
+      {
+        "name": "Reflejo de las Tinieblas",
+        "rarity": 5,
+        "type": "Opción por rol",
+        "note": "Jade Cutter sinergiza a la perfección con su vida y ATQ.",
+        "weaponId": "11509",
+        "reviewedNote": false
       },
       {
         "name": "Espada Negra",
         "rarity": 4,
-        "type": "Pase de Batalla",
-        "note": "+Prob. Crítica y aumento directo a sus cortes normales."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica y aumento directo a sus cortes normales.",
+        "weaponId": "11409",
+        "reviewedNote": false
       },
       {
-        "name": "Espada Amenoma Gemela / Espada de Madera",
+        "name": "Espada Amenoma Gemela",
         "rarity": 4,
-        "type": "Mejor F2P",
-        "note": "Amenoma resuelve toda su recarga de forma gratuita."
+        "type": "Opción por rol",
+        "note": "Amenoma resuelve toda su recarga de forma gratuita.",
+        "weaponId": "11414",
+        "reviewedNote": false
+      },
+      {
+        "name": "Espada de Madera",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Amenoma resuelve toda su recarga de forma gratuita.",
+        "weaponId": "11417",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Eco del Sacrificio (4 piezas)",
         "type": "BiS (Bajo Ping)",
-        "bonus": "Probabilidad de +70% de daño en cada golpe Shunsuiken."
+        "bonus": "Probabilidad de +70% de daño en cada golpe Shunsuiken.",
+        "reviewedBonus": false
       },
       {
         "set": "Gladiador (4 piezas)",
         "type": "BiS Universal",
-        "bonus": "+35% Daño en Ataques Normales consistente sin depender del ping."
+        "bonus": "+35% Daño en Ataques Normales consistente sin depender del ping.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -4753,6 +5537,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Hydro%",
       "circlet": "Prob. Crítica% / Daño Crítico%",
       "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% > 3. Recarga de Energía% (120% - 135%) > 4. Vida%"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/ayato-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -4772,40 +5570,58 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% y Maestría Elemental (Reacciona frecuentemente con Dendro)",
     "bestWeapons": [
       {
-        "name": "Reflejo de las Tinieblas (Mistsplitter)",
+        "name": "Reflejo de las Tinieblas",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+Daño Crítico y hasta +40% Bono Daño Elemental al golpear con E y Q."
+        "type": "Opción por rol",
+        "note": "+Daño Crítico y hasta +40% Bono Daño Elemental al golpear con E y Q.",
+        "weaponId": "11509",
+        "reviewedNote": false
       },
       {
         "name": "Cortador de Jade Primordial",
         "rarity": 5,
-        "type": "BiS 5★ Alternativa",
-        "note": "+44.1% Prob. Crítica masiva y ATQ% adicional según Vida."
+        "type": "Opción por rol",
+        "note": "+44.1% Prob. Crítica masiva y ATQ% adicional según Vida.",
+        "weaponId": "11505",
+        "reviewedNote": false
       },
       {
-        "name": "Rugido del León (Lion's Roar R5)",
+        "name": "Rugido del León",
         "rarity": 4,
-        "type": "Mejor 4★ Gacha",
-        "note": "+36% Daño continuo contra enemigos afectados por Electro."
+        "type": "Opción por rol",
+        "note": "+36% Daño continuo contra enemigos afectados por Electro.",
+        "weaponId": "11405",
+        "reviewedNote": false
       },
       {
-        "name": "Espada de Madera / Espina de Hierro",
+        "name": "Espada de Madera",
         "rarity": 4,
-        "type": "F2P",
-        "note": "Maestría Elemental para Intensificación."
+        "type": "Opción por rol",
+        "note": "Maestría Elemental para Intensificación.",
+        "weaponId": "11417",
+        "reviewedNote": false
+      },
+      {
+        "name": "Espina de Hierro",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Maestría Elemental para Intensificación.",
+        "weaponId": "11407",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Furia del Trueno (4 piezas)",
         "type": "BiS Indiscutible",
-        "bonus": "+15% Bono Electro, +20% Daño en Intensificación y reduce el cooldown de su habilidad E a casi 0s."
+        "bonus": "+15% Bono Electro, +20% Daño en Intensificación y reduce el cooldown de su habilidad E a casi 0s.",
+        "reviewedBonus": false
       },
       {
         "set": "Sueños Áureos (4 piezas)",
         "type": "Alternativa EM",
-        "bonus": "+Hasta 230 de Maestría Elemental para daño de reacción."
+        "bonus": "+Hasta 230 de Maestría Elemental para daño de reacción.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -4932,6 +5748,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Electro%",
       "circlet": "Prob. Crítica% / Daño Crítico%",
       "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% > 3. Maestría Elemental (100 – 180 EM) > 4. Recarga de Energía%"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/keqing-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -4951,40 +5781,50 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% y Multiplicadores Masivos de Cañón E (Escamas Noctámbulas)",
     "bestWeapons": [
       {
-        "name": "Colmillo del Rey de la Montaña (Fang of the Mountain King)",
+        "name": "Colmillo del Rey de la Montaña",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+Prob. Crítica, genera acumulaciones de daño al causar Quemadura o Crepitar."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica, genera acumulaciones de daño al causar Quemadura o Crepitar.",
+        "weaponId": "12513",
+        "reviewedNote": false
       },
       {
-        "name": "Médula de la Serpiente Marina (Serpent Spine)",
+        "name": "Médula de la Serpiente Marina",
         "rarity": 4,
-        "type": "Mejor 4★ Pase",
-        "note": "+Prob. Crítica y hasta +50% daño directo en sus cañonazos de escamas."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica y hasta +50% daño directo en sus cañonazos de escamas.",
+        "weaponId": "12409",
+        "reviewedNote": false
       },
       {
-        "name": "Terragitador (Earth Shaker R5)",
+        "name": "Terragitador",
         "rarity": 4,
-        "type": "Mejor F2P Forja",
-        "note": "Forja de Natlan: +32% Daño de Habilidad Elemental al causar reacciones Pyro."
+        "type": "Opción por rol",
+        "note": "Forja de Natlan: +32% Daño de Habilidad Elemental al causar reacciones Pyro.",
+        "weaponId": "12431",
+        "reviewedNote": false
       },
       {
         "name": "Lápida del Lobo",
         "rarity": 5,
-        "type": "Alternativa 5★",
-        "note": "Enorme bono de ATQ%."
+        "type": "Opción por rol",
+        "note": "Enorme bono de ATQ%.",
+        "weaponId": "12502",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Códice de Obsidiana (4 piezas)",
         "type": "BiS Indiscutible",
-        "bonus": "+40% Prob. Crítica garantizada al gastar puntos de Noctambulismo en su gancho."
+        "bonus": "+40% Prob. Crítica garantizada al gastar puntos de Noctambulismo en su gancho.",
+        "reviewedBonus": false
       },
       {
         "set": "Sueños Inacabados (4 piezas)",
         "type": "Alternativa Quemadura",
-        "bonus": "+50% Daño permanente si hay enemigos afectados por Quemadura en combate."
+        "bonus": "+50% Daño permanente si hay enemigos afectados por Quemadura en combate.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -5121,6 +5961,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Dendro%",
       "circlet": "Daño Crítico% (o Prob. CR)",
       "substats": "1. Daño Crítico / Prob. Crítica (tope 60% CR con Obsidiana) > 2. ATQ% > 3. Recarga de Energía% (120% – 130% ER) > 4. Maestría Elemental"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/kinich-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -5140,45 +5994,64 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado 100% Maestría Elemental para Hyperbloom (35k+ por semilla) + HP para curación",
     "bestWeapons": [
       {
-        "name": "Espina de Hierro (Iron Sting)",
+        "name": "Espina de Hierro",
         "rarity": 4,
-        "type": "BiS F2P Forja",
-        "note": "Forja accesible que otorga +165 de Maestría Elemental pura de forma gratuita."
+        "type": "Opción por rol",
+        "note": "Forja accesible que otorga +165 de Maestría Elemental pura de forma gratuita.",
+        "weaponId": "11407",
+        "reviewedNote": false
       },
       {
-        "name": "Luz Lunar de Xifos (Xiphos)",
+        "name": "Luz Lunar de Xifos",
         "rarity": 4,
-        "type": "BiS Gacha",
-        "note": "+Maestría Elemental y convierte EM en recarga para todo el equipo."
+        "type": "Opción por rol",
+        "note": "+Maestría Elemental y convierte EM en recarga para todo el equipo.",
+        "weaponId": "11418",
+        "reviewedNote": false
       },
       {
-        "name": "Diluvio Florífero (Toukabou Shigure)",
+        "name": "Diluvio Florífero",
         "rarity": 4,
-        "type": "Evento EM",
-        "note": "+165 de Maestría Elemental y daño extra contra enemigos marcados."
+        "type": "Opción por rol",
+        "note": "+165 de Maestría Elemental y daño extra contra enemigos marcados.",
+        "weaponId": "11422",
+        "reviewedNote": false
       },
       {
-        "name": "Llave de la Coronación / Juramento por la Libertad",
+        "name": "Llave de la Coronación",
         "rarity": 5,
-        "type": "Opciones 5★",
-        "note": "La Llave da Vida% descomunal y comparte hasta 150 EM con el equipo."
+        "type": "Opción por rol",
+        "note": "La Llave da Vida% descomunal y comparte hasta 150 EM con el equipo.",
+        "weaponId": "11511",
+        "reviewedNote": false
+      },
+      {
+        "name": "Juramento por la Libertad",
+        "rarity": 5,
+        "type": "Opción por rol",
+        "note": "La Llave da Vida% descomunal y comparte hasta 150 EM con el equipo.",
+        "weaponId": "11503",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Flor Olvidada del Paraíso (4 piezas)",
         "type": "BiS Daño Hyperbloom",
-        "bonus": "+80% Daño en reacciones de Sobreflorecimiento (máximo daño por semilla)."
+        "bonus": "+80% Daño en reacciones de Sobreflorecimiento (máximo daño por semilla).",
+        "reviewedBonus": false
       },
       {
         "set": "Sueños Áureos (4 piezas)",
         "type": "Alternativa Eficiente",
-        "bonus": "+Hasta 230 de Maestría Elemental total (más fácil de farmear junto a Recuerdos)."
+        "bonus": "+Hasta 230 de Maestría Elemental total (más fácil de farmear junto a Recuerdos).",
+        "reviewedBonus": false
       },
       {
         "set": "2p EM+80 + 2p EM+80",
         "type": "Transición F2P",
-        "bonus": "+160 Maestría Elemental permanente."
+        "bonus": "+160 Maestría Elemental permanente.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -5203,12 +6076,12 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Alhaitham Quickbloom",
-        "comp": "Alhaitham • Nahida • Xingqiu • Yelan",
+        "comp": "Alhaitham • Nahida • Xingqiu • Kuki Shinobu",
         "members": [
           "Alhaitham",
           "Nahida",
           "Xingqiu",
-          "Yelan"
+          "Kuki Shinobu"
         ]
       },
       {
@@ -5314,6 +6187,22 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Maestría Elemental",
       "circlet": "Maestría Elemental",
       "substats": "1. Maestría Elemental (Meta estricto: 950 – 1,050 EM) > 2. Vida% y Vida Plana (para mayor curación pasiva) > 3. Recarga de Energía%"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/shinobu-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Añadido el detonador Electro ausente en Quickbloom."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -5335,32 +6224,48 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Llave de la Coronación",
         "rarity": 5,
-        "type": "BiS 5★ Vida",
-        "note": "+86.2% Vida Máxima para un escudo descomunal y comparte EM."
+        "type": "Opción por rol",
+        "note": "+86.2% Vida Máxima para un escudo descomunal y comparte EM.",
+        "weaponId": "11511",
+        "reviewedNote": false
       },
       {
         "name": "Espada de Favonius",
         "rarity": 4,
-        "type": "BiS Utilidad F2P",
-        "note": "Batería para el equipo."
+        "type": "Opción por rol",
+        "note": "Batería para el equipo.",
+        "weaponId": "11401",
+        "reviewedNote": false
       },
       {
-        "name": "Vado del Río Ceniciento / Espada del Alba",
+        "name": "Vado del Río Ceniciento",
         "rarity": 4,
-        "type": "F2P",
-        "note": "Recarga de energía y crítico."
+        "type": "Opción por rol",
+        "note": "Recarga de energía y crítico.",
+        "weaponId": "11426",
+        "reviewedNote": false
+      },
+      {
+        "name": "Espada del Alba",
+        "rarity": 3,
+        "type": "Opción por rol",
+        "note": "Recarga de energía y crítico.",
+        "weaponId": "11301",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Tenacidad de la Geoarmada (4 piezas)",
         "type": "BiS Indiscutible",
-        "bonus": "+20% ATQ para todo el equipo y +30% Protección de Escudo con sus estrellas fugaces."
+        "bonus": "+20% ATQ para todo el equipo y +30% Protección de Escudo con sus estrellas fugaces.",
+        "reviewedBonus": false
       },
       {
         "set": "2p Vida+20% + 2p Vida+20%",
         "type": "Escudo Puro (45k+ HP)",
-        "bonus": "+40% Vida Máxima total."
+        "bonus": "+40% Vida Máxima total.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -5496,6 +6401,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Vida%",
       "circlet": "Vida% (o Prob. CR con Favonius)",
       "substats": "1. Vida% y Vida Plana (Meta: 38,000 – 44,000 HP) > 2. Recarga de Energía% (130% - 150% ER) > 3. Prob. Crítica (para Favonius)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/layla-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -5515,40 +6434,50 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% + Maestría Elemental • 0% ER necesaria",
     "bestWeapons": [
       {
-        "name": "A Thousand Blazing Suns",
+        "name": "Mil Soles Abrasadores",
         "rarity": 5,
-        "type": "BiS Firma Oficial",
-        "note": "+Crítico colosal y daño Nightsoul Pyro."
+        "type": "Opción por rol",
+        "note": "+Crítico colosal y daño Nightsoul Pyro.",
+        "weaponId": "12514",
+        "reviewedNote": false
       },
       {
-        "name": "Lápida del Lobo (Wolf's Gravestone)",
+        "name": "Lápida del Lobo",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "+ATQ% brutal para el equipo."
+        "type": "Opción por rol",
+        "note": "+ATQ% brutal para el equipo.",
+        "weaponId": "12502",
+        "reviewedNote": false
       },
       {
-        "name": "Médula de la Serpiente Marina (Serpent Spine)",
+        "name": "Médula de la Serpiente Marina",
         "rarity": 4,
-        "type": "BiS 4★ Pase",
-        "note": "+Prob. Crítica y bono de daño universal."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica y bono de daño universal.",
+        "weaponId": "12409",
+        "reviewedNote": false
       },
       {
-        "name": "Hacha de la Mota del Bosque (Earth Shaker)",
+        "name": "Terragitador",
         "rarity": 4,
-        "type": "Mejor Forja Natlan",
-        "note": "+ATQ% y bono de habilidad tras reacción Pyro."
+        "type": "Opción por rol",
+        "note": "+ATQ% y bono de habilidad tras reacción Pyro.",
+        "weaponId": "12431",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Códice de Obsidiana (4 piezas)",
         "type": "BiS On-Field Carry",
-        "bonus": "+40% Prob. Crítica garantizada al gastar puntos de Noctámbulo."
+        "bonus": "+40% Prob. Crítica garantizada al gastar puntos de Noctámbulo.",
+        "reviewedBonus": false
       },
       {
         "set": "Pergamino del Héroe de la Ciudad de las Cenizas (4p)",
         "type": "BiS Off-Field Buffer",
-        "bonus": "+40% Daño Elemental para todo el equipo."
+        "bonus": "+40% Daño Elemental para todo el equipo.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -5686,6 +6615,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Pyro%",
       "circlet": "Daño Crítico% (o Prob. CR)",
       "substats": "1. Daño Crítico > 2. Prob. Crítica (tope 60% en panel con Obsidiana) > 3. ATQ% > 4. Maestría Elemental (150-250 EM) > ❌ ER% es 100% inútil"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/mavuika-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -5705,40 +6648,58 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% y Recarga de Energía (Pasiva A4: ER a Bono Hydro)",
     "bestWeapons": [
       {
-        "name": "Cuento de Cazadores de Dragones (TTDS)",
+        "name": "Cuentos de Cazadores de Dragones",
         "rarity": 3,
-        "type": "Soporte Carry",
-        "note": "+48% ATQ para el atacante principal del equipo."
+        "type": "Opción por rol",
+        "note": "+48% ATQ para el atacante principal del equipo.",
+        "weaponId": "11316",
+        "reviewedNote": false
       },
       {
-        "name": "Códice de Favonius / Prototipo Ámbar",
+        "name": "Códice de Favonius",
         "rarity": 4,
-        "type": "Batería / Cura",
-        "note": "Favonius asegura recarga fluida de la Definitiva."
+        "type": "Opción por rol",
+        "note": "Favonius asegura recarga fluida de la Definitiva.",
+        "weaponId": "14401",
+        "reviewedNote": false
+      },
+      {
+        "name": "Prototipo Ámbar",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Favonius asegura recarga fluida de la Definitiva.",
+        "weaponId": "14406",
+        "reviewedNote": false
       },
       {
         "name": "Sinfonía de los Merodeadores",
         "rarity": 4,
-        "type": "Nuke DPS",
-        "note": "Convierte la burbuja de la Q en una explosión millonaria."
+        "type": "Opción por rol",
+        "note": "Convierte la burbuja de la Q en una explosión millonaria.",
+        "weaponId": "14402",
+        "reviewedNote": false
       },
       {
-        "name": "Oración Perdida",
+        "name": "Oración Perdida a los Vientos Sagrados",
         "rarity": 5,
-        "type": "Stat-stick 5★",
-        "note": "Alta Prob. Crítica y velocidad."
+        "type": "Opción por rol",
+        "note": "Alta Prob. Crítica y velocidad.",
+        "weaponId": "14502",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Nobleza Obligada (4 piezas)",
         "type": "BiS Soporte",
-        "bonus": "+20% ATQ para todo el equipo al activar su Presagio (Q)."
+        "bonus": "+20% ATQ para todo el equipo al activar su Presagio (Q).",
+        "reviewedBonus": false
       },
       {
         "set": "Emblema del Destino (4 piezas)",
         "type": "BiS Daño Nuke",
-        "bonus": "Convierte su alta recarga en daño directo en la burbuja ilusoria."
+        "bonus": "Convierte su alta recarga en daño directo en la burbuja ilusoria.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -5875,6 +6836,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Hydro% o ATQ%",
       "circlet": "Prob. Crítica% / Daño Crítico%",
       "substats": "1. Recarga de Energía% (200% - 240% ER) > 2. Prob. Crítica (para activar Favonius) > 3. Daño Crítico > 4. ATQ%"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/mona-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -5894,40 +6869,50 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por Vida Máxima (HP%) + Maestría Elemental (EM en Vape)",
     "bestWeapons": [
       {
-        "name": "Hora del Surf",
+        "name": "Hora de Surfear",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+Daño Crítico, +Vida Máx y +48% daño en Ataques Normales de Noctambulismo."
+        "type": "Opción por rol",
+        "note": "+Daño Crítico, +Vida Máx y +48% daño en Ataques Normales de Noctambulismo.",
+        "weaponId": "14516",
+        "reviewedNote": false
       },
       {
-        "name": "Anillo de Yaxche",
+        "name": "Laúd de la Luz Celestial",
         "rarity": 4,
-        "type": "Mejor 4★ / Forja F2P",
-        "note": "Forja de Natlan: escala daño de Ataques Normales según Vida Máxima."
+        "type": "Opción por rol",
+        "note": "Forja de Natlan: escala daño de Ataques Normales según Vida Máxima.",
+        "weaponId": "14432",
+        "reviewedNote": false
       },
       {
         "name": "Jade Sacrificial",
         "rarity": 4,
-        "type": "Pase de Batalla",
-        "note": "Excelente stat-stick de Prob. Crítica y gran aumento de Vida Máxima."
+        "type": "Opción por rol",
+        "note": "Excelente stat-stick de Prob. Crítica y gran aumento de Vida Máxima.",
+        "weaponId": "14424",
+        "reviewedNote": false
       },
       {
         "name": "Sinfonía de los Merodeadores",
         "rarity": 4,
-        "type": "Alternativa Gacha",
-        "note": "Enorme Daño Crítico y buff masivo con canción de EM o Daño Elemental."
+        "type": "Opción por rol",
+        "note": "Enorme Daño Crítico y buff masivo con canción de EM o Daño Elemental.",
+        "weaponId": "14402",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Códice de Obsidiana (4 piezas)",
         "type": "BiS Indiscutible",
-        "bonus": "+40% Prob. Crítica permanente al consumir puntos de Noctambulismo."
+        "bonus": "+40% Prob. Crítica permanente al consumir puntos de Noctambulismo.",
+        "reviewedBonus": false
       },
       {
         "set": "Sueños Áureos (4 piezas)",
         "type": "Alternativa Vape",
-        "bonus": "+Maestría Elemental masiva para aumentar los multiplicadores de Vaporizado."
+        "bonus": "+Maestría Elemental masiva para aumentar los multiplicadores de Vaporizado.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -6064,6 +7049,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Hydro%",
       "circlet": "Daño Crítico% (o Vida% si ya supera 50% CR)",
       "substats": "1. Daño Crítico (con Códice de Obsidiana) > 2. Vida% (hasta 35,000+ HP) > 3. Maestría Elemental (150 – 250 EM) > 4. Prob. Crítica (tope 60%)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/mualani-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -6083,40 +7082,58 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado Principal por Maestría Elemental (Tope Pasivas A1 y A4 en 1,000 EM) + ATQ%",
     "bestWeapons": [
       {
-        "name": "Sueños de las Mil Noches (A Thousand Floating Dreams)",
+        "name": "Sueños de las Mil Noches",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+265 Maestría Elemental, +Daño Elemental y +40 EM adicional para todo el equipo."
+        "type": "Opción por rol",
+        "note": "+265 Maestría Elemental, +Daño Elemental y +40 EM adicional para todo el equipo.",
+        "weaponId": "14511",
+        "reviewedNote": false
       },
       {
-        "name": "Memorias de Sacrificio (Sacrificial Fragments)",
+        "name": "Memorias de Sacrificios",
         "rarity": 4,
-        "type": "Mejor 4★ Gacha",
-        "note": "+221 Maestría Elemental pura para llegar fácilmente a 1,000 EM."
+        "type": "Opción por rol",
+        "note": "+221 Maestría Elemental pura para llegar fácilmente a 1,000 EM.",
+        "weaponId": "14403",
+        "reviewedNote": false
       },
       {
-        "name": "Guía Mágica (Magic Guide R5)",
+        "name": "Guía Mágica",
         "rarity": 3,
-        "type": "Mejor F2P 3★",
-        "note": "+187 Maestría Elemental y +24% daño contra enemigos afectados por Hydro o Electro."
+        "type": "Opción por rol",
+        "note": "+187 Maestría Elemental y +24% daño contra enemigos afectados por Hydro o Electro.",
+        "weaponId": "11315",
+        "reviewedNote": false
       },
       {
-        "name": "Sinfonía de los Merodeadores / Estrella del Vagabundo",
+        "name": "Sinfonía de los Merodeadores",
         "rarity": 4,
-        "type": "Opciones 4★",
-        "note": "Vagabundo comparte ATQ según su EM; Sinfonía otorga Daño Crítico alto."
+        "type": "Opción por rol",
+        "note": "Vagabundo comparte ATQ según su EM; Sinfonía otorga Daño Crítico alto.",
+        "weaponId": "14402",
+        "reviewedNote": false
+      },
+      {
+        "name": "Ojo del Juramento",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Vagabundo comparte ATQ según su EM; Sinfonía otorga Daño Crítico alto.",
+        "weaponId": "14415",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Recuerdos del Bosque / Deepwood Memories (4 piezas)",
         "type": "BiS Indiscutible",
-        "bonus": "-30% Resistencia Dendro a los enemigos marcados con la habilidad E (crucial para todo equipo Dendro)."
+        "bonus": "-30% Resistencia Dendro a los enemigos marcados con la habilidad E (crucial para todo equipo Dendro).",
+        "reviewedBonus": false
       },
       {
         "set": "Sueños Áureos (4 piezas)",
         "type": "Alternativa Sub-DPS",
-        "bonus": "Solo si otro compañero del equipo (ej. Zhongli, Kuki o Baizhu) ya lleva Recuerdos del Bosque."
+        "bonus": "Solo si otro compañero del equipo (ej. Zhongli, Kuki o Baizhu) ya lleva Recuerdos del Bosque.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -6142,12 +7159,12 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Alhaitham Quickbloom",
-        "comp": "Alhaitham • Nahida • Xingqiu • Yelan",
+        "comp": "Alhaitham • Nahida • Xingqiu • Kuki Shinobu",
         "members": [
           "Alhaitham",
           "Nahida",
           "Xingqiu",
-          "Yelan"
+          "Kuki Shinobu"
         ]
       },
       {
@@ -6253,6 +7270,22 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Maestría Elemental o Bono Daño Dendro%",
       "circlet": "Maestría Elemental o Prob. Crítica%",
       "substats": "1. Maestría Elemental (Meta: 800 – 1,000 EM) > 2. Prob. Crítica / Daño Crítico (A4 otorga hasta +24% CR y +80% Daño en Tri-Karma) > 3. Recarga de Energía% (120% – 135%) > 4. ATQ%"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/nahida-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Añadido el detonador Electro ausente en Quickbloom."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -6272,40 +7305,58 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% & Multiplicador de Balas de Fragmentación (Shrapnel)",
     "bestWeapons": [
       {
-        "name": "Sentencia (Verdict)",
+        "name": "Sentenciadora",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+Prob. Crítica, +20% ATQ y hasta +36% daño en Habilidad Elemental con Cristalización."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica, +20% ATQ y hasta +36% daño en Habilidad Elemental con Cristalización.",
+        "weaponId": "12512",
+        "reviewedNote": false
       },
       {
         "name": "Médula de la Serpiente Marina",
         "rarity": 4,
-        "type": "Mejor 4★",
-        "note": "+Prob. Crítica y hasta +50% daño directo en sus disparos de escopeta."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica y hasta +50% daño directo en sus disparos de escopeta.",
+        "weaponId": "12409",
+        "reviewedNote": false
       },
       {
-        "name": "Lápida del Lobo / Espadón Cornirrojo",
+        "name": "Lápida del Lobo",
         "rarity": 5,
-        "type": "Opciones 5★",
-        "note": "Stat-sticks descomunales de ATQ% o Daño Crítico."
+        "type": "Opción por rol",
+        "note": "Stat-sticks descomunales de ATQ% o Daño Crítico.",
+        "weaponId": "12502",
+        "reviewedNote": false
       },
       {
-        "name": "Superespada Mágica Suprema (Ultimate Overlord)",
+        "name": "Espadón Cornirrojo",
+        "rarity": 5,
+        "type": "Opción por rol",
+        "note": "Stat-sticks descomunales de ATQ% o Daño Crítico.",
+        "weaponId": "12510",
+        "reviewedNote": false
+      },
+      {
+        "name": "Superespada Mágica Suprema",
         "rarity": 4,
-        "type": "Mejor F2P",
-        "note": "Arma de evento con recarga y hasta +48% ATQ% pasivo."
+        "type": "Opción por rol",
+        "note": "Arma de evento con recarga y hasta +48% ATQ% pasivo.",
+        "weaponId": "12426",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Murmullo del Bosque Reverberante (4 piezas)",
         "type": "BiS Indiscutible",
-        "bonus": "+18% ATQ y hasta +50% Bono Daño Geo continuo con escudos de Cristalización."
+        "bonus": "+18% ATQ y hasta +50% Bono Daño Geo continuo con escudos de Cristalización.",
+        "reviewedBonus": false
       },
       {
         "set": "Cazador Fantasmal (4 piezas)",
         "type": "BiS con Furina",
-        "bonus": "+36% Prob. Crítica si se juega junto a Furina."
+        "bonus": "+36% Prob. Crítica si se juega junto a Furina.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -6330,14 +7381,14 @@ const CHARACTER_BUILDS_DB = [
     },
     "metaTeams": [
       {
-        "name": "Navia Double Pyro",
-        "comp": "Navia • Zhongli • Chiori • Bennett",
+        "name": "Navia doble Pyro",
         "members": [
           "Navia",
           "Zhongli",
-          "Chiori",
+          "Xiangling",
           "Bennett"
-        ]
+        ],
+        "comp": "Navia • Zhongli • Xiangling • Bennett"
       },
       {
         "name": "Navia-Furina Core",
@@ -6442,6 +7493,22 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Geo%",
       "circlet": "Prob. Crítica% / Daño Crítico%",
       "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% > 3. Recarga de Energía% (120% – 135% ER) > 4. DEF%"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/navia-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Doble Pyro ahora incluye dos personajes Pyro."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -6463,43 +7530,54 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Escrituras del Fluir Sempiterno",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+88.2% Daño Crítico, +Vida% y regeneración masiva de energía."
+        "type": "Opción por rol",
+        "note": "+88.2% Daño Crítico, +Vida% y regeneración masiva de energía.",
+        "weaponId": "14514",
+        "reviewedNote": false
       },
       {
         "name": "Jade Sacrificial",
         "rarity": 4,
-        "type": "Mejor 4★",
-        "note": "+36.8% Prob. Crítica y +64% Vida Máxima tras estar fuera de campo."
+        "type": "Opción por rol",
+        "note": "+36.8% Prob. Crítica y +64% Vida Máxima tras estar fuera de campo.",
+        "weaponId": "14424",
+        "reviewedNote": false
       },
       {
         "name": "Prototipo Ámbar",
         "rarity": 4,
-        "type": "Mejor F2P",
-        "note": "Forja accesible (+41.3% Vida Máx, cura al equipo y genera energía)."
+        "type": "Opción por rol",
+        "note": "Forja accesible (+41.3% Vida Máx, cura al equipo y genera energía).",
+        "weaponId": "14406",
+        "reviewedNote": false
       },
       {
         "name": "Oración Perdida a los Vientos Sagrados",
         "rarity": 5,
-        "type": "Alternativa 5★",
-        "note": "Stat-stick de Prob. Crítica y bono de velocidad/daño."
+        "type": "Opción por rol",
+        "note": "Stat-stick de Prob. Crítica y bono de velocidad/daño.",
+        "weaponId": "14502",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Cazador Fantasmal (4 piezas)",
         "type": "BiS Indiscutible",
-        "bonus": "+36% Prob. Crítica permanente por fluctuaciones de Vida."
+        "bonus": "+36% Prob. Crítica permanente por fluctuaciones de Vida.",
+        "reviewedBonus": false
       },
       {
         "set": "Corazón de las Profundidades (4 piezas)",
         "type": "Alternativa",
-        "bonus": "+15% Bono Hydro y +30% Daño en Ataques Cargados."
+        "bonus": "+15% Bono Hydro y +30% Daño en Ataques Cargados.",
+        "reviewedBonus": false
       },
       {
         "set": "2p Vida+20% + 2p Hydro+15%",
         "type": "Transición 2p+2p",
-        "bonus": "Excelente alternativa mientras se farmea Cazador Fantasmal."
+        "bonus": "Excelente alternativa mientras se farmea Cazador Fantasmal.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -6636,6 +7714,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Hydro% o Vida% (con Furina + Kazuha)",
       "circlet": "Daño Crítico% (o Prob. CR si falta)",
       "substats": "1. Prob. Crítica (tope 64% con Cazador) / Daño Crítico > 2. Vida% (hasta 40,000+ HP) > 3. Recarga de Energía% (110% - 130%) > ❌ ATQ% no tiene ningún impacto"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/neuvillette-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -6657,32 +7749,56 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Llave de la Coronación",
         "rarity": 5,
-        "type": "BiS Absoluto",
-        "note": "+86.2% Vida Máxima y convierte Vida en Maestría Elemental masiva para el equipo."
+        "type": "Opción por rol",
+        "note": "+86.2% Vida Máxima y convierte Vida en Maestría Elemental masiva para el equipo.",
+        "weaponId": "11511",
+        "reviewedNote": false
       },
       {
-        "name": "Espada de Madera / Luz Lunar de Xifos",
+        "name": "Espada de Madera",
         "rarity": 4,
-        "type": "Mejores 4★",
-        "note": "Aportan recarga y Maestría Elemental."
+        "type": "Opción por rol",
+        "note": "Aportan recarga y Maestría Elemental.",
+        "weaponId": "11417",
+        "reviewedNote": false
       },
       {
-        "name": "Vado del Río Ceniciento / Espina de Hierro",
+        "name": "Luz Lunar de Xifos",
         "rarity": 4,
-        "type": "F2P",
-        "note": "Espina de Hierro da EM pura; Vado da recarga."
+        "type": "Opción por rol",
+        "note": "Aportan recarga y Maestría Elemental.",
+        "weaponId": "11418",
+        "reviewedNote": false
+      },
+      {
+        "name": "Vado del Río Ceniciento",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Espina de Hierro da EM pura; Vado da recarga.",
+        "weaponId": "11426",
+        "reviewedNote": false
+      },
+      {
+        "name": "Espina de Hierro",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Espina de Hierro da EM pura; Vado da recarga.",
+        "weaponId": "11407",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "2p Vida+20% (Tenacidad) + 2p Vida+20% (Vourukasha)",
         "type": "BiS Óptimo",
-        "bonus": "+40% Vida Máxima total para maximizar daño de núcleos de Florecimiento."
+        "bonus": "+40% Vida Máxima total para maximizar daño de núcleos de Florecimiento.",
+        "reviewedBonus": false
       },
       {
         "set": "Flor Olvidada del Paraíso (4 piezas)",
         "type": "Alternativa EM",
-        "bonus": "Solo si Nilou detona la mayoría de los núcleos (poco habitual)."
+        "bonus": "Solo si Nilou detona la mayoría de los núcleos (poco habitual).",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -6808,6 +7924,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Vida%",
       "circlet": "Vida%",
       "substats": "1. Vida% y Vida Plana (Meta: acercarse lo más posible a 74,444 HP) > 2. Maestría Elemental > 3. Recarga de Energía%"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/nilou-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -6827,40 +7957,50 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Definitiva en C6 convierte más del 130% de su DEF en ATQ gigante",
     "bestWeapons": [
       {
-        "name": "Espadón Cornirrojo (Redhorn)",
+        "name": "Espadón Cornirrojo",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+88.2% Daño Crítico, +DEF% y aumento de daño plano en sus barridos normales."
+        "type": "Opción por rol",
+        "note": "+88.2% Daño Crítico, +DEF% y aumento de daño plano en sus barridos normales.",
+        "weaponId": "12510",
+        "reviewedNote": false
       },
       {
         "name": "Médula de la Serpiente Marina",
         "rarity": 4,
-        "type": "Mejor 4★ Pase",
-        "note": "+Prob. Crítica y hasta +50% daño directo continuo."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica y hasta +50% daño directo continuo.",
+        "weaponId": "12409",
+        "reviewedNote": false
       },
       {
-        "name": "Sombra Blanca (Whiteblind R5)",
+        "name": "Sombra Blanca",
         "rarity": 4,
-        "type": "Mejor F2P Forja",
-        "note": "Aporte masivo de hasta +99.7% DEF total de forma gratuita."
+        "type": "Opción por rol",
+        "note": "Aporte masivo de hasta +99.7% DEF total de forma gratuita.",
+        "weaponId": "12407",
+        "reviewedNote": false
       },
       {
         "name": "Gran Espada de Favonius",
         "rarity": 4,
-        "type": "Batería Cómoda",
-        "note": "Si el equipo no tiene baterías Geo externas."
+        "type": "Opción por rol",
+        "note": "Si el equipo no tiene baterías Geo externas.",
+        "weaponId": "12401",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Cazador Fantasmal (4 piezas)",
         "type": "BiS con Furina",
-        "bonus": "+36% Prob. Crítica permanente al jugarla como Healer/Driver junto a Furina."
+        "bonus": "+36% Prob. Crítica permanente al jugarla como Healer/Driver junto a Furina.",
+        "reviewedBonus": false
       },
       {
         "set": "Cáscara de Sueños Opulentos (4 piezas)",
         "type": "BiS Tradicional",
-        "bonus": "+54% DEF y +24% Bono Daño Geo."
+        "bonus": "+54% DEF y +24% Bono Daño Geo.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -6987,6 +8127,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Geo%",
       "circlet": "Prob. Crítica% / Daño Crítico%",
       "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. DEF% > 3. Recarga de Energía% (130% - 145% ER) > 4. ATQ%"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/noelle-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -7006,40 +8160,58 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por Recarga de Energía (Pasiva A4 convierte ER en Bono Electro y regeneración)",
     "bestWeapons": [
       {
-        "name": "Luz del Segador (Engulfing Lightning)",
+        "name": "Luz del Segador",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+55.1% Recarga de Energía, convierte ER en hasta +80% ATQ y da +30% ER al tirar Q."
+        "type": "Opción por rol",
+        "note": "+55.1% Recarga de Energía, convierte ER en hasta +80% ATQ y da +30% ER al tirar Q.",
+        "weaponId": "13509",
+        "reviewedNote": false
       },
       {
-        "name": "La Captura (The Catch R5)",
+        "name": "La Captura",
         "rarity": 4,
-        "type": "Mejor 4★ F2P",
-        "note": "+45.9% Recarga de Energía, +32% Daño en la Definitiva y +12% Prob. Crítica en Q."
+        "type": "Opción por rol",
+        "note": "+45.9% Recarga de Energía, +32% Daño en la Definitiva y +12% Prob. Crítica en Q.",
+        "weaponId": "13415",
+        "reviewedNote": false
       },
       {
-        "name": "Halcón de Jade Primordial / Báculo de Homa",
+        "name": "Halcón de Jade",
         "rarity": 5,
-        "type": "Opciones 5★ Daño",
-        "note": "Stat-sticks de Crítico descomunales."
+        "type": "Opción por rol",
+        "note": "Stat-sticks de Crítico descomunales.",
+        "weaponId": "13505",
+        "reviewedNote": false
+      },
+      {
+        "name": "Báculo de Homa",
+        "rarity": 5,
+        "type": "Opción por rol",
+        "note": "Stat-sticks de Crítico descomunales.",
+        "weaponId": "13501",
+        "reviewedNote": false
       },
       {
         "name": "Lanza de Favonius",
         "rarity": 4,
-        "type": "Batería Máxima",
-        "note": "Aporte masivo de partículas blancas para el equipo."
+        "type": "Opción por rol",
+        "note": "Aporte masivo de partículas blancas para el equipo.",
+        "weaponId": "13407",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Emblema del Destino (4 piezas)",
         "type": "BiS Obligatorio",
-        "bonus": "Convierte el 25% de su Recarga de Energía en hasta +75% de Daño en su Definitiva Musou no Hitotachi."
+        "bonus": "Convierte el 25% de su Recarga de Energía en hasta +75% de Daño en su Definitiva Musou no Hitotachi.",
+        "reviewedBonus": false
       },
       {
         "set": "Flor Olvidada del Paraíso (4 piezas)",
         "type": "Solo en Hyperbloom",
-        "bonus": "Solo si se juega como activadora de Hyperbloom a Full EM con su habilidad E."
+        "bonus": "Solo si se juega como activadora de Hyperbloom a Full EM con su habilidad E.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -7065,13 +8237,13 @@ const CHARACTER_BUILDS_DB = [
     "metaTeams": [
       {
         "name": "Raiden National (Rational)",
-        "comp": "Raiden Shogun • Xiangling • Xingqiu • Yelan",
         "members": [
           "Raiden Shogun",
           "Xiangling",
           "Xingqiu",
-          "Yelan"
-        ]
+          "Bennett"
+        ],
+        "comp": "Raiden Shogun • Xiangling • Xingqiu • Bennett"
       },
       {
         "name": "Raiden Hypercarry",
@@ -7176,6 +8348,22 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Electro% o ATQ%",
       "circlet": "Prob. Crítica% / Daño Crítico%",
       "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. Recarga de Energía% (250% - 280% ER) > 3. ATQ% > 4. Maestría Elemental"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/raiden-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Rational recupera a Bennett; eliminado el segundo Hydro de esa etiqueta."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -7197,38 +8385,48 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Luna Inalterable",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+Vida Máx, Bono de Curación y regeneración de energía al golpear en Q."
+        "type": "Opción por rol",
+        "note": "+Vida Máx, Bono de Curación y regeneración de energía al golpear en Q.",
+        "weaponId": "14506",
+        "reviewedNote": false
       },
       {
         "name": "Prototipo Ámbar",
         "rarity": 4,
-        "type": "Mejor 4★ / F2P",
-        "note": "Mejor arma global: genera energía para la Q y cura a todo el equipo."
+        "type": "Opción por rol",
+        "note": "Mejor arma global: genera energía para la Q y cura a todo el equipo.",
+        "weaponId": "14406",
+        "reviewedNote": false
       },
       {
-        "name": "Cuento de Cazadores de Dragones (TTDS)",
+        "name": "Cuentos de Cazadores de Dragones",
         "rarity": 3,
-        "type": "Buffer 3★",
-        "note": "+48% ATQ para el Hypercarry al cambiar de personaje."
+        "type": "Opción por rol",
+        "note": "+48% ATQ para el Hypercarry al cambiar de personaje.",
+        "weaponId": "11316",
+        "reviewedNote": false
       },
       {
-        "name": "Memorias de Sacrificio",
+        "name": "Memorias de Sacrificios",
         "rarity": 4,
-        "type": "Nilou Bloom",
-        "note": "Reinicia la medusa E y aporta gran Maestría Elemental."
+        "type": "Opción por rol",
+        "note": "Reinicia la medusa E y aporta gran Maestría Elemental.",
+        "weaponId": "14403",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Perla Oceánica (4 piezas)",
         "type": "BiS Daño/Cura",
-        "bonus": "Burbuja de daño físico de hasta 30,000 cada 3.5 segundos con curación."
+        "bonus": "Burbuja de daño físico de hasta 30,000 cada 3.5 segundos con curación.",
+        "reviewedBonus": false
       },
       {
         "set": "Tenacidad de la Geoarmada (4 piezas)",
         "type": "Soporte Freeze",
-        "bonus": "+20% ATQ constante para Ayaka o Ganyu con la medusa E."
+        "bonus": "+20% ATQ constante para Ayaka o Ganyu con la medusa E.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -7365,6 +8563,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Vida% o Bono Daño Hydro%",
       "circlet": "Bono de Curación%",
       "substats": "1. Bono de Curación (Pasiva A4 convierte cura en daño) > 2. Vida% > 3. Recarga de Energía% (140% - 160%) > ❌ El Crítico es matemáticamente inútil"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/kokomi-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -7384,40 +8596,58 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado 100% por ATQ Total (Transfiere su ATQ como Daño Plano a los ataques Cryo del equipo)",
     "bestWeapons": [
       {
-        "name": "Perforanubes (Calamity Queller)",
+        "name": "Pacificadora del Desastre",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "741 ATQ Base descomunal y hasta +38.4% ATQ adicional fuera de campo."
+        "type": "Opción por rol",
+        "note": "741 ATQ Base descomunal y hasta +38.4% ATQ adicional fuera de campo.",
+        "weaponId": "13507",
+        "reviewedNote": false
       },
       {
         "name": "Lanza de Favonius",
         "rarity": 4,
-        "type": "BiS Utilidad F2P",
-        "note": "Resuelve la alta demanda de recarga para lanzar su Definitiva cada rotación."
+        "type": "Opción por rol",
+        "note": "Resuelve la alta demanda de recarga para lanzar su Definitiva cada rotación.",
+        "weaponId": "13407",
+        "reviewedNote": false
       },
       {
-        "name": "Aleta Cortamareas (Wavebreaker's Fin)",
+        "name": "Aleta Cortaolas",
         "rarity": 4,
-        "type": "Máximo ATQ 4★",
-        "note": "ATQ Base altísimo (620) y sub-stat de ATQ%."
+        "type": "Opción por rol",
+        "note": "ATQ Base altísimo (620) y sub-stat de ATQ%.",
+        "weaponId": "13416",
+        "reviewedNote": false
       },
       {
-        "name": "La Captura / Prototipo Estelar",
+        "name": "La Captura",
         "rarity": 4,
-        "type": "F2P",
-        "note": "Recarga de energía accesible."
+        "type": "Opción por rol",
+        "note": "Recarga de energía accesible.",
+        "weaponId": "13415",
+        "reviewedNote": false
+      },
+      {
+        "name": "Prototipo Estelar",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Recarga de energía accesible.",
+        "weaponId": "13402",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Nobleza Obligada (4 piezas)",
         "type": "BiS Soporte Equipo",
-        "bonus": "+20% ATQ para todo el equipo tras activar su Definitiva."
+        "bonus": "+20% ATQ para todo el equipo tras activar su Definitiva.",
+        "reviewedBonus": false
       },
       {
         "set": "2p ATQ+18% + 2p ATQ+18%",
         "type": "Máximo Daño Plumas",
-        "bonus": "+36% ATQ total para maximizar el valor de cada Pluma Glaciar."
+        "bonus": "+36% ATQ total para maximizar el valor de cada Pluma Glaciar.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -7543,6 +8773,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "ATQ%",
       "circlet": "ATQ% (o Prob. CR con Favonius)",
       "substats": "1. Recarga de Energía% (170% - 200% ER) > 2. ATQ% y ATQ Plano (Meta: 3,400 – 4,000 ATQ) > 3. Prob. Crítica (si usa Favonius)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/shenhe-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -7562,34 +8806,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado 100% por Vida Máxima (Tope Pasiva A1 en 65,000 HP)",
     "bestWeapons": [
       {
-        "name": "Silvershower Heartstrings",
+        "name": "Corazón de la Lluvia",
         "rarity": 5,
-        "type": "BiS Firma 5★",
-        "note": "+Vida% masiva y regeneración de energía."
+        "type": "Opción por rol",
+        "note": "+Vida% masiva y regeneración de energía.",
+        "weaponId": "15513",
+        "reviewedNote": false
       },
       {
-        "name": "Arco de Favonius (Favonius Warbow)",
+        "name": "Arco de Favonius",
         "rarity": 4,
-        "type": "Batería F2P",
-        "note": "Generación de energía constante."
+        "type": "Opción por rol",
+        "note": "Generación de energía constante.",
+        "weaponId": "15401",
+        "reviewedNote": false
       },
       {
-        "name": "Arco Recurvo (Recurve Bow)",
+        "name": "Arco Recurvo",
         "rarity": 3,
-        "type": "Opción F2P HP",
-        "note": "+46.9% Vida gratuita."
+        "type": "Opción por rol",
+        "note": "+46.9% Vida gratuita.",
+        "weaponId": "11321",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Canción de Días Pretéritos (4 piezas)",
         "type": "BiS Soporte",
-        "bonus": "Registra su masiva curación y suma hasta 1,200 de daño plano a los ataques."
+        "bonus": "Registra su masiva curación y suma hasta 1,200 de daño plano a los ataques.",
+        "reviewedBonus": false
       },
       {
         "set": "Perla Oceánica (4 piezas)",
         "type": "Alternativa Daño",
-        "bonus": "Aporta daño físico pasivo consistente con sus burbujas curativas."
+        "bonus": "Aporta daño físico pasivo consistente con sus burbujas curativas.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -7714,6 +8966,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Vida%",
       "circlet": "Vida% (o Bono Curación)",
       "substats": "1. Vida% y Vida Plana (Meta: 65,000 HP para tope del buff) > 2. Recarga de Energía% (140% - 160%)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/sigewinne-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -7733,34 +8999,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado 100% Maestría Elemental (Comparte 20% de su EM con el equipo)",
     "bestWeapons": [
       {
-        "name": "Memorias de Sacrificio (Sacrificial Fragments)",
+        "name": "Memorias de Sacrificios",
         "rarity": 4,
-        "type": "BiS Absoluto",
-        "note": "+221 Maestría Elemental y reinicia su habilidad E para doble succión."
+        "type": "Opción por rol",
+        "note": "+221 Maestría Elemental y reinicia su habilidad E para doble succión.",
+        "weaponId": "14403",
+        "reviewedNote": false
       },
       {
-        "name": "Cuento de Cazadores de Dragones (TTDS)",
+        "name": "Cuentos de Cazadores de Dragones",
         "rarity": 3,
-        "type": "Buffer Carry",
-        "note": "+48% ATQ para el Hypercarry además de compartir Maestría Elemental."
+        "type": "Opción por rol",
+        "note": "+48% ATQ para el Hypercarry además de compartir Maestría Elemental.",
+        "weaponId": "11316",
+        "reviewedNote": false
       },
       {
         "name": "Códice de Favonius",
         "rarity": 4,
-        "type": "Batería",
-        "note": "Para equipos con alta demanda de recarga."
+        "type": "Opción por rol",
+        "note": "Para equipos con alta demanda de recarga.",
+        "weaponId": "14401",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Sombra Verde Esmeralda (4 piezas)",
         "type": "BiS Obligatorio",
-        "bonus": "-40% RES Elemental para multiplicar el daño del equipo."
+        "bonus": "-40% RES Elemental para multiplicar el daño del equipo.",
+        "reviewedBonus": false
       },
       {
         "set": "Instructor (4 piezas)",
         "type": "Soporte de Reacciones",
-        "bonus": "+120 de Maestría Elemental a todos los miembros del equipo al causar una reacción elemental."
+        "bonus": "+120 de Maestría Elemental a todos los miembros del equipo al causar una reacción elemental.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -7895,6 +9169,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Maestría Elemental",
       "circlet": "Maestría Elemental",
       "substats": "1. Maestría Elemental (Meta: 800 – 950 EM) > 2. Recarga de Energía% (140% - 160% ER)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/sucrose-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -7914,40 +9202,66 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por Ataque (ATQ%) con Aplicación Hydro Cuadrática",
     "bestWeapons": [
       {
-        "name": "Estrella Polar",
+        "name": "Estrella Invernal",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+Prob. Crítica y hasta +48% ATQ acumulable con todas las habilidades."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica y hasta +48% ATQ acumulable con todas las habilidades.",
+        "weaponId": "15507",
+        "reviewedNote": false
       },
       {
-        "name": "Agitador del Relámpago / Aqua Simulacra",
+        "name": "Agitador del Relámpago",
         "rarity": 5,
-        "type": "Opciones 5★",
-        "note": "Stat-sticks masivos de Daño Crítico."
+        "type": "Opción por rol",
+        "note": "Stat-sticks masivos de Daño Crítico.",
+        "weaponId": "15509",
+        "reviewedNote": false
+      },
+      {
+        "name": "Aqua Simulacra",
+        "rarity": 5,
+        "type": "Opción por rol",
+        "note": "Stat-sticks masivos de Daño Crítico.",
+        "weaponId": "15508",
+        "reviewedNote": false
       },
       {
         "name": "Arco de la Cazadora Esmeralda",
         "rarity": 4,
-        "type": "Mejor 4★",
-        "note": "Crea vórtices de atracción en área para agrupar y detonar Riptide."
+        "type": "Opción por rol",
+        "note": "Crea vórtices de atracción en área para agrupar y detonar Riptide.",
+        "weaponId": "15409",
+        "reviewedNote": false
       },
       {
-        "name": "Herrumbre / Último Acorde",
+        "name": "Herrumbre",
         "rarity": 4,
-        "type": "Opciones F2P",
-        "note": "Herrumbre potencia ataques normales; Último Acorde maximiza el Nuke de Q."
+        "type": "Opción por rol",
+        "note": "Herrumbre potencia ataques normales; Último Acorde maximiza el Nuke de Q.",
+        "weaponId": "15405",
+        "reviewedNote": false
+      },
+      {
+        "name": "Último Acorde",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Herrumbre potencia ataques normales; Último Acorde maximiza el Nuke de Q.",
+        "weaponId": "15402",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Sueño de la Ninfa (4 piezas)",
         "type": "BiS Óptimo",
-        "bonus": "+Bono Daño Hydro y +ATQ% al golpear con normales, E y Q."
+        "bonus": "+Bono Daño Hydro y +ATQ% al golpear con normales, E y Q.",
+        "reviewedBonus": false
       },
       {
         "set": "Corazón de las Profundidades (4 piezas)",
         "type": "Alternativa Sólida",
-        "bonus": "+15% Bono Hydro y +30% Daño en normales de cuerpo a cuerpo."
+        "bonus": "+15% Bono Hydro y +30% Daño en normales de cuerpo a cuerpo.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -8074,6 +9388,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Hydro%",
       "circlet": "Prob. Crítica% / Daño Crítico%",
       "substats": "1. Prob. Crítica (esencial para aplicar Riptide en golpes críticos) > 2. Daño Crítico > 3. ATQ% > 4. Maestría Elemental (100 - 150 EM en Vaporize)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/tartaglia-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -8093,34 +9421,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por Maestría Elemental (Burgeon) + HP (Escudo)",
     "bestWeapons": [
       {
-        "name": "Cruz de Kitain (Kitain Cross Spear R5)",
+        "name": "Cruz de Kitain",
         "rarity": 4,
-        "type": "BiS Burgeon Forja",
-        "note": "+110 Maestría Elemental y restaura energía pasivamente sin requerir críticos."
+        "type": "Opción por rol",
+        "note": "+110 Maestría Elemental y restaura energía pasivamente sin requerir críticos.",
+        "weaponId": "13414",
+        "reviewedNote": false
       },
       {
         "name": "Perdición del Dragón",
         "rarity": 4,
-        "type": "Máxima EM",
-        "note": "+221 Maestría Elemental para daño máximo en semillas."
+        "type": "Opción por rol",
+        "note": "+221 Maestría Elemental para daño máximo en semillas.",
+        "weaponId": "13401",
+        "reviewedNote": false
       },
       {
         "name": "Lanza de Favonius",
         "rarity": 4,
-        "type": "Batería Escudo",
-        "note": "Si se juega como escudo puro en equipos de Hu Tao o Yoimiya."
+        "type": "Opción por rol",
+        "note": "Si se juega como escudo puro en equipos de Hu Tao o Yoimiya.",
+        "weaponId": "13407",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Flor Olvidada del Paraíso (4 piezas)",
         "type": "BiS Burgeon",
-        "bonus": "+80% Daño en reacciones de Crepitar."
+        "bonus": "+80% Daño en reacciones de Crepitar.",
+        "reviewedBonus": false
       },
       {
         "set": "Sueños Áureos (4 piezas)",
         "type": "Alternativa EM",
-        "bonus": "+Hasta 230 de Maestría Elemental continua."
+        "bonus": "+Hasta 230 de Maestría Elemental continua.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -8246,6 +9582,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Maestría Elemental",
       "circlet": "Maestría Elemental",
       "substats": "1. Recarga de Energía% (180% - 210% ER crucial) > 2. Maestría Elemental (800 – 950 EM) > 3. Vida% (para mayor escudo)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/thoma-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -8265,40 +9615,58 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% y Multiplicadores de Ataques Normales durante Vuelo E",
     "bestWeapons": [
       {
-        "name": "Reminiscencia de Tulaytullah",
+        "name": "Sueños de las Mil Noches",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+44.1% Daño Crítico, +10% Velocidad de Ataque y hasta +48% daño en normales."
+        "type": "Opción por rol",
+        "note": "+44.1% Daño Crítico, +10% Velocidad de Ataque y hasta +48% daño en normales.",
+        "weaponId": "14511",
+        "reviewedNote": false
       },
       {
         "name": "Oración Perdida a los Vientos Sagrados",
         "rarity": 5,
-        "type": "Opción 5★ Sólida",
-        "note": "+Prob. Crítica y velocidad de movimiento."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica y velocidad de movimiento.",
+        "weaponId": "14502",
+        "reviewedNote": false
       },
       {
-        "name": "Sinfonía de los Merodeadores (The Widsith)",
+        "name": "Sinfonía de los Merodeadores",
         "rarity": 4,
-        "type": "Mejor 4★ Gacha",
-        "note": "+55.1% Daño Crítico y buffs explosivos de canción."
+        "type": "Opción por rol",
+        "note": "+55.1% Daño Crítico y buffs explosivos de canción.",
+        "weaponId": "14402",
+        "reviewedNote": false
       },
       {
-        "name": "Cuentos de Dodoco / Fluente Pureza",
+        "name": "Cuentos de Dodoco",
         "rarity": 4,
-        "type": "Mejor F2P",
-        "note": "Potencia ataques normales y cargados."
+        "type": "Opción por rol",
+        "note": "Potencia ataques normales y cargados.",
+        "weaponId": "14413",
+        "reviewedNote": false
+      },
+      {
+        "name": "Jade Sacrificial",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Potencia ataques normales y cargados.",
+        "weaponId": "14424",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Pabellón del Desierto (4 piezas)",
         "type": "BiS Indiscutible",
-        "bonus": "+10% Velocidad de Ataque y +40% Daño en normales/cargados tras un cargado."
+        "bonus": "+10% Velocidad de Ataque y +40% Daño en normales/cargados tras un cargado.",
+        "reviewedBonus": false
       },
       {
         "set": "Reminiscencia de la Purificación (4 piezas)",
         "type": "Alternativa Normales",
-        "bonus": "+50% Daño en Ataques Normales a cambio de 15 de energía."
+        "bonus": "+50% Daño en Ataques Normales a cambio de 15 de energía.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -8434,6 +9802,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Anemo%",
       "circlet": "Prob. Crítica% / Daño Crítico%",
       "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% > 3. Recarga de Energía% (110% – 125% ER)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/wanderer-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -8453,34 +9835,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por Maestría Elemental (Daño de Torbellino masivo contra hordas)",
     "bestWeapons": [
       {
-        "name": "Elegía del Fin (Elegy for the End)",
+        "name": "Elegía del Fin",
         "rarity": 5,
-        "type": "BiS 5★ Soporte",
-        "note": "+Recarga de Energía, +100 EM para el equipo y +20% ATQ continuo."
+        "type": "Opción por rol",
+        "note": "+Recarga de Energía, +100 EM para el equipo y +20% ATQ continuo.",
+        "weaponId": "15503",
+        "reviewedNote": false
       },
       {
-        "name": "Último Acorde (The Stringless)",
+        "name": "Último Acorde",
         "rarity": 4,
-        "type": "BiS 4★ Daño",
-        "note": "+165 Maestría Elemental y hasta +48% Daño directo en su Vórtice Q."
+        "type": "Opción por rol",
+        "note": "+165 Maestría Elemental y hasta +48% Daño directo en su Vórtice Q.",
+        "weaponId": "15402",
+        "reviewedNote": false
       },
       {
         "name": "Arco de Favonius",
         "rarity": 4,
-        "type": "Batería F2P",
-        "note": "Garantiza recarga total en cada rotación sin esfuerzo."
+        "type": "Opción por rol",
+        "note": "Garantiza recarga total en cada rotación sin esfuerzo.",
+        "weaponId": "15401",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Sombra Verde Esmeralda (4 piezas)",
         "type": "BiS Obligatorio",
-        "bonus": "-40% RES Elemental al elemento absorbido en su agujero negro."
+        "bonus": "-40% RES Elemental al elemento absorbido en su agujero negro.",
+        "reviewedBonus": false
       },
       {
         "set": "Emblema del Destino (4 piezas)",
         "type": "Opción Sub-DPS Burst",
-        "bonus": "+20% Recarga de Energía y aumenta el daño de la Definitiva hasta un 75% según la Recarga."
+        "bonus": "+20% Recarga de Energía y aumenta el daño de la Definitiva hasta un 75% según la Recarga.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -8606,6 +9996,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Maestría Elemental",
       "circlet": "Maestría Elemental",
       "substats": "1. Maestría Elemental (700 – 900 EM) > 2. Recarga de Energía% (150% - 170% ER) > 3. Prob. Crítica (si usa Favonius)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/venti-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -8625,40 +10029,58 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% y Multiplicadores de Puñetazos durante estado E",
     "bestWeapons": [
       {
-        "name": "Supervisión del Tesoro (Cashflow Supervision)",
+        "name": "Supervisor Flujoáurico",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+Prob. Crítica, +ATQ% y hasta +42% daño en normales/cargados y +8% Velocidad de Ataque."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica, +ATQ% y hasta +42% daño en normales/cargados y +8% Velocidad de Ataque.",
+        "weaponId": "14513",
+        "reviewedNote": false
       },
       {
-        "name": "Escrituras del Fluir Sempiterno / Tulaytullah",
+        "name": "Escrituras del Fluir Sempiterno",
         "rarity": 5,
-        "type": "Opciones 5★",
-        "note": "Stat-sticks descomunales de Daño Crítico."
+        "type": "Opción por rol",
+        "note": "Stat-sticks descomunales de Daño Crítico.",
+        "weaponId": "14514",
+        "reviewedNote": false
       },
       {
-        "name": "Sinfonía de los Merodeadores (The Widsith)",
-        "rarity": 4,
-        "type": "Mejor 4★ Gacha",
-        "note": "+55.1% Daño Crítico y canciones de alto valor."
+        "name": "Reminiscencia de Tulaytulah",
+        "rarity": 5,
+        "type": "Opción por rol",
+        "note": "Stat-sticks descomunales de Daño Crítico.",
+        "weaponId": "14512",
+        "reviewedNote": false
       },
       {
-        "name": "Fluente Pureza (Flowing Purity R5)",
+        "name": "Sinfonía de los Merodeadores",
         "rarity": 4,
-        "type": "Mejor F2P Forja",
-        "note": "Forja de Fontaine: +Bono Daño Elemental al curar Pacto de Vida."
+        "type": "Opción por rol",
+        "note": "+55.1% Daño Crítico y canciones de alto valor.",
+        "weaponId": "14402",
+        "reviewedNote": false
+      },
+      {
+        "name": "Fluencia Impoluta",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Forja de Fontaine: +Bono Daño Elemental al curar Pacto de Vida.",
+        "weaponId": "14425",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Cazador Fantasmal (4 piezas)",
         "type": "BiS Absoluto",
-        "bonus": "+36% Prob. Crítica gratuita al perder y recuperar vida con sus puñetazos reforzados."
+        "bonus": "+36% Prob. Crítica gratuita al perder y recuperar vida con sus puñetazos reforzados.",
+        "reviewedBonus": false
       },
       {
         "set": "Reminiscencia de la Purificación (4 piezas)",
         "type": "Alternativa Normales",
-        "bonus": "+50% Daño en Ataques Normales y Cargados."
+        "bonus": "+50% Daño en Ataques Normales y Cargados.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -8795,6 +10217,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Cryo%",
       "circlet": "Daño Crítico% (o Prob. CR)",
       "substats": "1. Daño Crítico / Prob. Crítica (tope 64% con Cazador) > 2. ATQ% > 3. Maestría Elemental (100 – 180 EM en Melt) > 4. Recarga de Energía%"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/wriothesley-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -8814,40 +10250,58 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Pyronado hace Snapshot del buff de Bennett y no tiene ICD",
     "bestWeapons": [
       {
-        "name": "La Captura (The Catch R5)",
+        "name": "La Captura",
         "rarity": 4,
-        "type": "BiS F2P Absoluto",
-        "note": "Gratis pescando en Inazuma: +45.9% ER, +32% Daño en Q y +12% CR en Q."
+        "type": "Opción por rol",
+        "note": "Gratis pescando en Inazuma: +45.9% ER, +32% Daño en Q y +12% CR en Q.",
+        "weaponId": "13415",
+        "reviewedNote": false
       },
       {
-        "name": "Báculo de las Arenas Escarlatas / Báculo de Homa",
+        "name": "Báculo de las Arenas Escarlatas",
         "rarity": 5,
-        "type": "Opciones 5★",
-        "note": "Arenas Escarlatas convierte su EM en ATQ masivo."
+        "type": "Opción por rol",
+        "note": "Arenas Escarlatas convierte su EM en ATQ masivo.",
+        "weaponId": "13511",
+        "reviewedNote": false
+      },
+      {
+        "name": "Báculo de Homa",
+        "rarity": 5,
+        "type": "Opción por rol",
+        "note": "Arenas Escarlatas convierte su EM en ATQ masivo.",
+        "weaponId": "13501",
+        "reviewedNote": false
       },
       {
         "name": "Lanza de Favonius",
         "rarity": 4,
-        "type": "Batería Cómoda",
-        "note": "Si el equipo tiene problemas de recarga."
+        "type": "Opción por rol",
+        "note": "Si el equipo tiene problemas de recarga.",
+        "weaponId": "13407",
+        "reviewedNote": false
       },
       {
         "name": "Perdición del Dragón",
         "rarity": 4,
-        "type": "Vape Nuke",
-        "note": "Enorme daño en Vaporizado si ya tiene ~200% ER en artefactos."
+        "type": "Opción por rol",
+        "note": "Enorme daño en Vaporizado si ya tiene ~200% ER en artefactos.",
+        "weaponId": "13401",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Emblema del Destino (4 piezas)",
         "type": "BiS Indiscutible",
-        "bonus": "Convierte su alta recarga en hasta +75% de bono de daño para el Pyronado."
+        "bonus": "Convierte su alta recarga en hasta +75% de bono de daño para el Pyronado.",
+        "reviewedBonus": false
       },
       {
         "set": "Bruja Carmesí en Llamas (4 piezas)",
         "type": "Alternativa Vape",
-        "bonus": "+15% Bono Pyro y +15% Daño en Vaporizados."
+        "bonus": "+15% Bono Pyro y +15% Daño en Vaporizados.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -8984,6 +10438,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Pyro%",
       "circlet": "Prob. Crítica% / Daño Crítico%",
       "substats": "1. Recarga de Energía% (180% - 220% ER) > 2. Prob. Crítica / Daño Crítico (1:2) > 3. Maestría Elemental (150 – 250 EM) > 4. ATQ%"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/xiangling-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -9003,40 +10471,50 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ Total (Meta: 4,000 – 4,500 ATQ para tope pasiva A4 de 9,000 daño plano)",
     "bestWeapons": [
       {
-        "name": "Llamada del Eco del Eco (Crane's Echoing Call)",
+        "name": "Reverberación de la Grulla",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+741 ATQ Base descomunal, +28% daño en Ataques Descendentes para el equipo y recarga."
+        "type": "Opción por rol",
+        "note": "+741 ATQ Base descomunal, +28% daño en Ataques Descendentes para el equipo y recarga.",
+        "weaponId": "14515",
+        "reviewedNote": false
       },
       {
-        "name": "Ojo del Juramento (Oathsworn Eye)",
+        "name": "Ojo del Juramento",
         "rarity": 4,
-        "type": "Mejor 4★ Evento",
-        "note": "+27.6% ATQ y +48% Recarga de Energía al usar su Habilidad Elemental."
+        "type": "Opción por rol",
+        "note": "+27.6% ATQ y +48% Recarga de Energía al usar su Habilidad Elemental.",
+        "weaponId": "14415",
+        "reviewedNote": false
       },
       {
         "name": "Códice de Favonius",
         "rarity": 4,
-        "type": "Batería Cómoda",
-        "note": "Resuelve cualquier problema de recarga para lanzar la Definitiva cada rotación."
+        "type": "Opción por rol",
+        "note": "Resuelve cualquier problema de recarga para lanzar la Definitiva cada rotación.",
+        "weaponId": "14401",
+        "reviewedNote": false
       },
       {
-        "name": "Fluente Pureza (Flowing Purity)",
+        "name": "Fluencia Impoluta",
         "rarity": 4,
-        "type": "Mejor F2P",
-        "note": "Forja de Fontaine con 565 ATQ Base y bono de ATQ%."
+        "type": "Opción por rol",
+        "note": "Forja de Fontaine con 565 ATQ Base y bono de ATQ%.",
+        "weaponId": "14425",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Sombra Verde Esmeralda (4 piezas)",
         "type": "BiS Universal",
-        "bonus": "-40% RES Elemental para el carry Pyro, Hydro, Electro o Cryo."
+        "bonus": "-40% RES Elemental para el carry Pyro, Hydro, Electro o Cryo.",
+        "reviewedBonus": false
       },
       {
         "set": "Canción de Días Pretéritos (4 piezas)",
         "type": "Alternativa Xiao",
-        "bonus": "Suma daño plano adicional a los saltos de Xiao o personajes Anemo/Geo."
+        "bonus": "Suma daño plano adicional a los saltos de Xiao o personajes Anemo/Geo.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -9172,6 +10650,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "ATQ%",
       "circlet": "ATQ% (o Bono de Curación)",
       "substats": "1. Recarga de Energía% (170% - 200% ER) > 2. ATQ% y ATQ Plano (Meta: acercarse a 4,000+ ATQ) > 3. Prob. Crítica (si usa Favonius)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/xianyun-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -9191,40 +10683,58 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% y Multiplicadores de Ataques Descendentes en Q",
     "bestWeapons": [
       {
-        "name": "Halcón de Jade Primordial",
+        "name": "Halcón de Jade",
         "rarity": 5,
-        "type": "BiS 5★ Canónico",
-        "note": "+Prob. Crítica, +22.4% ATQ y +12% daño universal al golpear."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica, +22.4% ATQ y +12% daño universal al golpear.",
+        "weaponId": "13505",
+        "reviewedNote": false
       },
       {
         "name": "Báculo de Homa",
         "rarity": 5,
-        "type": "Alternativa 5★ Top",
-        "note": "+66.2% Daño Crítico masivo que equilibra sus estadísticas."
+        "type": "Opción por rol",
+        "note": "+66.2% Daño Crítico masivo que equilibra sus estadísticas.",
+        "weaponId": "13501",
+        "reviewedNote": false
       },
       {
-        "name": "Lanza del Duelo (Deathmatch)",
+        "name": "Lanza del Duelo",
         "rarity": 4,
-        "type": "Mejor 4★ Pase",
-        "note": "+36.8% Prob. Crítica altísima y bono de ATQ continuo."
+        "type": "Opción por rol",
+        "note": "+36.8% Prob. Crítica altísima y bono de ATQ continuo.",
+        "weaponId": "13405",
+        "reviewedNote": false
       },
       {
-        "name": "Borla Negra / Alabarda del Viento F2P",
+        "name": "Borla Negra",
+        "rarity": 3,
+        "type": "Opción por rol",
+        "note": "Lanza de Favonius o Alabarda del Viento para solventar recarga.",
+        "weaponId": "11313",
+        "reviewedNote": false
+      },
+      {
+        "name": "Alabarda del Viento Epistolar",
         "rarity": 4,
-        "type": "F2P",
-        "note": "Lanza de Favonius o Alabarda del Viento para solventar recarga."
+        "type": "Opción por rol",
+        "note": "Lanza de Favonius o Alabarda del Viento para solventar recarga.",
+        "weaponId": "13419",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Deceso del Cinabrio (4 piezas)",
         "type": "BiS Indiscutible",
-        "bonus": "+Hasta 66% de ATQ al perder vida continuamente durante su Definitiva."
+        "bonus": "+Hasta 66% de ATQ al perder vida continuamente durante su Definitiva.",
+        "reviewedBonus": false
       },
       {
         "set": "Cazador Fantasmal (4 piezas)",
         "type": "BiS con Furina",
-        "bonus": "+36% Prob. Crítica permanente por pérdida de vida durante saltos."
+        "bonus": "+36% Prob. Crítica permanente por pérdida de vida durante saltos.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -9350,6 +10860,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Anemo% (o ATQ% con Furina + Xianyun)",
       "circlet": "Prob. Crítica% / Daño Crítico%",
       "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% > 3. Recarga de Energía% (120% – 135% ER)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/xiao-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -9369,40 +10893,50 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por DEF% (3,200 DEF activa tope de arma 5★) • Reducción depende de Nv. Talento E",
     "bestWeapons": [
       {
-        "name": "Canción Patrullera de las Cumbres",
+        "name": "Himno de las Cumbres",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+25.6% Bono Daño Elemental al equipo al alcanzar 3,200 DEF y enorme DEF%."
+        "type": "Opción por rol",
+        "note": "+25.6% Bono Daño Elemental al equipo al alcanzar 3,200 DEF y enorme DEF%.",
+        "weaponId": "11516",
+        "reviewedNote": false
       },
       {
         "name": "Espada de Favonius",
         "rarity": 4,
-        "type": "BiS Utilidad F2P",
-        "note": "Batería universal para todo el equipo en cualquier rotación."
+        "type": "Opción por rol",
+        "note": "Batería universal para todo el equipo en cualquier rotación.",
+        "weaponId": "11401",
+        "reviewedNote": false
       },
       {
         "name": "Flauta de Ezpitzal",
         "rarity": 4,
-        "type": "Mejor F2P DEF",
-        "note": "Forja de Natlan: +69% DEF total de forma gratuita."
+        "type": "Opción por rol",
+        "note": "Forja de Natlan: +69% DEF total de forma gratuita.",
+        "weaponId": "11431",
+        "reviewedNote": false
       },
       {
         "name": "Huso de Cinabrio",
         "rarity": 4,
-        "type": "Alternativa Evento",
-        "note": "Aporte masivo de DEF%."
+        "type": "Opción por rol",
+        "note": "Aporte masivo de DEF%.",
+        "weaponId": "11415",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Pergamino del Héroe de la Ciudad de las Cenizas (4p)",
         "type": "BiS Indiscutible",
-        "bonus": "+40% Daño Elemental a los elementos que reaccionan con Noctámbulo."
+        "bonus": "+40% Daño Elemental a los elementos que reaccionan con Noctámbulo.",
+        "reviewedBonus": false
       },
       {
         "set": "Cáscara de Sueños Opulentos (4 piezas)",
         "type": "Máxima DEF",
-        "bonus": "+54% DEF y +24% Bono Geo (si se busca maximizar su curación y arma)."
+        "bonus": "+54% DEF y +24% Bono Geo (si se busca maximizar su curación y arma).",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -9538,6 +11072,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "DEF%",
       "circlet": "Bono de Curación% o DEF% (o Prob. CR con Favonius)",
       "substats": "1. DEF% y DEF Plana (Meta: 3,200 DEF con arma 5★ / 2,800+ F2P) > 2. Recarga de Energía% (160% - 190% ER) > 3. Prob. Crítica (si usa Favonius)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/xilonen-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -9559,38 +11107,48 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Espada de Sacrificio",
         "rarity": 4,
-        "type": "BiS Absoluto",
-        "note": "R3+ reinicia la E y genera dobles partículas, resolviendo toda su recarga."
+        "type": "Opción por rol",
+        "note": "R3+ reinicia la E y genera dobles partículas, resolviendo toda su recarga.",
+        "weaponId": "11403",
+        "reviewedNote": false
       },
       {
         "name": "Espada de Favonius",
         "rarity": 4,
-        "type": "Alternativa 4★",
-        "note": "Batería sólida si Sacrificio no tiene refinamientos altos."
+        "type": "Opción por rol",
+        "note": "Batería sólida si Sacrificio no tiene refinamientos altos.",
+        "weaponId": "11401",
+        "reviewedNote": false
       },
       {
         "name": "Cortador de Jade Primordial",
         "rarity": 5,
-        "type": "Daño 5★ (Con Raiden)",
-        "note": "Máximo daño personal si el equipo cubre su recarga."
+        "type": "Opción por rol",
+        "note": "Máximo daño personal si el equipo cubre su recarga.",
+        "weaponId": "11505",
+        "reviewedNote": false
       },
       {
         "name": "Vado del Río Ceniciento",
         "rarity": 4,
-        "type": "F2P",
-        "note": "Buena opción F2P de pesca con recarga."
+        "type": "Opción por rol",
+        "note": "Buena opción F2P de pesca con recarga.",
+        "weaponId": "11426",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Emblema del Destino (4 piezas)",
         "type": "BiS Daño Personal",
-        "bonus": "Multiplica el daño de cada espada de lluvia según su ER."
+        "bonus": "Multiplica el daño de cada espada de lluvia según su ER.",
+        "reviewedBonus": false
       },
       {
         "set": "Nobleza Obligada (4 piezas)",
         "type": "Soporte Equipo",
-        "bonus": "+20% ATQ para todo el equipo si nadie más lo lleva."
+        "bonus": "+20% ATQ para todo el equipo si nadie más lo lleva.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -9727,6 +11285,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Hydro%",
       "circlet": "Prob. Crítica% / Daño Crítico%",
       "substats": "1. Recarga de Energía% (180% - 210% con Sacrificio R3+) > 2. Prob. Crítica / Daño Crítico > 3. ATQ% > 4. Maestría Elemental"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/xingqiu-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -9746,40 +11318,58 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% + Pasiva A4 (+0.15% daño en tótems por cada punto de EM)",
     "bestWeapons": [
       {
-        "name": "Axioma de la Kagura (Kagura's Verity)",
+        "name": "Axioma de la Kagura",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+66.2% Daño Crítico, +36% Daño de Habilidad Elemental acumulable y +12% Daño Elemental."
+        "type": "Opción por rol",
+        "note": "+66.2% Daño Crítico, +36% Daño de Habilidad Elemental acumulable y +12% Daño Elemental.",
+        "weaponId": "14509",
+        "reviewedNote": false
       },
       {
-        "name": "Sinfonía de los Merodeadores (The Widsith)",
+        "name": "Sinfonía de los Merodeadores",
         "rarity": 4,
-        "type": "Mejor 4★ Gacha",
-        "note": "+55.1% Daño Crítico y cualquiera de las 3 canciones (ATQ, Daño o EM) es perfecta para ella."
+        "type": "Opción por rol",
+        "note": "+55.1% Daño Crítico y cualquiera de las 3 canciones (ATQ, Daño o EM) es perfecta para ella.",
+        "weaponId": "14402",
+        "reviewedNote": false
       },
       {
         "name": "Oración Perdida a los Vientos Sagrados",
         "rarity": 5,
-        "type": "Opción 5★ CR",
-        "note": "+Prob. Crítica altísima."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica altísima.",
+        "weaponId": "14502",
+        "reviewedNote": false
       },
       {
-        "name": "Anillo de Hakushin / Guía Mágica",
+        "name": "Anillo de Hakushin",
         "rarity": 4,
-        "type": "Mejor F2P",
-        "note": "Hakushin buffea el daño elemental del equipo tras reacciones electro."
+        "type": "Opción por rol",
+        "note": "Hakushin buffea el daño elemental del equipo tras reacciones electro.",
+        "weaponId": "14414",
+        "reviewedNote": false
+      },
+      {
+        "name": "Guía Mágica",
+        "rarity": 3,
+        "type": "Opción por rol",
+        "note": "Hakushin buffea el daño elemental del equipo tras reacciones electro.",
+        "weaponId": "11315",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Compañía Dorada (4 piezas)",
         "type": "BiS Tótems E",
-        "bonus": "+70% Daño en Habilidad Elemental para sus 3 tótems mientras está fuera de campo."
+        "bonus": "+70% Daño en Habilidad Elemental para sus 3 tótems mientras está fuera de campo.",
+        "reviewedBonus": false
       },
       {
         "set": "Sueños Áureos (4 piezas)",
         "type": "BiS Aggravate",
-        "bonus": "+ATQ% y hasta +150 de Maestría Elemental para potenciar sus reacciones de Intensificación."
+        "bonus": "+ATQ% y hasta +150 de Maestría Elemental para potenciar sus reacciones de Intensificación.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -9916,6 +11506,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Electro%",
       "circlet": "Prob. Crítica% / Daño Crítico%",
       "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% > 3. Maestría Elemental (100 – 180 EM en Aggravate) > 4. Recarga de Energía% (130% – 145%)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/yae-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -9937,38 +11541,56 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Aqua Simulacra",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+88.2% Daño Crítico y +20% Daño universal (requiere reloj de ER%)."
+        "type": "Opción por rol",
+        "note": "+88.2% Daño Crítico y +20% Daño universal (requiere reloj de ER%).",
+        "weaponId": "15508",
+        "reviewedNote": false
       },
       {
         "name": "Arco de Favonius",
         "rarity": 4,
-        "type": "Mejor 4★ / F2P",
-        "note": "Mejor arma global en C0 para asegurar rotaciones con Definitiva."
+        "type": "Opción por rol",
+        "note": "Mejor arma global en C0 para asegurar rotaciones con Definitiva.",
+        "weaponId": "15401",
+        "reviewedNote": false
       },
       {
-        "name": "Estrella Polar / Elegía del Fin",
+        "name": "Estrella Invernal",
         "rarity": 5,
-        "type": "Soporte 5★",
-        "note": "Elegía aporta gran recarga y buff de ATQ y EM a todo el equipo."
+        "type": "Opción por rol",
+        "note": "Elegía aporta gran recarga y buff de ATQ y EM a todo el equipo.",
+        "weaponId": "15507",
+        "reviewedNote": false
       },
       {
-        "name": "Último Acorde (The Stringless)",
+        "name": "Elegía del Fin",
+        "rarity": 5,
+        "type": "Opción por rol",
+        "note": "Elegía aporta gran recarga y buff de ATQ y EM a todo el equipo.",
+        "weaponId": "15503",
+        "reviewedNote": false
+      },
+      {
+        "name": "Último Acorde",
         "rarity": 4,
-        "type": "Vaporize Nuke",
-        "note": "Aumenta drásticamente el daño de E y Q si ya tiene suficiente ER."
+        "type": "Opción por rol",
+        "note": "Aumenta drásticamente el daño de E y Q si ya tiene suficiente ER.",
+        "weaponId": "15402",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Emblema del Destino (4 piezas)",
         "type": "BiS Indiscutible",
-        "bonus": "Convierte la Recarga de Energía en hasta +75% Daño en la Definitiva."
+        "bonus": "Convierte la Recarga de Energía en hasta +75% Daño en la Definitiva.",
+        "reviewedBonus": false
       },
       {
         "set": "2p Vida+20% + 2p Hydro+15%",
         "type": "Alternativa C1+",
-        "bonus": "Excelente daño equilibrado en composiciones Doble Hydro."
+        "bonus": "Excelente daño equilibrado en composiciones Doble Hydro.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -10105,6 +11727,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Hydro%",
       "circlet": "Prob. Crítica% / Daño Crítico%",
       "substats": "1. Recarga de Energía% (180% - 220% en C0) > 2. Prob. Crítica / Daño Crítico (1:2) > 3. Vida% (hasta 35,000 HP) > ❌ ATQ% no hace nada"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/yelan-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -10124,40 +11760,58 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% y Multiplicador Infusión E en Ataques Normales",
     "bestWeapons": [
       {
-        "name": "Agitador del Relámpago (Thundering Pulse)",
+        "name": "Agitador del Relámpago",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+66.2% Daño Crítico, +20% ATQ y hasta +40% daño en Ataques Normales."
+        "type": "Opción por rol",
+        "note": "+66.2% Daño Crítico, +20% ATQ y hasta +40% daño en Ataques Normales.",
+        "weaponId": "15509",
+        "reviewedNote": false
       },
       {
-        "name": "Herrumbre (Rust R5)",
+        "name": "Herrumbre",
         "rarity": 4,
-        "type": "Mejor 4★",
-        "note": "R5 otorga un descomunal +80% de daño en Ataques Normales, casi igualando a las 5★."
+        "type": "Opción por rol",
+        "note": "R5 otorga un descomunal +80% de daño en Ataques Normales, casi igualando a las 5★.",
+        "weaponId": "15405",
+        "reviewedNote": false
       },
       {
-        "name": "Aqua Simulacra / Alas Celestiales",
+        "name": "Aqua Simulacra",
         "rarity": 5,
-        "type": "Opciones 5★",
-        "note": "Stat-sticks de Crítico excepcionales."
+        "type": "Opción por rol",
+        "note": "Stat-sticks de Crítico excepcionales.",
+        "weaponId": "15508",
+        "reviewedNote": false
       },
       {
-        "name": "Tirachinas (Slingshot R5)",
+        "name": "Alas Celestiales",
+        "rarity": 5,
+        "type": "Opción por rol",
+        "note": "Stat-sticks de Crítico excepcionales.",
+        "weaponId": "15501",
+        "reviewedNote": false
+      },
+      {
+        "name": "Tirachinas",
         "rarity": 3,
-        "type": "Mejor F2P 3★",
-        "note": "+31.2% Prob. Crítica y +60% daño normal a corta distancia (usar con Bennett)."
+        "type": "Opción por rol",
+        "note": "+31.2% Prob. Crítica y +60% daño normal a corta distancia (usar con Bennett).",
+        "weaponId": "11320",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Reminiscencia de la Purificación (4 piezas)",
         "type": "BiS Óptimo",
-        "bonus": "+50% Daño en Ataques Normales durante toda la duración de su habilidad E."
+        "bonus": "+50% Daño en Ataques Normales durante toda la duración de su habilidad E.",
+        "reviewedBonus": false
       },
       {
         "set": "Bruja Carmesí en Llamas (4 piezas)",
         "type": "Alternativa Vape",
-        "bonus": "+15% Bono Pyro y +15% Daño en Vaporizados continuos."
+        "bonus": "+15% Bono Pyro y +15% Daño en Vaporizados continuos.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -10294,6 +11948,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Pyro%",
       "circlet": "Prob. Crítica% / Daño Crítico%",
       "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% > 3. Maestría Elemental (80 – 150 EM) > 4. Recarga (baja prioridad con Reminiscencia)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/yoimiya-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -10313,45 +11981,56 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado 100% Vida Máxima (HP%) para el escudo • Daño de Q escala con HP y ATQ",
     "bestWeapons": [
       {
-        "name": "Borla Negra (Black Tassel)",
+        "name": "Borla Negra",
         "rarity": 3,
-        "type": "BiS Escudo Puro F2P",
-        "note": "Arma 3★ que aporta +46.9% Vida Máxima, ideal para superar los 50,000 HP."
+        "type": "Opción por rol",
+        "note": "Arma 3★ que aporta +46.9% Vida Máxima, ideal para superar los 50,000 HP.",
+        "weaponId": "11313",
+        "reviewedNote": false
       },
       {
         "name": "Lanza de Favonius",
         "rarity": 4,
-        "type": "BiS Batería Utilidad",
-        "note": "Genera partículas neutras para el equipo manteniendo un escudo sólido."
+        "type": "Opción por rol",
+        "note": "Genera partículas neutras para el equipo manteniendo un escudo sólido.",
+        "weaponId": "13407",
+        "reviewedNote": false
       },
       {
         "name": "Báculo de Homa",
         "rarity": 5,
-        "type": "Híbrido Meteorito Nuke",
-        "note": "+Vida Máx, Daño Crítico masivo y excelente daño en la Definitiva."
+        "type": "Opción por rol",
+        "note": "+Vida Máx, Daño Crítico masivo y excelente daño en la Definitiva.",
+        "weaponId": "13501",
+        "reviewedNote": false
       },
       {
         "name": "Cruz de Kitain",
         "rarity": 4,
-        "type": "F2P",
-        "note": "Regenera energía pasivamente."
+        "type": "Opción por rol",
+        "note": "Regenera energía pasivamente.",
+        "weaponId": "13414",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Tenacidad de la Geoarmada (4 piezas)",
         "type": "BiS Soporte",
-        "bonus": "+20% ATQ para todo el equipo y +30% Protección de Escudo con el pilar E."
+        "bonus": "+20% ATQ para todo el equipo y +30% Protección de Escudo con el pilar E.",
+        "reviewedBonus": false
       },
       {
         "set": "Instructor (4 piezas)",
         "type": "Soporte Reacciones",
-        "bonus": "+120 Maestría Elemental para equipos de Hu Tao o Navia al cristalizar."
+        "bonus": "+120 Maestría Elemental para equipos de Hu Tao o Navia al cristalizar.",
+        "reviewedBonus": false
       },
       {
         "set": "2p Tenacidad + 2p Vourukasha",
         "type": "Escudo Dios (55k+ HP)",
-        "bonus": "+40% Vida Máxima total para un escudo imposible de romper."
+        "bonus": "+40% Vida Máxima total para un escudo imposible de romper.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -10487,6 +12166,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Vida% (o Bono Geo en Híbrido)",
       "circlet": "Vida% (o Prob. CR con Favonius)",
       "substats": "1. Vida% y Vida Plana > 2. Recarga de Energía% (si se usa la Definitiva) > 3. Prob. Crítica (para Favonius)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/zhongli-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -10506,34 +12199,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado masivo por Vida Máxima (HP%) & Fluctuación",
     "bestWeapons": [
       {
-        "name": "Nocturno tras el Velo (Nocturne's Curtain Call)",
+        "name": "Nocturno tras el Velo",
         "rarity": 5,
-        "type": "BiS Absoluto (Firma)",
-        "note": "Catalizador firma con Daño Crítico, Vida% y bono de Reacciones Lunares."
+        "type": "Opción por rol",
+        "note": "Catalizador firma con Daño Crítico, Vida% y bono de Reacciones Lunares.",
+        "weaponId": "14522",
+        "reviewedNote": false
       },
       {
-        "name": "Escrituras del Fluir Sempiterno (Tome of the Eternal Flow)",
+        "name": "Escrituras del Fluir Sempiterno",
         "rarity": 5,
-        "type": "Alternativa 5★",
-        "note": "88.2% Daño Crítico y +16% Vida base."
+        "type": "Opción por rol",
+        "note": "88.2% Daño Crítico y +16% Vida base.",
+        "weaponId": "14514",
+        "reviewedNote": false
       },
       {
-        "name": "Prototipo Ámbar (Prototype Amber R5)",
+        "name": "Prototipo Ámbar",
         "rarity": 4,
-        "type": "Mejor F2P",
-        "note": "41.3% Vida y regeneración de energía para todo el equipo."
+        "type": "Opción por rol",
+        "note": "41.3% Vida y regeneración de energía para todo el equipo.",
+        "weaponId": "14406",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Alborada de la Estrella del Alba y la Luna / Aubade of Morningstar and Moon (4 piezas)",
-        "type": "BiS",
-        "bonus": "Potencia el daño de sub-DPS fuera de campo y reacciones lunares."
+        "set": "Silken Moon’s Serenade (4 piezas)",
+        "type": "Según equipo y rol",
+        "bonus": "",
+        "reviewedBonus": false
       },
       {
-        "set": "Compañía Dorada (4 piezas)",
-        "type": "Alternativa Sub-DPS",
-        "bonus": "+70% Daño de Habilidad Elemental fuera de campo."
+        "set": "Aubade of Morningstar and Moon (4 piezas)",
+        "type": "Según equipo y rol",
+        "bonus": "",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -10601,6 +12302,22 @@ const CHARACTER_BUILDS_DB = [
       "em": "120 – 180 EM",
       "er": "160% – 180% ER",
       "crit": "70%+ CR / 150%+ CD"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/columbina-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Sets contrastados; eliminadas alternativas que no benefician al daño principal de este rol."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -10620,34 +12337,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escala con ATQ% y Críticos (Stellar-Conduct)",
     "bestWeapons": [
       {
-        "name": "Llave de la Trascendencia (A Teaspoon of Transcendence)",
+        "name": "Llave de la Trascendencia",
         "rarity": 5,
-        "type": "BiS Absoluto (Firma)",
-        "note": "Mandoble firma de Sandrone con Crítico y bono de Conducto Estelar."
+        "type": "Opción por rol",
+        "note": "Mandoble firma de Sandrone con Crítico y bono de Conducto Estelar.",
+        "weaponId": "12516",
+        "reviewedNote": false
       },
       {
-        "name": "Mil Soles Abrasadores (A Thousand Blazing Suns)",
+        "name": "Mil Soles Abrasadores",
         "rarity": 5,
-        "type": "Alternativa 5★",
-        "note": "Gran ATQ Base, Prob. Crítica y bono de Daño Crítico."
+        "type": "Opción por rol",
+        "note": "Gran ATQ Base, Prob. Crítica y bono de Daño Crítico.",
+        "weaponId": "12514",
+        "reviewedNote": false
       },
       {
-        "name": "Médula de la Serpiente Marina (Serpent Spine R5)",
+        "name": "Médula de la Serpiente Marina",
         "rarity": 4,
-        "type": "Mejor 4★",
-        "note": "Prob. Crítica alta y hasta +50% Daño infligido."
+        "type": "Opción por rol",
+        "note": "Prob. Crítica alta y hasta +50% Daño infligido.",
+        "weaponId": "12409",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Desilusión Congelada en las Sombras / Disenchantment in Deep Shadows (4 piezas)",
-        "type": "BiS",
-        "bonus": "Aumenta masivamente el daño de Conducto Estelar y Crítico."
+        "set": "Disenchantment in Deep Shadows (4 piezas)",
+        "type": "Según equipo y rol",
+        "bonus": "",
+        "reviewedBonus": false
       },
       {
-        "set": "Final del Gladiador (4 piezas)",
-        "type": "Alternativa 4p",
-        "bonus": "Hasta 36% Daño Infligido extra."
+        "set": "Gilded Dreams (4 piezas)",
+        "type": "Según equipo y rol",
+        "bonus": "",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -10687,7 +12412,7 @@ const CHARACTER_BUILDS_DB = [
           "Sandrone",
           "Diona",
           "Beidou",
-          "Aliyosha"
+          "Alyosha"
         ],
         "comp": "Sandrone • Diona • Beidou • Aliyosha"
       }
@@ -10705,6 +12430,22 @@ const CHARACTER_BUILDS_DB = [
       "em": "60 – 100 EM",
       "er": "130% – 150% ER",
       "crit": "70%+ CR / 150%+ CD"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/sandrone-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Sets contrastados; eliminadas alternativas que no benefician al daño principal de este rol."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -10724,40 +12465,50 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% y Balas Espirituales de Colores",
     "bestWeapons": [
       {
-        "name": "Astral Vulture's Crimson Plumage",
+        "name": "Pluma Carmesí Buitreastral",
         "rarity": 5,
-        "type": "BiS Firma 5★",
-        "note": "+Crítico y daño a proyectiles multi-elementales."
+        "type": "Opción por rol",
+        "note": "+Crítico y daño a proyectiles multi-elementales.",
+        "weaponId": "15514",
+        "reviewedNote": false
       },
       {
-        "name": "El Primer Gran Truco Mágico (The First Great Magic)",
+        "name": "El Primer Gran Número de Magia",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "+Daño Crítico y ATQ por aliados."
+        "type": "Opción por rol",
+        "note": "+Daño Crítico y ATQ por aliados.",
+        "weaponId": "15512",
+        "reviewedNote": false
       },
       {
         "name": "Aqua Simulacra",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "+88.2% Daño Crítico y +20% daño universal."
+        "type": "Opción por rol",
+        "note": "+88.2% Daño Crítico y +20% daño universal.",
+        "weaponId": "15508",
+        "reviewedNote": false
       },
       {
-        "name": "Rompecadenas (Chain Breaker)",
+        "name": "Rompecadenas",
         "rarity": 4,
-        "type": "Mejor Forja Natlan",
-        "note": "+ATQ% y bono por miembros de distinta región."
+        "type": "Opción por rol",
+        "note": "+ATQ% y bono por miembros de distinta región.",
+        "weaponId": "15431",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Códice de Obsidiana (4 piezas)",
         "type": "BiS Natlan",
-        "bonus": "+40% Prob. Crítica masiva en modo de vuelo de Espíritu de la Noche."
+        "bonus": "+40% Prob. Crítica masiva en modo de vuelo de Espíritu de la Noche.",
+        "reviewedBonus": false
       },
       {
         "set": "Cazador Fantasmal (4 piezas)",
         "type": "BiS con Furina",
-        "bonus": "+36% Prob. Crítica."
+        "bonus": "+36% Prob. Crítica.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -10815,6 +12566,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Anemo% o ATQ%",
       "circlet": "Daño Crítico% o Prob. Crítica%",
       "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% (1,900 – 2,300 ATQ) > 3. Recarga de Energía% (120% ER) > 4. Maestría Elemental"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/chasca-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -10834,34 +12599,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% y Ojos del Abismo",
     "bestWeapons": [
       {
-        "name": "Elegía del Fin (Elegy for the End)",
+        "name": "Elegía del Fin",
         "rarity": 5,
-        "type": "BiS Soporte 5★",
-        "note": "Recarga de energía y buff masivo de +100 EM y +20% ATQ al equipo."
+        "type": "Opción por rol",
+        "note": "Recarga de energía y buff masivo de +100 EM y +20% ATQ al equipo.",
+        "weaponId": "15503",
+        "reviewedNote": false
       },
       {
         "name": "Arco de Favonius",
         "rarity": 4,
-        "type": "BiS Batería F2P",
-        "note": "Generación inagotable de partículas de energía blanca."
+        "type": "Opción por rol",
+        "note": "Generación inagotable de partículas de energía blanca.",
+        "weaponId": "15401",
+        "reviewedNote": false
       },
       {
-        "name": "Último Acorde (Stringless)",
+        "name": "Último Acorde",
         "rarity": 4,
-        "type": "Daño Personal",
-        "note": "+48% daño en Habilidad Elemental y Definitiva."
+        "type": "Opción por rol",
+        "note": "+48% daño en Habilidad Elemental y Definitiva.",
+        "weaponId": "15402",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Pergamino del Héroe de la Ciudad de las Cenizas (4p)",
         "type": "BiS Natlan",
-        "bonus": "+40% Bono Daño Elemental a los elementos activados."
+        "bonus": "+40% Bono Daño Elemental a los elementos activados.",
+        "reviewedBonus": false
       },
       {
         "set": "Emblema del Destino (4 piezas)",
         "type": "BiS Sub-DPS",
-        "bonus": "+75% Daño en la Definitiva según Recarga de Energía."
+        "bonus": "+75% Daño en la Definitiva según Recarga de Energía.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -10919,6 +12692,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Electro%",
       "circlet": "Prob. Crítica% o Daño Crítico%",
       "substats": "1. Recarga de Energía% (170% – 200% ER) > 2. Prob. Crítica / Daño Crítico (1:2) > 3. ATQ% (1,600 – 1,900 ATQ) > 4. Maestría Elemental"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/ororon-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -10938,40 +12725,58 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% y Frascos de Fragancia",
     "bestWeapons": [
       {
-        "name": "Elegía Lumidulce (Lumidouce Elegy)",
+        "name": "Elegía Lumidulce",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+Prob. Crítica y hasta +60% Daño amplificado continuo con Quemadura."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica y hasta +60% Daño amplificado continuo con Quemadura.",
+        "weaponId": "13513",
+        "reviewedNote": false
       },
       {
-        "name": "Báculo de las Arenas Escarlatas / Homa",
+        "name": "Báculo de las Arenas Escarlatas",
         "rarity": 5,
-        "type": "Opciones 5★",
-        "note": "Altísimo stat-stick de Prob. o Daño Crítico."
+        "type": "Opción por rol",
+        "note": "Altísimo stat-stick de Prob. o Daño Crítico.",
+        "weaponId": "13511",
+        "reviewedNote": false
       },
       {
-        "name": "Lanza del Duelo (Deathmatch)",
-        "rarity": 4,
-        "type": "Mejor 4★ Pase",
-        "note": "+36.8% Prob. Crítica sólida."
+        "name": "Báculo de Homa",
+        "rarity": 5,
+        "type": "Opción por rol",
+        "note": "Altísimo stat-stick de Prob. o Daño Crítico.",
+        "weaponId": "13501",
+        "reviewedNote": false
       },
       {
-        "name": "La Captura (The Catch R5)",
+        "name": "Lanza del Duelo",
         "rarity": 4,
-        "type": "Mejor F2P",
-        "note": "+32% Daño y +12% CR en la Definitiva con alta Recarga."
+        "type": "Opción por rol",
+        "note": "+36.8% Prob. Crítica sólida.",
+        "weaponId": "13405",
+        "reviewedNote": false
+      },
+      {
+        "name": "La Captura",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "+32% Daño y +12% CR en la Definitiva con alta Recarga.",
+        "weaponId": "13415",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Ensoñación Inacabada (4 piezas)",
         "type": "BiS Exclusivo Quemadura",
-        "bonus": "+50% Daño infligido continuo al quemar enemigos."
+        "bonus": "+50% Daño infligido continuo al quemar enemigos.",
+        "reviewedBonus": false
       },
       {
         "set": "Recuerdos del Bosque (4 piezas)",
         "type": "BiS Reducción RES",
-        "bonus": "-30% Resistencia Dendro a todos los enemigos."
+        "bonus": "-30% Resistencia Dendro a todos los enemigos.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -11039,6 +12844,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Dendro%",
       "circlet": "Prob. Crítica% o Daño Crítico%",
       "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% (2,000 – 2,400 ATQ) > 3. Recarga de Energía% (130% – 150% ER) > 4. Maestría Elemental (80 – 140 EM)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/emilie-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -11058,34 +12877,58 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado Dual por Maestría Elemental (EM) & ATQ",
     "bestWeapons": [
       {
-        "name": "Cazador del Callejón / Forja de Nubes",
+        "name": "Cazador del Callejón",
         "rarity": 4,
-        "type": "BiS 4★ Evento",
-        "note": "Aumento masivo de Maestría Elemental tras consumir energía."
+        "type": "Opción por rol",
+        "note": "Aumento masivo de Maestría Elemental tras consumir energía.",
+        "weaponId": "15410",
+        "reviewedNote": false
       },
       {
-        "name": "Tirachinas (Slingshot R5)",
+        "name": "Cimentador de Nubes",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Aumento masivo de Maestría Elemental tras consumir energía.",
+        "weaponId": "15426",
+        "reviewedNote": false
+      },
+      {
+        "name": "Tirachinas",
         "rarity": 3,
-        "type": "BiS F2P Dios",
-        "note": "+31.2% Prob. Crítica y +60% Daño en disparos directos."
+        "type": "Opción por rol",
+        "note": "+31.2% Prob. Crítica y +60% Daño en disparos directos.",
+        "weaponId": "11320",
+        "reviewedNote": false
       },
       {
-        "name": "Aqua Simulacra / Gran Magia",
+        "name": "Aqua Simulacra",
         "rarity": 5,
-        "type": "Opciones 5★",
-        "note": "Estadísticas críticas legendarias."
+        "type": "Opción por rol",
+        "note": "Estadísticas críticas legendarias.",
+        "weaponId": "15508",
+        "reviewedNote": false
+      },
+      {
+        "name": "El Primer Gran Número de Magia",
+        "rarity": 5,
+        "type": "Opción por rol",
+        "note": "Estadísticas críticas legendarias.",
+        "weaponId": "15512",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Orquesta del Errante (4 piezas)",
         "type": "BiS Disparos Cargados",
-        "bonus": "+80 EM y +35% Daño continuo en Ataques Cargados con Arco."
+        "bonus": "+80 EM y +35% Daño continuo en Ataques Cargados con Arco.",
+        "reviewedBonus": false
       },
       {
         "set": "Sueños Áureos (4 piezas)",
         "type": "BiS Maestría",
-        "bonus": "+Hasta 230 de Maestría Elemental en equipos multi-elemento."
+        "bonus": "+Hasta 230 de Maestría Elemental en equipos multi-elemento.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -11143,6 +12986,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Electro%",
       "circlet": "Prob. Crítica% o Daño Crítico%",
       "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. Maestría Elemental (300 – 450 EM) > 3. ATQ% (1,300 – 1,600 ATQ) > 4. Recarga de Energía% (120% ER)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/sethos-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -11162,34 +13019,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por Defensa (DEF%) y Taladro Turbogiro",
     "bestWeapons": [
       {
-        "name": "Huella del Arcoíris (Footprint of the Rainbow)",
+        "name": "Estela Iridiscente",
         "rarity": 4,
-        "type": "BiS Forja Natlan",
-        "note": "+DEF% masiva tras usar Habilidad Elemental."
+        "type": "Opción por rol",
+        "note": "+DEF% masiva tras usar Habilidad Elemental.",
+        "weaponId": "13431",
+        "reviewedNote": false
       },
       {
-        "name": "Lanza de Favonius (Favonius Lance)",
+        "name": "Lanza de Favonius",
         "rarity": 4,
-        "type": "Mejor Batería F2P",
-        "note": "Batería de energía para todo el equipo."
+        "type": "Opción por rol",
+        "note": "Batería de energía para todo el equipo.",
+        "weaponId": "13407",
+        "reviewedNote": false
       },
       {
-        "name": "Retribución de la Justicia (Rightful Reward)",
+        "name": "Retribución de la Justicia",
         "rarity": 4,
-        "type": "Forja Fontaine",
-        "note": "+Vida y energía al recibir curación."
+        "type": "Opción por rol",
+        "note": "+Vida y energía al recibir curación.",
+        "weaponId": "13425",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Pergamino del Héroe de la Ciudad de las Cenizas (4p)",
         "type": "BiS Obligatorio Buffer",
-        "bonus": "+40% Bono Daño Elemental continuo a todo el equipo al activar reacciones de Espíritu Nocturno."
+        "bonus": "+40% Bono Daño Elemental continuo a todo el equipo al activar reacciones de Espíritu Nocturno.",
+        "reviewedBonus": false
       },
       {
         "set": "Cáscara de Sueños Opulentos (4 piezas)",
         "type": "Daño Personal DEF",
-        "bonus": "+54% DEF y +24% Bono Geo."
+        "bonus": "+54% DEF y +24% Bono Geo.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -11246,6 +13111,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "DEF% o Bono Daño Geo%",
       "circlet": "DEF% o Prob. Crítica% (Favonius)",
       "substats": "1. DEF% y DEF Plana (2,000 – 2,500 DEF) > 2. Recarga de Energía% (170% – 200% ER) > 3. Prob. Crítica (40%+ si usa Favonius)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/kachina-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -11267,32 +13146,40 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Lanza de Favonius",
         "rarity": 4,
-        "type": "BiS Utilidad F2P",
-        "note": "Batería de energía y recarga constante."
+        "type": "Opción por rol",
+        "note": "Batería de energía y recarga constante.",
+        "weaponId": "13407",
+        "reviewedNote": false
       },
       {
-        "name": "La Captura (The Catch R5)",
+        "name": "La Captura",
         "rarity": 4,
-        "type": "BiS Daño F2P",
-        "note": "+32% Daño y +12% CR en la Definitiva."
+        "type": "Opción por rol",
+        "note": "+32% Daño y +12% CR en la Definitiva.",
+        "weaponId": "13415",
+        "reviewedNote": false
       },
       {
         "name": "Lanza del Duelo",
         "rarity": 4,
-        "type": "Mejor 4★ Pase",
-        "note": "+Prob. Crítica y ATQ%."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica y ATQ%.",
+        "weaponId": "13405",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Pergamino del Héroe de la Ciudad de las Cenizas (4p)",
         "type": "BiS Natlan",
-        "bonus": "+40% Bono Daño Elemental al equipo."
+        "bonus": "+40% Bono Daño Elemental al equipo.",
+        "reviewedBonus": false
       },
       {
         "set": "Emblema del Destino (4 piezas)",
         "type": "BiS Daño Q",
-        "bonus": "Conversión de ER a Daño en la Definitiva."
+        "bonus": "Conversión de ER a Daño en la Definitiva.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -11314,7 +13201,7 @@ const CHARACTER_BUILDS_DB = [
       "er": "170% – 190% ER",
       "crit": "65%+ CR / 140%+ CD"
     },
-    "talentPriority": "Habilidad Elemental (E) = Definitiva (Q) >>> Básicos",
+    "talentPriority": "Definitiva (Q) > nivel del personaje. Habilidad y normales sin prioridad.",
     "metaTeams": [
       {
         "name": "Iansan Overload Storm",
@@ -11350,6 +13237,22 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Electro%",
       "circlet": "Prob. Crítica% o Daño Crítico%",
       "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. Recarga de Energía% (160% – 190% ER) > 3. ATQ% (1,700 – 2,100 ATQ) > 4. Maestría Elemental"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/iansan-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "El límite de su buff depende de la definitiva."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -11369,34 +13272,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% y Bonificación por Pyro en Enemigo",
     "bestWeapons": [
       {
-        "name": "El Primer Gran Truco Mágico (The First Great Magic)",
+        "name": "El Primer Gran Número de Magia",
         "rarity": 5,
-        "type": "BiS Firma 5★",
-        "note": "+66.2% Daño Crítico y +ATQ% por personajes Pyro."
+        "type": "Opción por rol",
+        "note": "+66.2% Daño Crítico y +ATQ% por personajes Pyro.",
+        "weaponId": "15512",
+        "reviewedNote": false
       },
       {
         "name": "Aqua Simulacra",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "+88.2% Daño Crítico y +20% daño."
+        "type": "Opción por rol",
+        "note": "+88.2% Daño Crítico y +20% daño.",
+        "weaponId": "15508",
+        "reviewedNote": false
       },
       {
-        "name": "Canción del Silencio (Song of Stillness R5)",
+        "name": "Serenata del Sosiego",
         "rarity": 4,
-        "type": "Mejor Forja F2P",
-        "note": "+32% Daño tras recibir curación."
+        "type": "Opción por rol",
+        "note": "+32% Daño tras recibir curación.",
+        "weaponId": "15425",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Cazador Fantasmal (4 piezas)",
         "type": "BiS Absoluto",
-        "bonus": "+36% Prob. Crítica masiva al consumir o recuperar Vida con sus flechas de gato."
+        "bonus": "+36% Prob. Crítica masiva al consumir o recuperar Vida con sus flechas de gato.",
+        "reviewedBonus": false
       },
       {
         "set": "Virtuoso Corredor de Lava (4 piezas)",
         "type": "BiS Mono Pyro",
-        "bonus": "+35% Daño continuo contra enemigos afectados por Pyro."
+        "bonus": "+35% Daño continuo contra enemigos afectados por Pyro.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -11453,6 +13364,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Pyro%",
       "circlet": "Daño Crítico%",
       "substats": "1. Daño Crítico% y Prob. Crítica% (1:2) > 2. ATQ% (2,100 – 2,500 ATQ) > 3. Recarga de Energía% (120% – 130% ER)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/lyney-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -11474,32 +13399,40 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Espada de Favonius",
         "rarity": 4,
-        "type": "BiS Utilidad",
-        "note": "Batería para rotación continua de la Definitiva."
+        "type": "Opción por rol",
+        "note": "Batería para rotación continua de la Definitiva.",
+        "weaponId": "11401",
+        "reviewedNote": false
       },
       {
         "name": "Espada de Sacrificio",
         "rarity": 4,
-        "type": "Doble Carga E",
-        "note": "Permite dos carreras sombrías consecutivas."
+        "type": "Opción por rol",
+        "note": "Permite dos carreras sombrías consecutivas.",
+        "weaponId": "11403",
+        "reviewedNote": false
       },
       {
-        "name": "Vado del Río Ceniciento (Fleuve Cendre)",
+        "name": "Vado del Río Ceniciento",
         "rarity": 4,
-        "type": "F2P Pesca",
-        "note": "Alta Recarga de Energía y Prob. Crítica en E."
+        "type": "Opción por rol",
+        "note": "Alta Recarga de Energía y Prob. Crítica en E.",
+        "weaponId": "11426",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Sombra Verde Esmeralda (4 piezas)",
         "type": "BiS Obligatorio",
-        "bonus": "-40% RES Elemental al elemento dispersado."
+        "bonus": "-40% RES Elemental al elemento dispersado.",
+        "reviewedBonus": false
       },
       {
         "set": "Nobleza Obligada (4 piezas)",
         "type": "Buff de Equipo",
-        "bonus": "+20% ATQ para todo el equipo tras usar Q."
+        "bonus": "+20% ATQ para todo el equipo tras usar Q.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -11556,6 +13489,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Anemo%",
       "circlet": "Prob. Crítica% o Daño Crítico%",
       "substats": "1. Recarga de Energía% (180% – 210% ER) > 2. Prob. Crítica / Daño Crítico (1:2) > 3. ATQ% y Maestría Elemental"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/lynette-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -11575,51 +13522,80 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escala con Maestría Elemental (EM), ATQ y Conducción Estelar",
     "bestWeapons": [
       {
-        "name": "Báculo de las Arenas Escarlatas (Staff of the Scarlet Sands)",
+        "name": "Báculo de las Arenas Escarlatas",
         "rarity": 5,
-        "type": "BiS Firma Oficial",
-        "note": "+44.1% Prob. Crítica y colosal conversión de Maestría Elemental a ATQ."
+        "type": "Opción por rol",
+        "note": "+44.1% Prob. Crítica y colosal conversión de Maestría Elemental a ATQ.",
+        "weaponId": "13511",
+        "reviewedNote": false
       },
       {
-        "name": "Halcón de Jade / Báculo de Homa",
+        "name": "Halcón de Jade",
         "rarity": 5,
-        "type": "Opciones 5★",
-        "note": "Estadísticas críticas masivas y escalado general de daño."
+        "type": "Opción por rol",
+        "note": "Estadísticas críticas masivas y escalado general de daño.",
+        "weaponId": "13505",
+        "reviewedNote": false
+      },
+      {
+        "name": "Báculo de Homa",
+        "rarity": 5,
+        "type": "Opción por rol",
+        "note": "Estadísticas críticas masivas y escalado general de daño.",
+        "weaponId": "13501",
+        "reviewedNote": false
       },
       {
         "name": "Balada de los Fiordos",
         "rarity": 4,
-        "type": "BiS Pase de Batalla",
-        "note": "+27.6% Prob. Crítica y +240 de Maestría Elemental con 3 elementos distintos."
+        "type": "Opción por rol",
+        "note": "+27.6% Prob. Crítica y +240 de Maestría Elemental con 3 elementos distintos.",
+        "weaponId": "13424",
+        "reviewedNote": false
       },
       {
-        "name": "Borla Blanca R5",
+        "name": "Borla Blanca",
         "rarity": 3,
-        "type": "BiS F2P Dios",
-        "note": "+23.4% Prob. Crítica y +48% daño en todos sus ataques normales de garra."
+        "type": "Opción por rol",
+        "note": "+23.4% Prob. Crítica y +48% daño en todos sus ataques normales de garra.",
+        "weaponId": "11312",
+        "reviewedNote": false
       },
       {
-        "name": "Lanza Cruzada de Kitain / Perdición del Dragón",
+        "name": "Cruz de Kitain",
         "rarity": 4,
-        "type": "Opciones Forja F2P",
-        "note": "Maestría elemental y recarga pasiva continua."
+        "type": "Opción por rol",
+        "note": "Maestría elemental y recarga pasiva continua.",
+        "weaponId": "13414",
+        "reviewedNote": false
+      },
+      {
+        "name": "Perdición del Dragón",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Maestría elemental y recarga pasiva continua.",
+        "weaponId": "13401",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Desencanto en las Sombras Profundas (4 piezas)",
         "type": "BiS Oficial Rework V6.6+",
-        "bonus": "+18% ATQ, +80% Daño Superconductor / +40% Conducción Estelar y +16% Prob. Crítica contra enemigos afectados."
+        "bonus": "+18% ATQ, +80% Daño Superconductor / +40% Conducción Estelar y +16% Prob. Crítica contra enemigos afectados.",
+        "reviewedBonus": false
       },
       {
         "set": "Furia del Trueno (4 piezas)",
         "type": "BiS Rotaciones Clásicas",
-        "bonus": "-0.8s TdE en Habilidad Elemental al activar reacciones Electro, duplicando lanzamientos de garra."
+        "bonus": "-0.8s TdE en Habilidad Elemental al activar reacciones Electro, duplicando lanzamientos de garra.",
+        "reviewedBonus": false
       },
       {
         "set": "Sueños Áureos (4 piezas)",
         "type": "BiS Quickbloom Tradicional",
-        "bonus": "+Hasta 230 de Maestría Elemental y +14% ATQ continuo en equipos de Sobreflorecimiento."
+        "bonus": "+Hasta 230 de Maestría Elemental y +14% ATQ continuo en equipos de Sobreflorecimiento.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -11687,6 +13663,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Electro%",
       "circlet": "Prob. Crítica% o Daño Crítico%",
       "substats": "Crit > EM > ER% > ATQ%"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/cyno-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -11706,39 +13696,48 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado Híbrido por Vida Máxima (HP%) & ATQ",
     "bestWeapons": [
       {
-        "name": "Emblema del Mar de Juncos (Beacon of the Reed Sea)",
+        "name": "Emblema del Mar de Juncos",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+Prob. Crítica, +Vida% y enorme bono de ATQ al recibir daño."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica, +Vida% y enorme bono de ATQ al recibir daño.",
+        "weaponId": "12511",
+        "reviewedNote": false
       },
       {
         "name": "Gran Espada de Favonius",
         "rarity": 4,
-        "type": "BiS Utilidad F2P",
-        "note": "Batería de recarga para solucionar su coste de Definitiva."
+        "type": "Opción por rol",
+        "note": "Batería de recarga para solucionar su coste de Definitiva.",
+        "weaponId": "12401",
+        "reviewedNote": false
       },
       {
-        "name": "Segadora de la Lluvia R5",
+        "name": "Segadora de la Lluvia",
         "rarity": 4,
-        "type": "BiS Crepitar / Burgeon",
-        "note": "+165 Maestría y +36% Daño contra Hydro/Pyro."
+        "type": "Opción por rol",
+        "note": "+165 Maestría y +36% Daño contra Hydro/Pyro.",
+        "weaponId": "12405",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Tenacidad de la Geoarmada (4 piezas)",
         "type": "BiS Soporte Equipo",
-        "bonus": "+20% Vida Máx y +20% ATQ para el equipo al impactar su campo de llamas."
+        "bonus": "+20% Vida Máx y +20% ATQ para el equipo al impactar su campo de llamas.",
+        "reviewedBonus": false
       },
       {
         "set": "Emblema del Destino (4 piezas)",
         "type": "BiS DPS Nuke",
-        "bonus": "Máximo daño en su ráfaga de puñetazos ardientes."
+        "bonus": "Máximo daño en su ráfaga de puñetazos ardientes.",
+        "reviewedBonus": false
       },
       {
         "set": "Flor Olvidada del Paraíso (4 piezas)",
         "type": "BiS Crepitar / Burgeon",
-        "bonus": "+80% Daño de Reacción de Crepitar continuo."
+        "bonus": "+80% Daño de Reacción de Crepitar continuo.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -11796,6 +13795,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Pyro% o Vida% o EM",
       "circlet": "Prob. Crítica% o Vida% o EM",
       "substats": "1. Vida% y Vida Plana (35,000 – 42,000 HP) > 2. Recarga de Energía% (170% – 200% ER) > 3. Prob. Crítica / Daño Crítico (1:2) > 4. Maestría Elemental"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/dehya-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -11817,32 +13830,40 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Oración Perdida a los Vientos Sagrados",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+Prob. Crítica, velocidad de movimiento y Bono Daño Elemental continuo."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica, velocidad de movimiento y Bono Daño Elemental continuo.",
+        "weaponId": "14502",
+        "reviewedNote": false
       },
       {
-        "name": "Sinfonía de los Merodeadores (The Widsith R5)",
+        "name": "Sinfonía de los Merodeadores",
         "rarity": 4,
-        "type": "BiS 4★ Ráfaga",
-        "note": "+55.1% Daño Crítico y buff colosal al entrar en combate."
+        "type": "Opción por rol",
+        "note": "+55.1% Daño Crítico y buff colosal al entrar en combate.",
+        "weaponId": "14402",
+        "reviewedNote": false
       },
       {
-        "name": "Cuentos de Dodoco (Dodoco Tales R5)",
+        "name": "Cuentos de Dodoco",
         "rarity": 4,
-        "type": "F2P Insignia",
-        "note": "Potenciación directa de Ataques Normales y Cargados."
+        "type": "Opción por rol",
+        "note": "Potenciación directa de Ataques Normales y Cargados.",
+        "weaponId": "14413",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Bruja Carmesí en Llamas (4 piezas)",
         "type": "BiS Reacciones Pyro",
-        "bonus": "+15% Bono Pyro y daño aumentado de Vaporizados."
+        "bonus": "+15% Bono Pyro y daño aumentado de Vaporizados.",
+        "reviewedBonus": false
       },
       {
         "set": "Virtuoso Corredor de Lava (4 piezas)",
         "type": "BiS Mono Pyro",
-        "bonus": "+35% Daño directo incondicional a enemigos en llamas."
+        "bonus": "+35% Daño directo incondicional a enemigos en llamas.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -11900,6 +13921,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Pyro%",
       "circlet": "Prob. Crítica% o Daño Crítico%",
       "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% (1,900 – 2,300 ATQ) > 3. Maestría Elemental (100 – 160 EM) > 4. Recarga de Energía% (120% ER)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/klee-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -11921,32 +13956,48 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Códice de Favonius",
         "rarity": 4,
-        "type": "BiS Batería Utilidad",
-        "note": "Alivia su alto coste de energía en la Definitiva."
+        "type": "Opción por rol",
+        "note": "Alivia su alto coste de energía en la Definitiva.",
+        "weaponId": "14401",
+        "reviewedNote": false
       },
       {
         "name": "Cuentos de Cazadores de Dragones",
         "rarity": 3,
-        "type": "BiS Buffer",
-        "note": "+48% ATQ para tu Main DPS."
+        "type": "Opción por rol",
+        "note": "+48% ATQ para tu Main DPS.",
+        "weaponId": "11316",
+        "reviewedNote": false
       },
       {
-        "name": "Ojo del Juramento / Prototipo Ámbar",
+        "name": "Ojo del Juramento",
         "rarity": 4,
-        "type": "Alternativas F2P",
-        "note": "Aporte de ATQ y Recarga de Energía."
+        "type": "Opción por rol",
+        "note": "Aporte de ATQ y Recarga de Energía.",
+        "weaponId": "14415",
+        "reviewedNote": false
+      },
+      {
+        "name": "Prototipo Ámbar",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Aporte de ATQ y Recarga de Energía.",
+        "weaponId": "14406",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Ritual Antiguo de la Nobleza (4 piezas)",
         "type": "BiS Buffer Equipo",
-        "bonus": "+20% ATQ para todos los aliados tras usar su flash fotográfico."
+        "bonus": "+20% ATQ para todos los aliados tras usar su flash fotográfico.",
+        "reviewedBonus": false
       },
       {
         "set": "Doncella Amada (4 piezas)",
         "type": "Máxima Curación",
-        "bonus": "Curación masiva de emergencia."
+        "bonus": "Curación masiva de emergencia.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -12003,6 +14054,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "ATQ%",
       "circlet": "Bono Curación% o Prob. Crítica% (Favonius)",
       "substats": "1. Recarga de Energía% (200% – 240% ER) > 2. ATQ% (1,800 – 2,200 ATQ) > 3. Prob. Crítica (si usa Favonius)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/charlotte-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -12022,39 +14087,56 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por Vida Máxima (HP%) & Escudo de Caja Nekomata",
     "bestWeapons": [
       {
-        "name": "Llave de la Coronación (Key of Khaj-Nisut)",
+        "name": "Llave de la Coronación",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+66.2% Vida Máx masiva y conversión de Vida a Maestría para el equipo."
+        "type": "Opción por rol",
+        "note": "+66.2% Vida Máx masiva y conversión de Vida a Maestría para el equipo.",
+        "weaponId": "11511",
+        "reviewedNote": false
       },
       {
-        "name": "Espada de Favonius / Sacrificio",
+        "name": "Espada de Favonius",
         "rarity": 4,
-        "type": "BiS Batería F2P",
-        "note": "Recarga de energía y partículas para rotaciones perfectas."
+        "type": "Opción por rol",
+        "note": "Recarga de energía y partículas para rotaciones perfectas.",
+        "weaponId": "11401",
+        "reviewedNote": false
+      },
+      {
+        "name": "Espada de Sacrificio",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Recarga de energía y partículas para rotaciones perfectas.",
+        "weaponId": "11403",
+        "reviewedNote": false
       },
       {
         "name": "Espada de Madera",
         "rarity": 4,
-        "type": "Forja Sumeru",
-        "note": "Suelta hojas que otorgan hasta 120 de Maestría Elemental al DPS."
+        "type": "Opción por rol",
+        "note": "Suelta hojas que otorgan hasta 120 de Maestría Elemental al DPS.",
+        "weaponId": "11417",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Recuerdos del Bosque (4 piezas)",
         "type": "BiS Soporte Dendro",
-        "bonus": "-30% Resistencia Dendro al golpear a los enemigos en modo caja."
+        "bonus": "-30% Resistencia Dendro al golpear a los enemigos en modo caja.",
+        "reviewedBonus": false
       },
       {
         "set": "Tenacidad de la Geoarmada (4 piezas)",
         "type": "Escudo y Buff",
-        "bonus": "+20% Vida Máx y +20% ATQ para el equipo."
+        "bonus": "+20% Vida Máx y +20% ATQ para el equipo.",
+        "reviewedBonus": false
       },
       {
         "set": "Instructor (4 piezas)",
         "type": "BiS Buffer EM",
-        "bonus": "+120 Maestría Elemental para todo el equipo tras provocar reacciones."
+        "bonus": "+120 Maestría Elemental para todo el equipo tras provocar reacciones.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -12111,6 +14193,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Vida%",
       "circlet": "Vida% o Prob. Crítica (Favonius)",
       "substats": "1. Vida% y Vida Plana (38,000 – 48,000 HP) > 2. Recarga de Energía% (140% – 160% ER) > 3. Prob. Crítica (para Favonius)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/kirara-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -12130,34 +14226,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por Vida Máxima (HP%) & Rábanos de Yuegui",
     "bestWeapons": [
       {
-        "name": "Borla Negra R5",
+        "name": "Borla Negra",
         "rarity": 3,
-        "type": "BiS Vida F2P",
-        "note": "+46.9% Vida Máx gratuita para curación colosal."
+        "type": "Opción por rol",
+        "note": "+46.9% Vida Máx gratuita para curación colosal.",
+        "weaponId": "11313",
+        "reviewedNote": false
       },
       {
         "name": "Lanza de Favonius",
         "rarity": 4,
-        "type": "BiS Utilidad",
-        "note": "Partículas de recarga constantes para el equipo."
+        "type": "Opción por rol",
+        "note": "Partículas de recarga constantes para el equipo.",
+        "weaponId": "13407",
+        "reviewedNote": false
       },
       {
         "name": "Cruz de Kitain",
         "rarity": 4,
-        "type": "Forja Inazuma",
-        "note": "+Maestría y regeneración pasiva de energía."
+        "type": "Opción por rol",
+        "note": "+Maestría y regeneración pasiva de energía.",
+        "weaponId": "13414",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Recuerdos del Bosque (4 piezas)",
         "type": "BiS Reducción RES",
-        "bonus": "-30% Resistencia Dendro continua con los rábanos de Yuegui."
+        "bonus": "-30% Resistencia Dendro continua con los rábanos de Yuegui.",
+        "reviewedBonus": false
       },
       {
         "set": "Tenacidad de la Geoarmada (4 piezas)",
         "type": "BiS Buffer ATQ",
-        "bonus": "+20% ATQ continuo para el equipo mientras Yuegui lanza rábanos."
+        "bonus": "+20% ATQ continuo para el equipo mientras Yuegui lanza rábanos.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -12215,6 +14319,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Vida%",
       "circlet": "Bono de Curación% o Vida%",
       "substats": "1. Vida% y Vida Plana (34,000 – 40,000 HP) > 2. Recarga de Energía% (160% – 190% ER) > 3. Maestría Elemental > 4. Prob. Crítica (Favonius)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/yaoyao-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -12236,32 +14354,40 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Oración Perdida a los Vientos Sagrados",
         "rarity": 5,
-        "type": "BiS 5★ DPS",
-        "note": "Crítico y bono elemental."
+        "type": "Opción por rol",
+        "note": "Crítico y bono elemental.",
+        "weaponId": "14502",
+        "reviewedNote": false
       },
       {
-        "name": "Sinfonía de los Merodeadores (The Widsith)",
+        "name": "Sinfonía de los Merodeadores",
         "rarity": 4,
-        "type": "BiS 4★ Gacha",
-        "note": "Daño Crítico colosal."
+        "type": "Opción por rol",
+        "note": "Daño Crítico colosal.",
+        "weaponId": "14402",
+        "reviewedNote": false
       },
       {
-        "name": "Prototipo Ámbar (Tankfei C4)",
+        "name": "Prototipo Ámbar",
         "rarity": 4,
-        "type": "BiS Escudo Tankfei",
-        "note": "Vida y curación con escudo colosal en C4."
+        "type": "Opción por rol",
+        "note": "Vida y curación con escudo colosal en C4.",
+        "weaponId": "14406",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Bruja Carmesí en Llamas (4 piezas)",
         "type": "BiS Vaporizados",
-        "bonus": "+15% Bono Pyro y +15% Daño en Vaporizados."
+        "bonus": "+15% Bono Pyro y +15% Daño en Vaporizados.",
+        "reviewedBonus": false
       },
       {
         "set": "Orquesta del Errante (4 piezas)",
         "type": "BiS Ataques Cargados",
-        "bonus": "+80 EM y +35% Daño continuo en Ataques Cargados."
+        "bonus": "+80 EM y +35% Daño continuo en Ataques Cargados.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -12319,6 +14445,20 @@ const CHARACTER_BUILDS_DB = [
       "goblet": "Bono Daño Pyro%",
       "circlet": "Prob. Crítica% o Daño Crítico%",
       "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% (1,800 – 2,200 ATQ) > 3. Maestría Elemental (120 – 200 EM) > 4. Recarga de Energía% (130% ER)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/yanfei-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -12338,34 +14478,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escala con Maestría Elemental (EM) y Recarga de Energía",
     "bestWeapons": [
       {
-        "name": "Sabiduría Fraguada (Flame-Forged Insight)",
+        "name": "Sabiduría Fraguada",
         "rarity": 4,
-        "type": "BiS",
-        "note": "Mandoble de Maestría Elemental y soporte de reacciones lunares."
+        "type": "Opción por rol",
+        "note": "Mandoble de Maestría Elemental y soporte de reacciones lunares.",
+        "weaponId": "12432",
+        "reviewedNote": false
       },
       {
-        "name": "Fierro Floriorlado (Mailed Flower R5)",
+        "name": "Fierro Floriorlado",
         "rarity": 4,
-        "type": "Alternativa EM",
-        "note": "Excelente aporte de Maestría Elemental pasiva."
+        "type": "Opción por rol",
+        "note": "Excelente aporte de Maestría Elemental pasiva.",
+        "weaponId": "12418",
+        "reviewedNote": false
       },
       {
-        "name": "Gran Espada de Favonius (Favonius Greatsword)",
+        "name": "Gran Espada de Favonius",
         "rarity": 4,
-        "type": "Batería F2P",
-        "note": "Generación de partículas blancas para todo el equipo."
+        "type": "Opción por rol",
+        "note": "Generación de partículas blancas para todo el equipo.",
+        "weaponId": "12401",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Serenata de la Luna Tejida / Silken Moon's Serenade (4 piezas)",
         "type": "BiS",
-        "bonus": "Aumenta la Maestría Elemental y potencia las reacciones del equipo."
+        "bonus": "Aumenta la Maestría Elemental y potencia las reacciones del equipo.",
+        "reviewedBonus": false
       },
       {
         "set": "Instructor (4 piezas)",
         "type": "Opción F2P",
-        "bonus": "+120 EM para todo el equipo tras activar una reacción."
+        "bonus": "+120 EM para todo el equipo tras activar una reacción.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -12422,6 +14570,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "800 - 1,000 EM",
       "er": "160% - 180% ER",
       "crit": "60%+ CR / 120%+ CD"
+    },
+    "talentPriority": "Definitiva (Q) >> Habilidad (E). Talentos de baja prioridad; nivel del personaje para reacciones.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/aino-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -12441,49 +14606,63 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% y Multiplicadores de Carga Lunar",
     "bestWeapons": [
       {
-        "name": "Bloodsoaked Ruins",
+        "name": "Ruinas Ensangrentadas",
         "rarity": 5,
-        "type": "BiS Firma Nod-Krai",
-        "note": "+Prob. Crítica y aumento masivo al daño de ataques lunares."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica y aumento masivo al daño de ataques lunares.",
+        "weaponId": "13516",
+        "reviewedNote": false
       },
       {
-        "name": "Halcón de Jade Primordial",
+        "name": "Halcón de Jade",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "+Prob. Crítica y acumulación de ATQ% constante."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica y acumulación de ATQ% constante.",
+        "weaponId": "13505",
+        "reviewedNote": false
       },
       {
         "name": "Báculo de Homa",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "+66.2% Daño Crítico y bono de ATQ por vida."
+        "type": "Opción por rol",
+        "note": "+66.2% Daño Crítico y bono de ATQ por vida.",
+        "weaponId": "13501",
+        "reviewedNote": false
       },
       {
-        "name": "La Captura (The Catch R5)",
+        "name": "La Captura",
         "rarity": 4,
-        "type": "Mejor F2P",
-        "note": "+32% Daño de Burst y +12% Prob. Crítica gratis."
+        "type": "Opción por rol",
+        "note": "+32% Daño de Burst y +12% Prob. Crítica gratis.",
+        "weaponId": "13415",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Night of the Sky's Unveiling (4 piezas)",
-        "note": "BiS Nod-Krai: Incrementa daño Electro y crítico tras invocar la noche."
+        "note": "BiS Nod-Krai: Incrementa daño Electro y crítico tras invocar la noche.",
+        "bonus": "BiS Nod-Krai: Incrementa daño Electro y crítico tras invocar la noche.",
+        "reviewedBonus": false
       },
       {
         "set": "Furia del Trueno (4 piezas)",
-        "note": "+15% Daño Electro y reducción de enfriamientos con reacciones."
+        "note": "+15% Daño Electro y reducción de enfriamientos con reacciones.",
+        "bonus": "+15% Daño Electro y reducción de enfriamientos con reacciones.",
+        "reviewedBonus": false
       },
       {
         "set": "Gladiador (4 piezas)",
-        "note": "+35% Daño en Ataques Normales."
+        "note": "+35% Daño en Ataques Normales.",
+        "bonus": "+35% Daño en Ataques Normales.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
-      "sands": "ATQ% o Recarga de Energía",
-      "goblet": "Bono Daño Electro%",
-      "circlet": "Prob. Crítica o Daño Crítico",
-      "substats": "Prob. Crítica > Daño Crítico > ATQ% > Recarga de Energía% > EM"
+      "sands": "ATQ%",
+      "goblet": "ATQ%",
+      "circlet": "Prob. Crítica / Daño Crítico",
+      "substats": "Recarga hasta lo requerido > Crítico > ATQ% > Maestría."
     },
     "benchmarks": {
       "hp": "17,000 - 19,000",
@@ -12516,16 +14695,12 @@ const CHARACTER_BUILDS_DB = [
       }
     ],
     "substatsPriority": [
-      "1. Prob. Crítica",
-      "2. Daño Crítico",
-      "3. ATQ%",
-      "4. Recarga de Energía%",
-      "5. EM"
+      "Recarga hasta lo requerido > Crítico > ATQ% > Maestría."
     ],
     "mainStats": {
-      "sands": "ATQ% o Recarga de Energía",
-      "goblet": "Bono Daño Electro%",
-      "circlet": "Prob. Crítica o Daño Crítico"
+      "sands": "ATQ%",
+      "goblet": "ATQ%",
+      "circlet": "Prob. Crítica / Daño Crítico"
     },
     "recommendedPanel": {
       "hp": "17,000 - 19,000",
@@ -12534,6 +14709,24 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "130% - 140%",
       "crit": "75%+ CR / 170%+ CD"
+    },
+    "talentPriority": "Definitiva (Q) > nivel 90 > Habilidad (E). Normales sin subir.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/flins-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico.",
+        "Estadísticas contrastadas con la guía del rol indicado."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -12553,42 +14746,56 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por Maestría Elemental (EM) y Vida%",
     "bestWeapons": [
       {
-        "name": "Nightweaver's Looking Glass",
+        "name": "Espejo Tejenoches",
         "rarity": 5,
-        "type": "BiS Firma Nod-Krai",
-        "note": "+EM y daño residual a núcleos dendro y reacciones."
+        "type": "Opción por rol",
+        "note": "+EM y daño residual a núcleos dendro y reacciones.",
+        "weaponId": "14520",
+        "reviewedNote": false
       },
       {
-        "name": "Mil Soles Flotantes (A Thousand Floating Dreams)",
+        "name": "Sueños de las Mil Noches",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "Buff masivo de EM para todo el equipo."
+        "type": "Opción por rol",
+        "note": "Buff masivo de EM para todo el equipo.",
+        "weaponId": "14511",
+        "reviewedNote": false
       },
       {
-        "name": "Memorias de Sacrificio",
+        "name": "Memorias de Sacrificios",
         "rarity": 4,
-        "type": "Mejor 4★ Gacha",
-        "note": "+221 EM y doble aplicación Dendro."
+        "type": "Opción por rol",
+        "note": "+221 EM y doble aplicación Dendro.",
+        "weaponId": "14403",
+        "reviewedNote": false
       },
       {
-        "name": "Prototipo Ámbar (Prototype Amber R5)",
+        "name": "Prototipo Ámbar",
         "rarity": 4,
-        "type": "Mejor F2P",
-        "note": "Curación grupal adicional y recarga pasiva."
+        "type": "Opción por rol",
+        "note": "Curación grupal adicional y recarga pasiva.",
+        "weaponId": "14406",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Recuerdos del Bosque (4 piezas)",
-        "note": "BiS Indiscutible: -30% Resistencia Dendro enemiga continua."
+        "note": "BiS Indiscutible: -30% Resistencia Dendro enemiga continua.",
+        "bonus": "BiS Indiscutible: -30% Resistencia Dendro enemiga continua.",
+        "reviewedBonus": false
       },
       {
         "set": "Sueños Áureos (4 piezas)",
-        "note": "Hasta +230 EM adicional tras activar reacciones."
+        "note": "Hasta +230 EM adicional tras activar reacciones.",
+        "bonus": "Hasta +230 EM adicional tras activar reacciones.",
+        "reviewedBonus": false
       },
       {
         "set": "Instructor (4 piezas)",
-        "note": "+120 EM a todo el equipo."
+        "note": "+120 EM a todo el equipo.",
+        "bonus": "+120 EM a todo el equipo.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -12645,6 +14852,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "850 - 1,000 EM",
       "er": "160% ER",
       "crit": "60%+ CR / 120%+ CD"
+    },
+    "talentPriority": "Habilidad (E) = Definitiva (Q) > nivel 90.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/lauma-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -12664,41 +14888,49 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escala con ATQ% total y Recarga de Energía",
     "bestWeapons": [
       {
-        "name": "Luz del Segador (Engulfing Lightning)",
+        "name": "Luz del Segador",
         "rarity": 5,
-        "type": "BiS",
-        "note": "Convierte Recarga de Energía en ATQ% masivo para su buff."
+        "type": "Opción por rol",
+        "note": "Convierte Recarga de Energía en ATQ% masivo para su buff.",
+        "weaponId": "13509",
+        "reviewedNote": false
       },
       {
-        "name": "Lanza de Favonius (Favonius Lance)",
+        "name": "Lanza de Favonius",
         "rarity": 4,
-        "type": "Mejor 4★ Batería",
-        "note": "Recarga de energía y partículas para rotaciones continuas."
+        "type": "Opción por rol",
+        "note": "Recarga de energía y partículas para rotaciones continuas.",
+        "weaponId": "13407",
+        "reviewedNote": false
       },
       {
-        "name": "La Captura (The Catch R5)",
+        "name": "La Captura",
         "rarity": 4,
-        "type": "Opción F2P",
-        "note": "+45.9% ER y +32% Daño de Habilidad Definitiva."
+        "type": "Opción por rol",
+        "note": "+45.9% ER y +32% Daño de Habilidad Definitiva.",
+        "weaponId": "13415",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Ritual Antiguo de la Nobleza (4 piezas)",
         "type": "BiS",
-        "bonus": "+20% Daño de Definitiva y +20% ATQ para todo el equipo."
+        "bonus": "+20% Daño de Definitiva y +20% ATQ para todo el equipo.",
+        "reviewedBonus": false
       },
       {
         "set": "Emblema del Destino (4 piezas)",
         "type": "Alternativa ER",
-        "bonus": "+20% Recarga de Energía y daño de Definitiva."
+        "bonus": "+20% Recarga de Energía y daño de Definitiva.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
-      "sands": "Recarga de Energía o ATQ%",
-      "goblet": "ATQ% o Bono Daño Cryo%",
-      "circlet": "Prob. Crítica o ATQ%",
-      "substats": "Recarga de Energía% > Prob. Crítica > ATQ% > Daño Crítico"
+      "sands": "Recarga / ATQ%",
+      "goblet": "ATQ%",
+      "circlet": "Bono de Curación / ATQ% / Prob. Crítica con Favonius",
+      "substats": "Recarga > Prob. Crítica con Favonius > ATQ%."
     },
     "benchmarks": {
       "hp": "17,000 - 19,000",
@@ -12731,15 +14963,12 @@ const CHARACTER_BUILDS_DB = [
       }
     ],
     "mainStats": {
-      "sands": "ATQ% o Recarga de Energía",
+      "sands": "Recarga / ATQ%",
       "goblet": "ATQ%",
-      "circlet": "ATQ% o Prob. Crítica"
+      "circlet": "Bono de Curación / ATQ% / Prob. Crítica con Favonius"
     },
     "substatsPriority": [
-      "1. Recarga de Energía%",
-      "2. Prob. Crítica",
-      "3. ATQ%",
-      "4. Daño Crítico"
+      "Recarga > Prob. Crítica con Favonius > ATQ%."
     ],
     "recommendedPanel": {
       "hp": "17,000 - 19,000",
@@ -12748,6 +14977,24 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "220% - 250% ER",
       "crit": "55%+ CR"
+    },
+    "talentPriority": "Habilidad (E) > Definitiva (Q). Normales sin subir.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/alyosha-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico.",
+        "Estadísticas contrastadas con la guía del rol indicado."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -12767,41 +15014,49 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escala con ATQ% y Críticos",
     "bestWeapons": [
       {
-        "name": "Allende la Crisálida (Beyond the Chrysalis)",
+        "name": "Allende la Crisálida",
         "rarity": 5,
-        "type": "BiS Absoluto (Firma)",
-        "note": "Espada ligera firma de Vesna para daño de Torbellino Estelar."
+        "type": "Opción por rol",
+        "note": "Espada ligera firma de Vesna para daño de Torbellino Estelar.",
+        "weaponId": "11522",
+        "reviewedNote": false
       },
       {
-        "name": "Reflejo de las Tinieblas (Mistsplitter Reforged)",
+        "name": "Reflejo de las Tinieblas",
         "rarity": 5,
-        "type": "Alternativa 5★",
-        "note": "Daño Crítico alto y bono elemental."
+        "type": "Opción por rol",
+        "note": "Daño Crítico alto y bono elemental.",
+        "weaponId": "11509",
+        "reviewedNote": false
       },
       {
-        "name": "Cortador de Jade Primordial (Primordial Jade Cutter)",
+        "name": "Cortador de Jade Primordial",
         "rarity": 5,
-        "type": "Stat-Stick CR",
-        "note": "44.1% Prob. Crítica y bono de ATQ."
+        "type": "Opción por rol",
+        "note": "44.1% Prob. Crítica y bono de ATQ.",
+        "weaponId": "11505",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Testimonio Escarlata / Scarlet Proof (4 piezas)",
-        "type": "BiS",
-        "bonus": "Potencia el daño de Torbellino Estelar y Crítico."
+        "set": "Scarlet Proof (4 piezas)",
+        "type": "Según equipo y rol",
+        "bonus": "",
+        "reviewedBonus": false
       },
       {
-        "set": "Sombra Verde Esmeralda (4 piezas)",
-        "type": "Alternativa Anemo",
-        "bonus": "+15% Daño Anemo y -40% RES Elemental."
+        "set": "Gilded Dreams (4 piezas)",
+        "type": "Según equipo y rol",
+        "bonus": "",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
-      "sands": "ATQ% o Maestría Elemental",
-      "goblet": "Bono Daño Anemo%",
-      "circlet": "Prob. Crítica o Daño Crítico",
-      "substats": "Prob. Crítica > Daño Crítico > ATQ% > Maestría Elemental > Recarga"
+      "sands": "ATQ%",
+      "goblet": "ATQ%",
+      "circlet": "Prob. Crítica / Daño Crítico",
+      "substats": "Crítico > ATQ% > Maestría. No forzar recarga para usar Q cada rotación."
     },
     "benchmarks": {
       "hp": "17,000 - 19,000",
@@ -12813,37 +15068,35 @@ const CHARACTER_BUILDS_DB = [
     },
     "metaTeams": [
       {
-        "name": "Vesna Stellar Swirl",
+        "name": "Torbellino Estelar",
         "members": [
           "Vesna",
-          "Faruzan",
-          "Furina",
-          "Bennett"
+          "Odette",
+          "Vodyanitsa",
+          "Faruzan"
         ],
-        "comp": "Vesna • Faruzan • Furina • Bennett"
+        "comp": "Vesna • Odette • Vodyanitsa • Faruzan",
+        "note": "Faruzan C6. Mantener aplicación Cryo."
       },
       {
-        "name": "Vesna National Hyper",
+        "name": "Alternativa con Qiqi",
         "members": [
           "Vesna",
-          "Xiangling",
-          "Xingqiu",
-          "Bennett"
+          "Odette",
+          "Qiqi",
+          "Faruzan"
         ],
-        "comp": "Vesna • Xiangling • Xingqiu • Bennett"
+        "comp": "Vesna • Odette • Qiqi • Faruzan",
+        "note": "Faruzan C6; Qiqi aporta curación."
       }
     ],
     "mainStats": {
       "sands": "ATQ%",
-      "goblet": "ATQ% o Bono Daño Anemo%",
-      "circlet": "Prob. Crítica o Daño Crítico"
+      "goblet": "ATQ%",
+      "circlet": "Prob. Crítica / Daño Crítico"
     },
     "substatsPriority": [
-      "1. Prob. Crítica",
-      "2. Daño Crítico",
-      "3. ATQ%",
-      "4. Maestría Elemental",
-      "5. Recarga"
+      "Crítico > ATQ% > Maestría. No forzar recarga para usar Q cada rotación."
     ],
     "recommendedPanel": {
       "hp": "17,000 - 19,000",
@@ -12852,6 +15105,26 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "125%",
       "crit": "70%+ CR / 180%+ CD"
+    },
+    "talentPriority": "Habilidad (E) >> Definitiva (Q). Los ataques especiales escalan con E.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://www.prydwen.gg/genshin-impact/characters/vesna",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico.",
+        "Estadísticas contrastadas con la guía del rol indicado.",
+        "Sustituidos equipos sin Cryo que no podían activar Torbellino Estelar.",
+        "Sets contrastados; eliminadas alternativas que no benefician al daño principal de este rol."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -12871,34 +15144,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escala 100% con Vida Máxima (HP%)",
     "bestWeapons": [
       {
-        "name": "Himno del Vórtice (Hymn of the Maelstrom)",
+        "name": "Himno del Vórtice",
         "rarity": 5,
-        "type": "BiS Absoluto (Firma)",
-        "note": "Catalizador firma con Vida% masiva y amplificación de equipo Freeze."
+        "type": "Opción por rol",
+        "note": "Catalizador firma con Vida% masiva y amplificación de equipo Freeze.",
+        "weaponId": "14524",
+        "reviewedNote": false
       },
       {
-        "name": "Cuentos de Cazadores de Dragones (TTDS R5)",
+        "name": "Cuentos de Cazadores de Dragones",
         "rarity": 3,
-        "type": "Mejor Buffer F2P",
-        "note": "+35.2% Vida y +48% ATQ al DPS principal."
+        "type": "Opción por rol",
+        "note": "+35.2% Vida y +48% ATQ al DPS principal.",
+        "weaponId": "11316",
+        "reviewedNote": false
       },
       {
-        "name": "Prototipo Ámbar (Prototype Amber R5)",
+        "name": "Prototipo Ámbar",
         "rarity": 4,
-        "type": "Batería & Curación",
-        "note": "41.3% Vida y regeneración de energía."
+        "type": "Opción por rol",
+        "note": "41.3% Vida y regeneración de energía.",
+        "weaponId": "14406",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Tenacidad de la Geoarmada (4 piezas)",
-        "type": "BiS",
-        "bonus": "+20% Vida y +20% ATQ para todo el equipo."
+        "set": "Tenacity of the Millelith (4 piezas)",
+        "type": "Según equipo y rol",
+        "bonus": "",
+        "reviewedBonus": false
       },
       {
-        "set": "Serenata de la Luna Tejida (4 piezas)",
-        "type": "Alternativa Soporte",
-        "bonus": "Soporte de reacciones elementales."
+        "set": "2p Tenacity of the Millelith + 2p Vourukasha’s Glow",
+        "type": "Según equipo y rol",
+        "bonus": "",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -12917,24 +15198,26 @@ const CHARACTER_BUILDS_DB = [
     },
     "metaTeams": [
       {
-        "name": "Permafrost Supremo",
+        "name": "Torbellino Estelar",
         "members": [
-          "Ayaka",
           "Vodyanitsa",
-          "Shenhe",
-          "Kazuha"
+          "Vesna",
+          "Odette",
+          "Faruzan"
         ],
-        "comp": "Ayaka • Vodyanitsa • Shenhe • Kazuha"
+        "comp": "Vodyanitsa • Vesna • Odette • Faruzan",
+        "note": "Faruzan C6."
       },
       {
-        "name": "Vodyanitsa Vaporize",
+        "name": "Cryo con Sandrone",
         "members": [
-          "Arlecchino",
           "Vodyanitsa",
-          "Yelan",
-          "Bennett"
+          "Sandrone",
+          "Odette",
+          "Yae Miko"
         ],
-        "comp": "Arlecchino • Vodyanitsa • Yelan • Bennett"
+        "comp": "Vodyanitsa • Sandrone • Odette • Yae Miko",
+        "note": ""
       }
     ],
     "mainStats": {
@@ -12955,6 +15238,25 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "170% - 190% ER",
       "crit": "60%+ CR / 120%+ CD"
+    },
+    "talentPriority": "Habilidad (E) > nivel 90 > Definitiva (Q). Normales sin subir.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/vodyanitsa-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico.",
+        "Priorizadas sinergias verificadas; su aplicación Hydro lenta no es un aplicador universal.",
+        "Sets contrastados; eliminadas alternativas que no benefician al daño principal de este rol."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -12974,51 +15276,64 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escala con ATQ%, Daño Crítico y Multiplicador del Vacío",
     "bestWeapons": [
       {
-        "name": "Azurelight",
+        "name": "Fulgor Cerúleo",
         "rarity": 5,
-        "type": "BiS Firma Oficial",
-        "note": "+44.1% Daño Crítico y penetración de resistencia abisal."
+        "type": "Opción por rol",
+        "note": "+44.1% Daño Crítico y penetración de resistencia abisal.",
+        "weaponId": "11517",
+        "reviewedNote": false
       },
       {
-        "name": "Reflejo de las Tinieblas (Mistsplitter)",
+        "name": "Reflejo de las Tinieblas",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "+44.1% Daño Crítico y hasta +28% Bono Elemental."
+        "type": "Opción por rol",
+        "note": "+44.1% Daño Crítico y hasta +28% Bono Elemental.",
+        "weaponId": "11509",
+        "reviewedNote": false
       },
       {
         "name": "Cortador de Jade Primordial",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "+44.1% Prob. Crítica y ATQ por vida."
+        "type": "Opción por rol",
+        "note": "+44.1% Prob. Crítica y ATQ por vida.",
+        "weaponId": "11505",
+        "reviewedNote": false
       },
       {
-        "name": "Espada Negra (The Black Sword R5)",
+        "name": "Espada Negra",
         "rarity": 4,
-        "type": "Pase de Batalla",
-        "note": "+40% Daño a Normales/Cargados y auto-cura."
+        "type": "Opción por rol",
+        "note": "+40% Daño a Normales/Cargados y auto-cura.",
+        "weaponId": "11409",
+        "reviewedNote": false
       },
       {
         "name": "Vado del Río Ceniciento",
         "rarity": 4,
-        "type": "Opción F2P Pesca",
-        "note": "+16% Prob. Crítica en Habilidad Elemental."
+        "type": "Opción por rol",
+        "note": "+16% Prob. Crítica en Habilidad Elemental.",
+        "weaponId": "11426",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Finale of the Deep Galleries (4 piezas)",
         "type": "BiS Oficial Indiscutible",
-        "bonus": "Con 0 de Energía Elemental, +60% Daño de Ataques Normales y +60% Daño de Definitiva. (No consume ni requiere energía)."
+        "bonus": "Con 0 de Energía Elemental, +60% Daño de Ataques Normales y +60% Daño de Definitiva. (No consume ni requiere energía).",
+        "reviewedBonus": false
       },
       {
         "set": "Cazador Sombrío (4 piezas)",
         "type": "BiS con Furina",
-        "bonus": "+36% Prob. Crítica permanente con fluctuaciones de vida de Furina."
+        "bonus": "+36% Prob. Crítica permanente con fluctuaciones de vida de Furina.",
+        "reviewedBonus": false
       },
       {
         "set": "Nómada del Invierno (4 piezas)",
         "type": "Alternativa Permafrost",
-        "bonus": "+40% Prob. Crítica contra enemigos congelados en composiciones Freeze."
+        "bonus": "+40% Prob. Crítica contra enemigos congelados en composiciones Freeze.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -13037,34 +15352,26 @@ const CHARACTER_BUILDS_DB = [
     },
     "metaTeams": [
       {
-        "name": "Skirk Abyssal Freeze (Top Meta)",
+        "name": "Hydro/Cryo",
         "members": [
           "Skirk",
           "Escoffier",
           "Furina",
           "Shenhe"
         ],
-        "comp": "Skirk • Escoffier • Furina • Shenhe"
+        "comp": "Skirk • Escoffier • Furina • Shenhe",
+        "note": ""
       },
       {
-        "name": "Skirk Mono Cryo Cataclysm",
-        "members": [
-          "Skirk",
-          "Shenhe",
-          "Kazuha",
-          "Citlali"
-        ],
-        "comp": "Skirk • Shenhe • Kazuha • Citlali"
-      },
-      {
-        "name": "Skirk Permafrost F2P",
+        "name": "Alternativa accesible",
         "members": [
           "Skirk",
           "Xingqiu",
           "Rosaria",
           "Dahlia"
         ],
-        "comp": "Skirk • Xingqiu • Rosaria • Dahlia"
+        "comp": "Skirk • Xingqiu • Rosaria • Dahlia",
+        "note": ""
       }
     ],
     "substatsPriority": [
@@ -13088,7 +15395,24 @@ const CHARACTER_BUILDS_DB = [
       "er": "100% (Base estricta - El set BiS exige 0 Energía)",
       "crit": "75%+ CR / 220%+ CD"
     },
-    "talentPriority": "Definitiva (Q) = Habilidad Elemental (E) > Ataque Normal"
+    "talentPriority": "En campo: Habilidad (E) > Definitiva (Q). Quickswap: Q > E. Normales sin subir.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/skirk-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Los ataques del estado especial escalan con E, no con el talento de normales.",
+        "Retirado Kazuha para respetar la restricción Hydro/Cryo del kit."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
+    }
   },
   {
     "id": "durin",
@@ -13109,40 +15433,54 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Athame Artis",
         "rarity": 5,
-        "type": "BiS Firma Hexerei",
-        "note": "+Crítico y daño colosal fuera de campo a habilidades de dragón."
+        "type": "Opción por rol",
+        "note": "+Crítico y daño colosal fuera de campo a habilidades de dragón.",
+        "weaponId": "11518",
+        "reviewedNote": false
       },
       {
         "name": "Reflejo de las Tinieblas",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "+Daño Crítico y bono Pyro universal."
+        "type": "Opción por rol",
+        "note": "+Daño Crítico y bono Pyro universal.",
+        "weaponId": "11509",
+        "reviewedNote": false
       },
       {
-        "name": "Deseo Ponzoñoso (Festering Desire R5)",
+        "name": "Deseo Ponzoñoso",
         "rarity": 4,
-        "type": "BiS Evento",
-        "note": "+32% Daño y +12% Crítico en Habilidad Elemental."
+        "type": "Opción por rol",
+        "note": "+32% Daño y +12% Crítico en Habilidad Elemental.",
+        "weaponId": "11413",
+        "reviewedNote": false
       },
       {
         "name": "Espada de Favonius",
         "rarity": 4,
-        "type": "Batería F2P",
-        "note": "Asegura rotaciones continuas de energía."
+        "type": "Opción por rol",
+        "note": "Asegura rotaciones continuas de energía.",
+        "weaponId": "11401",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "A Day Carved from Rising Winds (4 piezas)",
-        "note": "BiS Hexerei: Potencia reacciones Pyro y otorga daño apilable."
+        "note": "BiS Hexerei: Potencia reacciones Pyro y otorga daño apilable.",
+        "bonus": "BiS Hexerei: Potencia reacciones Pyro y otorga daño apilable.",
+        "reviewedBonus": false
       },
       {
         "set": "Compañía Dorada (4 piezas)",
-        "note": "+70% Daño de Habilidad Elemental fuera de campo."
+        "note": "+70% Daño de Habilidad Elemental fuera de campo.",
+        "bonus": "+70% Daño de Habilidad Elemental fuera de campo.",
+        "reviewedBonus": false
       },
       {
         "set": "Bruja Carmesí en Llamas (4 piezas)",
-        "note": "+15% Bono Pyro y +15% Daño a Vaporizado/Derretido."
+        "note": "+15% Bono Pyro y +15% Daño a Vaporizado/Derretido.",
+        "bonus": "+15% Bono Pyro y +15% Daño a Vaporizado/Derretido.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -13200,6 +15538,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "150 - 250 EM",
       "er": "120% ER",
       "crit": "70%+ CR / 180%+ CD"
+    },
+    "talentPriority": "Definitiva (Q) > Habilidad (E). Normales solo si juega en campo.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/durin-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -13219,49 +15574,63 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ Bruto, Fuerza de Ruptura y Torbellino de Mandoble",
     "bestWeapons": [
       {
-        "name": "Gest of the Mighty Wolf",
+        "name": "Cantar de Gesta del Lobo",
         "rarity": 5,
-        "type": "BiS Firma Oficial",
-        "note": "+Crítico masivo y daño descomunal a tajos de mandoble Anemo."
+        "type": "Opción por rol",
+        "note": "+Crítico masivo y daño descomunal a tajos de mandoble Anemo.",
+        "weaponId": "12515",
+        "reviewedNote": false
       },
       {
-        "name": "Lápida del Lobo (Wolf's Gravestone)",
+        "name": "Lápida del Lobo",
         "rarity": 5,
-        "type": "Opción 5★ Lore",
-        "note": "+ATQ% masivo y buff al escuadrón."
+        "type": "Opción por rol",
+        "note": "+ATQ% masivo y buff al escuadrón.",
+        "weaponId": "12502",
+        "reviewedNote": false
       },
       {
-        "name": "Médula de la Serpiente Marina (Serpent Spine)",
+        "name": "Médula de la Serpiente Marina",
         "rarity": 4,
-        "type": "BiS 4★ Pase",
-        "note": "+Prob. Crítica y hasta +50% daño total."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica y hasta +50% daño total.",
+        "weaponId": "12409",
+        "reviewedNote": false
       },
       {
-        "name": "Sombra de la Marea (Tidal Shadow R5)",
+        "name": "Sombra de la Marea",
         "rarity": 4,
-        "type": "Mejor F2P",
-        "note": "+48% ATQ tras recibir curación."
+        "type": "Opción por rol",
+        "note": "+48% ATQ tras recibir curación.",
+        "weaponId": "12425",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "A Day Carved from Rising Winds (4 piezas)",
-        "note": "BiS Hexerei: Incrementa daño de mandoble y torbellino anemo."
+        "note": "BiS Hexerei: Incrementa daño de mandoble y torbellino anemo.",
+        "bonus": "BiS Hexerei: Incrementa daño de mandoble y torbellino anemo.",
+        "reviewedBonus": false
       },
       {
         "set": "Pabellón del Desierto (4 piezas)",
-        "note": "+40% Daño a Normales y Cargados tras cargado."
+        "note": "+40% Daño a Normales y Cargados tras cargado.",
+        "bonus": "+40% Daño a Normales y Cargados tras cargado.",
+        "reviewedBonus": false
       },
       {
         "set": "Gladiador (4 piezas)",
-        "note": "+35% Daño en Ataques Normales."
+        "note": "+35% Daño en Ataques Normales.",
+        "bonus": "+35% Daño en Ataques Normales.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
       "sands": "ATQ%",
-      "goblet": "Bono Daño Anemo%",
-      "circlet": "Prob. Crítica o Daño Crítico",
-      "substats": "Prob. Crítica > Daño Crítico > ATQ% > Recarga de Energía% > EM"
+      "goblet": "Bono del elemento convertido / ATQ% > Bono Anemo",
+      "circlet": "Prob. Crítica / Daño Crítico",
+      "substats": "Crítico > ATQ% > Maestría, según reacciones."
     },
     "benchmarks": {
       "hp": "17,000 - 19,000",
@@ -13273,37 +15642,35 @@ const CHARACTER_BUILDS_DB = [
     },
     "metaTeams": [
       {
-        "name": "Varka Favonius Sovereign",
+        "name": "Doble Pyro / doble Anemo",
         "members": [
           "Varka",
-          "Faruzan",
-          "Furina",
-          "Bennett"
+          "Venti",
+          "Nicole",
+          "Durin"
         ],
-        "comp": "Varka • Faruzan • Furina • Bennett"
+        "comp": "Varka • Venti • Nicole • Durin",
+        "note": ""
       },
       {
-        "name": "Varka Hexerei Cleave",
+        "name": "Alternativa con Prune",
         "members": [
           "Varka",
-          "Xilonen",
-          "Yelan",
-          "Zhongli"
+          "Prune",
+          "Nicole",
+          "Durin"
         ],
-        "comp": "Varka • Xilonen • Yelan • Zhongli"
+        "comp": "Varka • Prune • Nicole • Durin",
+        "note": "Prune C6 para esta alternativa."
       }
     ],
     "substatsPriority": [
-      "1. Prob. Crítica",
-      "2. Daño Crítico",
-      "3. ATQ%",
-      "4. Recarga de Energía%",
-      "5. EM"
+      "Crítico > ATQ% > Maestría, según reacciones."
     ],
     "mainStats": {
       "sands": "ATQ%",
-      "goblet": "Bono Daño Anemo%",
-      "circlet": "Prob. Crítica o Daño Crítico"
+      "goblet": "Bono del elemento convertido / ATQ% > Bono Anemo",
+      "circlet": "Prob. Crítica / Daño Crítico"
     },
     "recommendedPanel": {
       "hp": "17,000 - 19,000",
@@ -13312,6 +15679,25 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "130%",
       "crit": "75%+ CR / 180%+ CD"
+    },
+    "talentPriority": "Habilidad (E) > nivel del personaje. Normales y definitiva pueden quedar sin subir.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/varka-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico.",
+        "Estadísticas contrastadas con la guía del rol indicado.",
+        "Corregida la composición para sus requisitos de elementos y Hexerei."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -13331,32 +15717,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por Maestría Elemental (EM) y Vida%",
     "bestWeapons": [
       {
-        "name": "Sunny Morning Sleep-In",
+        "name": "Hibernación Matutina de Año Nuevo",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+EM y daño a torbellinos."
+        "type": "Opción por rol",
+        "note": "+EM y daño a torbellinos.",
+        "weaponId": "14518",
+        "reviewedNote": false
       },
       {
-        "name": "Memorias de Sacrificio",
+        "name": "Memorias de Sacrificios",
         "rarity": 4,
-        "type": "BiS 4★",
-        "note": "+221 EM y reinicio de E."
+        "type": "Opción por rol",
+        "note": "+221 EM y reinicio de E.",
+        "weaponId": "14403",
+        "reviewedNote": false
       },
       {
-        "name": "Cuentos de Cazadores de Dragones (TTDS)",
+        "name": "Cuentos de Cazadores de Dragones",
         "rarity": 3,
-        "type": "Buffer F2P",
-        "note": "+48% ATQ."
+        "type": "Opción por rol",
+        "note": "+48% ATQ.",
+        "weaponId": "11316",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Sombra Verde Esmeralda (4 piezas)",
-        "note": "-40% Resistencia elemental enemiga."
+        "note": "-40% Resistencia elemental enemiga.",
+        "bonus": "-40% Resistencia elemental enemiga.",
+        "reviewedBonus": false
       },
       {
         "set": "Instructor (4 piezas)",
-        "note": "+120 EM al equipo."
+        "note": "+120 EM al equipo.",
+        "bonus": "+120 EM al equipo.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -13412,6 +15808,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "800+ EM",
       "er": "160%",
       "crit": "60%+ CR / 120%+ CD"
+    },
+    "talentPriority": "Nivel 90 > Habilidad (E) > Definitiva (Q) >> Normales.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/ifa-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -13431,32 +15844,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escudo escala con ATQ% y Recarga de Energía",
     "bestWeapons": [
       {
-        "name": "Candado Terrenal (Memory of Dust)",
+        "name": "Candado Terrenal",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+Fuerza de escudo y ATQ%."
+        "type": "Opción por rol",
+        "note": "+Fuerza de escudo y ATQ%.",
+        "weaponId": "14504",
+        "reviewedNote": false
       },
       {
         "name": "Ojo de la Perspicacia",
         "rarity": 4,
-        "type": "Opción ATQ",
-        "note": "+ATQ% para el escudo."
+        "type": "Opción por rol",
+        "note": "+ATQ% para el escudo.",
+        "weaponId": "14409",
+        "reviewedNote": false
       },
       {
         "name": "Cuentos de Cazadores de Dragones",
         "rarity": 3,
-        "type": "Buffer F2P",
-        "note": "+48% ATQ transferible."
+        "type": "Opción por rol",
+        "note": "+48% ATQ transferible.",
+        "weaponId": "11316",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Sombra Verde Esmeralda (4 piezas)",
-        "note": "-40% Resistencia enemiga."
+        "note": "-40% Resistencia enemiga.",
+        "bonus": "-40% Resistencia enemiga.",
+        "reviewedBonus": false
       },
       {
         "set": "Ritual Antiguo de la Nobleza (4 piezas)",
-        "note": "+20% ATQ."
+        "note": "+20% ATQ.",
+        "bonus": "+20% ATQ.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -13475,24 +15898,26 @@ const CHARACTER_BUILDS_DB = [
     },
     "metaTeams": [
       {
-        "name": "Lan Yan Shield Anemo",
+        "name": "Intensificación con escudo",
         "members": [
-          "Xiao",
-          "Faruzan",
           "Lan Yan",
-          "Furina"
+          "Clorinde",
+          "Fischl",
+          "Nahida"
         ],
-        "comp": "Xiao • Faruzan • Lan Yan • Furina"
+        "comp": "Lan Yan • Clorinde • Fischl • Nahida",
+        "note": ""
       },
       {
-        "name": "Lan Yan Hyperbloom Shielder",
+        "name": "Vaporizado con escudo",
         "members": [
-          "Alhacén",
           "Lan Yan",
-          "Nahida",
-          "Xingqiu"
+          "Arlecchino",
+          "Bennett",
+          "Yelan"
         ],
-        "comp": "Alhacén • Lan Yan • Nahida • Xingqiu"
+        "comp": "Lan Yan • Arlecchino • Bennett • Yelan",
+        "note": ""
       }
     ],
     "substatsPriority": [
@@ -13512,6 +15937,24 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "180%",
       "crit": "60%+ CR / 120%+ CD"
+    },
+    "talentPriority": "Escudo: Habilidad (E) > Definitiva (Q). Driver: nivel 90 > E > Q.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/lan-yan-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico.",
+        "Corregido Hyperbloom sin Electro y composición con Furina sin curación suficiente."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -13533,43 +15976,55 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Lanza de Favonius",
         "rarity": 4,
-        "type": "BiS Batería",
-        "note": "Batería de energía."
+        "type": "Opción por rol",
+        "note": "Batería de energía.",
+        "weaponId": "13407",
+        "reviewedNote": false
       },
       {
-        "name": "Huella del Arcoíris",
+        "name": "Estela Iridiscente",
         "rarity": 4,
-        "type": "Forja Natlan",
-        "note": "+DEF% masiva."
+        "type": "Opción por rol",
+        "note": "+DEF% masiva.",
+        "weaponId": "13431",
+        "reviewedNote": false
       },
       {
-        "name": "La Captura R5 (The Catch)",
+        "name": "La Captura",
         "rarity": 4,
-        "type": "BiS F2P Pesca",
-        "note": "+45.9% Recarga y +32% Daño en Definitiva."
+        "type": "Opción por rol",
+        "note": "+45.9% Recarga y +32% Daño en Definitiva.",
+        "weaponId": "13415",
+        "reviewedNote": false
       },
       {
         "name": "Balada de los Fiordos",
         "rarity": 4,
-        "type": "Pase de Batalla",
-        "note": "+27.6% Prob. Crítica y Maestría Elemental."
+        "type": "Opción por rol",
+        "note": "+27.6% Prob. Crítica y Maestría Elemental.",
+        "weaponId": "13424",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Silken Moon's Serenade (4 piezas)",
-        "note": "BiS Cristalización Lunar."
+        "note": "BiS Cristalización Lunar.",
+        "bonus": "BiS Cristalización Lunar.",
+        "reviewedBonus": false
       },
       {
         "set": "Cáscara de Sueños Opulentos (4 piezas)",
-        "note": "+DEF% y Bono Geo."
+        "note": "+DEF% y Bono Geo.",
+        "bonus": "+DEF% y Bono Geo.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
-      "sands": "DEF% o Recarga",
-      "goblet": "DEF%",
-      "circlet": "DEF% o Prob. Crítica",
-      "substats": "DEF% > Recarga de Energía% > Maestría Elemental"
+      "sands": "Maestría / Recarga",
+      "goblet": "Maestría",
+      "circlet": "Maestría / Prob. Crítica con Favonius",
+      "substats": "Recarga hasta lo requerido > Maestría > Prob. Crítica con Favonius."
     },
     "benchmarks": {
       "hp": "16,000",
@@ -13602,14 +16057,12 @@ const CHARACTER_BUILDS_DB = [
       }
     ],
     "substatsPriority": [
-      "1. DEF%",
-      "2. Recarga de Energía%",
-      "3. Maestría Elemental"
+      "Recarga hasta lo requerido > Maestría > Prob. Crítica con Favonius."
     ],
     "mainStats": {
-      "sands": "DEF% o Recarga",
-      "goblet": "DEF%",
-      "circlet": "DEF% o Prob. Crítica"
+      "sands": "Maestría / Recarga",
+      "goblet": "Maestría",
+      "circlet": "Maestría / Prob. Crítica con Favonius"
     },
     "recommendedPanel": {
       "hp": "16,000",
@@ -13618,6 +16071,24 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "170%",
       "crit": "60%+ CR / 120%+ CD"
+    },
+    "talentPriority": "Definitiva (Q) > nivel del personaje. Habilidad y normales opcionales.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/illuga-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico.",
+        "Estadísticas contrastadas con la guía del rol indicado."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -13637,39 +16108,49 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% y Maestría Elemental",
     "bestWeapons": [
       {
-        "name": "Fractured Halo",
+        "name": "Halo Fracturado",
         "rarity": 5,
-        "type": "BiS Firma",
-        "note": "+Crítico y daño de descargas lunares."
+        "type": "Opción por rol",
+        "note": "+Crítico y daño de descargas lunares.",
+        "weaponId": "13515",
+        "reviewedNote": false
       },
       {
         "name": "Báculo de las Arenas Escarlatas",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "Convierte EM en ATQ."
+        "type": "Opción por rol",
+        "note": "Convierte EM en ATQ.",
+        "weaponId": "13511",
+        "reviewedNote": false
       },
       {
-        "name": "La Captura (The Catch R5)",
+        "name": "La Captura",
         "rarity": 4,
-        "type": "Mejor F2P",
-        "note": "+32% Daño Definitiva."
+        "type": "Opción por rol",
+        "note": "+32% Daño Definitiva.",
+        "weaponId": "13415",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Aubade of Morningstar and Moon (4 piezas)",
-        "note": "BiS Daño Lunar."
+        "note": "BiS Daño Lunar.",
+        "bonus": "BiS Daño Lunar.",
+        "reviewedBonus": false
       },
       {
         "set": "Compañía Dorada (4 piezas)",
-        "note": "+70% Daño Habilidad Elemental."
+        "note": "+70% Daño Habilidad Elemental.",
+        "bonus": "+70% Daño Habilidad Elemental.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
-      "sands": "ATQ% o EM",
-      "goblet": "Bono Daño Electro%",
-      "circlet": "Prob. Crítica o Daño Crítico",
-      "substats": "Prob. Crítica > Daño Crítico > ATQ% > EM > Recarga"
+      "sands": "ATQ% / Maestría",
+      "goblet": "ATQ% / Maestría",
+      "circlet": "Prob. Crítica / Daño Crítico",
+      "substats": "Crítico > ATQ% > Maestría; recarga solo según uso de Q."
     },
     "benchmarks": {
       "hp": "17,000 - 19,000",
@@ -13702,16 +16183,12 @@ const CHARACTER_BUILDS_DB = [
       }
     ],
     "substatsPriority": [
-      "1. Prob. Crítica",
-      "2. Daño Crítico",
-      "3. ATQ%",
-      "4. EM",
-      "5. Recarga"
+      "Crítico > ATQ% > Maestría; recarga solo según uso de Q."
     ],
     "mainStats": {
-      "sands": "ATQ% o EM",
-      "goblet": "Bono Daño Electro%",
-      "circlet": "Prob. Crítica o Daño Crítico"
+      "sands": "ATQ% / Maestría",
+      "goblet": "ATQ% / Maestría",
+      "circlet": "Prob. Crítica / Daño Crítico"
     },
     "recommendedPanel": {
       "hp": "17,000 - 19,000",
@@ -13720,6 +16197,24 @@ const CHARACTER_BUILDS_DB = [
       "em": "150 EM",
       "er": "120% ER",
       "crit": "70%+ CR / 160%+ CD"
+    },
+    "talentPriority": "Nivel 90 > Habilidad (E) > Definitiva (Q). Normales sin subir.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/ineffa-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico.",
+        "Estadísticas contrastadas con la guía del rol indicado."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -13739,41 +16234,49 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escala con Defensa (DEF%) y Críticos",
     "bestWeapons": [
       {
-        "name": "Rama del Juramento Escarchado (Golden Frostbound Oath)",
+        "name": "Rama del Juramento Escarchado",
         "rarity": 5,
-        "type": "BiS Absoluto (Firma)",
-        "note": "Arco firma de Linnéa con DEF%, Crítico y bono de Cristalización Lunar."
+        "type": "Opción por rol",
+        "note": "Arco firma de Linnéa con DEF%, Crítico y bono de Cristalización Lunar.",
+        "weaponId": "15516",
+        "reviewedNote": false
       },
       {
         "name": "Aqua Simulacra",
         "rarity": 5,
-        "type": "Alternativa 5★",
-        "note": "88.2% Daño Crítico y +20% Daño total incluso fuera de campo."
+        "type": "Opción por rol",
+        "note": "88.2% Daño Crítico y +20% Daño total incluso fuera de campo.",
+        "weaponId": "15508",
+        "reviewedNote": false
       },
       {
-        "name": "Arco de Favonius (Favonius Warbow)",
+        "name": "Arco de Favonius",
         "rarity": 4,
-        "type": "Mejor F2P Batería",
-        "note": "Recarga de Energía y partículas para el equipo."
+        "type": "Opción por rol",
+        "note": "Recarga de Energía y partículas para el equipo.",
+        "weaponId": "15401",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Alborada de la Estrella del Alba y la Luna / Aubade of Morningstar and Moon (4 piezas)",
         "type": "BiS",
-        "bonus": "Maximiza el daño Sub-DPS y reacciones de Cristalización Lunar."
+        "bonus": "Maximiza el daño Sub-DPS y reacciones de Cristalización Lunar.",
+        "reviewedBonus": false
       },
       {
         "set": "Cáscara de Sueños Opulentos (4 piezas)",
         "type": "Alternativa DEF",
-        "bonus": "+54% DEF y +24% Bono Daño Geo."
+        "bonus": "+54% DEF y +24% Bono Daño Geo.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
       "sands": "DEF%",
-      "goblet": "Bono Daño Geo% o DEF%",
-      "circlet": "Prob. Crítica o Daño Crítico",
-      "substats": "Prob. Crítica > Daño Crítico > DEF% > Recarga"
+      "goblet": "DEF%",
+      "circlet": "Prob. Crítica / Daño Crítico / DEF%",
+      "substats": "Recarga según uso de Q > Crítico > DEF% > Maestría."
     },
     "benchmarks": {
       "hp": "16,000",
@@ -13807,14 +16310,11 @@ const CHARACTER_BUILDS_DB = [
     ],
     "mainStats": {
       "sands": "DEF%",
-      "goblet": "DEF% o Bono Daño Geo%",
-      "circlet": "Prob. Crítica o Daño Crítico"
+      "goblet": "DEF%",
+      "circlet": "Prob. Crítica / Daño Crítico / DEF%"
     },
     "substatsPriority": [
-      "1. Prob. Crítica",
-      "2. Daño Crítico",
-      "3. DEF%",
-      "4. Recarga"
+      "Recarga según uso de Q > Crítico > DEF% > Maestría."
     ],
     "recommendedPanel": {
       "hp": "16,000",
@@ -13823,6 +16323,24 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "120% ER",
       "crit": "70%+ CR / 150%+ CD"
+    },
+    "talentPriority": "Habilidad (E) > nivel 90 > Definitiva (Q), para curación.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/linnea-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico.",
+        "Estadísticas contrastadas con la guía del rol indicado."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -13842,46 +16360,55 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escala con Maestría Elemental y Daño Crítico",
     "bestWeapons": [
       {
-        "name": "Reliquary of Truth",
+        "name": "Relicario de la Verdad",
         "rarity": 5,
-        "type": "BiS Firma",
-        "note": "+EM colosal y crítico a semillas."
+        "type": "Opción por rol",
+        "note": "+EM colosal y crítico a semillas.",
+        "weaponId": "14521",
+        "reviewedNote": false
       },
       {
         "name": "Sueños de las Mil Noches",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "+265 EM."
+        "type": "Opción por rol",
+        "note": "+265 EM.",
+        "weaponId": "14511",
+        "reviewedNote": false
       },
       {
-        "name": "Memorias de Sacrificio",
+        "name": "Memorias de Sacrificios",
         "rarity": 4,
-        "type": "BiS 4★",
-        "note": "+221 EM."
+        "type": "Opción por rol",
+        "note": "+221 EM.",
+        "weaponId": "14403",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Flor del Paraíso Perdido (4 piezas)",
         "type": "BiS Indiscutible Oficial",
-        "bonus": "Aumenta el Daño de Florecimiento, Sobreflorecimiento y Crepitar hasta un 140%."
+        "bonus": "Aumenta el Daño de Florecimiento, Sobreflorecimiento y Crepitar hasta un 140%.",
+        "reviewedBonus": false
       },
       {
         "set": "Sueños Áureos (4 piezas)",
         "type": "BiS Daño Puro",
-        "bonus": "Hasta +230 de Maestría Elemental y +14% ATQ continuo."
+        "bonus": "Hasta +230 de Maestría Elemental y +14% ATQ continuo.",
+        "reviewedBonus": false
       },
       {
         "set": "Recuerdos del Bosque (4 piezas)",
         "type": "Opción Soporte / Shred",
-        "bonus": "+15% Daño Dendro y -30% RES Dendro en enemigos."
+        "bonus": "+15% Daño Dendro y -30% RES Dendro en enemigos.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
-      "sands": "Maestría Elemental",
-      "goblet": "Maestría Elemental o Bono Dendro%",
-      "circlet": "Prob. Crítica o Daño Crítico",
-      "substats": "Maestría Elemental > Prob. Crítica > Daño Crítico > Recarga"
+      "sands": "Maestría",
+      "goblet": "Maestría",
+      "circlet": "Prob. Crítica / Daño Crítico / Maestría",
+      "substats": "Crítico > Maestría; recarga según rotación."
     },
     "benchmarks": {
       "hp": "17,000 - 20,000",
@@ -13893,36 +16420,35 @@ const CHARACTER_BUILDS_DB = [
     },
     "metaTeams": [
       {
-        "name": "Nefer Lunar Bloom",
+        "name": "Florecimiento Lunar",
         "members": [
           "Nefer",
-          "Nilou",
-          "Kokomi",
-          "Nahida"
+          "Aino",
+          "Lauma",
+          "Zhongli"
         ],
-        "comp": "Nefer • Nilou • Kokomi • Nahida"
+        "comp": "Nefer • Aino • Lauma • Zhongli",
+        "note": ""
       },
       {
-        "name": "Nefer Hyperbloom Catalyze",
+        "name": "Alternativa sin Lauma",
         "members": [
           "Nefer",
-          "Xingqiu",
-          "Raiden",
-          "Baizhu"
+          "Aino",
+          "Nahida",
+          "Kuki Shinobu"
         ],
-        "comp": "Nefer • Xingqiu • Raiden • Baizhu"
+        "comp": "Nefer • Aino • Nahida • Kuki Shinobu",
+        "note": "Kuki aporta curación; los núcleos se convierten antes de activar su E."
       }
     ],
     "substatsPriority": [
-      "1. Maestría Elemental",
-      "2. Prob. Crítica",
-      "3. Daño Crítico",
-      "4. Recarga"
+      "Crítico > Maestría; recarga según rotación."
     ],
     "mainStats": {
-      "sands": "Maestría Elemental",
-      "goblet": "Maestría Elemental o Bono Dendro%",
-      "circlet": "Prob. Crítica o Daño Crítico"
+      "sands": "Maestría",
+      "goblet": "Maestría",
+      "circlet": "Prob. Crítica / Daño Crítico / Maestría"
     },
     "recommendedPanel": {
       "hp": "17,000 - 20,000",
@@ -13931,6 +16457,25 @@ const CHARACTER_BUILDS_DB = [
       "em": "850+ EM",
       "er": "120% ER",
       "crit": "60%+ CR / 140%+ CD"
+    },
+    "talentPriority": "Habilidad (E) > Definitiva (Q). Sus ataques especiales escalan con E.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/nefer-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico.",
+        "Estadísticas contrastadas con la guía del rol indicado.",
+        "Nefer convierte los núcleos; retiradas etiquetas y equipos de Hyperbloom/Nilou incompatibles."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -13950,41 +16495,55 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escala con ATQ% y Críticos",
     "bestWeapons": [
       {
-        "name": "Pluma Invernal Lagoblanco (Whitelake Frostfeather)",
+        "name": "Pluma Invernal Lagoblanco",
         "rarity": 5,
-        "type": "BiS Absoluto (Firma)",
-        "note": "Espada ligera firma de Odette con Crítico y bono de Fulgor Estelar."
+        "type": "Opción por rol",
+        "note": "Espada ligera firma de Odette con Crítico y bono de Fulgor Estelar.",
+        "weaponId": "11520",
+        "reviewedNote": false
       },
       {
-        "name": "Reflejo de las Tinieblas (Mistsplitter Reforged)",
+        "name": "Reflejo de las Tinieblas",
         "rarity": 5,
-        "type": "Alternativa 5★",
-        "note": "44.1% Daño Crítico y Bono Elemental."
+        "type": "Opción por rol",
+        "note": "44.1% Daño Crítico y Bono Elemental.",
+        "weaponId": "11509",
+        "reviewedNote": false
       },
       {
-        "name": "Cortador de Jade Primordial (Primordial Jade Cutter)",
+        "name": "Cortador de Jade Primordial",
         "rarity": 5,
-        "type": "Stat-Stick CR",
-        "note": "44.1% Prob. Crítica y bono de ATQ."
+        "type": "Opción por rol",
+        "note": "44.1% Prob. Crítica y bono de ATQ.",
+        "weaponId": "11505",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Corazón Forjado / Heart of the Furnace (4 piezas)",
-        "type": "BiS",
-        "bonus": "Aumenta el daño Sub-DPS de Fulgor Estelar y Crítico."
+        "set": "Heart of the Furnace (4 piezas)",
+        "type": "Según equipo y rol",
+        "bonus": "",
+        "reviewedBonus": false
       },
       {
-        "set": "Compañía Dorada (4 piezas)",
-        "type": "Alternativa Off-Field",
-        "bonus": "+70% Daño de Habilidad Elemental fuera de campo."
+        "set": "Disenchantment in Deep Shadows (4 piezas)",
+        "type": "Según equipo y rol",
+        "bonus": "",
+        "reviewedBonus": false
+      },
+      {
+        "set": "Tenacity of the Millelith (4 piezas)",
+        "type": "Según equipo y rol",
+        "bonus": "",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
-      "sands": "ATQ% o Recarga",
-      "goblet": "Bono Daño Cryo%",
-      "circlet": "Prob. Crítica o Daño Crítico",
-      "substats": "Prob. Crítica > Daño Crítico > ATQ% > Recarga"
+      "sands": "ATQ%",
+      "goblet": "ATQ%",
+      "circlet": "Prob. Crítica / Daño Crítico",
+      "substats": "Crítico > ATQ% > Maestría. Q según disponibilidad."
     },
     "benchmarks": {
       "hp": "17,000 - 19,000",
@@ -13996,36 +16555,35 @@ const CHARACTER_BUILDS_DB = [
     },
     "metaTeams": [
       {
-        "name": "Odette Freeze",
+        "name": "Torbellino Estelar",
         "members": [
-          "Ayaka",
           "Odette",
-          "Furina",
-          "Kazuha"
+          "Mizuki",
+          "Viajero Cryo",
+          "Faruzan"
         ],
-        "comp": "Ayaka • Odette • Furina • Kazuha"
+        "comp": "Odette • Mizuki • Viajero Cryo • Faruzan",
+        "note": "Faruzan C6."
       },
       {
-        "name": "Odette Reverse Melt",
+        "name": "Alternativa accesible",
         "members": [
           "Odette",
-          "Xiangling",
-          "Bennett",
-          "Kazuha"
+          "Viajero Cryo",
+          "Ifa",
+          "Sucrose"
         ],
-        "comp": "Odette • Xiangling • Bennett • Kazuha"
+        "comp": "Odette • Viajero Cryo • Ifa • Sucrose",
+        "note": ""
       }
     ],
     "mainStats": {
       "sands": "ATQ%",
-      "goblet": "ATQ% o Bono Daño Cryo%",
-      "circlet": "Prob. Crítica o Daño Crítico"
+      "goblet": "ATQ%",
+      "circlet": "Prob. Crítica / Daño Crítico"
     },
     "substatsPriority": [
-      "1. Prob. Crítica",
-      "2. Daño Crítico",
-      "3. ATQ%",
-      "4. Recarga"
+      "Crítico > ATQ% > Maestría. Q según disponibilidad."
     ],
     "recommendedPanel": {
       "hp": "17,000 - 19,000",
@@ -14034,6 +16592,26 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "140%",
       "crit": "70%+ CR / 170%+ CD"
+    },
+    "talentPriority": "Habilidad (E) >> nivel 90 ≥ Definitiva (Q). Normales sin subir.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/odette-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico.",
+        "Estadísticas contrastadas con la guía del rol indicado.",
+        "Reemplazadas composiciones genéricas Freeze/Melt por equipos de reacciones estelares.",
+        "Sets contrastados; eliminadas alternativas que no benefician al daño principal de este rol."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -14053,39 +16631,49 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% y Maestría Elemental",
     "bestWeapons": [
       {
-        "name": "Atlas del Cielo (Skyward Atlas)",
+        "name": "Pergamino Celestial",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "+ATQ% masivo y bono elemental."
+        "type": "Opción por rol",
+        "note": "+ATQ% masivo y bono elemental.",
+        "weaponId": "14501",
+        "reviewedNote": false
       },
       {
         "name": "Ojo del Juramento",
         "rarity": 4,
-        "type": "Opción Evento",
-        "note": "+Recarga tras usar E."
+        "type": "Opción por rol",
+        "note": "+Recarga tras usar E.",
+        "weaponId": "14415",
+        "reviewedNote": false
       },
       {
         "name": "Cuentos de Cazadores de Dragones",
         "rarity": 3,
-        "type": "Buffer F2P",
-        "note": "+48% ATQ."
+        "type": "Opción por rol",
+        "note": "+48% ATQ.",
+        "weaponId": "11316",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Sombra Verde Esmeralda (4 piezas)",
-        "note": "-40% Resistencia enemiga."
+        "note": "-40% Resistencia enemiga.",
+        "bonus": "-40% Resistencia enemiga.",
+        "reviewedBonus": false
       },
       {
         "set": "Compañía Dorada (4 piezas)",
-        "note": "+70% Daño E fuera de campo."
+        "note": "+70% Daño E fuera de campo.",
+        "bonus": "+70% Daño E fuera de campo.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
-      "sands": "ATQ% o Recarga",
-      "goblet": "Bono Daño Anemo%",
-      "circlet": "Prob. Crítica o ATQ%",
-      "substats": "ATQ% > Recarga de Energía% > Maestría Elemental"
+      "sands": "ATQ% / Recarga",
+      "goblet": "ATQ%",
+      "circlet": "ATQ%",
+      "substats": "Recarga hasta lo requerido > ATQ% > Prob. Crítica con Favonius."
     },
     "benchmarks": {
       "hp": "17,000 - 19,000",
@@ -14118,14 +16706,12 @@ const CHARACTER_BUILDS_DB = [
       }
     ],
     "substatsPriority": [
-      "1. ATQ%",
-      "2. Recarga de Energía%",
-      "3. Maestría Elemental"
+      "Recarga hasta lo requerido > ATQ% > Prob. Crítica con Favonius."
     ],
     "mainStats": {
-      "sands": "ATQ% o Recarga",
-      "goblet": "Bono Daño Anemo%",
-      "circlet": "Prob. Crítica o ATQ%"
+      "sands": "ATQ% / Recarga",
+      "goblet": "ATQ%",
+      "circlet": "ATQ%"
     },
     "recommendedPanel": {
       "hp": "17,000 - 19,000",
@@ -14134,6 +16720,24 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "170%",
       "crit": "60%+ CR / 120%+ CD"
+    },
+    "talentPriority": "Nivel del personaje >> Definitiva (Q) > Habilidad (E). Sus buffs no dependen de talentos.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/prune-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico.",
+        "Estadísticas contrastadas con la guía del rol indicado."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -14153,32 +16757,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ%, Daño Electro y Crítico",
     "bestWeapons": [
       {
-        "name": "Vivid Notions",
+        "name": "Reflexión Iridiscente",
         "rarity": 5,
-        "type": "BiS Firma",
-        "note": "+Daño Crítico y bono masivo a ataques electro continuos."
+        "type": "Opción por rol",
+        "note": "+Daño Crítico y bono masivo a ataques electro continuos.",
+        "weaponId": "14519",
+        "reviewedNote": false
       },
       {
         "name": "Axioma de la Kagura",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "+66.2% Daño Crítico y buff apilable."
+        "type": "Opción por rol",
+        "note": "+66.2% Daño Crítico y buff apilable.",
+        "weaponId": "14509",
+        "reviewedNote": false
       },
       {
         "name": "Sinfonía de los Merodeadores",
         "rarity": 4,
-        "type": "BiS 4★",
-        "note": "+Daño Crítico colosal."
+        "type": "Opción por rol",
+        "note": "+Daño Crítico colosal.",
+        "weaponId": "14402",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Long Night's Oath (4 piezas)",
-        "note": "BiS: Aumento letal a descargas electro prolongadas."
+        "note": "BiS: Aumento letal a descargas electro prolongadas.",
+        "bonus": "BiS: Aumento letal a descargas electro prolongadas.",
+        "reviewedBonus": false
       },
       {
         "set": "Furia del Trueno (4 piezas)",
-        "note": "+15% Bono Electro y reducción de CD."
+        "note": "+15% Bono Electro y reducción de CD.",
+        "bonus": "+15% Bono Electro y reducción de CD.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -14236,6 +16850,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "120% ER",
       "crit": "75%+ CR / 190%+ CD"
+    },
+    "talentPriority": "Ataque Normal (descendentes) > Definitiva (Q) > nivel 90 > Habilidad (E).",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/varesa-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -14255,52 +16886,51 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por DEF% y Daño Crítico",
     "bestWeapons": [
       {
-        "name": "Lightbearing Moonshard",
+        "name": "Refulgencia de la Luna",
         "rarity": 5,
-        "type": "BiS Firma",
-        "note": "+DEF% y daño de estocadas lunares."
+        "type": "Opción por rol",
+        "note": "+DEF% y daño de estocadas lunares.",
+        "weaponId": "11519",
+        "reviewedNote": false
       },
       {
-        "name": "Urakusugiri",
+        "name": "Cortatelones de Urakusai",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "+88.2% Daño Crítico y bono por daño Geo."
+        "type": "Opción por rol",
+        "note": "+88.2% Daño Crítico y bono por daño Geo.",
+        "weaponId": "11514",
+        "reviewedNote": false
       },
       {
-        "name": "Huso de Cinabrio (Cinnabar Spindle)",
+        "name": "Huso de Cinabrio",
         "rarity": 4,
-        "type": "BiS Evento",
-        "note": "Escala daño con DEF%."
+        "type": "Opción por rol",
+        "note": "Escala daño con DEF%.",
+        "weaponId": "11415",
+        "reviewedNote": false
       },
       {
-        "name": "Espada del Alba (Harbinger of Dawn R5)",
+        "name": "Espada del Alba",
         "rarity": 3,
-        "type": "Mejor F2P",
-        "note": "+28% CR / +46.9% CD."
+        "type": "Opción por rol",
+        "note": "+28% CR / +46.9% CD.",
+        "weaponId": "11301",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Cáscara de Sueños Opulentos (4 piezas)",
-        "type": "BiS Indiscutible Oficial",
-        "bonus": "Hasta +54% DEF y +24% Bono Daño Geo acumulable."
-      },
-      {
-        "set": "Murmullo del Bosque en la Noche Ecoica (4 piezas)",
-        "type": "BiS Cristalización",
-        "bonus": "Aumenta masivamente el daño tras recoger fragmentos de Cristalización."
-      },
-      {
-        "set": "Compañía Dorada (4 piezas)",
-        "type": "Alternativa Off-field",
-        "bonus": "+70% Daño a la Habilidad Elemental fuera de campo."
+        "set": "Night of the Sky’s Unveiling (4 piezas)",
+        "type": "Según equipo y rol",
+        "bonus": "",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
       "sands": "DEF%",
-      "goblet": "Bono Daño Geo% o DEF%",
-      "circlet": "Prob. Crítica o Daño Crítico",
-      "substats": "Prob. Crítica > Daño Crítico > DEF% > Recarga"
+      "goblet": "DEF%",
+      "circlet": "Prob. Crítica / Daño Crítico",
+      "substats": "Crítico > DEF% > Maestría > Recarga."
     },
     "benchmarks": {
       "hp": "16,000",
@@ -14312,36 +16942,35 @@ const CHARACTER_BUILDS_DB = [
     },
     "metaTeams": [
       {
-        "name": "Zibai Lunar Sunder",
+        "name": "Cristalización Lunar",
         "members": [
           "Zibai",
-          "Furina",
-          "Xilonen",
-          "Gorou"
+          "Illuga",
+          "Linnea",
+          "Columbina"
         ],
-        "comp": "Zibai • Furina • Xilonen • Gorou"
+        "comp": "Zibai • Illuga • Linnea • Columbina",
+        "note": ""
       },
       {
-        "name": "Zibai Mono Geo Sunder",
+        "name": "Alternativa accesible",
         "members": [
           "Zibai",
-          "Navia",
-          "Zhongli",
-          "Bennett"
+          "Illuga",
+          "Gorou",
+          "Aino"
         ],
-        "comp": "Zibai • Navia • Zhongli • Bennett"
+        "comp": "Zibai • Illuga • Gorou • Aino",
+        "note": ""
       }
     ],
     "substatsPriority": [
-      "1. Prob. Crítica",
-      "2. Daño Crítico",
-      "3. DEF%",
-      "4. Recarga"
+      "Crítico > DEF% > Maestría > Recarga."
     ],
     "mainStats": {
       "sands": "DEF%",
-      "goblet": "Bono Daño Geo% o DEF%",
-      "circlet": "Prob. Crítica o Daño Crítico"
+      "goblet": "DEF%",
+      "circlet": "Prob. Crítica / Daño Crítico"
     },
     "recommendedPanel": {
       "hp": "16,000",
@@ -14350,6 +16979,26 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "120% ER",
       "crit": "75%+ CR / 180%+ CD"
+    },
+    "talentPriority": "Habilidad (E) > nivel 90 = Definitiva (Q). Normales sin subir.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/zibai-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico.",
+        "Estadísticas contrastadas con la guía del rol indicado.",
+        "Añadida aplicación Hydro y compañeros de la reacción lunar.",
+        "Sets contrastados; eliminadas alternativas que no benefician al daño principal de este rol."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -14371,30 +17020,40 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Espada de Favonius",
         "rarity": 4,
-        "type": "BiS Batería",
-        "note": "Generación de energía."
+        "type": "Opción por rol",
+        "note": "Generación de energía.",
+        "weaponId": "11401",
+        "reviewedNote": false
       },
       {
-        "name": "Espada del Sacrificio",
+        "name": "Espada de Sacrificio",
         "rarity": 4,
-        "type": "Utilidad Reset",
-        "note": "Reset de escudo."
+        "type": "Opción por rol",
+        "note": "Reset de escudo.",
+        "weaponId": "11403",
+        "reviewedNote": false
       },
       {
         "name": "Vado del Río Ceniciento",
         "rarity": 4,
-        "type": "Mejor F2P Pesca",
-        "note": "+Recarga y Prob. Crítica en E."
+        "type": "Opción por rol",
+        "note": "+Recarga y Prob. Crítica en E.",
+        "weaponId": "11426",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Ritual Antiguo de la Nobleza (4 piezas)",
-        "note": "+20% ATQ para aliados."
+        "note": "+20% ATQ para aliados.",
+        "bonus": "+20% ATQ para aliados.",
+        "reviewedBonus": false
       },
       {
         "set": "Tenacidad de la Geoarmada (4 piezas)",
-        "note": "+20% Vida Máx."
+        "note": "+20% Vida Máx.",
+        "bonus": "+20% Vida Máx.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -14450,6 +17109,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "180%",
       "crit": "60%+ CR / 120%+ CD"
+    },
+    "talentPriority": "Nivel 90 > Definitiva (Q). Habilidad y normales sin prioridad.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/dahlia-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -14469,32 +17145,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% y Recarga de Energía",
     "bestWeapons": [
       {
-        "name": "Symphonist of Scents",
+        "name": "Sinfonista de Aromas",
         "rarity": 5,
-        "type": "BiS Firma",
-        "note": "+Crítico y daño Cryo de torreta."
+        "type": "Opción por rol",
+        "note": "+Crítico y daño Cryo de torreta.",
+        "weaponId": "13514",
+        "reviewedNote": false
       },
       {
-        "name": "La Captura (The Catch R5)",
+        "name": "La Captura",
         "rarity": 4,
-        "type": "Mejor F2P",
-        "note": "+Daño Definitiva."
+        "type": "Opción por rol",
+        "note": "+Daño Definitiva.",
+        "weaponId": "13415",
+        "reviewedNote": false
       },
       {
         "name": "Lanza de Favonius",
         "rarity": 4,
-        "type": "Batería",
-        "note": "Generación de partículas."
+        "type": "Opción por rol",
+        "note": "Generación de partículas.",
+        "weaponId": "13407",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Compañía Dorada (4 piezas)",
-        "note": "+70% Daño de Habilidad fuera de campo."
+        "note": "+70% Daño de Habilidad fuera de campo.",
+        "bonus": "+70% Daño de Habilidad fuera de campo.",
+        "reviewedBonus": false
       },
       {
         "set": "Emblema del Destino (4 piezas)",
-        "note": "+Recarga y daño Burst."
+        "note": "+Recarga y daño Burst.",
+        "bonus": "+Recarga y daño Burst.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -14551,6 +17237,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "160%",
       "crit": "65%+ CR / 140%+ CD"
+    },
+    "talentPriority": "Habilidad (E) > Definitiva (Q), que aumenta la curación.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/escoffier-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -14570,40 +17273,55 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escala con Maestría Elemental pura",
     "bestWeapons": [
       {
-        "name": "Sunny Morning Sleep-In",
+        "name": "Hibernación Matutina de Año Nuevo",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "+EM masiva."
+        "type": "Opción por rol",
+        "note": "+EM masiva.",
+        "weaponId": "14518",
+        "reviewedNote": false
       },
       {
-        "name": "Memorias de Sacrificio",
+        "name": "Memorias de Sacrificios",
         "rarity": 4,
-        "type": "BiS 4★",
-        "note": "+221 EM."
+        "type": "Opción por rol",
+        "note": "+221 EM.",
+        "weaponId": "14403",
+        "reviewedNote": false
       },
       {
         "name": "Cuentos de Cazadores de Dragones",
         "rarity": 3,
-        "type": "Buffer F2P",
-        "note": "+48% ATQ."
+        "type": "Opción por rol",
+        "note": "+48% ATQ.",
+        "weaponId": "11316",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Sombra Verde Esmeralda (4 piezas)",
-        "note": "-40% Resistencia elemental enemiga."
+        "set": "Gilded Dreams (4 piezas)",
+        "type": "Según equipo y rol",
+        "bonus": "",
+        "reviewedBonus": false
       },
       {
-        "set": "Instructor (4 piezas)",
-        "type": "Soporte de Reacciones",
-        "bonus": "+120 de Maestría Elemental a todo el equipo al activar reacciones elementales."
+        "set": "2p Maestría + 2p Maestría",
+        "type": "Según equipo y rol",
+        "bonus": "",
+        "reviewedBonus": false
+      },
+      {
+        "set": "Viridescent Venerer (4 piezas)",
+        "type": "Según equipo y rol",
+        "bonus": "",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
-      "sands": "Maestría Elemental",
-      "goblet": "Maestría Elemental",
-      "circlet": "Maestría Elemental",
-      "substats": "Maestría Elemental > Recarga de Energía%"
+      "sands": "Maestría",
+      "goblet": "Maestría",
+      "circlet": "Prob. Crítica / Daño Crítico (Torbellino Estelar) / Maestría (Torbellino normal)",
+      "substats": "Torbellino Estelar: Crítico ≥ Maestría. Torbellino normal: Maestría."
     },
     "benchmarks": {
       "hp": "17,000 - 20,000",
@@ -14615,34 +17333,35 @@ const CHARACTER_BUILDS_DB = [
     },
     "metaTeams": [
       {
-        "name": "Mizuki Swirl Team",
+        "name": "Torbellino Estelar",
         "members": [
-          "Ayato",
-          "Xiangling",
           "Mizuki",
-          "Bennett"
+          "Odette",
+          "Viajero Cryo",
+          "Faruzan"
         ],
-        "comp": "Ayato • Xiangling • Mizuki • Bennett"
+        "comp": "Mizuki • Odette • Viajero Cryo • Faruzan",
+        "note": "Faruzan C6."
       },
       {
-        "name": "Mizuki Aggravate Swirl",
+        "name": "Alternativa con Sucrose",
         "members": [
-          "Keqing",
-          "Fischl",
           "Mizuki",
-          "Nahida"
+          "Odette",
+          "Viajero Cryo",
+          "Sucrose"
         ],
-        "comp": "Keqing • Fischl • Mizuki • Nahida"
+        "comp": "Mizuki • Odette • Viajero Cryo • Sucrose",
+        "note": ""
       }
     ],
     "substatsPriority": [
-      "1. Maestría Elemental",
-      "2. Recarga de Energía%"
+      "Torbellino Estelar: Crítico ≥ Maestría. Torbellino normal: Maestría."
     ],
     "mainStats": {
-      "sands": "Maestría Elemental",
-      "goblet": "Maestría Elemental",
-      "circlet": "Maestría Elemental"
+      "sands": "Maestría",
+      "goblet": "Maestría",
+      "circlet": "Prob. Crítica / Daño Crítico (Torbellino Estelar) / Maestría (Torbellino normal)"
     },
     "recommendedPanel": {
       "hp": "17,000 - 20,000",
@@ -14651,6 +17370,26 @@ const CHARACTER_BUILDS_DB = [
       "em": "850+ EM",
       "er": "160%",
       "crit": "60%+ CR / 120%+ CD"
+    },
+    "talentPriority": "Habilidad (E) > nivel 90 >> Definitiva (Q), hasta tener suficiente curación.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/mizuki-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico.",
+        "Estadísticas contrastadas con la guía del rol indicado.",
+        "Mizuki necesita tiempo en campo; retirados equipos con dos drivers simultáneos.",
+        "Sets contrastados; eliminadas alternativas que no benefician al daño principal de este rol."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -14670,38 +17409,50 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% y Daño Definitivo",
     "bestWeapons": [
       {
-        "name": "Lápida del Lobo (Wolf's Gravestone)",
+        "name": "Lápida del Lobo",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+ATQ% masivo y buff al escuadrón."
+        "type": "Opción por rol",
+        "note": "+ATQ% masivo y buff al escuadrón.",
+        "weaponId": "12502",
+        "reviewedNote": false
       },
       {
-        "name": "Médula de la Serpiente Marina (Serpent Spine)",
+        "name": "Médula de la Serpiente Marina",
         "rarity": 4,
-        "type": "BiS Pase",
-        "note": "+Prob. Crítica y hasta +50% daño."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica y hasta +50% daño.",
+        "weaponId": "12409",
+        "reviewedNote": false
       },
       {
-        "name": "Gran Espada del Sacrificio (Sacrificial Greatsword)",
+        "name": "Gran Espada de Sacrificio",
         "rarity": 4,
-        "type": "Utilidad Reset",
-        "note": "Doble campo de infusión Cryo."
+        "type": "Opción por rol",
+        "note": "Doble campo de infusión Cryo.",
+        "weaponId": "12403",
+        "reviewedNote": false
       },
       {
         "name": "Gran Espada de Favonius",
         "rarity": 4,
-        "type": "Batería F2P",
-        "note": "Generación de partículas para el equipo."
+        "type": "Opción por rol",
+        "note": "Generación de partículas para el equipo.",
+        "weaponId": "12401",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Emblema del Destino (4 piezas)",
-        "note": "+Daño masivo a los 3-4 espadazos de su Definitiva."
+        "note": "+Daño masivo a los 3-4 espadazos de su Definitiva.",
+        "bonus": "+Daño masivo a los 3-4 espadazos de su Definitiva.",
+        "reviewedBonus": false
       },
       {
         "set": "Ritual Antiguo de la Nobleza (4 piezas)",
-        "note": "+20% ATQ al equipo con Burst de 40 energía."
+        "note": "+20% ATQ al equipo con Burst de 40 energía.",
+        "bonus": "+20% ATQ al equipo con Burst de 40 energía.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -14759,6 +17510,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "130%",
       "crit": "65%+ CR / 150%+ CD"
+    },
+    "talentPriority": "Definitiva (Q) > Habilidad (E). Normales solo para un rol en campo.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/chongyun-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -14778,36 +17546,48 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escudo y curación escalan con Vida Máxima (HP%)",
     "bestWeapons": [
       {
-        "name": "Arco del Sacrificio (Sacrificial Bow)",
+        "name": "Arco del Sacrificio",
         "rarity": 4,
-        "type": "BiS Indiscutible",
-        "note": "Reset inmediato de garras para doble escudo y 8 partículas."
+        "type": "Opción por rol",
+        "note": "Reset inmediato de garras para doble escudo y 8 partículas.",
+        "weaponId": "15403",
+        "reviewedNote": false
       },
       {
-        "name": "Arco de Favonius (Favonius Warbow)",
+        "name": "Arco de Favonius",
         "rarity": 4,
-        "type": "Mejor Batería F2P",
-        "note": "Partículas blancas consistentes para todo el equipo."
+        "type": "Opción por rol",
+        "note": "Partículas blancas consistentes para todo el equipo.",
+        "weaponId": "15401",
+        "reviewedNote": false
       },
       {
-        "name": "Arco Recurvo (Recurve Bow)",
+        "name": "Arco Recurvo",
         "rarity": 3,
-        "type": "Opción 3★ HP",
-        "note": "+46.9% Vida Máx para escudos más gruesos."
+        "type": "Opción por rol",
+        "note": "+46.9% Vida Máx para escudos más gruesos.",
+        "weaponId": "11321",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Ritual Antiguo de la Nobleza (4 piezas)",
-        "note": "BiS Support: +20% ATQ para aliados."
+        "note": "BiS Support: +20% ATQ para aliados.",
+        "bonus": "BiS Support: +20% ATQ para aliados.",
+        "reviewedBonus": false
       },
       {
         "set": "Tenacidad de la Geoarmada (2 piezas)",
-        "note": "+20% Vida Máx."
+        "note": "+20% Vida Máx.",
+        "bonus": "+20% Vida Máx.",
+        "reviewedBonus": false
       },
       {
         "set": "Doncella Amada (4 piezas)",
-        "note": "Curación máxima."
+        "note": "Curación máxima.",
+        "bonus": "Curación máxima.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -14864,6 +17644,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "180% - 200% ER",
       "crit": "60%+ CR / 120%+ CD"
+    },
+    "talentPriority": "Nivel del personaje ≥ Habilidad (E) ≥ Definitiva (Q). Normales sin subir.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/diona-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -14885,30 +17682,40 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Gran Espada de Favonius",
         "rarity": 4,
-        "type": "BiS Batería F2P",
-        "note": "Batería máxima para aliados con alto costo de energía."
+        "type": "Opción por rol",
+        "note": "Batería máxima para aliados con alto costo de energía.",
+        "weaponId": "12401",
+        "reviewedNote": false
       },
       {
-        "name": "Gran Espada del Sacrificio",
+        "name": "Gran Espada de Sacrificio",
         "rarity": 4,
-        "type": "Opción ER",
-        "note": "Doble uso de E para regeneración."
+        "type": "Opción por rol",
+        "note": "Doble uso de E para regeneración.",
+        "weaponId": "12403",
+        "reviewedNote": false
       },
       {
-        "name": "Orgullo Celestial (Skyward Pride)",
+        "name": "Orgullo Celestial",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "+Recarga y daño residual."
+        "type": "Opción por rol",
+        "note": "+Recarga y daño residual.",
+        "weaponId": "12501",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Ritual Antiguo de la Nobleza (4 piezas)",
-        "note": "+20% ATQ para aliados."
+        "note": "+20% ATQ para aliados.",
+        "bonus": "+20% ATQ para aliados.",
+        "reviewedBonus": false
       },
       {
         "set": "Perla Oceánica (4 piezas)",
-        "note": "Burbujas de daño por exceso de cura."
+        "note": "Burbujas de daño por exceso de cura.",
+        "bonus": "Burbujas de daño por exceso de cura.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -14964,6 +17771,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "200% - 220% ER",
       "crit": "60%+ CR / 120%+ CD"
+    },
+    "talentPriority": "Soporte: Definitiva (Q) > Habilidad (E). Driver C6: Q > Normales > E.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/dori-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -14985,36 +17809,48 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Axioma de la Kagura",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+66.2% Daño Crítico y buff apilable a su puño elemental."
+        "type": "Opción por rol",
+        "note": "+66.2% Daño Crítico y buff apilable a su puño elemental.",
+        "weaponId": "14509",
+        "reviewedNote": false
       },
       {
         "name": "Oración Perdida a los Vientos Sagrados",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "+33.1% Prob. Crítica y velocidad."
+        "type": "Opción por rol",
+        "note": "+33.1% Prob. Crítica y velocidad.",
+        "weaponId": "14502",
+        "reviewedNote": false
       },
       {
-        "name": "Sinfonía de los Merodeadores (The Widsith)",
+        "name": "Sinfonía de los Merodeadores",
         "rarity": 4,
-        "type": "BiS 4★ Gacha",
-        "note": "+55.1% Daño Crítico y ráfaga demoledora."
+        "type": "Opción por rol",
+        "note": "+55.1% Daño Crítico y ráfaga demoledora.",
+        "weaponId": "14402",
+        "reviewedNote": false
       },
       {
         "name": "Cuentos de Dodoco",
         "rarity": 4,
-        "type": "Opción F2P",
-        "note": "+ATQ% y daño a básicos."
+        "type": "Opción por rol",
+        "note": "+ATQ% y daño a básicos.",
+        "weaponId": "14413",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Sombra Verde Esmeralda (4 piezas)",
-        "note": "-40% Resistencia elemental enemiga y +60% daño torbellino."
+        "note": "-40% Resistencia elemental enemiga y +60% daño torbellino.",
+        "bonus": "-40% Resistencia elemental enemiga y +60% daño torbellino.",
+        "reviewedBonus": false
       },
       {
         "set": "Pabellón del Desierto (4 piezas)",
-        "note": "+40% Daño a golpes normales y cargados."
+        "note": "+40% Daño a golpes normales y cargados.",
+        "bonus": "+40% Daño a golpes normales y cargados.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -15072,6 +17908,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "150 - 250 EM",
       "er": "120% ER",
       "crit": "70%+ CR / 160%+ CD"
+    },
+    "talentPriority": "Driver: Habilidad (E) > Normales > Definitiva (Q). Quickswap de soporte: E > Q > Normales.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/heizou-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -15091,42 +17944,56 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ%, Bono Cryo y Daño Definitivo",
     "bestWeapons": [
       {
-        "name": "Reflejo de las Tinieblas (Mistsplitter)",
+        "name": "Reflejo de las Tinieblas",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+44.1% Daño Crítico y daño elemental masivo."
+        "type": "Opción por rol",
+        "note": "+44.1% Daño Crítico y daño elemental masivo.",
+        "weaponId": "11509",
+        "reviewedNote": false
       },
       {
         "name": "Cortador de Jade Primordial",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "+44.1% Prob. Crítica y ATQ por vida."
+        "type": "Opción por rol",
+        "note": "+44.1% Prob. Crítica y ATQ por vida.",
+        "weaponId": "11505",
+        "reviewedNote": false
       },
       {
         "name": "Espada de Favonius",
         "rarity": 4,
-        "type": "Batería F2P",
-        "note": "Recarga garantizada para rotaciones continuas."
+        "type": "Opción por rol",
+        "note": "Recarga garantizada para rotaciones continuas.",
+        "weaponId": "11401",
+        "reviewedNote": false
       },
       {
-        "name": "Espada Negra (The Black Sword)",
+        "name": "Espada Negra",
         "rarity": 4,
-        "type": "Pase de Batalla",
-        "note": "+Crítico y daño a normales si opera como on-field."
+        "type": "Opción por rol",
+        "note": "+Crítico y daño a normales si opera como on-field.",
+        "weaponId": "11409",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Emblema del Destino (4 piezas)",
-        "note": "BiS Sub-DPS: +Daño al Vals Glacial continuo."
+        "note": "BiS Sub-DPS: +Daño al Vals Glacial continuo.",
+        "bonus": "BiS Sub-DPS: +Daño al Vals Glacial continuo.",
+        "reviewedBonus": false
       },
       {
         "set": "Nómada del Invierno (4 piezas)",
-        "note": "+40% Prob. Crítica en equipos Permafrost."
+        "note": "+40% Prob. Crítica en equipos Permafrost.",
+        "bonus": "+40% Prob. Crítica en equipos Permafrost.",
+        "reviewedBonus": false
       },
       {
         "set": "Ritual Antiguo de la Nobleza (4 piezas)",
-        "note": "+20% ATQ para aliados."
+        "note": "+20% ATQ para aliados.",
+        "bonus": "+20% ATQ para aliados.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -15184,6 +18051,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "160% - 180%",
       "crit": "65%+ CR / 150%+ CD"
+    },
+    "talentPriority": "Definitiva (Q) > Habilidad (E) >> Normales, para daño fuera de campo.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/kaeya-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -15203,42 +18087,56 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por Maestría Elemental (EM) y Recarga de Energía",
     "bestWeapons": [
       {
-        "name": "Flor Aeromarina (Mailed Flower R5)",
+        "name": "Fierro Floriorlado",
         "rarity": 4,
-        "type": "BiS Evento",
-        "note": "+EM y ATQ% tras usar E o reacciones."
+        "type": "Opción por rol",
+        "note": "+EM y ATQ% tras usar E o reacciones.",
+        "weaponId": "12418",
+        "reviewedNote": false
       },
       {
         "name": "Gran Espada de Favonius",
         "rarity": 4,
-        "type": "Batería F2P",
-        "note": "Soluciona su elevado costo de 80 energía."
+        "type": "Opción por rol",
+        "note": "Soluciona su elevado costo de 80 energía.",
+        "weaponId": "12401",
+        "reviewedNote": false
       },
       {
-        "name": "Segadora de la Lluvia (Rainslasher R5)",
+        "name": "Segadora de la Lluvia",
         "rarity": 4,
-        "type": "Opción Gacha",
-        "note": "+165 EM y +36% Daño contra Hydro/Electro."
+        "type": "Opción por rol",
+        "note": "+165 EM y +36% Daño contra Hydro/Electro.",
+        "weaponId": "12405",
+        "reviewedNote": false
       },
       {
-        "name": "Espada Real del Bosque (Forest Regalia)",
+        "name": "Espada Real del Bosque",
         "rarity": 4,
-        "type": "Forja Sumeru",
-        "note": "+Recarga y otorga hoja de +120 EM."
+        "type": "Opción por rol",
+        "note": "+Recarga y otorga hoja de +120 EM.",
+        "weaponId": "12417",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Flor del Paraíso Perdido (4 piezas)",
-        "note": "+80% Daño a explosión de Núcleos Dendro."
+        "note": "+80% Daño a explosión de Núcleos Dendro.",
+        "bonus": "+80% Daño a explosión de Núcleos Dendro.",
+        "reviewedBonus": false
       },
       {
         "set": "Recuerdos del Bosque (4 piezas)",
-        "note": "-30% Resistencia Dendro enemiga."
+        "note": "-30% Resistencia Dendro enemiga.",
+        "bonus": "-30% Resistencia Dendro enemiga.",
+        "reviewedBonus": false
       },
       {
         "set": "Sueños Áureos (4 piezas)",
-        "note": "+EM masiva para maximizar auto-curación."
+        "note": "+EM masiva para maximizar auto-curación.",
+        "bonus": "+EM masiva para maximizar auto-curación.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -15295,6 +18193,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "750 - 900 EM",
       "er": "180% - 200% ER",
       "crit": "60%+ CR / 120%+ CD"
+    },
+    "talentPriority": "Definitiva (Q) > Normales = Habilidad (E). Nivel 90 si desencadena Florecimiento.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/kaveh-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -15316,40 +18231,54 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Axioma de la Kagura",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+66.2% Daño Crítico y buff apilable de E."
+        "type": "Opción por rol",
+        "note": "+66.2% Daño Crítico y buff apilable de E.",
+        "weaponId": "14509",
+        "reviewedNote": false
       },
       {
         "name": "Sinfonía de los Merodeadores",
         "rarity": 4,
-        "type": "BiS 4★",
-        "note": "+Daño Crítico y buff rotativo letal."
+        "type": "Opción por rol",
+        "note": "+Daño Crítico y buff rotativo letal.",
+        "weaponId": "14402",
+        "reviewedNote": false
       },
       {
         "name": "Cuentos de Cazadores de Dragones",
         "rarity": 3,
-        "type": "BiS Buffer F2P",
-        "note": "-15% DEF enemiga + 48% ATQ para el carry."
+        "type": "Opción por rol",
+        "note": "-15% DEF enemiga + 48% ATQ para el carry.",
+        "weaponId": "11316",
+        "reviewedNote": false
       },
       {
         "name": "Prototipo Ámbar",
         "rarity": 4,
-        "type": "Soporte Forja",
-        "note": "Curación de equipo y regeneración de energía."
+        "type": "Opción por rol",
+        "note": "Curación de equipo y regeneración de energía.",
+        "weaponId": "14406",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Emblema del Destino (4 piezas)",
-        "note": "Soluciona costo de 80 energía y potencia su campo eléctrico."
+        "note": "Soluciona costo de 80 energía y potencia su campo eléctrico.",
+        "bonus": "Soluciona costo de 80 energía y potencia su campo eléctrico.",
+        "reviewedBonus": false
       },
       {
         "set": "Ritual Antiguo de la Nobleza (4 piezas)",
-        "note": "+20% ATQ para aliados."
+        "note": "+20% ATQ para aliados.",
+        "bonus": "+20% ATQ para aliados.",
+        "reviewedBonus": false
       },
       {
         "set": "Sueños Áureos (4 piezas)",
-        "note": "+EM en equipos de Agravado/Hiperflorecimiento."
+        "note": "+EM en equipos de Agravado/Hiperflorecimiento.",
+        "bonus": "+EM en equipos de Agravado/Hiperflorecimiento.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -15407,6 +18336,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "200% - 220% ER",
       "crit": "60%+ CR / 130%+ CD"
+    },
+    "talentPriority": "Definitiva (Q) ≥ Habilidad (E) > Normales. Nivel 90 para Intensificación.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/lisa-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -15426,36 +18372,48 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Curación escala con Vida Máxima (HP%), Buffs por nivel de talento",
     "bestWeapons": [
       {
-        "name": "Lanza de Favonius (Favonius Lance)",
+        "name": "Lanza de Favonius",
         "rarity": 4,
-        "type": "BiS Indiscutible",
-        "note": "Generación de energía crítica para el carry físico."
+        "type": "Opción por rol",
+        "note": "Generación de energía crítica para el carry físico.",
+        "weaponId": "13407",
+        "reviewedNote": false
       },
       {
-        "name": "Borla Negra (Black Tassel)",
+        "name": "Borla Negra",
         "rarity": 3,
-        "type": "Opción HP 3★",
-        "note": "+46.9% Vida Máx totalmente gratis."
+        "type": "Opción por rol",
+        "note": "+46.9% Vida Máx totalmente gratis.",
+        "weaponId": "11313",
+        "reviewedNote": false
       },
       {
         "name": "La Captura",
         "rarity": 4,
-        "type": "Opción F2P",
-        "note": "+Recarga de energía."
+        "type": "Opción por rol",
+        "note": "+Recarga de energía.",
+        "weaponId": "13415",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Ritual Antiguo de la Nobleza (4 piezas)",
-        "note": "+20% ATQ para aliados."
+        "note": "+20% ATQ para aliados.",
+        "bonus": "+20% ATQ para aliados.",
+        "reviewedBonus": false
       },
       {
         "set": "Perla Oceánica (4 piezas)",
-        "note": "Convierte exceso de cura en daño físico."
+        "note": "Convierte exceso de cura en daño físico.",
+        "bonus": "Convierte exceso de cura en daño físico.",
+        "reviewedBonus": false
       },
       {
         "set": "Sonata de Días Pretéritos (4 piezas)",
-        "note": "+Bono de daño plano según curación."
+        "note": "+Bono de daño plano según curación.",
+        "bonus": "+Bono de daño plano según curación.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -15512,6 +18470,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "200% - 230% ER",
       "crit": "45%+ CR"
+    },
+    "talentPriority": "Definitiva (Q) ≥ Habilidad (E). E mejora velocidad de ataque, no el bono físico.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/mika-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -15533,36 +18508,48 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Oración Perdida a los Vientos Sagrados",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+33.1% Prob. Crítica y bono elemental continuo."
+        "type": "Opción por rol",
+        "note": "+33.1% Prob. Crítica y bono elemental continuo.",
+        "weaponId": "14502",
+        "reviewedNote": false
       },
       {
         "name": "Axioma de la Kagura",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "+66.2% Daño Crítico."
+        "type": "Opción por rol",
+        "note": "+66.2% Daño Crítico.",
+        "weaponId": "14509",
+        "reviewedNote": false
       },
       {
-        "name": "Sinfonía de los Merodeadores (The Widsith)",
+        "name": "Sinfonía de los Merodeadores",
         "rarity": 4,
-        "type": "BiS 4★ Gacha",
-        "note": "+55.1% Daño Crítico y ráfaga brutal de gemas."
+        "type": "Opción por rol",
+        "note": "+55.1% Daño Crítico y ráfaga brutal de gemas.",
+        "weaponId": "14402",
+        "reviewedNote": false
       },
       {
-        "name": "Ágata del Peñasco Oscuro (Blackcliff Agate)",
+        "name": "Ágata del Peñasco Oscuro",
         "rarity": 4,
-        "type": "Opción F2P Brillo",
-        "note": "+Daño Crítico y ATQ tras derrotas."
+        "type": "Opción por rol",
+        "note": "+Daño Crítico y ATQ tras derrotas.",
+        "weaponId": "14408",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Murmullo del Bosque en la Noche Ecoica (4 piezas)",
-        "note": "+50% Bono Geo continuo tras cristalizar."
+        "note": "+50% Bono Geo continuo tras cristalizar.",
+        "bonus": "+50% Bono Geo continuo tras cristalizar.",
+        "reviewedBonus": false
       },
       {
         "set": "Petra Arcaica (2 piezas) + Gladiador (2 piezas)",
-        "note": "+15% Bono Geo y +18% ATQ."
+        "note": "+15% Bono Geo y +18% ATQ.",
+        "bonus": "+15% Bono Geo y +18% ATQ.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -15619,6 +18606,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "125%",
       "crit": "70%+ CR / 160%+ CD"
+    },
+    "talentPriority": "Definitiva (Q) > Normales ≥ Habilidad (E). En C6: Q y Normales similares.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/ningguang-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -15638,32 +18642,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Curación escala puramente con el ATQ Total",
     "bestWeapons": [
       {
-        "name": "Espada del Sacrificio (Sacrificial Sword)",
+        "name": "Espada de Sacrificio",
         "rarity": 4,
-        "type": "BiS Indiscutible",
-        "note": "Resuelve el enfriamiento de 30s de su E para 100% tiempo de cura."
+        "type": "Opción por rol",
+        "note": "Resuelve el enfriamiento de 30s de su E para 100% tiempo de cura.",
+        "weaponId": "11403",
+        "reviewedNote": false
       },
       {
         "name": "Espada de Favonius",
         "rarity": 4,
-        "type": "Batería F2P",
-        "note": "Genera partículas para aliados."
+        "type": "Opción por rol",
+        "note": "Genera partículas para aliados.",
+        "weaponId": "11401",
+        "reviewedNote": false
       },
       {
-        "name": "Hoja Afilada Celestial (Skyward Blade)",
+        "name": "Hoja Afilada Celestial",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "+Recarga y ATQ básico elevado."
+        "type": "Opción por rol",
+        "note": "+Recarga y ATQ básico elevado.",
+        "weaponId": "11502",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Perla Oceánica (4 piezas)",
-        "note": "BiS Daño: Detona burbujas de 30,000 de daño físico cada 3.5 segundos."
+        "note": "BiS Daño: Detona burbujas de 30,000 de daño físico cada 3.5 segundos.",
+        "bonus": "BiS Daño: Detona burbujas de 30,000 de daño físico cada 3.5 segundos.",
+        "reviewedBonus": false
       },
       {
         "set": "Tenacidad de la Geoarmada (4 piezas)",
-        "note": "El heraldo de escarcha activa buff continuo de +20% ATQ."
+        "note": "El heraldo de escarcha activa buff continuo de +20% ATQ.",
+        "bonus": "El heraldo de escarcha activa buff continuo de +20% ATQ.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -15719,6 +18733,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "200% ER",
       "crit": "60%+ CR / 120%+ CD"
+    },
+    "talentPriority": "Habilidad (E) > Definitiva (Q), según la curación necesaria. Buffs sin escalado de talentos.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/qiqi-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -15738,42 +18769,56 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escala con ATQ / Físico en clásico o EM en variante Rainbow",
     "bestWeapons": [
       {
-        "name": "Lápida del Lobo (Wolf's Gravestone)",
+        "name": "Lápida del Lobo",
         "rarity": 5,
-        "type": "BiS 5★ Físico",
-        "note": "+ATQ% masivo y buff al escuadrón."
+        "type": "Opción por rol",
+        "note": "+ATQ% masivo y buff al escuadrón.",
+        "weaponId": "12502",
+        "reviewedNote": false
       },
       {
-        "name": "Médula de la Serpiente Marina (Serpent Spine)",
+        "name": "Médula de la Serpiente Marina",
         "rarity": 4,
-        "type": "BiS Pase",
-        "note": "+Prob. Crítica y hasta +50% daño."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica y hasta +50% daño.",
+        "weaponId": "12409",
+        "reviewedNote": false
       },
       {
-        "name": "Flor Aeromarina (Mailed Flower)",
+        "name": "Fierro Floriorlado",
         "rarity": 4,
-        "type": "BiS Rainbow EM",
-        "note": "+EM y ATQ para sobrecargas/crepitar."
+        "type": "Opción por rol",
+        "note": "+EM y ATQ para sobrecargas/crepitar.",
+        "weaponId": "12418",
+        "reviewedNote": false
       },
       {
-        "name": "Prototipo Arcaico (Prototype Archaic R5)",
+        "name": "Prototipo Arcaico",
         "rarity": 4,
-        "type": "Mejor F2P",
-        "note": "+ATQ% y explosión de daño físico."
+        "type": "Opción por rol",
+        "note": "+ATQ% y explosión de daño físico.",
+        "weaponId": "12406",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Llama Albina (4 piezas)",
-        "note": "BiS Físico: +50% Daño Físico y +18% ATQ."
+        "note": "BiS Físico: +50% Daño Físico y +18% ATQ.",
+        "bonus": "BiS Físico: +50% Daño Físico y +18% ATQ.",
+        "reviewedBonus": false
       },
       {
         "set": "Flor del Paraíso Perdido (4 piezas)",
-        "note": "BiS Rainbow EM: +80% Daño a Crepitar/Hiperflorecimiento."
+        "note": "BiS Rainbow EM: +80% Daño a Crepitar/Hiperflorecimiento.",
+        "bonus": "BiS Rainbow EM: +80% Daño a Crepitar/Hiperflorecimiento.",
+        "reviewedBonus": false
       },
       {
         "set": "Gladiador (4 piezas)",
-        "note": "+35% Daño a Ataques Normales."
+        "note": "+35% Daño a Ataques Normales.",
+        "bonus": "+35% Daño a Ataques Normales.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -15831,6 +18876,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "120%",
       "crit": "70%+ CR / 150%+ CD"
+    },
+    "talentPriority": "Físico/Intensificación: Normales > Definitiva (Q) > Habilidad (E). Reacciones transformativas: nivel 90; talentos opcionales.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/razor-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -15850,38 +18912,50 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escala con ATQ%, Prob. Crítica (hasta 100% CR) y Daño Burst",
     "bestWeapons": [
       {
-        "name": "Halcón de Jade Primordial",
+        "name": "Halcón de Jade",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+Prob. Crítica y ATQ apilable."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica y ATQ apilable.",
+        "weaponId": "13505",
+        "reviewedNote": false
       },
       {
-        "name": "Lanza del Duelo (Deathmatch)",
+        "name": "Lanza del Duelo",
         "rarity": 4,
-        "type": "BiS Pase",
-        "note": "+36.8% Prob. Crítica para maximizar el buff a aliados."
+        "type": "Opción por rol",
+        "note": "+36.8% Prob. Crítica para maximizar el buff a aliados.",
+        "weaponId": "13405",
+        "reviewedNote": false
       },
       {
-        "name": "La Captura (The Catch R5)",
+        "name": "La Captura",
         "rarity": 4,
-        "type": "Mejor F2P Daño",
-        "note": "+32% Daño y +12% CR en Burst."
+        "type": "Opción por rol",
+        "note": "+32% Daño y +12% CR en Burst.",
+        "weaponId": "13415",
+        "reviewedNote": false
       },
       {
         "name": "Lanza de Favonius",
         "rarity": 4,
-        "type": "Batería F2P",
-        "note": "Batería para el equipo con alto crítico."
+        "type": "Opción por rol",
+        "note": "Batería para el equipo con alto crítico.",
+        "weaponId": "13407",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Ritual Antiguo de la Nobleza (4 piezas)",
-        "note": "BiS Buff: +20% ATQ para aliados + transferencia de crítico."
+        "note": "BiS Buff: +20% ATQ para aliados + transferencia de crítico.",
+        "bonus": "BiS Buff: +20% ATQ para aliados + transferencia de crítico.",
+        "reviewedBonus": false
       },
       {
         "set": "Emblema del Destino (4 piezas)",
-        "note": "+Daño masivo a su lanza glacial continua."
+        "note": "+Daño masivo a su lanza glacial continua.",
+        "bonus": "+Daño masivo a su lanza glacial continua.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -15939,6 +19013,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "150%",
       "crit": "80%+ CR (Transfiere 12-15% CR al equipo)"
+    },
+    "talentPriority": "Definitiva (Q) > Habilidad (E). Normales solo en un rol físico en campo.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/rosaria-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -15958,38 +19049,58 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Buff de ATQ escala exclusivamente con su ATQ Base (Personaje + Arma)",
     "bestWeapons": [
       {
-        "name": "Alas Celestiales (Skyward Harp)",
+        "name": "Alas Celestiales",
         "rarity": 5,
-        "type": "BiS 5★ ATQ Base",
-        "note": "674 ATQ Base colosal + Crítico."
+        "type": "Opción por rol",
+        "note": "674 ATQ Base colosal + Crítico.",
+        "weaponId": "15501",
+        "reviewedNote": false
       },
       {
-        "name": "Elegía del Fin (Elegy for the End)",
+        "name": "Elegía del Fin",
         "rarity": 5,
-        "type": "BiS Support 5★",
-        "note": "+Recarga y buff de +100 EM y +20% ATQ."
+        "type": "Opción por rol",
+        "note": "+Recarga y buff de +100 EM y +20% ATQ.",
+        "weaponId": "15503",
+        "reviewedNote": false
       },
       {
         "name": "Luna de Mouun",
         "rarity": 4,
-        "type": "BiS 4★ Daño",
-        "note": "Alto ATQ Base (565) y potencia la Definitiva."
+        "type": "Opción por rol",
+        "note": "Alto ATQ Base (565) y potencia la Definitiva.",
+        "weaponId": "15416",
+        "reviewedNote": false
       },
       {
-        "name": "Arco del Sacrificio / Favonius",
+        "name": "Arco del Sacrificio",
         "rarity": 4,
-        "type": "Batería F2P",
-        "note": "Asegura recarga de 80 energía."
+        "type": "Opción por rol",
+        "note": "Asegura recarga de 80 energía.",
+        "weaponId": "15403",
+        "reviewedNote": false
+      },
+      {
+        "name": "Arco de Favonius",
+        "rarity": 4,
+        "type": "Opción por rol",
+        "note": "Asegura recarga de 80 energía.",
+        "weaponId": "15401",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Emblema del Destino (4 piezas)",
-        "note": "Convierte su alta recarga en daño demoledor de tormenta tengu."
+        "note": "Convierte su alta recarga en daño demoledor de tormenta tengu.",
+        "bonus": "Convierte su alta recarga en daño demoledor de tormenta tengu.",
+        "reviewedBonus": false
       },
       {
         "set": "Ritual Antiguo de la Nobleza (4 piezas)",
-        "note": "+20% ATQ para aliados."
+        "note": "+20% ATQ para aliados.",
+        "bonus": "+20% ATQ para aliados.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -16046,6 +19157,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "200% - 220% ER",
       "crit": "60%+ CR / 130%+ CD"
+    },
+    "talentPriority": "Habilidad (E), para el buff de ATQ > Definitiva (Q). Normales sin prioridad.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/sara-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -16067,36 +19195,48 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Lápida del Lobo",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "+ATQ% masivo."
+        "type": "Opción por rol",
+        "note": "+ATQ% masivo.",
+        "weaponId": "12502",
+        "reviewedNote": false
       },
       {
         "name": "Gran Espada de Favonius",
         "rarity": 4,
-        "type": "BiS Batería F2P",
-        "note": "Batería y fluidez de rotaciones."
+        "type": "Opción por rol",
+        "note": "Batería y fluidez de rotaciones.",
+        "weaponId": "12401",
+        "reviewedNote": false
       },
       {
-        "name": "Diluvio de Aguamarina (Makhaira)",
+        "name": "Májaira Aguamarina",
         "rarity": 4,
-        "type": "BiS EM",
-        "note": "Convierte EM en ATQ para ella y aliados."
+        "type": "Opción por rol",
+        "note": "Convierte EM en ATQ para ella y aliados.",
+        "weaponId": "12415",
+        "reviewedNote": false
       },
       {
-        "name": "Segadora de la Lluvia (Rainslasher)",
+        "name": "Segadora de la Lluvia",
         "rarity": 4,
-        "type": "Opción EM",
-        "note": "+165 EM."
+        "type": "Opción por rol",
+        "note": "+165 EM.",
+        "weaponId": "12405",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Sombra Verde Esmeralda (4 piezas)",
-        "note": "BiS Obligatorio: -40% Resistencia elemental enemiga."
+        "note": "BiS Obligatorio: -40% Resistencia elemental enemiga.",
+        "bonus": "BiS Obligatorio: -40% Resistencia elemental enemiga.",
+        "reviewedBonus": false
       },
       {
         "set": "Doncella Amada (4 piezas)",
-        "note": "Curación máxima."
+        "note": "Curación máxima.",
+        "bonus": "Curación máxima.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -16152,6 +19292,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "600+ EM",
       "er": "180% - 200% ER",
       "crit": "60%+ CR / 120%+ CD"
+    },
+    "talentPriority": "Soporte: Definitiva (Q) > Habilidad (E). Driver: E > Q y nivel 90.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/sayu-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -16171,42 +19328,56 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escala dualmente con ATQ% y Maestría Elemental (EM)",
     "bestWeapons": [
       {
-        "name": "Senda de la Cazadora (Hunter's Path)",
+        "name": "Senda de la Cazadora",
         "rarity": 5,
-        "type": "BiS Firma Oficial",
-        "note": "+44.1% Prob. Crítica y escala daño de flechas con 160% de su EM."
+        "type": "Opción por rol",
+        "note": "+44.1% Prob. Crítica y escala daño de flechas con 160% de su EM.",
+        "weaponId": "15511",
+        "reviewedNote": false
       },
       {
-        "name": "El Primer Gran Truco Mágico",
+        "name": "El Primer Gran Número de Magia",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "+66.2% Daño Crítico y +ATQ%."
+        "type": "Opción por rol",
+        "note": "+66.2% Daño Crítico y +ATQ%.",
+        "weaponId": "15512",
+        "reviewedNote": false
       },
       {
         "name": "Aqua Simulacra",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "+88.2% Daño Crítico y +20% daño universal."
+        "type": "Opción por rol",
+        "note": "+88.2% Daño Crítico y +20% daño universal.",
+        "weaponId": "15508",
+        "reviewedNote": false
       },
       {
-        "name": "Tirachinas (Slingshot R5)",
+        "name": "Tirachinas",
         "rarity": 3,
-        "type": "Mejor F2P 3★",
-        "note": "+31.2% Prob. Crítica y +60% Daño en corto alcance."
+        "type": "Opción por rol",
+        "note": "+31.2% Prob. Crítica y +60% Daño en corto alcance.",
+        "weaponId": "11320",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Sueños Áureos (4 piezas)",
-        "note": "BiS: +230 EM y ATQ% tras activar reacciones de Propagación."
+        "note": "BiS: +230 EM y ATQ% tras activar reacciones de Propagación.",
+        "bonus": "BiS: +230 EM y ATQ% tras activar reacciones de Propagación.",
+        "reviewedBonus": false
       },
       {
         "set": "Orquesta del Errante (4 piezas)",
-        "note": "+80 EM y +35% Daño a Flechas Cargadas."
+        "note": "+80 EM y +35% Daño a Flechas Cargadas.",
+        "bonus": "+80 EM y +35% Daño a Flechas Cargadas.",
+        "reviewedBonus": false
       },
       {
         "set": "Recuerdos del Bosque (4 piezas)",
-        "note": "-30% Resistencia Dendro si ningún compañero lo lleva."
+        "note": "-30% Resistencia Dendro si ningún compañero lo lleva.",
+        "bonus": "-30% Resistencia Dendro si ningún compañero lo lleva.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -16264,6 +19435,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "300 - 450 EM",
       "er": "120% ER",
       "crit": "75%+ CR / 180%+ CD"
+    },
+    "talentPriority": "Normales (cargados) > Definitiva (Q) >> Habilidad (E). Nivel 90 para Propagación.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/tighnari-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -16283,38 +19471,50 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escudo escala con DEF, Daño Definitivo físico garantiza 100% Crítico en C2",
     "bestWeapons": [
       {
-        "name": "Espadón Cornirrojo (Redhorn)",
+        "name": "Espadón Cornirrojo",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+88.2% Daño Crítico y bono por DEF."
+        "type": "Opción por rol",
+        "note": "+88.2% Daño Crítico y bono por DEF.",
+        "weaponId": "12510",
+        "reviewedNote": false
       },
       {
         "name": "Médula de la Serpiente Marina",
         "rarity": 4,
-        "type": "BiS Pase",
-        "note": "+Prob. Crítica y daño."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica y daño.",
+        "weaponId": "12409",
+        "reviewedNote": false
       },
       {
         "name": "Orgullo Celestial",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "+Recarga y ondas de vacío físicas."
+        "type": "Opción por rol",
+        "note": "+Recarga y ondas de vacío físicas.",
+        "weaponId": "12501",
+        "reviewedNote": false
       },
       {
-        "name": "Sombra Blanca (Whiteblind)",
+        "name": "Sombra Blanca",
         "rarity": 4,
-        "type": "Mejor Forja",
-        "note": "+DEF% para escudo y golpes."
+        "type": "Opción por rol",
+        "note": "+DEF% para escudo y golpes.",
+        "weaponId": "12407",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Llama Albina (4 piezas)",
-        "note": "+50% Daño Físico y +18% ATQ."
+        "note": "+50% Daño Físico y +18% ATQ.",
+        "bonus": "+50% Daño Físico y +18% ATQ.",
+        "reviewedBonus": false
       },
       {
         "set": "Caballería Sanguinaria (2 piezas) + Llama Albina (2 piezas)",
-        "note": "+50% Daño Físico permanente."
+        "note": "+50% Daño Físico permanente.",
+        "bonus": "+50% Daño Físico permanente.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -16371,6 +19571,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "120% ER",
       "crit": "170%+ CD"
+    },
+    "talentPriority": "Físico: Normales ≥ Definitiva (Q) ≥ Habilidad (E). Escudo: E; Q opcional.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/xinyan/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -16390,32 +19607,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Buff de Ataques Normales escala puramente con su Defensa Total (DEF)",
     "bestWeapons": [
       {
-        "name": "Lanza de Favonius (Favonius Lance)",
+        "name": "Lanza de Favonius",
         "rarity": 4,
-        "type": "BiS Indiscutible",
-        "note": "Batería para costear su Definitiva de 60 energía."
+        "type": "Opción por rol",
+        "note": "Batería para costear su Definitiva de 60 energía.",
+        "weaponId": "13407",
+        "reviewedNote": false
       },
       {
-        "name": "Huella del Arcoíris",
+        "name": "Estela Iridiscente",
         "rarity": 4,
-        "type": "Forja Natlan",
-        "note": "+DEF% colosal."
+        "type": "Opción por rol",
+        "note": "+DEF% colosal.",
+        "weaponId": "13431",
+        "reviewedNote": false
       },
       {
         "name": "La Captura",
         "rarity": 4,
-        "type": "Opción ER",
-        "note": "+Recarga."
+        "type": "Opción por rol",
+        "note": "+Recarga.",
+        "weaponId": "13415",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Cáscara de Sueños Opulentos (4 piezas)",
-        "note": "BiS Indiscutible: Hasta +54% DEF total y +24% Bono Geo."
+        "note": "BiS Indiscutible: Hasta +54% DEF total y +24% Bono Geo.",
+        "bonus": "BiS Indiscutible: Hasta +54% DEF total y +24% Bono Geo.",
+        "reviewedBonus": false
       },
       {
         "set": "Ritual Antiguo de la Nobleza (4 piezas)",
-        "note": "+20% ATQ para aliados."
+        "note": "+20% ATQ para aliados.",
+        "bonus": "+20% ATQ para aliados.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -16482,6 +19709,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "200% - 220% ER",
       "crit": "50%+ CR"
+    },
+    "talentPriority": "Nivel 90 > Definitiva (Q). Habilidad (E) opcional; normales sin prioridad.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/yunjin-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -16503,31 +19747,40 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Agitador del Relámpago",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+Daño Crítico y ATQ."
+        "type": "Opción por rol",
+        "note": "+Daño Crítico y ATQ.",
+        "weaponId": "15509",
+        "reviewedNote": false
       },
       {
-        "name": "Último Acorde (The Stringless)",
+        "name": "Último Acorde",
         "rarity": 4,
-        "type": "BiS 4★",
-        "note": "+Daño a Burst."
+        "type": "Opción por rol",
+        "note": "+Daño a Burst.",
+        "weaponId": "15402",
+        "reviewedNote": false
       },
       {
         "name": "Arco del Sacrificio",
         "rarity": 4,
-        "type": "Utilidad",
-        "note": "Doble uso de minibombas."
+        "type": "Opción por rol",
+        "note": "Doble uso de minibombas.",
+        "weaponId": "15403",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Nómada del Invierno (2 piezas) + Ritual Nobleza (2 piezas)",
-        "note": "+15% Cryo y +20% Burst."
+        "note": "+15% Cryo y +20% Burst.",
+        "bonus": "+15% Cryo y +20% Burst.",
+        "reviewedBonus": false
       },
       {
         "set": "Emblema del Destino (4 piezas)",
         "type": "Opción Nuke Burst",
-        "bonus": "+20% Recarga de Energía y bono de daño colosal a su Definitiva Cryo."
+        "bonus": "+20% Recarga de Energía y bono de daño colosal a su Definitiva Cryo.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -16584,6 +19837,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "120% ER",
       "crit": "60%+ CR / 140%+ CD"
+    },
+    "talentPriority": "Definitiva (Q) > Habilidad (E) > Normales, para quickswap.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/aloy-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -16603,32 +19873,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escala con Recarga y Maestría para Vaporizados/Derretidos",
     "bestWeapons": [
       {
-        "name": "Elegía del Fin (Elegy for the End)",
+        "name": "Elegía del Fin",
         "rarity": 5,
-        "type": "BiS Support 5★",
-        "note": "Aplica los 4 stacks en 1 segundo con su Definitiva para +100 EM y +20% ATQ."
+        "type": "Opción por rol",
+        "note": "Aplica los 4 stacks en 1 segundo con su Definitiva para +100 EM y +20% ATQ.",
+        "weaponId": "15503",
+        "reviewedNote": false
       },
       {
         "name": "Arco de Favonius",
         "rarity": 4,
-        "type": "Batería F2P",
-        "note": "Generación de energía."
+        "type": "Opción por rol",
+        "note": "Generación de energía.",
+        "weaponId": "15401",
+        "reviewedNote": false
       },
       {
         "name": "Último Acorde",
         "rarity": 4,
-        "type": "Opción Daño",
-        "note": "+Daño en Habilidad y Burst."
+        "type": "Opción por rol",
+        "note": "+Daño en Habilidad y Burst.",
+        "weaponId": "15402",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Ritual Antiguo de la Nobleza (4 piezas)",
-        "note": "BiS: +20% ATQ inmediato gracias a su Burst de 40 energía."
+        "note": "BiS: +20% ATQ inmediato gracias a su Burst de 40 energía.",
+        "bonus": "BiS: +20% ATQ inmediato gracias a su Burst de 40 energía.",
+        "reviewedBonus": false
       },
       {
         "set": "Instructor (4 piezas)",
-        "note": "+120 EM a todo el escuadrón."
+        "note": "+120 EM a todo el escuadrón.",
+        "bonus": "+120 EM a todo el escuadrón.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -16684,6 +19964,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "180% - 200% ER",
       "crit": "60%+ CR / 120%+ CD"
+    },
+    "talentPriority": "Soporte: Definitiva (Q) >> Habilidad (E). Crepitar: nivel 90; talentos pueden quedar en 1.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/amber-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -16703,32 +20000,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escalado por ATQ% y Maestría Elemental (EM)",
     "bestWeapons": [
       {
-        "name": "Elegía del Fin (Elegy for the End)",
+        "name": "Elegía del Fin",
         "rarity": 5,
-        "type": "BiS Support 5★",
-        "note": "+100 EM y +20% ATQ al equipo."
+        "type": "Opción por rol",
+        "note": "+100 EM y +20% ATQ al equipo.",
+        "weaponId": "15503",
+        "reviewedNote": false
       },
       {
         "name": "Arco de Favonius",
         "rarity": 4,
-        "type": "BiS F2P",
-        "note": "Batería de energía constante."
+        "type": "Opción por rol",
+        "note": "Batería de energía constante.",
+        "weaponId": "15401",
+        "reviewedNote": false
       },
       {
         "name": "Arco del Sacrificio",
         "rarity": 4,
-        "type": "Utilidad Reset",
-        "note": "Doble bumerán floral."
+        "type": "Opción por rol",
+        "note": "Doble bumerán floral.",
+        "weaponId": "15403",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Recuerdos del Bosque (4 piezas)",
-        "note": "BiS Indiscutible: -30% Resistencia Dendro enemiga."
+        "note": "BiS Indiscutible: -30% Resistencia Dendro enemiga.",
+        "bonus": "BiS Indiscutible: -30% Resistencia Dendro enemiga.",
+        "reviewedBonus": false
       },
       {
         "set": "Instructor (4 piezas)",
-        "note": "+120 EM para aliados."
+        "note": "+120 EM para aliados.",
+        "bonus": "+120 EM para aliados.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -16785,6 +20092,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "180% - 210% ER",
       "crit": "55%+ CR"
+    },
+    "talentPriority": "Nivel 90 para reacciones > Definitiva (Q) > Habilidad (E). Normales sin prioridad.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/collei-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -16804,38 +20128,50 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Reloj de Pers escala con ATQ% y niveles de presión",
     "bestWeapons": [
       {
-        "name": "Oda a los Pinos (Song of Broken Pines)",
+        "name": "Oda de los Pinos",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+Daño Físico colosal y velocidad de ataque."
+        "type": "Opción por rol",
+        "note": "+Daño Físico colosal y velocidad de ataque.",
+        "weaponId": "12503",
+        "reviewedNote": false
       },
       {
         "name": "Médula de la Serpiente Marina",
         "rarity": 4,
-        "type": "BiS Pase",
-        "note": "+Prob. Crítica y hasta +50% daño."
+        "type": "Opción por rol",
+        "note": "+Prob. Crítica y hasta +50% daño.",
+        "weaponId": "12409",
+        "reviewedNote": false
       },
       {
-        "name": "Sombra de la Marea (Tidal Shadow)",
+        "name": "Sombra de la Marea",
         "rarity": 4,
-        "type": "Mejor Forja F2P",
-        "note": "+48% ATQ al recibir curación."
+        "type": "Opción por rol",
+        "note": "+48% ATQ al recibir curación.",
+        "weaponId": "12425",
+        "reviewedNote": false
       },
       {
         "name": "Gran Espada de Favonius",
         "rarity": 4,
-        "type": "Batería F2P",
-        "note": "Recarga fluida."
+        "type": "Opción por rol",
+        "note": "Recarga fluida.",
+        "weaponId": "12401",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Llama Albina (4 piezas)",
-        "note": "BiS Físico: +50% Daño Físico y +18% ATQ."
+        "note": "BiS Físico: +50% Daño Físico y +18% ATQ.",
+        "bonus": "BiS Físico: +50% Daño Físico y +18% ATQ.",
+        "reviewedBonus": false
       },
       {
         "set": "Cazador Sombrío (4 piezas)",
-        "note": "+36% Prob. Crítica si va con Furina."
+        "note": "+36% Prob. Crítica si va con Furina.",
+        "bonus": "+36% Prob. Crítica si va con Furina.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -16892,6 +20228,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "120% ER",
       "crit": "70%+ CR / 150%+ CD"
+    },
+    "talentPriority": "Habilidad (E) > Normales >>> Definitiva (Q). Descendentes: Normales > E.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/freminet-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -16913,31 +20266,40 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Juramento por la Libertad",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+EM y buff a todo el equipo."
+        "type": "Opción por rol",
+        "note": "+EM y buff a todo el equipo.",
+        "weaponId": "11503",
+        "reviewedNote": false
       },
       {
         "name": "Espada de Favonius",
         "rarity": 4,
-        "type": "BiS Batería F2P",
-        "note": "Batería de energía."
+        "type": "Opción por rol",
+        "note": "Batería de energía.",
+        "weaponId": "11401",
+        "reviewedNote": false
       },
       {
-        "name": "Espina de Hierro (Iron Sting)",
+        "name": "Espina de Hierro",
         "rarity": 4,
-        "type": "Forja EM",
-        "note": "+165 EM."
+        "type": "Opción por rol",
+        "note": "+165 EM.",
+        "weaponId": "11407",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Sombra Verde Esmeralda (4 piezas)",
-        "note": "-40% Resistencia elemental enemiga."
+        "note": "-40% Resistencia elemental enemiga.",
+        "bonus": "-40% Resistencia elemental enemiga.",
+        "reviewedBonus": false
       },
       {
         "set": "Instructor (4 piezas)",
         "type": "Soporte F2P",
-        "bonus": "+120 de Maestría Elemental a todo el equipo al activar un Torbellino."
+        "bonus": "+120 de Maestría Elemental a todo el equipo al activar un Torbellino.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -16992,6 +20354,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "700+ EM",
       "er": "180%",
       "crit": "60%+ CR / 120%+ CD"
+    },
+    "talentPriority": "Habilidad (E) > Definitiva (Q) > Normales.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/anemo-traveler/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -17013,36 +20392,48 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Cortador de Jade Primordial",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+44.1% Prob. Crítica."
+        "type": "Opción por rol",
+        "note": "+44.1% Prob. Crítica.",
+        "weaponId": "11505",
+        "reviewedNote": false
       },
       {
         "name": "Reflejo de las Tinieblas",
         "rarity": 5,
-        "type": "Opción 5★",
-        "note": "+Daño Crítico."
+        "type": "Opción por rol",
+        "note": "+Daño Crítico.",
+        "weaponId": "11509",
+        "reviewedNote": false
       },
       {
-        "name": "Deseo Ponzoñoso (Festering Desire)",
+        "name": "Deseo Ponzoñoso",
         "rarity": 4,
-        "type": "BiS Evento",
-        "note": "+32% Daño en E."
+        "type": "Opción por rol",
+        "note": "+32% Daño en E.",
+        "weaponId": "11413",
+        "reviewedNote": false
       },
       {
         "name": "Espada de Favonius",
         "rarity": 4,
-        "type": "Batería F2P",
-        "note": "Batería Geo excelente."
+        "type": "Opción por rol",
+        "note": "Batería Geo excelente.",
+        "weaponId": "11401",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Emblema del Destino (4 piezas)",
-        "note": "+Daño masivo a la onda sísmica."
+        "note": "+Daño masivo a la onda sísmica.",
+        "bonus": "+Daño masivo a la onda sísmica.",
+        "reviewedBonus": false
       },
       {
         "set": "Petra Arcaica (2 piezas) + Gladiador (2 piezas)",
-        "note": "+15% Geo y +18% ATQ."
+        "note": "+15% Geo y +18% ATQ.",
+        "bonus": "+15% Geo y +18% ATQ.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -17099,6 +20490,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "120% ER",
       "crit": "65%+ CR / 140%+ CD"
+    },
+    "talentPriority": "Habilidad (E) ≥ Definitiva (Q) > Normales.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/geo-traveler/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -17118,32 +20526,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Recarga donada escala directamente con su propia Recarga de Energía",
     "bestWeapons": [
       {
-        "name": "Hoja Afilada Celestial (Skyward Blade)",
+        "name": "Hoja Afilada Celestial",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+Recarga elevada."
+        "type": "Opción por rol",
+        "note": "+Recarga elevada.",
+        "weaponId": "11502",
+        "reviewedNote": false
       },
       {
         "name": "Espada de Favonius",
         "rarity": 4,
-        "type": "BiS Indiscutible",
-        "note": "Batería máxima de energía."
+        "type": "Opción por rol",
+        "note": "Batería máxima de energía.",
+        "weaponId": "11401",
+        "reviewedNote": false
       },
       {
-        "name": "Espada del Sacrificio",
+        "name": "Espada de Sacrificio",
         "rarity": 4,
-        "type": "Utilidad",
-        "note": "Doble generación de amuletos."
+        "type": "Opción por rol",
+        "note": "Doble generación de amuletos.",
+        "weaponId": "11403",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Emblema del Destino (4 piezas)",
-        "note": "+20% Recarga y daño según ER."
+        "note": "+20% Recarga y daño según ER.",
+        "bonus": "+20% Recarga y daño según ER.",
+        "reviewedBonus": false
       },
       {
         "set": "Ritual Antiguo de la Nobleza (4 piezas)",
-        "note": "+20% ATQ para aliados."
+        "note": "+20% ATQ para aliados.",
+        "bonus": "+20% ATQ para aliados.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -17199,6 +20617,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "250%+ ER",
       "crit": "60%+ CR / 120%+ CD"
+    },
+    "talentPriority": "Habilidad (E) > Definitiva (Q) > Normales. E y Q al 7 maximizan la generación de energía.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/electro-traveler/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -17220,40 +20655,54 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Juramento por la Libertad",
         "rarity": 5,
-        "type": "BiS 5★",
-        "note": "+198 EM y buff al equipo."
+        "type": "Opción por rol",
+        "note": "+198 EM y buff al equipo.",
+        "weaponId": "11503",
+        "reviewedNote": false
       },
       {
         "name": "Espada de Favonius",
         "rarity": 4,
-        "type": "BiS F2P Batería",
-        "note": "Indispensable para su costo de 80 energía."
+        "type": "Opción por rol",
+        "note": "Indispensable para su costo de 80 energía.",
+        "weaponId": "11401",
+        "reviewedNote": false
       },
       {
-        "name": "Espada de Madera (Sapwood Blade R5)",
+        "name": "Espada de Madera",
         "rarity": 4,
-        "type": "Mejor Forja Sumeru",
-        "note": "+Recarga y suelta hoja de +120 EM."
+        "type": "Opción por rol",
+        "note": "+Recarga y suelta hoja de +120 EM.",
+        "weaponId": "11417",
+        "reviewedNote": false
       },
       {
-        "name": "Espada del Sacrificio",
+        "name": "Espada de Sacrificio",
         "rarity": 4,
-        "type": "Utilidad",
-        "note": "Doble uso de E para partículas."
+        "type": "Opción por rol",
+        "note": "Doble uso de E para partículas.",
+        "weaponId": "11403",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Recuerdos del Bosque (4 piezas)",
-        "note": "BiS Indiscutible: -30% Resistencia Dendro enemiga."
+        "note": "BiS Indiscutible: -30% Resistencia Dendro enemiga.",
+        "bonus": "BiS Indiscutible: -30% Resistencia Dendro enemiga.",
+        "reviewedBonus": false
       },
       {
         "set": "Emblema del Destino (4 piezas)",
-        "note": "Facilita rotaciones con +20% Recarga."
+        "note": "Facilita rotaciones con +20% Recarga.",
+        "bonus": "Facilita rotaciones con +20% Recarga.",
+        "reviewedBonus": false
       },
       {
         "set": "Ritual Antiguo de la Nobleza (4 piezas)",
-        "note": "+20% ATQ al equipo."
+        "note": "+20% ATQ al equipo.",
+        "bonus": "+20% ATQ al equipo.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -17310,6 +20759,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "220% - 250% ER",
       "crit": "55%+ CR"
+    },
+    "talentPriority": "Definitiva (Q) > Habilidad (E). Normales sin subir.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/dendro-traveler-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -17331,30 +20797,40 @@ const CHARACTER_BUILDS_DB = [
       {
         "name": "Espada de Favonius",
         "rarity": 4,
-        "type": "BiS Batería",
-        "note": "Batería de energía."
+        "type": "Opción por rol",
+        "note": "Batería de energía.",
+        "weaponId": "11401",
+        "reviewedNote": false
       },
       {
         "name": "Vado del Río Ceniciento",
         "rarity": 4,
-        "type": "Forja Fontaine Pesca",
-        "note": "+Recarga y Prob. Crítica."
+        "type": "Opción por rol",
+        "note": "+Recarga y Prob. Crítica.",
+        "weaponId": "11426",
+        "reviewedNote": false
       },
       {
-        "name": "Espada del Sacrificio",
+        "name": "Espada de Sacrificio",
         "rarity": 4,
-        "type": "Utilidad",
-        "note": "Doble torrente."
+        "type": "Opción por rol",
+        "note": "Doble torrente.",
+        "weaponId": "11403",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Ritual Antiguo de la Nobleza (4 piezas)",
-        "note": "+20% ATQ para aliados."
+        "note": "+20% ATQ para aliados.",
+        "bonus": "+20% ATQ para aliados.",
+        "reviewedBonus": false
       },
       {
         "set": "Emblema del Destino (4 piezas)",
-        "note": "+Daño a su Definitiva de ola."
+        "note": "+Daño a su Definitiva de ola.",
+        "bonus": "+Daño a su Definitiva de ola.",
+        "reviewedBonus": false
       }
     ],
     "statPriority": {
@@ -17410,6 +20886,23 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "190% ER",
       "crit": "60%+ CR / 120%+ CD"
+    },
+    "talentPriority": "Habilidad (E) > Definitiva (Q). Normales sin subir.",
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/hydro-traveler-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -17429,34 +20922,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escala con ATQ% y Recarga de Energía",
     "bestWeapons": [
       {
-        "name": "Elegía del Fin (Elegy for the End)",
+        "name": "Elegía del Fin",
         "rarity": 5,
-        "type": "BiS",
-        "note": "55.1% Recarga de Energía y otorga +100 EM y +20% ATQ a todo el equipo."
+        "type": "Opción por rol",
+        "note": "55.1% Recarga de Energía y otorga +100 EM y +20% ATQ a todo el equipo.",
+        "weaponId": "15503",
+        "reviewedNote": false
       },
       {
-        "name": "Arco de Favonius (Favonius Warbow)",
+        "name": "Arco de Favonius",
         "rarity": 4,
-        "type": "Mejor 4★ Batería",
-        "note": "61.3% Recarga de Energía y partículas blancas para el equipo."
+        "type": "Opción por rol",
+        "note": "61.3% Recarga de Energía y partículas blancas para el equipo.",
+        "weaponId": "15401",
+        "reviewedNote": false
       },
       {
-        "name": "Arco del Sacrificio (Sacrificial Bow)",
+        "name": "Arco del Sacrificio",
         "rarity": 4,
-        "type": "Alternativa F2P",
-        "note": "Doble uso de Habilidad Elemental para máxima generación de energía."
+        "type": "Opción por rol",
+        "note": "Doble uso de Habilidad Elemental para máxima generación de energía.",
+        "weaponId": "15403",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Sombra Verde Esmeralda (4 piezas)",
         "type": "BiS",
-        "bonus": "+15% Daño Anemo, +60% Daño Torbellino y -40% RES Elemental al enemigo."
+        "bonus": "+15% Daño Anemo, +60% Daño Torbellino y -40% RES Elemental al enemigo.",
+        "reviewedBonus": false
       },
       {
         "set": "Ritual Antiguo de la Nobleza (4 piezas)",
         "type": "Alternativa Buffer",
-        "bonus": "+20% ATQ para todo el equipo al lanzar la Definitiva."
+        "bonus": "+20% ATQ para todo el equipo al lanzar la Definitiva.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -17514,6 +21015,20 @@ const CHARACTER_BUILDS_DB = [
       "em": "150+ EM",
       "er": "180% – 200% ER",
       "crit": "50%+ CR (Favonius)"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/jahoda-quickguide/",
+      "sourceConsulted": true,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -17533,34 +21048,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escala con ATQ%, Bono Daño Cryo y Críticos",
     "bestWeapons": [
       {
-        "name": "Desastre y Arrepentimiento (Disaster and Remorse)",
+        "name": "Desastre y Arrepentimiento",
         "rarity": 5,
-        "type": "BiS Absoluto (Firma)",
-        "note": "Lanza firma de Lohen con Crítico masivo y bono de daño Hexerei."
+        "type": "Opción por rol",
+        "note": "Lanza firma de Lohen con Crítico masivo y bono de daño Hexerei.",
+        "weaponId": "13517",
+        "reviewedNote": false
       },
       {
-        "name": "Báculo de Homa (Staff of Homa)",
+        "name": "Báculo de Homa",
         "rarity": 5,
-        "type": "Alternativa 5★",
-        "note": "66.2% Daño Crítico y gran bono de ATQ."
+        "type": "Opción por rol",
+        "note": "66.2% Daño Crítico y gran bono de ATQ.",
+        "weaponId": "13501",
+        "reviewedNote": false
       },
       {
-        "name": "Halcón de Jade (Primordial Jade Winged-Spear)",
+        "name": "Halcón de Jade",
         "rarity": 5,
-        "type": "Stat-Stick CR",
-        "note": "674 ATQ Base y 22.1% Prob. Crítica."
+        "type": "Opción por rol",
+        "note": "674 ATQ Base y 22.1% Prob. Crítica.",
+        "weaponId": "13505",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Día de los Vientos Alzantes / A Day Carved from Rising Winds (4 piezas)",
         "type": "BiS",
-        "bonus": "Potencia el daño de unidades Hexerei y otorga Prob. Crítica/ATQ."
+        "bonus": "Potencia el daño de unidades Hexerei y otorga Prob. Crítica/ATQ.",
+        "reviewedBonus": false
       },
       {
         "set": "Nómada del Invierno (4 piezas)",
         "type": "Alternativa Freeze",
-        "bonus": "+15% Bono Cryo y hasta +40% Prob. Crítica contra enemigos congelados."
+        "bonus": "+15% Bono Cryo y hasta +40% Prob. Crítica contra enemigos congelados.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -17573,7 +21096,7 @@ const CHARACTER_BUILDS_DB = [
       "2. ATQ%",
       "3. Recarga de Energía% (120% – 130%)"
     ],
-    "talentPriority": "Habilidad Elemental (E) = Definitiva (Q) >>> Ataques Normales",
+    "talentPriority": "Habilidad (E) > Definitiva (Q). Normales sin subir.",
     "benchmarks": {
       "hp": "18,000",
       "atk": "2,100 – 2,500+ ATQ",
@@ -17617,6 +21140,22 @@ const CHARACTER_BUILDS_DB = [
       "em": "0 – 100 EM",
       "er": "120% – 130% ER",
       "crit": "75%+ CR / 210%+ CD"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/lohen-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "Los ataques convertidos escalan con la habilidad."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -17636,34 +21175,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Amplifica el daño del equipo según su ATQ% total",
     "bestWeapons": [
       {
-        "name": "Heptadas de los Ángeles (Angelos' Heptades)",
+        "name": "Heptadas de los Ángeles",
         "rarity": 5,
-        "type": "BiS Absoluto (Firma)",
-        "note": "Catalizador firma de Nicole con ATQ% masivo y bendición Hexerei grupal."
+        "type": "Opción por rol",
+        "note": "Catalizador firma de Nicole con ATQ% masivo y bendición Hexerei grupal.",
+        "weaponId": "14523",
+        "reviewedNote": false
       },
       {
-        "name": "Pergamino Celestial (Skyward Atlas)",
+        "name": "Pergamino Celestial",
         "rarity": 5,
-        "type": "Alternativa 5★ ATQ",
-        "note": "674 ATQ Base y 33.1% ATQ secundario para maximizar su buff."
+        "type": "Opción por rol",
+        "note": "674 ATQ Base y 33.1% ATQ secundario para maximizar su buff.",
+        "weaponId": "14501",
+        "reviewedNote": false
       },
       {
-        "name": "Códice de Favonius (Favonius Codex)",
+        "name": "Códice de Favonius",
         "rarity": 4,
-        "type": "Mejor F2P Batería",
-        "note": "Recarga de Energía y generación de partículas para el equipo."
+        "type": "Opción por rol",
+        "note": "Recarga de Energía y generación de partículas para el equipo.",
+        "weaponId": "14401",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Dádiva Celestial / Celestial Gift (4 piezas)",
         "type": "BiS",
-        "bonus": "Set insignia de soporte que incrementa el ATQ y el daño de todo el escuadrón."
+        "bonus": "Set insignia de soporte que incrementa el ATQ y el daño de todo el escuadrón.",
+        "reviewedBonus": false
       },
       {
         "set": "Ritual Antiguo de la Nobleza (4 piezas)",
         "type": "Alternativa Clásica",
-        "bonus": "+20% ATQ para todo el equipo al usar la Definitiva."
+        "bonus": "+20% ATQ para todo el equipo al usar la Definitiva.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -17676,7 +21223,7 @@ const CHARACTER_BUILDS_DB = [
       "2. Recarga de Energía% (160% – 180% ER)",
       "3. Prob. Crítica"
     ],
-    "talentPriority": "Habilidad Elemental (E) = Definitiva (Q) >>> Ataques Normales",
+    "talentPriority": "Habilidad (E) > Definitiva (Q) ≥ nivel 90. Normales sin subir.",
     "benchmarks": {
       "hp": "17,000+",
       "atk": "2,800 – 3,400+ ATQ",
@@ -17720,6 +21267,22 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "160% – 180% ER",
       "crit": "50%+ CR"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/nicole-quickguide/",
+      "sourceConsulted": true,
+      "changes": [
+        "El buff y el escudo dependen de la habilidad."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -17739,34 +21302,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escala con ATQ% y Críticos",
     "bestWeapons": [
       {
-        "name": "Hoja de Exáifanes (Exaiphanes Blade)",
+        "name": "Hoja de Exáifanes",
         "rarity": 5,
-        "type": "BiS",
-        "note": "Espada de Snezhnaya con bono especial para el Viajero y alto ATQ/Crítico."
+        "type": "Opción por rol",
+        "note": "Espada de Snezhnaya con bono especial para el Viajero y alto ATQ/Crítico.",
+        "weaponId": "11521",
+        "reviewedNote": false
       },
       {
-        "name": "Reflejo de las Tinieblas (Mistsplitter Reforged)",
+        "name": "Reflejo de las Tinieblas",
         "rarity": 5,
-        "type": "Alternativa 5★",
-        "note": "44.1% Daño Crítico y hasta +40% Bono Daño Elemental."
+        "type": "Opción por rol",
+        "note": "44.1% Daño Crítico y hasta +40% Bono Daño Elemental.",
+        "weaponId": "11509",
+        "reviewedNote": false
       },
       {
-        "name": "Espada de Favonius (Favonius Sword)",
+        "name": "Espada de Favonius",
         "rarity": 4,
-        "type": "Opción Soporte F2P",
-        "note": "61.3% Recarga de Energía y batería para el equipo."
+        "type": "Opción por rol",
+        "note": "61.3% Recarga de Energía y batería para el equipo.",
+        "weaponId": "11401",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Desilusión Congelada en las Sombras / Disenchantment in Deep Shadows (4 piezas)",
         "type": "BiS",
-        "bonus": "Potencia el daño de reacciones estelares de Snezhnaya y Crítico."
+        "bonus": "Potencia el daño de reacciones estelares de Snezhnaya y Crítico.",
+        "reviewedBonus": false
       },
       {
         "set": "Nómada del Invierno (4 piezas)",
         "type": "Alternativa Cryo",
-        "bonus": "+15% Bono Cryo y hasta +40% Prob. Crítica."
+        "bonus": "+15% Bono Cryo y hasta +40% Prob. Crítica.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -17823,6 +21394,20 @@ const CHARACTER_BUILDS_DB = [
       "em": "0",
       "er": "135% ER",
       "crit": "70%+ CR / 180%+ CD"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://library.keqingmains.com/characters/cryo/traveler/",
+      "sourceConsulted": false,
+      "changes": [],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   },
   {
@@ -17842,34 +21427,42 @@ const CHARACTER_BUILDS_DB = [
     "scalingLabel": "Escala con ATQ%, Bono Pyro y Bendición Noctespíritu",
     "bestWeapons": [
       {
-        "name": "Reflejo de las Tinieblas (Mistsplitter Reforged)",
+        "name": "Reflejo de las Tinieblas",
         "rarity": 5,
-        "type": "BiS",
-        "note": "Máximo daño personal Pyro y Daño Crítico."
+        "type": "Opción por rol",
+        "note": "Máximo daño personal Pyro y Daño Crítico.",
+        "weaponId": "11509",
+        "reviewedNote": false
       },
       {
-        "name": "Espada de Favonius (Favonius Sword)",
+        "name": "Espada de Favonius",
         "rarity": 4,
-        "type": "Mejor Soporte 4★",
-        "note": "Asegura la Definitiva en cada rotación y genera partículas."
+        "type": "Opción por rol",
+        "note": "Asegura la Definitiva en cada rotación y genera partículas.",
+        "weaponId": "11401",
+        "reviewedNote": false
       },
       {
-        "name": "Vado del Río Ceniciento (Fleuve Cendre Ferryman R5)",
+        "name": "Vado del Río Ceniciento",
         "rarity": 4,
-        "type": "Mejor F2P Pesca",
-        "note": "+45.9% ER y +16% Prob. Crítica en la Habilidad Elemental."
+        "type": "Opción por rol",
+        "note": "+45.9% ER y +16% Prob. Crítica en la Habilidad Elemental.",
+        "weaponId": "11426",
+        "reviewedNote": false
       }
     ],
     "bestArtifacts": [
       {
         "set": "Pergamino del Héroe de la Ciudad de las Cenizas (4 piezas)",
         "type": "BiS",
-        "bonus": "+40% Bono de Daño Elemental para todo el equipo al activar reacciones en Noctespíritu."
+        "bonus": "+40% Bono de Daño Elemental para todo el equipo al activar reacciones en Noctespíritu.",
+        "reviewedBonus": false
       },
       {
         "set": "Códice de Obsidiana (4 piezas)",
         "type": "Opción DPS en Campo",
-        "bonus": "+15% Daño y +40% Prob. Crítica en estado Noctespíritu."
+        "bonus": "+15% Daño y +40% Prob. Crítica en estado Noctespíritu.",
+        "reviewedBonus": false
       }
     ],
     "mainStats": {
@@ -17883,7 +21476,7 @@ const CHARACTER_BUILDS_DB = [
       "3. ATQ%",
       "4. Maestría Elemental"
     ],
-    "talentPriority": "Habilidad Elemental (E) > Definitiva (Q) >>> Ataques Normales",
+    "talentPriority": "Nivel 90 para reacciones > Definitiva (Q) ≥ Habilidad (E). Normales solo en campo con C6.",
     "benchmarks": {
       "hp": "16,500",
       "atk": "1,700 – 2,000 ATQ",
@@ -17927,6 +21520,22 @@ const CHARACTER_BUILDS_DB = [
       "em": "100+ EM",
       "er": "160% – 180% ER",
       "crit": "65%+ CR / 140%+ CD"
+    },
+    "review": {
+      "date": "2026-10-23",
+      "targetVersion": "7.1",
+      "status": "partial",
+      "sourceUrl": "https://keqingmains.com/q/pyro-traveler-quickguide/",
+      "sourceConsulted": false,
+      "changes": [
+        "Separado el rol fuera de campo del rol C6."
+      ],
+      "pending": [
+        "Comparativa completa de armas y refinamientos para cada variante.",
+        "Objetivos numéricos y rotaciones de energía por equipo.",
+        "Actualización de todas las variantes y equipos a 7.1."
+      ],
+      "hideUnverifiedBenchmarks": true
     }
   }
 ];
@@ -17943,6 +21552,18 @@ if (typeof ORIGINAL_SIMULATOR_DATA !== "undefined") {
   });
 }
 
+// La identidad del personaje procede del catálogo; las recomendaciones son comunitarias.
+if (typeof REAL_CHARACTERS_DB !== "undefined") {
+  const avatarKey = (url) => String(url || "").split("/").pop();
+  CHARACTER_BUILDS_DB.forEach((build) => {
+    const character = REAL_CHARACTERS_DB.find((c) => c.id !== "custom" && avatarKey(c.icon) === avatarKey(build.icon));
+    if (!character || /traveler|viajero/i.test(build.id)) return;
+    build.element = character.element;
+    build.rarity = character.rarity;
+    build.weaponType = character.weapon;
+    build.icon = character.icon;
+  });
+}
 
 if (typeof window !== "undefined") { window.CHARACTER_BUILDS_DB = CHARACTER_BUILDS_DB; }
 if (typeof module !== "undefined" && module.exports) { module.exports = { CHARACTER_BUILDS_DB }; }

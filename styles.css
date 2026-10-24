@@ -5515,3 +5515,22 @@ body {
     transform: translateY(0) scale(1);
   }
 }
+
+.tc-review-info { padding: 12px 18px; border-bottom: 1px solid var(--border); font-size: .82rem; line-height: 1.5; }
+.tc-review-info summary { cursor: pointer; font-weight: 700; }
+.tc-review-info p { margin: .5rem 0; }
+.tc-review-note { font-size: .78rem; color: var(--text-muted); line-height: 1.5; margin: .5rem 0; }
+
+/* Datos base del personaje, sin modificadores de equipo. */
+.tc-original-facts { padding: 14px 18px; border-bottom: 1px solid var(--border); }
+.tc-original-facts summary { cursor: pointer; font-weight: 700; }
+.tc-base-stats-level { color: var(--text-muted); font-size: 0.8rem; margin: 12px 0 8px; }
+.tc-base-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 0 0 6px; }
+.tc-base-stats dt { color: var(--text-muted); font-size: 0.78rem; }
+.tc-base-stats dd { margin: 4px 0 0; color: var(--text-main); font-weight: 700; font-size: 0.9rem; overflow-wrap: anywhere; }
+@media (max-width: 600px) { .tc-base-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.tc-artifact-combination { margin-top: 8px; font-size: 0.78rem; line-height: 1.5; color: var(--text-muted); }
+.tc-artifact-combination p { margin: 0 0 4px; }
+.tc-artifact-combination > div { display: flex; flex-wrap: wrap; column-gap: 8px; margin-top: 3px; }
+.tc-artifact-combination strong { color: var(--text-main); font-weight: 600; }

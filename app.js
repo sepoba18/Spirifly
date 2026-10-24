@@ -544,6 +544,12 @@ function initApp() {
     renderAll();
   });
 
+  const tutorialLangSelect = document.getElementById("tutorialLangSelect");
+  tutorialLangSelect.addEventListener("change", () => {
+    langSelect.value = tutorialLangSelect.value;
+    langSelect.dispatchEvent(new Event("change"));
+  });
+
   // Sincronizar estado visual de navegación inicial sin parpadeos
   document.querySelectorAll(".nav-btn").forEach((b) => {
     b.classList.toggle("active", b.dataset.tab === state.activeTab);
@@ -576,7 +582,6 @@ function initApp() {
         renderWishesDashboard();
       } else if (state.activeTab === "theory") {
         renderTheorycraft();
-        showTheorycraftPolishingNotice();
       } else if (state.activeTab === "planner") {
         if (typeof renderCharacterWeaponPlanner === "function") {
           renderCharacterWeaponPlanner();
@@ -771,7 +776,6 @@ function initApp() {
     renderWishesDashboard();
   } else if (state.activeTab === "theory") {
     renderTheorycraft();
-    showTheorycraftPolishingNotice();
   }
 
   window.addEventListener("hashchange", () => {
@@ -791,6 +795,7 @@ function setTextIfPresent(id, text) {
 }
 
 function applyStaticTranslations(t) {
+  translateInteractiveTutorial(state.lang);
   // 1. Navegación y Hero
   setTextIfPresent("navPlanner", t.nav.planner);
   setTextIfPresent("navFarming", t.nav.farming);
@@ -2577,17 +2582,14 @@ const WEAPON_NAME_ALIASES = {
 };
 
 function getWeaponFallbackIcon(type = "Sword") {
-  const map = {
-    "Sword": "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Zephyrus.png",
-    "Claymore": "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Zephyrus.png",
-    "Polearm": "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Zephyrus.png",
-    "Bow": "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Bow_Zephyrus.png",
-    "Catalyst": "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Zephyrus.png"
-  };
-  return map[type] || map["Sword"];
+  return `assets/weapon_types/${String(type).toLowerCase()}.png`;
 }
 
-function getWeaponDisplayData(rawName, fallbackRarity = 5, charWeaponType = "Sword") {
+function getWeaponDisplayData(rawName, fallbackRarity = 5, charWeaponType = "Sword", weaponId = null) {
+  if (weaponId && typeof REAL_WEAPONS_DB !== "undefined") {
+    const exact = REAL_WEAPONS_DB.find(w => String(w.id) === String(weaponId) && w.type === charWeaponType);
+    if (exact) return { icon: exact.icon, rarity: exact.rarity, name: exact.name };
+  }
   const fallbackIcon = getWeaponFallbackIcon(charWeaponType);
   if (!rawName) return { icon: fallbackIcon, rarity: fallbackRarity, name: "Arma" };
   const clean = rawName.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s*\([^)]*\)/g, "").replace(/\s*r[1-5]/gi, "").trim();
@@ -2650,231 +2652,260 @@ function getWeaponDisplayData(rawName, fallbackRarity = 5, charWeaponType = "Swo
 // Diccionario Oficial y Verificado de Sets de Artefactos de Genshin Impact (Flores de la Vida en Enka/Yatta CDN)
 const ARTIFACT_SETS_ICONS = {
   // Sets 5★ Clásicos y Universales
-  "gladiador": "https://enka.network/ui/UI_RelicIcon_15001_1.png", // Final del Gladiador
-  "gladiator": "https://enka.network/ui/UI_RelicIcon_15001_1.png",
-  "gladeador": "https://enka.network/ui/UI_RelicIcon_15001_1.png",
-  "orquesta del errante": "https://enka.network/ui/UI_RelicIcon_15003_1.png", // Orquesta del Errante
-  "orquesta": "https://enka.network/ui/UI_RelicIcon_15003_1.png",
-  "wanderer": "https://enka.network/ui/UI_RelicIcon_15003_1.png",
-  "ritual antiguo de la nobleza": "https://enka.network/ui/UI_RelicIcon_15007_1.png", // Ritual Antiguo de la Nobleza
-  "nobleza obligada": "https://enka.network/ui/UI_RelicIcon_15007_1.png",
-  "nobleza": "https://enka.network/ui/UI_RelicIcon_15007_1.png",
-  "noblesse": "https://enka.network/ui/UI_RelicIcon_15007_1.png",
-  "caballeria sanguinaria": "https://enka.network/ui/UI_RelicIcon_15008_1.png", // Caballería Sanguinaria
-  "caballeria": "https://enka.network/ui/UI_RelicIcon_15008_1.png",
-  "bloodstained": "https://enka.network/ui/UI_RelicIcon_15008_1.png",
+  "gladiador": "assets/artifacts/UI_RelicIcon_15001_4.png", // Final del Gladiador
+  "gladiator": "assets/artifacts/UI_RelicIcon_15001_4.png",
+  "gladeador": "assets/artifacts/UI_RelicIcon_15001_4.png",
+  "orquesta del errante": "assets/artifacts/UI_RelicIcon_15003_4.png", // Orquesta del Errante
+  "orquesta": "assets/artifacts/UI_RelicIcon_15003_4.png",
+  "wanderer": "assets/artifacts/UI_RelicIcon_15003_4.png",
+  "ritual antiguo de la nobleza": "assets/artifacts/UI_RelicIcon_15007_4.png", // Ritual Antiguo de la Nobleza
+  "nobleza obligada": "assets/artifacts/UI_RelicIcon_15007_4.png",
+  "nobleza": "assets/artifacts/UI_RelicIcon_15007_4.png",
+  "noblesse": "assets/artifacts/UI_RelicIcon_15007_4.png",
+  "caballeria sanguinaria": "assets/artifacts/UI_RelicIcon_15008_4.png", // Caballería Sanguinaria
+  "caballeria": "assets/artifacts/UI_RelicIcon_15008_4.png",
+  "bloodstained": "assets/artifacts/UI_RelicIcon_15008_4.png",
 
   // Sets Mondstadt & Liyue
-  "sombra verde esmeralda": "https://enka.network/ui/UI_RelicIcon_15002_1.png", // Sombra Verde Esmeralda
-  "sombra verde": "https://enka.network/ui/UI_RelicIcon_15002_1.png",
-  "viridescent": "https://enka.network/ui/UI_RelicIcon_15002_1.png",
-  "furia del trueno": "https://enka.network/ui/UI_RelicIcon_15005_1.png", // Furia del Trueno
-  "thundering fury": "https://enka.network/ui/UI_RelicIcon_15005_1.png",
-  "domador de truenos": "https://enka.network/ui/UI_RelicIcon_14002_1.png", // Domador de Truenos
-  "thundersoother": "https://enka.network/ui/UI_RelicIcon_14002_1.png",
-  "bruja carmesi en llamas": "https://enka.network/ui/UI_RelicIcon_15006_1.png", // Bruja Carmesí en Llamas
-  "bruja carmesi": "https://enka.network/ui/UI_RelicIcon_15006_1.png",
-  "crimson witch": "https://enka.network/ui/UI_RelicIcon_15006_1.png",
-  "virtuoso corredor de lava": "https://enka.network/ui/UI_RelicIcon_14003_1.png", // Virtuoso Corredor de Lava
-  "corredor de lava": "https://enka.network/ui/UI_RelicIcon_14003_1.png",
-  "lavawalker": "https://enka.network/ui/UI_RelicIcon_14003_1.png",
-  "petra arcaica": "https://enka.network/ui/UI_RelicIcon_15014_1.png", // Petra Arcaica
-  "archaic petra": "https://enka.network/ui/UI_RelicIcon_15014_1.png",
-  "retroceso del meteorito": "https://enka.network/ui/UI_RelicIcon_15015_1.png", // Retroceso del Meteorito
-  "meteorito": "https://enka.network/ui/UI_RelicIcon_15015_1.png",
-  "bolide": "https://enka.network/ui/UI_RelicIcon_15015_1.png",
-  "doncella amada": "https://enka.network/ui/UI_RelicIcon_14004_1.png", // Doncella Amada
-  "maiden": "https://enka.network/ui/UI_RelicIcon_14004_1.png",
+  "sombra verde esmeralda": "assets/artifacts/UI_RelicIcon_15002_4.png", // Sombra Verde Esmeralda
+  "sombra verde": "assets/artifacts/UI_RelicIcon_15002_4.png",
+  "viridescent": "assets/artifacts/UI_RelicIcon_15002_4.png",
+  "furia del trueno": "assets/artifacts/UI_RelicIcon_15005_4.png", // Furia del Trueno
+  "thundering fury": "assets/artifacts/UI_RelicIcon_15005_4.png",
+  "domador de truenos": "assets/artifacts/UI_RelicIcon_14002_4.png", // Domador de Truenos
+  "thundersoother": "assets/artifacts/UI_RelicIcon_14002_4.png",
+  "bruja carmesi en llamas": "assets/artifacts/UI_RelicIcon_15006_4.png", // Bruja Carmesí en Llamas
+  "bruja carmesi": "assets/artifacts/UI_RelicIcon_15006_4.png",
+  "crimson witch": "assets/artifacts/UI_RelicIcon_15006_4.png",
+  "virtuoso corredor de lava": "assets/artifacts/UI_RelicIcon_14003_4.png", // Virtuoso Corredor de Lava
+  "corredor de lava": "assets/artifacts/UI_RelicIcon_14003_4.png",
+  "lavawalker": "assets/artifacts/UI_RelicIcon_14003_4.png",
+  "petra arcaica": "assets/artifacts/UI_RelicIcon_15014_4.png", // Petra Arcaica
+  "archaic petra": "assets/artifacts/UI_RelicIcon_15014_4.png",
+  "retroceso del meteorito": "assets/artifacts/UI_RelicIcon_15015_4.png", // Retroceso del Meteorito
+  "meteorito": "assets/artifacts/UI_RelicIcon_15015_4.png",
+  "bolide": "assets/artifacts/UI_RelicIcon_15015_4.png",
+  "doncella amada": "assets/artifacts/UI_RelicIcon_14004_4.png", // Doncella Amada
+  "maiden": "assets/artifacts/UI_RelicIcon_14004_4.png",
 
   // Espinadragón & Inazuma
-  "nomada del invierno": "https://enka.network/ui/UI_RelicIcon_14001_1.png", // Nómada del Invierno
-  "blizzard strayer": "https://enka.network/ui/UI_RelicIcon_14001_1.png",
-  "blizzard": "https://enka.network/ui/UI_RelicIcon_14001_1.png",
-  "corazon de las profundidades": "https://enka.network/ui/UI_RelicIcon_15016_1.png", // Corazón de las Profundidades
-  "heart of depth": "https://enka.network/ui/UI_RelicIcon_15016_1.png",
-  "tenacidad de la geoarmada": "https://enka.network/ui/UI_RelicIcon_15017_1.png", // Tenacidad de la Geoarmada
-  "tenacidad": "https://enka.network/ui/UI_RelicIcon_15017_1.png",
-  "millelith": "https://enka.network/ui/UI_RelicIcon_15017_1.png",
-  "llamas albinas": "https://enka.network/ui/UI_RelicIcon_15018_1.png", // Llamas Albinas
-  "llama albina": "https://enka.network/ui/UI_RelicIcon_15018_1.png",
-  "pale flame": "https://enka.network/ui/UI_RelicIcon_15018_1.png",
-  "reminiscencia de la purificacion": "https://enka.network/ui/UI_RelicIcon_15019_1.png", // Reminiscencia de la Purificación
-  "reminiscencia": "https://enka.network/ui/UI_RelicIcon_15019_1.png",
-  "shimenawa": "https://enka.network/ui/UI_RelicIcon_15019_1.png",
-  "emblema del destino": "https://enka.network/ui/UI_RelicIcon_15020_1.png", // Emblema del Destino
-  "emblema": "https://enka.network/ui/UI_RelicIcon_15020_1.png",
-  "emblem": "https://enka.network/ui/UI_RelicIcon_15020_1.png",
-  "cascara de suenos opulentos": "https://enka.network/ui/UI_RelicIcon_15021_1.png", // Cáscara de Sueños Opulentos
-  "cascara de suenos": "https://enka.network/ui/UI_RelicIcon_15021_1.png",
-  "opulent": "https://enka.network/ui/UI_RelicIcon_15021_1.png",
-  "husk": "https://enka.network/ui/UI_RelicIcon_15021_1.png",
-  "perla oceanica": "https://enka.network/ui/UI_RelicIcon_15022_1.png", // Perla Oceánica
-  "ocean-hued": "https://enka.network/ui/UI_RelicIcon_15022_1.png",
-  "clam": "https://enka.network/ui/UI_RelicIcon_15022_1.png",
+  "nomada del invierno": "assets/artifacts/UI_RelicIcon_14001_4.png", // Nómada del Invierno
+  "blizzard strayer": "assets/artifacts/UI_RelicIcon_14001_4.png",
+  "blizzard": "assets/artifacts/UI_RelicIcon_14001_4.png",
+  "corazon de las profundidades": "assets/artifacts/UI_RelicIcon_15016_4.png", // Corazón de las Profundidades
+  "heart of depth": "assets/artifacts/UI_RelicIcon_15016_4.png",
+  "tenacidad de la geoarmada": "assets/artifacts/UI_RelicIcon_15017_4.png", // Tenacidad de la Geoarmada
+  "tenacidad": "assets/artifacts/UI_RelicIcon_15017_4.png",
+  "millelith": "assets/artifacts/UI_RelicIcon_15017_4.png",
+  "llamas albinas": "assets/artifacts/UI_RelicIcon_15018_4.png", // Llamas Albinas
+  "llama albina": "assets/artifacts/UI_RelicIcon_15018_4.png",
+  "pale flame": "assets/artifacts/UI_RelicIcon_15018_4.png",
+  "reminiscencia de la purificacion": "assets/artifacts/UI_RelicIcon_15019_4.png", // Reminiscencia de la Purificación
+  "reminiscencia": "assets/artifacts/UI_RelicIcon_15019_4.png",
+  "shimenawa": "assets/artifacts/UI_RelicIcon_15019_4.png",
+  "emblema del destino": "assets/artifacts/UI_RelicIcon_15020_4.png", // Emblema del Destino
+  "emblema": "assets/artifacts/UI_RelicIcon_15020_4.png",
+  "emblem": "assets/artifacts/UI_RelicIcon_15020_4.png",
+  "cascara de suenos opulentos": "assets/artifacts/UI_RelicIcon_15021_4.png", // Cáscara de Sueños Opulentos
+  "cascara de suenos": "assets/artifacts/UI_RelicIcon_15021_4.png",
+  "opulent": "assets/artifacts/UI_RelicIcon_15021_4.png",
+  "husk": "assets/artifacts/UI_RelicIcon_15021_4.png",
+  "perla oceanica": "assets/artifacts/UI_RelicIcon_15022_4.png", // Perla Oceánica
+  "ocean-hued": "assets/artifacts/UI_RelicIcon_15022_4.png",
+  "clam": "assets/artifacts/UI_RelicIcon_15022_4.png",
 
   // Sima & Sumeru
-  "deceso del cinabrio": "https://enka.network/ui/UI_RelicIcon_15023_1.png", // Deceso del Cinabrio
-  "cinabrio": "https://enka.network/ui/UI_RelicIcon_15023_1.png",
-  "vermillion": "https://enka.network/ui/UI_RelicIcon_15023_1.png",
-  "eco del sacrificio": "https://enka.network/ui/UI_RelicIcon_15024_1.png", // Eco del Sacrificio
-  "echoes": "https://enka.network/ui/UI_RelicIcon_15024_1.png",
-  "recuerdos del bosque": "https://enka.network/ui/UI_RelicIcon_15025_1.png", // Recuerdos del Bosque
-  "deepwood": "https://enka.network/ui/UI_RelicIcon_15025_1.png",
-  "suenos aureos": "https://enka.network/ui/UI_RelicIcon_15026_1.png", // Sueños Áureos
-  "gilded": "https://enka.network/ui/UI_RelicIcon_15026_1.png",
-  "pabellon del desierto": "https://enka.network/ui/UI_RelicIcon_15027_1.png", // Épica del Pabellón del Desierto
-  "desert pavilion": "https://enka.network/ui/UI_RelicIcon_15027_1.png",
-  "flor del paraiso perdido": "https://enka.network/ui/UI_RelicIcon_15028_1.png", // Flor del Paraíso Perdido
-  "flor olvidada del paraiso": "https://enka.network/ui/UI_RelicIcon_15028_1.png",
-  "paraiso perdido": "https://enka.network/ui/UI_RelicIcon_15028_1.png",
-  "paradise lost": "https://enka.network/ui/UI_RelicIcon_15028_1.png",
-  "sueno de la ninfa": "https://enka.network/ui/UI_RelicIcon_15029_1.png", // Sueño de la Ninfa
-  "nymph": "https://enka.network/ui/UI_RelicIcon_15029_1.png",
-  "fulgor de vurukasha": "https://enka.network/ui/UI_RelicIcon_15030_1.png", // Fulgor de Vurukasha
-  "vurukasha": "https://enka.network/ui/UI_RelicIcon_15030_1.png",
-  "vourukasha": "https://enka.network/ui/UI_RelicIcon_15030_1.png",
+  "deceso del cinabrio": "assets/artifacts/UI_RelicIcon_15023_4.png", // Deceso del Cinabrio
+  "cinabrio": "assets/artifacts/UI_RelicIcon_15023_4.png",
+  "vermillion": "assets/artifacts/UI_RelicIcon_15023_4.png",
+  "eco del sacrificio": "assets/artifacts/UI_RelicIcon_15024_4.png", // Eco del Sacrificio
+  "echoes": "assets/artifacts/UI_RelicIcon_15024_4.png",
+  "recuerdos del bosque": "assets/artifacts/UI_RelicIcon_15025_4.png", // Recuerdos del Bosque
+  "deepwood": "assets/artifacts/UI_RelicIcon_15025_4.png",
+  "suenos aureos": "assets/artifacts/UI_RelicIcon_15026_4.png", // Sueños Áureos
+  "gilded": "assets/artifacts/UI_RelicIcon_15026_4.png",
+  "pabellon del desierto": "assets/artifacts/UI_RelicIcon_15027_4.png", // Épica del Pabellón del Desierto
+  "desert pavilion": "assets/artifacts/UI_RelicIcon_15027_4.png",
+  "flor del paraiso perdido": "assets/artifacts/UI_RelicIcon_15028_4.png", // Flor del Paraíso Perdido
+  "flor olvidada del paraiso": "assets/artifacts/UI_RelicIcon_15028_4.png",
+  "paraiso perdido": "assets/artifacts/UI_RelicIcon_15028_4.png",
+  "paradise lost": "assets/artifacts/UI_RelicIcon_15028_4.png",
+  "sueno de la ninfa": "assets/artifacts/UI_RelicIcon_15029_4.png", // Sueño de la Ninfa
+  "nymph": "assets/artifacts/UI_RelicIcon_15029_4.png",
+  "fulgor de vurukasha": "assets/artifacts/UI_RelicIcon_15030_4.png", // Fulgor de Vurukasha
+  "vurukasha": "assets/artifacts/UI_RelicIcon_15030_4.png",
+  "vourukasha": "assets/artifacts/UI_RelicIcon_15030_4.png",
 
   // Fontaine
-  "cazador sombrio": "https://enka.network/ui/UI_RelicIcon_15031_1.png", // Cazador Sombrío / Marechaussee
-  "cazador fantasmal": "https://enka.network/ui/UI_RelicIcon_15031_1.png",
-  "marechaussee": "https://enka.network/ui/UI_RelicIcon_15031_1.png",
-  "compania dorada": "https://enka.network/ui/UI_RelicIcon_15032_1.png", // Compañía Dorada
-  "golden troupe": "https://enka.network/ui/UI_RelicIcon_15032_1.png",
-  "cancion de dias preteritos": "https://enka.network/ui/UI_RelicIcon_15033_1.png", // Canción de Días Pretéritos
-  "sonata de dias preteritos": "https://enka.network/ui/UI_RelicIcon_15033_1.png",
-  "dias preteritos": "https://enka.network/ui/UI_RelicIcon_15033_1.png",
-  "son de antano": "https://enka.network/ui/UI_RelicIcon_15033_1.png",
-  "song of days": "https://enka.network/ui/UI_RelicIcon_15033_1.png",
-  "murmullo del bosque en la noche ecoica": "https://enka.network/ui/UI_RelicIcon_15034_1.png",
-  "murmullo del bosque reverberante": "https://enka.network/ui/UI_RelicIcon_15034_1.png",
-  "murmullo del bosque": "https://enka.network/ui/UI_RelicIcon_15034_1.png",
-  "noche ecoica": "https://enka.network/ui/UI_RelicIcon_15034_1.png",
-  "nighttime whispers": "https://enka.network/ui/UI_RelicIcon_15034_1.png",
-  "fragmento de la armonia fantasmal": "https://enka.network/ui/UI_RelicIcon_15035_1.png", // Fragmento de la Armonía Fantasiosa
-  "armonia fantasmal": "https://enka.network/ui/UI_RelicIcon_15035_1.png",
-  "armonia fantas": "https://enka.network/ui/UI_RelicIcon_15035_1.png",
-  "harmonic whimsy": "https://enka.network/ui/UI_RelicIcon_15035_1.png",
-  "whimsy": "https://enka.network/ui/UI_RelicIcon_15035_1.png",
-  "ensonacion inacabada": "https://enka.network/ui/UI_RelicIcon_15036_1.png", // Ensoñación Inacabada
-  "suenos inacabados": "https://enka.network/ui/UI_RelicIcon_15036_1.png",
-  "unfinished reverie": "https://enka.network/ui/UI_RelicIcon_15036_1.png",
-  "reverie": "https://enka.network/ui/UI_RelicIcon_15036_1.png",
+  "cazador sombrio": "assets/artifacts/UI_RelicIcon_15031_4.png", // Cazador Sombrío / Marechaussee
+  "cazador fantasmal": "assets/artifacts/UI_RelicIcon_15031_4.png",
+  "marechaussee": "assets/artifacts/UI_RelicIcon_15031_4.png",
+  "compania dorada": "assets/artifacts/UI_RelicIcon_15032_4.png", // Compañía Dorada
+  "golden troupe": "assets/artifacts/UI_RelicIcon_15032_4.png",
+  "cancion de dias preteritos": "assets/artifacts/UI_RelicIcon_15033_4.png", // Canción de Días Pretéritos
+  "sonata de dias preteritos": "assets/artifacts/UI_RelicIcon_15033_4.png",
+  "dias preteritos": "assets/artifacts/UI_RelicIcon_15033_4.png",
+  "son de antano": "assets/artifacts/UI_RelicIcon_15033_4.png",
+  "song of days": "assets/artifacts/UI_RelicIcon_15033_4.png",
+  "murmullo del bosque en la noche ecoica": "assets/artifacts/UI_RelicIcon_15034_4.png",
+  "murmullo del bosque reverberante": "assets/artifacts/UI_RelicIcon_15034_4.png",
+  "murmullo del bosque": "assets/artifacts/UI_RelicIcon_15034_4.png",
+  "noche ecoica": "assets/artifacts/UI_RelicIcon_15034_4.png",
+  "nighttime whispers": "assets/artifacts/UI_RelicIcon_15034_4.png",
+  "fragmento de la armonia fantasmal": "assets/artifacts/UI_RelicIcon_15035_4.png", // Fragmento de la Armonía Fantasiosa
+  "armonia fantasmal": "assets/artifacts/UI_RelicIcon_15035_4.png",
+  "armonia fantas": "assets/artifacts/UI_RelicIcon_15035_4.png",
+  "harmonic whimsy": "assets/artifacts/UI_RelicIcon_15035_4.png",
+  "whimsy": "assets/artifacts/UI_RelicIcon_15035_4.png",
+  "ensonacion inacabada": "assets/artifacts/UI_RelicIcon_15036_4.png", // Ensoñación Inacabada
+  "suenos inacabados": "assets/artifacts/UI_RelicIcon_15036_4.png",
+  "unfinished reverie": "assets/artifacts/UI_RelicIcon_15036_4.png",
+  "reverie": "assets/artifacts/UI_RelicIcon_15036_4.png",
 
   // Natlan
-  "pergamino del heroe de la ciudad de las cenizas": "https://enka.network/ui/UI_RelicIcon_15037_1.png",
-  "pergamino del heroe": "https://enka.network/ui/UI_RelicIcon_15037_1.png",
-  "cinder city": "https://enka.network/ui/UI_RelicIcon_15037_1.png",
-  "hero of cinder": "https://enka.network/ui/UI_RelicIcon_15037_1.png",
-  "codice de obsidiana": "https://enka.network/ui/UI_RelicIcon_15038_1.png", // Códice de Obsidiana
-  "obsidian codex": "https://enka.network/ui/UI_RelicIcon_15038_1.png",
+  "pergamino del heroe de la ciudad de las cenizas": "assets/artifacts/UI_RelicIcon_15037_4.png",
+  "pergamino del heroe": "assets/artifacts/UI_RelicIcon_15037_4.png",
+  "cinder city": "assets/artifacts/UI_RelicIcon_15037_4.png",
+  "hero of cinder": "assets/artifacts/UI_RelicIcon_15037_4.png",
+  "codice de obsidiana": "assets/artifacts/UI_RelicIcon_15038_4.png", // Códice de Obsidiana
+  "obsidian codex": "assets/artifacts/UI_RelicIcon_15038_4.png",
 
   // Sets Nuevos Oficiales (15039 - 15048: Nod-Krai, Snezhnaya & Hexerei)
-  "long night's oath": "https://enka.network/ui/UI_RelicIcon_15039_1.png",
-  "long night": "https://enka.network/ui/UI_RelicIcon_15039_1.png",
-  "juramento de la noche": "https://enka.network/ui/UI_RelicIcon_15039_1.png",
-  "finale of the deep galleries": "https://enka.network/ui/UI_RelicIcon_15040_1.png",
-  "finale of the deep": "https://enka.network/ui/UI_RelicIcon_15040_1.png",
-  "deep galleries": "https://enka.network/ui/UI_RelicIcon_15040_1.png",
-  "requiem del corredor": "https://enka.network/ui/UI_RelicIcon_15040_1.png",
-  "night of the sky's unveiling": "https://enka.network/ui/UI_RelicIcon_15041_1.png",
-  "sky's unveiling": "https://enka.network/ui/UI_RelicIcon_15041_1.png",
-  "revelacion del cielo": "https://enka.network/ui/UI_RelicIcon_15041_1.png",
-  "silken moon's serenade": "https://enka.network/ui/UI_RelicIcon_15042_1.png",
-  "serenata de la luna tejida": "https://enka.network/ui/UI_RelicIcon_15042_1.png",
-  "serenata de la luna": "https://enka.network/ui/UI_RelicIcon_15042_1.png",
-  "luna tejida": "https://enka.network/ui/UI_RelicIcon_15042_1.png",
-  "silken moon": "https://enka.network/ui/UI_RelicIcon_15042_1.png",
-  "aubade of morningstar and moon": "https://enka.network/ui/UI_RelicIcon_15043_1.png",
-  "aubade": "https://enka.network/ui/UI_RelicIcon_15043_1.png",
-  "morningstar": "https://enka.network/ui/UI_RelicIcon_15043_1.png",
-  "alborada de la estrella": "https://enka.network/ui/UI_RelicIcon_15043_1.png",
-  "a day carved from rising winds": "https://enka.network/ui/UI_RelicIcon_15044_1.png",
-  "rising winds": "https://enka.network/ui/UI_RelicIcon_15044_1.png",
-  "vientos alzantes": "https://enka.network/ui/UI_RelicIcon_15044_1.png",
-  "dia de los vientos alzantes": "https://enka.network/ui/UI_RelicIcon_15044_1.png",
-  "celestial gift": "https://enka.network/ui/UI_RelicIcon_15045_1.png",
-  "dadiva celestial": "https://enka.network/ui/UI_RelicIcon_15045_1.png",
-  "desencanto en las sombras profundas": "https://enka.network/ui/UI_RelicIcon_15046_1.png",
-  "desencanto en las sombras": "https://enka.network/ui/UI_RelicIcon_15046_1.png",
-  "desencanto": "https://enka.network/ui/UI_RelicIcon_15046_1.png",
-  "desilusion congelada en las sombras": "https://enka.network/ui/UI_RelicIcon_15046_1.png",
-  "desilusion congelada": "https://enka.network/ui/UI_RelicIcon_15046_1.png",
-  "disenchantment in deep shadows": "https://enka.network/ui/UI_RelicIcon_15046_1.png",
-  "disenchantment": "https://enka.network/ui/UI_RelicIcon_15046_1.png",
-  "deep shadow": "https://enka.network/ui/UI_RelicIcon_15046_1.png",
-  "scarlet proof": "https://enka.network/ui/UI_RelicIcon_15047_1.png",
-  "testimonio escarlata": "https://enka.network/ui/UI_RelicIcon_15047_1.png",
-  "heart of the furnace": "https://enka.network/ui/UI_RelicIcon_15048_1.png",
-  "corazon forjado": "https://enka.network/ui/UI_RelicIcon_15048_1.png",
+  "long night's oath": "assets/artifacts/UI_RelicIcon_15039_4.png",
+  "long night": "assets/artifacts/UI_RelicIcon_15039_4.png",
+  "juramento de la noche": "assets/artifacts/UI_RelicIcon_15039_4.png",
+  "finale of the deep galleries": "assets/artifacts/UI_RelicIcon_15040_4.png",
+  "finale of the deep": "assets/artifacts/UI_RelicIcon_15040_4.png",
+  "deep galleries": "assets/artifacts/UI_RelicIcon_15040_4.png",
+  "requiem del corredor": "assets/artifacts/UI_RelicIcon_15040_4.png",
+  "night of the sky's unveiling": "assets/artifacts/UI_RelicIcon_15041_4.png",
+  "sky's unveiling": "assets/artifacts/UI_RelicIcon_15041_4.png",
+  "revelacion del cielo": "assets/artifacts/UI_RelicIcon_15041_4.png",
+  "silken moon's serenade": "assets/artifacts/UI_RelicIcon_15042_4.png",
+  "serenata de la luna tejida": "assets/artifacts/UI_RelicIcon_15042_4.png",
+  "serenata de la luna": "assets/artifacts/UI_RelicIcon_15042_4.png",
+  "luna tejida": "assets/artifacts/UI_RelicIcon_15042_4.png",
+  "silken moon": "assets/artifacts/UI_RelicIcon_15042_4.png",
+  "aubade of morningstar and moon": "assets/artifacts/UI_RelicIcon_15043_4.png",
+  "aubade": "assets/artifacts/UI_RelicIcon_15043_4.png",
+  "morningstar": "assets/artifacts/UI_RelicIcon_15043_4.png",
+  "alborada de la estrella": "assets/artifacts/UI_RelicIcon_15043_4.png",
+  "a day carved from rising winds": "assets/artifacts/UI_RelicIcon_15044_4.png",
+  "rising winds": "assets/artifacts/UI_RelicIcon_15044_4.png",
+  "vientos alzantes": "assets/artifacts/UI_RelicIcon_15044_4.png",
+  "dia de los vientos alzantes": "assets/artifacts/UI_RelicIcon_15044_4.png",
+  "celestial gift": "assets/artifacts/UI_RelicIcon_15045_4.png",
+  "dadiva celestial": "assets/artifacts/UI_RelicIcon_15045_4.png",
+  "desencanto en las sombras profundas": "assets/artifacts/UI_RelicIcon_15046_4.png",
+  "desencanto en las sombras": "assets/artifacts/UI_RelicIcon_15046_4.png",
+  "desencanto": "assets/artifacts/UI_RelicIcon_15046_4.png",
+  "desilusion congelada en las sombras": "assets/artifacts/UI_RelicIcon_15046_4.png",
+  "desilusion congelada": "assets/artifacts/UI_RelicIcon_15046_4.png",
+  "disenchantment in deep shadows": "assets/artifacts/UI_RelicIcon_15046_4.png",
+  "disenchantment": "assets/artifacts/UI_RelicIcon_15046_4.png",
+  "deep shadow": "assets/artifacts/UI_RelicIcon_15046_4.png",
+  "scarlet proof": "assets/artifacts/UI_RelicIcon_15047_4.png",
+  "testimonio escarlata": "assets/artifacts/UI_RelicIcon_15047_4.png",
+  "heart of the furnace": "assets/artifacts/UI_RelicIcon_15048_4.png",
+  "corazon forjado": "assets/artifacts/UI_RelicIcon_15048_4.png",
 
   // Sets 4★ Esenciales
-  "instructor": "https://enka.network/ui/UI_RelicIcon_10007_1.png",
-  "exiliado": "https://enka.network/ui/UI_RelicIcon_10009_1.png",
-  "berserker": "https://enka.network/ui/UI_RelicIcon_10005_1.png"
+  "instructor": "assets/artifacts/UI_RelicIcon_10007_4.png",
+  "exiliado": "assets/artifacts/UI_RelicIcon_10009_4.png",
+  "berserker": "assets/artifacts/UI_RelicIcon_10005_4.png"
 };
 
 function getArtifactSetIcon(setName) {
-  if (!setName) return "https://enka.network/ui/UI_RelicIcon_15001_1.png";
-  const clean = setName.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+  const fallback = "";
+  if (!setName) return fallback;
+  const normalize = value => String(value).toLowerCase().normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "").replace(/[’']/g, "").trim();
+  const clean = normalize(setName);
+  // Priorizar el primer set de la combinación; si solo indica una estadística, usar un set real compatible.
+  const primary = clean.split(/\s+\+\s+/)[0];
+  const matches = Object.entries(ARTIFACT_SETS_ICONS)
+    .map(([key, icon]) => ({ key: normalize(key), icon }))
+    .filter(entry => primary.includes(entry.key))
+    .sort((left, right) => right.key.length - left.key.length);
+  if (matches.length) return matches[0].icon;
+  const statIcons = [
+    [/\bvida\b|\bhp\b/, "15017"],
+    [/maestria|\bem\b/, "15003"],
+    [/\batq\b|\batk\b/, "15001"],
+    [/recarga|\ber\b/, "15020"],
+    [/dendro/, "15025"],
+    [/hydro/, "15016"]
+  ];
+  const statMatch = statIcons.find(([pattern]) => pattern.test(primary));
+  return statMatch ? `assets/artifacts/UI_RelicIcon_${statMatch[1]}_4.png` : fallback;
+}
 
-  // Si es un set combinado (2p + 2p), aislar el primer set principal para elegir su flor
-  const primaryPart = clean.includes("+") ? clean.split("+")[0].trim() : clean;
+const ARTIFACT_TWO_PIECE_SETS = {
+  "10009": {name:"Exiliado", stat:"Recarga de Energía", amount:"20%"},
+  "14001": {name:"Nómada del Invierno", stat:"Bono Cryo", amount:"15%"},
+  "15001": {name:"Gladiador", stat:"ATQ", amount:"18%"},
+  "15003": {name:"Orquesta del Errante", stat:"Maestría Elemental", amount:"80"},
+  "15005": {name:"Furia del Trueno", stat:"Bono Electro", amount:"15%"},
+  "15007": {name:"Nobleza Obligada", stat:"burst", amount:"20%"},
+  "15008": {name:"Caballería Sanguinaria", stat:"Bono Físico", amount:"25%"},
+  "15014": {name:"Petra Arcaica", stat:"Bono Geo", amount:"15%"},
+  "15016": {name:"Corazón de las Profundidades", stat:"Bono Hydro", amount:"15%"},
+  "15017": {name:"Tenacidad de la Geoarmada", stat:"Vida", amount:"20%"},
+  "15018": {name:"Llamas Albinas", stat:"Bono Físico", amount:"25%"},
+  "15019": {name:"Reminiscencia de la Purificación", stat:"ATQ", amount:"18%"},
+  "15020": {name:"Emblema del Destino", stat:"Recarga de Energía", amount:"20%"},
+  "15025": {name:"Recuerdos del Bosque", stat:"Bono Dendro", amount:"15%"},
+  "15026": {name:"Sueños Áureos", stat:"Maestría Elemental", amount:"80"},
+  "15030": {name:"Fulgor de Vurukasha", stat:"Vida", amount:"20%"},
+  "15032": {name:"Compañía Dorada", stat:"skill", amount:"20%"}
+};
 
-  // 1. Buscar coincidencia en la parte primaria
-  let bestMatch = null;
-  let earliestIdx = Infinity;
-  let longestKeyLen = 0;
-
-  for (const [k, v] of Object.entries(ARTIFACT_SETS_ICONS)) {
-    const idx = primaryPart.indexOf(k);
-    if (idx !== -1) {
-      if (idx < earliestIdx || (idx === earliestIdx && k.length > longestKeyLen)) {
-        earliestIdx = idx;
-        longestKeyLen = k.length;
-        bestMatch = v;
-      }
-    }
+function getArtifactPieceGroups(setName) {
+  if (!/2\s*(?:p|piezas|pieces)/i.test(setName || "")) return [];
+  const parts = String(setName).split(/\s+\+\s+/);
+  const groups = parts.map(part => {
+    const id = getArtifactSetIcon(part).match(/UI_RelicIcon_(\d+)_/)?.[1];
+    return id && ARTIFACT_TWO_PIECE_SETS[id] ? {id, ...ARTIFACT_TWO_PIECE_SETS[id]} : null;
+  });
+  if (groups.some(group => !group)) return [];
+  if (groups.length === 2 && groups[0].id === groups[1].id) {
+    const alternative = {"15003":"15026", "15017":"15030", "15001":"15019", "15020":"10009"}[groups[0].id];
+    if (alternative) groups[1] = {id:alternative, ...ARTIFACT_TWO_PIECE_SETS[alternative]};
   }
-  if (bestMatch) return bestMatch;
+  return groups;
+}
 
-  // 2. Si no hubo en primaryPart, buscar en toda la cadena
-  earliestIdx = Infinity;
-  longestKeyLen = 0;
-  for (const [k, v] of Object.entries(ARTIFACT_SETS_ICONS)) {
-    const idx = clean.indexOf(k);
-    if (idx !== -1) {
-      if (idx < earliestIdx || (idx === earliestIdx && k.length > longestKeyLen)) {
-        earliestIdx = idx;
-        longestKeyLen = k.length;
-        bestMatch = v;
-      }
-    }
-  }
-  if (bestMatch) return bestMatch;
+function getArtifactPieceCopy(lang) {
+  return ({
+    es:{title:"Combinación de 2 + 2 piezas", example:"Ejemplo compatible:", burst:"Daño de Habilidad Definitiva", skill:"Daño de Habilidad Elemental"},
+    en:{title:"2 + 2-piece combination", example:"Compatible example:", burst:"Elemental Burst DMG", skill:"Elemental Skill DMG"},
+    pt:{title:"Combinação de 2 + 2 peças", example:"Exemplo compatível:", burst:"Dano do Supremo", skill:"Dano da Habilidade Elemental"},
+    ja:{title:"2セット＋2セット", example:"組み合わせ例：", burst:"元素爆発ダメージ", skill:"元素スキルダメージ"},
+    ko:{title:"2세트 + 2세트 조합", example:"조합 예시:", burst:"원소폭발 피해", skill:"원소전투 스킬 피해"}
+  })[lang] || getArtifactPieceCopy("es");
+}
 
-  // 3. Fallbacks seguros por palabras completas (regex con límites de palabra para evitar colisiones)
-  if (/\b(dendro)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_15025_1.png"; // Recuerdos del Bosque
-  if (/\b(em|maestria)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_15026_1.png"; // Sueños Áureos
-  if (/\b(recarga|er)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_15020_1.png"; // Emblema del Destino
-  if (/\b(vida|hp)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_15017_1.png"; // Tenacidad de la Geoarmada
-  if (/\b(def|defensa)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_15021_1.png"; // Cáscara de Sueños
-  if (/\b(atq|atk|ataque)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_15001_1.png"; // Gladiador
-  if (/\b(pyro)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_15006_1.png"; // Bruja Carmesí
-  if (/\b(hydro)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_15016_1.png"; // Corazón de las Profundidades
-  if (/\b(cryo)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_14001_1.png"; // Nómada del Invierno
-  if (/\b(electro)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_15005_1.png"; // Furia del Trueno
-  if (/\b(anemo)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_15002_1.png"; // Sombra Verde
-  if (/\b(geo)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_15014_1.png"; // Petra Arcaica
-  if (/\b(fisico|physical)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_15018_1.png"; // Llamas Albinas
-  if (/\b(curacion|healing)\b/.test(clean)) return "https://enka.network/ui/UI_RelicIcon_15022_1.png"; // Perla Oceánica
-
-  return "https://enka.network/ui/UI_RelicIcon_15001_1.png";
+function renderArtifactPieceDetails(groups, lang) {
+  if (!groups.length) return "";
+  const copy = getArtifactPieceCopy(lang);
+  return `<div class="tc-artifact-combination">${groups.length === 2 ? `<p>${escapeHtml(copy.example)}</p>` : ""}${groups.map(group => {
+    const name = getArtifactTranslatedName(group.name, lang);
+    const stat = copy[group.stat] || getBaseAscensionLabel(group.stat, lang);
+    return `<div><span>2p ${escapeHtml(name)}</span><strong>+${escapeHtml(group.amount)} ${escapeHtml(stat)}</strong></div>`;
+  }).join("")}</div>`;
 }
 
 function getCharacterTeammateAvatar(rawName) {
   if (!rawName) return null;
   const clean = rawName.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
   if (typeof CHARACTER_BUILDS_DB !== "undefined" && Array.isArray(CHARACTER_BUILDS_DB)) {
+    const travelerElement = clean.match(/(?:viajer[oa]|traveler)\s*\(?\s*(anemo|geo|electro|dendro|hydro|pyro|cryo)/);
+    if (travelerElement) {
+      const traveler = CHARACTER_BUILDS_DB.find(c => c.id === `traveler_${travelerElement[1]}`);
+      if (traveler) return traveler.icon;
+    }
+    const exact = CHARACTER_BUILDS_DB.find(c => [c.name?.es, c.name?.en].some(n => String(n || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '') === clean));
+    if (exact?.icon) return exact.icon;
     const foundBuild = CHARACTER_BUILDS_DB.find(c => {
       const es = (c.name?.es || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
       const en = (c.name?.en || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -2895,44 +2926,6 @@ function getCharacterTeammateAvatar(rawName) {
   return null;
 }
 
-function showTheorycraftPolishingNotice() {
-  let toast = document.getElementById("tcPolishingToast");
-  if (!toast) {
-    toast = document.createElement("div");
-    toast.id = "tcPolishingToast";
-    toast.className = "theory-floating-toast";
-    toast.setAttribute("role", "status");
-    document.body.appendChild(toast);
-  }
-  toast.innerHTML = `
-    <div class="theory-toast-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"></circle>
-        <line x1="12" y1="8" x2="12" y2="12"></line>
-        <line x1="12" y1="16" x2="12.01" y2="16"></line>
-      </svg>
-    </div>
-    <div class="theory-toast-body">
-      <strong>Sección en Proceso de Pulido</strong>
-      <span>Las builds, estadísticas y equipos recomendados están en optimización y testeo continuo.</span>
-    </div>
-    <button type="button" class="theory-toast-close" onclick="this.parentElement.classList.remove(\'visible\')" aria-label="Cerrar aviso">&times;</button>
-  `;
-  const banner = document.getElementById("theoryPolishingBanner");
-  if (banner) {
-    banner.style.transition = "box-shadow 0.3s ease";
-    banner.style.boxShadow = "0 0 20px rgba(245, 158, 11, 0.4)";
-    setTimeout(() => { if (banner) banner.style.boxShadow = ""; }, 1800);
-  }
-  requestAnimationFrame(() => {
-    toast.classList.add("visible");
-  });
-  clearTimeout(showTheorycraftPolishingNotice._timer);
-  showTheorycraftPolishingNotice._timer = setTimeout(() => {
-    if (toast) toast.classList.remove("visible");
-  }, 4800);
-}
-
 function formatOriginalTalentAttribute(template, parameters, level, lang) {
   return String(template || "").replace(/\{(param\d+):([^}]+)\}/g, (token, key, format) => {
     const value = parameters[key]?.[level - 1];
@@ -2943,17 +2936,50 @@ function formatOriginalTalentAttribute(template, parameters, level, lang) {
   }).replace(/<[^>]*>/g, "");
 }
 
-function renderOriginalBuildFacts(build, level = 10) {
+const BASE_STATS_I18N = {
+  es: {title:"Datos del juego: estadísticas base", level:"Nivel 90", hp:"Vida", atk:"ATQ", def:"DEF", asc:"Ascensión"},
+  en: {title:"Game data: base stats", level:"Level 90", hp:"HP", atk:"ATK", def:"DEF", asc:"Ascension"},
+  pt: {title:"Dados do jogo: atributos base", level:"Nível 90", hp:"Vida", atk:"ATQ", def:"DEF", asc:"Ascensão"},
+  ja: {title:"ゲームデータ：基礎ステータス", level:"レベル90", hp:"HP", atk:"攻撃力", def:"防御力", asc:"突破ステータス"},
+  ko: {title:"게임 데이터: 기초 능력치", level:"레벨 90", hp:"HP", atk:"공격력", def:"방어력", asc:"돌파 능력치"}
+};
+
+function getBaseAscensionLabel(rawStat, lang) {
+  const normalized = String(rawStat || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  const language = Math.max(0, ["es", "en", "pt", "ja", "ko"].indexOf(lang));
+  const elements = {rock:"Geo",wind:"Anemo",fire:"Pyro",ice:"Cryo",grass:"Dendro",water:"Hydro",elec:"Electro"};
+  const nativeElement = normalized.match(/fight_prop_(rock|wind|fire|ice|grass|water|elec)_add_hurt/);
+  const element = nativeElement ? elements[nativeElement[1]] : normalized.match(/geo|anemo|pyro|cryo|dendro|hydro|electro/i)?.[0];
+  if (element) {
+    const name = element[0].toUpperCase() + element.slice(1);
+    return [`Bono de Daño ${name}`, `${name} DMG Bonus`, `Bônus de Dano ${name}`, `${name}元素ダメージ`, `${name} 원소 피해 보너스`][language];
+  }
+  const definitions = [
+    [/prob.*crit/, ["Prob. Crítica", "CRIT Rate", "Taxa Crítica", "会心率", "치명타 확률"]],
+    [/dano.*crit/, ["Daño Crítico", "CRIT DMG", "Dano Crítico", "会心ダメージ", "치명타 피해"]],
+    [/recarga/, ["Recarga de Energía", "Energy Recharge", "Recarga de Energia", "元素チャージ効率", "원소 충전 효율"]],
+    [/maestria/, ["Maestría Elemental", "Elemental Mastery", "Proficiência Elemental", "元素熟知", "원소 마스터리"]],
+    [/curacion/, ["Bono de Curación", "Healing Bonus", "Bônus de Cura", "与える治療効果", "주는 치유 보너스"]],
+    [/fisico/, ["Bono de Daño Físico", "Physical DMG Bonus", "Bônus de Dano Físico", "物理ダメージ", "물리 피해 보너스"]],
+    [/vida/, ["Vida", "HP", "Vida", "HP", "HP"]],
+    [/atq/, ["ATQ", "ATK", "ATQ", "攻撃力", "공격력"]],
+    [/def/, ["DEF", "DEF", "DEF", "防御力", "방어력"]]
+  ];
+  const entry = definitions.find(([pattern]) => pattern.test(normalized));
+  return entry ? entry[1][language] : rawStat;
+}
+
+function renderOriginalBuildFacts(build) {
   const stats = build.baseStats;
-  const rows = Object.values(build.talentsData || {}).filter(t => t.native).map(talent => {
-    const attributes = talent.native.labels.map(label => {
-      const [name, template] = label.split("|");
-      const value = formatOriginalTalentAttribute(template, talent.native.parameters, level, state.lang);
-      return `<tr><td style="padding:4px 10px 4px 0;">${escapeHtml(name)}</td><td style="padding:4px 0;">${escapeHtml(value)}</td></tr>`;
-    }).join("");
-    return `<h4 style="margin:12px 0 5px;">${escapeHtml(talent.name)} · Nv. ${level}</h4><table style="width:100%;font-size:0.78rem;"><tbody>${attributes}</tbody></table>`;
-  }).join("");
-  return `<p style="font-size:0.82rem;">Base Nv. 90: Vida ${stats.hp90.toLocaleString()} · ATQ ${stats.atk90} · DEF ${stats.def90}. Ascensión: +${escapeHtml(stats.ascVal)} ${escapeHtml(stats.ascStat)}.</p>${rows}<p style="font-size:0.75rem;color:var(--text-muted);margin-top:12px;">Los porcentajes son parámetros del talento; el daño final depende de la fórmula, equipo y enemigo. <a href="${escapeHtml(build.originalSource)}/blob/main/src/data/Spanish/talents/${escapeHtml(build.originalSourceKey)}.json" target="_blank" rel="noopener noreferrer">Consultar fuente</a>.</p>`;
+  const labels = BASE_STATS_I18N[state.lang] || BASE_STATS_I18N.es;
+  const format = value => Number(value).toLocaleString(state.lang || "es", { maximumFractionDigits: 2 });
+  const ascStat = getBaseAscensionLabel(stats.ascStat, state.lang);
+  return `<p class="tc-base-stats-level">${escapeHtml(labels.level)}</p><dl class="tc-base-stats">
+    <div><dt>${escapeHtml(labels.hp)}</dt><dd>${format(stats.hp90)}</dd></div>
+    <div><dt>${escapeHtml(labels.atk)}</dt><dd>${format(stats.atk90)}</dd></div>
+    <div><dt>${escapeHtml(labels.def)}</dt><dd>${format(stats.def90)}</dd></div>
+    <div><dt>${escapeHtml(labels.asc)}</dt><dd>${escapeHtml(ascStat)} +${escapeHtml(String(stats.ascVal))}</dd></div>
+  </dl>`;
 }
 
 function renderTheorycraft() {
@@ -3262,7 +3288,7 @@ function renderTheorycraft() {
     let weaponsHtml = "";
     if (ch.bestWeapons && ch.bestWeapons.length > 0) {
       weaponsHtml = ch.bestWeapons.map((w) => {
-        const meta = getWeaponDisplayData(w.name, w.rarity || 5, ch.weaponType);
+        const meta = getWeaponDisplayData(w.name, w.rarity || 5, ch.weaponType, w.weaponId);
         const starsStr = "★".repeat(meta.rarity || 5);
         const dispWName = (typeof getWeaponTranslatedName === "function") ? getWeaponTranslatedName(w.name, state.lang) : w.name;
         return `
@@ -3276,7 +3302,7 @@ function renderTheorycraft() {
                 <span class="tc-weapon-name">${dispWName}</span>
                 <span class="tc-weapon-badge ${w.type && w.type.includes('BiS') ? 'bis' : ''}">${trBuildStr((w.type || tc.recBadge).replace(/\s*Game8\b/gi, '').trim() || tc.recBadge)}</span>
               </div>
-              <div class="tc-weapon-note">${trBuildStr(w.note || '')}</div>
+              <div class="tc-weapon-note">${trBuildStr(w.reviewedNote === false ? '' : (w.note || ''))}</div>
             </div>
           </div>
         `;
@@ -3296,7 +3322,7 @@ function renderTheorycraft() {
                 <span class="tc-weapon-name">${dispWName}</span>
                 <span class="tc-weapon-badge">${trBuildStr(w.dps)}</span>
               </div>
-              <div class="tc-weapon-note">${trBuildStr(w.note || '')}</div>
+              <div class="tc-weapon-note">${trBuildStr(w.reviewedNote === false ? '' : (w.note || ''))}</div>
             </div>
           </div>
         `;
@@ -3308,21 +3334,22 @@ function renderTheorycraft() {
     if (ch.bestArtifacts && ch.bestArtifacts.length > 0) {
       artifactsHtml = ch.bestArtifacts.map((a) => {
         const aIcon = getArtifactSetIcon(a.set);
-        const is2p2p = a.set.toLowerCase().includes("2p") && !a.set.toLowerCase().includes("4");
-        const pieceBadge = is2p2p ? "2p+2p" : "4p";
-        const dispASet = (typeof getArtifactTranslatedName === "function") ? getArtifactTranslatedName(a.set, state.lang) : trBuildStr(a.set);
+        const pieceGroups = getArtifactPieceGroups(a.set);
+        const pieceBadge = pieceGroups.length === 2 ? "2p+2p" : pieceGroups.length === 1 ? "2p" : "4p";
+        const dispASet = pieceGroups.length === 2 ? getArtifactPieceCopy(state.lang).title : (typeof getArtifactTranslatedName === "function") ? getArtifactTranslatedName(a.set, state.lang) : trBuildStr(a.set);
         return `
           <div class="tc-artifact-set-item">
             <div class="tc-arti-icon-wrap" title="${dispASet}">
-              <img src="${aIcon}" alt="${dispASet}" class="tc-arti-img" onerror="this.src='https://enka.network/ui/UI_RelicIcon_15001_1.png'" />
+              <img src="${aIcon}" alt="${dispASet}" class="tc-arti-img" onerror="this.onerror=null;this.style.display='none'" />
               <span class="tc-arti-piece-badge">${pieceBadge}</span>
             </div>
             <div class="tc-arti-content">
               <div class="tc-artifact-set-title">
                 <strong>${dispASet}</strong>
-                <span class="tc-arti-role-badge">${trBuildStr(a.type || a.role || tc.optBadge)}</span>
+                <span class="tc-arti-role-badge">${trBuildStr(/indiscutible|absoluto|oficial/i.test(a.type || '') ? 'Opción por rol' : (a.type || a.role || tc.optBadge))}</span>
               </div>
-              <div class="tc-artifact-set-desc">${trBuildStr(a.bonus || a.dps || '')}</div>
+              ${renderArtifactPieceDetails(pieceGroups, state.lang)}
+              <div class="tc-artifact-set-desc">${trBuildStr(a.reviewedBonus === false ? '' : (a.bonus || a.dps || ''))}</div>
             </div>
           </div>
         `;
@@ -3330,18 +3357,20 @@ function renderTheorycraft() {
     } else if (ch.artifactRanking) {
       artifactsHtml = ch.artifactRanking.map((a) => {
         const aIcon = getArtifactSetIcon(a.set);
-        const dispASet = (typeof getArtifactTranslatedName === "function") ? getArtifactTranslatedName(a.set, state.lang) : trBuildStr(a.set);
+        const pieceGroups = getArtifactPieceGroups(a.set);
+        const dispASet = pieceGroups.length === 2 ? getArtifactPieceCopy(state.lang).title : (typeof getArtifactTranslatedName === "function") ? getArtifactTranslatedName(a.set, state.lang) : trBuildStr(a.set);
         return `
           <div class="tc-artifact-set-item">
             <div class="tc-arti-icon-wrap">
-              <img src="${aIcon}" alt="${dispASet}" class="tc-arti-img" onerror="this.src='https://enka.network/ui/UI_RelicIcon_15001_1.png'" />
-              <span class="tc-arti-piece-badge">Set</span>
+              <img src="${aIcon}" alt="${dispASet}" class="tc-arti-img" onerror="this.onerror=null;this.style.display='none'" />
+              <span class="tc-arti-piece-badge">${pieceGroups.length === 2 ? "2p+2p" : pieceGroups.length === 1 ? "2p" : "4p"}</span>
             </div>
             <div class="tc-arti-content">
               <div class="tc-artifact-set-title">
                 <strong>${dispASet}</strong>
                 <span class="tc-arti-role-badge">${trBuildStr(a.dps)}</span>
               </div>
+              ${renderArtifactPieceDetails(pieceGroups, state.lang)}
             </div>
           </div>
         `;
@@ -3370,12 +3399,12 @@ function renderTheorycraft() {
     }
 
     // Talent Priority
-    const talentPrio = trBuildStr(ch.talentPriority || "Habilidad Elemental (E) > Definitiva (Q) > Ataques Normales");
+    const talentPrio = trBuildStr(ch.talentPriority || "Prioridad pendiente de contraste para este rol");
 
     // Benchmarks (con soporte seguro para benchmarks y recommendedPanel)
     let benchmarksHtml = "";
     const bmData = ch.benchmarks || ch.recommendedPanel;
-    if (bmData) {
+    if (bmData && !ch.review?.hideUnverifiedBenchmarks) {
       const bHp = bmData.hp || bmData.VIDA || bmData.HP || 'Cualquiera';
       const bAtk = bmData.atk || bmData.ATQ || bmData.ATK || 'Base';
       const bDef = bmData.def || bmData.DEF || bmData.DEFENSA || 'Base';
@@ -3394,6 +3423,7 @@ function renderTheorycraft() {
         </div>
       `;
     }
+
 
     // Meta Teams con mini avatares
     let teamsHtml = "";
@@ -3416,7 +3446,7 @@ function renderTheorycraft() {
         return `
           <div class="tc-team-row">
             <span class="tc-team-name"><img src="assets/weapon_types/sword.png" style="width:13px;height:13px;vertical-align:-1px;margin-right:4px;" alt="" />${trBuildStr(tm.name)}</span>
-            <div class="tc-team-members-row">${membersHtml}</div>
+            <div class="tc-team-members-row">${membersHtml}</div>${tm.note ? `<p class="tc-review-note">${escapeHtml(tm.note)}</p>` : ""}
           </div>
         `;
       }).join("");
@@ -3434,9 +3464,6 @@ function renderTheorycraft() {
             <div style="display:flex;align-items:center;gap:0.55rem;flex-wrap:wrap;">
               <span class="book-title" style="font-size:1.35rem;">${cName}</span>
               <span class="el-badge el-${ch.element}"><img src="assets/elements/${(ch.element || 'Pyro').toLowerCase()}.png" alt="${ch.element}" class="tc-card-el-icon" />${ch.element}</span>
-              <span style="font-size:0.75rem;background:rgba(245,217,150,0.16);color:var(--gold-bright);padding:0.18rem 0.55rem;border-radius:6px;font-weight:800;">
-                ${trBuildStr(ch.tier || 'Meta Pick')}
-              </span>
             </div>
             <div style="font-size:0.84rem;color:var(--text-muted);margin-top:0.15rem;">${cRole}</div>
             <span class="scaling-pill scale-${ch.scalingType}"><img src="assets/ui/sparkle.svg" style="width:11px;height:11px;vertical-align:-1px;margin-right:4px;" alt="" />${trBuildStr(ch.scalingLabel)}</span>
@@ -3450,7 +3477,7 @@ function renderTheorycraft() {
         </div>
       </div>
 
-      ${ch.originalSource ? `<details class="tc-original-facts" style="padding:14px 18px;border-bottom:1px solid var(--border);"><summary style="cursor:pointer;font-weight:700;">Datos del juego: estadísticas base y talentos</summary><label style="display:block;margin:12px 0;">Nivel de talentos <select class="tc-original-level">${Array.from({length:13},(_,i)=>`<option value="${i+1}" ${i===9?'selected':''}>${i+1}</option>`).join('')}</select></label><div class="tc-original-values">${renderOriginalBuildFacts(ch)}</div></details>` : ""}
+      ${ch.baseStats ? `<details class="tc-original-facts"><summary>${escapeHtml((BASE_STATS_I18N[state.lang] || BASE_STATS_I18N.es).title)}</summary><div class="tc-original-values">${renderOriginalBuildFacts(ch)}</div></details>` : ""}
 
       <div class="tc-build-grid">
         <!-- COLUMNA 1: EQUIPAMIENTO ÓPTIMO (ARMAS Y ARTEFACTOS) -->
@@ -3491,8 +3518,7 @@ function renderTheorycraft() {
             ${substatsHtml}
           </div>
 
-          <div class="tc-block-title"><img src="assets/ui/sparkle.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> ${escapeHtml(tc.benchmarks)}</div>
-          ${benchmarksHtml}
+          ${benchmarksHtml ? `<div class="tc-block-title"><img src="assets/ui/sparkle.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> ${escapeHtml(tc.benchmarks)}</div>${benchmarksHtml}` : ""}
 
           <div class="tc-block-title" style="margin-top:0.75rem;"><img src="assets/ui/user.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> ${escapeHtml(tc.teams)}</div>
           <div class="tc-teams-container">
@@ -3502,11 +3528,6 @@ function renderTheorycraft() {
       </div>
     `;
 
-    const originalLevel = card.querySelector('.tc-original-level');
-    if (originalLevel) originalLevel.addEventListener('change', () => {
-      const level = Math.max(1, Math.min(13, Number(originalLevel.value) || 10));
-      card.querySelector('.tc-original-values').innerHTML = renderOriginalBuildFacts(ch, level);
-    });
     container.appendChild(card);
   });
 }
@@ -5680,42 +5701,42 @@ function renderSeelieArtifacts() {
       name: "Fin del Pecado (Fontaine)",
       resinCost: 20,
       sets: "Cazador Fantasmal / Compañía Dorada",
-      icon: "https://enka.network/ui/UI_RelicIcon_15031_1.png",
+      icon: null,
       suitedChars: ["Furina", "Neuvillette", "Wriothesley", "Lyney", "Fischl", "Navia"]
     },
     {
       name: "Arboleda de la Reconciliación (Natlan)",
       resinCost: 20,
       sets: "Códice de Obsidiana / Pergamino del Héroe de la Ciudad Cenicienta",
-      icon: "https://enka.network/ui/UI_RelicIcon_15035_1.png",
+      icon: null,
       suitedChars: ["Mavuika", "Mualani", "Kinich", "Xilonen", "Citlali", "Chasca"]
     },
     {
       name: "Jardín de Otoño (Inazuma)",
       resinCost: 20,
       sets: "Emblema del Destino / Reminiscencia de la Purificación",
-      icon: "https://enka.network/ui/UI_RelicIcon_15020_1.png",
+      icon: null,
       suitedChars: ["Shogun Raiden", "Xiangling", "Xingchiu", "Yelan", "Beidou"]
     },
     {
       name: "Púspata de la Iluminación (Sumeru)",
       resinCost: 20,
       sets: "Recuerdos del Bosque / Sueños Áureos",
-      icon: "https://enka.network/ui/UI_RelicIcon_15025_1.png",
+      icon: null,
       suitedChars: ["Nahida", "Alhacén", "Tignari", "Nilou", "Kuki Shinobu"]
     },
     {
       name: "Palacio de Guyun (Liyue)",
       resinCost: 20,
       sets: "Petra Arcaica / Retroceso del Meteorito",
-      icon: "https://enka.network/ui/UI_RelicIcon_15014_1.png",
+      icon: null,
       suitedChars: ["Zhongli", "Albedo", "Ninguang", "Navia"]
     },
     {
       name: "Valle de los Recuerdos (Mondstadt)",
       resinCost: 20,
       sets: "Sombra Verde Esmeralda / Doncella Amada",
-      icon: "https://enka.network/ui/UI_RelicIcon_15002_1.png",
+      icon: null,
       suitedChars: ["Kaedehara Kazuha", "Sacarosa", "Venti", "Jean", "Sayu"]
     }
   ];
@@ -5736,7 +5757,7 @@ function renderSeelieArtifacts() {
           <span class="farm-resin-cost-badge">${dom.resinCost} ✦</span>
         </div>
         <div style="display:flex;align-items:center;gap:0.6rem;margin:0.4rem 0;">
-          <img src="${dom.icon}" alt="Artefacto" style="width:38px;height:38px;object-fit:contain;border-radius:6px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.1);" onerror="this.onerror=null;this.src='assets/ui/tab_domain.png'" />
+          <img src="${getArtifactSetIcon(dom.sets)}" alt="${escapeHtml(dom.sets)}" style="width:38px;height:38px;object-fit:contain;border-radius:6px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.1);" onerror="this.onerror=null;this.style.display='none'" />
           <div>
             <div style="font-weight:700;font-size:0.86rem;color:var(--text-main);">${escapeHtml(dom.sets)}</div>
             <div style="font-size:0.75rem;color:var(--gold-primary);">Abierto los 7 días (24/7)</div>
@@ -6335,7 +6356,14 @@ function initInteractiveTutorial() {
       chip.classList.toggle("completed", idx < currentStep);
     });
 
-    if (stepCounter) stepCounter.textContent = `Paso ${currentStep + 1} de ${totalSteps}`;
+    modal.dataset.step = String(currentStep);
+    chips.forEach((chip, idx) => {
+      if (idx === currentStep) chip.setAttribute("aria-current", "step");
+      else chip.removeAttribute("aria-current");
+    });
+    if (stepCounter) stepCounter.textContent = formatTutorialStep(state.lang, currentStep + 1, totalSteps);
+    modal.querySelector(".tutorial-body").scrollTop = 0;
+    if (modal.classList.contains("open")) chips[currentStep].scrollIntoView({ block: "nearest", inline: "nearest" });
 
     if (btnPrev) btnPrev.style.display = currentStep > 0 ? "inline-flex" : "none";
     if (btnNext && btnFinish) {
@@ -6349,13 +6377,23 @@ function initInteractiveTutorial() {
     }
   }
 
+  let previousFocus = null;
+  let previousBodyOverflow = "";
   function openTutorial() {
-    updateTutorialStep(0);
+    if (modal.classList.contains("open")) return;
+    previousFocus = document.activeElement;
+    previousBodyOverflow = document.body.style.overflow;
+    translateInteractiveTutorial(state.lang);
     modal.classList.add("open");
+    document.body.style.overflow = "hidden";
+    updateTutorialStep(0);
+    btnCloseX.focus({ preventScroll: true });
   }
 
   function closeTutorial() {
     modal.classList.remove("open");
+    document.body.style.overflow = previousBodyOverflow;
+    if (previousFocus && previousFocus.isConnected) previousFocus.focus({ preventScroll: true });
     sessionStorage.setItem("spirifly_tut_dismissed", "true");
   }
 
@@ -6377,6 +6415,13 @@ function initInteractiveTutorial() {
   // Soporte para teclado (flechas y Escape)
   document.addEventListener("keydown", (e) => {
     if (!modal.classList.contains("open")) return;
+    if (e.key === "Tab") {
+      const focusable = [...modal.querySelectorAll("button:not([disabled]), a[href], input, select, [tabindex='0']")].filter(el => el.getClientRects().length);
+      const first = focusable[0], last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+    if (e.target.matches("select, input, textarea") && e.key !== "Escape") return;
     if (e.key === "ArrowRight" && currentStep < totalSteps - 1) updateTutorialStep(currentStep + 1);
     if (e.key === "ArrowLeft" && currentStep > 0) updateTutorialStep(currentStep - 1);
     if (e.key === "Escape") closeTutorial();
