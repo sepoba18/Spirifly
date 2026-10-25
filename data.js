@@ -140,7 +140,7 @@ const I18N = {
     sync: {
       title: "Sincronización con Google Drive & Gestión de Cuentas",
       subtitle: "Guarda tu progreso, personajes, inventario y deseos de forma privada y automática.",
-      driveDesc: "Teyvat Companion usa <strong>Google Drive</strong> para guardar y sincronizar tu configuración, inventario de 508 materiales, armas, personajes e historial de deseos. Solo leemos y escribimos en archivos creados por la aplicación.",
+      driveDesc: "Spirifly usa <strong>Google Drive</strong> para guardar y sincronizar tu configuración, inventario de 508 materiales, armas, personajes e historial de deseos. Solo leemos y escribimos en archivos creados por la aplicación.",
       statusSyncedBadge: "Drive: Sincronizado",
       statusLocalBadge: "Drive: Desvinculado (Modo Local)",
       accountHeader: "Cuenta de Google Drive Vinculada:",
@@ -307,7 +307,7 @@ const I18N = {
     sync: {
       title: "Google Drive Sync & Account Manager",
       subtitle: "Save your progress, characters, inventory, and wishes privately and automatically.",
-      driveDesc: "Teyvat Companion uses <strong>Google Drive</strong> to save and sync your planner settings, 508-item inventory, weapons, characters, and wish history. We only access files created by this app.",
+      driveDesc: "Spirifly uses <strong>Google Drive</strong> to save and sync your planner settings, 508-item inventory, weapons, characters, and wish history. We only access files created by this app.",
       statusSyncedBadge: "Drive: Synced",
       statusLocalBadge: "Drive: Unlinked (Local Only)",
       accountHeader: "Linked Google Drive Account:",
@@ -474,7 +474,7 @@ const I18N = {
     sync: {
       title: "Sincronização com Google Drive & Gestão de Contas",
       subtitle: "Salve seu progresso, personagens, inventário e desejos de forma privada e automática.",
-      driveDesc: "Teyvat Companion usa o <strong>Google Drive</strong> para salvar e sincronizar sua configuração, inventário de 508 materiais, armas, personagens e histórico de tiros. Lemos e gravamos apenas arquivos criados pelo aplicativo.",
+      driveDesc: "Spirifly usa o <strong>Google Drive</strong> para salvar e sincronizar sua configuração, inventário de 508 materiais, armas, personagens e histórico de tiros. Lemos e gravamos apenas arquivos criados pelo aplicativo.",
       statusSyncedBadge: "Drive: Sincronizado",
       statusLocalBadge: "Drive: Desconectado (Modo Local)",
       accountHeader: "Conta do Google Drive Vinculada:",

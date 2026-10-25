@@ -297,18 +297,26 @@ body {
 
 /* AdSense Slot */
 .ad-slot {
-  margin: 0.9rem auto;
+  margin: 0 auto;
   max-width: 970px;
-  min-height: 85px;
-  border: 1px dashed rgba(211, 188, 142, 0.4);
-  background: linear-gradient(90deg, rgba(22, 26, 40, 0.92), rgba(37, 43, 65, 0.92));
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0.6rem;
+  min-height: 0;
+  max-height: 0;
+  overflow: hidden;
+  display: block;
+  padding: 0;
   text-align: center;
+}
+
+/* Mantiene el ancho disponible para AdSense sin reservar un bloque vacío. */
+.ad-slot:has(.adsbygoogle[data-ad-status="filled"]),
+.ad-slot:has(.adsbygoogle[data-ad-status="unfill-optimized"]) {
+  margin: 0.9rem auto;
+  max-height: none;
+  overflow: visible;
+}
+
+.ad-slot .adsbygoogle[data-ad-status="unfilled"] {
+  display: none !important;
 }
 
 .ad-slot.hidden { display: none; }
