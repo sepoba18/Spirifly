@@ -1,0 +1,38 @@
+const fs = require('node:fs');
+const vm = require('node:vm');
+const assert = require('node:assert/strict');
+const path = require('node:path');
+const root = path.resolve(__dirname, '..');
+const c = vm.createContext({console, state: {activePlans: []}});
+for (const file of ['data_real_genshin.js','assets/data/traveler-planner.js','planner_real.js']) {
+  vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'), c);
+}
+const run = code => vm.runInContext(code,c);
+assert.equal(run('REAL_CHAR_LIST.filter(c=>c.sharedProgression === "traveler").length'),7);
+const plan = key => ({kind:'character',key,active:true,curState:0,tarState:13,incLevel:true,talCur:[1,1,1],talTar:[10,10,10],talInc:[true,true,true],incWeapon:false});
+const pyro = plan('Viajero'), cryo = plan('Viajero (Cryo)'), geo = plan('Viajero (Geo)');
+c.state.activePlans = [pyro,cryo,geo];
+c.p = pyro; c.q = cryo; c.g = geo;
+assert.equal(run('computePlanRequirements(p,["level"])[100024]'),168);
+assert.equal(run('computePlanRequirements(q,["level"])[100024] || 0'),0);
+assert.equal(run('computePlanRequirements(q,["talents"])[112149]'),18);
+assert.equal(run('computePlanRequirements(q,["talents"])[112150]'),66);
+assert.equal(run('computePlanRequirements(q,["talents"])[112151]'),93);
+assert.equal(run('computePlanRequirements(q,["talents"])[112005] || 0'),0);
+assert.equal(run('computePlanRequirements(q,["talents"])[113075]'),18);
+assert.equal(run('computePlanRequirements(p,["talents"])[113063]'),12);
+assert.equal(run('computePlanRequirements(g,["talents"])[113005]'),6);
+assert.equal(run('computePlanRequirements(g,["talents"])[113006]'),12);
+assert.equal(run('computePlanRequirements(g,["talents"])[202]'),4957500);
+pyro.active=false;
+assert.equal(run('computePlanRequirements(q,["level"])[100024]'),168);
+pyro.active=true;
+assert.equal(run('computePlanRequirements({...q,travelerFullLevel:true},["level"])[100024]'),168);
+run('markPlanAsCompleted(q)');
+assert.equal(pyro.curState,13);
+assert.equal(geo.curState,13);
+assert.equal(pyro.talCur[0],1);
+assert.equal(cryo.talCur[0],10);
+assert.equal(run('getTalentConstBonus("Viajero (Cryo)",2,3)'),3);
+assert.equal(run('getTalentConstBonus("Viajero (Dendro)",1,3)'),3);
+console.log('PASS: siete elementos, costos independientes, ascensión única, pausa y completar sin duplicar.');

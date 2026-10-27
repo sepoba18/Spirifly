@@ -585,6 +585,41 @@ function talentLevelToBase(lv, bonus) {
  * Calcula materiales de un plan. `parts` (opcional) limita el calculo a
  * "level", "talents" y/o "weapon"; sin `parts` suma todo.
  */
+// La ascensión del Viajero pertenece a un solo personaje; los talentos no.
+function isTravelerPlan(plan) {
+  return plan && plan.kind === "character" && getRosterCharInfo(plan.key)?.sharedProgression === "traveler";
+}
+
+function travelerPlansWithDraft(plan) {
+  const plans = (state.activePlans || []).filter(isTravelerPlan).map(p =>
+    p.key === plan.key ? plan : p);
+  if (!plans.some(p => p.key === plan.key)) plans.push(plan);
+  return plans;
+}
+
+function addTravelerLevelRequirements(plan, addReq, ascensionCosts) {
+  const all = travelerPlansWithDraft(plan);
+  // El nivel actual es compartido incluso si una variante está pausada.
+  const current = Math.max(...all.map(p => p.curState || 0));
+  const active = all.filter(p => p.active !== false && p.incLevel !== false);
+  for (let step = current; step < (plan.tarState || 0); step++) {
+    // Cada salto se asigna una sola vez, también con objetivos diferentes.
+    const owner = active.find(p => (p.tarState || 0) > step);
+    if (plan.travelerFullLevel || owner?.key === plan.key) {
+      addLevelStepsToReq(addReq, step, step + 1, REAL_CHAR_EXP_STEPS, ascensionCosts);
+    }
+  }
+}
+
+function syncTravelerLevel(plan) {
+  if (!isTravelerPlan(plan)) return;
+  (state.activePlans || []).filter(isTravelerPlan).forEach(p => {
+    p.curState = plan.curState;
+    p.tarState = plan.tarState;
+    p.incLevel = plan.incLevel;
+  });
+}
+
 function computePlanRequirements(plan, parts) {
   const req = {};
   if (plan.active === false) return req;
@@ -610,7 +645,8 @@ function computePlanRequirements(plan, parts) {
 
   // 1. Nivel y ascension del personaje
   if (want("level") && plan.incLevel !== false) {
-    addLevelStepsToReq(addReq, plan.curState || 0, plan.tarState || 0, REAL_CHAR_EXP_STEPS, ch.ascensionCosts);
+    if (isTravelerPlan(plan)) addTravelerLevelRequirements(plan, addReq, ch.ascensionCosts);
+    else addLevelStepsToReq(addReq, plan.curState || 0, plan.tarState || 0, REAL_CHAR_EXP_STEPS, ch.ascensionCosts);
   }
 
   // 2. Cada talento por separado (con soporte de constelaciones C3/C5 para niveles 1..13)
@@ -818,7 +854,7 @@ function renderRosterModalGrid() {
       const curLang = (typeof state !== "undefined" && state.lang) || "es";
       const plain = ch.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
       const trans = (typeof getCharacterTranslatedName === "function") ? getCharacterTranslatedName(ch.name, curLang).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") : "";
-      let matches = plain.includes(search) || trans.includes(search);
+      let matches = plain.includes(search) || trans.includes(search) || (ch.sharedProgression === "traveler" && ["traveler", "traveller", "aether", "lumine", "viajera"].some(alias => alias.includes(search)));
       if (!matches) {
         if (search === "columbina" && plain.includes("colombina")) matches = true;
         else if (search === "arlechino" && plain.includes("arlecchino")) matches = true;
@@ -892,6 +928,14 @@ function openCharConfigModal(charName, openedFromRoster) {
     };
   }
 
+  if (isTravelerPlan(state.cfgDraft)) {
+    const shared = state.activePlans.find(isTravelerPlan);
+    if (shared) {
+      state.cfgDraft.curState = shared.curState;
+      state.cfgDraft.tarState = shared.tarState;
+      state.cfgDraft.incLevel = shared.incLevel;
+    }
+  }
   closeAllLevelPopovers();
   state.cfgActiveTab = "level";
   document.querySelectorAll("[data-cfgtab]").forEach((b) => b.classList.toggle("active", b.dataset.cfgtab === "level"));
@@ -911,6 +955,7 @@ function closeCharConfigModal(autoSave = true) {
   const d = state.cfgDraft;
   state.cfgDraft = null;
   if (autoSave && d) {
+    syncTravelerLevel(d);
     const idx = state.activePlans.findIndex((p) => p.kind === "character" && p.key === d.key);
     if (idx !== -1) {
       state.activePlans[idx] = JSON.parse(JSON.stringify(d));
@@ -1363,7 +1408,10 @@ function markPlanAsCompleted(plan) {
     plan.curState = plan.tarState;
     return;
   }
-  if (plan.incLevel !== false) plan.curState = plan.tarState;
+  if (plan.incLevel !== false) {
+    plan.curState = plan.tarState;
+    syncTravelerLevel(plan);
+  }
   for (let t = 0; t < 3; t++) {
     if (!plan.talInc || plan.talInc[t] !== false) plan.talCur[t] = plan.talTar[t];
   }
@@ -1376,7 +1424,7 @@ function saveDraftCharacterToPlans(consumeMaterialsNow) {
   const d = state.cfgDraft;
   if (!d) return;
   if (consumeMaterialsNow) {
-    consumeRequirementsFromOwned(computePlanRequirements(d));
+    consumeRequirementsFromOwned(computePlanRequirements({ ...d, travelerFullLevel: true }));
     markPlanAsCompleted(d);
   }
   closeCharConfigModal(true);
@@ -1385,7 +1433,7 @@ function saveDraftCharacterToPlans(consumeMaterialsNow) {
 function completeAndConsumePlan(idx) {
   const plan = state.activePlans[idx];
   if (!plan) return;
-  consumeRequirementsFromOwned(computePlanRequirements(plan));
+  consumeRequirementsFromOwned(computePlanRequirements({ ...plan, travelerFullLevel: true }));
   markPlanAsCompleted(plan);
   savePlansToStorage();
 }

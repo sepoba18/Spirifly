@@ -318,7 +318,6 @@ body {
 .ad-slot .adsbygoogle[data-ad-status="unfilled"] {
   display: none !important;
 }
-
 .ad-slot.hidden { display: none; }
 .ad-badge {
   font-size: 0.66rem;
@@ -2737,11 +2736,17 @@ body {
   border-radius: 16px;
   width: 100%;
   max-width: 600px;
-  overflow: visible;
+  max-height: 92vh;
+  max-height: 92dvh;
+  overflow: hidden;
   box-shadow: 0 26px 65px rgba(0, 0, 0, 0.72);
   display: flex;
   flex-direction: column;
   animation: fadeIn 0.16s ease;
+}
+
+.seelie-config-dialog > :not(.seelie-modal-body) {
+  flex-shrink: 0;
 }
 
 .seelie-config-banner {
@@ -2906,7 +2911,9 @@ body {
 .seelie-modal-body {
   padding: 1rem 1.15rem;
   background: #21263a;
-  min-height: 250px;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  min-height: 0;
   position: relative;
 }
 
@@ -5542,3 +5549,11 @@ body {
 .tc-artifact-combination p { margin: 0 0 4px; }
 .tc-artifact-combination > div { display: flex; flex-wrap: wrap; column-gap: 8px; margin-top: 3px; }
 .tc-artifact-combination strong { color: var(--text-main); font-weight: 600; }
+
+.wish-share-dialog { width: min(920px, calc(100vw - 24px)); max-height: calc(100dvh - 32px); box-sizing: border-box; margin: auto; padding: 20px; border: 1px solid var(--border); border-radius: 16px; background: #151a27; color: #f5f1e8; overflow: auto; }
+.wish-share-dialog::backdrop { background: rgba(0,0,0,.75); }
+.wish-share-dialog h2 { margin: 0 0 16px; font-size: 1.2rem; }
+.wish-share-dialog img { display: block; width: 100%; height: auto; border-radius: 8px; }
+.wish-share-actions { display: flex; gap: 12px; justify-content: flex-end; flex-wrap: wrap; margin-top: 16px; }
+.wish-share-actions a { text-decoration: none; }
+#btnShareWishes:disabled { opacity: .5; cursor: not-allowed; }

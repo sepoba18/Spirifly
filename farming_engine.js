@@ -2670,6 +2670,22 @@ const FarmingEngine = {
           order: 1
         };
       }
+      // Los diamantes del Viajero son recompensas de rango, no de jefes.
+      else if (["104101", "104102", "104103", "104104"].includes(idStr)) {
+        const labels = {
+          es: "Recompensas de Rango de Aventura",
+          en: "Adventure Rank Rewards",
+          pt: "Recompensas de Rank de Aventura",
+          ja: "\u5192\u967a\u30e9\u30f3\u30af\u5831\u916c",
+          ko: "\ubaa8\ud5d8 \ub4f1\uae09 \ubcf4\uc0c1"
+        };
+        sourceId = "adventure_rank_diamond";
+        cardDef = {
+          title: labels[lang] || labels.es,
+          subTitle: matInfo.name, region: "Teyvat",
+          tag: fe.tagSpecialty, tagType: "specialty", cost: 0, order: 90
+        };
+      }
       // 9. Gemas elementales (1041xx)
       else if (idStr.startsWith("1041")) {
         const elemKey = idStr.slice(0, 5);

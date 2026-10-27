@@ -2992,6 +2992,9 @@ function renderTheorycraft() {
     : THEORYCRAFT_DB;
 
   const SEARCH_ALIASES = {
+    "aether": ["traveler_"],
+    "lumine": ["traveler_"],
+    "viajera": ["traveler_"],
     "columbina": ["colombina", "damselette", "fatui"],
     "colombina": ["columbina", "damselette", "fatui"],
     "sandrone": ["marionette", "marioneta", "fatui"],
@@ -3025,7 +3028,7 @@ function renderTheorycraft() {
 
   function normalizeSearch(str) {
     if (!str) return "";
-    return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+    return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[()_]/g, " ").replace(/\s+/g, " ").trim();
   }
 
   const rawQ = (state.searchQuery || "").trim();
@@ -3400,6 +3403,14 @@ function renderTheorycraft() {
 
     // Talent Priority
     const talentPrio = trBuildStr(ch.talentPriority || "Prioridad pendiente de contraste para este rol");
+    const travelerTalentNotes = {
+      es: "Talento adicional de Nod-Krai: se desbloquea al completar la misión de Arconte «Luna verdadera». Cada elemento con el que hayas resonado aporta estadísticas adicionales y habilita un ataque cargado especial con condiciones propias. Ajusta las estadísticas del equipo según los bonos ya desbloqueados.",
+      en: "Nod-Krai additional talent: unlocked by completing the Archon Quest ‘True Moon’. Each element you have resonated with grants extra stats, and each elemental form has a special Charged Attack with its own conditions. Adjust your build for the bonuses you have unlocked.",
+      pt: "Talento adicional de Nod-Krai: desbloqueado ao concluir a Missão do Arconte ‘Lua Verdadeira’. Cada elemento com que você ressoou concede atributos extras, e cada forma elemental tem um Ataque Carregado especial com suas próprias condições. Ajuste a build aos bônus desbloqueados.",
+      ja: "ナド・クライの追加天賦：魔神任務「真月」クリア後に解放。共鳴した元素ごとにステータスが上昇し、元素ごとに条件の異なる特殊な重撃を使用できます。解放済みの効果に合わせて装備を調整してください。",
+      ko: "노드크라이 추가 특성: 마신 임무 ‘진월’ 완료 후 해금됩니다. 공명한 원소마다 추가 능력치를 얻고, 원소별 조건을 충족하면 특별한 강공격을 사용할 수 있습니다. 해금한 보너스에 맞춰 세팅을 조정하세요."
+    };
+    const travelerTalentNote = ch.id.startsWith("traveler_") ? (travelerTalentNotes[state.lang] || travelerTalentNotes.es) : "";
 
     // Benchmarks (con soporte seguro para benchmarks y recommendedPanel)
     let benchmarksHtml = "";
@@ -3511,6 +3522,7 @@ function renderTheorycraft() {
           <div class="tc-talent-box">
             <div style="font-size:0.75rem;color:var(--text-muted);">${escapeHtml(tc.talSub)}</div>
             <div class="tc-talent-arrow-flow">${talentPrio}</div>
+            ${travelerTalentNote ? `<p class="tc-review-note">${escapeHtml(travelerTalentNote)}</p>` : ""}
           </div>
 
           <div class="tc-block-title"><img src="assets/ui/clipboard.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> ${escapeHtml(tc.subPrio)}</div>
@@ -3550,6 +3562,7 @@ function loadBuildIntoSimulator(charKey) {
 let cachedFullWishResults = null;
 
 function initWishCounterEvents() {
+  document.getElementById("btnShareWishes").addEventListener("click", () => WishShare.open(cachedFullWishResults, state.lang));
   // 1. Abrir y Cerrar Drawer
   const btnToggle = document.getElementById("btnToggleImport");
   const drawer = document.getElementById("importDrawer");
@@ -3886,6 +3899,7 @@ async function renderWishesDashboard() {
   // 2. Procesar con WishEngine
   const fullResult = WishEngine.processFullHistory(state.rawWishes);
   cachedFullWishResults = fullResult;
+  WishShare.update(fullResult, state.lang);
 
   // 3. Actualizar Selector de Cuentas / UIDs
   const accSelect = document.getElementById("wishAccountSelect");

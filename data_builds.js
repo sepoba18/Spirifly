@@ -21350,7 +21350,7 @@ const CHARACTER_BUILDS_DB = [
       "2. ATQ%",
       "3. Recarga de Energía% (130% – 150%)"
     ],
-    "talentPriority": "Habilidad Elemental (E) > Definitiva (Q) > Ataques Normales",
+    "talentPriority": "Ataques Normales > Definitiva (Q) > Habilidad Elemental (E)",
     "benchmarks": {
       "hp": "16,500",
       "atk": "1,900 – 2,200 ATQ",

@@ -4,7 +4,7 @@ const vm = require('node:vm');
 const assert = require('node:assert/strict');
 const root = path.resolve(__dirname, '..');
 const context = vm.createContext({ console, state: { activePlans: [], realOwned: {}, lang: 'es' }, document: { getElementById: () => null } });
-for (const file of ['data.js','data_real_genshin.js','assets/data/simulator-original.js','data_builds.js','planner_real.js','farming_engine.js']) {
+for (const file of ['data.js','data_real_genshin.js','assets/data/traveler-planner.js','assets/data/simulator-original.js','data_builds.js','planner_real.js','farming_engine.js']) {
   vm.runInContext(fs.readFileSync(path.join(root, file), 'utf8'), context);
 }
 const audit = vm.runInContext(`(() => {
@@ -28,6 +28,7 @@ const audit = vm.runInContext(`(() => {
   const missingSimulator = CHARACTER_BUILDS_DB.filter(c => !c.baseStats || !c.talentsData).map(c => c.name.es);
   return { counts: { characters: REAL_CHAR_LIST.length, weapons: REAL_WEAPONS_DB.length, builds: CHARACTER_BUILDS_DB.length, materials: materials.length }, missingRefs, inconsistentDomains, iconMismatch, missingTalentSources, missingBossSources, missingSimulator };
 })()`, context);
+assert.equal(vm.runInContext('REAL_CHAR_LIST.filter(c=>c.sharedProgression === \"traveler\").length',context),7,'La auditoría general incluye las siete variantes del Viajero');
 assert.equal(audit.missingSimulator.length,0,'Todas las builds tienen estadísticas y talentos específicos');
 assert.equal(audit.missingRefs.length, 0, 'Referencias y cantidades de materiales');
 assert.equal(audit.inconsistentDomains.length, 0, 'No mezclar materiales semanales y jefes normales');
@@ -92,6 +93,17 @@ for (const [id, name] of [['112004','Slimes'], ['112008','Samachurls'], ['112011
   const record = vm.runInContext(`FarmingEngine.getSeelieFarmingData("all", {'${id}': 1}).sections.flatMap(s=>s.cards)[0]`, context);
   assert.equal(record.title,name);
 }
+// Los diamantes brillantes se obtienen por rango; nunca añaden resina.
+const diamonds = vm.runInContext('FarmingEngine.getSeelieFarmingData("all", {"104101":1,"104102":9,"104103":9,"104104":6})',context);
+assert.equal(diamonds.totals.totalResin,0);
+assert.equal(diamonds.totals.condResin,0);
+const diamondCards = diamonds.sections.flatMap(s=>s.cards);
+assert.equal(diamondCards.length,1);
+assert.equal(diamondCards[0].id,'adventure_rank_diamond');
+assert.equal(diamondCards[0].items.length,4);
+assert.equal(diamondCards[0].title,'Recompensas de Rango de Aventura');
+// Las gemas de los demás personajes conservan su fuente de jefes.
+assert.ok(vm.runInContext('FarmingEngine.getSeelieFarmingData("all", {"104111":1}).totals.totalResin',context)>0);
 const wishes = require(path.join(root, 'wish_engine.js'));
 const unknownDate = wishes.processBannerPity([{id:'1',name:'Arma',rank_type:'3',time:''}], 'character');
 assert.equal(unknownDate.stats.totalPulls,1);

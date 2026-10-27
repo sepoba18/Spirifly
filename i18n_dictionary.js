@@ -23317,6 +23317,11 @@ function getArtifactTranslatedName(rawSet, lang) {
 function getCharacterTranslatedName(rawChar, lang) {
   if (!rawChar) return "";
   const curLang = lang || (typeof state !== "undefined" && state.lang) || "es";
+  const traveler = String(rawChar).match(/^Viajero(?: \((Anemo|Geo|Electro|Dendro|Hydro|Pyro|Cryo)\))?$/i);
+  if (traveler) {
+    const names = {es:"Viajero",en:"Traveler",pt:"Viajante",ja:"旅人",ko:"여행자"};
+    return traveler[1] ? `${names[curLang] || names.en} (${traveler[1]})` : (names[curLang] || names.en);
+  }
   const low = String(rawChar).trim().toLowerCase();
   if (I18N_CHARACTERS_RAW[low]) {
     return I18N_CHARACTERS_RAW[low][curLang] || I18N_CHARACTERS_RAW[low].en || rawChar;
