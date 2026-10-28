@@ -1,0 +1,26 @@
+.privacy-panel[hidden], [data-ad-privacy][hidden] { display: none !important; }
+.privacy-panel {
+  position: fixed; inset: auto 1rem 1rem; z-index: 1300;
+  max-width: 900px; max-height: 45dvh; overflow-y: auto; margin: 0 auto;
+  padding: 1.1rem 1.25rem; border: 1px solid #7383a7; border-radius: 12px;
+  background: #151d30; color: #eef1f8; box-shadow: 0 8px 32px #0009;
+  font: 0.9rem/1.55 system-ui, sans-serif;
+}
+.privacy-panel h2 { color: #fff; font-size: 1.05rem; margin: 0 0 .4rem; }
+.privacy-panel p { margin: 0; color: #e2e8f0; }
+.privacy-panel a, .site-intro a { color: #93c5fd; text-decoration: underline; }
+.privacy-actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: .85rem; }
+.privacy-actions button {
+  flex: 1 1 170px; border: 1px solid #a6b9de; border-radius: 7px;
+  background: #24324b; color: #fff; padding: .6rem .9rem;
+  font: inherit; font-weight: 600; cursor: pointer;
+}
+.privacy-actions button:hover { background: #34476b; }
+.privacy-link { border: 0; padding: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; text-decoration: underline; }
+.privacy-link:focus-visible, .privacy-panel :focus-visible { outline: 3px solid #93c5fd; outline-offset: 3px; }
+.site-intro { max-width: 920px; margin: 0 auto 1.1rem; color: #cbd5e1; text-align: center; line-height: 1.65; font-size: .88rem; }
+@media (max-width: 600px) {
+  .privacy-panel { inset: auto .5rem .5rem; padding: .9rem; }
+  .privacy-actions { gap: .5rem; }
+  .privacy-actions button { flex-basis: 125px; }
+}

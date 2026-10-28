@@ -1,94 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy | Spirifly</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/ui/favicon-32x32.png" />
-  <link rel="icon" type="image/svg+xml" href="assets/ui/favicon.svg" />
-  <style>
-    :root {
-      --bg-dark: #0b0e14;
-      --card-bg: #151922;
-      --text-main: #e2e8f0;
-      --text-muted: #94a3b8;
-      --gold: #d3bc8e;
-      --border: rgba(255, 255, 255, 0.08);
-      --link: #60a5fa;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: var(--bg-dark);
-      color: var(--text-main);
-      font-family: Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      line-height: 1.65;
-      padding: 3.5rem 1.25rem;
-    }
-    .legal-container {
-      max-width: 820px;
-      margin: 0 auto;
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 2.5rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
-    .back-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--gold);
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.95rem;
-      margin-bottom: 2rem;
-      transition: opacity 0.2s;
-    }
-    .back-btn:hover { opacity: 0.8; }
-    h1 { font-size: 2.2rem; color: #ffffff; margin-bottom: 1.75rem; font-weight: 800; }
-    h2 { font-size: 1.28rem; color: #ffffff; margin: 1.75rem 0 0.85rem; font-weight: 700; }
-    ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
-    li { margin-bottom: 0.75rem; font-size: 1rem; color: var(--text-main); line-height: 1.6; }
-    a { color: var(--link); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    footer {
-      margin-top: 3.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-    footer a { color: var(--text-muted); margin: 0 0.75rem; }
-    footer a:hover { color: var(--gold); }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Política de privacidad | Spirifly</title>
+  <meta name="description" content="Información sobre datos locales, sincronización con Google Drive, analítica opcional y publicidad de Google en Spirifly.">
+  <link rel="canonical" href="https://spirifly.app/privacy">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/site-info.css?v=1">
+  <link rel="stylesheet" href="assets/privacy.css?v=1">
+  <script src="assets/privacy.js?v=1"></script>
 </head>
 <body>
+  <header class="info-header">
+    <a class="info-brand" href="/">Spirifly</a>
+    <nav aria-label="Navegación principal"><a href="/">Herramientas</a><a href="guide.html">Guía de uso</a><a href="about.html">Proyecto y contacto</a></nav>
+  </header>
+  <main class="info-main">
 
-  <div class="legal-container">
-    <a href="index.html" class="back-btn">← Back to Spirifly</a>
+    <h1>Política de privacidad</h1>
+    <p class="info-date">Actualizada el 28 de octubre de 2026.</p>
+    <p>Esta política describe el tratamiento de información al usar Spirifly en <a href="https://spirifly.app/">spirifly.app</a>. El proyecto y su canal de contacto se identifican en <a href="about.html">Proyecto y contacto</a>.</p>
+    <h2>Datos de las herramientas</h2>
+    <p>El planificador, el inventario, las preferencias y los perfiles se guardan en el almacenamiento del navegador, mediante tecnologías como localStorage e IndexedDB. El historial de deseos que importas puede incluir el UID del juego, fechas, objetos obtenidos y otros campos del archivo. El sitio utiliza estos datos para ofrecer las herramientas que solicitas.</p>
+    <p>Estos registros no se envían a Google Analytics como parte de la configuración de medición del sitio. Si utilizas el proxy de importación de deseos, la solicitud pasa por una función alojada en Cloudflare para consultar el servicio de origen. Esa solicitud puede contener credenciales temporales del enlace de importación: no compartas el enlace públicamente.</p>
+    <h2>Google Drive y acceso a Google</h2>
+    <p>Si conectas Google Drive, Google solicita tu autorización para acceder al espacio de datos de esta aplicación en Drive y al correo de la cuenta. La aplicación usa un token de acceso para consultar y sincronizar el respaldo; el correo y el estado de conexión pueden conservarse en el navegador. Tu contraseña se introduce en la pantalla de Google, no en Spirifly.</p>
+    <p>Los datos sincronizados se envían a Google Drive bajo tu cuenta. Puedes desconectar la integración en Spirifly y revocar el acceso en <a href="https://myaccount.google.com/connections" rel="noopener">las conexiones de tu cuenta de Google</a>. Desconectar o revocar el acceso no borra automáticamente los datos ya almacenados; puedes administrar los datos de la aplicación desde la configuración de Google Drive.</p>
+    <h2>Hosting, recursos y solicitudes técnicas</h2>
+    <p>Cloudflare sirve el sitio y procesa las solicitudes técnicas necesarias para entregarlo. Como parte de una conexión web, los proveedores pueden recibir la dirección IP, datos del navegador, URL solicitada y otros datos de conexión. El sitio también puede solicitar imágenes, fuentes o servicios externos; sus proveedores reciben los datos técnicos de esas solicitudes. No afirmamos que todo el tratamiento se limite a datos anónimos.</p>
+    <p>Consulta <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">la política de Cloudflare</a> y <a href="https://policies.google.com/privacy" rel="noopener">la política de Google</a>.</p>
+    <h2>Analítica opcional</h2>
+    <p>Google Analytics 4 está desactivado por defecto. Su etiqueta se carga únicamente después de que selecciones «Permitir analítica» en las preferencias del sitio. Puede medir visitas, interacción, características del dispositivo y ubicación aproximada derivada de la conexión. La configuración del sitio desactiva Google Signals y las señales de personalización publicitaria para Analytics.</p>
+    <p>La configuración inicial de medición excluye los parámetros y fragmentos de la dirección de la página y no envía la URL de referencia. No incluyas contraseñas ni tokens en nombres o campos de las herramientas. Puedes retirar el permiso desde <button type="button" class="privacy-link" data-privacy-settings>Preferencias de analítica</button>; al rechazarlo se desactiva la medición y se intenta eliminar las cookies de Analytics de este dominio. La retirada no borra información que Google haya recibido anteriormente.</p>
+    <h2>Publicidad de Google y terceros</h2>
+    <p>Spirifly ha solicitado utilizar Google AdSense. Cuando se carga su etiqueta, Google puede recibir información técnica de la conexión incluso si todavía no aparece un anuncio. Cuando se sirven anuncios, Google y otros proveedores o redes publicitarias pueden colocar y leer cookies, usar balizas web, direcciones IP u otros identificadores para entregar y medir publicidad, limitar repeticiones y prevenir fraude.</p>
+    <p>Google y sus socios pueden utilizar cookies para mostrar anuncios basados en tus visitas anteriores a este sitio u otros sitios de Internet, según la configuración y el consentimiento aplicables. La aceptación de Analytics en Spirifly no autoriza publicidad personalizada. Cuando corresponda, las preferencias publicitarias se gestionan por separado mediante el mensaje de consentimiento de Google.</p>
+    <p>Puedes desactivar la personalización en <a href="https://myadcenter.google.com/" rel="noopener">Mi centro de anuncios de Google</a> y consultar las opciones de otros proveedores en <a href="https://optout.aboutads.info/" rel="noopener">AboutAds</a>. Más información: <a href="https://business.safety.google/privacy/" rel="noopener">cómo usa Google la información de sitios y aplicaciones que utilizan sus servicios</a> y <a href="https://policies.google.com/technologies/ads" rel="noopener">tecnologías publicitarias de Google</a>.</p>
+    <h2>Cómo administrar y eliminar información</h2>
+    <p>Puedes exportar la información mediante las opciones disponibles en las herramientas y borrar el almacenamiento de Spirifly desde tu navegador. Haz un respaldo antes de borrar datos: la eliminación local puede afectar tus planes y el historial importado. Los respaldos de Drive, la información recibida por Google y los registros técnicos de los proveedores se administran por separado bajo sus respectivos controles y políticas.</p>
+    <p>Para preguntas o errores del proyecto, utiliza <a href="about.html">el canal de contacto</a>. No publiques datos personales, enlaces con credenciales ni tokens en incidencias públicas. Consulta también <a href="cookies.html">la política de cookies y preferencias</a>.</p>
 
-    <h1>Privacy Policy</h1>
-
-    <h2>Collected Data</h2>
-    <ul>
-      <li><strong>Spirifly</strong> collects only navigational data, like visited urls, browser, operating system, device, country and referer.</li>
-      <li>No personal data is stored in our server or database. All personal data is stored in your personal computer or mobile device, and, when using Google Drive sync, in Google databases, and is not managed by us.</li>
-    </ul>
-
-    <h2>Advertisement</h2>
-    <ul>
-      <li>All or partial advertising on this Website or App is managed by <strong>Google AdSense (Google LLC)</strong>. If Google publisher advertising services are used, Google LLC may collect and use certain aggregated and anonymized data for advertising purposes. To learn more about the types of data collected, how data is used and your choices as a user, please visit <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">https://policies.google.com/technologies/ads</a>.</li>
-    </ul>
-
-    <footer>
-      <a href="privacy.html">Privacy Policy</a> •
-      <a href="terms.html">Terms of Service</a> •
-      <a href="cookies.html">Cookie Policy</a>
-      <p style="margin-top:0.75rem;">© 2026 Spirifly. All rights reserved.</p>
-    </footer>
-  </div>
-
+  </main>
+  <footer class="info-footer">
+    <nav class="info-footer-links" aria-label="Privacidad y condiciones">
+      <a href="privacy.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="terms.html">Términos de uso</a>
+      <button type="button" class="privacy-link" data-privacy-settings>Preferencias de analítica</button>
+    </nav>
+    <p>© 2026 Spirifly. Proyecto independiente, sin afiliación ni respaldo de HoYoverse. Las marcas y los recursos de Genshin Impact pertenecen a sus respectivos titulares.</p>
+  </footer>
 </body>
 </html>

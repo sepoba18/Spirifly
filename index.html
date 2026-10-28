@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://spirifly.app/" />
+  <meta name="google-adsense-account" content="ca-pub-4245858516736505" />
   <title>Spirifly — Genshin Impact Farming, Inventory, Wish Tracker &amp; Builds</title>
   <meta name="description"
     content="Spirifly: All-in-One Genshin Impact Hub synced with Google Drive. Visual Inventory with Smart Synthesis, Character &amp; Weapon Planner, Real-time Farming, Wish Counter &amp; Character Builds." />
@@ -13,8 +15,8 @@
   <meta property="og:title" content="Spirifly — Genshin Impact Farming, Inventory &amp; Wish Tracker" />
   <meta property="og:description"
     content="All-in-One Genshin Impact Hub synced with Google Drive. Visual Inventory, Smart Synthesis, Material Planner, Real-time Farming, Wish Counter and Character Builds." />
-  <meta property="og:image" content="https://sepoba18.github.io/Spirifly/assets/ui/logo_spirifly.jpg" />
-  <meta property="og:url" content="https://sepoba18.github.io/Spirifly/" />
+  <meta property="og:image" content="https://spirifly.app/assets/ui/logo_spirifly.jpg" />
+  <meta property="og:url" content="https://spirifly.app/" />
   <meta property="og:site_name" content="Spirifly" />
 
   <!-- Twitter / X -->
@@ -22,7 +24,7 @@
   <meta name="twitter:title" content="Spirifly — Genshin Impact Farming, Inventory &amp; Wish Tracker" />
   <meta name="twitter:description"
     content="All-in-One Genshin Impact Hub synced with Google Drive. Visual Inventory, Smart Synthesis, Material Planner, Real-time Farming, Wish Counter and Character Builds." />
-  <meta name="twitter:image" content="https://sepoba18.github.io/Spirifly/assets/ui/logo_spirifly.jpg" />
+  <meta name="twitter:image" content="https://spirifly.app/assets/ui/logo_spirifly.jpg" />
   <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/ui/favicon-32x32.png?v=2" />
   <link rel="icon" type="image/png" sizes="16x16" href="assets/ui/favicon-16x16.png?v=2" />
@@ -328,20 +330,16 @@
 
   </style>
   <link rel="stylesheet" href="assets/tutorial.css?v=2.10.6" />
-  <!-- Google Analytics 4 (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3F1TQSWB0"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-J3F1TQSWB0');
-  </script>
+  <!-- Consent defaults must run before Google tags. Analytics loads only after opt-in. -->
+  <link rel="stylesheet" href="assets/privacy.css?v=1" />
+  <script src="assets/privacy.js?v=1"></script>
   <!-- Google AdSense Official Script -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4245858516736505"
     crossorigin="anonymous"></script>
 </head>
 
 <body>
+  <noscript><p class="site-intro">Las herramientas necesitan JavaScript. Puedes consultar la <a href="guide.html">guía de uso</a>, la <a href="privacy.html">política de privacidad</a> y la <a href="about.html">información del proyecto</a> sin activarlo.</p></noscript>
 
   <!-- Barra Superior -->
   <header class="topbar">
@@ -390,18 +388,9 @@
       <h1 id="heroTitle">Ecosistema Integral Genshin Impact: Personajes, Inventario Inteligente y Builds</h1>
     </section>
 
-    <!-- Slot AdSense #1: Leaderboard Superior -->
-    <aside class="ad-slot" aria-label="Advertisement">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-4245858516736505"
-           data-ad-slot="auto"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-           (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    </aside>
+    <p class="site-intro">Organiza tus metas, descuenta los materiales de tu inventario y decide qué farmear en Genshin Impact.
+      Puedes usar las herramientas sin iniciar sesión; Google Drive es opcional.
+      <a href="guide.html">Consulta la guía de uso y los límites de los cálculos</a>.</p>
 
     <!-- ==========================================================
          PESTAÑA 1: INVENTARIO VISUAL
@@ -1899,18 +1888,6 @@
       </div>
     </section>
 
-    <!-- Slot AdSense #2: Inferior -->
-    <aside class="ad-slot" aria-label="Advertisement">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-4245858516736505"
-           data-ad-slot="auto"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-           (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    </aside>
   </main>
 
   <footer class="site-footer">
@@ -1923,6 +1900,10 @@
       <a href="#donar" id="footerDonateLink" style="color:var(--gold);font-weight:700;">☕ Donación</a>
       <a href="https://act.hoyolab.com/ys/app/interactive-map/index.html" target="_blank" rel="noopener">HoYoLAB
         Interactive Map</a>
+      <a href="guide.html">Guía de uso</a>
+      <a href="about.html">Proyecto y contacto</a>
+      <button type="button" class="privacy-link" data-privacy-settings>Preferencias de analítica</button>
+      <button type="button" class="privacy-link" data-ad-privacy hidden>Privacidad de anuncios</button>
     </div>
   </footer>
 
