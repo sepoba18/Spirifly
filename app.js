@@ -1,3 +1,60 @@
+// =====================================================================
+// GARANTÍA DEFENSIVA DE escapeHtml Y PUENTE RETROCOMPATIBLE DE ALMACENAMIENTO
+// =====================================================================
+if (typeof window !== "undefined" && typeof window.escapeHtml !== "function") {
+  window.escapeHtml = function (text) {
+    if (text === null || text === undefined) return "";
+    return String(text)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  };
+}
+if (typeof escapeHtml !== "function") {
+  var escapeHtml = typeof window !== "undefined" ? window.escapeHtml : function (text) {
+    if (text === null || text === undefined) return "";
+    return String(text)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  };
+}
+
+function getSpiriflyStorage(key, fallback) {
+  if (fallback === undefined) fallback = null;
+  try {
+    const val = localStorage.getItem(`spirifly_${key}`);
+    if (val !== null) return val;
+    const legacyVal = localStorage.getItem(`teyvat_${key}`);
+    if (legacyVal !== null) {
+      try { localStorage.setItem(`spirifly_${key}`, legacyVal); } catch (_) {}
+      return legacyVal;
+    }
+  } catch (_) {}
+  return fallback;
+}
+
+function setSpiriflyStorage(key, value) {
+  try {
+    const strVal = String(value);
+    localStorage.setItem(`spirifly_${key}`, strVal);
+    localStorage.setItem(`teyvat_${key}`, strVal);
+  } catch (_) {}
+}
+
+function parseSpiriflyStorage(key, fallback) {
+  try {
+    const raw = getSpiriflyStorage(key, null);
+    if (raw === null) return fallback;
+    return JSON.parse(raw);
+  } catch (_) {
+    return fallback;
+  }
+}
 
 function loadActiveAccountResin() {
   const activeAcc = (typeof AccountManager !== "undefined") ? AccountManager.getActiveAccountId() : (localStorage.getItem("account") || "main");
@@ -11,8 +68,8 @@ function loadActiveAccountResin() {
     }
   } catch (e) {}
   if (activeAcc === "main") {
-    const legacyVal = parseInt(localStorage.getItem("teyvat_resin_val") || "200", 10);
-    const legacyTime = parseInt(localStorage.getItem("teyvat_resin_updated_time") || "0", 10);
+    const legacyVal = parseInt(getSpiriflyStorage("resin_val", "200"), 10);
+    const legacyTime = parseInt(getSpiriflyStorage("resin_updated_time", "0"), 10);
     return { val: !isNaN(legacyVal) ? legacyVal : 200, updated: legacyTime > 0 ? legacyTime : Date.now() };
   }
   return { val: 200, updated: Date.now() };
@@ -23,8 +80,8 @@ function saveActiveAccountResin(val, updatedTime) {
   const data = { val: Math.max(0, Math.min(200, val)), updated: updatedTime || Date.now() };
   localStorage.setItem(`${activeAcc}-resin`, JSON.stringify(data));
   if (activeAcc === "main") {
-    localStorage.setItem("teyvat_resin_val", data.val);
-    localStorage.setItem("teyvat_resin_updated_time", data.updated);
+    setSpiriflyStorage("resin_val", data.val);
+    setSpiriflyStorage("resin_updated_time", data.updated);
   }
 }
 /* =====================================================================
@@ -43,7 +100,11 @@ if (typeof REAL_MASTER_MATERIALS !== "undefined" && !REAL_MASTER_MATERIALS["1130
 
 function safeParseLocal(key, fallback) {
   try {
-    const raw = localStorage.getItem(key);
+    let raw = localStorage.getItem(key);
+    if (!raw && key.startsWith("teyvat_")) {
+      const spiriKey = key.replace("teyvat_", "spirifly_");
+      raw = localStorage.getItem(spiriKey);
+    }
     if (!raw) return fallback;
     const parsed = JSON.parse(raw);
     return parsed !== null && parsed !== undefined ? parsed : fallback;
@@ -228,7 +289,7 @@ const ACTIVE_INVENTORY = REAL_INVENTORY_ITEMS;
 const IS_ADMIN_VIEW = new URLSearchParams(window.location.search).get("admin") === "1";
 
 const state = {
-  lang: localStorage.getItem("teyvat_lang") || "es",
+  lang: getSpiriflyStorage("lang", "es"),
   activeTab: (() => {
     try {
       const hash = (window.location.hash || "").replace("#", "").replace("sec-", "");
@@ -241,29 +302,29 @@ const state = {
   })(),
   invCategory: "all",
   invSearch: "",
-  invOnlyNeeded: Boolean(safeParseLocal("teyvat_inv_only_needed", false)),
+  invOnlyNeeded: Boolean(parseSpiriflyStorage("inv_only_needed", false)),
   selectedDayGroup: getTodayDayGroup(),
   farmingDay: new Date().getDay(),
   farmingResinFilter: "all",
   farmingCharFilter: "all",
   farmingMatFilter: "all",
-  starredChars: Array.isArray(safeParseLocal("teyvat_starred", [])) ? safeParseLocal("teyvat_starred", []) : [],
+  starredChars: Array.isArray(parseSpiriflyStorage("starred", [])) ? parseSpiriflyStorage("starred", []) : [],
   selectedElement: "ALL",
   selectedRole: "ALL",
   searchQuery: "",
   showAds: true,
   autoResolveConflict: true,
-  lastSyncTime: localStorage.getItem("teyvat_last_sync") || formatNow(),
-  driveLinked: localStorage.getItem("teyvat_drive_linked") === "true",
-  userEmail: localStorage.getItem("teyvat_drive_email") || "",
-  wishData: safeParseLocal("teyvat_wish_data", null) || JSON.parse(JSON.stringify(DEFAULT_WISH_DATA)),
-  activeWishBanner: localStorage.getItem("teyvat_active_wish_banner") || "character",
+  lastSyncTime: getSpiriflyStorage("last_sync", formatNow()),
+  driveLinked: getSpiriflyStorage("drive_linked") === "true",
+  userEmail: getSpiriflyStorage("drive_email", ""),
+  wishData: parseSpiriflyStorage("wish_data", null) || JSON.parse(JSON.stringify(DEFAULT_WISH_DATA)),
+  activeWishBanner: getSpiriflyStorage("active_wish_banner", "character"),
   wishTablePage: 1,
   wishTableRarityFilter: "ALL",
   wishTableSearch: "",
-  activeWishUid: localStorage.getItem("teyvat_active_wish_uid") || "default",
+  activeWishUid: getSpiriflyStorage("active_wish_uid", "default"),
   rawWishes: [],
-  topCurrency: safeParseLocal("teyvat_top_currency", null) || getDefaultTopCurrency(),
+  topCurrency: parseSpiriflyStorage("top_currency", null) || getDefaultTopCurrency(),
   activePlans: (function() {
     const activeAcc = (typeof AccountManager !== "undefined") ? AccountManager.getActiveAccountId() : (localStorage.getItem("account") || "main");
     const raw = safeParseLocal(`${activeAcc}-goals`, null) || (activeAcc === "main" ? safeParseLocal("teyvat_active_plans_v4", null) : []);
@@ -377,7 +438,7 @@ function updateSyncDisplay() {
 }
 
 function triggerDriveSyncStamp() {
-  localStorage.setItem("teyvat_data_last_modified", new Date().toISOString());
+  setSpiriflyStorage("data_last_modified", new Date().toISOString());
   if (typeof GoogleDriveSyncEngine !== "undefined") GoogleDriveSyncEngine.scheduleSync();
 }
 
@@ -538,7 +599,7 @@ function initApp() {
   langSelect.value = state.lang;
   langSelect.addEventListener("change", (e) => {
     state.lang = e.target.value;
-    localStorage.setItem("teyvat_lang", state.lang);
+    setSpiriflyStorage("lang", state.lang);
     triggerDriveSyncStamp();
     document.documentElement.lang = state.lang;
     renderAll();
@@ -635,7 +696,7 @@ function initApp() {
         inputDriveEmail.focus();
         return;
       }
-      localStorage.setItem("teyvat_drive_email", val);
+      setSpiriflyStorage("drive_email", val);
       driveFormBox.style.display = "none";
       connectGoogleDrive();
     };
@@ -667,7 +728,7 @@ function initApp() {
   if (btnToggleNeeded) {
     btnToggleNeeded.addEventListener("click", () => {
       state.invOnlyNeeded = !state.invOnlyNeeded;
-      localStorage.setItem("teyvat_inv_only_needed", JSON.stringify(state.invOnlyNeeded));
+      setSpiriflyStorage("inv_only_needed", JSON.stringify(state.invOnlyNeeded));
       triggerDriveSyncStamp();
       renderInventoryHeaderTabs();
       renderInventoryMatrix();
@@ -1768,7 +1829,7 @@ function renderInventoryMatrix() {
     if (resetBtn) {
       resetBtn.addEventListener("click", () => {
         state.invOnlyNeeded = false;
-        localStorage.setItem("teyvat_inv_only_needed", JSON.stringify(false));
+        setSpiriflyStorage("inv_only_needed", JSON.stringify(false));
         renderInventoryHeaderTabs();
         renderInventoryMatrix();
       });
@@ -2036,7 +2097,7 @@ function initSeelieCharacterSystem() {
     } else {
       state.starredChars.push(k);
     }
-    localStorage.setItem("teyvat_starred", JSON.stringify(state.starredChars));
+    setSpiriflyStorage("starred", JSON.stringify(state.starredChars));
     triggerDriveSyncStamp();
     updateCharConfigModalUI();
   });
@@ -2109,7 +2170,7 @@ function savePlansToStorage() {
   const activeAcc = (typeof AccountManager !== "undefined") ? AccountManager.getActiveAccountId() : (localStorage.getItem("account") || "main");
   localStorage.setItem(`${activeAcc}-goals`, JSON.stringify(state.activePlans));
   if (activeAcc === "main") {
-    localStorage.setItem("teyvat_active_plans_v4", JSON.stringify(state.activePlans));
+    setSpiriflyStorage("active_plans_v4", JSON.stringify(state.activePlans));
   }
   try { triggerDriveSyncStamp(); } catch (e) { console.error(e); }
   try { renderCharacterWeaponPlanner(); } catch (e) { console.error(e); }
@@ -3718,7 +3779,7 @@ function initWishCounterEvents() {
       bannerTabs.forEach((t) => t.classList.remove("active"));
       tab.classList.add("active");
       state.activeWishBanner = tab.dataset.banner;
-      localStorage.setItem("teyvat_active_wish_banner", state.activeWishBanner);
+      setSpiriflyStorage("active_wish_banner", state.activeWishBanner);
       triggerDriveSyncStamp();
       state.wishTablePage = 1;
       renderWishesDashboard();
@@ -4866,6 +4927,15 @@ function processWishFile(file) {
 
       let importedWishes = [];
       if (isExcel) {
+        if (typeof window !== "undefined" && !window.XLSX && typeof require === "undefined") {
+          await new Promise((resolve, reject) => {
+            const script = document.createElement("script");
+            script.src = "xlsx.full.min.js";
+            script.onload = resolve;
+            script.onerror = () => reject(new Error("No se pudo cargar la librería SheetJS (XLSX)."));
+            document.head.appendChild(script);
+          });
+        }
         importedWishes = WishEngine.importFromPaimonMoeXLSX(ev.target.result);
       } else if (isCsv) {
         importedWishes = WishEngine.importFromPaimonMoeCSV(ev.target.result);
@@ -6442,7 +6512,7 @@ function initInteractiveTutorial() {
   });
 
   // Requisito estricto: solo sale cuando detecte que NO hay una cuenta iniciada en Google
-  const isDriveLinked = localStorage.getItem("teyvat_drive_linked") === "true";
+  const isDriveLinked = getSpiriflyStorage("drive_linked") === "true";
   const dismissedThisSession = sessionStorage.getItem("spirifly_tut_dismissed") === "true";
 
   if (!isDriveLinked && !dismissedThisSession) {
