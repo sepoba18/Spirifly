@@ -4,6 +4,1959 @@
 // =====================================================================
 
 const I18N_WEAPONS_RAW = {
+  "11101": {
+    "es": "Hoja Desafilada",
+    "en": "Dull Blade",
+    "pt": "Lâmina Sem Fio",
+    "ja": "無鋒の剣",
+    "ko": "무인검"
+  },
+  "11201": {
+    "es": "Espada Plateada",
+    "en": "Silver Sword",
+    "pt": "Espada de Prata",
+    "ja": "銀の剣",
+    "ko": "실버 소드"
+  },
+  "11301": {
+    "es": "Hoja Fría",
+    "en": "Cool Steel",
+    "pt": "Lâmina Fria",
+    "ja": "冷刃",
+    "ko": "차가운 칼날"
+  },
+  "11302": {
+    "es": "Espada del Alba",
+    "en": "Harbinger of Dawn",
+    "pt": "Prenúncio do Alvorecer",
+    "ja": "黎明の神剣",
+    "ko": "여명신검"
+  },
+  "11303": {
+    "es": "Espada del Viajero",
+    "en": "Traveler's Handy Sword",
+    "pt": "Espada do Viajante",
+    "ja": "旅道の剣",
+    "ko": "여행자의 검"
+  },
+  "11304": {
+    "es": "Espada de Hierro Oscuro",
+    "en": "Dark Iron Sword",
+    "pt": "Espada de Ferro Negro",
+    "ja": "暗鉄剣",
+    "ko": "암철검"
+  },
+  "11305": {
+    "es": "Hoja de Filetear",
+    "en": "Fillet Blade",
+    "pt": "Lâmina de Filés",
+    "ja": "チ虎魚の刀",
+    "ko": "흘호 생선회칼"
+  },
+  "11306": {
+    "es": "Espada Surcacielos",
+    "en": "Skyrider Sword",
+    "pt": "Espada do Cavaleiro do Céu",
+    "ja": "飛天御剣",
+    "ko": "비천어검"
+  },
+  "11401": {
+    "es": "Espada de Favonius",
+    "en": "Favonius Sword",
+    "pt": "Espada de Favonius",
+    "ja": "西風剣",
+    "ko": "페보니우스 검"
+  },
+  "11402": {
+    "es": "Flauta",
+    "en": "The Flute",
+    "pt": "A Flauta",
+    "ja": "笛の剣",
+    "ko": "피리검"
+  },
+  "11403": {
+    "es": "Espada de Sacrificio",
+    "en": "Sacrificial Sword",
+    "pt": "Espada do Sacrifício",
+    "ja": "祭礼の剣",
+    "ko": "제례검"
+  },
+  "11404": {
+    "es": "Espada Real Larga",
+    "en": "Royal Longsword",
+    "pt": "Espada Longa Real",
+    "ja": "旧貴族長剣",
+    "ko": "왕실의 장검"
+  },
+  "11405": {
+    "es": "Rugido del León",
+    "en": "Lion's Roar",
+    "pt": "Rugido do Leão",
+    "ja": "匣中龍吟",
+    "ko": "용의 포효"
+  },
+  "11406": {
+    "es": "Prototipo Rencor",
+    "en": "Prototype Rancour",
+    "pt": "Protótipo Rancor",
+    "ja": "斬岩·試作",
+    "ko": "참암 프로토타입"
+  },
+  "11407": {
+    "es": "Espina de Hierro",
+    "en": "Iron Sting",
+    "pt": "Espinho de Ferro",
+    "ja": "鉄蜂の刺し",
+    "ko": "강철 벌침"
+  },
+  "11408": {
+    "es": "Espada Larga del Peñasco Oscuro",
+    "en": "Blackcliff Longsword",
+    "pt": "Espada do Penhasco Obscuro",
+    "ja": "黒岩の長剣",
+    "ko": "흑암 장검"
+  },
+  "11409": {
+    "es": "Espada Negra",
+    "en": "The Black Sword",
+    "pt": "Espada Negra",
+    "ja": "黒剣",
+    "ko": "칠흑검"
+  },
+  "11410": {
+    "es": "Destello en la Oscuridad",
+    "en": "The Alley Flash",
+    "pt": "Brilho do Beco",
+    "ja": "ダークアレイの閃光",
+    "ko": "뒷골목의 섬광"
+  },
+  "11412": {
+    "es": "Espada del Descenso",
+    "en": "Sword of Descension",
+    "pt": "Espada do Advento",
+    "ja": "降臨の剣",
+    "ko": "강림의 검"
+  },
+  "11413": {
+    "es": "Deseo Ponzoñoso",
+    "en": "Festering Desire",
+    "pt": "Espada Pútrida",
+    "ja": "腐植の剣",
+    "ko": "부식의 검"
+  },
+  "11414": {
+    "es": "Espada Amenoma Gemela",
+    "en": "Amenoma Kageuchi",
+    "pt": "Lâmina Amenoma Kageuta",
+    "ja": "天目影打",
+    "ko": "아메노마 카게우치가타나"
+  },
+  "11415": {
+    "es": "Huso de Cinabrio",
+    "en": "Cinnabar Spindle",
+    "pt": "Haste de Cinábrio",
+    "ja": "シナバースピンドル",
+    "ko": "진사의 방추"
+  },
+  "11416": {
+    "es": "Kagotsurube Isshin",
+    "en": "Kagotsurube Isshin",
+    "pt": "Kagotsurube Isshin",
+    "ja": "籠釣瓶一心",
+    "ko": "카고츠루베 잇신"
+  },
+  "11417": {
+    "es": "Espada de Madera",
+    "en": "Sapwood Blade",
+    "pt": "Espada de Madeira",
+    "ja": "原木刀",
+    "ko": "원목 검"
+  },
+  "11418": {
+    "es": "Luz Lunar de Xifos",
+    "en": "Xiphos' Moonlight",
+    "pt": "Luz Lunar de Xiphos",
+    "ja": "サイフォスの月明かり",
+    "ko": "크시포스의 달빛"
+  },
+  "11422": {
+    "es": "Diluvio Florífero",
+    "en": "Toukabou Shigure",
+    "pt": "Chuva Floral",
+    "ja": "東花坊時雨",
+    "ko": "꽃잎비"
+  },
+  "11424": {
+    "es": "Colmillo Lupino",
+    "en": "Wolf-Fang",
+    "pt": "Farpa",
+    "ja": "狼牙",
+    "ko": "늑대 송곳니"
+  },
+  "11425": {
+    "es": "Réquiem Abisal",
+    "en": "Finale of the Deep",
+    "pt": "Epílogo das Profundezas",
+    "ja": "海淵のフィナーレ",
+    "ko": "해연의 피날레"
+  },
+  "11426": {
+    "es": "Vado del Río Ceniciento",
+    "en": "Fleuve Cendre Ferryman",
+    "pt": "Cruzamento de Fleuve Cendre",
+    "ja": "サーンドルの渡し守",
+    "ko": "잿빛의 강 뱃사공"
+  },
+  "11427": {
+    "es": "Sable de la Dársena",
+    "en": "The Dockhand's Assistant",
+    "pt": "A Doca",
+    "ja": "船渠剣",
+    "ko": "뱃도랑 장검"
+  },
+  "11428": {
+    "es": "Espada Cruz de los Narcisos",
+    "en": "Sword of Narzissenkreuz",
+    "pt": "Espada da Cruz de Narcissus",
+    "ja": "水仙十字の剣",
+    "ko": "수선화 십자검"
+  },
+  "11430": {
+    "es": "Hueso Recio",
+    "en": "Sturdy Bone",
+    "pt": "Osso Robusto",
+    "ja": "ストロング・ボーン",
+    "ko": "견고한 골검"
+  },
+  "11431": {
+    "es": "Flauta de Ezpitzal",
+    "en": "Flute of Ezpitzal",
+    "pt": "Flauta de Ezpitzal",
+    "ja": "エズピツァルの笛",
+    "ko": "에스피찰의 피리"
+  },
+  "11432": {
+    "es": "Calamidad de Eshu",
+    "en": "Calamity of Eshu",
+    "pt": "Calamidade de Eshu",
+    "ja": "厄水の災い",
+    "ko": "에슈의 재앙"
+  },
+  "11433": {
+    "es": "Silbido Melifluo",
+    "en": "Serenity's Call",
+    "pt": "Chamado da Serenidade",
+    "ja": "静謐の笛",
+    "ko": "고요한 휘파람"
+  },
+  "11434": {
+    "es": "Alba de la Tejelunas",
+    "en": "Moonweaver's Dawn",
+    "pt": "Alvorada do Tecedor do Luar",
+    "ja": "月紡ぎの曙光",
+    "ko": "달을 엮는 자의 새벽빛"
+  },
+  "11435": {
+    "es": "Filo de la Caza de los Herejes",
+    "en": "Heretic's Molten Blade",
+    "pt": "Lâmina Derretida do Herege",
+    "ja": "異端を狩る熔刃",
+    "ko": "이단을 가르는 불꽃"
+  },
+  "11436": {
+    "es": "Fuente de Ignición",
+    "en": "Emberwell",
+    "pt": "Fonte da Ignição",
+    "ja": "導炎の源",
+    "ko": "불꽃의 인도자"
+  },
+  "11437": {
+    "es": "Nueva Rama",
+    "en": "New Bough",
+    "pt": "Ramo Novo",
+    "ja": "新たなる枝",
+    "ko": "새순"
+  },
+  "11438": {
+    "es": "Luz Plateada",
+    "en": "Silver Light",
+    "pt": "Lâmpada Prateada",
+    "ja": "銀灯",
+    "ko": "은강검"
+  },
+  "11501": {
+    "es": "Aquila Favonia",
+    "en": "Aquila Favonia",
+    "pt": "Falcão",
+    "ja": "風鷹剣",
+    "ko": "매의 검"
+  },
+  "11502": {
+    "es": "Hoja Afilada Celestial",
+    "en": "Skyward Blade",
+    "pt": "Espada Celestial",
+    "ja": "天空の刃",
+    "ko": "천공의 검"
+  },
+  "11503": {
+    "es": "Juramento por la Libertad",
+    "en": "Freedom-Sworn",
+    "pt": "Juramento pela Liberdade",
+    "ja": "蒼古なる自由への誓い",
+    "ko": "오래된 자유의 서약"
+  },
+  "11504": {
+    "es": "Rompemontañas",
+    "en": "Summit Shaper",
+    "pt": "Cortador de Montanhas",
+    "ja": "斬山の刃",
+    "ko": "참봉의 칼날"
+  },
+  "11505": {
+    "es": "Cortador de Jade Primordial",
+    "en": "Primordial Jade Cutter",
+    "pt": "Cortador de Jade Primordial",
+    "ja": "磐岩結緑",
+    "ko": "반암결록"
+  },
+  "11509": {
+    "es": "Reflejo de las Tinieblas",
+    "en": "Mistsplitter Reforged",
+    "pt": "Cortadora da Neblina Reforjada",
+    "ja": "霧切の廻光",
+    "ko": "안개를 가르는 회광"
+  },
+  "11510": {
+    "es": "Luna Ondulante de Futsu",
+    "en": "Haran Geppaku Futsu",
+    "pt": "Maremoto da Lua de Futsu",
+    "ja": "波乱月白経津",
+    "ko": "하란 월백의 후츠"
+  },
+  "11511": {
+    "es": "Llave de la Coronación",
+    "en": "Key of Khaj-Nisut",
+    "pt": "Chave de Hierofania",
+    "ja": "聖顕の鍵",
+    "ko": "성현의 열쇠"
+  },
+  "11512": {
+    "es": "Clorofilo Refulgente",
+    "en": "Light of Foliar Incision",
+    "pt": "Luz das Folhas Cortadas",
+    "ja": "萃光の裁葉",
+    "ko": "잎을 가르는 빛"
+  },
+  "11513": {
+    "es": "Fulgor de las Aguas Calmas",
+    "en": "Splendor of Tranquil Waters",
+    "pt": "Esplendor das Águas Silenciosas",
+    "ja": "静水流転の輝き",
+    "ko": "고요히 샘솟는 빛"
+  },
+  "11514": {
+    "es": "Cortatelones de Urakusai",
+    "en": "Uraku Misugiri",
+    "pt": "Urakugo Rensai",
+    "ja": "有楽御簾切",
+    "ko": "우라쿠의 미스기리"
+  },
+  "11515": {
+    "es": "Expiadora",
+    "en": "Absolution",
+    "pt": "Absolvição",
+    "ja": "赦罪",
+    "ko": "사면"
+  },
+  "11516": {
+    "es": "Himno de las Cumbres",
+    "en": "Peak Patrol Song",
+    "pt": "Canção da Patrulha do Pico",
+    "ja": "岩峰を巡る歌",
+    "ko": "바위산을 맴도는 노래"
+  },
+  "11517": {
+    "es": "Fulgor Cerúleo",
+    "en": "Azurelight",
+    "pt": "Azul Brilhante",
+    "ja": "蒼耀",
+    "ko": "창백한 섬광"
+  },
+  "11518": {
+    "es": "Athame Artis",
+    "en": "Athame Artis",
+    "pt": "Corrupção Sombria",
+    "ja": "黒蝕",
+    "ko": "검은 침식"
+  },
+  "11519": {
+    "es": "Refulgencia de la Luna",
+    "en": "Lightbearing Moonshard",
+    "pt": "Fragmento Lunar da Luz",
+    "ja": "三日月の含光",
+    "ko": "신월의 달빛"
+  },
+  "11520": {
+    "es": "Pluma Invernal Lagoblanco",
+    "en": "Whitelake Frostfeather",
+    "pt": "Asa Gelada do Lago Branco",
+    "ja": "白銀の湖を舞う翼",
+    "ko": "백조의 호수"
+  },
+  "11521": {
+    "es": "Hoja de Exáifanes",
+    "en": "Exaiphanes Blade",
+    "pt": "Sabre da Ponta Estelar",
+    "ja": "星鋒の剣",
+    "ko": "별빛검"
+  },
+  "11522": {
+    "es": "Allende la Crisálida",
+    "en": "Beyond the Chrysalis",
+    "pt": "Borboleta Transformadora",
+    "ja": "蝶の羽化",
+    "ko": "나비의 우화"
+  },
+  "12101": {
+    "es": "Gran Espada del Guerrero",
+    "en": "Waster Greatsword",
+    "pt": "Espadão do Julgamento",
+    "ja": "訓練用大剣",
+    "ko": "훈련용 대검"
+  },
+  "12201": {
+    "es": "Espada del Mercenario",
+    "en": "Old Merc's Pal",
+    "pt": "Espada do Mercenário",
+    "ja": "傭兵の重剣",
+    "ko": "용병 중검"
+  },
+  "12301": {
+    "es": "Sombra Férrea",
+    "en": "Ferrous Shadow",
+    "pt": "Sombra de Ferro",
+    "ja": "鉄影段平",
+    "ko": "강철의 그림자"
+  },
+  "12302": {
+    "es": "Gran Espada Sangrienta",
+    "en": "Bloodtainted Greatsword",
+    "pt": "Espadão Sangrento",
+    "ja": "龍血を浴びた剣",
+    "ko": "드래곤 블러드 소드"
+  },
+  "12303": {
+    "es": "Espada de Hierro Blanco",
+    "en": "White Iron Greatsword",
+    "pt": "Espadão de Ferro Branco",
+    "ja": "白鉄の大剣",
+    "ko": "백철 대검"
+  },
+  "12305": {
+    "es": "Garrote del Debate",
+    "en": "Debate Club",
+    "pt": "Pacifista",
+    "ja": "理屈責め",
+    "ko": "훌륭한 대화수단"
+  },
+  "12306": {
+    "es": "Gran Espada Surcacielos",
+    "en": "Skyrider Greatsword",
+    "pt": "Espadão do Cavaleiro do Céu",
+    "ja": "飛天大御剣",
+    "ko": "비천대어검"
+  },
+  "12401": {
+    "es": "Gran Espada de Favonius",
+    "en": "Favonius Greatsword",
+    "pt": "Grande Espada de Favonius",
+    "ja": "西風大剣",
+    "ko": "페보니우스 대검"
+  },
+  "12402": {
+    "es": "Espada del Tiempo",
+    "en": "The Bell",
+    "pt": "O Sino",
+    "ja": "鐘の剣",
+    "ko": "시간의 검"
+  },
+  "12403": {
+    "es": "Gran Espada de Sacrificio",
+    "en": "Sacrificial Greatsword",
+    "pt": "Espadão do Sacrifício",
+    "ja": "祭礼の大剣",
+    "ko": "제례 대검"
+  },
+  "12404": {
+    "es": "Gran Espada Real",
+    "en": "Royal Greatsword",
+    "pt": "Espadão Real",
+    "ja": "旧貴族大剣",
+    "ko": "왕실의 대검"
+  },
+  "12405": {
+    "es": "Segadora de la Lluvia",
+    "en": "Rainslasher",
+    "pt": "Segadeira da Chuva",
+    "ja": "雨裁",
+    "ko": "빗물 베기"
+  },
+  "12406": {
+    "es": "Prototipo Arcaico",
+    "en": "Prototype Archaic",
+    "pt": "Protótipo Arcaico",
+    "ja": "古華·試作",
+    "ko": "고화 프로토타입"
+  },
+  "12407": {
+    "es": "Sombra Blanca",
+    "en": "Whiteblind",
+    "pt": "Sombra Branca",
+    "ja": "白影の剣",
+    "ko": "백영검"
+  },
+  "12408": {
+    "es": "Gran Hoja del Peñasco Oscuro",
+    "en": "Blackcliff Slasher",
+    "pt": "Foice do Penhasco Obscuro",
+    "ja": "黒岩の斬刀",
+    "ko": "흑암참도"
+  },
+  "12409": {
+    "es": "Médula de la Serpiente Marina",
+    "en": "Serpent Spine",
+    "pt": "Espinha Dorsal da Serpente",
+    "ja": "螭龍の剣",
+    "ko": "이무기 검"
+  },
+  "12410": {
+    "es": "Espada Lítica",
+    "en": "Lithic Blade",
+    "pt": "Espada Antiga de Millelith",
+    "ja": "千岩古剣",
+    "ko": "천암고검"
+  },
+  "12411": {
+    "es": "Argento Estelar de las Nieves",
+    "en": "Snow-Tombed Starsilver",
+    "pt": "Estrela de Prata Enterrada na Neve",
+    "ja": "雪葬の星銀",
+    "ko": "설장의 성은"
+  },
+  "12412": {
+    "es": "Rey de los Mares",
+    "en": "Luxurious Sea-Lord",
+    "pt": "Lorde do Mar Luxuoso",
+    "ja": "銜玉の海皇",
+    "ko": "진주를 문 해황"
+  },
+  "12414": {
+    "es": "Asesinato de Katsuragi",
+    "en": "Katsuragikiri Nagamasa",
+    "pt": "Espada Grande de Katsuragi",
+    "ja": "桂木斬長正",
+    "ko": "카츠라기를 벤 나가마사"
+  },
+  "12415": {
+    "es": "Májaira Aguamarina",
+    "en": "Makhaira Aquamarine",
+    "pt": "Água-Marinha de Mahara",
+    "ja": "マカイラの水色",
+    "ko": "물빛 마카이라"
+  },
+  "12416": {
+    "es": "Rey del Mal",
+    "en": "Akuoumaru",
+    "pt": "Akuoumaru",
+    "ja": "惡王丸",
+    "ko": "아쿠오마루"
+  },
+  "12417": {
+    "es": "Espada Real del Bosque",
+    "en": "Forest Regalia",
+    "pt": "Espada Real da Floresta",
+    "ja": "森林のレガリア",
+    "ko": "숲의 리게일리어"
+  },
+  "12418": {
+    "es": "Fierro Floriorlado",
+    "en": "Mailed Flower",
+    "pt": "Flor de Aço",
+    "ja": "鉄彩の花",
+    "ko": "꽃 장식 대검"
+  },
+  "12424": {
+    "es": "Garrote del Diálogo",
+    "en": "Talking Stick",
+    "pt": "Diálogo",
+    "ja": "話死合い棒",
+    "ko": "대화봉"
+  },
+  "12425": {
+    "es": "Sombra de la Marea",
+    "en": "Tidal Shadow",
+    "pt": "Lâmina das Ondas",
+    "ja": "タイダル·シャドー",
+    "ko": "파도 그림자 대검"
+  },
+  "12426": {
+    "es": "Superespada Mágica Suprema",
+    "en": "\"Ultimate Overlord's Mega Magic Sword\"",
+    "pt": "Mega Ultra Espada Mágica do Soberano",
+    "ja": "「スーパーアルティメット覇王魔剣」",
+    "ko": "「슈퍼 울트라 패왕 마검」"
+  },
+  "12427": {
+    "es": "Motosierra Transportable",
+    "en": "Portable Power Saw",
+    "pt": "Serra Elétrica Portátil",
+    "ja": "携帯型チェーンソー",
+    "ko": "휴대용 체인톱"
+  },
+  "12430": {
+    "es": "Gancho del Triunfo",
+    "en": "Fruitful Hook",
+    "pt": "Gancho Frutífero",
+    "ja": "実りの鉤鉈",
+    "ko": "수확의 갈고리"
+  },
+  "12431": {
+    "es": "Terragitador",
+    "en": "Earth Shaker",
+    "pt": "Estremecedor da Terra",
+    "ja": "アースシェイカー",
+    "ko": "대지를 울리는 자"
+  },
+  "12432": {
+    "es": "Sabiduría Fraguada",
+    "en": "Flame-Forged Insight",
+    "pt": "Forja da Sabedoria",
+    "ja": "知恵の溶炎",
+    "ko": "불로 벼린 지혜"
+  },
+  "12433": {
+    "es": "Llave Maestra",
+    "en": "Master Key",
+    "pt": "Chave Mestra",
+    "ja": "万能の鍵",
+    "ko": "만능 열쇠"
+  },
+  "12435": {
+    "es": "Sombra de la Melodía Dorada",
+    "en": "Forged by the Golden Melody",
+    "pt": "Forjada pela Lei Dourada",
+    "ja": "シンフォニーの鋳影",
+    "ko": "황금빛 선율"
+  },
+  "12436": {
+    "es": "Tajo Redentor",
+    "en": "Blade of Atonement",
+    "pt": "Lâmina da Redenção",
+    "ja": "救済の剣",
+    "ko": "구원의 대검"
+  },
+  "12501": {
+    "es": "Orgullo Celestial",
+    "en": "Skyward Pride",
+    "pt": "Orgulho Celestial",
+    "ja": "天空の傲",
+    "ko": "천공의 긍지"
+  },
+  "12502": {
+    "es": "Lápida del Lobo",
+    "en": "Wolf's Gravestone",
+    "pt": "Túmulo do Lobo",
+    "ja": "狼の末路",
+    "ko": "늑대의 말로"
+  },
+  "12503": {
+    "es": "Oda de los Pinos",
+    "en": "Song of Broken Pines",
+    "pt": "Canção dos Pinhos",
+    "ja": "松韻の響く頃",
+    "ko": "송뢰가 울릴 무렵"
+  },
+  "12504": {
+    "es": "Espada de la Desidia",
+    "en": "The Unforged",
+    "pt": "Espada Áspera",
+    "ja": "無工の剣",
+    "ko": "무공의 검"
+  },
+  "12510": {
+    "es": "Espadón Cornirrojo",
+    "en": "Redhorn Stonethresher",
+    "pt": "Chifres Vermelhos Destruidores de Pedras",
+    "ja": "赤角石塵滅砕",
+    "ko": "쇄석의 붉은 뿔"
+  },
+  "12511": {
+    "es": "Emblema del Mar de Juncos",
+    "en": "Beacon of the Reed Sea",
+    "pt": "Sinal dos Mares",
+    "ja": "葦海の標",
+    "ko": "갈대 바다의 등대"
+  },
+  "12512": {
+    "es": "Sentenciadora",
+    "en": "Verdict",
+    "pt": "Veredito",
+    "ja": "裁断",
+    "ko": "판정"
+  },
+  "12513": {
+    "es": "Colmillo del Rey de la Montaña",
+    "en": "Fang of the Mountain King",
+    "pt": "Presa do Rei da Montanha",
+    "ja": "山の王の長牙",
+    "ko": "산왕의 엄니"
+  },
+  "12514": {
+    "es": "Mil Soles Abrasadores",
+    "en": "A Thousand Blazing Suns",
+    "pt": "Mil Sóis Ardentes",
+    "ja": "千烈の日輪",
+    "ko": "타오르는 천 개의 태양"
+  },
+  "12515": {
+    "es": "Cantar de Gesta del Lobo",
+    "en": "Gest of the Mighty Wolf",
+    "pt": "Balada do Poderoso Lobo",
+    "ja": "狼の武勲詩",
+    "ko": "늑대의 무용담"
+  },
+  "12516": {
+    "es": "Llave de la Trascendencia",
+    "en": "A Teaspoon of Transcendence",
+    "pt": "Chave da Transcendência",
+    "ja": "超越の鍵",
+    "ko": "초월의 열쇠"
+  },
+  "13101": {
+    "es": "Lanza del Principiante",
+    "en": "Beginner's Protector",
+    "pt": "Protetor de Iniciante",
+    "ja": "新米の長槍",
+    "ko": "초보자의 장창"
+  },
+  "13201": {
+    "es": "Punta de Hierro",
+    "en": "Iron Point",
+    "pt": "Ponta de Ferro",
+    "ja": "鉄尖槍",
+    "ko": "철촉창"
+  },
+  "13301": {
+    "es": "Borla Blanca",
+    "en": "White Tassel",
+    "pt": "Borla Branca",
+    "ja": "白纓槍",
+    "ko": "백술창"
+  },
+  "13302": {
+    "es": "Alabarda",
+    "en": "Halberd",
+    "pt": "Alabarda",
+    "ja": "鉾槍",
+    "ko": "미늘창"
+  },
+  "13303": {
+    "es": "Borla Negra",
+    "en": "Black Tassel",
+    "pt": "Borla Preta",
+    "ja": "黒纓槍",
+    "ko": "흑술창"
+  },
+  "13401": {
+    "es": "Perdición del Dragón",
+    "en": "Dragon's Bane",
+    "pt": "Perdição do Dragão",
+    "ja": "匣中滅龍",
+    "ko": "용학살창"
+  },
+  "13402": {
+    "es": "Prototipo Estelar",
+    "en": "Prototype Starglitter",
+    "pt": "Protótipo Estelar",
+    "ja": "星鎌·試作",
+    "ko": "별의 낫 프로토타입"
+  },
+  "13403": {
+    "es": "Pica Luna Creciente",
+    "en": "Crescent Pike",
+    "pt": "Pique Crescente",
+    "ja": "流月の針",
+    "ko": "유월창"
+  },
+  "13404": {
+    "es": "Lanza del Peñasco Oscuro",
+    "en": "Blackcliff Pole",
+    "pt": "Lança do Penhasco Obscuro",
+    "ja": "黒岩の突槍",
+    "ko": "흑암창"
+  },
+  "13405": {
+    "es": "Lanza del Duelo",
+    "en": "Deathmatch",
+    "pt": "Lança do Duelo",
+    "ja": "死闘の槍",
+    "ko": "결투의 창"
+  },
+  "13406": {
+    "es": "Lanza Lítica",
+    "en": "Lithic Spear",
+    "pt": "Lança de Millelith",
+    "ja": "千岩長槍",
+    "ko": "천암장창"
+  },
+  "13407": {
+    "es": "Lanza de Favonius",
+    "en": "Favonius Lance",
+    "pt": "Lança de Favonius",
+    "ja": "西風長槍",
+    "ko": "페보니우스 장창"
+  },
+  "13408": {
+    "es": "Lanza de Caza Real",
+    "en": "Royal Spear",
+    "pt": "Lança de Caça Real",
+    "ja": "旧貴族猟槍",
+    "ko": "왕실의 장창"
+  },
+  "13409": {
+    "es": "Lanza de Espinadragón",
+    "en": "Dragonspine Spear",
+    "pt": "Lança da Espinha do Dragão",
+    "ja": "ドラゴンスピア",
+    "ko": "용의 척추"
+  },
+  "13414": {
+    "es": "Cruz de Kitain",
+    "en": "Kitain Cross Spear",
+    "pt": "Lança Cruzada de Kitain",
+    "ja": "喜多院十文字槍",
+    "ko": "키타인 십자창"
+  },
+  "13415": {
+    "es": "La Captura",
+    "en": "\"The Catch\"",
+    "pt": "\"A Fisgada\"",
+    "ja": "「漁獲」",
+    "ko": "「어획」"
+  },
+  "13416": {
+    "es": "Aleta Cortaolas",
+    "en": "Wavebreaker's Fin",
+    "pt": "Barbatana do Quebra Ondas",
+    "ja": "斬波のひれ長",
+    "ko": "파도 베는 지느러미"
+  },
+  "13417": {
+    "es": "Perforalunas",
+    "en": "Moonpiercer",
+    "pt": "Perfurador de Luas",
+    "ja": "ムーンピアサー",
+    "ko": "달을 꿰뚫는 화살"
+  },
+  "13419": {
+    "es": "Alabarda del Viento Epistolar",
+    "en": "Missive Windspear",
+    "pt": "Lâmina do Vento Mensageiro",
+    "ja": "風信の矛",
+    "ko": "날카로운 바람의 서신"
+  },
+  "13424": {
+    "es": "Balada de los Fiordos",
+    "en": "Ballad of the Fjords",
+    "pt": "Canção do Fiorde",
+    "ja": "フィヨルドの歌",
+    "ko": "협만의 노래"
+  },
+  "13425": {
+    "es": "Retribución de la Justicia",
+    "en": "Rightful Reward",
+    "pt": "Justa Recompensa",
+    "ja": "正義の報酬",
+    "ko": "공의의 보상"
+  },
+  "13426": {
+    "es": "Discusión de los Sabios del Desierto",
+    "en": "Dialogues of the Desert Sages",
+    "pt": "Conversas dos Sábios do Deserto",
+    "ja": "砂中の賢者達の問答",
+    "ko": "위대한 사막 현자의 대답"
+  },
+  "13427": {
+    "es": "Taladradora de Prospección",
+    "en": "Prospector's Drill",
+    "pt": "Broca do Prospector",
+    "ja": "プロスペクタードリル",
+    "ko": "탐사용 드릴"
+  },
+  "13430": {
+    "es": "Púa Sustentamontañas",
+    "en": "Mountain-Bracing Bolt",
+    "pt": "Prego Esmagador de Montanhas",
+    "ja": "鎮山の釘",
+    "ko": "산을 고정하는 못"
+  },
+  "13431": {
+    "es": "Estela Iridiscente",
+    "en": "Footprint of the Rainbow",
+    "pt": "Trilha do Arco-Íris",
+    "ja": "虹の行方",
+    "ko": "무지개의 행적"
+  },
+  "13432": {
+    "es": "Charla en el Pabellón",
+    "en": "Tamayuratei no Ohanashi",
+    "pt": "Fofocas Breves do Pavilhão",
+    "ja": "玉響停の御噺",
+    "ko": "쉼터의 이야기꾼"
+  },
+  "13433": {
+    "es": "Azada Excavatesoros",
+    "en": "Prospector's Shovel",
+    "pt": "Pá do Escavador",
+    "ja": "金掘りのシャベル",
+    "ko": "채굴의 삽"
+  },
+  "13434": {
+    "es": "Báculo Rutilante de la Sacerdotisa",
+    "en": "Sacrificer's Staff",
+    "pt": "Cajado do Sacrificador",
+    "ja": "聖祭者の輝杖",
+    "ko": "신성한 제사의 지팡이"
+  },
+  "13435": {
+    "es": "Hálito Glacial",
+    "en": "Frostbreath",
+    "pt": "Sopro Gélido",
+    "ja": "氷の吐息",
+    "ko": "서리 숨결"
+  },
+  "13436": {
+    "es": "Balada de la Custodia",
+    "en": "Song of the Vigil",
+    "pt": "Canção da Vigília",
+    "ja": "遠望の歌",
+    "ko": "수호의 노래"
+  },
+  "13501": {
+    "es": "Báculo de Homa",
+    "en": "Staff of Homa",
+    "pt": "Báculo de Homa",
+    "ja": "護摩の杖",
+    "ko": "호마의 지팡이"
+  },
+  "13502": {
+    "es": "Púa Celestial",
+    "en": "Skyward Spine",
+    "pt": "Espinha Celestial",
+    "ja": "天空の脊",
+    "ko": "천공의 마루"
+  },
+  "13504": {
+    "es": "Lanza Perforanubes",
+    "en": "Vortex Vanquisher",
+    "pt": "Perfuradora Prismática",
+    "ja": "破天の槍",
+    "ko": "관홍의 창"
+  },
+  "13505": {
+    "es": "Halcón de Jade",
+    "en": "Primordial Jade Winged-Spear",
+    "pt": "Lança de Jade Primitiva",
+    "ja": "和璞鳶",
+    "ko": "화박연"
+  },
+  "13507": {
+    "es": "Pacificadora del Desastre",
+    "en": "Calamity Queller",
+    "pt": "Subjugadora de Calamidades",
+    "ja": "息災",
+    "ko": "식재"
+  },
+  "13509": {
+    "es": "Luz del Segador",
+    "en": "Engulfing Lightning",
+    "pt": "Luz do Cortador de Grama",
+    "ja": "草薙の稲光",
+    "ko": "예초의 번개"
+  },
+  "13511": {
+    "es": "Báculo de las Arenas Escarlatas",
+    "en": "Staff of the Scarlet Sands",
+    "pt": "Báculo das Areias Escarlates",
+    "ja": "赤砂の杖",
+    "ko": "적색 사막의 지팡이"
+  },
+  "13512": {
+    "es": "Semblante de la Luna Carmesí",
+    "en": "Crimson Moon's Semblance",
+    "pt": "Semblante da Lua Carmesim",
+    "ja": "赤月のシルエット",
+    "ko": "붉은 달의 형상"
+  },
+  "13513": {
+    "es": "Elegía Lumidulce",
+    "en": "Lumidouce Elegy",
+    "pt": "Elegia Lumidouce",
+    "ja": "ルミドゥースの挽歌",
+    "ko": "등방울꽃의 애가"
+  },
+  "13514": {
+    "es": "Sinfonista de Aromas",
+    "en": "Symphonist of Scents",
+    "pt": "Sinfonista de Aromas",
+    "ja": "香りのシンフォニスト",
+    "ko": "맛의 지휘자"
+  },
+  "13515": {
+    "es": "Halo Fracturado",
+    "en": "Fractured Halo",
+    "pt": "Resplendor Fragmentado",
+    "ja": "砕け散る光輪",
+    "ko": "파멸의 빛고리"
+  },
+  "13516": {
+    "es": "Ruinas Ensangrentadas",
+    "en": "Bloodsoaked Ruins",
+    "pt": "Ruínas Ensanguentadas",
+    "ja": "血染めの荒れ地",
+    "ko": "피로 물든 성"
+  },
+  "13517": {
+    "es": "Desastre y Arrepentimiento",
+    "en": "Disaster and Remorse",
+    "pt": "Desastre e Remorso",
+    "ja": "災憾",
+    "ko": "재앙"
+  },
+  "14101": {
+    "es": "Apuntes del Aprendiz",
+    "en": "Apprentice's Notes",
+    "pt": "Anotações do Aprendiz",
+    "ja": "生徒ノート",
+    "ko": "학도의 노트"
+  },
+  "14201": {
+    "es": "Grimorio de Bolsillo",
+    "en": "Pocket Grimoire",
+    "pt": "Grimório de Bolso",
+    "ja": "ポケット魔導書",
+    "ko": "포켓 주술서"
+  },
+  "14301": {
+    "es": "Guía Mágica",
+    "en": "Magic Guide",
+    "pt": "Guia de Magia",
+    "ja": "魔導緒論",
+    "ko": "마도 서론"
+  },
+  "14302": {
+    "es": "Cuentos de Cazadores de Dragones",
+    "en": "Thrilling Tales of Dragon Slayers",
+    "pt": "Histórias Extraordinárias de Caçadores de Dragões",
+    "ja": "龍殺しの英傑譚",
+    "ko": "드래곤 슬레이어 영웅담"
+  },
+  "14303": {
+    "es": "Historias de Otros Mundos",
+    "en": "Otherworldly Story",
+    "pt": "Histórias de Outros Mundos",
+    "ja": "異世界旅行記",
+    "ko": "이세계 여행기"
+  },
+  "14304": {
+    "es": "Orbe Esmeralda",
+    "en": "Emerald Orb",
+    "pt": "Orbe de Esmeralda",
+    "ja": "翡玉法珠",
+    "ko": "비취 오브"
+  },
+  "14305": {
+    "es": "Nefrita Gemela",
+    "en": "Twin Nephrite",
+    "pt": "Nefrita Gêmea",
+    "ja": "特級の宝玉",
+    "ko": "1급 보옥"
+  },
+  "14401": {
+    "es": "Códice de Favonius",
+    "en": "Favonius Codex",
+    "pt": "Codex de Favonius",
+    "ja": "西風秘典",
+    "ko": "페보니우스 비전"
+  },
+  "14402": {
+    "es": "Sinfonía de los Merodeadores",
+    "en": "The Widsith",
+    "pt": "Sinfonia dos Indolentes",
+    "ja": "流浪楽章",
+    "ko": "음유시인의 악장"
+  },
+  "14403": {
+    "es": "Memorias de Sacrificios",
+    "en": "Sacrificial Fragments",
+    "pt": "Memórias de Sacrifício",
+    "ja": "祭礼の断片",
+    "ko": "제례의 악장"
+  },
+  "14404": {
+    "es": "Grimorio Real",
+    "en": "Royal Grimoire",
+    "pt": "Grimório Real",
+    "ja": "旧貴族秘法録",
+    "ko": "왕실의 비전록"
+  },
+  "14405": {
+    "es": "Perla Solar",
+    "en": "Solar Pearl",
+    "pt": "Pérola Solar",
+    "ja": "匣中日月",
+    "ko": "일월의 정수"
+  },
+  "14406": {
+    "es": "Prototipo Ámbar",
+    "en": "Prototype Amber",
+    "pt": "Protótipo Âmbar",
+    "ja": "金珀·試作",
+    "ko": "황금 호박 프로토타입"
+  },
+  "14407": {
+    "es": "Carta Náutica",
+    "en": "Mappa Mare",
+    "pt": "Mappa Mare",
+    "ja": "万国諸海の図譜",
+    "ko": "만국 항해용해도"
+  },
+  "14408": {
+    "es": "Ágata del Peñasco Oscuro",
+    "en": "Blackcliff Agate",
+    "pt": "Ágata do Penhasco Obscuro",
+    "ja": "黒岩の緋玉",
+    "ko": "흑암 홍옥"
+  },
+  "14409": {
+    "es": "Ojo de la Perspicacia",
+    "en": "Eye of Perception",
+    "pt": "Olho da Percepção",
+    "ja": "昭心",
+    "ko": "소심"
+  },
+  "14410": {
+    "es": "Vino y Poesía",
+    "en": "Wine and Song",
+    "pt": "Vinho e Música",
+    "ja": "ダークアレイの酒と詩",
+    "ko": "뒷골목의 술과 시"
+  },
+  "14412": {
+    "es": "Frío Eterno",
+    "en": "Frostbearer",
+    "pt": "Fruto do Sabugueiro",
+    "ja": "冬忍びの実",
+    "ko": "인동의 열매"
+  },
+  "14413": {
+    "es": "Cuentos de Dodoco",
+    "en": "Dodoco Tales",
+    "pt": "Contos de Dodoco",
+    "ja": "ドドコの物語",
+    "ko": "도도코 이야기집"
+  },
+  "14414": {
+    "es": "Anillo de Hakushin",
+    "en": "Hakushin Ring",
+    "pt": "Anel de Hakushin",
+    "ja": "白辰の輪",
+    "ko": "하쿠신의 고리"
+  },
+  "14415": {
+    "es": "Ojo del Juramento",
+    "en": "Oathsworn Eye",
+    "pt": "Olho do Juramento",
+    "ja": "誓いの明瞳",
+    "ko": "맹세의 눈동자"
+  },
+  "14416": {
+    "es": "Estrella Errabunda",
+    "en": "Wandering Evenstar",
+    "pt": "Estrela Itinerante",
+    "ja": "彷徨える星",
+    "ko": "방랑하는 저녁별"
+  },
+  "14417": {
+    "es": "Fruto de la Culminación",
+    "en": "Fruit of Fulfillment",
+    "pt": "Fruto da Abundância",
+    "ja": "満悦の実",
+    "ko": "충만의 열매"
+  },
+  "14424": {
+    "es": "Jade Sacrificial",
+    "en": "Sacrificial Jade",
+    "pt": "Sacrifício de Jade",
+    "ja": "古祠の瓏",
+    "ko": "제사의 옥"
+  },
+  "14425": {
+    "es": "Fluencia Impoluta",
+    "en": "Flowing Purity",
+    "pt": "Fluxo da Pureza",
+    "ja": "純水流華",
+    "ko": "순수한 달빛 물결"
+  },
+  "14426": {
+    "es": "Oda al Vasto Azul",
+    "en": "Ballad of the Boundless Blue",
+    "pt": "Canção do Vasto Azul",
+    "ja": "果てなき紺碧の唄",
+    "ko": "끝없는 쪽빛의 노래"
+  },
+  "14427": {
+    "es": "Cuerno Veteazulado",
+    "en": "Ash-Graven Drinking Horn",
+    "pt": "Cálice de Chifre Cinza Escarlate",
+    "ja": "蒼紋の角杯",
+    "ko": "푸른 문양 뿔잔"
+  },
+  "14430": {
+    "es": "Volver de las Olas",
+    "en": "Waveriding Whirl",
+    "pt": "Redemoinho das Ondas",
+    "ja": "波乗りの旋回",
+    "ko": "돌아오는 파도"
+  },
+  "14431": {
+    "es": "Anillo del Yaxché",
+    "en": "Ring of Yaxche",
+    "pt": "Anel de Yaxche",
+    "ja": "ヤシュチェの環",
+    "ko": "약스체의 고리"
+  },
+  "14432": {
+    "es": "Laúd de la Luz Celestial",
+    "en": "Etherlight Spindlelute",
+    "pt": "Lira do Tecedor da Luz",
+    "ja": "天光のリュート",
+    "ko": "금빛 류트"
+  },
+  "14433": {
+    "es": "Lámpara Medulaoscura",
+    "en": "Blackmarrow Lantern",
+    "pt": "Lanterna do Tutano Preto",
+    "ja": "烏髄の孤灯",
+    "ko": "검은 골수의 등불"
+  },
+  "14434": {
+    "es": "Escarcha del Albor",
+    "en": "Dawning Frost",
+    "pt": "Estrela Gelada",
+    "ja": "霜辰",
+    "ko": "서릿빛 새벽"
+  },
+  "14435": {
+    "es": "Choque de Reyes",
+    "en": "Clash of Kings",
+    "pt": "Duelo de Reis",
+    "ja": "諸王の対局",
+    "ko": "왕들의 대국"
+  },
+  "14436": {
+    "es": "Eco del Corazón",
+    "en": "Echoes of the Heart",
+    "pt": "Ecos do Coração",
+    "ja": "胸中の谺",
+    "ko": "충성의 메아리"
+  },
+  "14437": {
+    "es": "Corazón del Invierno",
+    "en": "Winter's Heavy Heart",
+    "pt": "Coração Congelado",
+    "ja": "雪に沈む心",
+    "ko": "얼어붙은 심장"
+  },
+  "14501": {
+    "es": "Pergamino Celestial",
+    "en": "Skyward Atlas",
+    "pt": "Atlas Celestial",
+    "ja": "天空の巻",
+    "ko": "천공의 두루마리"
+  },
+  "14502": {
+    "es": "Oración Perdida a los Vientos Sagrados",
+    "en": "Lost Prayer to the Sacred Winds",
+    "pt": "Oração Perdida aos Ventos Sagrados",
+    "ja": "四風原典",
+    "ko": "사풍 원서"
+  },
+  "14504": {
+    "es": "Candado Terrenal",
+    "en": "Memory of Dust",
+    "pt": "Memória da Poeira",
+    "ja": "浮世の錠",
+    "ko": "속세의 자물쇠"
+  },
+  "14505": {
+    "es": "Centelleo Jadecaído",
+    "en": "Jadefall's Splendor",
+    "pt": "Esplendor Índigo",
+    "ja": "碧落の瓏",
+    "ko": "벽락의 옥"
+  },
+  "14506": {
+    "es": "Luna Inalterable",
+    "en": "Everlasting Moonglow",
+    "pt": "Fumetsu Gekka",
+    "ja": "不滅の月華",
+    "ko": "불멸의 달빛"
+  },
+  "14509": {
+    "es": "Axioma de la Kagura",
+    "en": "Kagura's Verity",
+    "pt": "Prova de Kagura",
+    "ja": "神楽の真意",
+    "ko": "카구라의 진의"
+  },
+  "14511": {
+    "es": "Sueños de las Mil Noches",
+    "en": "A Thousand Floating Dreams",
+    "pt": "Sonhos Flutuantes das Mil Noites",
+    "ja": "千夜に浮かぶ夢",
+    "ko": "떠오르는 천일 밤의 꿈"
+  },
+  "14512": {
+    "es": "Reminiscencia de Tulaytulah",
+    "en": "Tulaytullah's Remembrance",
+    "pt": "Reminiscências de Tulaytullah",
+    "ja": "トゥライトゥーラの記憶",
+    "ko": "툴레이툴라의 기억"
+  },
+  "14513": {
+    "es": "Supervisor Flujoáurico",
+    "en": "Cashflow Supervision",
+    "pt": "Supervisão de Caixa",
+    "ja": "凛流の監視者",
+    "ko": "현금 흐름 감독"
+  },
+  "14514": {
+    "es": "Escrituras del Fluir Sempiterno",
+    "en": "Tome of the Eternal Flow",
+    "pt": "Rito do Fluxo Eterno",
+    "ja": "久遠流転の大典",
+    "ko": "영원히 샘솟는 법전"
+  },
+  "14515": {
+    "es": "Reverberación de la Grulla",
+    "en": "Crane's Echoing Call",
+    "pt": "Chamado Ecoante da Garça",
+    "ja": "鶴鳴の余韻",
+    "ko": "학의 여음"
+  },
+  "14516": {
+    "es": "Hora de Surfear",
+    "en": "Surf's Up",
+    "pt": "Hora do Surfe",
+    "ja": "サーフィンタイム",
+    "ko": "서핑 타임"
+  },
+  "14517": {
+    "es": "Vigía de las Estrellas",
+    "en": "Starcaller's Watch",
+    "pt": "Observatório do Chamador de Estrelas",
+    "ja": "祭星者の眺め",
+    "ko": "별지기의 시선"
+  },
+  "14518": {
+    "es": "Hibernación Matutina de Año Nuevo",
+    "en": "Sunny Morning Sleep-In",
+    "pt": "Hibernação Matinal do Ano Novo",
+    "ja": "寝正月の初晴",
+    "ko": "나른한 새해"
+  },
+  "14519": {
+    "es": "Reflexión Iridiscente",
+    "en": "Vivid Notions",
+    "pt": "Coração Resplandecente",
+    "ja": "ヴィヴィッド・ハート",
+    "ko": "빛나는 마음"
+  },
+  "14520": {
+    "es": "Espejo Tejenoches",
+    "en": "Nightweaver's Looking Glass",
+    "pt": "Luneta do Tecedor da Noite",
+    "ja": "夜を紡ぐ天鏡",
+    "ko": "밤을 엮는 거울"
+  },
+  "14521": {
+    "es": "Relicario de la Verdad",
+    "en": "Reliquary of Truth",
+    "pt": "Relicário da Verdade",
+    "ja": "真言の匣",
+    "ko": "진실의 함"
+  },
+  "14522": {
+    "es": "Nocturno tras el Velo",
+    "en": "Nocturne's Curtain Call",
+    "pt": "Cortinas Noturnas",
+    "ja": "帳の夜曲",
+    "ko": "막간의 야상곡"
+  },
+  "14523": {
+    "es": "Heptadas de los Ángeles",
+    "en": "Angelos' Heptades",
+    "pt": "Os Sete Éditos da Poeira e Luz",
+    "ja": "塵と光の七つの誓約",
+    "ko": "일곱빛 계시"
+  },
+  "14524": {
+    "es": "Himno del Vórtice",
+    "en": "Hymn of the Maelstrom",
+    "pt": "Cântico Rodopiante",
+    "ja": "旋流の讃美歌",
+    "ko": "파도의 찬송가"
+  },
+  "14525": {
+    "es": "Edicto Selloastral",
+    "en": "Starsealed Edict",
+    "pt": "Ordens Canônicas Estelares",
+    "ja": "秘星の聖典",
+    "ko": "별빛 계시"
+  },
+  "15101": {
+    "es": "Arco del Cazador",
+    "en": "Hunter's Bow",
+    "pt": "Arco do Caçador",
+    "ja": "狩猟弓",
+    "ko": "사냥활"
+  },
+  "15201": {
+    "es": "Arco del Cazador Estacional",
+    "en": "Seasoned Hunter's Bow",
+    "pt": "Arco do Caçador Experiente",
+    "ja": "歴戦の狩猟弓",
+    "ko": "노련의 사냥활"
+  },
+  "15301": {
+    "es": "Arco de Cuervo",
+    "en": "Raven Bow",
+    "pt": "Arco de Corvo",
+    "ja": "鴉羽の弓",
+    "ko": "까마귀깃 활"
+  },
+  "15302": {
+    "es": "Juramento del Arquero",
+    "en": "Sharpshooter's Oath",
+    "pt": "Juramento de Sagitário",
+    "ja": "シャープシューターの誓い",
+    "ko": "신궁의 서약"
+  },
+  "15303": {
+    "es": "Arco Recurvo",
+    "en": "Recurve Bow",
+    "pt": "Arco Recurvado",
+    "ja": "リカーブボウ",
+    "ko": "곡궁"
+  },
+  "15304": {
+    "es": "Tirachinas",
+    "en": "Slingshot",
+    "pt": "Estilingue",
+    "ja": "弾弓",
+    "ko": "탄궁"
+  },
+  "15305": {
+    "es": "Mensajero",
+    "en": "Messenger",
+    "pt": "Mensageiro",
+    "ja": "文使い",
+    "ko": "전령"
+  },
+  "15401": {
+    "es": "Arco de Favonius",
+    "en": "Favonius Warbow",
+    "pt": "Arco de Favonius",
+    "ja": "西風猟弓",
+    "ko": "페보니우스 활"
+  },
+  "15402": {
+    "es": "Último Acorde",
+    "en": "The Stringless",
+    "pt": "Último Acorde",
+    "ja": "絶弦",
+    "ko": "절현"
+  },
+  "15403": {
+    "es": "Arco del Sacrificio",
+    "en": "Sacrificial Bow",
+    "pt": "Arco do Sacrifício",
+    "ja": "祭礼の弓",
+    "ko": "제례활"
+  },
+  "15404": {
+    "es": "Arco Real",
+    "en": "Royal Bow",
+    "pt": "Arco Real",
+    "ja": "旧貴族長弓",
+    "ko": "왕실의 장궁"
+  },
+  "15405": {
+    "es": "Herrumbre",
+    "en": "Rust",
+    "pt": "Arco Enferrujado",
+    "ja": "弓蔵",
+    "ko": "녹슨 활"
+  },
+  "15406": {
+    "es": "Prototipo Luz de Luna",
+    "en": "Prototype Crescent",
+    "pt": "Protótipo da Luz Lunar Pálida",
+    "ja": "澹月·試作",
+    "ko": "담월 프로토타입"
+  },
+  "15407": {
+    "es": "Arco Compuesto",
+    "en": "Compound Bow",
+    "pt": "Arco Composto",
+    "ja": "リングボウ",
+    "ko": "강철궁"
+  },
+  "15408": {
+    "es": "Arco del Peñasco Oscuro",
+    "en": "Blackcliff Warbow",
+    "pt": "Arco do Penhasco Obscuro",
+    "ja": "黒岩の戦弓",
+    "ko": "흑암 배틀 보우"
+  },
+  "15409": {
+    "es": "Arco de la Cazadora Esmeralda",
+    "en": "The Viridescent Hunt",
+    "pt": "Arco Esmeralda do Caçador",
+    "ja": "蒼翠の狩猟弓",
+    "ko": "청록의 사냥활"
+  },
+  "15410": {
+    "es": "Cazador del Callejón",
+    "en": "Alley Hunter",
+    "pt": "Caçador do Beco",
+    "ja": "ダークアレイの狩人",
+    "ko": "뒷골목 사냥꾼"
+  },
+  "15411": {
+    "es": "Desvanecimiento del Crepúsculo",
+    "en": "Fading Twilight",
+    "pt": "Crepúsculo Desvanecido",
+    "ja": "落霞",
+    "ko": "노을"
+  },
+  "15412": {
+    "es": "Vals Nocturno",
+    "en": "Mitternachts Waltz",
+    "pt": "Valsa do Crepúsculo",
+    "ja": "幽夜のワルツ",
+    "ko": "유야의 왈츠"
+  },
+  "15413": {
+    "es": "Oda a las Flores de Viento",
+    "en": "Windblume Ode",
+    "pt": "Ode à Brisa Florescente",
+    "ja": "風花の頌歌",
+    "ko": "바람 꽃의 노래"
+  },
+  "15414": {
+    "es": "Masacrademonios",
+    "en": "Hamayumi",
+    "pt": "Arco Quebra-Demônios",
+    "ja": "破魔の弓",
+    "ko": "파마궁"
+  },
+  "15415": {
+    "es": "Depredador",
+    "en": "Predator",
+    "pt": "Predador",
+    "ja": "プレデター",
+    "ko": "포식자"
+  },
+  "15416": {
+    "es": "Luna de Mouun",
+    "en": "Mouun's Moon",
+    "pt": "Lua de Mouun",
+    "ja": "曚雲の月",
+    "ko": "모운의 달"
+  },
+  "15417": {
+    "es": "Vasalla del Rey",
+    "en": "King's Squire",
+    "pt": "Vassalo do Rei",
+    "ja": "王の近侍",
+    "ko": "왕의 측근"
+  },
+  "15418": {
+    "es": "Fin de las Aguas",
+    "en": "End of the Line",
+    "pt": "Águas Secas",
+    "ja": "竭沢",
+    "ko": "메마른 연못"
+  },
+  "15419": {
+    "es": "Perforaibis",
+    "en": "Ibis Piercer",
+    "pt": "Bico de Íbis",
+    "ja": "トキの嘴",
+    "ko": "꿰뚫는 따오기 부리"
+  },
+  "15424": {
+    "es": "Descendientes del Sol Abrasador",
+    "en": "Scion of the Blazing Sun",
+    "pt": "Herdeiro do Sol",
+    "ja": "烈日の後嗣",
+    "ko": "뜨거운 태양의 후손"
+  },
+  "15425": {
+    "es": "Serenata del Sosiego",
+    "en": "Song of Stillness",
+    "pt": "Canção do Silêncio",
+    "ja": "静寂の唄",
+    "ko": "고요한 노래"
+  },
+  "15426": {
+    "es": "Cimentador de Nubes",
+    "en": "Cloudforged",
+    "pt": "Tocador de Nuvens",
+    "ja": "築雲",
+    "ko": "축운"
+  },
+  "15427": {
+    "es": "Medidor Telemétrico",
+    "en": "Range Gauge",
+    "pt": "Medidor de Alcance",
+    "ja": "レンジゲージ",
+    "ko": "거리 측정기"
+  },
+  "15430": {
+    "es": "Penacho Engalanado",
+    "en": "Flower-Wreathed Feathers",
+    "pt": "Penas Cercadas de Flores",
+    "ja": "花飾りの羽",
+    "ko": "꽃장식 깃"
+  },
+  "15431": {
+    "es": "Rompecadenas",
+    "en": "Chain Breaker",
+    "pt": "Quebrador de Correntes",
+    "ja": "チェーンブレイカー",
+    "ko": "사슬 파괴자"
+  },
+  "15432": {
+    "es": "Cadencia de la Soledad",
+    "en": "Sequence of Solitude",
+    "pt": "Ritmo da Solidão",
+    "ja": "冷寂の音",
+    "ko": "침묵의 사격"
+  },
+  "15433": {
+    "es": "Gancho Trampero",
+    "en": "Snare Hook",
+    "pt": "Gancho da Armadilha",
+    "ja": "羅網の針",
+    "ko": "그물을 뚫는 화살"
+  },
+  "15434": {
+    "es": "Pluvioarco de la Serpiente Arcoíris",
+    "en": "Rainbow Serpent's Rain Bow",
+    "pt": "Cordas da Chuva da Serpente Arco-Íris",
+    "ja": "虹蛇の雨弦",
+    "ko": "무지개뱀의 현"
+  },
+  "15435": {
+    "es": "Visión de Jade",
+    "en": "Jade Vista",
+    "pt": "Vista da Jade Primordial",
+    "ja": "千鈞懸黎",
+    "ko": "옥빛 장궁"
+  },
+  "15436": {
+    "es": "Juramento de la Escarcha",
+    "en": "Covenant of Frost and Snow",
+    "pt": "Pacto do Gelo e Neve",
+    "ja": "霜雪の契",
+    "ko": "서리의 서약"
+  },
+  "15437": {
+    "es": "Estribillo del Viento",
+    "en": "Breezeborne Refrain",
+    "pt": "Cordas Suaves",
+    "ja": "風に遊ぶ弦",
+    "ko": "산들바람 활"
+  },
+  "15501": {
+    "es": "Alas Celestiales",
+    "en": "Skyward Harp",
+    "pt": "Harpa Celestial",
+    "ja": "天空の翼",
+    "ko": "천공의 날개"
+  },
+  "15502": {
+    "es": "Arco de Amos",
+    "en": "Amos' Bow",
+    "pt": "Arco de Amos",
+    "ja": "アモスの弓",
+    "ko": "아모스의 활"
+  },
+  "15503": {
+    "es": "Elegía del Fin",
+    "en": "Elegy for the End",
+    "pt": "Elegia do Suspiro Final",
+    "ja": "終焉を嘆く詩",
+    "ko": "종말 탄식의 노래"
+  },
+  "15507": {
+    "es": "Estrella Invernal",
+    "en": "Polar Star",
+    "pt": "Estrela Invernal",
+    "ja": "冬極の白星",
+    "ko": "극지의 별"
+  },
+  "15508": {
+    "es": "Aqua Simulacra",
+    "en": "Aqua Simulacra",
+    "pt": "Aqua Simulacra",
+    "ja": "若水",
+    "ko": "약수"
+  },
+  "15509": {
+    "es": "Agitador del Relámpago",
+    "en": "Thundering Pulse",
+    "pt": "Agitação Trovejante",
+    "ja": "飛雷の鳴弦",
+    "ko": "비뢰의 고동"
+  },
+  "15511": {
+    "es": "Senda de la Cazadora",
+    "en": "Hunter's Path",
+    "pt": "Caminho do Caçador",
+    "ja": "狩人の道",
+    "ko": "사냥꾼의 길"
+  },
+  "15512": {
+    "es": "El Primer Gran Número de Magia",
+    "en": "The First Great Magic",
+    "pt": "Arcana Original",
+    "ja": "始まりの大魔術",
+    "ko": "최초의 대마술"
+  },
+  "15513": {
+    "es": "Corazón de la Lluvia",
+    "en": "Silvershower Heartstrings",
+    "pt": "Cordas da Chuva Branca",
+    "ja": "白雨心弦",
+    "ko": "심금을 울리는 하얀 비"
+  },
+  "15514": {
+    "es": "Pluma Carmesí Buitreastral",
+    "en": "Astral Vulture's Crimson Plumage",
+    "pt": "Plumagem Escarlate do Abutre Astral",
+    "ja": "星鷲の紅き羽",
+    "ko": "붉은 깃 별독수리"
+  },
+  "15515": {
+    "es": "Albores de la Historia",
+    "en": "The Daybreak Chronicles",
+    "pt": "As Crônicas do Amanhecer",
+    "ja": "暁を告げる歴史",
+    "ko": "여명이 트는 역사"
+  },
+  "15516": {
+    "es": "Rama del Juramento Escarchado",
+    "en": "Golden Frostbound Oath",
+    "pt": "Ramo Dourado do Juramento Gelado",
+    "ja": "霜契の金枝",
+    "ko": "서리 맺힌 금빛 가지"
+  },
+  "310001": {
+    "es": "Devoraserpientes",
+    "en": "Serpent Devourer",
+    "pt": "Devoradora de Serpentes",
+    "ja": "呑蛇",
+    "ko": "삼키는 뱀"
+  },
+  "310002": {
+    "es": "Devoraserpientes: Culminación",
+    "en": "Serpent Devourer - Sublimation",
+    "pt": "Devoradora de Serpentes - Sublimação",
+    "ja": "呑蛇・真化",
+    "ko": "삼키는 뱀·실체"
+  },
+  "310003": {
+    "es": "Rama Dorada de Nemorense",
+    "en": "Golden Bough of Nemorensis",
+    "pt": "Galho Dourado de Nemorensis",
+    "ja": "ネモレンシスの金枝",
+    "ko": "네모렌시스의 황금 가지"
+  },
+  "310004": {
+    "es": "Rama Dorada de Nemorense: Culminación",
+    "en": "Golden Bough of Nemorensis - Sublimation",
+    "pt": "Galho Dourado de Nemorensis - Sublimação",
+    "ja": "ネモレンシスの金枝・真化",
+    "ko": "네모렌시스의 황금 가지·실체"
+  },
+  "320001": {
+    "es": "Tempestad Abrasadora",
+    "en": "Ardent Storm",
+    "pt": "Incêndio Ardente",
+    "ja": "煌烈",
+    "ko": "맹렬한 열기"
+  },
+  "320002": {
+    "es": "Tempestad Abrasadora: Culminación",
+    "en": "Ardent Storm - Sublimation",
+    "pt": "Incêndio Ardente - Sublimação",
+    "ja": "煌烈・真化",
+    "ko": "맹렬한 열기·실체"
+  },
+  "320003": {
+    "es": "Fulgor Argénteo de Gradlon",
+    "en": "Silver Radiance of Gradlon",
+    "pt": "Brilho Prateado de Gradlon",
+    "ja": "グラドロンの銀光",
+    "ko": "그라들롱의 은빛"
+  },
+  "320004": {
+    "es": "Fulgor Argénteo de Gradlon: Culminación",
+    "en": "Silver Radiance of Gradlon - Sublimation",
+    "pt": "Brilho Prateado de Gradlon - Sublimação",
+    "ja": "グラドロンの銀光・真化",
+    "ko": "그라들롱의 은빛·실체"
+  },
+  "330001": {
+    "es": "Luna Quebrada",
+    "en": "Shattered Moon",
+    "pt": "Lua Despedaçada",
+    "ja": "砕月",
+    "ko": "부서진 달"
+  },
+  "330002": {
+    "es": "Luna Quebrada: Culminación",
+    "en": "Shattered Moon - Sublimation",
+    "pt": "Lua Despedaçada - Sublimação",
+    "ja": "砕月・真化",
+    "ko": "부서진 달·실체"
+  },
+  "330003": {
+    "es": "Luz Estelar de Fylkir",
+    "en": "Starlight of Fylkir",
+    "pt": "Luz Estelar de Fylkir",
+    "ja": "フュルキルの星芒",
+    "ko": "필키르의 별빛"
+  },
+  "330004": {
+    "es": "Luz Estelar de Fylkir: Culminación",
+    "en": "Starlight of Fylkir - Sublimation",
+    "pt": "Luz Estelar de Fylkir - Sublimação",
+    "ja": "フュルキルの星芒・真化",
+    "ko": "필키르의 별빛·실체"
+  },
+  "340001": {
+    "es": "Grilletes Celestiales",
+    "en": "Hallowed Fetters",
+    "pt": "Grilhões Celestiais",
+    "ja": "聖縛",
+    "ko": "신성한 속박"
+  },
+  "340002": {
+    "es": "Grilletes Celestiales: Culminación",
+    "en": "Hallowed Fetters - Sublimation",
+    "pt": "Grilhões Celestiais - Sublimação",
+    "ja": "聖縛・真化",
+    "ko": "신성한 속박·실체"
+  },
+  "340003": {
+    "es": "Estrella del Alba de Shahar",
+    "en": "Dawnstar of Shahar",
+    "pt": "Estrela da Alvorada de Shahar",
+    "ja": "シャヘルの暁星",
+    "ko": "샤하르의 새벽별"
+  },
+  "340004": {
+    "es": "Estrella del Alba de Shahar: Culminación",
+    "en": "Dawnstar of Shahar - Sublimation",
+    "pt": "Estrela da Alvorada de Shahar - Sublimação",
+    "ja": "シャヘルの暁星・真化",
+    "ko": "샤하르의 새벽별·실체"
+  },
+  "350001": {
+    "es": "Traspasaestrellas",
+    "en": "Starpiercer",
+    "pt": "Perfurador de Estrelas",
+    "ja": "貫星",
+    "ko": "꿰뚫린 별"
+  },
+  "350002": {
+    "es": "Traspasaestrellas: Culminación",
+    "en": "Starpiercer - Sublimation",
+    "pt": "Perfurador de Estrelas - Sublimação",
+    "ja": "貫星・真化",
+    "ko": "꿰뚫린 별·실체"
+  },
+  "350003": {
+    "es": "Yayu",
+    "en": "Yayu",
+    "pt": "Yayu",
+    "ja": "猰貐",
+    "ko": "알유"
+  },
+  "350004": {
+    "es": "Yayu: Culminación",
+    "en": "Yayu - Sublimation",
+    "pt": "Yayu - Sublimação",
+    "ja": "猰貐・真化",
+    "ko": "알유·실체"
+  },
+  "380001": {
+    "es": "Rito Ilusorio: Augurio Estelar",
+    "en": "Phantasmal Gift: Star Omen",
+    "pt": "Fantasia Ilusória: Sinais Estelares",
+    "ja": "幻のギフト・スターオーメン",
+    "ko": "선물·마법 구슬"
+  },
+  "380002": {
+    "es": "Llave Mágica Superpoderosa",
+    "en": "Super Awesome Magic Key",
+    "pt": "\"Super Chave Mágica\"",
+    "ja": "「マジカルマジックキー」",
+    "ko": "「슈퍼 울트라 마법 열쇠」"
+  },
+  "380003": {
+    "es": "¡Escarcha para un Verano Ardiente!",
+    "en": "A Touch of Frost in Scorching Summer!",
+    "pt": "Um Toque Gelado no Verão Quente!",
+    "ja": "真夏のアイスポップ！",
+    "ko": "아이스바!"
+  },
+  "390001": {
+    "es": "Durandal, la Indestructible",
+    "en": "Unbreakable: Durandarte",
+    "pt": "Indestrutível: Durandarte",
+    "ja": "無毀・デュランガルド",
+    "ko": "불멸·듀란달"
+  },
+  "390002": {
+    "es": "Hoja de Exáifanes",
+    "en": "Exaiphanes Blade",
+    "pt": "Sabre da Ponta Estelar",
+    "ja": "星鋒の剣",
+    "ko": "별빛검"
+  },
+  "390003": {
+    "es": "Hoja de Exáifanes",
+    "en": "Exaiphanes Blade",
+    "pt": "Sabre da Ponta Estelar",
+    "ja": "星鋒の剣",
+    "ko": "별빛검"
+  },
   "hoja fr?a": {
     "es": "Hoja Fr?a",
     "en": "Cool Steel",
@@ -46,13 +1999,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "????",
     "ko": "?? ??"
   },
-  "11101": {
-    "es": "Hoja Desafilada",
-    "en": "Dull Blade",
-    "pt": "Lâmina Sem Fio",
-    "ja": "無鋒の剣",
-    "ko": "무인검"
-  },
   "hoja desafilada": {
     "es": "Hoja Desafilada",
     "en": "Dull Blade",
@@ -73,13 +2019,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Lâmina Sem Fio",
     "ja": "無鋒の剣",
     "ko": "무인검"
-  },
-  "11201": {
-    "es": "Espada Plateada",
-    "en": "Silver Sword",
-    "pt": "Espada de Prata",
-    "ja": "銀の剣",
-    "ko": "실버 소드"
   },
   "espada plateada": {
     "es": "Espada Plateada",
@@ -102,13 +2041,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "銀の剣",
     "ko": "실버 소드"
   },
-  "11301": {
-    "es": "Hoja Fría",
-    "en": "Cool Steel",
-    "pt": "Lâmina Fria",
-    "ja": "冷刃",
-    "ko": "차가운 칼날"
-  },
   "hoja fría": {
     "es": "Hoja Fría",
     "en": "Cool Steel",
@@ -129,13 +2061,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Lâmina Fria",
     "ja": "冷刃",
     "ko": "차가운 칼날"
-  },
-  "11302": {
-    "es": "Espada del Alba",
-    "en": "Harbinger of Dawn",
-    "pt": "Prenúncio do Alvorecer",
-    "ja": "黎明の神剣",
-    "ko": "여명신검"
   },
   "espada del alba": {
     "es": "Espada del Alba",
@@ -158,13 +2083,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "黎明の神剣",
     "ko": "여명신검"
   },
-  "11303": {
-    "es": "Espada del Viajero",
-    "en": "Traveler's Handy Sword",
-    "pt": "Espada do Viajante",
-    "ja": "旅道の剣",
-    "ko": "여행자의 검"
-  },
   "espada del viajero": {
     "es": "Espada del Viajero",
     "en": "Traveler's Handy Sword",
@@ -185,13 +2103,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Espada do Viajante",
     "ja": "旅道の剣",
     "ko": "여행자의 검"
-  },
-  "11304": {
-    "es": "Espada de Hierro Oscuro",
-    "en": "Dark Iron Sword",
-    "pt": "Espada de Ferro Negro",
-    "ja": "暗鉄剣",
-    "ko": "암철검"
   },
   "espada de hierro oscuro": {
     "es": "Espada de Hierro Oscuro",
@@ -214,13 +2125,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "暗鉄剣",
     "ko": "암철검"
   },
-  "11305": {
-    "es": "Hoja de Filetear",
-    "en": "Fillet Blade",
-    "pt": "Lâmina de Filés",
-    "ja": "チ虎魚の刀",
-    "ko": "흘호 생선회칼"
-  },
   "hoja de filetear": {
     "es": "Hoja de Filetear",
     "en": "Fillet Blade",
@@ -241,13 +2145,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Lâmina de Filés",
     "ja": "チ虎魚の刀",
     "ko": "흘호 생선회칼"
-  },
-  "11306": {
-    "es": "Espada Surcacielos",
-    "en": "Skyrider Sword",
-    "pt": "Espada do Cavaleiro do Céu",
-    "ja": "飛天御剣",
-    "ko": "비천어검"
   },
   "espada surcacielos": {
     "es": "Espada Surcacielos",
@@ -270,13 +2167,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "飛天御剣",
     "ko": "비천어검"
   },
-  "11401": {
-    "es": "Espada de Favonius",
-    "en": "Favonius Sword",
-    "pt": "Espada de Favonius",
-    "ja": "西風剣",
-    "ko": "페보니우스 검"
-  },
   "espada de favonius": {
     "es": "Espada de Favonius",
     "en": "Favonius Sword",
@@ -290,13 +2180,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Espada de Favonius",
     "ja": "西風剣",
     "ko": "페보니우스 검"
-  },
-  "11402": {
-    "es": "Flauta",
-    "en": "The Flute",
-    "pt": "A Flauta",
-    "ja": "笛の剣",
-    "ko": "피리검"
   },
   "flauta": {
     "es": "Flauta",
@@ -319,13 +2202,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "笛の剣",
     "ko": "피리검"
   },
-  "11403": {
-    "es": "Espada de Sacrificio",
-    "en": "Sacrificial Sword",
-    "pt": "Espada do Sacrifício",
-    "ja": "祭礼の剣",
-    "ko": "제례검"
-  },
   "espada de sacrificio": {
     "es": "Espada de Sacrificio",
     "en": "Sacrificial Sword",
@@ -346,13 +2222,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Espada do Sacrifício",
     "ja": "祭礼の剣",
     "ko": "제례검"
-  },
-  "11404": {
-    "es": "Espada Real Larga",
-    "en": "Royal Longsword",
-    "pt": "Espada Longa Real",
-    "ja": "旧貴族長剣",
-    "ko": "왕실의 장검"
   },
   "espada real larga": {
     "es": "Espada Real Larga",
@@ -375,13 +2244,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "旧貴族長剣",
     "ko": "왕실의 장검"
   },
-  "11405": {
-    "es": "Rugido del León",
-    "en": "Lion's Roar",
-    "pt": "Rugido do Leão",
-    "ja": "匣中龍吟",
-    "ko": "용의 포효"
-  },
   "rugido del león": {
     "es": "Rugido del León",
     "en": "Lion's Roar",
@@ -402,13 +2264,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Rugido do Leão",
     "ja": "匣中龍吟",
     "ko": "용의 포효"
-  },
-  "11406": {
-    "es": "Prototipo Rencor",
-    "en": "Prototype Rancour",
-    "pt": "Protótipo Rancor",
-    "ja": "斬岩·試作",
-    "ko": "참암 프로토타입"
   },
   "prototipo rencor": {
     "es": "Prototipo Rencor",
@@ -431,13 +2286,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "斬岩·試作",
     "ko": "참암 프로토타입"
   },
-  "11407": {
-    "es": "Espina de Hierro",
-    "en": "Iron Sting",
-    "pt": "Espinho de Ferro",
-    "ja": "鉄蜂の刺し",
-    "ko": "강철 벌침"
-  },
   "espina de hierro": {
     "es": "Espina de Hierro",
     "en": "Iron Sting",
@@ -458,13 +2306,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Espinho de Ferro",
     "ja": "鉄蜂の刺し",
     "ko": "강철 벌침"
-  },
-  "11408": {
-    "es": "Espada Larga del Peñasco Oscuro",
-    "en": "Blackcliff Longsword",
-    "pt": "Espada do Penhasco Obscuro",
-    "ja": "黒岩の長剣",
-    "ko": "흑암 장검"
   },
   "espada larga del peñasco oscuro": {
     "es": "Espada Larga del Peñasco Oscuro",
@@ -487,13 +2328,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "黒岩の長剣",
     "ko": "흑암 장검"
   },
-  "11409": {
-    "es": "Espada Negra",
-    "en": "The Black Sword",
-    "pt": "Espada Negra",
-    "ja": "黒剣",
-    "ko": "칠흑검"
-  },
   "espada negra": {
     "es": "Espada Negra",
     "en": "The Black Sword",
@@ -507,13 +2341,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Espada Negra",
     "ja": "黒剣",
     "ko": "칠흑검"
-  },
-  "11410": {
-    "es": "Destello en la Oscuridad",
-    "en": "The Alley Flash",
-    "pt": "Brilho do Beco",
-    "ja": "ダークアレイの閃光",
-    "ko": "뒷골목의 섬광"
   },
   "destello en la oscuridad": {
     "es": "Destello en la Oscuridad",
@@ -536,13 +2363,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "ダークアレイの閃光",
     "ko": "뒷골목의 섬광"
   },
-  "11412": {
-    "es": "Espada del Descenso",
-    "en": "Sword of Descension",
-    "pt": "Espada do Advento",
-    "ja": "降臨の剣",
-    "ko": "강림의 검"
-  },
   "espada del descenso": {
     "es": "Espada del Descenso",
     "en": "Sword of Descension",
@@ -563,13 +2383,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Espada do Advento",
     "ja": "降臨の剣",
     "ko": "강림의 검"
-  },
-  "11413": {
-    "es": "Deseo Ponzoñoso",
-    "en": "Festering Desire",
-    "pt": "Espada Pútrida",
-    "ja": "腐植の剣",
-    "ko": "부식의 검"
   },
   "deseo ponzoñoso": {
     "es": "Deseo Ponzoñoso",
@@ -592,13 +2405,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "腐植の剣",
     "ko": "부식의 검"
   },
-  "11414": {
-    "es": "Espada Amenoma Gemela",
-    "en": "Amenoma Kageuchi",
-    "pt": "Lâmina Amenoma Kageuta",
-    "ja": "天目影打",
-    "ko": "아메노마 카게우치가타나"
-  },
   "espada amenoma gemela": {
     "es": "Espada Amenoma Gemela",
     "en": "Amenoma Kageuchi",
@@ -619,13 +2425,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Lâmina Amenoma Kageuta",
     "ja": "天目影打",
     "ko": "아메노마 카게우치가타나"
-  },
-  "11415": {
-    "es": "Huso de Cinabrio",
-    "en": "Cinnabar Spindle",
-    "pt": "Haste de Cinábrio",
-    "ja": "シナバースピンドル",
-    "ko": "진사의 방추"
   },
   "huso de cinabrio": {
     "es": "Huso de Cinabrio",
@@ -648,26 +2447,12 @@ const I18N_WEAPONS_RAW = {
     "ja": "シナバースピンドル",
     "ko": "진사의 방추"
   },
-  "11416": {
-    "es": "Kagotsurube Isshin",
-    "en": "Kagotsurube Isshin",
-    "pt": "Kagotsurube Isshin",
-    "ja": "籠釣瓶一心",
-    "ko": "카고츠루베 잇신"
-  },
   "kagotsurube isshin": {
     "es": "Kagotsurube Isshin",
     "en": "Kagotsurube Isshin",
     "pt": "Kagotsurube Isshin",
     "ja": "籠釣瓶一心",
     "ko": "카고츠루베 잇신"
-  },
-  "11417": {
-    "es": "Espada de Madera",
-    "en": "Sapwood Blade",
-    "pt": "Espada de Madeira",
-    "ja": "原木刀",
-    "ko": "원목 검"
   },
   "espada de madera": {
     "es": "Espada de Madera",
@@ -690,13 +2475,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "原木刀",
     "ko": "원목 검"
   },
-  "11418": {
-    "es": "Luz Lunar de Xifos",
-    "en": "Xiphos' Moonlight",
-    "pt": "Luz Lunar de Xiphos",
-    "ja": "サイフォスの月明かり",
-    "ko": "크시포스의 달빛"
-  },
   "luz lunar de xifos": {
     "es": "Luz Lunar de Xifos",
     "en": "Xiphos' Moonlight",
@@ -717,13 +2495,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Luz Lunar de Xiphos",
     "ja": "サイフォスの月明かり",
     "ko": "크시포스의 달빛"
-  },
-  "11422": {
-    "es": "Diluvio Florífero",
-    "en": "Toukabou Shigure",
-    "pt": "Chuva Floral",
-    "ja": "東花坊時雨",
-    "ko": "꽃잎비"
   },
   "diluvio florífero": {
     "es": "Diluvio Florífero",
@@ -746,13 +2517,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "東花坊時雨",
     "ko": "꽃잎비"
   },
-  "11424": {
-    "es": "Colmillo Lupino",
-    "en": "Wolf-Fang",
-    "pt": "Farpa",
-    "ja": "狼牙",
-    "ko": "늑대 송곳니"
-  },
   "colmillo lupino": {
     "es": "Colmillo Lupino",
     "en": "Wolf-Fang",
@@ -773,13 +2537,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Farpa",
     "ja": "狼牙",
     "ko": "늑대 송곳니"
-  },
-  "11425": {
-    "es": "Réquiem Abisal",
-    "en": "Finale of the Deep",
-    "pt": "Epílogo das Profundezas",
-    "ja": "海淵のフィナーレ",
-    "ko": "해연의 피날레"
   },
   "réquiem abisal": {
     "es": "Réquiem Abisal",
@@ -802,13 +2559,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "海淵のフィナーレ",
     "ko": "해연의 피날레"
   },
-  "11426": {
-    "es": "Vado del Río Ceniciento",
-    "en": "Fleuve Cendre Ferryman",
-    "pt": "Cruzamento de Fleuve Cendre",
-    "ja": "サーンドルの渡し守",
-    "ko": "잿빛의 강 뱃사공"
-  },
   "vado del río ceniciento": {
     "es": "Vado del Río Ceniciento",
     "en": "Fleuve Cendre Ferryman",
@@ -829,13 +2579,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Cruzamento de Fleuve Cendre",
     "ja": "サーンドルの渡し守",
     "ko": "잿빛의 강 뱃사공"
-  },
-  "11427": {
-    "es": "Sable de la Dársena",
-    "en": "The Dockhand's Assistant",
-    "pt": "A Doca",
-    "ja": "船渠剣",
-    "ko": "뱃도랑 장검"
   },
   "sable de la dársena": {
     "es": "Sable de la Dársena",
@@ -858,13 +2601,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "船渠剣",
     "ko": "뱃도랑 장검"
   },
-  "11428": {
-    "es": "Espada Cruz de los Narcisos",
-    "en": "Sword of Narzissenkreuz",
-    "pt": "Espada da Cruz de Narcissus",
-    "ja": "水仙十字の剣",
-    "ko": "수선화 십자검"
-  },
   "espada cruz de los narcisos": {
     "es": "Espada Cruz de los Narcisos",
     "en": "Sword of Narzissenkreuz",
@@ -885,13 +2621,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Espada da Cruz de Narcissus",
     "ja": "水仙十字の剣",
     "ko": "수선화 십자검"
-  },
-  "11430": {
-    "es": "Hueso Recio",
-    "en": "Sturdy Bone",
-    "pt": "Osso Robusto",
-    "ja": "ストロング・ボーン",
-    "ko": "견고한 골검"
   },
   "hueso recio": {
     "es": "Hueso Recio",
@@ -914,13 +2643,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "ストロング・ボーン",
     "ko": "견고한 골검"
   },
-  "11431": {
-    "es": "Flauta de Ezpitzal",
-    "en": "Flute of Ezpitzal",
-    "pt": "Flauta de Ezpitzal",
-    "ja": "エズピツァルの笛",
-    "ko": "에스피찰의 피리"
-  },
   "flauta de ezpitzal": {
     "es": "Flauta de Ezpitzal",
     "en": "Flute of Ezpitzal",
@@ -934,13 +2656,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Flauta de Ezpitzal",
     "ja": "エズピツァルの笛",
     "ko": "에스피찰의 피리"
-  },
-  "11432": {
-    "es": "Calamidad de Eshu",
-    "en": "Calamity of Eshu",
-    "pt": "Calamidade de Eshu",
-    "ja": "厄水の災い",
-    "ko": "에슈의 재앙"
   },
   "calamidad de eshu": {
     "es": "Calamidad de Eshu",
@@ -963,13 +2678,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "厄水の災い",
     "ko": "에슈의 재앙"
   },
-  "11433": {
-    "es": "Silbido Melifluo",
-    "en": "Serenity's Call",
-    "pt": "Chamado da Serenidade",
-    "ja": "静謐の笛",
-    "ko": "고요한 휘파람"
-  },
   "silbido melifluo": {
     "es": "Silbido Melifluo",
     "en": "Serenity's Call",
@@ -990,13 +2698,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Chamado da Serenidade",
     "ja": "静謐の笛",
     "ko": "고요한 휘파람"
-  },
-  "11434": {
-    "es": "Alba de la Tejelunas",
-    "en": "Moonweaver's Dawn",
-    "pt": "Alvorada do Tecedor do Luar",
-    "ja": "月紡ぎの曙光",
-    "ko": "달을 엮는 자의 새벽빛"
   },
   "alba de la tejelunas": {
     "es": "Alba de la Tejelunas",
@@ -1019,13 +2720,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "月紡ぎの曙光",
     "ko": "달을 엮는 자의 새벽빛"
   },
-  "11435": {
-    "es": "Filo de la Caza de los Herejes",
-    "en": "Heretic's Molten Blade",
-    "pt": "Lâmina Derretida do Herege",
-    "ja": "異端を狩る熔刃",
-    "ko": "이단을 가르는 불꽃"
-  },
   "filo de la caza de los herejes": {
     "es": "Filo de la Caza de los Herejes",
     "en": "Heretic's Molten Blade",
@@ -1046,13 +2740,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Lâmina Derretida do Herege",
     "ja": "異端を狩る熔刃",
     "ko": "이단을 가르는 불꽃"
-  },
-  "11436": {
-    "es": "Fuente de Ignición",
-    "en": "Emberwell",
-    "pt": "Fonte da Ignição",
-    "ja": "導炎の源",
-    "ko": "불꽃의 인도자"
   },
   "fuente de ignición": {
     "es": "Fuente de Ignición",
@@ -1075,13 +2762,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "導炎の源",
     "ko": "불꽃의 인도자"
   },
-  "11437": {
-    "es": "Nueva Rama",
-    "en": "New Bough",
-    "pt": "Ramo Novo",
-    "ja": "新たなる枝",
-    "ko": "새순"
-  },
   "nueva rama": {
     "es": "Nueva Rama",
     "en": "New Bough",
@@ -1102,13 +2782,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Ramo Novo",
     "ja": "新たなる枝",
     "ko": "새순"
-  },
-  "11438": {
-    "es": "Luz Plateada",
-    "en": "Silver Light",
-    "pt": "Lâmpada Prateada",
-    "ja": "銀灯",
-    "ko": "은강검"
   },
   "luz plateada": {
     "es": "Luz Plateada",
@@ -1131,13 +2804,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "銀灯",
     "ko": "은강검"
   },
-  "11501": {
-    "es": "Aquila Favonia",
-    "en": "Aquila Favonia",
-    "pt": "Falcão",
-    "ja": "風鷹剣",
-    "ko": "매의 검"
-  },
   "aquila favonia": {
     "es": "Aquila Favonia",
     "en": "Aquila Favonia",
@@ -1151,13 +2817,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Falcão",
     "ja": "風鷹剣",
     "ko": "매의 검"
-  },
-  "11502": {
-    "es": "Hoja Afilada Celestial",
-    "en": "Skyward Blade",
-    "pt": "Espada Celestial",
-    "ja": "天空の刃",
-    "ko": "천공의 검"
   },
   "hoja afilada celestial": {
     "es": "Hoja Afilada Celestial",
@@ -1180,13 +2839,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "天空の刃",
     "ko": "천공의 검"
   },
-  "11503": {
-    "es": "Juramento por la Libertad",
-    "en": "Freedom-Sworn",
-    "pt": "Juramento pela Liberdade",
-    "ja": "蒼古なる自由への誓い",
-    "ko": "오래된 자유의 서약"
-  },
   "juramento por la libertad": {
     "es": "Juramento por la Libertad",
     "en": "Freedom-Sworn",
@@ -1207,13 +2859,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Juramento pela Liberdade",
     "ja": "蒼古なる自由への誓い",
     "ko": "오래된 자유의 서약"
-  },
-  "11504": {
-    "es": "Rompemontañas",
-    "en": "Summit Shaper",
-    "pt": "Cortador de Montanhas",
-    "ja": "斬山の刃",
-    "ko": "참봉의 칼날"
   },
   "rompemontañas": {
     "es": "Rompemontañas",
@@ -1236,13 +2881,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "斬山の刃",
     "ko": "참봉의 칼날"
   },
-  "11505": {
-    "es": "Cortador de Jade Primordial",
-    "en": "Primordial Jade Cutter",
-    "pt": "Cortador de Jade Primordial",
-    "ja": "磐岩結緑",
-    "ko": "반암결록"
-  },
   "cortador de jade primordial": {
     "es": "Cortador de Jade Primordial",
     "en": "Primordial Jade Cutter",
@@ -1256,13 +2894,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Cortador de Jade Primordial",
     "ja": "磐岩結緑",
     "ko": "반암결록"
-  },
-  "11509": {
-    "es": "Reflejo de las Tinieblas",
-    "en": "Mistsplitter Reforged",
-    "pt": "Cortadora da Neblina Reforjada",
-    "ja": "霧切の廻光",
-    "ko": "안개를 가르는 회광"
   },
   "reflejo de las tinieblas": {
     "es": "Reflejo de las Tinieblas",
@@ -1285,13 +2916,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "霧切の廻光",
     "ko": "안개를 가르는 회광"
   },
-  "11510": {
-    "es": "Luna Ondulante de Futsu",
-    "en": "Haran Geppaku Futsu",
-    "pt": "Maremoto da Lua de Futsu",
-    "ja": "波乱月白経津",
-    "ko": "하란 월백의 후츠"
-  },
   "luna ondulante de futsu": {
     "es": "Luna Ondulante de Futsu",
     "en": "Haran Geppaku Futsu",
@@ -1312,13 +2936,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Maremoto da Lua de Futsu",
     "ja": "波乱月白経津",
     "ko": "하란 월백의 후츠"
-  },
-  "11511": {
-    "es": "Llave de la Coronación",
-    "en": "Key of Khaj-Nisut",
-    "pt": "Chave de Hierofania",
-    "ja": "聖顕の鍵",
-    "ko": "성현의 열쇠"
   },
   "llave de la coronación": {
     "es": "Llave de la Coronación",
@@ -1341,13 +2958,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "聖顕の鍵",
     "ko": "성현의 열쇠"
   },
-  "11512": {
-    "es": "Clorofilo Refulgente",
-    "en": "Light of Foliar Incision",
-    "pt": "Luz das Folhas Cortadas",
-    "ja": "萃光の裁葉",
-    "ko": "잎을 가르는 빛"
-  },
   "clorofilo refulgente": {
     "es": "Clorofilo Refulgente",
     "en": "Light of Foliar Incision",
@@ -1368,13 +2978,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Luz das Folhas Cortadas",
     "ja": "萃光の裁葉",
     "ko": "잎을 가르는 빛"
-  },
-  "11513": {
-    "es": "Fulgor de las Aguas Calmas",
-    "en": "Splendor of Tranquil Waters",
-    "pt": "Esplendor das Águas Silenciosas",
-    "ja": "静水流転の輝き",
-    "ko": "고요히 샘솟는 빛"
   },
   "fulgor de las aguas calmas": {
     "es": "Fulgor de las Aguas Calmas",
@@ -1397,13 +3000,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "静水流転の輝き",
     "ko": "고요히 샘솟는 빛"
   },
-  "11514": {
-    "es": "Cortatelones de Urakusai",
-    "en": "Uraku Misugiri",
-    "pt": "Urakugo Rensai",
-    "ja": "有楽御簾切",
-    "ko": "우라쿠의 미스기리"
-  },
   "cortatelones de urakusai": {
     "es": "Cortatelones de Urakusai",
     "en": "Uraku Misugiri",
@@ -1424,13 +3020,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Urakugo Rensai",
     "ja": "有楽御簾切",
     "ko": "우라쿠의 미스기리"
-  },
-  "11515": {
-    "es": "Expiadora",
-    "en": "Absolution",
-    "pt": "Absolvição",
-    "ja": "赦罪",
-    "ko": "사면"
   },
   "expiadora": {
     "es": "Expiadora",
@@ -1453,13 +3042,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "赦罪",
     "ko": "사면"
   },
-  "11516": {
-    "es": "Himno de las Cumbres",
-    "en": "Peak Patrol Song",
-    "pt": "Canção da Patrulha do Pico",
-    "ja": "岩峰を巡る歌",
-    "ko": "바위산을 맴도는 노래"
-  },
   "himno de las cumbres": {
     "es": "Himno de las Cumbres",
     "en": "Peak Patrol Song",
@@ -1480,13 +3062,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Canção da Patrulha do Pico",
     "ja": "岩峰を巡る歌",
     "ko": "바위산을 맴도는 노래"
-  },
-  "11517": {
-    "es": "Fulgor Cerúleo",
-    "en": "Azurelight",
-    "pt": "Azul Brilhante",
-    "ja": "蒼耀",
-    "ko": "창백한 섬광"
   },
   "fulgor cerúleo": {
     "es": "Fulgor Cerúleo",
@@ -1509,13 +3084,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "蒼耀",
     "ko": "창백한 섬광"
   },
-  "11518": {
-    "es": "Athame Artis",
-    "en": "Athame Artis",
-    "pt": "Corrupção Sombria",
-    "ja": "黒蝕",
-    "ko": "검은 침식"
-  },
   "athame artis": {
     "es": "Athame Artis",
     "en": "Athame Artis",
@@ -1529,13 +3097,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Corrupção Sombria",
     "ja": "黒蝕",
     "ko": "검은 침식"
-  },
-  "11519": {
-    "es": "Refulgencia de la Luna",
-    "en": "Lightbearing Moonshard",
-    "pt": "Fragmento Lunar da Luz",
-    "ja": "三日月の含光",
-    "ko": "신월의 달빛"
   },
   "refulgencia de la luna": {
     "es": "Refulgencia de la Luna",
@@ -1558,13 +3119,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "三日月の含光",
     "ko": "신월의 달빛"
   },
-  "11520": {
-    "es": "Pluma Invernal Lagoblanco",
-    "en": "Whitelake Frostfeather",
-    "pt": "Asa Gelada do Lago Branco",
-    "ja": "白銀の湖を舞う翼",
-    "ko": "백조의 호수"
-  },
   "pluma invernal lagoblanco": {
     "es": "Pluma Invernal Lagoblanco",
     "en": "Whitelake Frostfeather",
@@ -1585,13 +3139,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Asa Gelada do Lago Branco",
     "ja": "白銀の湖を舞う翼",
     "ko": "백조의 호수"
-  },
-  "11521": {
-    "es": "Hoja de Exáifanes",
-    "en": "Exaiphanes Blade",
-    "pt": "Sabre da Ponta Estelar",
-    "ja": "星鋒の剣",
-    "ko": "별빛검"
   },
   "hoja de exáifanes": {
     "es": "Hoja de Exáifanes",
@@ -1614,13 +3161,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "星鋒の剣",
     "ko": "별빛검"
   },
-  "11522": {
-    "es": "Allende la Crisálida",
-    "en": "Beyond the Chrysalis",
-    "pt": "Borboleta Transformadora",
-    "ja": "蝶の羽化",
-    "ko": "나비의 우화"
-  },
   "allende la crisálida": {
     "es": "Allende la Crisálida",
     "en": "Beyond the Chrysalis",
@@ -1641,13 +3181,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Borboleta Transformadora",
     "ja": "蝶の羽化",
     "ko": "나비의 우화"
-  },
-  "12101": {
-    "es": "Gran Espada del Guerrero",
-    "en": "Waster Greatsword",
-    "pt": "Espadão do Julgamento",
-    "ja": "訓練用大剣",
-    "ko": "훈련용 대검"
   },
   "gran espada del guerrero": {
     "es": "Gran Espada del Guerrero",
@@ -1670,13 +3203,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "訓練用大剣",
     "ko": "훈련용 대검"
   },
-  "12201": {
-    "es": "Espada del Mercenario",
-    "en": "Old Merc's Pal",
-    "pt": "Espada do Mercenário",
-    "ja": "傭兵の重剣",
-    "ko": "용병 중검"
-  },
   "espada del mercenario": {
     "es": "Espada del Mercenario",
     "en": "Old Merc's Pal",
@@ -1697,13 +3223,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Espada do Mercenário",
     "ja": "傭兵の重剣",
     "ko": "용병 중검"
-  },
-  "12301": {
-    "es": "Sombra Férrea",
-    "en": "Ferrous Shadow",
-    "pt": "Sombra de Ferro",
-    "ja": "鉄影段平",
-    "ko": "강철의 그림자"
   },
   "sombra férrea": {
     "es": "Sombra Férrea",
@@ -1726,13 +3245,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "鉄影段平",
     "ko": "강철의 그림자"
   },
-  "12302": {
-    "es": "Gran Espada Sangrienta",
-    "en": "Bloodtainted Greatsword",
-    "pt": "Espadão Sangrento",
-    "ja": "龍血を浴びた剣",
-    "ko": "드래곤 블러드 소드"
-  },
   "gran espada sangrienta": {
     "es": "Gran Espada Sangrienta",
     "en": "Bloodtainted Greatsword",
@@ -1753,13 +3265,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Espadão Sangrento",
     "ja": "龍血を浴びた剣",
     "ko": "드래곤 블러드 소드"
-  },
-  "12303": {
-    "es": "Espada de Hierro Blanco",
-    "en": "White Iron Greatsword",
-    "pt": "Espadão de Ferro Branco",
-    "ja": "白鉄の大剣",
-    "ko": "백철 대검"
   },
   "espada de hierro blanco": {
     "es": "Espada de Hierro Blanco",
@@ -1782,13 +3287,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "白鉄の大剣",
     "ko": "백철 대검"
   },
-  "12305": {
-    "es": "Garrote del Debate",
-    "en": "Debate Club",
-    "pt": "Pacifista",
-    "ja": "理屈責め",
-    "ko": "훌륭한 대화수단"
-  },
   "garrote del debate": {
     "es": "Garrote del Debate",
     "en": "Debate Club",
@@ -1809,13 +3307,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Pacifista",
     "ja": "理屈責め",
     "ko": "훌륭한 대화수단"
-  },
-  "12306": {
-    "es": "Gran Espada Surcacielos",
-    "en": "Skyrider Greatsword",
-    "pt": "Espadão do Cavaleiro do Céu",
-    "ja": "飛天大御剣",
-    "ko": "비천대어검"
   },
   "gran espada surcacielos": {
     "es": "Gran Espada Surcacielos",
@@ -1838,13 +3329,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "飛天大御剣",
     "ko": "비천대어검"
   },
-  "12401": {
-    "es": "Gran Espada de Favonius",
-    "en": "Favonius Greatsword",
-    "pt": "Grande Espada de Favonius",
-    "ja": "西風大剣",
-    "ko": "페보니우스 대검"
-  },
   "gran espada de favonius": {
     "es": "Gran Espada de Favonius",
     "en": "Favonius Greatsword",
@@ -1865,13 +3349,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Grande Espada de Favonius",
     "ja": "西風大剣",
     "ko": "페보니우스 대검"
-  },
-  "12402": {
-    "es": "Espada del Tiempo",
-    "en": "The Bell",
-    "pt": "O Sino",
-    "ja": "鐘の剣",
-    "ko": "시간의 검"
   },
   "espada del tiempo": {
     "es": "Espada del Tiempo",
@@ -1894,13 +3371,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "鐘の剣",
     "ko": "시간의 검"
   },
-  "12403": {
-    "es": "Gran Espada de Sacrificio",
-    "en": "Sacrificial Greatsword",
-    "pt": "Espadão do Sacrifício",
-    "ja": "祭礼の大剣",
-    "ko": "제례 대검"
-  },
   "gran espada de sacrificio": {
     "es": "Gran Espada de Sacrificio",
     "en": "Sacrificial Greatsword",
@@ -1921,13 +3391,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Espadão do Sacrifício",
     "ja": "祭礼の大剣",
     "ko": "제례 대검"
-  },
-  "12404": {
-    "es": "Gran Espada Real",
-    "en": "Royal Greatsword",
-    "pt": "Espadão Real",
-    "ja": "旧貴族大剣",
-    "ko": "왕실의 대검"
   },
   "gran espada real": {
     "es": "Gran Espada Real",
@@ -1950,13 +3413,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "旧貴族大剣",
     "ko": "왕실의 대검"
   },
-  "12405": {
-    "es": "Segadora de la Lluvia",
-    "en": "Rainslasher",
-    "pt": "Segadeira da Chuva",
-    "ja": "雨裁",
-    "ko": "빗물 베기"
-  },
   "segadora de la lluvia": {
     "es": "Segadora de la Lluvia",
     "en": "Rainslasher",
@@ -1977,13 +3433,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Segadeira da Chuva",
     "ja": "雨裁",
     "ko": "빗물 베기"
-  },
-  "12406": {
-    "es": "Prototipo Arcaico",
-    "en": "Prototype Archaic",
-    "pt": "Protótipo Arcaico",
-    "ja": "古華·試作",
-    "ko": "고화 프로토타입"
   },
   "prototipo arcaico": {
     "es": "Prototipo Arcaico",
@@ -2006,13 +3455,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "古華·試作",
     "ko": "고화 프로토타입"
   },
-  "12407": {
-    "es": "Sombra Blanca",
-    "en": "Whiteblind",
-    "pt": "Sombra Branca",
-    "ja": "白影の剣",
-    "ko": "백영검"
-  },
   "sombra blanca": {
     "es": "Sombra Blanca",
     "en": "Whiteblind",
@@ -2033,13 +3475,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Sombra Branca",
     "ja": "白影の剣",
     "ko": "백영검"
-  },
-  "12408": {
-    "es": "Gran Hoja del Peñasco Oscuro",
-    "en": "Blackcliff Slasher",
-    "pt": "Foice do Penhasco Obscuro",
-    "ja": "黒岩の斬刀",
-    "ko": "흑암참도"
   },
   "gran hoja del peñasco oscuro": {
     "es": "Gran Hoja del Peñasco Oscuro",
@@ -2062,13 +3497,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "黒岩の斬刀",
     "ko": "흑암참도"
   },
-  "12409": {
-    "es": "Médula de la Serpiente Marina",
-    "en": "Serpent Spine",
-    "pt": "Espinha Dorsal da Serpente",
-    "ja": "螭龍の剣",
-    "ko": "이무기 검"
-  },
   "médula de la serpiente marina": {
     "es": "Médula de la Serpiente Marina",
     "en": "Serpent Spine",
@@ -2089,13 +3517,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Espinha Dorsal da Serpente",
     "ja": "螭龍の剣",
     "ko": "이무기 검"
-  },
-  "12410": {
-    "es": "Espada Lítica",
-    "en": "Lithic Blade",
-    "pt": "Espada Antiga de Millelith",
-    "ja": "千岩古剣",
-    "ko": "천암고검"
   },
   "espada lítica": {
     "es": "Espada Lítica",
@@ -2118,13 +3539,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "千岩古剣",
     "ko": "천암고검"
   },
-  "12411": {
-    "es": "Argento Estelar de las Nieves",
-    "en": "Snow-Tombed Starsilver",
-    "pt": "Estrela de Prata Enterrada na Neve",
-    "ja": "雪葬の星銀",
-    "ko": "설장의 성은"
-  },
   "argento estelar de las nieves": {
     "es": "Argento Estelar de las Nieves",
     "en": "Snow-Tombed Starsilver",
@@ -2145,13 +3559,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Estrela de Prata Enterrada na Neve",
     "ja": "雪葬の星銀",
     "ko": "설장의 성은"
-  },
-  "12412": {
-    "es": "Rey de los Mares",
-    "en": "Luxurious Sea-Lord",
-    "pt": "Lorde do Mar Luxuoso",
-    "ja": "銜玉の海皇",
-    "ko": "진주를 문 해황"
   },
   "rey de los mares": {
     "es": "Rey de los Mares",
@@ -2174,13 +3581,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "銜玉の海皇",
     "ko": "진주를 문 해황"
   },
-  "12414": {
-    "es": "Asesinato de Katsuragi",
-    "en": "Katsuragikiri Nagamasa",
-    "pt": "Espada Grande de Katsuragi",
-    "ja": "桂木斬長正",
-    "ko": "카츠라기를 벤 나가마사"
-  },
   "asesinato de katsuragi": {
     "es": "Asesinato de Katsuragi",
     "en": "Katsuragikiri Nagamasa",
@@ -2201,13 +3601,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Espada Grande de Katsuragi",
     "ja": "桂木斬長正",
     "ko": "카츠라기를 벤 나가마사"
-  },
-  "12415": {
-    "es": "Májaira Aguamarina",
-    "en": "Makhaira Aquamarine",
-    "pt": "Água-Marinha de Mahara",
-    "ja": "マカイラの水色",
-    "ko": "물빛 마카이라"
   },
   "májaira aguamarina": {
     "es": "Májaira Aguamarina",
@@ -2230,13 +3623,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "マカイラの水色",
     "ko": "물빛 마카이라"
   },
-  "12416": {
-    "es": "Rey del Mal",
-    "en": "Akuoumaru",
-    "pt": "Akuoumaru",
-    "ja": "惡王丸",
-    "ko": "아쿠오마루"
-  },
   "rey del mal": {
     "es": "Rey del Mal",
     "en": "Akuoumaru",
@@ -2250,13 +3636,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Akuoumaru",
     "ja": "惡王丸",
     "ko": "아쿠오마루"
-  },
-  "12417": {
-    "es": "Espada Real del Bosque",
-    "en": "Forest Regalia",
-    "pt": "Espada Real da Floresta",
-    "ja": "森林のレガリア",
-    "ko": "숲의 리게일리어"
   },
   "espada real del bosque": {
     "es": "Espada Real del Bosque",
@@ -2279,13 +3658,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "森林のレガリア",
     "ko": "숲의 리게일리어"
   },
-  "12418": {
-    "es": "Fierro Floriorlado",
-    "en": "Mailed Flower",
-    "pt": "Flor de Aço",
-    "ja": "鉄彩の花",
-    "ko": "꽃 장식 대검"
-  },
   "fierro floriorlado": {
     "es": "Fierro Floriorlado",
     "en": "Mailed Flower",
@@ -2306,13 +3678,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Flor de Aço",
     "ja": "鉄彩の花",
     "ko": "꽃 장식 대검"
-  },
-  "12424": {
-    "es": "Garrote del Diálogo",
-    "en": "Talking Stick",
-    "pt": "Diálogo",
-    "ja": "話死合い棒",
-    "ko": "대화봉"
   },
   "garrote del diálogo": {
     "es": "Garrote del Diálogo",
@@ -2335,13 +3700,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "話死合い棒",
     "ko": "대화봉"
   },
-  "12425": {
-    "es": "Sombra de la Marea",
-    "en": "Tidal Shadow",
-    "pt": "Lâmina das Ondas",
-    "ja": "タイダル·シャドー",
-    "ko": "파도 그림자 대검"
-  },
   "sombra de la marea": {
     "es": "Sombra de la Marea",
     "en": "Tidal Shadow",
@@ -2362,13 +3720,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Lâmina das Ondas",
     "ja": "タイダル·シャドー",
     "ko": "파도 그림자 대검"
-  },
-  "12426": {
-    "es": "Superespada Mágica Suprema",
-    "en": "\"Ultimate Overlord's Mega Magic Sword\"",
-    "pt": "Mega Ultra Espada Mágica do Soberano",
-    "ja": "「スーパーアルティメット覇王魔剣」",
-    "ko": "「슈퍼 울트라 패왕 마검」"
   },
   "superespada mágica suprema": {
     "es": "Superespada Mágica Suprema",
@@ -2391,13 +3742,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "「スーパーアルティメット覇王魔剣」",
     "ko": "「슈퍼 울트라 패왕 마검」"
   },
-  "12427": {
-    "es": "Motosierra Transportable",
-    "en": "Portable Power Saw",
-    "pt": "Serra Elétrica Portátil",
-    "ja": "携帯型チェーンソー",
-    "ko": "휴대용 체인톱"
-  },
   "motosierra transportable": {
     "es": "Motosierra Transportable",
     "en": "Portable Power Saw",
@@ -2418,13 +3762,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Serra Elétrica Portátil",
     "ja": "携帯型チェーンソー",
     "ko": "휴대용 체인톱"
-  },
-  "12430": {
-    "es": "Gancho del Triunfo",
-    "en": "Fruitful Hook",
-    "pt": "Gancho Frutífero",
-    "ja": "実りの鉤鉈",
-    "ko": "수확의 갈고리"
   },
   "gancho del triunfo": {
     "es": "Gancho del Triunfo",
@@ -2447,13 +3784,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "実りの鉤鉈",
     "ko": "수확의 갈고리"
   },
-  "12431": {
-    "es": "Terragitador",
-    "en": "Earth Shaker",
-    "pt": "Estremecedor da Terra",
-    "ja": "アースシェイカー",
-    "ko": "대지를 울리는 자"
-  },
   "terragitador": {
     "es": "Terragitador",
     "en": "Earth Shaker",
@@ -2474,13 +3804,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Estremecedor da Terra",
     "ja": "アースシェイカー",
     "ko": "대지를 울리는 자"
-  },
-  "12432": {
-    "es": "Sabiduría Fraguada",
-    "en": "Flame-Forged Insight",
-    "pt": "Forja da Sabedoria",
-    "ja": "知恵の溶炎",
-    "ko": "불로 벼린 지혜"
   },
   "sabiduría fraguada": {
     "es": "Sabiduría Fraguada",
@@ -2503,13 +3826,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "知恵の溶炎",
     "ko": "불로 벼린 지혜"
   },
-  "12433": {
-    "es": "Llave Maestra",
-    "en": "Master Key",
-    "pt": "Chave Mestra",
-    "ja": "万能の鍵",
-    "ko": "만능 열쇠"
-  },
   "llave maestra": {
     "es": "Llave Maestra",
     "en": "Master Key",
@@ -2530,13 +3846,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Chave Mestra",
     "ja": "万能の鍵",
     "ko": "만능 열쇠"
-  },
-  "12435": {
-    "es": "Sombra de la Melodía Dorada",
-    "en": "Forged by the Golden Melody",
-    "pt": "Forjada pela Lei Dourada",
-    "ja": "シンフォニーの鋳影",
-    "ko": "황금빛 선율"
   },
   "sombra de la melodía dorada": {
     "es": "Sombra de la Melodía Dorada",
@@ -2559,13 +3868,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "シンフォニーの鋳影",
     "ko": "황금빛 선율"
   },
-  "12436": {
-    "es": "Tajo Redentor",
-    "en": "Blade of Atonement",
-    "pt": "Lâmina da Redenção",
-    "ja": "救済の剣",
-    "ko": "구원의 대검"
-  },
   "tajo redentor": {
     "es": "Tajo Redentor",
     "en": "Blade of Atonement",
@@ -2586,13 +3888,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Lâmina da Redenção",
     "ja": "救済の剣",
     "ko": "구원의 대검"
-  },
-  "12501": {
-    "es": "Orgullo Celestial",
-    "en": "Skyward Pride",
-    "pt": "Orgulho Celestial",
-    "ja": "天空の傲",
-    "ko": "천공의 긍지"
   },
   "orgullo celestial": {
     "es": "Orgullo Celestial",
@@ -2615,13 +3910,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "天空の傲",
     "ko": "천공의 긍지"
   },
-  "12502": {
-    "es": "Lápida del Lobo",
-    "en": "Wolf's Gravestone",
-    "pt": "Túmulo do Lobo",
-    "ja": "狼の末路",
-    "ko": "늑대의 말로"
-  },
   "lápida del lobo": {
     "es": "Lápida del Lobo",
     "en": "Wolf's Gravestone",
@@ -2642,13 +3930,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Túmulo do Lobo",
     "ja": "狼の末路",
     "ko": "늑대의 말로"
-  },
-  "12503": {
-    "es": "Oda de los Pinos",
-    "en": "Song of Broken Pines",
-    "pt": "Canção dos Pinhos",
-    "ja": "松韻の響く頃",
-    "ko": "송뢰가 울릴 무렵"
   },
   "oda de los pinos": {
     "es": "Oda de los Pinos",
@@ -2671,13 +3952,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "松韻の響く頃",
     "ko": "송뢰가 울릴 무렵"
   },
-  "12504": {
-    "es": "Espada de la Desidia",
-    "en": "The Unforged",
-    "pt": "Espada Áspera",
-    "ja": "無工の剣",
-    "ko": "무공의 검"
-  },
   "espada de la desidia": {
     "es": "Espada de la Desidia",
     "en": "The Unforged",
@@ -2698,13 +3972,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Espada Áspera",
     "ja": "無工の剣",
     "ko": "무공의 검"
-  },
-  "12510": {
-    "es": "Espadón Cornirrojo",
-    "en": "Redhorn Stonethresher",
-    "pt": "Chifres Vermelhos Destruidores de Pedras",
-    "ja": "赤角石塵滅砕",
-    "ko": "쇄석의 붉은 뿔"
   },
   "espadón cornirrojo": {
     "es": "Espadón Cornirrojo",
@@ -2727,13 +3994,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "赤角石塵滅砕",
     "ko": "쇄석의 붉은 뿔"
   },
-  "12511": {
-    "es": "Emblema del Mar de Juncos",
-    "en": "Beacon of the Reed Sea",
-    "pt": "Sinal dos Mares",
-    "ja": "葦海の標",
-    "ko": "갈대 바다의 등대"
-  },
   "emblema del mar de juncos": {
     "es": "Emblema del Mar de Juncos",
     "en": "Beacon of the Reed Sea",
@@ -2754,13 +4014,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Sinal dos Mares",
     "ja": "葦海の標",
     "ko": "갈대 바다의 등대"
-  },
-  "12512": {
-    "es": "Sentenciadora",
-    "en": "Verdict",
-    "pt": "Veredito",
-    "ja": "裁断",
-    "ko": "판정"
   },
   "sentenciadora": {
     "es": "Sentenciadora",
@@ -2783,13 +4036,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "裁断",
     "ko": "판정"
   },
-  "12513": {
-    "es": "Colmillo del Rey de la Montaña",
-    "en": "Fang of the Mountain King",
-    "pt": "Presa do Rei da Montanha",
-    "ja": "山の王の長牙",
-    "ko": "산왕의 엄니"
-  },
   "colmillo del rey de la montaña": {
     "es": "Colmillo del Rey de la Montaña",
     "en": "Fang of the Mountain King",
@@ -2810,13 +4056,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Presa do Rei da Montanha",
     "ja": "山の王の長牙",
     "ko": "산왕의 엄니"
-  },
-  "12514": {
-    "es": "Mil Soles Abrasadores",
-    "en": "A Thousand Blazing Suns",
-    "pt": "Mil Sóis Ardentes",
-    "ja": "千烈の日輪",
-    "ko": "타오르는 천 개의 태양"
   },
   "mil soles abrasadores": {
     "es": "Mil Soles Abrasadores",
@@ -2839,13 +4078,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "千烈の日輪",
     "ko": "타오르는 천 개의 태양"
   },
-  "12515": {
-    "es": "Cantar de Gesta del Lobo",
-    "en": "Gest of the Mighty Wolf",
-    "pt": "Balada do Poderoso Lobo",
-    "ja": "狼の武勲詩",
-    "ko": "늑대의 무용담"
-  },
   "cantar de gesta del lobo": {
     "es": "Cantar de Gesta del Lobo",
     "en": "Gest of the Mighty Wolf",
@@ -2866,13 +4098,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Balada do Poderoso Lobo",
     "ja": "狼の武勲詩",
     "ko": "늑대의 무용담"
-  },
-  "12516": {
-    "es": "Llave de la Trascendencia",
-    "en": "A Teaspoon of Transcendence",
-    "pt": "Chave da Transcendência",
-    "ja": "超越の鍵",
-    "ko": "초월의 열쇠"
   },
   "llave de la trascendencia": {
     "es": "Llave de la Trascendencia",
@@ -2895,13 +4120,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "超越の鍵",
     "ko": "초월의 열쇠"
   },
-  "13101": {
-    "es": "Lanza del Principiante",
-    "en": "Beginner's Protector",
-    "pt": "Protetor de Iniciante",
-    "ja": "新米の長槍",
-    "ko": "초보자의 장창"
-  },
   "lanza del principiante": {
     "es": "Lanza del Principiante",
     "en": "Beginner's Protector",
@@ -2922,13 +4140,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Protetor de Iniciante",
     "ja": "新米の長槍",
     "ko": "초보자의 장창"
-  },
-  "13201": {
-    "es": "Punta de Hierro",
-    "en": "Iron Point",
-    "pt": "Ponta de Ferro",
-    "ja": "鉄尖槍",
-    "ko": "철촉창"
   },
   "punta de hierro": {
     "es": "Punta de Hierro",
@@ -2951,13 +4162,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "鉄尖槍",
     "ko": "철촉창"
   },
-  "13301": {
-    "es": "Borla Blanca",
-    "en": "White Tassel",
-    "pt": "Borla Branca",
-    "ja": "白纓槍",
-    "ko": "백술창"
-  },
   "borla blanca": {
     "es": "Borla Blanca",
     "en": "White Tassel",
@@ -2979,13 +4183,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "白纓槍",
     "ko": "백술창"
   },
-  "13302": {
-    "es": "Alabarda",
-    "en": "Halberd",
-    "pt": "Alabarda",
-    "ja": "鉾槍",
-    "ko": "미늘창"
-  },
   "alabarda": {
     "es": "Alabarda",
     "en": "Halberd",
@@ -2999,13 +4196,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Alabarda",
     "ja": "鉾槍",
     "ko": "미늘창"
-  },
-  "13303": {
-    "es": "Borla Negra",
-    "en": "Black Tassel",
-    "pt": "Borla Preta",
-    "ja": "黒纓槍",
-    "ko": "흑술창"
   },
   "borla negra": {
     "es": "Borla Negra",
@@ -3028,13 +4218,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "黒纓槍",
     "ko": "흑술창"
   },
-  "13401": {
-    "es": "Perdición del Dragón",
-    "en": "Dragon's Bane",
-    "pt": "Perdição do Dragão",
-    "ja": "匣中滅龍",
-    "ko": "용학살창"
-  },
   "perdición del dragón": {
     "es": "Perdición del Dragón",
     "en": "Dragon's Bane",
@@ -3055,13 +4238,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Perdição do Dragão",
     "ja": "匣中滅龍",
     "ko": "용학살창"
-  },
-  "13402": {
-    "es": "Prototipo Estelar",
-    "en": "Prototype Starglitter",
-    "pt": "Protótipo Estelar",
-    "ja": "星鎌·試作",
-    "ko": "별의 낫 프로토타입"
   },
   "prototipo estelar": {
     "es": "Prototipo Estelar",
@@ -3084,13 +4260,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "星鎌·試作",
     "ko": "별의 낫 프로토타입"
   },
-  "13403": {
-    "es": "Pica Luna Creciente",
-    "en": "Crescent Pike",
-    "pt": "Pique Crescente",
-    "ja": "流月の針",
-    "ko": "유월창"
-  },
   "pica luna creciente": {
     "es": "Pica Luna Creciente",
     "en": "Crescent Pike",
@@ -3111,13 +4280,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Pique Crescente",
     "ja": "流月の針",
     "ko": "유월창"
-  },
-  "13404": {
-    "es": "Lanza del Peñasco Oscuro",
-    "en": "Blackcliff Pole",
-    "pt": "Lança do Penhasco Obscuro",
-    "ja": "黒岩の突槍",
-    "ko": "흑암창"
   },
   "lanza del peñasco oscuro": {
     "es": "Lanza del Peñasco Oscuro",
@@ -3140,13 +4302,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "黒岩の突槍",
     "ko": "흑암창"
   },
-  "13405": {
-    "es": "Lanza del Duelo",
-    "en": "Deathmatch",
-    "pt": "Lança do Duelo",
-    "ja": "死闘の槍",
-    "ko": "결투의 창"
-  },
   "lanza del duelo": {
     "es": "Lanza del Duelo",
     "en": "Deathmatch",
@@ -3167,13 +4322,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Lança do Duelo",
     "ja": "死闘の槍",
     "ko": "결투의 창"
-  },
-  "13406": {
-    "es": "Lanza Lítica",
-    "en": "Lithic Spear",
-    "pt": "Lança de Millelith",
-    "ja": "千岩長槍",
-    "ko": "천암장창"
   },
   "lanza lítica": {
     "es": "Lanza Lítica",
@@ -3196,13 +4344,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "千岩長槍",
     "ko": "천암장창"
   },
-  "13407": {
-    "es": "Lanza de Favonius",
-    "en": "Favonius Lance",
-    "pt": "Lança de Favonius",
-    "ja": "西風長槍",
-    "ko": "페보니우스 장창"
-  },
   "lanza de favonius": {
     "es": "Lanza de Favonius",
     "en": "Favonius Lance",
@@ -3223,13 +4364,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Lança de Favonius",
     "ja": "西風長槍",
     "ko": "페보니우스 장창"
-  },
-  "13408": {
-    "es": "Lanza de Caza Real",
-    "en": "Royal Spear",
-    "pt": "Lança de Caça Real",
-    "ja": "旧貴族猟槍",
-    "ko": "왕실의 장창"
   },
   "lanza de caza real": {
     "es": "Lanza de Caza Real",
@@ -3252,13 +4386,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "旧貴族猟槍",
     "ko": "왕실의 장창"
   },
-  "13409": {
-    "es": "Lanza de Espinadragón",
-    "en": "Dragonspine Spear",
-    "pt": "Lança da Espinha do Dragão",
-    "ja": "ドラゴンスピア",
-    "ko": "용의 척추"
-  },
   "lanza de espinadragón": {
     "es": "Lanza de Espinadragón",
     "en": "Dragonspine Spear",
@@ -3279,13 +4406,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Lança da Espinha do Dragão",
     "ja": "ドラゴンスピア",
     "ko": "용의 척추"
-  },
-  "13414": {
-    "es": "Cruz de Kitain",
-    "en": "Kitain Cross Spear",
-    "pt": "Lança Cruzada de Kitain",
-    "ja": "喜多院十文字槍",
-    "ko": "키타인 십자창"
   },
   "cruz de kitain": {
     "es": "Cruz de Kitain",
@@ -3308,13 +4428,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "喜多院十文字槍",
     "ko": "키타인 십자창"
   },
-  "13415": {
-    "es": "La Captura",
-    "en": "\"The Catch\"",
-    "pt": "\"A Fisgada\"",
-    "ja": "「漁獲」",
-    "ko": "「어획」"
-  },
   "la captura": {
     "es": "La Captura",
     "en": "\"The Catch\"",
@@ -3335,13 +4448,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "\"A Fisgada\"",
     "ja": "「漁獲」",
     "ko": "「어획」"
-  },
-  "13416": {
-    "es": "Aleta Cortaolas",
-    "en": "Wavebreaker's Fin",
-    "pt": "Barbatana do Quebra Ondas",
-    "ja": "斬波のひれ長",
-    "ko": "파도 베는 지느러미"
   },
   "aleta cortaolas": {
     "es": "Aleta Cortaolas",
@@ -3364,13 +4470,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "斬波のひれ長",
     "ko": "파도 베는 지느러미"
   },
-  "13417": {
-    "es": "Perforalunas",
-    "en": "Moonpiercer",
-    "pt": "Perfurador de Luas",
-    "ja": "ムーンピアサー",
-    "ko": "달을 꿰뚫는 화살"
-  },
   "perforalunas": {
     "es": "Perforalunas",
     "en": "Moonpiercer",
@@ -3391,13 +4490,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Perfurador de Luas",
     "ja": "ムーンピアサー",
     "ko": "달을 꿰뚫는 화살"
-  },
-  "13419": {
-    "es": "Alabarda del Viento Epistolar",
-    "en": "Missive Windspear",
-    "pt": "Lâmina do Vento Mensageiro",
-    "ja": "風信の矛",
-    "ko": "날카로운 바람의 서신"
   },
   "alabarda del viento epistolar": {
     "es": "Alabarda del Viento Epistolar",
@@ -3420,13 +4512,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "風信の矛",
     "ko": "날카로운 바람의 서신"
   },
-  "13424": {
-    "es": "Balada de los Fiordos",
-    "en": "Ballad of the Fjords",
-    "pt": "Canção do Fiorde",
-    "ja": "フィヨルドの歌",
-    "ko": "협만의 노래"
-  },
   "balada de los fiordos": {
     "es": "Balada de los Fiordos",
     "en": "Ballad of the Fjords",
@@ -3447,13 +4532,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Canção do Fiorde",
     "ja": "フィヨルドの歌",
     "ko": "협만의 노래"
-  },
-  "13425": {
-    "es": "Retribución de la Justicia",
-    "en": "Rightful Reward",
-    "pt": "Justa Recompensa",
-    "ja": "正義の報酬",
-    "ko": "공의의 보상"
   },
   "retribución de la justicia": {
     "es": "Retribución de la Justicia",
@@ -3476,13 +4554,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "正義の報酬",
     "ko": "공의의 보상"
   },
-  "13426": {
-    "es": "Discusión de los Sabios del Desierto",
-    "en": "Dialogues of the Desert Sages",
-    "pt": "Conversas dos Sábios do Deserto",
-    "ja": "砂中の賢者達の問答",
-    "ko": "위대한 사막 현자의 대답"
-  },
   "discusión de los sabios del desierto": {
     "es": "Discusión de los Sabios del Desierto",
     "en": "Dialogues of the Desert Sages",
@@ -3503,13 +4574,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Conversas dos Sábios do Deserto",
     "ja": "砂中の賢者達の問答",
     "ko": "위대한 사막 현자의 대답"
-  },
-  "13427": {
-    "es": "Taladradora de Prospección",
-    "en": "Prospector's Drill",
-    "pt": "Broca do Prospector",
-    "ja": "プロスペクタードリル",
-    "ko": "탐사용 드릴"
   },
   "taladradora de prospección": {
     "es": "Taladradora de Prospección",
@@ -3532,13 +4596,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "プロスペクタードリル",
     "ko": "탐사용 드릴"
   },
-  "13430": {
-    "es": "Púa Sustentamontañas",
-    "en": "Mountain-Bracing Bolt",
-    "pt": "Prego Esmagador de Montanhas",
-    "ja": "鎮山の釘",
-    "ko": "산을 고정하는 못"
-  },
   "púa sustentamontañas": {
     "es": "Púa Sustentamontañas",
     "en": "Mountain-Bracing Bolt",
@@ -3559,13 +4616,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Prego Esmagador de Montanhas",
     "ja": "鎮山の釘",
     "ko": "산을 고정하는 못"
-  },
-  "13431": {
-    "es": "Estela Iridiscente",
-    "en": "Footprint of the Rainbow",
-    "pt": "Trilha do Arco-Íris",
-    "ja": "虹の行方",
-    "ko": "무지개의 행적"
   },
   "estela iridiscente": {
     "es": "Estela Iridiscente",
@@ -3588,13 +4638,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "虹の行方",
     "ko": "무지개의 행적"
   },
-  "13432": {
-    "es": "Charla en el Pabellón",
-    "en": "Tamayuratei no Ohanashi",
-    "pt": "Fofocas Breves do Pavilhão",
-    "ja": "玉響停の御噺",
-    "ko": "쉼터의 이야기꾼"
-  },
   "charla en el pabellón": {
     "es": "Charla en el Pabellón",
     "en": "Tamayuratei no Ohanashi",
@@ -3615,13 +4658,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Fofocas Breves do Pavilhão",
     "ja": "玉響停の御噺",
     "ko": "쉼터의 이야기꾼"
-  },
-  "13433": {
-    "es": "Azada Excavatesoros",
-    "en": "Prospector's Shovel",
-    "pt": "Pá do Escavador",
-    "ja": "金掘りのシャベル",
-    "ko": "채굴의 삽"
   },
   "azada excavatesoros": {
     "es": "Azada Excavatesoros",
@@ -3644,13 +4680,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "金掘りのシャベル",
     "ko": "채굴의 삽"
   },
-  "13434": {
-    "es": "Báculo Rutilante de la Sacerdotisa",
-    "en": "Sacrificer's Staff",
-    "pt": "Cajado do Sacrificador",
-    "ja": "聖祭者の輝杖",
-    "ko": "신성한 제사의 지팡이"
-  },
   "báculo rutilante de la sacerdotisa": {
     "es": "Báculo Rutilante de la Sacerdotisa",
     "en": "Sacrificer's Staff",
@@ -3671,13 +4700,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Cajado do Sacrificador",
     "ja": "聖祭者の輝杖",
     "ko": "신성한 제사의 지팡이"
-  },
-  "13435": {
-    "es": "Hálito Glacial",
-    "en": "Frostbreath",
-    "pt": "Sopro Gélido",
-    "ja": "氷の吐息",
-    "ko": "서리 숨결"
   },
   "hálito glacial": {
     "es": "Hálito Glacial",
@@ -3700,13 +4722,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "氷の吐息",
     "ko": "서리 숨결"
   },
-  "13436": {
-    "es": "Balada de la Custodia",
-    "en": "Song of the Vigil",
-    "pt": "Canção da Vigília",
-    "ja": "遠望の歌",
-    "ko": "수호의 노래"
-  },
   "balada de la custodia": {
     "es": "Balada de la Custodia",
     "en": "Song of the Vigil",
@@ -3728,13 +4743,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "遠望の歌",
     "ko": "수호의 노래"
   },
-  "13501": {
-    "es": "Báculo de Homa",
-    "en": "Staff of Homa",
-    "pt": "Báculo de Homa",
-    "ja": "護摩の杖",
-    "ko": "호마의 지팡이"
-  },
   "báculo de homa": {
     "es": "Báculo de Homa",
     "en": "Staff of Homa",
@@ -3748,13 +4756,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Báculo de Homa",
     "ja": "護摩の杖",
     "ko": "호마의 지팡이"
-  },
-  "13502": {
-    "es": "Púa Celestial",
-    "en": "Skyward Spine",
-    "pt": "Espinha Celestial",
-    "ja": "天空の脊",
-    "ko": "천공의 마루"
   },
   "púa celestial": {
     "es": "Púa Celestial",
@@ -3777,13 +4778,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "天空の脊",
     "ko": "천공의 마루"
   },
-  "13504": {
-    "es": "Lanza Perforanubes",
-    "en": "Vortex Vanquisher",
-    "pt": "Perfuradora Prismática",
-    "ja": "破天の槍",
-    "ko": "관홍의 창"
-  },
   "lanza perforanubes": {
     "es": "Lanza Perforanubes",
     "en": "Vortex Vanquisher",
@@ -3804,13 +4798,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Perfuradora Prismática",
     "ja": "破天の槍",
     "ko": "관홍의 창"
-  },
-  "13505": {
-    "es": "Halcón de Jade",
-    "en": "Primordial Jade Winged-Spear",
-    "pt": "Lança de Jade Primitiva",
-    "ja": "和璞鳶",
-    "ko": "화박연"
   },
   "halcón de jade": {
     "es": "Halcón de Jade",
@@ -3833,13 +4820,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "和璞鳶",
     "ko": "화박연"
   },
-  "13507": {
-    "es": "Pacificadora del Desastre",
-    "en": "Calamity Queller",
-    "pt": "Subjugadora de Calamidades",
-    "ja": "息災",
-    "ko": "식재"
-  },
   "pacificadora del desastre": {
     "es": "Pacificadora del Desastre",
     "en": "Calamity Queller",
@@ -3860,13 +4840,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Subjugadora de Calamidades",
     "ja": "息災",
     "ko": "식재"
-  },
-  "13509": {
-    "es": "Luz del Segador",
-    "en": "Engulfing Lightning",
-    "pt": "Luz do Cortador de Grama",
-    "ja": "草薙の稲光",
-    "ko": "예초의 번개"
   },
   "luz del segador": {
     "es": "Luz del Segador",
@@ -3889,13 +4862,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "草薙の稲光",
     "ko": "예초의 번개"
   },
-  "13511": {
-    "es": "Báculo de las Arenas Escarlatas",
-    "en": "Staff of the Scarlet Sands",
-    "pt": "Báculo das Areias Escarlates",
-    "ja": "赤砂の杖",
-    "ko": "적색 사막의 지팡이"
-  },
   "báculo de las arenas escarlatas": {
     "es": "Báculo de las Arenas Escarlatas",
     "en": "Staff of the Scarlet Sands",
@@ -3916,13 +4882,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Báculo das Areias Escarlates",
     "ja": "赤砂の杖",
     "ko": "적색 사막의 지팡이"
-  },
-  "13512": {
-    "es": "Semblante de la Luna Carmesí",
-    "en": "Crimson Moon's Semblance",
-    "pt": "Semblante da Lua Carmesim",
-    "ja": "赤月のシルエット",
-    "ko": "붉은 달의 형상"
   },
   "semblante de la luna carmesí": {
     "es": "Semblante de la Luna Carmesí",
@@ -3945,13 +4904,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "赤月のシルエット",
     "ko": "붉은 달의 형상"
   },
-  "13513": {
-    "es": "Elegía Lumidulce",
-    "en": "Lumidouce Elegy",
-    "pt": "Elegia Lumidouce",
-    "ja": "ルミドゥースの挽歌",
-    "ko": "등방울꽃의 애가"
-  },
   "elegía lumidulce": {
     "es": "Elegía Lumidulce",
     "en": "Lumidouce Elegy",
@@ -3973,13 +4925,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "ルミドゥースの挽歌",
     "ko": "등방울꽃의 애가"
   },
-  "13514": {
-    "es": "Sinfonista de Aromas",
-    "en": "Symphonist of Scents",
-    "pt": "Sinfonista de Aromas",
-    "ja": "香りのシンフォニスト",
-    "ko": "맛의 지휘자"
-  },
   "sinfonista de aromas": {
     "es": "Sinfonista de Aromas",
     "en": "Symphonist of Scents",
@@ -3993,13 +4938,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Sinfonista de Aromas",
     "ja": "香りのシンフォニスト",
     "ko": "맛의 지휘자"
-  },
-  "13515": {
-    "es": "Halo Fracturado",
-    "en": "Fractured Halo",
-    "pt": "Resplendor Fragmentado",
-    "ja": "砕け散る光輪",
-    "ko": "파멸의 빛고리"
   },
   "halo fracturado": {
     "es": "Halo Fracturado",
@@ -4022,13 +4960,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "砕け散る光輪",
     "ko": "파멸의 빛고리"
   },
-  "13516": {
-    "es": "Ruinas Ensangrentadas",
-    "en": "Bloodsoaked Ruins",
-    "pt": "Ruínas Ensanguentadas",
-    "ja": "血染めの荒れ地",
-    "ko": "피로 물든 성"
-  },
   "ruinas ensangrentadas": {
     "es": "Ruinas Ensangrentadas",
     "en": "Bloodsoaked Ruins",
@@ -4049,13 +4980,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Ruínas Ensanguentadas",
     "ja": "血染めの荒れ地",
     "ko": "피로 물든 성"
-  },
-  "13517": {
-    "es": "Desastre y Arrepentimiento",
-    "en": "Disaster and Remorse",
-    "pt": "Desastre e Remorso",
-    "ja": "災憾",
-    "ko": "재앙"
   },
   "desastre y arrepentimiento": {
     "es": "Desastre y Arrepentimiento",
@@ -4078,13 +5002,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "災憾",
     "ko": "재앙"
   },
-  "14101": {
-    "es": "Apuntes del Aprendiz",
-    "en": "Apprentice's Notes",
-    "pt": "Anotações do Aprendiz",
-    "ja": "生徒ノート",
-    "ko": "학도의 노트"
-  },
   "apuntes del aprendiz": {
     "es": "Apuntes del Aprendiz",
     "en": "Apprentice's Notes",
@@ -4105,13 +5022,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Anotações do Aprendiz",
     "ja": "生徒ノート",
     "ko": "학도의 노트"
-  },
-  "14201": {
-    "es": "Grimorio de Bolsillo",
-    "en": "Pocket Grimoire",
-    "pt": "Grimório de Bolso",
-    "ja": "ポケット魔導書",
-    "ko": "포켓 주술서"
   },
   "grimorio de bolsillo": {
     "es": "Grimorio de Bolsillo",
@@ -4134,13 +5044,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "ポケット魔導書",
     "ko": "포켓 주술서"
   },
-  "14301": {
-    "es": "Guía Mágica",
-    "en": "Magic Guide",
-    "pt": "Guia de Magia",
-    "ja": "魔導緒論",
-    "ko": "마도 서론"
-  },
   "guía mágica": {
     "es": "Guía Mágica",
     "en": "Magic Guide",
@@ -4161,13 +5064,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Guia de Magia",
     "ja": "魔導緒論",
     "ko": "마도 서론"
-  },
-  "14302": {
-    "es": "Cuentos de Cazadores de Dragones",
-    "en": "Thrilling Tales of Dragon Slayers",
-    "pt": "Histórias Extraordinárias de Caçadores de Dragões",
-    "ja": "龍殺しの英傑譚",
-    "ko": "드래곤 슬레이어 영웅담"
   },
   "cuentos de cazadores de dragones": {
     "es": "Cuentos de Cazadores de Dragones",
@@ -4190,13 +5086,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "龍殺しの英傑譚",
     "ko": "드래곤 슬레이어 영웅담"
   },
-  "14303": {
-    "es": "Historias de Otros Mundos",
-    "en": "Otherworldly Story",
-    "pt": "Histórias de Outros Mundos",
-    "ja": "異世界旅行記",
-    "ko": "이세계 여행기"
-  },
   "historias de otros mundos": {
     "es": "Historias de Otros Mundos",
     "en": "Otherworldly Story",
@@ -4217,13 +5106,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Histórias de Outros Mundos",
     "ja": "異世界旅行記",
     "ko": "이세계 여행기"
-  },
-  "14304": {
-    "es": "Orbe Esmeralda",
-    "en": "Emerald Orb",
-    "pt": "Orbe de Esmeralda",
-    "ja": "翡玉法珠",
-    "ko": "비취 오브"
   },
   "orbe esmeralda": {
     "es": "Orbe Esmeralda",
@@ -4246,13 +5128,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "翡玉法珠",
     "ko": "비취 오브"
   },
-  "14305": {
-    "es": "Nefrita Gemela",
-    "en": "Twin Nephrite",
-    "pt": "Nefrita Gêmea",
-    "ja": "特級の宝玉",
-    "ko": "1급 보옥"
-  },
   "nefrita gemela": {
     "es": "Nefrita Gemela",
     "en": "Twin Nephrite",
@@ -4273,13 +5148,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Nefrita Gêmea",
     "ja": "特級の宝玉",
     "ko": "1급 보옥"
-  },
-  "14401": {
-    "es": "Códice de Favonius",
-    "en": "Favonius Codex",
-    "pt": "Codex de Favonius",
-    "ja": "西風秘典",
-    "ko": "페보니우스 비전"
   },
   "códice de favonius": {
     "es": "Códice de Favonius",
@@ -4302,13 +5170,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "西風秘典",
     "ko": "페보니우스 비전"
   },
-  "14402": {
-    "es": "Sinfonía de los Merodeadores",
-    "en": "The Widsith",
-    "pt": "Sinfonia dos Indolentes",
-    "ja": "流浪楽章",
-    "ko": "음유시인의 악장"
-  },
   "sinfonía de los merodeadores": {
     "es": "Sinfonía de los Merodeadores",
     "en": "The Widsith",
@@ -4329,13 +5190,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Sinfonia dos Indolentes",
     "ja": "流浪楽章",
     "ko": "음유시인의 악장"
-  },
-  "14403": {
-    "es": "Memorias de Sacrificios",
-    "en": "Sacrificial Fragments",
-    "pt": "Memórias de Sacrifício",
-    "ja": "祭礼の断片",
-    "ko": "제례의 악장"
   },
   "memorias de sacrificios": {
     "es": "Memorias de Sacrificios",
@@ -4358,13 +5212,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "祭礼の断片",
     "ko": "제례의 악장"
   },
-  "14404": {
-    "es": "Grimorio Real",
-    "en": "Royal Grimoire",
-    "pt": "Grimório Real",
-    "ja": "旧貴族秘法録",
-    "ko": "왕실의 비전록"
-  },
   "grimorio real": {
     "es": "Grimorio Real",
     "en": "Royal Grimoire",
@@ -4385,13 +5232,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Grimório Real",
     "ja": "旧貴族秘法録",
     "ko": "왕실의 비전록"
-  },
-  "14405": {
-    "es": "Perla Solar",
-    "en": "Solar Pearl",
-    "pt": "Pérola Solar",
-    "ja": "匣中日月",
-    "ko": "일월의 정수"
   },
   "perla solar": {
     "es": "Perla Solar",
@@ -4414,13 +5254,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "匣中日月",
     "ko": "일월의 정수"
   },
-  "14406": {
-    "es": "Prototipo Ámbar",
-    "en": "Prototype Amber",
-    "pt": "Protótipo Âmbar",
-    "ja": "金珀·試作",
-    "ko": "황금 호박 프로토타입"
-  },
   "prototipo ámbar": {
     "es": "Prototipo Ámbar",
     "en": "Prototype Amber",
@@ -4442,13 +5275,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "金珀·試作",
     "ko": "황금 호박 프로토타입"
   },
-  "14407": {
-    "es": "Carta Náutica",
-    "en": "Mappa Mare",
-    "pt": "Mappa Mare",
-    "ja": "万国諸海の図譜",
-    "ko": "만국 항해용해도"
-  },
   "carta náutica": {
     "es": "Carta Náutica",
     "en": "Mappa Mare",
@@ -4462,13 +5288,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Mappa Mare",
     "ja": "万国諸海の図譜",
     "ko": "만국 항해용해도"
-  },
-  "14408": {
-    "es": "Ágata del Peñasco Oscuro",
-    "en": "Blackcliff Agate",
-    "pt": "Ágata do Penhasco Obscuro",
-    "ja": "黒岩の緋玉",
-    "ko": "흑암 홍옥"
   },
   "ágata del peñasco oscuro": {
     "es": "Ágata del Peñasco Oscuro",
@@ -4491,13 +5310,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "黒岩の緋玉",
     "ko": "흑암 홍옥"
   },
-  "14409": {
-    "es": "Ojo de la Perspicacia",
-    "en": "Eye of Perception",
-    "pt": "Olho da Percepção",
-    "ja": "昭心",
-    "ko": "소심"
-  },
   "ojo de la perspicacia": {
     "es": "Ojo de la Perspicacia",
     "en": "Eye of Perception",
@@ -4518,13 +5330,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Olho da Percepção",
     "ja": "昭心",
     "ko": "소심"
-  },
-  "14410": {
-    "es": "Vino y Poesía",
-    "en": "Wine and Song",
-    "pt": "Vinho e Música",
-    "ja": "ダークアレイの酒と詩",
-    "ko": "뒷골목의 술과 시"
   },
   "vino y poesía": {
     "es": "Vino y Poesía",
@@ -4547,13 +5352,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "ダークアレイの酒と詩",
     "ko": "뒷골목의 술과 시"
   },
-  "14412": {
-    "es": "Frío Eterno",
-    "en": "Frostbearer",
-    "pt": "Fruto do Sabugueiro",
-    "ja": "冬忍びの実",
-    "ko": "인동의 열매"
-  },
   "frío eterno": {
     "es": "Frío Eterno",
     "en": "Frostbearer",
@@ -4574,13 +5372,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Fruto do Sabugueiro",
     "ja": "冬忍びの実",
     "ko": "인동의 열매"
-  },
-  "14413": {
-    "es": "Cuentos de Dodoco",
-    "en": "Dodoco Tales",
-    "pt": "Contos de Dodoco",
-    "ja": "ドドコの物語",
-    "ko": "도도코 이야기집"
   },
   "cuentos de dodoco": {
     "es": "Cuentos de Dodoco",
@@ -4603,13 +5394,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "ドドコの物語",
     "ko": "도도코 이야기집"
   },
-  "14414": {
-    "es": "Anillo de Hakushin",
-    "en": "Hakushin Ring",
-    "pt": "Anel de Hakushin",
-    "ja": "白辰の輪",
-    "ko": "하쿠신의 고리"
-  },
   "anillo de hakushin": {
     "es": "Anillo de Hakushin",
     "en": "Hakushin Ring",
@@ -4630,13 +5414,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Anel de Hakushin",
     "ja": "白辰の輪",
     "ko": "하쿠신의 고리"
-  },
-  "14415": {
-    "es": "Ojo del Juramento",
-    "en": "Oathsworn Eye",
-    "pt": "Olho do Juramento",
-    "ja": "誓いの明瞳",
-    "ko": "맹세의 눈동자"
   },
   "ojo del juramento": {
     "es": "Ojo del Juramento",
@@ -4659,13 +5436,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "誓いの明瞳",
     "ko": "맹세의 눈동자"
   },
-  "14416": {
-    "es": "Estrella Errabunda",
-    "en": "Wandering Evenstar",
-    "pt": "Estrela Itinerante",
-    "ja": "彷徨える星",
-    "ko": "방랑하는 저녁별"
-  },
   "estrella errabunda": {
     "es": "Estrella Errabunda",
     "en": "Wandering Evenstar",
@@ -4686,13 +5456,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Estrela Itinerante",
     "ja": "彷徨える星",
     "ko": "방랑하는 저녁별"
-  },
-  "14417": {
-    "es": "Fruto de la Culminación",
-    "en": "Fruit of Fulfillment",
-    "pt": "Fruto da Abundância",
-    "ja": "満悦の実",
-    "ko": "충만의 열매"
   },
   "fruto de la culminación": {
     "es": "Fruto de la Culminación",
@@ -4715,13 +5478,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "満悦の実",
     "ko": "충만의 열매"
   },
-  "14424": {
-    "es": "Jade Sacrificial",
-    "en": "Sacrificial Jade",
-    "pt": "Sacrifício de Jade",
-    "ja": "古祠の瓏",
-    "ko": "제사의 옥"
-  },
   "jade sacrificial": {
     "es": "Jade Sacrificial",
     "en": "Sacrificial Jade",
@@ -4742,13 +5498,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Sacrifício de Jade",
     "ja": "古祠の瓏",
     "ko": "제사의 옥"
-  },
-  "14425": {
-    "es": "Fluencia Impoluta",
-    "en": "Flowing Purity",
-    "pt": "Fluxo da Pureza",
-    "ja": "純水流華",
-    "ko": "순수한 달빛 물결"
   },
   "fluencia impoluta": {
     "es": "Fluencia Impoluta",
@@ -4771,13 +5520,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "純水流華",
     "ko": "순수한 달빛 물결"
   },
-  "14426": {
-    "es": "Oda al Vasto Azul",
-    "en": "Ballad of the Boundless Blue",
-    "pt": "Canção do Vasto Azul",
-    "ja": "果てなき紺碧の唄",
-    "ko": "끝없는 쪽빛의 노래"
-  },
   "oda al vasto azul": {
     "es": "Oda al Vasto Azul",
     "en": "Ballad of the Boundless Blue",
@@ -4798,13 +5540,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Canção do Vasto Azul",
     "ja": "果てなき紺碧の唄",
     "ko": "끝없는 쪽빛의 노래"
-  },
-  "14427": {
-    "es": "Cuerno Veteazulado",
-    "en": "Ash-Graven Drinking Horn",
-    "pt": "Cálice de Chifre Cinza Escarlate",
-    "ja": "蒼紋の角杯",
-    "ko": "푸른 문양 뿔잔"
   },
   "cuerno veteazulado": {
     "es": "Cuerno Veteazulado",
@@ -4827,13 +5562,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "蒼紋の角杯",
     "ko": "푸른 문양 뿔잔"
   },
-  "14430": {
-    "es": "Volver de las Olas",
-    "en": "Waveriding Whirl",
-    "pt": "Redemoinho das Ondas",
-    "ja": "波乗りの旋回",
-    "ko": "돌아오는 파도"
-  },
   "volver de las olas": {
     "es": "Volver de las Olas",
     "en": "Waveriding Whirl",
@@ -4854,13 +5582,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Redemoinho das Ondas",
     "ja": "波乗りの旋回",
     "ko": "돌아오는 파도"
-  },
-  "14431": {
-    "es": "Anillo del Yaxché",
-    "en": "Ring of Yaxche",
-    "pt": "Anel de Yaxche",
-    "ja": "ヤシュチェの環",
-    "ko": "약스체의 고리"
   },
   "anillo del yaxché": {
     "es": "Anillo del Yaxché",
@@ -4883,13 +5604,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "ヤシュチェの環",
     "ko": "약스체의 고리"
   },
-  "14432": {
-    "es": "Laúd de la Luz Celestial",
-    "en": "Etherlight Spindlelute",
-    "pt": "Lira do Tecedor da Luz",
-    "ja": "天光のリュート",
-    "ko": "금빛 류트"
-  },
   "laúd de la luz celestial": {
     "es": "Laúd de la Luz Celestial",
     "en": "Etherlight Spindlelute",
@@ -4910,13 +5624,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Lira do Tecedor da Luz",
     "ja": "天光のリュート",
     "ko": "금빛 류트"
-  },
-  "14433": {
-    "es": "Lámpara Medulaoscura",
-    "en": "Blackmarrow Lantern",
-    "pt": "Lanterna do Tutano Preto",
-    "ja": "烏髄の孤灯",
-    "ko": "검은 골수의 등불"
   },
   "lámpara medulaoscura": {
     "es": "Lámpara Medulaoscura",
@@ -4939,13 +5646,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "烏髄の孤灯",
     "ko": "검은 골수의 등불"
   },
-  "14434": {
-    "es": "Escarcha del Albor",
-    "en": "Dawning Frost",
-    "pt": "Estrela Gelada",
-    "ja": "霜辰",
-    "ko": "서릿빛 새벽"
-  },
   "escarcha del albor": {
     "es": "Escarcha del Albor",
     "en": "Dawning Frost",
@@ -4966,13 +5666,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Estrela Gelada",
     "ja": "霜辰",
     "ko": "서릿빛 새벽"
-  },
-  "14435": {
-    "es": "Choque de Reyes",
-    "en": "Clash of Kings",
-    "pt": "Duelo de Reis",
-    "ja": "諸王の対局",
-    "ko": "왕들의 대국"
   },
   "choque de reyes": {
     "es": "Choque de Reyes",
@@ -4995,13 +5688,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "諸王の対局",
     "ko": "왕들의 대국"
   },
-  "14436": {
-    "es": "Eco del Corazón",
-    "en": "Echoes of the Heart",
-    "pt": "Ecos do Coração",
-    "ja": "胸中の谺",
-    "ko": "충성의 메아리"
-  },
   "eco del corazón": {
     "es": "Eco del Corazón",
     "en": "Echoes of the Heart",
@@ -5022,13 +5708,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Ecos do Coração",
     "ja": "胸中の谺",
     "ko": "충성의 메아리"
-  },
-  "14437": {
-    "es": "Corazón del Invierno",
-    "en": "Winter's Heavy Heart",
-    "pt": "Coração Congelado",
-    "ja": "雪に沈む心",
-    "ko": "얼어붙은 심장"
   },
   "corazón del invierno": {
     "es": "Corazón del Invierno",
@@ -5051,13 +5730,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "雪に沈む心",
     "ko": "얼어붙은 심장"
   },
-  "14501": {
-    "es": "Pergamino Celestial",
-    "en": "Skyward Atlas",
-    "pt": "Atlas Celestial",
-    "ja": "天空の巻",
-    "ko": "천공의 두루마리"
-  },
   "pergamino celestial": {
     "es": "Pergamino Celestial",
     "en": "Skyward Atlas",
@@ -5078,13 +5750,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Atlas Celestial",
     "ja": "天空の巻",
     "ko": "천공의 두루마리"
-  },
-  "14502": {
-    "es": "Oración Perdida a los Vientos Sagrados",
-    "en": "Lost Prayer to the Sacred Winds",
-    "pt": "Oração Perdida aos Ventos Sagrados",
-    "ja": "四風原典",
-    "ko": "사풍 원서"
   },
   "oración perdida a los vientos sagrados": {
     "es": "Oración Perdida a los Vientos Sagrados",
@@ -5107,13 +5772,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "四風原典",
     "ko": "사풍 원서"
   },
-  "14504": {
-    "es": "Candado Terrenal",
-    "en": "Memory of Dust",
-    "pt": "Memória da Poeira",
-    "ja": "浮世の錠",
-    "ko": "속세의 자물쇠"
-  },
   "candado terrenal": {
     "es": "Candado Terrenal",
     "en": "Memory of Dust",
@@ -5134,13 +5792,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Memória da Poeira",
     "ja": "浮世の錠",
     "ko": "속세의 자물쇠"
-  },
-  "14505": {
-    "es": "Centelleo Jadecaído",
-    "en": "Jadefall's Splendor",
-    "pt": "Esplendor Índigo",
-    "ja": "碧落の瓏",
-    "ko": "벽락의 옥"
   },
   "centelleo jadecaído": {
     "es": "Centelleo Jadecaído",
@@ -5163,13 +5814,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "碧落の瓏",
     "ko": "벽락의 옥"
   },
-  "14506": {
-    "es": "Luna Inalterable",
-    "en": "Everlasting Moonglow",
-    "pt": "Fumetsu Gekka",
-    "ja": "不滅の月華",
-    "ko": "불멸의 달빛"
-  },
   "luna inalterable": {
     "es": "Luna Inalterable",
     "en": "Everlasting Moonglow",
@@ -5190,13 +5834,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Fumetsu Gekka",
     "ja": "不滅の月華",
     "ko": "불멸의 달빛"
-  },
-  "14509": {
-    "es": "Axioma de la Kagura",
-    "en": "Kagura's Verity",
-    "pt": "Prova de Kagura",
-    "ja": "神楽の真意",
-    "ko": "카구라의 진의"
   },
   "axioma de la kagura": {
     "es": "Axioma de la Kagura",
@@ -5219,13 +5856,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "神楽の真意",
     "ko": "카구라의 진의"
   },
-  "14511": {
-    "es": "Sueños de las Mil Noches",
-    "en": "A Thousand Floating Dreams",
-    "pt": "Sonhos Flutuantes das Mil Noites",
-    "ja": "千夜に浮かぶ夢",
-    "ko": "떠오르는 천일 밤의 꿈"
-  },
   "sueños de las mil noches": {
     "es": "Sueños de las Mil Noches",
     "en": "A Thousand Floating Dreams",
@@ -5246,13 +5876,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Sonhos Flutuantes das Mil Noites",
     "ja": "千夜に浮かぶ夢",
     "ko": "떠오르는 천일 밤의 꿈"
-  },
-  "14512": {
-    "es": "Reminiscencia de Tulaytulah",
-    "en": "Tulaytullah's Remembrance",
-    "pt": "Reminiscências de Tulaytullah",
-    "ja": "トゥライトゥーラの記憶",
-    "ko": "툴레이툴라의 기억"
   },
   "reminiscencia de tulaytulah": {
     "es": "Reminiscencia de Tulaytulah",
@@ -5275,13 +5898,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "トゥライトゥーラの記憶",
     "ko": "툴레이툴라의 기억"
   },
-  "14513": {
-    "es": "Supervisor Flujoáurico",
-    "en": "Cashflow Supervision",
-    "pt": "Supervisão de Caixa",
-    "ja": "凛流の監視者",
-    "ko": "현금 흐름 감독"
-  },
   "supervisor flujoáurico": {
     "es": "Supervisor Flujoáurico",
     "en": "Cashflow Supervision",
@@ -5302,13 +5918,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Supervisão de Caixa",
     "ja": "凛流の監視者",
     "ko": "현금 흐름 감독"
-  },
-  "14514": {
-    "es": "Escrituras del Fluir Sempiterno",
-    "en": "Tome of the Eternal Flow",
-    "pt": "Rito do Fluxo Eterno",
-    "ja": "久遠流転の大典",
-    "ko": "영원히 샘솟는 법전"
   },
   "escrituras del fluir sempiterno": {
     "es": "Escrituras del Fluir Sempiterno",
@@ -5331,13 +5940,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "久遠流転の大典",
     "ko": "영원히 샘솟는 법전"
   },
-  "14515": {
-    "es": "Reverberación de la Grulla",
-    "en": "Crane's Echoing Call",
-    "pt": "Chamado Ecoante da Garça",
-    "ja": "鶴鳴の余韻",
-    "ko": "학의 여음"
-  },
   "reverberación de la grulla": {
     "es": "Reverberación de la Grulla",
     "en": "Crane's Echoing Call",
@@ -5358,13 +5960,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Chamado Ecoante da Garça",
     "ja": "鶴鳴の余韻",
     "ko": "학의 여음"
-  },
-  "14516": {
-    "es": "Hora de Surfear",
-    "en": "Surf's Up",
-    "pt": "Hora do Surfe",
-    "ja": "サーフィンタイム",
-    "ko": "서핑 타임"
   },
   "hora de surfear": {
     "es": "Hora de Surfear",
@@ -5387,13 +5982,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "サーフィンタイム",
     "ko": "서핑 타임"
   },
-  "14517": {
-    "es": "Vigía de las Estrellas",
-    "en": "Starcaller's Watch",
-    "pt": "Observatório do Chamador de Estrelas",
-    "ja": "祭星者の眺め",
-    "ko": "별지기의 시선"
-  },
   "vigía de las estrellas": {
     "es": "Vigía de las Estrellas",
     "en": "Starcaller's Watch",
@@ -5414,13 +6002,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Observatório do Chamador de Estrelas",
     "ja": "祭星者の眺め",
     "ko": "별지기의 시선"
-  },
-  "14518": {
-    "es": "Hibernación Matutina de Año Nuevo",
-    "en": "Sunny Morning Sleep-In",
-    "pt": "Hibernação Matinal do Ano Novo",
-    "ja": "寝正月の初晴",
-    "ko": "나른한 새해"
   },
   "hibernación matutina de año nuevo": {
     "es": "Hibernación Matutina de Año Nuevo",
@@ -5443,13 +6024,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "寝正月の初晴",
     "ko": "나른한 새해"
   },
-  "14519": {
-    "es": "Reflexión Iridiscente",
-    "en": "Vivid Notions",
-    "pt": "Coração Resplandecente",
-    "ja": "ヴィヴィッド・ハート",
-    "ko": "빛나는 마음"
-  },
   "reflexión iridiscente": {
     "es": "Reflexión Iridiscente",
     "en": "Vivid Notions",
@@ -5470,13 +6044,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Coração Resplandecente",
     "ja": "ヴィヴィッド・ハート",
     "ko": "빛나는 마음"
-  },
-  "14520": {
-    "es": "Espejo Tejenoches",
-    "en": "Nightweaver's Looking Glass",
-    "pt": "Luneta do Tecedor da Noite",
-    "ja": "夜を紡ぐ天鏡",
-    "ko": "밤을 엮는 거울"
   },
   "espejo tejenoches": {
     "es": "Espejo Tejenoches",
@@ -5499,13 +6066,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "夜を紡ぐ天鏡",
     "ko": "밤을 엮는 거울"
   },
-  "14521": {
-    "es": "Relicario de la Verdad",
-    "en": "Reliquary of Truth",
-    "pt": "Relicário da Verdade",
-    "ja": "真言の匣",
-    "ko": "진실의 함"
-  },
   "relicario de la verdad": {
     "es": "Relicario de la Verdad",
     "en": "Reliquary of Truth",
@@ -5526,13 +6086,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Relicário da Verdade",
     "ja": "真言の匣",
     "ko": "진실의 함"
-  },
-  "14522": {
-    "es": "Nocturno tras el Velo",
-    "en": "Nocturne's Curtain Call",
-    "pt": "Cortinas Noturnas",
-    "ja": "帳の夜曲",
-    "ko": "막간의 야상곡"
   },
   "nocturno tras el velo": {
     "es": "Nocturno tras el Velo",
@@ -5555,13 +6108,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "帳の夜曲",
     "ko": "막간의 야상곡"
   },
-  "14523": {
-    "es": "Heptadas de los Ángeles",
-    "en": "Angelos' Heptades",
-    "pt": "Os Sete Éditos da Poeira e Luz",
-    "ja": "塵と光の七つの誓約",
-    "ko": "일곱빛 계시"
-  },
   "heptadas de los ángeles": {
     "es": "Heptadas de los Ángeles",
     "en": "Angelos' Heptades",
@@ -5582,13 +6128,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Os Sete Éditos da Poeira e Luz",
     "ja": "塵と光の七つの誓約",
     "ko": "일곱빛 계시"
-  },
-  "14524": {
-    "es": "Himno del Vórtice",
-    "en": "Hymn of the Maelstrom",
-    "pt": "Cântico Rodopiante",
-    "ja": "旋流の讃美歌",
-    "ko": "파도의 찬송가"
   },
   "himno del vórtice": {
     "es": "Himno del Vórtice",
@@ -5611,13 +6150,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "旋流の讃美歌",
     "ko": "파도의 찬송가"
   },
-  "15101": {
-    "es": "Arco del Cazador",
-    "en": "Hunter's Bow",
-    "pt": "Arco do Caçador",
-    "ja": "狩猟弓",
-    "ko": "사냥활"
-  },
   "arco del cazador": {
     "es": "Arco del Cazador",
     "en": "Hunter's Bow",
@@ -5638,13 +6170,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Arco do Caçador",
     "ja": "狩猟弓",
     "ko": "사냥활"
-  },
-  "15201": {
-    "es": "Arco del Cazador Estacional",
-    "en": "Seasoned Hunter's Bow",
-    "pt": "Arco do Caçador Experiente",
-    "ja": "歴戦の狩猟弓",
-    "ko": "노련의 사냥활"
   },
   "arco del cazador estacional": {
     "es": "Arco del Cazador Estacional",
@@ -5667,13 +6192,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "歴戦の狩猟弓",
     "ko": "노련의 사냥활"
   },
-  "15301": {
-    "es": "Arco de Cuervo",
-    "en": "Raven Bow",
-    "pt": "Arco de Corvo",
-    "ja": "鴉羽の弓",
-    "ko": "까마귀깃 활"
-  },
   "arco de cuervo": {
     "es": "Arco de Cuervo",
     "en": "Raven Bow",
@@ -5694,13 +6212,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Arco de Corvo",
     "ja": "鴉羽の弓",
     "ko": "까마귀깃 활"
-  },
-  "15302": {
-    "es": "Juramento del Arquero",
-    "en": "Sharpshooter's Oath",
-    "pt": "Juramento de Sagitário",
-    "ja": "シャープシューターの誓い",
-    "ko": "신궁의 서약"
   },
   "juramento del arquero": {
     "es": "Juramento del Arquero",
@@ -5723,13 +6234,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "シャープシューターの誓い",
     "ko": "신궁의 서약"
   },
-  "15303": {
-    "es": "Arco Recurvo",
-    "en": "Recurve Bow",
-    "pt": "Arco Recurvado",
-    "ja": "リカーブボウ",
-    "ko": "곡궁"
-  },
   "arco recurvo": {
     "es": "Arco Recurvo",
     "en": "Recurve Bow",
@@ -5750,13 +6254,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Arco Recurvado",
     "ja": "リカーブボウ",
     "ko": "곡궁"
-  },
-  "15304": {
-    "es": "Tirachinas",
-    "en": "Slingshot",
-    "pt": "Estilingue",
-    "ja": "弾弓",
-    "ko": "탄궁"
   },
   "tirachinas": {
     "es": "Tirachinas",
@@ -5779,13 +6276,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "弾弓",
     "ko": "탄궁"
   },
-  "15305": {
-    "es": "Mensajero",
-    "en": "Messenger",
-    "pt": "Mensageiro",
-    "ja": "文使い",
-    "ko": "전령"
-  },
   "mensajero": {
     "es": "Mensajero",
     "en": "Messenger",
@@ -5807,13 +6297,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "文使い",
     "ko": "전령"
   },
-  "15401": {
-    "es": "Arco de Favonius",
-    "en": "Favonius Warbow",
-    "pt": "Arco de Favonius",
-    "ja": "西風猟弓",
-    "ko": "페보니우스 활"
-  },
   "arco de favonius": {
     "es": "Arco de Favonius",
     "en": "Favonius Warbow",
@@ -5828,13 +6311,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "西風猟弓",
     "ko": "페보니우스 활"
   },
-  "15402": {
-    "es": "Último Acorde",
-    "en": "The Stringless",
-    "pt": "Último Acorde",
-    "ja": "絶弦",
-    "ko": "절현"
-  },
   "último acorde": {
     "es": "Último Acorde",
     "en": "The Stringless",
@@ -5848,13 +6324,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Último Acorde",
     "ja": "絶弦",
     "ko": "절현"
-  },
-  "15403": {
-    "es": "Arco del Sacrificio",
-    "en": "Sacrificial Bow",
-    "pt": "Arco do Sacrifício",
-    "ja": "祭礼の弓",
-    "ko": "제례활"
   },
   "arco del sacrificio": {
     "es": "Arco del Sacrificio",
@@ -5877,13 +6346,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "祭礼の弓",
     "ko": "제례활"
   },
-  "15404": {
-    "es": "Arco Real",
-    "en": "Royal Bow",
-    "pt": "Arco Real",
-    "ja": "旧貴族長弓",
-    "ko": "왕실의 장궁"
-  },
   "arco real": {
     "es": "Arco Real",
     "en": "Royal Bow",
@@ -5897,13 +6359,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Arco Real",
     "ja": "旧貴族長弓",
     "ko": "왕실의 장궁"
-  },
-  "15405": {
-    "es": "Herrumbre",
-    "en": "Rust",
-    "pt": "Arco Enferrujado",
-    "ja": "弓蔵",
-    "ko": "녹슨 활"
   },
   "herrumbre": {
     "es": "Herrumbre",
@@ -5926,13 +6381,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "弓蔵",
     "ko": "녹슨 활"
   },
-  "15406": {
-    "es": "Prototipo Luz de Luna",
-    "en": "Prototype Crescent",
-    "pt": "Protótipo da Luz Lunar Pálida",
-    "ja": "澹月·試作",
-    "ko": "담월 프로토타입"
-  },
   "prototipo luz de luna": {
     "es": "Prototipo Luz de Luna",
     "en": "Prototype Crescent",
@@ -5953,13 +6401,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Protótipo da Luz Lunar Pálida",
     "ja": "澹月·試作",
     "ko": "담월 프로토타입"
-  },
-  "15407": {
-    "es": "Arco Compuesto",
-    "en": "Compound Bow",
-    "pt": "Arco Composto",
-    "ja": "リングボウ",
-    "ko": "강철궁"
   },
   "arco compuesto": {
     "es": "Arco Compuesto",
@@ -5982,13 +6423,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "リングボウ",
     "ko": "강철궁"
   },
-  "15408": {
-    "es": "Arco del Peñasco Oscuro",
-    "en": "Blackcliff Warbow",
-    "pt": "Arco do Penhasco Obscuro",
-    "ja": "黒岩の戦弓",
-    "ko": "흑암 배틀 보우"
-  },
   "arco del peñasco oscuro": {
     "es": "Arco del Peñasco Oscuro",
     "en": "Blackcliff Warbow",
@@ -6009,13 +6443,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Arco do Penhasco Obscuro",
     "ja": "黒岩の戦弓",
     "ko": "흑암 배틀 보우"
-  },
-  "15409": {
-    "es": "Arco de la Cazadora Esmeralda",
-    "en": "The Viridescent Hunt",
-    "pt": "Arco Esmeralda do Caçador",
-    "ja": "蒼翠の狩猟弓",
-    "ko": "청록의 사냥활"
   },
   "arco de la cazadora esmeralda": {
     "es": "Arco de la Cazadora Esmeralda",
@@ -6038,13 +6465,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "蒼翠の狩猟弓",
     "ko": "청록의 사냥활"
   },
-  "15410": {
-    "es": "Cazador del Callejón",
-    "en": "Alley Hunter",
-    "pt": "Caçador do Beco",
-    "ja": "ダークアレイの狩人",
-    "ko": "뒷골목 사냥꾼"
-  },
   "cazador del callejón": {
     "es": "Cazador del Callejón",
     "en": "Alley Hunter",
@@ -6065,13 +6485,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Caçador do Beco",
     "ja": "ダークアレイの狩人",
     "ko": "뒷골목 사냥꾼"
-  },
-  "15411": {
-    "es": "Desvanecimiento del Crepúsculo",
-    "en": "Fading Twilight",
-    "pt": "Crepúsculo Desvanecido",
-    "ja": "落霞",
-    "ko": "노을"
   },
   "desvanecimiento del crepúsculo": {
     "es": "Desvanecimiento del Crepúsculo",
@@ -6094,13 +6507,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "落霞",
     "ko": "노을"
   },
-  "15412": {
-    "es": "Vals Nocturno",
-    "en": "Mitternachts Waltz",
-    "pt": "Valsa do Crepúsculo",
-    "ja": "幽夜のワルツ",
-    "ko": "유야의 왈츠"
-  },
   "vals nocturno": {
     "es": "Vals Nocturno",
     "en": "Mitternachts Waltz",
@@ -6121,13 +6527,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Valsa do Crepúsculo",
     "ja": "幽夜のワルツ",
     "ko": "유야의 왈츠"
-  },
-  "15413": {
-    "es": "Oda a las Flores de Viento",
-    "en": "Windblume Ode",
-    "pt": "Ode à Brisa Florescente",
-    "ja": "風花の頌歌",
-    "ko": "바람 꽃의 노래"
   },
   "oda a las flores de viento": {
     "es": "Oda a las Flores de Viento",
@@ -6150,13 +6549,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "風花の頌歌",
     "ko": "바람 꽃의 노래"
   },
-  "15414": {
-    "es": "Masacrademonios",
-    "en": "Hamayumi",
-    "pt": "Arco Quebra-Demônios",
-    "ja": "破魔の弓",
-    "ko": "파마궁"
-  },
   "masacrademonios": {
     "es": "Masacrademonios",
     "en": "Hamayumi",
@@ -6177,13 +6569,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Arco Quebra-Demônios",
     "ja": "破魔の弓",
     "ko": "파마궁"
-  },
-  "15415": {
-    "es": "Depredador",
-    "en": "Predator",
-    "pt": "Predador",
-    "ja": "プレデター",
-    "ko": "포식자"
   },
   "depredador": {
     "es": "Depredador",
@@ -6206,13 +6591,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "プレデター",
     "ko": "포식자"
   },
-  "15416": {
-    "es": "Luna de Mouun",
-    "en": "Mouun's Moon",
-    "pt": "Lua de Mouun",
-    "ja": "曚雲の月",
-    "ko": "모운의 달"
-  },
   "luna de mouun": {
     "es": "Luna de Mouun",
     "en": "Mouun's Moon",
@@ -6233,13 +6611,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Lua de Mouun",
     "ja": "曚雲の月",
     "ko": "모운의 달"
-  },
-  "15417": {
-    "es": "Vasalla del Rey",
-    "en": "King's Squire",
-    "pt": "Vassalo do Rei",
-    "ja": "王の近侍",
-    "ko": "왕의 측근"
   },
   "vasalla del rey": {
     "es": "Vasalla del Rey",
@@ -6262,13 +6633,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "王の近侍",
     "ko": "왕의 측근"
   },
-  "15418": {
-    "es": "Fin de las Aguas",
-    "en": "End of the Line",
-    "pt": "Águas Secas",
-    "ja": "竭沢",
-    "ko": "메마른 연못"
-  },
   "fin de las aguas": {
     "es": "Fin de las Aguas",
     "en": "End of the Line",
@@ -6289,13 +6653,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Águas Secas",
     "ja": "竭沢",
     "ko": "메마른 연못"
-  },
-  "15419": {
-    "es": "Perforaibis",
-    "en": "Ibis Piercer",
-    "pt": "Bico de Íbis",
-    "ja": "トキの嘴",
-    "ko": "꿰뚫는 따오기 부리"
   },
   "perforaibis": {
     "es": "Perforaibis",
@@ -6318,13 +6675,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "トキの嘴",
     "ko": "꿰뚫는 따오기 부리"
   },
-  "15424": {
-    "es": "Descendientes del Sol Abrasador",
-    "en": "Scion of the Blazing Sun",
-    "pt": "Herdeiro do Sol",
-    "ja": "烈日の後嗣",
-    "ko": "뜨거운 태양의 후손"
-  },
   "descendientes del sol abrasador": {
     "es": "Descendientes del Sol Abrasador",
     "en": "Scion of the Blazing Sun",
@@ -6345,13 +6695,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Herdeiro do Sol",
     "ja": "烈日の後嗣",
     "ko": "뜨거운 태양의 후손"
-  },
-  "15425": {
-    "es": "Serenata del Sosiego",
-    "en": "Song of Stillness",
-    "pt": "Canção do Silêncio",
-    "ja": "静寂の唄",
-    "ko": "고요한 노래"
   },
   "serenata del sosiego": {
     "es": "Serenata del Sosiego",
@@ -6374,13 +6717,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "静寂の唄",
     "ko": "고요한 노래"
   },
-  "15426": {
-    "es": "Cimentador de Nubes",
-    "en": "Cloudforged",
-    "pt": "Tocador de Nuvens",
-    "ja": "築雲",
-    "ko": "축운"
-  },
   "cimentador de nubes": {
     "es": "Cimentador de Nubes",
     "en": "Cloudforged",
@@ -6401,13 +6737,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Tocador de Nuvens",
     "ja": "築雲",
     "ko": "축운"
-  },
-  "15427": {
-    "es": "Medidor Telemétrico",
-    "en": "Range Gauge",
-    "pt": "Medidor de Alcance",
-    "ja": "レンジゲージ",
-    "ko": "거리 측정기"
   },
   "medidor telemétrico": {
     "es": "Medidor Telemétrico",
@@ -6430,13 +6759,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "レンジゲージ",
     "ko": "거리 측정기"
   },
-  "15430": {
-    "es": "Penacho Engalanado",
-    "en": "Flower-Wreathed Feathers",
-    "pt": "Penas Cercadas de Flores",
-    "ja": "花飾りの羽",
-    "ko": "꽃장식 깃"
-  },
   "penacho engalanado": {
     "es": "Penacho Engalanado",
     "en": "Flower-Wreathed Feathers",
@@ -6457,13 +6779,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Penas Cercadas de Flores",
     "ja": "花飾りの羽",
     "ko": "꽃장식 깃"
-  },
-  "15431": {
-    "es": "Rompecadenas",
-    "en": "Chain Breaker",
-    "pt": "Quebrador de Correntes",
-    "ja": "チェーンブレイカー",
-    "ko": "사슬 파괴자"
   },
   "rompecadenas": {
     "es": "Rompecadenas",
@@ -6486,13 +6801,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "チェーンブレイカー",
     "ko": "사슬 파괴자"
   },
-  "15432": {
-    "es": "Cadencia de la Soledad",
-    "en": "Sequence of Solitude",
-    "pt": "Ritmo da Solidão",
-    "ja": "冷寂の音",
-    "ko": "침묵의 사격"
-  },
   "cadencia de la soledad": {
     "es": "Cadencia de la Soledad",
     "en": "Sequence of Solitude",
@@ -6513,13 +6821,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Ritmo da Solidão",
     "ja": "冷寂の音",
     "ko": "침묵의 사격"
-  },
-  "15433": {
-    "es": "Gancho Trampero",
-    "en": "Snare Hook",
-    "pt": "Gancho da Armadilha",
-    "ja": "羅網の針",
-    "ko": "그물을 뚫는 화살"
   },
   "gancho trampero": {
     "es": "Gancho Trampero",
@@ -6542,13 +6843,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "羅網の針",
     "ko": "그물을 뚫는 화살"
   },
-  "15434": {
-    "es": "Pluvioarco de la Serpiente Arcoíris",
-    "en": "Rainbow Serpent's Rain Bow",
-    "pt": "Cordas da Chuva da Serpente Arco-Íris",
-    "ja": "虹蛇の雨弦",
-    "ko": "무지개뱀의 현"
-  },
   "pluvioarco de la serpiente arcoíris": {
     "es": "Pluvioarco de la Serpiente Arcoíris",
     "en": "Rainbow Serpent's Rain Bow",
@@ -6569,13 +6863,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Cordas da Chuva da Serpente Arco-Íris",
     "ja": "虹蛇の雨弦",
     "ko": "무지개뱀의 현"
-  },
-  "15435": {
-    "es": "Visión de Jade",
-    "en": "Jade Vista",
-    "pt": "Vista da Jade Primordial",
-    "ja": "千鈞懸黎",
-    "ko": "옥빛 장궁"
   },
   "visión de jade": {
     "es": "Visión de Jade",
@@ -6598,13 +6885,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "千鈞懸黎",
     "ko": "옥빛 장궁"
   },
-  "15436": {
-    "es": "Juramento de la Escarcha",
-    "en": "Covenant of Frost and Snow",
-    "pt": "Pacto do Gelo e Neve",
-    "ja": "霜雪の契",
-    "ko": "서리의 서약"
-  },
   "juramento de la escarcha": {
     "es": "Juramento de la Escarcha",
     "en": "Covenant of Frost and Snow",
@@ -6625,13 +6905,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Pacto do Gelo e Neve",
     "ja": "霜雪の契",
     "ko": "서리의 서약"
-  },
-  "15437": {
-    "es": "Estribillo del Viento",
-    "en": "Breezeborne Refrain",
-    "pt": "Cordas Suaves",
-    "ja": "風に遊ぶ弦",
-    "ko": "산들바람 활"
   },
   "estribillo del viento": {
     "es": "Estribillo del Viento",
@@ -6654,13 +6927,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "風に遊ぶ弦",
     "ko": "산들바람 활"
   },
-  "15501": {
-    "es": "Alas Celestiales",
-    "en": "Skyward Harp",
-    "pt": "Harpa Celestial",
-    "ja": "天空の翼",
-    "ko": "천공의 날개"
-  },
   "alas celestiales": {
     "es": "Alas Celestiales",
     "en": "Skyward Harp",
@@ -6682,13 +6948,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "天空の翼",
     "ko": "천공의 날개"
   },
-  "15502": {
-    "es": "Arco de Amos",
-    "en": "Amos' Bow",
-    "pt": "Arco de Amos",
-    "ja": "アモスの弓",
-    "ko": "아모스의 활"
-  },
   "arco de amos": {
     "es": "Arco de Amos",
     "en": "Amos' Bow",
@@ -6702,13 +6961,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Arco de Amos",
     "ja": "アモスの弓",
     "ko": "아모스의 활"
-  },
-  "15503": {
-    "es": "Elegía del Fin",
-    "en": "Elegy for the End",
-    "pt": "Elegia do Suspiro Final",
-    "ja": "終焉を嘆く詩",
-    "ko": "종말 탄식의 노래"
   },
   "elegía del fin": {
     "es": "Elegía del Fin",
@@ -6731,13 +6983,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "終焉を嘆く詩",
     "ko": "종말 탄식의 노래"
   },
-  "15507": {
-    "es": "Estrella Invernal",
-    "en": "Polar Star",
-    "pt": "Estrela Invernal",
-    "ja": "冬極の白星",
-    "ko": "극지의 별"
-  },
   "estrella invernal": {
     "es": "Estrella Invernal",
     "en": "Polar Star",
@@ -6759,26 +7004,12 @@ const I18N_WEAPONS_RAW = {
     "ja": "冬極の白星",
     "ko": "극지의 별"
   },
-  "15508": {
-    "es": "Aqua Simulacra",
-    "en": "Aqua Simulacra",
-    "pt": "Aqua Simulacra",
-    "ja": "若水",
-    "ko": "약수"
-  },
   "aqua simulacra": {
     "es": "Aqua Simulacra",
     "en": "Aqua Simulacra",
     "pt": "Aqua Simulacra",
     "ja": "若水",
     "ko": "약수"
-  },
-  "15509": {
-    "es": "Agitador del Relámpago",
-    "en": "Thundering Pulse",
-    "pt": "Agitação Trovejante",
-    "ja": "飛雷の鳴弦",
-    "ko": "비뢰의 고동"
   },
   "agitador del relámpago": {
     "es": "Agitador del Relámpago",
@@ -6801,13 +7032,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "飛雷の鳴弦",
     "ko": "비뢰의 고동"
   },
-  "15511": {
-    "es": "Senda de la Cazadora",
-    "en": "Hunter's Path",
-    "pt": "Caminho do Caçador",
-    "ja": "狩人の道",
-    "ko": "사냥꾼의 길"
-  },
   "senda de la cazadora": {
     "es": "Senda de la Cazadora",
     "en": "Hunter's Path",
@@ -6828,13 +7052,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Caminho do Caçador",
     "ja": "狩人の道",
     "ko": "사냥꾼의 길"
-  },
-  "15512": {
-    "es": "El Primer Gran Número de Magia",
-    "en": "The First Great Magic",
-    "pt": "Arcana Original",
-    "ja": "始まりの大魔術",
-    "ko": "최초의 대마술"
   },
   "el primer gran número de magia": {
     "es": "El Primer Gran Número de Magia",
@@ -6857,13 +7074,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "始まりの大魔術",
     "ko": "최초의 대마술"
   },
-  "15513": {
-    "es": "Corazón de la Lluvia",
-    "en": "Silvershower Heartstrings",
-    "pt": "Cordas da Chuva Branca",
-    "ja": "白雨心弦",
-    "ko": "심금을 울리는 하얀 비"
-  },
   "corazón de la lluvia": {
     "es": "Corazón de la Lluvia",
     "en": "Silvershower Heartstrings",
@@ -6884,13 +7094,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Cordas da Chuva Branca",
     "ja": "白雨心弦",
     "ko": "심금을 울리는 하얀 비"
-  },
-  "15514": {
-    "es": "Pluma Carmesí Buitreastral",
-    "en": "Astral Vulture's Crimson Plumage",
-    "pt": "Plumagem Escarlate do Abutre Astral",
-    "ja": "星鷲の紅き羽",
-    "ko": "붉은 깃 별독수리"
   },
   "pluma carmesí buitreastral": {
     "es": "Pluma Carmesí Buitreastral",
@@ -6913,13 +7116,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "星鷲の紅き羽",
     "ko": "붉은 깃 별독수리"
   },
-  "15515": {
-    "es": "Albores de la Historia",
-    "en": "The Daybreak Chronicles",
-    "pt": "As Crônicas do Amanhecer",
-    "ja": "暁を告げる歴史",
-    "ko": "여명이 트는 역사"
-  },
   "albores de la historia": {
     "es": "Albores de la Historia",
     "en": "The Daybreak Chronicles",
@@ -6940,13 +7136,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "As Crônicas do Amanhecer",
     "ja": "暁を告げる歴史",
     "ko": "여명이 트는 역사"
-  },
-  "15516": {
-    "es": "Rama del Juramento Escarchado",
-    "en": "Golden Frostbound Oath",
-    "pt": "Ramo Dourado do Juramento Gelado",
-    "ja": "霜契の金枝",
-    "ko": "서리 맺힌 금빛 가지"
   },
   "rama del juramento escarchado": {
     "es": "Rama del Juramento Escarchado",
@@ -6969,13 +7158,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "霜契の金枝",
     "ko": "서리 맺힌 금빛 가지"
   },
-  "310001": {
-    "es": "Devoraserpientes",
-    "en": "Serpent Devourer",
-    "pt": "Devoradora de Serpentes",
-    "ja": "呑蛇",
-    "ko": "삼키는 뱀"
-  },
   "devoraserpientes": {
     "es": "Devoraserpientes",
     "en": "Serpent Devourer",
@@ -6996,13 +7178,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Devoradora de Serpentes",
     "ja": "呑蛇",
     "ko": "삼키는 뱀"
-  },
-  "310002": {
-    "es": "Devoraserpientes: Culminación",
-    "en": "Serpent Devourer - Sublimation",
-    "pt": "Devoradora de Serpentes - Sublimação",
-    "ja": "呑蛇・真化",
-    "ko": "삼키는 뱀·실체"
   },
   "devoraserpientes: culminación": {
     "es": "Devoraserpientes: Culminación",
@@ -7025,13 +7200,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "呑蛇・真化",
     "ko": "삼키는 뱀·실체"
   },
-  "310003": {
-    "es": "Rama Dorada de Nemorense",
-    "en": "Golden Bough of Nemorensis",
-    "pt": "Galho Dourado de Nemorensis",
-    "ja": "ネモレンシスの金枝",
-    "ko": "네모렌시스의 황금 가지"
-  },
   "rama dorada de nemorense": {
     "es": "Rama Dorada de Nemorense",
     "en": "Golden Bough of Nemorensis",
@@ -7052,13 +7220,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Galho Dourado de Nemorensis",
     "ja": "ネモレンシスの金枝",
     "ko": "네모렌시스의 황금 가지"
-  },
-  "310004": {
-    "es": "Rama Dorada de Nemorense: Culminación",
-    "en": "Golden Bough of Nemorensis - Sublimation",
-    "pt": "Galho Dourado de Nemorensis - Sublimação",
-    "ja": "ネモレンシスの金枝・真化",
-    "ko": "네모렌시스의 황금 가지·실체"
   },
   "rama dorada de nemorense: culminación": {
     "es": "Rama Dorada de Nemorense: Culminación",
@@ -7081,13 +7242,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "ネモレンシスの金枝・真化",
     "ko": "네모렌시스의 황금 가지·실체"
   },
-  "320001": {
-    "es": "Tempestad Abrasadora",
-    "en": "Ardent Storm",
-    "pt": "Incêndio Ardente",
-    "ja": "煌烈",
-    "ko": "맹렬한 열기"
-  },
   "tempestad abrasadora": {
     "es": "Tempestad Abrasadora",
     "en": "Ardent Storm",
@@ -7108,13 +7262,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Incêndio Ardente",
     "ja": "煌烈",
     "ko": "맹렬한 열기"
-  },
-  "320002": {
-    "es": "Tempestad Abrasadora: Culminación",
-    "en": "Ardent Storm - Sublimation",
-    "pt": "Incêndio Ardente - Sublimação",
-    "ja": "煌烈・真化",
-    "ko": "맹렬한 열기·실체"
   },
   "tempestad abrasadora: culminación": {
     "es": "Tempestad Abrasadora: Culminación",
@@ -7137,13 +7284,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "煌烈・真化",
     "ko": "맹렬한 열기·실체"
   },
-  "320003": {
-    "es": "Fulgor Argénteo de Gradlon",
-    "en": "Silver Radiance of Gradlon",
-    "pt": "Brilho Prateado de Gradlon",
-    "ja": "グラドロンの銀光",
-    "ko": "그라들롱의 은빛"
-  },
   "fulgor argénteo de gradlon": {
     "es": "Fulgor Argénteo de Gradlon",
     "en": "Silver Radiance of Gradlon",
@@ -7164,13 +7304,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Brilho Prateado de Gradlon",
     "ja": "グラドロンの銀光",
     "ko": "그라들롱의 은빛"
-  },
-  "320004": {
-    "es": "Fulgor Argénteo de Gradlon: Culminación",
-    "en": "Silver Radiance of Gradlon - Sublimation",
-    "pt": "Brilho Prateado de Gradlon - Sublimação",
-    "ja": "グラドロンの銀光・真化",
-    "ko": "그라들롱의 은빛·실체"
   },
   "fulgor argénteo de gradlon: culminación": {
     "es": "Fulgor Argénteo de Gradlon: Culminación",
@@ -7193,13 +7326,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "グラドロンの銀光・真化",
     "ko": "그라들롱의 은빛·실체"
   },
-  "330001": {
-    "es": "Luna Quebrada",
-    "en": "Shattered Moon",
-    "pt": "Lua Despedaçada",
-    "ja": "砕月",
-    "ko": "부서진 달"
-  },
   "luna quebrada": {
     "es": "Luna Quebrada",
     "en": "Shattered Moon",
@@ -7220,13 +7346,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Lua Despedaçada",
     "ja": "砕月",
     "ko": "부서진 달"
-  },
-  "330002": {
-    "es": "Luna Quebrada: Culminación",
-    "en": "Shattered Moon - Sublimation",
-    "pt": "Lua Despedaçada - Sublimação",
-    "ja": "砕月・真化",
-    "ko": "부서진 달·실체"
   },
   "luna quebrada: culminación": {
     "es": "Luna Quebrada: Culminación",
@@ -7249,13 +7368,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "砕月・真化",
     "ko": "부서진 달·실체"
   },
-  "330003": {
-    "es": "Luz Estelar de Fylkir",
-    "en": "Starlight of Fylkir",
-    "pt": "Luz Estelar de Fylkir",
-    "ja": "フュルキルの星芒",
-    "ko": "필키르의 별빛"
-  },
   "luz estelar de fylkir": {
     "es": "Luz Estelar de Fylkir",
     "en": "Starlight of Fylkir",
@@ -7269,13 +7381,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Luz Estelar de Fylkir",
     "ja": "フュルキルの星芒",
     "ko": "필키르의 별빛"
-  },
-  "330004": {
-    "es": "Luz Estelar de Fylkir: Culminación",
-    "en": "Starlight of Fylkir - Sublimation",
-    "pt": "Luz Estelar de Fylkir - Sublimação",
-    "ja": "フュルキルの星芒・真化",
-    "ko": "필키르의 별빛·실체"
   },
   "luz estelar de fylkir: culminación": {
     "es": "Luz Estelar de Fylkir: Culminación",
@@ -7298,13 +7403,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "フュルキルの星芒・真化",
     "ko": "필키르의 별빛·실체"
   },
-  "340001": {
-    "es": "Grilletes Celestiales",
-    "en": "Hallowed Fetters",
-    "pt": "Grilhões Celestiais",
-    "ja": "聖縛",
-    "ko": "신성한 속박"
-  },
   "grilletes celestiales": {
     "es": "Grilletes Celestiales",
     "en": "Hallowed Fetters",
@@ -7325,13 +7423,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Grilhões Celestiais",
     "ja": "聖縛",
     "ko": "신성한 속박"
-  },
-  "340002": {
-    "es": "Grilletes Celestiales: Culminación",
-    "en": "Hallowed Fetters - Sublimation",
-    "pt": "Grilhões Celestiais - Sublimação",
-    "ja": "聖縛・真化",
-    "ko": "신성한 속박·실체"
   },
   "grilletes celestiales: culminación": {
     "es": "Grilletes Celestiales: Culminación",
@@ -7354,13 +7445,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "聖縛・真化",
     "ko": "신성한 속박·실체"
   },
-  "340003": {
-    "es": "Estrella del Alba de Shahar",
-    "en": "Dawnstar of Shahar",
-    "pt": "Estrela da Alvorada de Shahar",
-    "ja": "シャヘルの暁星",
-    "ko": "샤하르의 새벽별"
-  },
   "estrella del alba de shahar": {
     "es": "Estrella del Alba de Shahar",
     "en": "Dawnstar of Shahar",
@@ -7381,13 +7465,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Estrela da Alvorada de Shahar",
     "ja": "シャヘルの暁星",
     "ko": "샤하르의 새벽별"
-  },
-  "340004": {
-    "es": "Estrella del Alba de Shahar: Culminación",
-    "en": "Dawnstar of Shahar - Sublimation",
-    "pt": "Estrela da Alvorada de Shahar - Sublimação",
-    "ja": "シャヘルの暁星・真化",
-    "ko": "샤하르의 새벽별·실체"
   },
   "estrella del alba de shahar: culminación": {
     "es": "Estrella del Alba de Shahar: Culminación",
@@ -7410,13 +7487,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "シャヘルの暁星・真化",
     "ko": "샤하르의 새벽별·실체"
   },
-  "350001": {
-    "es": "Traspasaestrellas",
-    "en": "Starpiercer",
-    "pt": "Perfurador de Estrelas",
-    "ja": "貫星",
-    "ko": "꿰뚫린 별"
-  },
   "traspasaestrellas": {
     "es": "Traspasaestrellas",
     "en": "Starpiercer",
@@ -7437,13 +7507,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Perfurador de Estrelas",
     "ja": "貫星",
     "ko": "꿰뚫린 별"
-  },
-  "350002": {
-    "es": "Traspasaestrellas: Culminación",
-    "en": "Starpiercer - Sublimation",
-    "pt": "Perfurador de Estrelas - Sublimação",
-    "ja": "貫星・真化",
-    "ko": "꿰뚫린 별·실체"
   },
   "traspasaestrellas: culminación": {
     "es": "Traspasaestrellas: Culminación",
@@ -7466,26 +7529,12 @@ const I18N_WEAPONS_RAW = {
     "ja": "貫星・真化",
     "ko": "꿰뚫린 별·실체"
   },
-  "350003": {
-    "es": "Yayu",
-    "en": "Yayu",
-    "pt": "Yayu",
-    "ja": "猰貐",
-    "ko": "알유"
-  },
   "yayu": {
     "es": "Yayu",
     "en": "Yayu",
     "pt": "Yayu",
     "ja": "猰貐",
     "ko": "알유"
-  },
-  "350004": {
-    "es": "Yayu: Culminación",
-    "en": "Yayu - Sublimation",
-    "pt": "Yayu - Sublimação",
-    "ja": "猰貐・真化",
-    "ko": "알유·실체"
   },
   "yayu: culminación": {
     "es": "Yayu: Culminación",
@@ -7508,13 +7557,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "猰貐・真化",
     "ko": "알유·실체"
   },
-  "380001": {
-    "es": "Rito Ilusorio: Augurio Estelar",
-    "en": "Phantasmal Gift: Star Omen",
-    "pt": "Fantasia Ilusória: Sinais Estelares",
-    "ja": "幻のギフト・スターオーメン",
-    "ko": "선물·마법 구슬"
-  },
   "rito ilusorio: augurio estelar": {
     "es": "Rito Ilusorio: Augurio Estelar",
     "en": "Phantasmal Gift: Star Omen",
@@ -7535,13 +7577,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Fantasia Ilusória: Sinais Estelares",
     "ja": "幻のギフト・スターオーメン",
     "ko": "선물·마법 구슬"
-  },
-  "380002": {
-    "es": "Llave Mágica Superpoderosa",
-    "en": "Super Awesome Magic Key",
-    "pt": "\"Super Chave Mágica\"",
-    "ja": "「マジカルマジックキー」",
-    "ko": "「슈퍼 울트라 마법 열쇠」"
   },
   "llave mágica superpoderosa": {
     "es": "Llave Mágica Superpoderosa",
@@ -7564,13 +7599,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "「マジカルマジックキー」",
     "ko": "「슈퍼 울트라 마법 열쇠」"
   },
-  "380003": {
-    "es": "¡Escarcha para un Verano Ardiente!",
-    "en": "A Touch of Frost in Scorching Summer!",
-    "pt": "Um Toque Gelado no Verão Quente!",
-    "ja": "真夏のアイスポップ！",
-    "ko": "아이스바!"
-  },
   "¡escarcha para un verano ardiente!": {
     "es": "¡Escarcha para un Verano Ardiente!",
     "en": "A Touch of Frost in Scorching Summer!",
@@ -7592,13 +7620,6 @@ const I18N_WEAPONS_RAW = {
     "ja": "真夏のアイスポップ！",
     "ko": "아이스바!"
   },
-  "390001": {
-    "es": "Durandal, la Indestructible",
-    "en": "Unbreakable: Durandarte",
-    "pt": "Indestrutível: Durandarte",
-    "ja": "無毀・デュランガルド",
-    "ko": "불멸·듀란달"
-  },
   "durandal, la indestructible": {
     "es": "Durandal, la Indestructible",
     "en": "Unbreakable: Durandarte",
@@ -7619,20 +7640,6 @@ const I18N_WEAPONS_RAW = {
     "pt": "Indestrutível: Durandarte",
     "ja": "無毀・デュランガルド",
     "ko": "불멸·듀란달"
-  },
-  "390002": {
-    "es": "Hoja de Exáifanes",
-    "en": "Exaiphanes Blade",
-    "pt": "Sabre da Ponta Estelar",
-    "ja": "星鋒の剣",
-    "ko": "별빛검"
-  },
-  "390003": {
-    "es": "Hoja de Exáifanes",
-    "en": "Exaiphanes Blade",
-    "pt": "Sabre da Ponta Estelar",
-    "ja": "星鋒の剣",
-    "ko": "별빛검"
   },
   "urakusugiri": {
     "es": "Cortatelones de Urakusai",
@@ -7836,18 +7843,25 @@ const I18N_WEAPONS_RAW = {
     "pt": "Borboleta Transformadora",
     "ja": "蝶の羽化",
     "ko": "나비의 우화"
+  },
+  "edicto selloastral": {
+    "es": "Edicto Selloastral",
+    "en": "Starsealed Edict",
+    "pt": "Ordens Canônicas Estelares",
+    "ja": "秘星の聖典",
+    "ko": "별빛 계시"
+  },
+  "starsealed edict": {
+    "es": "Edicto Selloastral",
+    "en": "Starsealed Edict",
+    "pt": "Ordens Canônicas Estelares",
+    "ja": "秘星の聖典",
+    "ko": "별빛 계시"
   }
 };
 
 const I18N_CHARACTERS_RAW = {
   "10000002": {
-    "es": "Kamisato Ayaka",
-    "en": "Kamisato Ayaka",
-    "pt": "Kamisato Ayaka",
-    "ja": "神里綾華",
-    "ko": "카미사토 아야카"
-  },
-  "kamisato ayaka": {
     "es": "Kamisato Ayaka",
     "en": "Kamisato Ayaka",
     "pt": "Kamisato Ayaka",
@@ -7861,21 +7875,7 @@ const I18N_CHARACTERS_RAW = {
     "ja": "ジン",
     "ko": "진"
   },
-  "jean": {
-    "es": "Jean",
-    "en": "Jean",
-    "pt": "Jean",
-    "ja": "ジン",
-    "ko": "진"
-  },
   "10000006": {
-    "es": "Lisa",
-    "en": "Lisa",
-    "pt": "Lisa",
-    "ja": "リサ",
-    "ko": "리사"
-  },
-  "lisa": {
     "es": "Lisa",
     "en": "Lisa",
     "pt": "Lisa",
@@ -7888,6 +7888,867 @@ const I18N_CHARACTERS_RAW = {
     "pt": "Barbara",
     "ja": "バーバラ",
     "ko": "바바라"
+  },
+  "10000015": {
+    "es": "Kaeya",
+    "en": "Kaeya",
+    "pt": "Kaeya",
+    "ja": "ガイア",
+    "ko": "케이아"
+  },
+  "10000016": {
+    "es": "Diluc",
+    "en": "Diluc",
+    "pt": "Diluc",
+    "ja": "ディルック",
+    "ko": "다이루크"
+  },
+  "10000020": {
+    "es": "Razor",
+    "en": "Razor",
+    "pt": "Razor",
+    "ja": "レザー",
+    "ko": "레이저"
+  },
+  "10000021": {
+    "es": "Amber",
+    "en": "Amber",
+    "pt": "Amber",
+    "ja": "アンバー",
+    "ko": "엠버"
+  },
+  "10000022": {
+    "es": "Venti",
+    "en": "Venti",
+    "pt": "Venti",
+    "ja": "ウェンティ",
+    "ko": "벤티"
+  },
+  "10000023": {
+    "es": "Xiangling",
+    "en": "Xiangling",
+    "pt": "Xiangling",
+    "ja": "香菱",
+    "ko": "향릉"
+  },
+  "10000024": {
+    "es": "Beidou",
+    "en": "Beidou",
+    "pt": "Beidou",
+    "ja": "北斗",
+    "ko": "북두"
+  },
+  "10000025": {
+    "es": "Xingchiu",
+    "en": "Xingqiu",
+    "pt": "Xingqiu",
+    "ja": "行秋",
+    "ko": "행추"
+  },
+  "10000026": {
+    "es": "Xiao",
+    "en": "Xiao",
+    "pt": "Xiao",
+    "ja": "魈",
+    "ko": "소"
+  },
+  "10000027": {
+    "es": "Ninguang",
+    "en": "Ningguang",
+    "pt": "Ningguang",
+    "ja": "凝光",
+    "ko": "응광"
+  },
+  "10000029": {
+    "es": "Klee",
+    "en": "Klee",
+    "pt": "Klee",
+    "ja": "クレー",
+    "ko": "클레"
+  },
+  "10000030": {
+    "es": "Zhongli",
+    "en": "Zhongli",
+    "pt": "Zhongli",
+    "ja": "鍾離",
+    "ko": "종려"
+  },
+  "10000031": {
+    "es": "Fischl",
+    "en": "Fischl",
+    "pt": "Fischl",
+    "ja": "フィッシュル",
+    "ko": "피슬"
+  },
+  "10000032": {
+    "es": "Bennett",
+    "en": "Bennett",
+    "pt": "Bennett",
+    "ja": "ベネット",
+    "ko": "베넷"
+  },
+  "10000033": {
+    "es": "Tartaglia",
+    "en": "Tartaglia",
+    "pt": "Tartaglia",
+    "ja": "タルタリヤ",
+    "ko": "타르탈리아"
+  },
+  "10000034": {
+    "es": "Noelle",
+    "en": "Noelle",
+    "pt": "Noelle",
+    "ja": "ノエル",
+    "ko": "노엘"
+  },
+  "10000035": {
+    "es": "Qiqi",
+    "en": "Qiqi",
+    "pt": "Qiqi",
+    "ja": "七七",
+    "ko": "치치"
+  },
+  "10000036": {
+    "es": "Chongyun",
+    "en": "Chongyun",
+    "pt": "Chongyun",
+    "ja": "重雲",
+    "ko": "중운"
+  },
+  "10000037": {
+    "es": "Ganyu",
+    "en": "Ganyu",
+    "pt": "Ganyu",
+    "ja": "甘雨",
+    "ko": "감우"
+  },
+  "10000038": {
+    "es": "Albedo",
+    "en": "Albedo",
+    "pt": "Albedo",
+    "ja": "アルベド",
+    "ko": "알베도"
+  },
+  "10000039": {
+    "es": "Diona",
+    "en": "Diona",
+    "pt": "Diona",
+    "ja": "ディオナ",
+    "ko": "디오나"
+  },
+  "10000041": {
+    "es": "Mona",
+    "en": "Mona",
+    "pt": "Mona",
+    "ja": "モナ",
+    "ko": "모나"
+  },
+  "10000042": {
+    "es": "Keching",
+    "en": "Keqing",
+    "pt": "Keqing",
+    "ja": "刻晴",
+    "ko": "각청"
+  },
+  "10000043": {
+    "es": "Sacarosa",
+    "en": "Sucrose",
+    "pt": "Sucrose",
+    "ja": "スクロース",
+    "ko": "설탕"
+  },
+  "10000044": {
+    "es": "Xinyan",
+    "en": "Xinyan",
+    "pt": "Xinyan",
+    "ja": "辛炎",
+    "ko": "신염"
+  },
+  "10000045": {
+    "es": "Rosaria",
+    "en": "Rosaria",
+    "pt": "Rosaria",
+    "ja": "ロサリア",
+    "ko": "로자리아"
+  },
+  "10000046": {
+    "es": "Hu Tao",
+    "en": "Hu Tao",
+    "pt": "Hutao",
+    "ja": "胡桃",
+    "ko": "호두"
+  },
+  "10000047": {
+    "es": "Kaedehara Kazuha",
+    "en": "Kaedehara Kazuha",
+    "pt": "Kaedehara Kazuha",
+    "ja": "楓原万葉",
+    "ko": "카에데하라 카즈하"
+  },
+  "10000048": {
+    "es": "Yanfei",
+    "en": "Yanfei",
+    "pt": "Yanfei",
+    "ja": "煙緋",
+    "ko": "연비"
+  },
+  "10000049": {
+    "es": "Yoimiya",
+    "en": "Yoimiya",
+    "pt": "Yoimiya",
+    "ja": "宵宮",
+    "ko": "요이미야"
+  },
+  "10000050": {
+    "es": "Thoma",
+    "en": "Thoma",
+    "pt": "Thoma",
+    "ja": "トーマ",
+    "ko": "토마"
+  },
+  "10000051": {
+    "es": "Eula",
+    "en": "Eula",
+    "pt": "Eula",
+    "ja": "エウルア",
+    "ko": "유라"
+  },
+  "10000052": {
+    "es": "Shogun Raiden",
+    "en": "Raiden Shogun",
+    "pt": "Shogun Raiden",
+    "ja": "雷電将軍",
+    "ko": "라이덴 쇼군"
+  },
+  "10000053": {
+    "es": "Sayu",
+    "en": "Sayu",
+    "pt": "Sayu",
+    "ja": "早柚",
+    "ko": "사유"
+  },
+  "10000054": {
+    "es": "Sangonomiya Kokomi",
+    "en": "Sangonomiya Kokomi",
+    "pt": "Sangonomiya Kokomi",
+    "ja": "珊瑚宮心海",
+    "ko": "산고노미야 코코미"
+  },
+  "10000055": {
+    "es": "Gorou",
+    "en": "Gorou",
+    "pt": "Gorou",
+    "ja": "ゴロー",
+    "ko": "고로"
+  },
+  "10000056": {
+    "es": "Kujou Sara",
+    "en": "Kujou Sara",
+    "pt": "Kujou Sara",
+    "ja": "九条裟羅",
+    "ko": "쿠죠 사라"
+  },
+  "10000057": {
+    "es": "Arataki Itto",
+    "en": "Arataki Itto",
+    "pt": "Arataki Itto",
+    "ja": "荒瀧一斗",
+    "ko": "아라타키 이토"
+  },
+  "10000058": {
+    "es": "Yae Miko",
+    "en": "Yae Miko",
+    "pt": "Yae Miko",
+    "ja": "八重神子",
+    "ko": "야에 미코"
+  },
+  "10000059": {
+    "es": "Shikanoin Heizou",
+    "en": "Shikanoin Heizou",
+    "pt": "Shikanoin Heizou",
+    "ja": "鹿野院平蔵",
+    "ko": "시카노인 헤이조"
+  },
+  "10000060": {
+    "es": "Yelan",
+    "en": "Yelan",
+    "pt": "Yelan",
+    "ja": "夜蘭",
+    "ko": "야란"
+  },
+  "10000061": {
+    "es": "Kirara",
+    "en": "Kirara",
+    "pt": "Kirara",
+    "ja": "綺良々",
+    "ko": "키라라"
+  },
+  "10000062": {
+    "es": "Aloy",
+    "en": "Aloy",
+    "pt": "Aloy",
+    "ja": "アーロイ",
+    "ko": "에일로이"
+  },
+  "10000063": {
+    "es": "Shenhe",
+    "en": "Shenhe",
+    "pt": "Shenhe",
+    "ja": "申鶴",
+    "ko": "신학"
+  },
+  "10000064": {
+    "es": "Yun Jin",
+    "en": "Yun Jin",
+    "pt": "Yunjin",
+    "ja": "雲菫",
+    "ko": "운근"
+  },
+  "10000065": {
+    "es": "Kuki Shinobu",
+    "en": "Kuki Shinobu",
+    "pt": "Kuki Shinobu",
+    "ja": "久岐忍",
+    "ko": "쿠키 시노부"
+  },
+  "10000066": {
+    "es": "Kamisato Ayato",
+    "en": "Kamisato Ayato",
+    "pt": "Kamisato Ayato",
+    "ja": "神里綾人",
+    "ko": "카미사토 아야토"
+  },
+  "10000067": {
+    "es": "Collei",
+    "en": "Collei",
+    "pt": "Collei",
+    "ja": "コレイ",
+    "ko": "콜레이"
+  },
+  "10000068": {
+    "es": "Dori",
+    "en": "Dori",
+    "pt": "Dori",
+    "ja": "ドリー",
+    "ko": "도리"
+  },
+  "10000069": {
+    "es": "Tignari",
+    "en": "Tighnari",
+    "pt": "Tighnari",
+    "ja": "ティナリ",
+    "ko": "타이나리"
+  },
+  "10000070": {
+    "es": "Nilou",
+    "en": "Nilou",
+    "pt": "Nilou",
+    "ja": "ニィロウ",
+    "ko": "닐루"
+  },
+  "10000071": {
+    "es": "Cyno",
+    "en": "Cyno",
+    "pt": "Cyno",
+    "ja": "セノ",
+    "ko": "사이노"
+  },
+  "10000072": {
+    "es": "Candace",
+    "en": "Candace",
+    "pt": "Candace",
+    "ja": "キャンディス",
+    "ko": "캔디스"
+  },
+  "10000073": {
+    "es": "Nahida",
+    "en": "Nahida",
+    "pt": "Nahida",
+    "ja": "ナヒーダ",
+    "ko": "나히다"
+  },
+  "10000074": {
+    "es": "Laila",
+    "en": "Layla",
+    "pt": "Layla",
+    "ja": "レイラ",
+    "ko": "레일라"
+  },
+  "10000075": {
+    "es": "Trotamundos",
+    "en": "Wanderer",
+    "pt": "Andarilho",
+    "ja": "放浪者",
+    "ko": "방랑자"
+  },
+  "10000076": {
+    "es": "Faruzán",
+    "en": "Faruzan",
+    "pt": "Faruzan",
+    "ja": "ファルザン",
+    "ko": "파루잔"
+  },
+  "10000077": {
+    "es": "Yaoyao",
+    "en": "Yaoyao",
+    "pt": "Yaoyao",
+    "ja": "ヨォーヨ",
+    "ko": "요요"
+  },
+  "10000078": {
+    "es": "Alhacén",
+    "en": "Alhaitham",
+    "pt": "Alhaitham",
+    "ja": "アルハイゼン",
+    "ko": "알하이탐"
+  },
+  "10000079": {
+    "es": "Dehya",
+    "en": "Dehya",
+    "pt": "Dehya",
+    "ja": "ディシア",
+    "ko": "데히야"
+  },
+  "10000080": {
+    "es": "Mika",
+    "en": "Mika",
+    "pt": "Mika",
+    "ja": "ミカ",
+    "ko": "미카"
+  },
+  "10000081": {
+    "es": "Kaveh",
+    "en": "Kaveh",
+    "pt": "Kaveh",
+    "ja": "カーヴェ",
+    "ko": "카베"
+  },
+  "10000082": {
+    "es": "Baizhu",
+    "en": "Baizhu",
+    "pt": "Baizhu",
+    "ja": "白朮",
+    "ko": "백출"
+  },
+  "10000083": {
+    "es": "Lynette",
+    "en": "Lynette",
+    "pt": "Lynette",
+    "ja": "リネット",
+    "ko": "리넷"
+  },
+  "10000084": {
+    "es": "Lyney",
+    "en": "Lyney",
+    "pt": "Lyney",
+    "ja": "リネ",
+    "ko": "리니"
+  },
+  "10000085": {
+    "es": "Fréminet",
+    "en": "Freminet",
+    "pt": "Freminet",
+    "ja": "フレミネ",
+    "ko": "프레미네"
+  },
+  "10000086": {
+    "es": "Wriothesley",
+    "en": "Wriothesley",
+    "pt": "Wriothesley",
+    "ja": "リオセスリ",
+    "ko": "라이오슬리"
+  },
+  "10000087": {
+    "es": "Neuvillette",
+    "en": "Neuvillette",
+    "pt": "Neuvillette",
+    "ja": "ヌヴィレット",
+    "ko": "느비예트"
+  },
+  "10000088": {
+    "es": "Charlotte",
+    "en": "Charlotte",
+    "pt": "Charlotte",
+    "ja": "シャルロット",
+    "ko": "샤를로트"
+  },
+  "10000089": {
+    "es": "Furina",
+    "en": "Furina",
+    "pt": "Furina",
+    "ja": "フリーナ",
+    "ko": "푸리나"
+  },
+  "10000090": {
+    "es": "Chevreuse",
+    "en": "Chevreuse",
+    "pt": "Chevreuse",
+    "ja": "シュヴルーズ",
+    "ko": "슈브르즈"
+  },
+  "10000091": {
+    "es": "Navia",
+    "en": "Navia",
+    "pt": "Navia",
+    "ja": "ナヴィア",
+    "ko": "나비아"
+  },
+  "10000092": {
+    "es": "Gaming",
+    "en": "Gaming",
+    "pt": "Gaming",
+    "ja": "嘉明",
+    "ko": "가명"
+  },
+  "10000093": {
+    "es": "Xianyun",
+    "en": "Xianyun",
+    "pt": "Xianyun",
+    "ja": "閑雲",
+    "ko": "한운"
+  },
+  "10000094": {
+    "es": "Chiori",
+    "en": "Chiori",
+    "pt": "Chiori",
+    "ja": "千織",
+    "ko": "치오리"
+  },
+  "10000095": {
+    "es": "Sigewinne",
+    "en": "Sigewinne",
+    "pt": "Sigewinne",
+    "ja": "シグウィン",
+    "ko": "시그윈"
+  },
+  "10000096": {
+    "es": "Arlecchino",
+    "en": "Arlecchino",
+    "pt": "Arlecchino",
+    "ja": "アルレッキーノ",
+    "ko": "아를레키노"
+  },
+  "10000097": {
+    "es": "Sethos",
+    "en": "Sethos",
+    "pt": "Sethos",
+    "ja": "セトス",
+    "ko": "세토스"
+  },
+  "10000098": {
+    "es": "Clorinde",
+    "en": "Clorinde",
+    "pt": "Clorinde",
+    "ja": "クロリンデ",
+    "ko": "클로린드"
+  },
+  "10000099": {
+    "es": "Émilie",
+    "en": "Emilie",
+    "pt": "Emilie",
+    "ja": "エミリエ",
+    "ko": "에밀리"
+  },
+  "10000100": {
+    "es": "Kachina",
+    "en": "Kachina",
+    "pt": "Kachina",
+    "ja": "カチーナ",
+    "ko": "카치나"
+  },
+  "10000101": {
+    "es": "Kinich",
+    "en": "Kinich",
+    "pt": "Kinich",
+    "ja": "キィニチ",
+    "ko": "키니치"
+  },
+  "10000102": {
+    "es": "Mualani",
+    "en": "Mualani",
+    "pt": "Mualani",
+    "ja": "ムアラニ",
+    "ko": "말라니"
+  },
+  "10000103": {
+    "es": "Xilonen",
+    "en": "Xilonen",
+    "pt": "Xilonen",
+    "ja": "シロネン",
+    "ko": "실로닌"
+  },
+  "10000104": {
+    "es": "Chasca",
+    "en": "Chasca",
+    "pt": "Chasca",
+    "ja": "チャスカ",
+    "ko": "차스카"
+  },
+  "10000105": {
+    "es": "Ororon",
+    "en": "Ororon",
+    "pt": "Ororon",
+    "ja": "オロルン",
+    "ko": "올로룬"
+  },
+  "10000106": {
+    "es": "Mavuika",
+    "en": "Mavuika",
+    "pt": "Mavuika",
+    "ja": "マーヴィカ",
+    "ko": "마비카"
+  },
+  "10000107": {
+    "es": "Citlalí",
+    "en": "Citlali",
+    "pt": "Citlali",
+    "ja": "シトラリ",
+    "ko": "시틀라리"
+  },
+  "10000108": {
+    "es": "Lan Yan",
+    "en": "Lan Yan",
+    "pt": "Lan Yan",
+    "ja": "藍硯",
+    "ko": "남연"
+  },
+  "10000109": {
+    "es": "Yumemizuki Mizuki",
+    "en": "Yumemizuki Mizuki",
+    "pt": "Yumemizuki Mizuki",
+    "ja": "夢見月瑞希",
+    "ko": "유메미즈키 미즈키"
+  },
+  "10000110": {
+    "es": "Iansán",
+    "en": "Iansan",
+    "pt": "Iansan",
+    "ja": "イアンサ",
+    "ko": "얀사"
+  },
+  "10000111": {
+    "es": "Varesa",
+    "en": "Varesa",
+    "pt": "Varesa",
+    "ja": "ヴァレサ",
+    "ko": "바레사"
+  },
+  "10000112": {
+    "es": "Escoffier",
+    "en": "Escoffier",
+    "pt": "Escoffier",
+    "ja": "エスコフィエ",
+    "ko": "에스코피에"
+  },
+  "10000113": {
+    "es": "Ifá",
+    "en": "Ifa",
+    "pt": "Ifa",
+    "ja": "イファ",
+    "ko": "이파"
+  },
+  "10000114": {
+    "es": "Skirk",
+    "en": "Skirk",
+    "pt": "Skirk",
+    "ja": "スカーク",
+    "ko": "스커크"
+  },
+  "10000115": {
+    "es": "Dahlia",
+    "en": "Dahlia",
+    "pt": "Dahlia",
+    "ja": "ダリア",
+    "ko": "달리아"
+  },
+  "10000116": {
+    "es": "Ineffa",
+    "en": "Ineffa",
+    "pt": "Ineffa",
+    "ja": "イネファ",
+    "ko": "이네파"
+  },
+  "10000117": {
+    "es": "Manekín masculino",
+    "en": "Manekin",
+    "pt": "Manequim",
+    "ja": "ドール（男）",
+    "ko": "별인형·남성"
+  },
+  "10000118": {
+    "es": "Manekín femenino",
+    "en": "Manekina",
+    "pt": "Manequina",
+    "ja": "ドール（女）",
+    "ko": "별인형·여성"
+  },
+  "10000119": {
+    "es": "Lauma",
+    "en": "Lauma",
+    "pt": "Lauma",
+    "ja": "ラウマ",
+    "ko": "라우마"
+  },
+  "10000120": {
+    "es": "Flins",
+    "en": "Flins",
+    "pt": "Flins",
+    "ja": "フリンズ",
+    "ko": "플린스"
+  },
+  "10000121": {
+    "es": "Aino",
+    "en": "Aino",
+    "pt": "Aino",
+    "ja": "アイノ",
+    "ko": "아이노"
+  },
+  "10000122": {
+    "es": "Néfer",
+    "en": "Nefer",
+    "pt": "Nefer",
+    "ja": "ネフェル",
+    "ko": "네페르"
+  },
+  "10000123": {
+    "es": "Durin",
+    "en": "Durin",
+    "pt": "Durin",
+    "ja": "ドゥリン",
+    "ko": "두린"
+  },
+  "10000124": {
+    "es": "Jahoda",
+    "en": "Jahoda",
+    "pt": "Jahoda",
+    "ja": "ヤフォダ",
+    "ko": "야호다"
+  },
+  "10000125": {
+    "es": "Colombina",
+    "en": "Columbina",
+    "pt": "Columbina",
+    "ja": "コロンビーナ",
+    "ko": "콜롬비나"
+  },
+  "10000126": {
+    "es": "Zibai",
+    "en": "Zibai",
+    "pt": "Zibai",
+    "ja": "兹白",
+    "ko": "자백"
+  },
+  "10000127": {
+    "es": "Illuga",
+    "en": "Illuga",
+    "pt": "Illuga",
+    "ja": "イルーガ",
+    "ko": "일루가"
+  },
+  "10000128": {
+    "es": "Varka",
+    "en": "Varka",
+    "pt": "Varka",
+    "ja": "ファルカ",
+    "ko": "바르카"
+  },
+  "10000129": {
+    "es": "Lohen",
+    "en": "Lohen",
+    "pt": "Lohen",
+    "ja": "ローエン",
+    "ko": "로엔"
+  },
+  "10000130": {
+    "es": "Linnéa",
+    "en": "Linnea",
+    "pt": "Linnea",
+    "ja": "リンネア",
+    "ko": "린네아"
+  },
+  "10000131": {
+    "es": "Nicole",
+    "en": "Nicole",
+    "pt": "Nicole",
+    "ja": "ニコ",
+    "ko": "니콜"
+  },
+  "10000132": {
+    "es": "Prune",
+    "en": "Prune",
+    "pt": "Prune",
+    "ja": "プルーネ",
+    "ko": "프루네"
+  },
+  "10000133": {
+    "es": "Sandrone",
+    "en": "Sandrone",
+    "pt": "Sandrone",
+    "ja": "サンドローネ",
+    "ko": "산드로네"
+  },
+  "10000136": {
+    "es": "Mitya",
+    "en": "Mitya",
+    "pt": "Mitya",
+    "ja": "ミティヤ",
+    "ko": "미탸"
+  },
+  "10000137": {
+    "es": "Valeri",
+    "en": "Valeriy",
+    "pt": "Valeriy",
+    "ja": "バレリー",
+    "ko": "발레리"
+  },
+  "10000140": {
+    "es": "Vodyanitsa",
+    "en": "Vodyanitsa",
+    "pt": "Vodyanitsa",
+    "ja": "ヴォジャニーツァ",
+    "ko": "보댜니차"
+  },
+  "10000143": {
+    "es": "Vesna",
+    "en": "Vesna",
+    "pt": "Vesna",
+    "ja": "ヴェスナ",
+    "ko": "베스나"
+  },
+  "10000148": {
+    "es": "Aliosha",
+    "en": "Alyosha",
+    "pt": "Alyosha",
+    "ja": "アリョーシャ",
+    "ko": "알료샤"
+  },
+  "10000150": {
+    "es": "Odette",
+    "en": "Odette",
+    "pt": "Odette",
+    "ja": "オデット",
+    "ko": "오데트"
+  },
+  "kamisato ayaka": {
+    "es": "Kamisato Ayaka",
+    "en": "Kamisato Ayaka",
+    "pt": "Kamisato Ayaka",
+    "ja": "神里綾華",
+    "ko": "카미사토 아야카"
+  },
+  "jean": {
+    "es": "Jean",
+    "en": "Jean",
+    "pt": "Jean",
+    "ja": "ジン",
+    "ko": "진"
+  },
+  "lisa": {
+    "es": "Lisa",
+    "en": "Lisa",
+    "pt": "Lisa",
+    "ja": "リサ",
+    "ko": "리사"
   },
   "bárbara": {
     "es": "Bárbara",
@@ -7903,26 +8764,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "バーバラ",
     "ko": "바바라"
   },
-  "10000015": {
-    "es": "Kaeya",
-    "en": "Kaeya",
-    "pt": "Kaeya",
-    "ja": "ガイア",
-    "ko": "케이아"
-  },
   "kaeya": {
     "es": "Kaeya",
     "en": "Kaeya",
     "pt": "Kaeya",
     "ja": "ガイア",
     "ko": "케이아"
-  },
-  "10000016": {
-    "es": "Diluc",
-    "en": "Diluc",
-    "pt": "Diluc",
-    "ja": "ディルック",
-    "ko": "다이루크"
   },
   "diluc": {
     "es": "Diluc",
@@ -7931,26 +8778,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "ディルック",
     "ko": "다이루크"
   },
-  "10000020": {
-    "es": "Razor",
-    "en": "Razor",
-    "pt": "Razor",
-    "ja": "レザー",
-    "ko": "레이저"
-  },
   "razor": {
     "es": "Razor",
     "en": "Razor",
     "pt": "Razor",
     "ja": "レザー",
     "ko": "레이저"
-  },
-  "10000021": {
-    "es": "Amber",
-    "en": "Amber",
-    "pt": "Amber",
-    "ja": "アンバー",
-    "ko": "엠버"
   },
   "amber": {
     "es": "Amber",
@@ -7959,26 +8792,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "アンバー",
     "ko": "엠버"
   },
-  "10000022": {
-    "es": "Venti",
-    "en": "Venti",
-    "pt": "Venti",
-    "ja": "ウェンティ",
-    "ko": "벤티"
-  },
   "venti": {
     "es": "Venti",
     "en": "Venti",
     "pt": "Venti",
     "ja": "ウェンティ",
     "ko": "벤티"
-  },
-  "10000023": {
-    "es": "Xiangling",
-    "en": "Xiangling",
-    "pt": "Xiangling",
-    "ja": "香菱",
-    "ko": "향릉"
   },
   "xiangling": {
     "es": "Xiangling",
@@ -7987,26 +8806,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "香菱",
     "ko": "향릉"
   },
-  "10000024": {
-    "es": "Beidou",
-    "en": "Beidou",
-    "pt": "Beidou",
-    "ja": "北斗",
-    "ko": "북두"
-  },
   "beidou": {
     "es": "Beidou",
     "en": "Beidou",
     "pt": "Beidou",
     "ja": "北斗",
     "ko": "북두"
-  },
-  "10000025": {
-    "es": "Xingchiu",
-    "en": "Xingqiu",
-    "pt": "Xingqiu",
-    "ja": "行秋",
-    "ko": "행추"
   },
   "xingchiu": {
     "es": "Xingchiu",
@@ -8022,26 +8827,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "行秋",
     "ko": "행추"
   },
-  "10000026": {
-    "es": "Xiao",
-    "en": "Xiao",
-    "pt": "Xiao",
-    "ja": "魈",
-    "ko": "소"
-  },
   "xiao": {
     "es": "Xiao",
     "en": "Xiao",
     "pt": "Xiao",
     "ja": "魈",
     "ko": "소"
-  },
-  "10000027": {
-    "es": "Ninguang",
-    "en": "Ningguang",
-    "pt": "Ningguang",
-    "ja": "凝光",
-    "ko": "응광"
   },
   "ninguang": {
     "es": "Ninguang",
@@ -8057,26 +8848,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "凝光",
     "ko": "응광"
   },
-  "10000029": {
-    "es": "Klee",
-    "en": "Klee",
-    "pt": "Klee",
-    "ja": "クレー",
-    "ko": "클레"
-  },
   "klee": {
     "es": "Klee",
     "en": "Klee",
     "pt": "Klee",
     "ja": "クレー",
     "ko": "클레"
-  },
-  "10000030": {
-    "es": "Zhongli",
-    "en": "Zhongli",
-    "pt": "Zhongli",
-    "ja": "鍾離",
-    "ko": "종려"
   },
   "zhongli": {
     "es": "Zhongli",
@@ -8085,26 +8862,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "鍾離",
     "ko": "종려"
   },
-  "10000031": {
-    "es": "Fischl",
-    "en": "Fischl",
-    "pt": "Fischl",
-    "ja": "フィッシュル",
-    "ko": "피슬"
-  },
   "fischl": {
     "es": "Fischl",
     "en": "Fischl",
     "pt": "Fischl",
     "ja": "フィッシュル",
     "ko": "피슬"
-  },
-  "10000032": {
-    "es": "Bennett",
-    "en": "Bennett",
-    "pt": "Bennett",
-    "ja": "ベネット",
-    "ko": "베넷"
   },
   "bennett": {
     "es": "Bennett",
@@ -8113,26 +8876,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "ベネット",
     "ko": "베넷"
   },
-  "10000033": {
-    "es": "Tartaglia",
-    "en": "Tartaglia",
-    "pt": "Tartaglia",
-    "ja": "タルタリヤ",
-    "ko": "타르탈리아"
-  },
   "tartaglia": {
     "es": "Tartaglia",
     "en": "Tartaglia",
     "pt": "Tartaglia",
     "ja": "タルタリヤ",
     "ko": "타르탈리아"
-  },
-  "10000034": {
-    "es": "Noelle",
-    "en": "Noelle",
-    "pt": "Noelle",
-    "ja": "ノエル",
-    "ko": "노엘"
   },
   "noelle": {
     "es": "Noelle",
@@ -8141,26 +8890,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "ノエル",
     "ko": "노엘"
   },
-  "10000035": {
-    "es": "Qiqi",
-    "en": "Qiqi",
-    "pt": "Qiqi",
-    "ja": "七七",
-    "ko": "치치"
-  },
   "qiqi": {
     "es": "Qiqi",
     "en": "Qiqi",
     "pt": "Qiqi",
     "ja": "七七",
     "ko": "치치"
-  },
-  "10000036": {
-    "es": "Chongyun",
-    "en": "Chongyun",
-    "pt": "Chongyun",
-    "ja": "重雲",
-    "ko": "중운"
   },
   "chongyun": {
     "es": "Chongyun",
@@ -8169,26 +8904,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "重雲",
     "ko": "중운"
   },
-  "10000037": {
-    "es": "Ganyu",
-    "en": "Ganyu",
-    "pt": "Ganyu",
-    "ja": "甘雨",
-    "ko": "감우"
-  },
   "ganyu": {
     "es": "Ganyu",
     "en": "Ganyu",
     "pt": "Ganyu",
     "ja": "甘雨",
     "ko": "감우"
-  },
-  "10000038": {
-    "es": "Albedo",
-    "en": "Albedo",
-    "pt": "Albedo",
-    "ja": "アルベド",
-    "ko": "알베도"
   },
   "albedo": {
     "es": "Albedo",
@@ -8197,13 +8918,6 @@ const I18N_CHARACTERS_RAW = {
     "ja": "アルベド",
     "ko": "알베도"
   },
-  "10000039": {
-    "es": "Diona",
-    "en": "Diona",
-    "pt": "Diona",
-    "ja": "ディオナ",
-    "ko": "디오나"
-  },
   "diona": {
     "es": "Diona",
     "en": "Diona",
@@ -8211,26 +8925,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "ディオナ",
     "ko": "디오나"
   },
-  "10000041": {
-    "es": "Mona",
-    "en": "Mona",
-    "pt": "Mona",
-    "ja": "モナ",
-    "ko": "모나"
-  },
   "mona": {
     "es": "Mona",
     "en": "Mona",
     "pt": "Mona",
     "ja": "モナ",
     "ko": "모나"
-  },
-  "10000042": {
-    "es": "Keching",
-    "en": "Keqing",
-    "pt": "Keqing",
-    "ja": "刻晴",
-    "ko": "각청"
   },
   "keching": {
     "es": "Keching",
@@ -8246,13 +8946,6 @@ const I18N_CHARACTERS_RAW = {
     "ja": "刻晴",
     "ko": "각청"
   },
-  "10000043": {
-    "es": "Sacarosa",
-    "en": "Sucrose",
-    "pt": "Sucrose",
-    "ja": "スクロース",
-    "ko": "설탕"
-  },
   "sacarosa": {
     "es": "Sacarosa",
     "en": "Sucrose",
@@ -8267,13 +8960,6 @@ const I18N_CHARACTERS_RAW = {
     "ja": "スクロース",
     "ko": "설탕"
   },
-  "10000044": {
-    "es": "Xinyan",
-    "en": "Xinyan",
-    "pt": "Xinyan",
-    "ja": "辛炎",
-    "ko": "신염"
-  },
   "xinyan": {
     "es": "Xinyan",
     "en": "Xinyan",
@@ -8281,26 +8967,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "辛炎",
     "ko": "신염"
   },
-  "10000045": {
-    "es": "Rosaria",
-    "en": "Rosaria",
-    "pt": "Rosaria",
-    "ja": "ロサリア",
-    "ko": "로자리아"
-  },
   "rosaria": {
     "es": "Rosaria",
     "en": "Rosaria",
     "pt": "Rosaria",
     "ja": "ロサリア",
     "ko": "로자리아"
-  },
-  "10000046": {
-    "es": "Hu Tao",
-    "en": "Hu Tao",
-    "pt": "Hutao",
-    "ja": "胡桃",
-    "ko": "호두"
   },
   "hu tao": {
     "es": "Hu Tao",
@@ -8316,26 +8988,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "胡桃",
     "ko": "호두"
   },
-  "10000047": {
-    "es": "Kaedehara Kazuha",
-    "en": "Kaedehara Kazuha",
-    "pt": "Kaedehara Kazuha",
-    "ja": "楓原万葉",
-    "ko": "카에데하라 카즈하"
-  },
   "kaedehara kazuha": {
     "es": "Kaedehara Kazuha",
     "en": "Kaedehara Kazuha",
     "pt": "Kaedehara Kazuha",
     "ja": "楓原万葉",
     "ko": "카에데하라 카즈하"
-  },
-  "10000048": {
-    "es": "Yanfei",
-    "en": "Yanfei",
-    "pt": "Yanfei",
-    "ja": "煙緋",
-    "ko": "연비"
   },
   "yanfei": {
     "es": "Yanfei",
@@ -8344,26 +9002,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "煙緋",
     "ko": "연비"
   },
-  "10000049": {
-    "es": "Yoimiya",
-    "en": "Yoimiya",
-    "pt": "Yoimiya",
-    "ja": "宵宮",
-    "ko": "요이미야"
-  },
   "yoimiya": {
     "es": "Yoimiya",
     "en": "Yoimiya",
     "pt": "Yoimiya",
     "ja": "宵宮",
     "ko": "요이미야"
-  },
-  "10000050": {
-    "es": "Thoma",
-    "en": "Thoma",
-    "pt": "Thoma",
-    "ja": "トーマ",
-    "ko": "토마"
   },
   "thoma": {
     "es": "Thoma",
@@ -8372,26 +9016,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "トーマ",
     "ko": "토마"
   },
-  "10000051": {
-    "es": "Eula",
-    "en": "Eula",
-    "pt": "Eula",
-    "ja": "エウルア",
-    "ko": "유라"
-  },
   "eula": {
     "es": "Eula",
     "en": "Eula",
     "pt": "Eula",
     "ja": "エウルア",
     "ko": "유라"
-  },
-  "10000052": {
-    "es": "Shogun Raiden",
-    "en": "Raiden Shogun",
-    "pt": "Shogun Raiden",
-    "ja": "雷電将軍",
-    "ko": "라이덴 쇼군"
   },
   "shogun raiden": {
     "es": "Shogun Raiden",
@@ -8407,26 +9037,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "雷電将軍",
     "ko": "라이덴 쇼군"
   },
-  "10000053": {
-    "es": "Sayu",
-    "en": "Sayu",
-    "pt": "Sayu",
-    "ja": "早柚",
-    "ko": "사유"
-  },
   "sayu": {
     "es": "Sayu",
     "en": "Sayu",
     "pt": "Sayu",
     "ja": "早柚",
     "ko": "사유"
-  },
-  "10000054": {
-    "es": "Sangonomiya Kokomi",
-    "en": "Sangonomiya Kokomi",
-    "pt": "Sangonomiya Kokomi",
-    "ja": "珊瑚宮心海",
-    "ko": "산고노미야 코코미"
   },
   "sangonomiya kokomi": {
     "es": "Sangonomiya Kokomi",
@@ -8435,26 +9051,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "珊瑚宮心海",
     "ko": "산고노미야 코코미"
   },
-  "10000055": {
-    "es": "Gorou",
-    "en": "Gorou",
-    "pt": "Gorou",
-    "ja": "ゴロー",
-    "ko": "고로"
-  },
   "gorou": {
     "es": "Gorou",
     "en": "Gorou",
     "pt": "Gorou",
     "ja": "ゴロー",
     "ko": "고로"
-  },
-  "10000056": {
-    "es": "Kujou Sara",
-    "en": "Kujou Sara",
-    "pt": "Kujou Sara",
-    "ja": "九条裟羅",
-    "ko": "쿠죠 사라"
   },
   "kujou sara": {
     "es": "Kujou Sara",
@@ -8463,26 +9065,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "九条裟羅",
     "ko": "쿠죠 사라"
   },
-  "10000057": {
-    "es": "Arataki Itto",
-    "en": "Arataki Itto",
-    "pt": "Arataki Itto",
-    "ja": "荒瀧一斗",
-    "ko": "아라타키 이토"
-  },
   "arataki itto": {
     "es": "Arataki Itto",
     "en": "Arataki Itto",
     "pt": "Arataki Itto",
     "ja": "荒瀧一斗",
     "ko": "아라타키 이토"
-  },
-  "10000058": {
-    "es": "Yae Miko",
-    "en": "Yae Miko",
-    "pt": "Yae Miko",
-    "ja": "八重神子",
-    "ko": "야에 미코"
   },
   "yae miko": {
     "es": "Yae Miko",
@@ -8491,26 +9079,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "八重神子",
     "ko": "야에 미코"
   },
-  "10000059": {
-    "es": "Shikanoin Heizou",
-    "en": "Shikanoin Heizou",
-    "pt": "Shikanoin Heizou",
-    "ja": "鹿野院平蔵",
-    "ko": "시카노인 헤이조"
-  },
   "shikanoin heizou": {
     "es": "Shikanoin Heizou",
     "en": "Shikanoin Heizou",
     "pt": "Shikanoin Heizou",
     "ja": "鹿野院平蔵",
     "ko": "시카노인 헤이조"
-  },
-  "10000060": {
-    "es": "Yelan",
-    "en": "Yelan",
-    "pt": "Yelan",
-    "ja": "夜蘭",
-    "ko": "야란"
   },
   "yelan": {
     "es": "Yelan",
@@ -8519,26 +9093,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "夜蘭",
     "ko": "야란"
   },
-  "10000061": {
-    "es": "Kirara",
-    "en": "Kirara",
-    "pt": "Kirara",
-    "ja": "綺良々",
-    "ko": "키라라"
-  },
   "kirara": {
     "es": "Kirara",
     "en": "Kirara",
     "pt": "Kirara",
     "ja": "綺良々",
     "ko": "키라라"
-  },
-  "10000062": {
-    "es": "Aloy",
-    "en": "Aloy",
-    "pt": "Aloy",
-    "ja": "アーロイ",
-    "ko": "에일로이"
   },
   "aloy": {
     "es": "Aloy",
@@ -8547,26 +9107,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "アーロイ",
     "ko": "에일로이"
   },
-  "10000063": {
-    "es": "Shenhe",
-    "en": "Shenhe",
-    "pt": "Shenhe",
-    "ja": "申鶴",
-    "ko": "신학"
-  },
   "shenhe": {
     "es": "Shenhe",
     "en": "Shenhe",
     "pt": "Shenhe",
     "ja": "申鶴",
     "ko": "신학"
-  },
-  "10000064": {
-    "es": "Yun Jin",
-    "en": "Yun Jin",
-    "pt": "Yunjin",
-    "ja": "雲菫",
-    "ko": "운근"
   },
   "yun jin": {
     "es": "Yun Jin",
@@ -8582,26 +9128,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "雲菫",
     "ko": "운근"
   },
-  "10000065": {
-    "es": "Kuki Shinobu",
-    "en": "Kuki Shinobu",
-    "pt": "Kuki Shinobu",
-    "ja": "久岐忍",
-    "ko": "쿠키 시노부"
-  },
   "kuki shinobu": {
     "es": "Kuki Shinobu",
     "en": "Kuki Shinobu",
     "pt": "Kuki Shinobu",
     "ja": "久岐忍",
     "ko": "쿠키 시노부"
-  },
-  "10000066": {
-    "es": "Kamisato Ayato",
-    "en": "Kamisato Ayato",
-    "pt": "Kamisato Ayato",
-    "ja": "神里綾人",
-    "ko": "카미사토 아야토"
   },
   "kamisato ayato": {
     "es": "Kamisato Ayato",
@@ -8610,13 +9142,6 @@ const I18N_CHARACTERS_RAW = {
     "ja": "神里綾人",
     "ko": "카미사토 아야토"
   },
-  "10000067": {
-    "es": "Collei",
-    "en": "Collei",
-    "pt": "Collei",
-    "ja": "コレイ",
-    "ko": "콜레이"
-  },
   "collei": {
     "es": "Collei",
     "en": "Collei",
@@ -8624,26 +9149,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "コレイ",
     "ko": "콜레이"
   },
-  "10000068": {
-    "es": "Dori",
-    "en": "Dori",
-    "pt": "Dori",
-    "ja": "ドリー",
-    "ko": "도리"
-  },
   "dori": {
     "es": "Dori",
     "en": "Dori",
     "pt": "Dori",
     "ja": "ドリー",
     "ko": "도리"
-  },
-  "10000069": {
-    "es": "Tignari",
-    "en": "Tighnari",
-    "pt": "Tighnari",
-    "ja": "ティナリ",
-    "ko": "타이나리"
   },
   "tignari": {
     "es": "Tignari",
@@ -8659,26 +9170,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "ティナリ",
     "ko": "타이나리"
   },
-  "10000070": {
-    "es": "Nilou",
-    "en": "Nilou",
-    "pt": "Nilou",
-    "ja": "ニィロウ",
-    "ko": "닐루"
-  },
   "nilou": {
     "es": "Nilou",
     "en": "Nilou",
     "pt": "Nilou",
     "ja": "ニィロウ",
     "ko": "닐루"
-  },
-  "10000071": {
-    "es": "Cyno",
-    "en": "Cyno",
-    "pt": "Cyno",
-    "ja": "セノ",
-    "ko": "사이노"
   },
   "cyno": {
     "es": "Cyno",
@@ -8687,13 +9184,6 @@ const I18N_CHARACTERS_RAW = {
     "ja": "セノ",
     "ko": "사이노"
   },
-  "10000072": {
-    "es": "Candace",
-    "en": "Candace",
-    "pt": "Candace",
-    "ja": "キャンディス",
-    "ko": "캔디스"
-  },
   "candace": {
     "es": "Candace",
     "en": "Candace",
@@ -8701,26 +9191,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "キャンディス",
     "ko": "캔디스"
   },
-  "10000073": {
-    "es": "Nahida",
-    "en": "Nahida",
-    "pt": "Nahida",
-    "ja": "ナヒーダ",
-    "ko": "나히다"
-  },
   "nahida": {
     "es": "Nahida",
     "en": "Nahida",
     "pt": "Nahida",
     "ja": "ナヒーダ",
     "ko": "나히다"
-  },
-  "10000074": {
-    "es": "Laila",
-    "en": "Layla",
-    "pt": "Layla",
-    "ja": "レイラ",
-    "ko": "레일라"
   },
   "laila": {
     "es": "Laila",
@@ -8735,13 +9211,6 @@ const I18N_CHARACTERS_RAW = {
     "pt": "Layla",
     "ja": "レイラ",
     "ko": "레일라"
-  },
-  "10000075": {
-    "es": "Trotamundos",
-    "en": "Wanderer",
-    "pt": "Andarilho",
-    "ja": "放浪者",
-    "ko": "방랑자"
   },
   "trotamundos": {
     "es": "Trotamundos",
@@ -8764,13 +9233,6 @@ const I18N_CHARACTERS_RAW = {
     "ja": "放浪者",
     "ko": "방랑자"
   },
-  "10000076": {
-    "es": "Faruzán",
-    "en": "Faruzan",
-    "pt": "Faruzan",
-    "ja": "ファルザン",
-    "ko": "파루잔"
-  },
   "faruzán": {
     "es": "Faruzán",
     "en": "Faruzan",
@@ -8785,26 +9247,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "ファルザン",
     "ko": "파루잔"
   },
-  "10000077": {
-    "es": "Yaoyao",
-    "en": "Yaoyao",
-    "pt": "Yaoyao",
-    "ja": "ヨォーヨ",
-    "ko": "요요"
-  },
   "yaoyao": {
     "es": "Yaoyao",
     "en": "Yaoyao",
     "pt": "Yaoyao",
     "ja": "ヨォーヨ",
     "ko": "요요"
-  },
-  "10000078": {
-    "es": "Alhacén",
-    "en": "Alhaitham",
-    "pt": "Alhaitham",
-    "ja": "アルハイゼン",
-    "ko": "알하이탐"
   },
   "alhacén": {
     "es": "Alhacén",
@@ -8820,26 +9268,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "アルハイゼン",
     "ko": "알하이탐"
   },
-  "10000079": {
-    "es": "Dehya",
-    "en": "Dehya",
-    "pt": "Dehya",
-    "ja": "ディシア",
-    "ko": "데히야"
-  },
   "dehya": {
     "es": "Dehya",
     "en": "Dehya",
     "pt": "Dehya",
     "ja": "ディシア",
     "ko": "데히야"
-  },
-  "10000080": {
-    "es": "Mika",
-    "en": "Mika",
-    "pt": "Mika",
-    "ja": "ミカ",
-    "ko": "미카"
   },
   "mika": {
     "es": "Mika",
@@ -8848,26 +9282,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "ミカ",
     "ko": "미카"
   },
-  "10000081": {
-    "es": "Kaveh",
-    "en": "Kaveh",
-    "pt": "Kaveh",
-    "ja": "カーヴェ",
-    "ko": "카베"
-  },
   "kaveh": {
     "es": "Kaveh",
     "en": "Kaveh",
     "pt": "Kaveh",
     "ja": "カーヴェ",
     "ko": "카베"
-  },
-  "10000082": {
-    "es": "Baizhu",
-    "en": "Baizhu",
-    "pt": "Baizhu",
-    "ja": "白朮",
-    "ko": "백출"
   },
   "baizhu": {
     "es": "Baizhu",
@@ -8876,13 +9296,6 @@ const I18N_CHARACTERS_RAW = {
     "ja": "白朮",
     "ko": "백출"
   },
-  "10000083": {
-    "es": "Lynette",
-    "en": "Lynette",
-    "pt": "Lynette",
-    "ja": "リネット",
-    "ko": "리넷"
-  },
   "lynette": {
     "es": "Lynette",
     "en": "Lynette",
@@ -8890,26 +9303,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "リネット",
     "ko": "리넷"
   },
-  "10000084": {
-    "es": "Lyney",
-    "en": "Lyney",
-    "pt": "Lyney",
-    "ja": "リネ",
-    "ko": "리니"
-  },
   "lyney": {
     "es": "Lyney",
     "en": "Lyney",
     "pt": "Lyney",
     "ja": "リネ",
     "ko": "리니"
-  },
-  "10000085": {
-    "es": "Fréminet",
-    "en": "Freminet",
-    "pt": "Freminet",
-    "ja": "フレミネ",
-    "ko": "프레미네"
   },
   "fréminet": {
     "es": "Fréminet",
@@ -8925,26 +9324,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "フレミネ",
     "ko": "프레미네"
   },
-  "10000086": {
-    "es": "Wriothesley",
-    "en": "Wriothesley",
-    "pt": "Wriothesley",
-    "ja": "リオセスリ",
-    "ko": "라이오슬리"
-  },
   "wriothesley": {
     "es": "Wriothesley",
     "en": "Wriothesley",
     "pt": "Wriothesley",
     "ja": "リオセスリ",
     "ko": "라이오슬리"
-  },
-  "10000087": {
-    "es": "Neuvillette",
-    "en": "Neuvillette",
-    "pt": "Neuvillette",
-    "ja": "ヌヴィレット",
-    "ko": "느비예트"
   },
   "neuvillette": {
     "es": "Neuvillette",
@@ -8953,26 +9338,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "ヌヴィレット",
     "ko": "느비예트"
   },
-  "10000088": {
-    "es": "Charlotte",
-    "en": "Charlotte",
-    "pt": "Charlotte",
-    "ja": "シャルロット",
-    "ko": "샤를로트"
-  },
   "charlotte": {
     "es": "Charlotte",
     "en": "Charlotte",
     "pt": "Charlotte",
     "ja": "シャルロット",
     "ko": "샤를로트"
-  },
-  "10000089": {
-    "es": "Furina",
-    "en": "Furina",
-    "pt": "Furina",
-    "ja": "フリーナ",
-    "ko": "푸리나"
   },
   "furina": {
     "es": "Furina",
@@ -8981,26 +9352,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "フリーナ",
     "ko": "푸리나"
   },
-  "10000090": {
-    "es": "Chevreuse",
-    "en": "Chevreuse",
-    "pt": "Chevreuse",
-    "ja": "シュヴルーズ",
-    "ko": "슈브르즈"
-  },
   "chevreuse": {
     "es": "Chevreuse",
     "en": "Chevreuse",
     "pt": "Chevreuse",
     "ja": "シュヴルーズ",
     "ko": "슈브르즈"
-  },
-  "10000091": {
-    "es": "Navia",
-    "en": "Navia",
-    "pt": "Navia",
-    "ja": "ナヴィア",
-    "ko": "나비아"
   },
   "navia": {
     "es": "Navia",
@@ -9009,26 +9366,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "ナヴィア",
     "ko": "나비아"
   },
-  "10000092": {
-    "es": "Gaming",
-    "en": "Gaming",
-    "pt": "Gaming",
-    "ja": "嘉明",
-    "ko": "가명"
-  },
   "gaming": {
     "es": "Gaming",
     "en": "Gaming",
     "pt": "Gaming",
     "ja": "嘉明",
     "ko": "가명"
-  },
-  "10000093": {
-    "es": "Xianyun",
-    "en": "Xianyun",
-    "pt": "Xianyun",
-    "ja": "閑雲",
-    "ko": "한운"
   },
   "xianyun": {
     "es": "Xianyun",
@@ -9037,26 +9380,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "閑雲",
     "ko": "한운"
   },
-  "10000094": {
-    "es": "Chiori",
-    "en": "Chiori",
-    "pt": "Chiori",
-    "ja": "千織",
-    "ko": "치오리"
-  },
   "chiori": {
     "es": "Chiori",
     "en": "Chiori",
     "pt": "Chiori",
     "ja": "千織",
     "ko": "치오리"
-  },
-  "10000095": {
-    "es": "Sigewinne",
-    "en": "Sigewinne",
-    "pt": "Sigewinne",
-    "ja": "シグウィン",
-    "ko": "시그윈"
   },
   "sigewinne": {
     "es": "Sigewinne",
@@ -9065,26 +9394,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "シグウィン",
     "ko": "시그윈"
   },
-  "10000096": {
-    "es": "Arlecchino",
-    "en": "Arlecchino",
-    "pt": "Arlecchino",
-    "ja": "アルレッキーノ",
-    "ko": "아를레키노"
-  },
   "arlecchino": {
     "es": "Arlecchino",
     "en": "Arlecchino",
     "pt": "Arlecchino",
     "ja": "アルレッキーノ",
     "ko": "아를레키노"
-  },
-  "10000097": {
-    "es": "Sethos",
-    "en": "Sethos",
-    "pt": "Sethos",
-    "ja": "セトス",
-    "ko": "세토스"
   },
   "sethos": {
     "es": "Sethos",
@@ -9093,26 +9408,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "セトス",
     "ko": "세토스"
   },
-  "10000098": {
-    "es": "Clorinde",
-    "en": "Clorinde",
-    "pt": "Clorinde",
-    "ja": "クロリンデ",
-    "ko": "클로린드"
-  },
   "clorinde": {
     "es": "Clorinde",
     "en": "Clorinde",
     "pt": "Clorinde",
     "ja": "クロリンデ",
     "ko": "클로린드"
-  },
-  "10000099": {
-    "es": "Émilie",
-    "en": "Emilie",
-    "pt": "Emilie",
-    "ja": "エミリエ",
-    "ko": "에밀리"
   },
   "émilie": {
     "es": "Émilie",
@@ -9128,26 +9429,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "エミリエ",
     "ko": "에밀리"
   },
-  "10000100": {
-    "es": "Kachina",
-    "en": "Kachina",
-    "pt": "Kachina",
-    "ja": "カチーナ",
-    "ko": "카치나"
-  },
   "kachina": {
     "es": "Kachina",
     "en": "Kachina",
     "pt": "Kachina",
     "ja": "カチーナ",
     "ko": "카치나"
-  },
-  "10000101": {
-    "es": "Kinich",
-    "en": "Kinich",
-    "pt": "Kinich",
-    "ja": "キィニチ",
-    "ko": "키니치"
   },
   "kinich": {
     "es": "Kinich",
@@ -9156,26 +9443,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "キィニチ",
     "ko": "키니치"
   },
-  "10000102": {
-    "es": "Mualani",
-    "en": "Mualani",
-    "pt": "Mualani",
-    "ja": "ムアラニ",
-    "ko": "말라니"
-  },
   "mualani": {
     "es": "Mualani",
     "en": "Mualani",
     "pt": "Mualani",
     "ja": "ムアラニ",
     "ko": "말라니"
-  },
-  "10000103": {
-    "es": "Xilonen",
-    "en": "Xilonen",
-    "pt": "Xilonen",
-    "ja": "シロネン",
-    "ko": "실로닌"
   },
   "xilonen": {
     "es": "Xilonen",
@@ -9184,26 +9457,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "シロネン",
     "ko": "실로닌"
   },
-  "10000104": {
-    "es": "Chasca",
-    "en": "Chasca",
-    "pt": "Chasca",
-    "ja": "チャスカ",
-    "ko": "차스카"
-  },
   "chasca": {
     "es": "Chasca",
     "en": "Chasca",
     "pt": "Chasca",
     "ja": "チャスカ",
     "ko": "차스카"
-  },
-  "10000105": {
-    "es": "Ororon",
-    "en": "Ororon",
-    "pt": "Ororon",
-    "ja": "オロルン",
-    "ko": "올로룬"
   },
   "ororon": {
     "es": "Ororon",
@@ -9212,26 +9471,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "オロルン",
     "ko": "올로룬"
   },
-  "10000106": {
-    "es": "Mavuika",
-    "en": "Mavuika",
-    "pt": "Mavuika",
-    "ja": "マーヴィカ",
-    "ko": "마비카"
-  },
   "mavuika": {
     "es": "Mavuika",
     "en": "Mavuika",
     "pt": "Mavuika",
     "ja": "マーヴィカ",
     "ko": "마비카"
-  },
-  "10000107": {
-    "es": "Citlalí",
-    "en": "Citlali",
-    "pt": "Citlali",
-    "ja": "シトラリ",
-    "ko": "시틀라리"
   },
   "citlalí": {
     "es": "Citlalí",
@@ -9247,13 +9492,6 @@ const I18N_CHARACTERS_RAW = {
     "ja": "シトラリ",
     "ko": "시틀라리"
   },
-  "10000108": {
-    "es": "Lan Yan",
-    "en": "Lan Yan",
-    "pt": "Lan Yan",
-    "ja": "藍硯",
-    "ko": "남연"
-  },
   "lan yan": {
     "es": "Lan Yan",
     "en": "Lan Yan",
@@ -9261,26 +9499,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "藍硯",
     "ko": "남연"
   },
-  "10000109": {
-    "es": "Yumemizuki Mizuki",
-    "en": "Yumemizuki Mizuki",
-    "pt": "Yumemizuki Mizuki",
-    "ja": "夢見月瑞希",
-    "ko": "유메미즈키 미즈키"
-  },
   "yumemizuki mizuki": {
     "es": "Yumemizuki Mizuki",
     "en": "Yumemizuki Mizuki",
     "pt": "Yumemizuki Mizuki",
     "ja": "夢見月瑞希",
     "ko": "유메미즈키 미즈키"
-  },
-  "10000110": {
-    "es": "Iansán",
-    "en": "Iansan",
-    "pt": "Iansan",
-    "ja": "イアンサ",
-    "ko": "얀사"
   },
   "iansán": {
     "es": "Iansán",
@@ -9296,13 +9520,6 @@ const I18N_CHARACTERS_RAW = {
     "ja": "イアンサ",
     "ko": "얀사"
   },
-  "10000111": {
-    "es": "Varesa",
-    "en": "Varesa",
-    "pt": "Varesa",
-    "ja": "ヴァレサ",
-    "ko": "바레사"
-  },
   "varesa": {
     "es": "Varesa",
     "en": "Varesa",
@@ -9310,26 +9527,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "ヴァレサ",
     "ko": "바레사"
   },
-  "10000112": {
-    "es": "Escoffier",
-    "en": "Escoffier",
-    "pt": "Escoffier",
-    "ja": "エスコフィエ",
-    "ko": "에스코피에"
-  },
   "escoffier": {
     "es": "Escoffier",
     "en": "Escoffier",
     "pt": "Escoffier",
     "ja": "エスコフィエ",
     "ko": "에스코피에"
-  },
-  "10000113": {
-    "es": "Ifá",
-    "en": "Ifa",
-    "pt": "Ifa",
-    "ja": "イファ",
-    "ko": "이파"
   },
   "ifá": {
     "es": "Ifá",
@@ -9345,26 +9548,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "イファ",
     "ko": "이파"
   },
-  "10000114": {
-    "es": "Skirk",
-    "en": "Skirk",
-    "pt": "Skirk",
-    "ja": "スカーク",
-    "ko": "스커크"
-  },
   "skirk": {
     "es": "Skirk",
     "en": "Skirk",
     "pt": "Skirk",
     "ja": "スカーク",
     "ko": "스커크"
-  },
-  "10000115": {
-    "es": "Dahlia",
-    "en": "Dahlia",
-    "pt": "Dahlia",
-    "ja": "ダリア",
-    "ko": "달리아"
   },
   "dahlia": {
     "es": "Dahlia",
@@ -9373,26 +9562,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "ダリア",
     "ko": "달리아"
   },
-  "10000116": {
-    "es": "Ineffa",
-    "en": "Ineffa",
-    "pt": "Ineffa",
-    "ja": "イネファ",
-    "ko": "이네파"
-  },
   "ineffa": {
     "es": "Ineffa",
     "en": "Ineffa",
     "pt": "Ineffa",
     "ja": "イネファ",
     "ko": "이네파"
-  },
-  "10000117": {
-    "es": "Manekín masculino",
-    "en": "Manekin",
-    "pt": "Manequim",
-    "ja": "ドール（男）",
-    "ko": "별인형·남성"
   },
   "manekín masculino": {
     "es": "Manekín masculino",
@@ -9415,13 +9590,6 @@ const I18N_CHARACTERS_RAW = {
     "ja": "ドール（男）",
     "ko": "별인형·남성"
   },
-  "10000118": {
-    "es": "Manekín femenino",
-    "en": "Manekina",
-    "pt": "Manequina",
-    "ja": "ドール（女）",
-    "ko": "별인형·여성"
-  },
   "manekín femenino": {
     "es": "Manekín femenino",
     "en": "Manekina",
@@ -9443,26 +9611,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "ドール（女）",
     "ko": "별인형·여성"
   },
-  "10000119": {
-    "es": "Lauma",
-    "en": "Lauma",
-    "pt": "Lauma",
-    "ja": "ラウマ",
-    "ko": "라우마"
-  },
   "lauma": {
     "es": "Lauma",
     "en": "Lauma",
     "pt": "Lauma",
     "ja": "ラウマ",
     "ko": "라우마"
-  },
-  "10000120": {
-    "es": "Flins",
-    "en": "Flins",
-    "pt": "Flins",
-    "ja": "フリンズ",
-    "ko": "플린스"
   },
   "flins": {
     "es": "Flins",
@@ -9471,26 +9625,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "フリンズ",
     "ko": "플린스"
   },
-  "10000121": {
-    "es": "Aino",
-    "en": "Aino",
-    "pt": "Aino",
-    "ja": "アイノ",
-    "ko": "아이노"
-  },
   "aino": {
     "es": "Aino",
     "en": "Aino",
     "pt": "Aino",
     "ja": "アイノ",
     "ko": "아이노"
-  },
-  "10000122": {
-    "es": "Néfer",
-    "en": "Nefer",
-    "pt": "Nefer",
-    "ja": "ネフェル",
-    "ko": "네페르"
   },
   "néfer": {
     "es": "Néfer",
@@ -9506,13 +9646,6 @@ const I18N_CHARACTERS_RAW = {
     "ja": "ネフェル",
     "ko": "네페르"
   },
-  "10000123": {
-    "es": "Durin",
-    "en": "Durin",
-    "pt": "Durin",
-    "ja": "ドゥリン",
-    "ko": "두린"
-  },
   "durin": {
     "es": "Durin",
     "en": "Durin",
@@ -9520,26 +9653,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "ドゥリン",
     "ko": "두린"
   },
-  "10000124": {
-    "es": "Jahoda",
-    "en": "Jahoda",
-    "pt": "Jahoda",
-    "ja": "ヤフォダ",
-    "ko": "야호다"
-  },
   "jahoda": {
     "es": "Jahoda",
     "en": "Jahoda",
     "pt": "Jahoda",
     "ja": "ヤフォダ",
     "ko": "야호다"
-  },
-  "10000125": {
-    "es": "Colombina",
-    "en": "Columbina",
-    "pt": "Columbina",
-    "ja": "コロンビーナ",
-    "ko": "콜롬비나"
   },
   "colombina": {
     "es": "Colombina",
@@ -9555,26 +9674,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "コロンビーナ",
     "ko": "콜롬비나"
   },
-  "10000126": {
-    "es": "Zibai",
-    "en": "Zibai",
-    "pt": "Zibai",
-    "ja": "兹白",
-    "ko": "자백"
-  },
   "zibai": {
     "es": "Zibai",
     "en": "Zibai",
     "pt": "Zibai",
     "ja": "兹白",
     "ko": "자백"
-  },
-  "10000127": {
-    "es": "Illuga",
-    "en": "Illuga",
-    "pt": "Illuga",
-    "ja": "イルーガ",
-    "ko": "일루가"
   },
   "illuga": {
     "es": "Illuga",
@@ -9583,13 +9688,6 @@ const I18N_CHARACTERS_RAW = {
     "ja": "イルーガ",
     "ko": "일루가"
   },
-  "10000128": {
-    "es": "Varka",
-    "en": "Varka",
-    "pt": "Varka",
-    "ja": "ファルカ",
-    "ko": "바르카"
-  },
   "varka": {
     "es": "Varka",
     "en": "Varka",
@@ -9597,26 +9695,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "ファルカ",
     "ko": "바르카"
   },
-  "10000129": {
-    "es": "Lohen",
-    "en": "Lohen",
-    "pt": "Lohen",
-    "ja": "ローエン",
-    "ko": "로엔"
-  },
   "lohen": {
     "es": "Lohen",
     "en": "Lohen",
     "pt": "Lohen",
     "ja": "ローエン",
     "ko": "로엔"
-  },
-  "10000130": {
-    "es": "Linnéa",
-    "en": "Linnea",
-    "pt": "Linnea",
-    "ja": "リンネア",
-    "ko": "린네아"
   },
   "linnéa": {
     "es": "Linnéa",
@@ -9632,26 +9716,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "リンネア",
     "ko": "린네아"
   },
-  "10000131": {
-    "es": "Nicole",
-    "en": "Nicole",
-    "pt": "Nicole",
-    "ja": "ニコ",
-    "ko": "니콜"
-  },
   "nicole": {
     "es": "Nicole",
     "en": "Nicole",
     "pt": "Nicole",
     "ja": "ニコ",
     "ko": "니콜"
-  },
-  "10000132": {
-    "es": "Prune",
-    "en": "Prune",
-    "pt": "Prune",
-    "ja": "プルーネ",
-    "ko": "프루네"
   },
   "prune": {
     "es": "Prune",
@@ -9660,26 +9730,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "プルーネ",
     "ko": "프루네"
   },
-  "10000133": {
-    "es": "Sandrone",
-    "en": "Sandrone",
-    "pt": "Sandrone",
-    "ja": "サンドローネ",
-    "ko": "산드로네"
-  },
   "sandrone": {
     "es": "Sandrone",
     "en": "Sandrone",
     "pt": "Sandrone",
     "ja": "サンドローネ",
     "ko": "산드로네"
-  },
-  "10000140": {
-    "es": "Vodyanitsa",
-    "en": "Vodyanitsa",
-    "pt": "Vodyanitsa",
-    "ja": "ヴォジャニーツァ",
-    "ko": "보댜니차"
   },
   "vodyanitsa": {
     "es": "Vodyanitsa",
@@ -9688,26 +9744,12 @@ const I18N_CHARACTERS_RAW = {
     "ja": "ヴォジャニーツァ",
     "ko": "보댜니차"
   },
-  "10000143": {
-    "es": "Vesna",
-    "en": "Vesna",
-    "pt": "Vesna",
-    "ja": "ヴェスナ",
-    "ko": "베스나"
-  },
   "vesna": {
     "es": "Vesna",
     "en": "Vesna",
     "pt": "Vesna",
     "ja": "ヴェスナ",
     "ko": "베스나"
-  },
-  "10000148": {
-    "es": "Aliosha",
-    "en": "Alyosha",
-    "pt": "Alyosha",
-    "ja": "アリョーシャ",
-    "ko": "알료샤"
   },
   "aliosha": {
     "es": "Aliosha",
@@ -9722,13 +9764,6 @@ const I18N_CHARACTERS_RAW = {
     "pt": "Alyosha",
     "ja": "アリョーシャ",
     "ko": "알료샤"
-  },
-  "10000150": {
-    "es": "Odette",
-    "en": "Odette",
-    "pt": "Odette",
-    "ja": "オデット",
-    "ko": "오데트"
   },
   "odette": {
     "es": "Odette",
@@ -9862,6 +9897,27 @@ const I18N_CHARACTERS_RAW = {
     "pt": "Viajante",
     "ja": "旅人",
     "ko": "여행자"
+  },
+  "mitya": {
+    "es": "Mitya",
+    "en": "Mitya",
+    "pt": "Mitya",
+    "ja": "ミティヤ",
+    "ko": "미탸"
+  },
+  "valeri": {
+    "es": "Valeri",
+    "en": "Valeriy",
+    "pt": "Valeriy",
+    "ja": "バレリー",
+    "ko": "발레리"
+  },
+  "valeriy": {
+    "es": "Valeri",
+    "en": "Valeriy",
+    "pt": "Valeriy",
+    "ja": "バレリー",
+    "ko": "발레리"
   }
 };
 

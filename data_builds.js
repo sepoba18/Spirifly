@@ -1,7 +1,7 @@
 // =====================================================================
 // BASE DE DATOS MODULAR DE BUILDS META & SIMULADOR DE THEORYCRAFTING
 // Estándar de la Comunidad Global (KeqingMains, Game8, GenshinLab)
-// Total de Personajes Jugables Integrados: 127
+// Total de Personajes Jugables Integrados: 129
 // =====================================================================
 
 const CHARACTER_BUILDS_DB = [
@@ -21537,6 +21537,233 @@ const CHARACTER_BUILDS_DB = [
       ],
       "hideUnverifiedBenchmarks": true
     }
+  },
+  {
+    "id": "mitya",
+    "name": {
+      "es": "Mitya",
+      "en": "Mitya"
+    },
+    "element": "Electro",
+    "rarity": 5,
+    "weaponType": "Catalyst",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Mitya.png",
+    "tier": "Preliminar 7.2",
+    "role": "DPS en campo · Build preliminar 7.2",
+    "roleCategory": "main_dps",
+    "scalingType": "EM",
+    "scalingLabel": "Maestría Elemental",
+    "bestWeapons": [
+      {
+        "weaponId": "14525",
+        "name": "Edicto Selloastral",
+        "rarity": 5,
+        "type": "Arma característica",
+        "note": "",
+        "reviewedNote": true
+      },
+      {
+        "weaponId": "14437",
+        "name": "Corazón del Invierno",
+        "rarity": 4,
+        "type": "Alternativa 4★",
+        "note": "",
+        "reviewedNote": true
+      },
+      {
+        "weaponId": "14434",
+        "name": "Escarcha del Albor",
+        "rarity": 4,
+        "type": "Alternativa 4★",
+        "note": "",
+        "reviewedNote": true
+      },
+      {
+        "weaponId": "14403",
+        "name": "Memorias de Sacrificios",
+        "rarity": 4,
+        "type": "Maestría Elemental",
+        "note": "",
+        "reviewedNote": true
+      }
+    ],
+    "bestArtifacts": [
+      {
+        "set": "Wanderer's Troupe (2 piezas) + Gilded Dreams (2 piezas)",
+        "type": "Maestría Elemental",
+        "bonus": "",
+        "reviewedBonus": false
+      },
+      {
+        "set": "Gilded Dreams (4 piezas)",
+        "type": "Alternativa",
+        "bonus": "",
+        "reviewedBonus": false
+      },
+      {
+        "set": "Desilusión Congelada en las Sombras (4 piezas)",
+        "type": "Según subestadísticas",
+        "bonus": "Comparativa preliminar: las guías difieren en su posición frente a las opciones de Maestría.",
+        "reviewedBonus": true
+      }
+    ],
+    "mainStats": {
+      "sands": "Maestría Elemental",
+      "goblet": "Maestría Elemental",
+      "circlet": "Prob. Crítica / Daño Crítico"
+    },
+    "substatsPriority": [
+      "Recarga de Energía%: 120–140%, según equipo",
+      "Prob. Crítica / Daño Crítico > Maestría Elemental",
+      "Considerar los bonos de Prob. Crítica del personaje y del equipo."
+    ],
+    "talentPriority": "Ataques Normales > Definitiva (Q) > Habilidad Elemental (E)",
+    "metaTeams": [
+      {
+        "name": "DPS en campo",
+        "members": [
+          "Mitya",
+          "Odette",
+          "Yae Miko",
+          "Sacarosa"
+        ],
+        "comp": "Mitya • Odette • Yae Miko • Sacarosa"
+      },
+      {
+        "name": "Con escudo",
+        "members": [
+          "Mitya",
+          "Odette",
+          "Valeri",
+          "Sacarosa"
+        ],
+        "comp": "Mitya • Odette • Valeri • Sacarosa",
+        "note": "Valeri aporta mucho más en C6."
+      }
+    ],
+    "review": {
+      "status": "preliminary",
+      "targetVersion": "7.2",
+      "date": "2026-11-02",
+      "sourceConsulted": true,
+      "hideUnverifiedBenchmarks": true,
+      "crossCheckedSources": [
+        "https://www.icy-veins.com/genshin-impact/mitya-guide-best-builds",
+        "https://genshinlab.com/characters/mitya/"
+      ],
+      "pending": [
+        "Validar rendimiento y requisitos de energía con equipos de la versión publicada."
+      ],
+      "sourceUrl": "https://mobalytics.gg/genshin-impact/characters/mitya-build-guide"
+    }
+  },
+  {
+    "id": "valeriy",
+    "name": {
+      "es": "Valeri",
+      "en": "Valeriy"
+    },
+    "element": "Electro",
+    "rarity": 4,
+    "weaponType": "Sword",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Valeriy.png",
+    "tier": "Preliminar 7.2",
+    "role": "Soporte con escudo · Build preliminar 7.2",
+    "roleCategory": "support",
+    "scalingType": "ATK",
+    "scalingLabel": "ATQ% y Recarga de Energía",
+    "bestWeapons": [
+      {
+        "weaponId": "11401",
+        "name": "Espada de Favonius",
+        "rarity": 4,
+        "type": "Energía del equipo",
+        "note": "Requiere golpes críticos en campo para activar su pasiva.",
+        "reviewedNote": true
+      },
+      {
+        "weaponId": "11502",
+        "name": "Hoja Afilada Celestial",
+        "rarity": 5,
+        "type": "ATQ y Recarga",
+        "note": "",
+        "reviewedNote": true
+      },
+      {
+        "weaponId": "11425",
+        "name": "Réquiem Abisal",
+        "rarity": 4,
+        "type": "Forja",
+        "note": "Requiere curación para eliminar el pacto vital y aprovechar el bono completo.",
+        "reviewedNote": true
+      }
+    ],
+    "bestArtifacts": [
+      {
+        "set": "Gladiator's Finale (2 piezas) + Shimenawa's Reminiscence (2 piezas)",
+        "type": "ATQ%",
+        "bonus": "",
+        "reviewedBonus": false
+      },
+      {
+        "set": "Instructor (4 piezas)",
+        "type": "Condicional",
+        "bonus": "Valeri debe activar una reacción; comprobar la rotación.",
+        "reviewedBonus": true
+      }
+    ],
+    "mainStats": {
+      "sands": "Recarga de Energía%",
+      "goblet": "ATQ%",
+      "circlet": "ATQ%"
+    },
+    "substatsPriority": [
+      "Recarga de Energía%: 200–250% como referencia con Favonius; ajustar al equipo",
+      "ATQ% > Prob. Crítica para Favonius > ATQ"
+    ],
+    "talentPriority": "Habilidad Elemental (E) > Ataques Normales > Definitiva (Q)",
+    "metaTeams": [
+      {
+        "name": "Soporte de Mitya",
+        "members": [
+          "Mitya",
+          "Odette",
+          "Valeri",
+          "Sacarosa"
+        ],
+        "comp": "Mitya • Odette • Valeri • Sacarosa",
+        "note": "C6 mejora considerablemente su aporte ofensivo."
+      },
+      {
+        "name": "Doble Electro de apoyo",
+        "members": [
+          "Mitya",
+          "Odette",
+          "Valeri",
+          "Yae Miko"
+        ],
+        "comp": "Mitya • Odette • Valeri • Yae Miko"
+      }
+    ],
+    "review": {
+      "status": "preliminary",
+      "targetVersion": "7.2",
+      "date": "2026-11-02",
+      "sourceConsulted": true,
+      "hideUnverifiedBenchmarks": true,
+      "crossCheckedSources": [
+        "https://www.icy-veins.com/genshin-impact/valeriy-guide-best-builds"
+      ],
+      "pending": [
+        "Validar rendimiento y requisitos de energía con equipos de la versión publicada."
+      ],
+      "decisions": [
+        "Prioridad E > normales > Q contrastada con Icy Veins y los multiplicadores originales: el bono del ataque cargado sí aumenta al subir el talento normal.",
+        "Favonius y recarga como configuración de partida; las guías no coinciden en el objetivo de energía ni en el orden de armas.",
+        "2+2 ATQ como opción práctica; no declarar Heart of the Furnace universal sin comprobar quién activa la reacción."
+      ],
+      "sourceUrl": "https://mobalytics.gg/genshin-impact/characters/valeriy-build-guide"
+    }
   }
 ];
 
@@ -21547,7 +21774,7 @@ if (typeof ORIGINAL_SIMULATOR_DATA !== "undefined") {
     if (!original) return;
     build.baseStats = original.baseStats;
     build.talentsData = original.talentsData;
-    build.originalSource = ORIGINAL_SIMULATOR_DATA.source;
+    build.originalSource = original.source || ORIGINAL_SIMULATOR_DATA.source;
     build.originalSourceKey = original.sourceKey;
   });
 }

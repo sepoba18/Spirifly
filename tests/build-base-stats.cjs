@@ -20,4 +20,4 @@ for (const build of CHARACTER_BUILDS_DB) {
 assert.ok(app.includes('${ch.baseStats ? `<details class="tc-original-facts">'));
 assert.ok(!app.includes('estadísticas base y talentos'));
 assert.ok(!app.includes('tc-original-level'));
-console.log('PASS: 127 fichas con Vida, ATQ, DEF y ascensión; cinco idiomas y sin tablas de talentos.');
+console.log(`PASS: ${vm.runInContext('CHARACTER_BUILDS_DB.length',context)} fichas con Vida, ATQ, DEF y ascensión; cinco idiomas y sin tablas de talentos.`);

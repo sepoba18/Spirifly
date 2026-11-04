@@ -1,0 +1,11 @@
+{
+  "version": "7.1",
+  "expectedCharacters": ["Vesna", "Vodyanitsa"],
+  "expectedWeapons": ["Beyond the Chrysalis", "Breezeborne Refrain", "Hymn of the Maelstrom", "New Bough", "Silver Light", "Winter's Heavy Heart"],
+  "officialReferences": [],
+  "manualChecks": [
+    "Prueba de control con la descarga real de 7.1: incluir fichas aunque ya existan en Spirifly.",
+    "Contrastar costes por salto, materiales, dominios y estadisticas sin reutilizar datos de otro personaje.",
+    "Revisar builds con guias especializadas y registrar la version de la guia."
+  ]
+}

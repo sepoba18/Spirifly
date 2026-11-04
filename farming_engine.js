@@ -952,996 +952,3081 @@ const FARMING_ADDITIONAL_SOURCES = [
 
 // REGISTRO MAESTRO DE DOMINIOS Y FUENTES DE RESINA DE TEYVAT
 const FARMING_DOMAINS_REGISTRY = [
-  ...FARMING_ADDITIONAL_SOURCES,
-  { id: "boss_coppelia", name: "Suite Criocéfiro (Coppélia)", region: "Fontaine", type: "boss",
-    resinCost: 40, days: [0,1,2,3,4,5,6], matName: "Recambio mecánico de Coppélia",
-    matIds: ["113049"], icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113049.png", characters: [] },
-
-  ...[
-    ['moonlight', 'Luz lunar', 104356, 1],
-    ['elysium', 'Paraíso', 104359, 2],
-    ['vagrancy', 'Errancia', 104362, 3]
-  ].map(([key, label, base, day]) => ({
-    id: `nodkrai_talent_${key}`, name: 'Capital sin luz', region: 'Nod-Krai',
-    type: 'talent', resinCost: 20, days: [day, day + 3, 0], familyKey: key,
-    matName: `Libros de ${label}`, matIds: [base, base + 1, base + 2].map(String),
-    icon: `https://gi.yatta.moe/assets/UI/UI_ItemIcon_${base + 2}.png`, characters: []
-  })),
-
-  // --- DOMINIOS DE TALENTO (20 ✦ RESINA) ---
-  // Mondstadt (Cañón del olvido)
-  {
-    id: "mond_talent_freedom",
-    name: "Cañón del olvido",
-    region: "Mondstadt",
-    type: "talent",
-    resinCost: 20,
-    days: [1, 4, 0],
-    familyKey: "freedom",
-    matName: "Libros de la Libertad",
-    matIds: ["104301", "104302", "104303"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104303.png",
-    characters: ["Tartaglia", "Klee", "Sacarosa", "Bárbara", "Amber", "Diona", "Aloy"]
-  },
-  {
-    id: "mond_talent_resistance",
-    name: "Cañón del olvido",
-    region: "Mondstadt",
-    type: "talent",
-    resinCost: 20,
-    days: [2, 5, 0],
-    familyKey: "resistance",
-    matName: "Libros de la Resistencia",
-    matIds: ["104304", "104305", "104306"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104306.png",
-    characters: ["Bennett", "Diluc", "Eula", "Jean", "Mona", "Noelle", "Razor"]
-  },
-  {
-    id: "mond_talent_ballad",
-    name: "Cañón del olvido",
-    region: "Mondstadt",
-    type: "talent",
-    resinCost: 20,
-    days: [3, 6, 0],
-    familyKey: "ballad",
-    matName: "Libros de la Poesía",
-    matIds: ["104307", "104308", "104309"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104309.png",
-    characters: ["Albedo", "Fischl", "Kaeya", "Lisa", "Rosaria", "Venti", "Mika"]
-  },
-
-  // Liyue (Mansión Taishan)
-  {
-    id: "liyue_talent_prosperity",
-    name: "Mansión Taishan",
-    region: "Liyue",
-    type: "talent",
-    resinCost: 20,
-    days: [1, 4, 0],
-    familyKey: "prosperity",
-    matName: "Libros de la Prosperidad",
-    matIds: ["104310", "104311", "104312"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104312.png",
-    characters: ["Keching", "Ninguang", "Qiqi", "Shenhe", "Xiao", "Yelan"]
-  },
-  {
-    id: "liyue_talent_diligence",
-    name: "Mansión Taishan",
-    region: "Liyue",
-    type: "talent",
-    resinCost: 20,
-    days: [2, 5, 0],
-    familyKey: "diligence",
-    matName: "Libros de la Diligencia",
-    matIds: ["104313", "104314", "104315"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104315.png",
-    characters: ["Chongyun", "Ganyu", "Hu Tao", "Kaedehara Kazuha", "Xiangling", "Yun Jin", "Yaoyao"]
-  },
-  {
-    id: "liyue_talent_gold",
-    name: "Mansión Taishan",
-    region: "Liyue",
-    type: "talent",
-    resinCost: 20,
-    days: [3, 6, 0],
-    familyKey: "gold",
-    matName: "Libros del Oro",
-    matIds: ["104316", "104317", "104318"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104318.png",
-    characters: ["Beidou", "Xingchiu", "Xinyan", "Yanfei", "Zhongli", "Baizhu", "Gaming"]
-  },
-
-  // Inazuma (Jardín Violeta)
-  {
-    id: "inazuma_talent_transience",
-    name: "Jardín Violeta",
-    region: "Inazuma",
-    type: "talent",
-    resinCost: 20,
-    days: [1, 4, 0],
-    familyKey: "transience",
-    matName: "Libros de la Transitoriedad",
-    matIds: ["104320", "104321", "104322"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104322.png",
-    characters: ["Yoimiya", "Thoma", "Sangonomiya Kokomi", "Shikanoin Heizou", "Kirara"]
-  },
-  {
-    id: "inazuma_talent_elegance",
-    name: "Jardín Violeta",
-    region: "Inazuma",
-    type: "talent",
-    resinCost: 20,
-    days: [2, 5, 0],
-    familyKey: "elegance",
-    matName: "Libros de la Elegancia",
-    matIds: ["104323", "104324", "104325"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104325.png",
-    characters: ["Kamisato Ayaka", "Kamisato Ayato", "Kujou Sara", "Arataki Itto", "Kuki Shinobu"]
-  },
-  {
-    id: "inazuma_talent_light",
-    name: "Jardín Violeta",
-    region: "Inazuma",
-    type: "talent",
-    resinCost: 20,
-    days: [3, 6, 0],
-    familyKey: "light",
-    matName: "Libros de la Luz",
-    matIds: ["104326", "104327", "104328"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104328.png",
-    characters: ["Shogun Raiden", "Sayu", "Yae Miko", "Gorou"]
-  },
-
-  // Sumeru (Campanario de la Ignorancia)
-  {
-    id: "sumeru_talent_admonition",
-    name: "Campanario de la Ignorancia",
-    region: "Sumeru",
-    type: "talent",
-    resinCost: 20,
-    days: [1, 4, 0],
-    familyKey: "admonition",
-    matName: "Libros de la Admonición",
-    matIds: ["104329", "104330", "104331"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104331.png",
-    characters: ["Tignari", "Candace", "Cyno", "Faruzán"]
-  },
-  {
-    id: "sumeru_talent_ingenuity",
-    name: "Campanario de la Ignorancia",
-    region: "Sumeru",
-    type: "talent",
-    resinCost: 20,
-    days: [2, 5, 0],
-    familyKey: "ingenuity",
-    matName: "Libros del Ingenio",
-    matIds: ["104332", "104333", "104334"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104334.png",
-    characters: ["Dori", "Nahida", "Laila", "Alhacén", "Kaveh"]
-  },
-  {
-    id: "sumeru_talent_praxis",
-    name: "Campanario de la Ignorancia",
-    region: "Sumeru",
-    type: "talent",
-    resinCost: 20,
-    days: [3, 6, 0],
-    familyKey: "praxis",
-    matName: "Libros de la Praxis",
-    matIds: ["104335", "104336", "104337"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104337.png",
-    characters: ["Collei", "Nilou", "Trotamundos", "Dehya", "Sethos"]
-  },
-
-  // Fontaine (Gloria póstuma albugínea)
-  {
-    id: "fontaine_talent_equity",
-    name: "Gloria póstuma albugínea",
-    region: "Fontaine",
-    type: "talent",
-    resinCost: 20,
-    days: [1, 4, 0],
-    familyKey: "equity",
-    matName: "Libros de la Equidad",
-    matIds: ["104338", "104339", "104340"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104340.png",
-    characters: ["Lyney", "Neuvillette", "Navia", "Sigewinne"]
-  },
-  {
-    id: "fontaine_talent_justice",
-    name: "Gloria póstuma albugínea",
-    region: "Fontaine",
-    type: "talent",
-    resinCost: 20,
-    days: [2, 5, 0],
-    familyKey: "justice",
-    matName: "Libros de la Justicia",
-    matIds: ["104341", "104342", "104343"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104343.png",
-    characters: ["Furina", "Clorinde", "Charlotte", "Fréminet", "Escoffier"]
-  },
-  {
-    id: "fontaine_talent_order",
-    name: "Gloria póstuma albugínea",
-    region: "Fontaine",
-    type: "talent",
-    resinCost: 20,
-    days: [3, 6, 0],
-    familyKey: "order",
-    matName: "Libros del Orden",
-    matIds: ["104344", "104345", "104346"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104346.png",
-    characters: ["Wriothesley", "Arlecchino", "Lynette", "Chevreuse", "Émilie"]
-  },
-
-  // Natlan (Ruinas de la Ignición)
-  {
-    id: "natlan_talent_contention",
-    name: "Ruinas de la Ignición",
-    region: "Natlan",
-    type: "talent",
-    resinCost: 20,
-    days: [1, 4, 0],
-    familyKey: "contention",
-    matName: "Libros de la Contienda",
-    matIds: ["104347", "104348", "104349"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104349.png",
-    characters: ["Mualani", "Mavuika", "Skirk", "Iansán"]
-  },
-  {
-    id: "natlan_talent_kindling",
-    name: "Ruinas de la Ignición",
-    region: "Natlan",
-    type: "talent",
-    resinCost: 20,
-    days: [2, 5, 0],
-    familyKey: "kindling",
-    matName: "Libros de la Incandescencia",
-    matIds: ["104350", "104351", "104352"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104352.png",
-    characters: ["Kinich", "Xilonen", "Citlalí", "Ororon"]
-  },
-  {
-    id: "natlan_talent_conflict",
-    name: "Ruinas de la Ignición",
-    region: "Natlan",
-    type: "talent",
-    resinCost: 20,
-    days: [3, 6, 0],
-    familyKey: "conflict",
-    matName: "Libros del Conflicto",
-    matIds: ["104353", "104354", "104355"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104355.png",
-    characters: ["Chasca", "Varesa", "Capitano"]
-  },
-
-  // --- DOMINIOS DE ARMAS (20 ✦ RESINA) ---
-  // Mondstadt (Jardín de las Cecilias)
-  {
-    id: "mond_weap_decarabian",
-    name: "Jardín de las Cecilias",
-    region: "Mondstadt",
-    type: "weapon",
-    resinCost: 20,
-    days: [1, 4, 0],
-    familyKey: "decarabian",
-    matName: "Materiales de Decarabian",
-    matIds: ["114001", "114002", "114003", "114004"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114004.png",
-    weaponsDesc: "Espadas de Favonius, Arco del Callejón, Oración Perdida a los Vientos Sagrados, Espada de Madera"
-  },
-  {
-    id: "mond_weap_boreal",
-    name: "Jardín de las Cecilias",
-    region: "Mondstadt",
-    type: "weapon",
-    resinCost: 20,
-    days: [2, 5, 0],
-    familyKey: "boreal",
-    matName: "Colmillo de Lobo Boreal",
-    matIds: ["114005", "114006", "114007", "114008"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114008.png",
-    weaponsDesc: "Último Acorde, Flauta, Lanza de Favonius, Espada Real, Aquila Favonia"
-  },
-  {
-    id: "mond_weap_dandelion",
-    name: "Jardín de las Cecilias",
-    region: "Mondstadt",
-    type: "weapon",
-    resinCost: 20,
-    days: [3, 6, 0],
-    familyKey: "dandelion",
-    matName: "Grillete de Diente de León",
-    matIds: ["114009", "114010", "114011", "114012"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114012.png",
-    weaponsDesc: "Alas Celestiales, Espada del Sacrificio, Espada de Hierro, Gran Espada del Sacrificio"
-  },
-
-  // Liyue (Palacio Oculto de Lianshan)
-  {
-    id: "liyue_weap_guyun",
-    name: "Palacio Oculto de Lianshan",
-    region: "Liyue",
-    type: "weapon",
-    resinCost: 20,
-    days: [1, 4, 0],
-    familyKey: "guyun",
-    matName: "Cuerpo Divino de Guyun",
-    matIds: ["114013", "114014", "114015", "114016"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114016.png",
-    weaponsDesc: "Halcón de Jade, Peñasco Oscuro, Prototipo Rencor, Espina de Hierro"
-  },
-  {
-    id: "liyue_weap_mist",
-    name: "Palacio Oculto de Lianshan",
-    region: "Liyue",
-    type: "weapon",
-    resinCost: 20,
-    days: [2, 5, 0],
-    familyKey: "mist",
-    matName: "Plomo de Niebla",
-    matIds: ["114017", "114018", "114019", "114020"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114020.png",
-    weaponsDesc: "Lanza del Duelo, Prototipo Arcaico, Cuento de Cazadores de Dragones, Prototipo Luz de Luna"
-  },
-  {
-    id: "liyue_weap_aerosiderite",
-    name: "Palacio Oculto de Lianshan",
-    region: "Liyue",
-    type: "weapon",
-    resinCost: 20,
-    days: [3, 6, 0],
-    familyKey: "aerosiderite",
-    matName: "Siderita Oscura",
-    matIds: ["114021", "114022", "114023", "114024"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114024.png",
-    weaponsDesc: "Vórtice del Destructor, Memoria de Polvo, Espada Negra, Prototipo Estelar"
-  },
-
-  // Inazuma (Corte de la Arena Fluida)
-  {
-    id: "inazuma_weap_branch",
-    name: "Corte de la Arena Fluida",
-    region: "Inazuma",
-    type: "weapon",
-    resinCost: 20,
-    days: [1, 4, 0],
-    familyKey: "branch",
-    matName: "Rama Dorada del Mar Distante",
-    matIds: ["114025", "114026", "114027", "114028"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114028.png",
-    weaponsDesc: "Luna Inmutable, Espada Amenoma Gemela, Anillo de Hakushin, Cruz de Kitain"
-  },
-  {
-    id: "inazuma_weap_narukami",
-    name: "Corte de la Arena Fluida",
-    region: "Inazuma",
-    type: "weapon",
-    resinCost: 20,
-    days: [2, 5, 0],
-    familyKey: "narukami",
-    matName: "Valentía de Narukami",
-    matIds: ["114029", "114030", "114031", "114032"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114032.png",
-    weaponsDesc: "Reflejo de las Tinieblas, Pulso de la Noche Estrellada, Segador de la Calamidad"
-  },
-  {
-    id: "inazuma_weap_mask",
-    name: "Corte de la Arena Fluida",
-    region: "Inazuma",
-    type: "weapon",
-    resinCost: 20,
-    days: [3, 6, 0],
-    familyKey: "mask",
-    matName: "Máscara de Kijin",
-    matIds: ["114033", "114034", "114035", "114036"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114036.png",
-    weaponsDesc: "Luz de las Olas Rojas, Caza del Viento, Akuoumaru, Onda de la Luna"
-  },
-
-  // Sumeru (Torre del Orgullo)
-  {
-    id: "sumeru_weap_forest",
-    name: "Torre del Orgullo",
-    region: "Sumeru",
-    type: "weapon",
-    resinCost: 20,
-    days: [1, 4, 0],
-    familyKey: "forest",
-    matName: "Talismán de Oro del Rocío",
-    matIds: ["114037", "114038", "114039", "114040"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114040.png",
-    weaponsDesc: "Espada de Madera, Clave de la Coronación, Espina Floral, Sendero de la Cazadora"
-  },
-  {
-    id: "sumeru_weap_oasis",
-    name: "Torre del Orgullo",
-    region: "Sumeru",
-    type: "weapon",
-    resinCost: 20,
-    days: [2, 5, 0],
-    familyKey: "oasis",
-    matName: "Esencia del Oasis Exuberante",
-    matIds: ["114041", "114042", "114043", "114044"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114044.png",
-    weaponsDesc: "Luz del Exterminio, Sueño de las Mil Noches, Diluvio de la Noche"
-  },
-  {
-    id: "sumeru_weap_deshret",
-    name: "Torre del Orgullo",
-    region: "Sumeru",
-    type: "weapon",
-    resinCost: 20,
-    days: [3, 6, 0],
-    familyKey: "deshret",
-    matName: "Poder del Sol del Desierto",
-    matIds: ["114045", "114046", "114047", "114048"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114048.png",
-    weaponsDesc: "Báculo de las Arenas Escarlatas, Luz Lunar de Xifos, Orgullo de las Flores"
-  },
-
-  // Fontaine (Ecos de las Mareas Profundas)
-  {
-    id: "fontaine_weap_echo",
-    name: "Ecos de las Mareas Profundas",
-    region: "Fontaine",
-    type: "weapon",
-    resinCost: 20,
-    days: [1, 4, 0],
-    familyKey: "echo",
-    matName: "Eco Puro de Serenata Arcaica",
-    matIds: ["114049", "114050", "114051", "114052"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114052.png",
-    weaponsDesc: "Fulgor de las Aguas Calmas (Furina), Espada de Madera de Fontaine, Vado del Río Ceniciento"
-  },
-  {
-    id: "fontaine_weap_dewdrop",
-    name: "Ecos de las Mareas Profundas",
-    region: "Fontaine",
-    type: "weapon",
-    resinCost: 20,
-    days: [2, 5, 0],
-    familyKey: "dewdrop",
-    matName: "Esencia de Rocío Sagrado",
-    matIds: ["114053", "114054", "114055", "114056"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114056.png",
-    weaponsDesc: "Escritura del Flujo Eterno (Neuvillette), Razón del Solsticio, Diálogo de los Sabios del Desierto"
-  },
-  {
-    id: "fontaine_weap_chalice",
-    name: "Ecos de las Mareas Profundas",
-    region: "Fontaine",
-    type: "weapon",
-    resinCost: 20,
-    days: [3, 6, 0],
-    familyKey: "chalice",
-    matName: "Copa de Oro del Mar Impoluto",
-    matIds: ["114057", "114058", "114059", "114060"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114060.png",
-    weaponsDesc: "Sentencia (Navia), Supervisor del Flujo, Portador de la Llama, Lanza de los Vientos"
-  },
-
-  // Natlan (Dominio de la Forja de Natlan)
-  {
-    id: "natlan_weap_blazing_heart",
-    name: "Dominio de Armas de Natlan",
-    region: "Natlan",
-    type: "weapon",
-    resinCost: 20,
-    days: [1, 4, 0],
-    familyKey: "blazing_heart",
-    matName: "Honor del Corazón Sacrificial Ardiente",
-    matIds: ["114061", "114062", "114063", "114064"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114064.png",
-    weaponsDesc: "Mil Soles Abrasadores (Mavuika), Flauta de Ezpitzal, Huella del Arco Iris"
-  },
-  {
-    id: "natlan_weap_sacred_flower",
-    name: "Dominio de Armas de Natlan",
-    region: "Natlan",
-    type: "weapon",
-    resinCost: 20,
-    days: [2, 5, 0],
-    familyKey: "sacred_flower",
-    matName: "Máscara Divina del Sagrado Señor Delirante",
-    matIds: ["114065", "114066", "114067", "114068"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114068.png",
-    weaponsDesc: "Colmillo de la Montaña (Kinich), Rueda de los Días, Gancho de la Tierra"
-  },
-  {
-    id: "natlan_weap_obsidian",
-    name: "Dominio de Armas de Natlan",
-    region: "Natlan",
-    type: "weapon",
-    resinCost: 20,
-    days: [3, 6, 0],
-    familyKey: "obsidian",
-    matName: "Revelación Espiritista de Obsidiana",
-    matIds: ["114069", "114070", "114071", "114072"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114072.png",
-    weaponsDesc: "Canción del Silencio, Astro del Destino, Garra de la Cazadora"
-  },
-
-  // Familias de armas posteriores a Natlan.
-  {
-      "id": "nodkrai_weap_artful_device",
-      "name": "Corte lunar perdida",
-      "region": "Nod-Krai",
-      "type": "weapon",
-      "resinCost": 20,
-      "days": [
-          1,
-          4,
-          0
-      ],
-      "familyKey": "artful_device",
-      "matName": "Instrumento misterioso",
-      "matIds": [
-          "114073",
-          "114074",
-          "114075",
-          "114076"
-      ],
-      "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114076.png"
-  },
-  {
-      "id": "nodkrai_weap_long_night",
-      "name": "Corte lunar perdida",
-      "region": "Nod-Krai",
-      "type": "weapon",
-      "resinCost": 20,
-      "days": [
-          2,
-          5,
-          0
-      ],
-      "familyKey": "long_night",
-      "matName": "Fuego de la larga noche",
-      "matIds": [
-          "114077",
-          "114078",
-          "114079",
-          "114080"
-      ],
-      "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114080.png"
-  },
-  {
-      "id": "nodkrai_weap_far_north",
-      "name": "Corte lunar perdida",
-      "region": "Nod-Krai",
-      "type": "weapon",
-      "resinCost": 20,
-      "days": [
-          3,
-          6,
-          0
-      ],
-      "familyKey": "far_north",
-      "matName": "Hijos del Lejano Norte",
-      "matIds": [
-          "114081",
-          "114082",
-          "114083",
-          "114084"
-      ],
-      "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114084.png"
-  },
-  {
-      "id": "snezhnaya_weap_pale_star",
-      "name": "Scars of Cursed Obsession",
-      "region": "Snezhnaya",
-      "type": "weapon",
-      "resinCost": 20,
-      "days": [
-          1,
-          4,
-          0
-      ],
-      "familyKey": "pale_star",
-      "matName": "Ejército de la Estrella Albina",
-      "matIds": [
-          "114085",
-          "114086",
-          "114087",
-          "114088"
-      ],
-      "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114088.png"
-  },
-  {
-      "id": "snezhnaya_weap_spiritual_nectar",
-      "name": "Scars of Cursed Obsession",
-      "region": "Snezhnaya",
-      "type": "weapon",
-      "resinCost": 20,
-      "days": [
-          2,
-          5,
-          0
-      ],
-      "familyKey": "spiritual_nectar",
-      "matName": "Néctar espiritual de la bodega",
-      "matIds": [
-          "114089",
-          "114090",
-          "114091",
-          "114092"
-      ],
-      "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114092.png"
-  },
-  {
-      "id": "snezhnaya_weap_frost_emperor",
-      "name": "Scars of Cursed Obsession",
-      "region": "Snezhnaya",
-      "type": "weapon",
-      "resinCost": 20,
-      "days": [
-          3,
-          6,
-          0
-      ],
-      "familyKey": "frost_emperor",
-      "matName": "Emperador de la escarcha",
-      "matIds": [
-          "114093",
-          "114094",
-          "114095",
-          "114096"
-      ],
-      "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114096.png"
-  },
-
-  // --- LÍNEAS LEY (20 ✦ RESINA) - TODOS LOS DÍAS ---
-  {
-    id: "leyline_mora",
-    name: "Líneas Ley: Brote de la Riqueza",
-    region: "Teyvat (Todas las Regiones)",
-    type: "leylines",
-    resinCost: 20,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Mora (60,000 por brote)",
-    matIds: ["202"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_202.png",
-    note: "Aporta ~60,000 Mora por 20 ✦ de Resina (o 120,000 por Resina Concentrada)."
-  },
-  {
-    id: "leyline_exp",
-    name: "Líneas Ley: Brote de la Revelación",
-    region: "Teyvat (Todas las Regiones)",
-    type: "leylines",
-    resinCost: 20,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Libros de EXP (Ingenio del Héroe)",
-    matIds: ["104001", "104002", "104003"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104003.png",
-    note: "Aporta ~4-5 Ingenios del Héroe + ~6-7 EXP del Aventurero (~90,000 EXP de personaje) por 20 ✦."
-  },
-
-  // --- JEFES DE MUNDO (40 ✦ RESINA) - TODOS LOS DÍAS ---
-  {
-    id: "boss_tulpa",
-    name: "Tulpa Hidromimético",
-    region: "Fontaine",
-    type: "boss",
-    resinCost: 40,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Agua intrascendible",
-    matIds: ["113057"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113057.png",
-    characters: ["Furina"]
-  },
-  {
-    id: "boss_golem_legatus",
-    name: "Gólem Legado",
-    region: "Fontaine",
-    type: "boss",
-    resinCost: 40,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Núcleo de las ruinas arcanas",
-    matIds: ["113059"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113059.png",
-    characters: ["Arlecchino", "Clorinde"]
-  },
-  {
-    id: "boss_coppelius",
-    name: "Suite Criocéfiro (Coppélius)",
-    region: "Fontaine",
-    type: "boss",
-    resinCost: 40,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Recambio mecánico de suite",
-    matIds: ["113050"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113050.png",
-    characters: ["Navia", "Lynette", "Fréminet"]
-  },
-  {
-    id: "boss_emperor_fire",
-    name: "Emperador Piroacorazado",
-    region: "Fontaine",
-    type: "boss",
-    resinCost: 40,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Resolución del juicio",
-    matIds: ["113051"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113051.png",
-    characters: ["Lyney", "Chevreuse"]
-  },
-  {
-    id: "boss_gravity_generator",
-    name: "Generador de Campo Experimental",
-    region: "Fontaine",
-    type: "boss",
-    resinCost: 40,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Dispositivo de gravedad",
-    matIds: ["113052"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113052.png",
-    characters: ["Wriothesley"]
-  },
-  {
-    id: "boss_millennial_seahorse",
-    name: "Corcel de Mar Perlamilenario",
-    region: "Fontaine",
-    type: "boss",
-    resinCost: 40,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Escala de caballito de mar",
-    matIds: ["113053"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113053.png",
-    characters: ["Neuvillette"]
-  },
-  {
-    id: "boss_natlan_yumkasaur",
-    name: "Rey Yumkasaurio Glotón",
-    region: "Natlan",
-    type: "boss",
-    resinCost: 40,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Corazón ignívomo",
-    matIds: ["113065"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113065.png",
-    characters: ["Kinich"]
-  },
-  {
-    id: "boss_natlan_lava_golem",
-    name: "Autómata Fuentenigma - Máquina configuracional",
-    region: "Natlan",
-    type: "boss",
-    resinCost: 40,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Marca dorada de la cima",
-    matIds: ["113066"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113066.png",
-    characters: ["Xilonen", "Mavuika"]
-  },
-  {
-    id: "boss_natlan_qucusaur",
-    name: "Tirano Qucusaurio Aureoardiente",
-    region: "Natlan",
-    type: "boss",
-    resinCost: 40,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Ojo del cielo ceniciento",
-    matIds: ["113064"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113064.png",
-    characters: ["Chasca", "Citlalí"]
-  },
-  {
-    id: "boss_natlan_kukusaur",
-    name: "Magmadragón Candente",
-    region: "Natlan",
-    type: "boss",
-    resinCost: 40,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Agallas secretas de las profundidades",
-    matIds: ["113072"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113072.png",
-    characters: ["Mualani", "Ororon"]
-  },
-  {
-    id: "boss_suanni",
-    name: "Suanni Ermitaña",
-    region: "Liyue",
-    type: "boss",
-    resinCost: 40,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Ala de pluma pétrea",
-    matIds: ["113058"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113058.png",
-    characters: ["Xianyun", "Gaming"]
-  },
-  {
-    id: "boss_setekh_wenut",
-    name: "Gusano de Sutej",
-    region: "Sumeru",
-    type: "boss",
-    resinCost: 40,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Seudomartillo de arena",
-    matIds: ["113044"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113044.png",
-    characters: ["Alhacén", "Mika"]
-  },
-  {
-    id: "boss_dendro_hypo",
-    name: "Hipóstasis Dendro",
-    region: "Sumeru",
-    type: "boss",
-    resinCost: 40,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Trepadora supresora",
-    matIds: ["113040"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113040.png",
-    characters: ["Nahida", "Yaoyao"]
-  },
-  {
-    id: "boss_ruin_serpent",
-    name: "Serpiente de las Ruinas",
-    region: "Liyue (Sima)",
-    type: "boss",
-    resinCost: 40,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Colmillo de la sombra rúbica",
-    matIds: ["113035"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113035.png",
-    characters: ["Yelan", "Shikanoin Heizou", "Kuki Shinobu"]
-  },
-  {
-    id: "boss_maguu_kenki",
-    name: "Oni Espadachín",
-    region: "Inazuma",
-    type: "boss",
-    resinCost: 40,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Engranaje marión",
-    matIds: ["113022"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113022.png",
-    characters: ["Kaedehara Kazuha", "Sayu"]
-  },
-  {
-    id: "boss_thunder_manifestation",
-    name: "Manifestación del Trueno",
-    region: "Inazuma",
-    type: "boss",
-    resinCost: 40,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Rencor de la tempestad",
-    matIds: ["113029"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113029.png",
-    characters: ["Shogun Raiden", "Kujou Sara"]
-  },
-  {
-    id: "boss_primo_geovishap",
-    name: "Protodragarto Geo",
-    region: "Liyue",
-    type: "boss",
-    resinCost: 40,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Cuerno juvenil",
-    matIds: ["113016"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113016.png",
-    characters: ["Xiao", "Hu Tao", "Yanfei"]
-  },
-
-  // --- JEFES SEMANALES (30 ✦ / 60 ✦ RESINA) - TODOS LOS DÍAS ---
-  {
-    id: "weekly_narwhal",
-    name: "Sombra del Mar Primitivo (Narval Devorador)",
-    region: "Fontaine",
-    type: "weekly",
-    resinCost: 30,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Materiales del Devorador Narval",
-    matIds: ["113054", "113055", "113056"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113056.png",
-    characters: ["Furina", "Navia", "Clorinde", "Sigewinne", "Chiori", "Chevreuse"]
-  },
-  {
-    id: "weekly_arlecchino",
-    name: "Teatro de la Vela Solitaria (Arlecchino)",
-    region: "Fontaine",
-    type: "weekly",
-    resinCost: 30,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Materiales de Arlecchino",
-    matIds: ["113060", "113061", "113062"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113060.png",
-    characters: ["Arlecchino", "Émilie", "Clorinde", "Sethos"]
-  },
-  {
-    id: "weekly_apep",
-    name: "Guardián del Oasis de Apep",
-    region: "Sumeru",
-    type: "weekly",
-    resinCost: 30,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Materiales del Guardián Apep",
-    matIds: ["113046", "113047", "113048"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113046.png",
-    characters: ["Baizhu", "Kaveh", "Alhacén", "Dehya", "Lyney", "Fréminet", "Wriothesley", "Neuvillette"]
-  },
-  {
-    id: "weekly_scaramouche",
-    name: "Taller de Joururi (Scaramouche)",
-    region: "Sumeru",
-    type: "weekly",
-    resinCost: 30,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Materiales de Scaramouche",
-    matIds: ["113041", "113042", "113043"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113041.png",
-    characters: ["Nahida", "Trotamundos", "Alhacén", "Faruzán", "Laila", "Dehya"]
-  },
-  {
-    id: "weekly_raiden",
-    name: "Fin del Paraíso Ilusorio (Shogun Raiden)",
-    region: "Inazuma",
-    type: "weekly",
-    resinCost: 30,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Materiales de la Shogun Raiden",
-    matIds: ["113032", "113033", "113034"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113032.png",
-    characters: ["Kamisato Ayato", "Yae Miko", "Shikanoin Heizou", "Kuki Shinobu", "Tignari", "Collei", "Cyno", "Nilou"]
-  },
-  {
-    id: "weekly_signora",
-    name: "Mansión Tenshukaku (La Signora)",
-    region: "Inazuma",
-    type: "weekly",
-    resinCost: 30,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Materiales de La Signora",
-    matIds: ["113025", "113026", "113027"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113025.png",
-    characters: ["Shogun Raiden", "Kujou Sara", "Sangonomiya Kokomi", "Thoma", "Arataki Itto", "Gorou", "Yelan"]
-  },
-  {
-    id: "weekly_azhdaha",
-    name: "Bajo el Dragón Queller (Azhdaha)",
-    region: "Liyue",
-    type: "weekly",
-    resinCost: 30,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Materiales de Azhdaha",
-    matIds: ["113017", "113018", "113019"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113017.png",
-    characters: ["Eula", "Kaedehara Kazuha", "Yanfei", "Kamisato Ayaka", "Yoimiya", "Sayu"]
-  },
-  {
-    id: "weekly_childe",
-    name: "Casa Dorada (Tartaglia)",
-    region: "Liyue",
-    type: "weekly",
-    resinCost: 30,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Materiales de Tartaglia",
-    matIds: ["113013", "113014", "113015"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113013.png",
-    characters: ["Xiao", "Ganyu", "Hu Tao", "Rosaria", "Zhongli", "Diona", "Xinyan"]
-  },
-  {
-    id: "weekly_andrius",
-    name: "Lobo del Norte (Andrius)",
-    region: "Mondstadt",
-    type: "weekly",
-    resinCost: 30,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Materiales de Andrius",
-    matIds: ["113006", "113007", "113008"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113006.png",
-    characters: ["Venti", "Klee", "Mona", "Jean", "Diluc", "Qiqi", "Keching"]
-  },
-  {
-    id: "weekly_dvalin",
-    name: "Guarida de Stormterror (Dvalin)",
-    region: "Mondstadt",
-    type: "weekly",
-    resinCost: 30,
-    days: [0, 1, 2, 3, 4, 5, 6],
-    matName: "Materiales de Dvalin",
-    matIds: ["113003", "113004", "113005"],
-    icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113003.png",
-    characters: ["Bennett", "Diluc", "Jean", "Bárbara", "Xiangling", "Razor"]
+  {
+    "id": "boss_anemo_hypostasis",
+    "name": "Hipóstasis Anemo",
+    "region": "Mondstadt",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Semilla de huracán",
+    "matIds": [
+      "113001"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113001.png",
+    "characters": [
+      "Jean",
+      "Sacarosa",
+      "Venti"
+    ],
+    "sourceKey": "anemo_hypostasis",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_electro_hypostasis",
+    "name": "Hipóstasis Electro",
+    "region": "Mondstadt",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Prisma del relámpago",
+    "matIds": [
+      "113002"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113002.png",
+    "characters": [
+      "Beidou",
+      "Fischl",
+      "Keching",
+      "Lisa",
+      "Razor"
+    ],
+    "sourceKey": "electro_hypostasis",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_geo_hypostasis",
+    "name": "Hipóstasis Geo",
+    "region": "Liyue",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Pilar de basalto",
+    "matIds": [
+      "113009"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113009.png",
+    "characters": [
+      "Albedo",
+      "Ninguang",
+      "Noelle",
+      "Zhongli"
+    ],
+    "sourceKey": "geo_hypostasis",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_cryo_regisvine",
+    "name": "Regisvid Cryo",
+    "region": "Mondstadt",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Núcleo de escarcha",
+    "matIds": [
+      "113010"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113010.png",
+    "characters": [
+      "Chongyun",
+      "Diona",
+      "Ganyu",
+      "Kaeya",
+      "Qiqi",
+      "Rosaria"
+    ],
+    "sourceKey": "cryo_regisvine",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_pyro_regisvine",
+    "name": "Regisvid Pyro",
+    "region": "Liyue",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Semilla de fuego eterno",
+    "matIds": [
+      "113011"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113011.png",
+    "characters": [
+      "Amber",
+      "Bennett",
+      "Diluc",
+      "Klee",
+      "Xiangling",
+      "Xinyan"
+    ],
+    "sourceKey": "pyro_regisvine",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_oceanid",
+    "name": "Oceánida",
+    "region": "Liyue",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Corazón purificador",
+    "matIds": [
+      "113012"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113012.png",
+    "characters": [
+      "Bárbara",
+      "Mona",
+      "Tartaglia",
+      "Xingchiu"
+    ],
+    "sourceKey": "oceanid",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_cryo_hypostasis",
+    "name": "Hipóstasis Cryo",
+    "region": "Mondstadt",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Flor cristalina",
+    "matIds": [
+      "113020"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113020.png",
+    "characters": [
+      "Aloy",
+      "Eula"
+    ],
+    "sourceKey": "cryo_hypostasis",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_perpetual_mechanical_array",
+    "name": "Maquinaria Eterna",
+    "region": "Inazuma",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Corazón de la eternidad",
+    "matIds": [
+      "113023"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113023.png",
+    "characters": [
+      "Gorou",
+      "Kamisato Ayaka"
+    ],
+    "sourceKey": "perpetual_mechanical_array",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_pyro_hypostasis",
+    "name": "Hipóstasis Pyro",
+    "region": "Inazuma",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Perla abrasante",
+    "matIds": [
+      "113024"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113024.png",
+    "characters": [
+      "Thoma",
+      "Yoimiya"
+    ],
+    "sourceKey": "pyro_hypostasis",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_hydro_hypostasis",
+    "name": "Hipóstasis Hydro",
+    "region": "Inazuma",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Rocío del rechazo",
+    "matIds": [
+      "113028"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113028.png",
+    "characters": [
+      "Kamisato Ayato",
+      "Sangonomiya Kokomi"
+    ],
+    "sourceKey": "hydro_hypostasis",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_golden_wolflord",
+    "name": "Rey Acechador Dorado",
+    "region": "Inazuma",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Cuerno del Rey Acechador",
+    "matIds": [
+      "113030"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113030.png",
+    "characters": [
+      "Arataki Itto",
+      "Yun Jin"
+    ],
+    "sourceKey": "golden_wolflord",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_bathysmal_vishap",
+    "name": "Dragartos de las Profundidades",
+    "region": "Inazuma",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Pseudoaleta de dragón de las profundidades",
+    "matIds": [
+      "113031"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113031.png",
+    "characters": [
+      "Shenhe",
+      "Yae Miko"
+    ],
+    "sourceKey": "bathysmal_vishap",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_jadeplume_terrorshroom",
+    "name": "Espantohongo Plumaverde",
+    "region": "Sumeru",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Picogancho fúngico",
+    "matIds": [
+      "113036"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113036.png",
+    "characters": [
+      "Collei",
+      "Tignari"
+    ],
+    "sourceKey": "jadeplume_terrorshroom",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_electro_regisvine",
+    "name": "Regisvid Electro",
+    "region": "Sumeru",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Fruto atronador",
+    "matIds": [
+      "113037"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113037.png",
+    "characters": [
+      "Cyno",
+      "Dori"
+    ],
+    "sourceKey": "electro_regisvine",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_aeonblight_drake",
+    "name": "Dragón Aciagoeterno",
+    "region": "Sumeru",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Resorte perpetuo",
+    "matIds": [
+      "113038"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113038.png",
+    "characters": [
+      "Laila",
+      "Nilou",
+      "Trotamundos"
+    ],
+    "sourceKey": "aeonblight_drake",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_semi_perpetual_control_matrix",
+    "name": "Algoritmo de Semi-Incesante Matriz de Observación Navegadora",
+    "region": "Sumeru",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Tetraedro guialuz",
+    "matIds": [
+      "113039"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113039.png",
+    "characters": [
+      "Candace",
+      "Dehya",
+      "Faruzán"
+    ],
+    "sourceKey": "semi_perpetual_control_matrix",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_iniquitous_baptist",
+    "name": "Bautista Sacrílego",
+    "region": "Sumeru",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Aro sombrioeterno",
+    "matIds": [
+      "113045"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113045.png",
+    "characters": [
+      "Baizhu",
+      "Kirara"
+    ],
+    "sourceKey": "iniquitous_baptist",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "quest_natlan_quests",
+    "name": "Misiones de Natlan",
+    "region": "Natlan",
+    "type": "quest",
+    "resinCost": 0,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Piedra angular piroastral",
+    "matIds": [
+      "113063"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113063.png",
+    "characters": [
+      "Viajero"
+    ],
+    "sourceKey": "natlan_quests",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_tenebrous_papilla",
+    "name": "Cepa Abismática",
+    "region": "Natlan",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Mirada abismática",
+    "matIds": [
+      "113067"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113067.png",
+    "characters": [
+      "Chasca",
+      "Iansán",
+      "Skirk"
+    ],
+    "sourceKey": "tenebrous_papilla",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "weekly_eroded_primal",
+    "name": "Señor del Fuego Primigenio Corroído",
+    "region": "Natlan",
+    "type": "weekly",
+    "resinCost": 60,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Cuerno corroído",
+    "matIds": [
+      "113068",
+      "113069",
+      "113070"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113068.png",
+    "characters": [
+      "Dahlia",
+      "Durin",
+      "Escoffier",
+      "Illuga",
+      "Ineffa",
+      "Lan Yan",
+      "Lauma",
+      "Mavuika",
+      "Varesa"
+    ],
+    "sourceKey": "eroded_primal",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_hermetic_spiritspeaker",
+    "name": "Asceta Espiritista",
+    "region": "Natlan",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Talismán de la tierra enigmática",
+    "matIds": [
+      "113071"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113071.png",
+    "characters": [
+      "Citlalí",
+      "Yumemizuki Mizuki"
+    ],
+    "sourceKey": "hermetic_spiritspeaker",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "weekly_the_game_before_the_gate",
+    "name": "El juego ante la puerta",
+    "region": "Mondstadt",
+    "type": "weekly",
+    "resinCost": 60,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Muestra ascendida: Caballo",
+    "matIds": [
+      "113073",
+      "113074",
+      "113075"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113073.png",
+    "characters": [
+      "Flins",
+      "Ifá",
+      "Jahoda",
+      "Lohen",
+      "Néfer",
+      "Skirk",
+      "Varka",
+      "Zibai"
+    ],
+    "sourceKey": "the_game_before_the_gate",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_overseer_device",
+    "name": "Autómata Fuentenigma - Máquina de control",
+    "region": "Natlan",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Acumulador de aire fuentenigma",
+    "matIds": [
+      "113076"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113076.png",
+    "characters": [
+      "Dahlia",
+      "Escoffier",
+      "Ineffa"
+    ],
+    "sourceKey": "overseer_device",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_knuckle_duckle",
+    "name": "Puñopato",
+    "region": "Nod-Krai",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Troquel de “estam-pato” de kuuvahki preciso",
+    "matIds": [
+      "113077"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113077.png",
+    "characters": [
+      "Aino",
+      "Flins"
+    ],
+    "sourceKey": "knuckle_duckle",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_radiant_moonfly",
+    "name": "Selenimariposa Radiante",
+    "region": "Nod-Krai",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Ala rutilante",
+    "matIds": [
+      "113078"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113078.png",
+    "characters": [
+      "Jahoda",
+      "Lauma"
+    ],
+    "sourceKey": "radiant_moonfly",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_frostnight_herra",
+    "name": "Señor Nochescarcha",
+    "region": "Nod-Krai",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Asta radiante",
+    "matIds": [
+      "113079"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113079.png",
+    "characters": [
+      "Colombina",
+      "Néfer",
+      "Prune"
+    ],
+    "sourceKey": "frostnight_herra",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_mechanized_fortress",
+    "name": "Todoterreno Superpesado - Fortaleza mecánica",
+    "region": "Nod-Krai",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Núcleo kuuvahki de bucle militar",
+    "matIds": [
+      "113080"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113080.png",
+    "characters": [
+      "Durin",
+      "Illuga"
+    ],
+    "sourceKey": "mechanized_fortress",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "weekly_the_doctor",
+    "name": "El Doctor (Hereje de la Falsa Luna)",
+    "region": "Nod-Krai",
+    "type": "weekly",
+    "resinCost": 60,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Máscara del doctor virtuoso",
+    "matIds": [
+      "113081",
+      "113082",
+      "113083"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113081.png",
+    "characters": [
+      "Aliosha",
+      "Colombina",
+      "Linnéa",
+      "Prune",
+      "Sandrone",
+      "Vodyanitsa",
+      "Mitya"
+    ],
+    "sourceKey": "the_doctor",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_lord_of_the_hidden_depths",
+    "name": "Susurrador de Pesadillas de las Profundidades Insondables",
+    "region": "Nod-Krai",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Vestigio de las alas del terror",
+    "matIds": [
+      "113084"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113084.png",
+    "characters": [
+      "Nicole",
+      "Zibai"
+    ],
+    "sourceKey": "lord_of_the_hidden_depths",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_radiant_moongecko",
+    "name": "Selenogeco Radiante",
+    "region": "Nod-Krai",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Cola prismática cortada",
+    "matIds": [
+      "113085"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113085.png",
+    "characters": [
+      "Lohen",
+      "Varka"
+    ],
+    "sourceKey": "radiant_moongecko",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_watcher_fallen_vigil",
+    "name": "Vigilante Celestecaído",
+    "region": "Mondstadt",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Pluma celestecaída",
+    "matIds": [
+      "113086"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113086.png",
+    "characters": [
+      "Linnéa",
+      "Sandrone"
+    ],
+    "sourceKey": "watcher_fallen_vigil",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "weekly_il_dottore",
+    "name": "Dottore (Campo restrictivo del nirvana universal)",
+    "region": "Sumeru",
+    "type": "weekly",
+    "resinCost": 60,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Resina falsa",
+    "matIds": [
+      "113087",
+      "113088",
+      "113089"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113087.png",
+    "characters": [
+      "Nicole",
+      "Odette",
+      "Vesna",
+      "Valeri"
+    ],
+    "sourceKey": "il_dottore",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_immortal_construct",
+    "name": "Creación Derivada Inmortal",
+    "region": "Snezhnaya",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Rama florida inmortal no chamuscada",
+    "matIds": [
+      "113090"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113090.png",
+    "characters": [
+      "Odette",
+      "Vodyanitsa"
+    ],
+    "sourceKey": "immortal_construct",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_chimeric_winged_lion",
+    "name": "León Quimérico Alado",
+    "region": "Snezhnaya",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Cola cercenada del surcacielos",
+    "matIds": [
+      "113091"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113091.png",
+    "characters": [
+      "Aliosha",
+      "Valeri"
+    ],
+    "sourceKey": "chimeric_winged_lion",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "boss_guardian_blade_of_drifting_snow",
+    "name": "Espadachina Protectora Surcanieves",
+    "region": "Snezhnaya",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Hombrera agrietada de la errabunda",
+    "matIds": [
+      "113092"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113092.png",
+    "characters": [
+      "Vesna"
+    ],
+    "sourceKey": "guardian_blade_of_drifting_snow",
+    "source": "https://seelie.me/"
+  },
+  {
+    "id": "snezhnaya_talent_charity",
+    "name": "Ruinas sagradas del desamparo",
+    "region": "Snezhnaya",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      1,
+      4,
+      0
+    ],
+    "familyKey": "charity",
+    "matName": "Libros de Amor",
+    "matIds": [
+      "104365",
+      "104366",
+      "104367"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104367.png",
+    "characters": [
+      "Odette",
+      "Mitya"
+    ],
+    "sourceKey": "fallen_grace",
+    "source": "https://genshindb.com/es/dominios/snezhnaya"
+  },
+  {
+    "id": "snezhnaya_talent_fortitude",
+    "name": "Ruinas sagradas del desamparo",
+    "region": "Snezhnaya",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      2,
+      5,
+      0
+    ],
+    "familyKey": "fortitude",
+    "matName": "Libros de Tenacidad",
+    "matIds": [
+      "104368",
+      "104369",
+      "104370"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104370.png",
+    "characters": [
+      "Aliosha",
+      "Vodyanitsa"
+    ],
+    "sourceKey": "fallen_grace",
+    "source": "https://genshindb.com/es/dominios/snezhnaya"
+  },
+  {
+    "id": "snezhnaya_talent_glory",
+    "name": "Ruinas sagradas del desamparo",
+    "region": "Snezhnaya",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      3,
+      6,
+      0
+    ],
+    "familyKey": "glory",
+    "matName": "Libros de Gloria",
+    "matIds": [
+      "104371",
+      "104372",
+      "104373"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104373.png",
+    "characters": [
+      "Vesna",
+      "Valeri"
+    ],
+    "sourceKey": "fallen_grace",
+    "source": "https://genshindb.com/es/dominios/snezhnaya"
+  },
+  {
+    "id": "boss_coppelia",
+    "name": "Suite Criocéfiro (Coppélia)",
+    "region": "Fontaine",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Recambio mecánico de Coppélia",
+    "matIds": [
+      "113049"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113049.png",
+    "characters": [
+      "Chiori",
+      "Lynette"
+    ]
+  },
+  {
+    "id": "nodkrai_talent_moonlight",
+    "name": "Capital sin luz",
+    "region": "Nod-Krai",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      1,
+      4,
+      0
+    ],
+    "familyKey": "moonlight",
+    "matName": "Libros de Luz lunar",
+    "matIds": [
+      "104356",
+      "104357",
+      "104358"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104358.png",
+    "characters": [
+      "Colombina",
+      "Lauma"
+    ]
+  },
+  {
+    "id": "nodkrai_talent_elysium",
+    "name": "Capital sin luz",
+    "region": "Nod-Krai",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      2,
+      5,
+      0
+    ],
+    "familyKey": "elysium",
+    "matName": "Libros de Paraíso",
+    "matIds": [
+      "104359",
+      "104360",
+      "104361"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104361.png",
+    "characters": [
+      "Aino",
+      "Illuga",
+      "Néfer",
+      "Nicole"
+    ]
+  },
+  {
+    "id": "nodkrai_talent_vagrancy",
+    "name": "Capital sin luz",
+    "region": "Nod-Krai",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      3,
+      6,
+      0
+    ],
+    "familyKey": "vagrancy",
+    "matName": "Libros de Errancia",
+    "matIds": [
+      "104362",
+      "104363",
+      "104364"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104364.png",
+    "characters": [
+      "Flins",
+      "Jahoda",
+      "Linnéa",
+      "Sandrone"
+    ]
+  },
+  {
+    "id": "mond_talent_freedom",
+    "name": "Cañón del olvido",
+    "region": "Mondstadt",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      1,
+      4,
+      0
+    ],
+    "familyKey": "freedom",
+    "matName": "Libros de la Libertad",
+    "matIds": [
+      "104301",
+      "104302",
+      "104303"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104303.png",
+    "characters": [
+      "Aloy",
+      "Amber",
+      "Bárbara",
+      "Diona",
+      "Klee",
+      "Sacarosa",
+      "Tartaglia",
+      "Varka"
+    ]
+  },
+  {
+    "id": "mond_talent_resistance",
+    "name": "Cañón del olvido",
+    "region": "Mondstadt",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      2,
+      5,
+      0
+    ],
+    "familyKey": "resistance",
+    "matName": "Libros de la Resistencia",
+    "matIds": [
+      "104304",
+      "104305",
+      "104306"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104306.png",
+    "characters": [
+      "Bennett",
+      "Diluc",
+      "Eula",
+      "Jean",
+      "Lohen",
+      "Mona",
+      "Noelle",
+      "Prune",
+      "Razor"
+    ]
+  },
+  {
+    "id": "mond_talent_ballad",
+    "name": "Cañón del olvido",
+    "region": "Mondstadt",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      3,
+      6,
+      0
+    ],
+    "familyKey": "ballad",
+    "matName": "Libros de la Poesía",
+    "matIds": [
+      "104307",
+      "104308",
+      "104309"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104309.png",
+    "characters": [
+      "Albedo",
+      "Dahlia",
+      "Durin",
+      "Fischl",
+      "Kaeya",
+      "Lisa",
+      "Mika",
+      "Rosaria",
+      "Venti"
+    ]
+  },
+  {
+    "id": "liyue_talent_prosperity",
+    "name": "Mansión Taishan",
+    "region": "Liyue",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      1,
+      4,
+      0
+    ],
+    "familyKey": "prosperity",
+    "matName": "Libros de la Prosperidad",
+    "matIds": [
+      "104310",
+      "104311",
+      "104312"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104312.png",
+    "characters": [
+      "Gaming",
+      "Keching",
+      "Ninguang",
+      "Qiqi",
+      "Shenhe",
+      "Xiao",
+      "Yelan"
+    ]
+  },
+  {
+    "id": "liyue_talent_diligence",
+    "name": "Mansión Taishan",
+    "region": "Liyue",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      2,
+      5,
+      0
+    ],
+    "familyKey": "diligence",
+    "matName": "Libros de la Diligencia",
+    "matIds": [
+      "104313",
+      "104314",
+      "104315"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104315.png",
+    "characters": [
+      "Chongyun",
+      "Ganyu",
+      "Hu Tao",
+      "Kaedehara Kazuha",
+      "Lan Yan",
+      "Xiangling",
+      "Yaoyao",
+      "Yun Jin"
+    ]
+  },
+  {
+    "id": "liyue_talent_gold",
+    "name": "Mansión Taishan",
+    "region": "Liyue",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      3,
+      6,
+      0
+    ],
+    "familyKey": "gold",
+    "matName": "Libros del Oro",
+    "matIds": [
+      "104316",
+      "104317",
+      "104318"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104318.png",
+    "characters": [
+      "Baizhu",
+      "Beidou",
+      "Xianyun",
+      "Xingchiu",
+      "Xinyan",
+      "Yanfei",
+      "Zhongli",
+      "Zibai"
+    ]
+  },
+  {
+    "id": "inazuma_talent_transience",
+    "name": "Jardín Violeta",
+    "region": "Inazuma",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      1,
+      4,
+      0
+    ],
+    "familyKey": "transience",
+    "matName": "Libros de la Transitoriedad",
+    "matIds": [
+      "104320",
+      "104321",
+      "104322"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104322.png",
+    "characters": [
+      "Kirara",
+      "Sangonomiya Kokomi",
+      "Shikanoin Heizou",
+      "Thoma",
+      "Yoimiya",
+      "Yumemizuki Mizuki"
+    ]
+  },
+  {
+    "id": "inazuma_talent_elegance",
+    "name": "Jardín Violeta",
+    "region": "Inazuma",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      2,
+      5,
+      0
+    ],
+    "familyKey": "elegance",
+    "matName": "Libros de la Elegancia",
+    "matIds": [
+      "104323",
+      "104324",
+      "104325"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104325.png",
+    "characters": [
+      "Arataki Itto",
+      "Kamisato Ayaka",
+      "Kamisato Ayato",
+      "Kujou Sara",
+      "Kuki Shinobu"
+    ]
+  },
+  {
+    "id": "inazuma_talent_light",
+    "name": "Jardín Violeta",
+    "region": "Inazuma",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      3,
+      6,
+      0
+    ],
+    "familyKey": "light",
+    "matName": "Libros de la Luz",
+    "matIds": [
+      "104326",
+      "104327",
+      "104328"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104328.png",
+    "characters": [
+      "Chiori",
+      "Gorou",
+      "Sayu",
+      "Shogun Raiden",
+      "Yae Miko"
+    ]
+  },
+  {
+    "id": "sumeru_talent_admonition",
+    "name": "Campanario de la Ignorancia",
+    "region": "Sumeru",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      1,
+      4,
+      0
+    ],
+    "familyKey": "admonition",
+    "matName": "Libros de la Admonición",
+    "matIds": [
+      "104329",
+      "104330",
+      "104331"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104331.png",
+    "characters": [
+      "Candace",
+      "Cyno",
+      "Faruzán",
+      "Tignari"
+    ]
+  },
+  {
+    "id": "sumeru_talent_ingenuity",
+    "name": "Campanario de la Ignorancia",
+    "region": "Sumeru",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      2,
+      5,
+      0
+    ],
+    "familyKey": "ingenuity",
+    "matName": "Libros del Ingenio",
+    "matIds": [
+      "104332",
+      "104333",
+      "104334"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104334.png",
+    "characters": [
+      "Alhacén",
+      "Dori",
+      "Kaveh",
+      "Laila",
+      "Nahida"
+    ]
+  },
+  {
+    "id": "sumeru_talent_praxis",
+    "name": "Campanario de la Ignorancia",
+    "region": "Sumeru",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      3,
+      6,
+      0
+    ],
+    "familyKey": "praxis",
+    "matName": "Libros de la Praxis",
+    "matIds": [
+      "104335",
+      "104336",
+      "104337"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104337.png",
+    "characters": [
+      "Collei",
+      "Dehya",
+      "Nilou",
+      "Sethos",
+      "Trotamundos"
+    ]
+  },
+  {
+    "id": "fontaine_talent_equity",
+    "name": "Gloria póstuma albugínea",
+    "region": "Fontaine",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      1,
+      4,
+      0
+    ],
+    "familyKey": "equity",
+    "matName": "Libros de la Equidad",
+    "matIds": [
+      "104338",
+      "104339",
+      "104340"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104340.png",
+    "characters": [
+      "Lyney",
+      "Navia",
+      "Neuvillette",
+      "Sigewinne"
+    ]
+  },
+  {
+    "id": "fontaine_talent_justice",
+    "name": "Gloria póstuma albugínea",
+    "region": "Fontaine",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      2,
+      5,
+      0
+    ],
+    "familyKey": "justice",
+    "matName": "Libros de la Justicia",
+    "matIds": [
+      "104341",
+      "104342",
+      "104343"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104343.png",
+    "characters": [
+      "Charlotte",
+      "Clorinde",
+      "Escoffier",
+      "Fréminet",
+      "Furina"
+    ]
+  },
+  {
+    "id": "fontaine_talent_order",
+    "name": "Gloria póstuma albugínea",
+    "region": "Fontaine",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      3,
+      6,
+      0
+    ],
+    "familyKey": "order",
+    "matName": "Libros del Orden",
+    "matIds": [
+      "104344",
+      "104345",
+      "104346"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104346.png",
+    "characters": [
+      "Arlecchino",
+      "Chevreuse",
+      "Émilie",
+      "Lynette",
+      "Wriothesley"
+    ]
+  },
+  {
+    "id": "natlan_talent_contention",
+    "name": "Ruinas de la Ignición",
+    "region": "Natlan",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      1,
+      4,
+      0
+    ],
+    "familyKey": "contention",
+    "matName": "Libros de la Contienda",
+    "matIds": [
+      "104347",
+      "104348",
+      "104349"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104349.png",
+    "characters": [
+      "Iansán",
+      "Mavuika",
+      "Mualani",
+      "Skirk",
+      "Viajero"
+    ]
+  },
+  {
+    "id": "natlan_talent_kindling",
+    "name": "Ruinas de la Ignición",
+    "region": "Natlan",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      2,
+      5,
+      0
+    ],
+    "familyKey": "kindling",
+    "matName": "Libros de la Incandescencia",
+    "matIds": [
+      "104350",
+      "104351",
+      "104352"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104352.png",
+    "characters": [
+      "Citlalí",
+      "Kinich",
+      "Ororon",
+      "Viajero",
+      "Xilonen"
+    ]
+  },
+  {
+    "id": "natlan_talent_conflict",
+    "name": "Ruinas de la Ignición",
+    "region": "Natlan",
+    "type": "talent",
+    "resinCost": 20,
+    "days": [
+      3,
+      6,
+      0
+    ],
+    "familyKey": "conflict",
+    "matName": "Libros del Conflicto",
+    "matIds": [
+      "104353",
+      "104354",
+      "104355"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104355.png",
+    "characters": [
+      "Chasca",
+      "Ifá",
+      "Ineffa",
+      "Kachina",
+      "Varesa",
+      "Viajero"
+    ]
+  },
+  {
+    "id": "mond_weap_decarabian",
+    "name": "Jardín de las Cecilias",
+    "region": "Mondstadt",
+    "type": "weapon",
+    "resinCost": 20,
+    "days": [
+      1,
+      4,
+      0
+    ],
+    "familyKey": "decarabian",
+    "matName": "Materiales de Decarabian",
+    "matIds": [
+      "114001",
+      "114002",
+      "114003",
+      "114004"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114004.png",
+    "weaponsDesc": "Espadas de Favonius, Arco del Callejón, Oración Perdida a los Vientos Sagrados, Espada de Madera",
+    "characters": []
+  },
+  {
+    "id": "mond_weap_boreal",
+    "name": "Jardín de las Cecilias",
+    "region": "Mondstadt",
+    "type": "weapon",
+    "resinCost": 20,
+    "days": [
+      2,
+      5,
+      0
+    ],
+    "familyKey": "boreal",
+    "matName": "Colmillo de Lobo Boreal",
+    "matIds": [
+      "114005",
+      "114006",
+      "114007",
+      "114008"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114008.png",
+    "weaponsDesc": "Último Acorde, Flauta, Lanza de Favonius, Espada Real, Aquila Favonia",
+    "characters": []
+  },
+  {
+    "id": "mond_weap_dandelion",
+    "name": "Jardín de las Cecilias",
+    "region": "Mondstadt",
+    "type": "weapon",
+    "resinCost": 20,
+    "days": [
+      3,
+      6,
+      0
+    ],
+    "familyKey": "dandelion",
+    "matName": "Grillete de Diente de León",
+    "matIds": [
+      "114009",
+      "114010",
+      "114011",
+      "114012"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114012.png",
+    "weaponsDesc": "Alas Celestiales, Espada del Sacrificio, Espada de Hierro, Gran Espada del Sacrificio",
+    "characters": []
+  },
+  {
+    "id": "liyue_weap_guyun",
+    "name": "Palacio Oculto de Lianshan",
+    "region": "Liyue",
+    "type": "weapon",
+    "resinCost": 20,
+    "days": [
+      1,
+      4,
+      0
+    ],
+    "familyKey": "guyun",
+    "matName": "Cuerpo Divino de Guyun",
+    "matIds": [
+      "114013",
+      "114014",
+      "114015",
+      "114016"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114016.png",
+    "weaponsDesc": "Halcón de Jade, Peñasco Oscuro, Prototipo Rencor, Espina de Hierro",
+    "characters": []
+  },
+  {
+    "id": "liyue_weap_mist",
+    "name": "Palacio Oculto de Lianshan",
+    "region": "Liyue",
+    "type": "weapon",
+    "resinCost": 20,
+    "days": [
+      2,
+      5,
+      0
+    ],
+    "familyKey": "mist",
+    "matName": "Plomo de Niebla",
+    "matIds": [
+      "114017",
+      "114018",
+      "114019",
+      "114020"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114020.png",
+    "weaponsDesc": "Lanza del Duelo, Prototipo Arcaico, Cuento de Cazadores de Dragones, Prototipo Luz de Luna",
+    "characters": []
+  },
+  {
+    "id": "liyue_weap_aerosiderite",
+    "name": "Palacio Oculto de Lianshan",
+    "region": "Liyue",
+    "type": "weapon",
+    "resinCost": 20,
+    "days": [
+      3,
+      6,
+      0
+    ],
+    "familyKey": "aerosiderite",
+    "matName": "Siderita Oscura",
+    "matIds": [
+      "114021",
+      "114022",
+      "114023",
+      "114024"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114024.png",
+    "weaponsDesc": "Vórtice del Destructor, Memoria de Polvo, Espada Negra, Prototipo Estelar",
+    "characters": []
+  },
+  {
+    "id": "inazuma_weap_branch",
+    "name": "Corte de la Arena Fluida",
+    "region": "Inazuma",
+    "type": "weapon",
+    "resinCost": 20,
+    "days": [
+      1,
+      4,
+      0
+    ],
+    "familyKey": "branch",
+    "matName": "Rama Dorada del Mar Distante",
+    "matIds": [
+      "114025",
+      "114026",
+      "114027",
+      "114028"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114028.png",
+    "weaponsDesc": "Luna Inmutable, Espada Amenoma Gemela, Anillo de Hakushin, Cruz de Kitain",
+    "characters": []
+  },
+  {
+    "id": "inazuma_weap_narukami",
+    "name": "Corte de la Arena Fluida",
+    "region": "Inazuma",
+    "type": "weapon",
+    "resinCost": 20,
+    "days": [
+      2,
+      5,
+      0
+    ],
+    "familyKey": "narukami",
+    "matName": "Valentía de Narukami",
+    "matIds": [
+      "114029",
+      "114030",
+      "114031",
+      "114032"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114032.png",
+    "weaponsDesc": "Reflejo de las Tinieblas, Pulso de la Noche Estrellada, Segador de la Calamidad",
+    "characters": []
+  },
+  {
+    "id": "inazuma_weap_mask",
+    "name": "Corte de la Arena Fluida",
+    "region": "Inazuma",
+    "type": "weapon",
+    "resinCost": 20,
+    "days": [
+      3,
+      6,
+      0
+    ],
+    "familyKey": "mask",
+    "matName": "Máscara de Kijin",
+    "matIds": [
+      "114033",
+      "114034",
+      "114035",
+      "114036"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114036.png",
+    "weaponsDesc": "Luz de las Olas Rojas, Caza del Viento, Akuoumaru, Onda de la Luna",
+    "characters": []
+  },
+  {
+    "id": "sumeru_weap_forest",
+    "name": "Torre del Orgullo",
+    "region": "Sumeru",
+    "type": "weapon",
+    "resinCost": 20,
+    "days": [
+      1,
+      4,
+      0
+    ],
+    "familyKey": "forest",
+    "matName": "Talismán de Oro del Rocío",
+    "matIds": [
+      "114037",
+      "114038",
+      "114039",
+      "114040"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114040.png",
+    "weaponsDesc": "Espada de Madera, Clave de la Coronación, Espina Floral, Sendero de la Cazadora",
+    "characters": []
+  },
+  {
+    "id": "sumeru_weap_oasis",
+    "name": "Torre del Orgullo",
+    "region": "Sumeru",
+    "type": "weapon",
+    "resinCost": 20,
+    "days": [
+      2,
+      5,
+      0
+    ],
+    "familyKey": "oasis",
+    "matName": "Esencia del Oasis Exuberante",
+    "matIds": [
+      "114041",
+      "114042",
+      "114043",
+      "114044"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114044.png",
+    "weaponsDesc": "Luz del Exterminio, Sueño de las Mil Noches, Diluvio de la Noche",
+    "characters": []
+  },
+  {
+    "id": "sumeru_weap_deshret",
+    "name": "Torre del Orgullo",
+    "region": "Sumeru",
+    "type": "weapon",
+    "resinCost": 20,
+    "days": [
+      3,
+      6,
+      0
+    ],
+    "familyKey": "deshret",
+    "matName": "Poder del Sol del Desierto",
+    "matIds": [
+      "114045",
+      "114046",
+      "114047",
+      "114048"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114048.png",
+    "weaponsDesc": "Báculo de las Arenas Escarlatas, Luz Lunar de Xifos, Orgullo de las Flores",
+    "characters": []
+  },
+  {
+    "id": "fontaine_weap_echo",
+    "name": "Ecos de las Mareas Profundas",
+    "region": "Fontaine",
+    "type": "weapon",
+    "resinCost": 20,
+    "days": [
+      1,
+      4,
+      0
+    ],
+    "familyKey": "echo",
+    "matName": "Eco Puro de Serenata Arcaica",
+    "matIds": [
+      "114049",
+      "114050",
+      "114051",
+      "114052"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114052.png",
+    "weaponsDesc": "Fulgor de las Aguas Calmas (Furina), Espada de Madera de Fontaine, Vado del Río Ceniciento",
+    "characters": []
+  },
+  {
+    "id": "fontaine_weap_dewdrop",
+    "name": "Ecos de las Mareas Profundas",
+    "region": "Fontaine",
+    "type": "weapon",
+    "resinCost": 20,
+    "days": [
+      2,
+      5,
+      0
+    ],
+    "familyKey": "dewdrop",
+    "matName": "Esencia de Rocío Sagrado",
+    "matIds": [
+      "114053",
+      "114054",
+      "114055",
+      "114056"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114056.png",
+    "weaponsDesc": "Escritura del Flujo Eterno (Neuvillette), Razón del Solsticio, Diálogo de los Sabios del Desierto",
+    "characters": []
+  },
+  {
+    "id": "fontaine_weap_chalice",
+    "name": "Ecos de las Mareas Profundas",
+    "region": "Fontaine",
+    "type": "weapon",
+    "resinCost": 20,
+    "days": [
+      3,
+      6,
+      0
+    ],
+    "familyKey": "chalice",
+    "matName": "Copa de Oro del Mar Impoluto",
+    "matIds": [
+      "114057",
+      "114058",
+      "114059",
+      "114060"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114060.png",
+    "weaponsDesc": "Sentencia (Navia), Supervisor del Flujo, Portador de la Llama, Lanza de los Vientos",
+    "characters": []
+  },
+  {
+    "id": "natlan_weap_blazing_heart",
+    "name": "Dominio de Armas de Natlan",
+    "region": "Natlan",
+    "type": "weapon",
+    "resinCost": 20,
+    "days": [
+      1,
+      4,
+      0
+    ],
+    "familyKey": "blazing_heart",
+    "matName": "Honor del Corazón Sacrificial Ardiente",
+    "matIds": [
+      "114061",
+      "114062",
+      "114063",
+      "114064"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114064.png",
+    "weaponsDesc": "Mil Soles Abrasadores (Mavuika), Flauta de Ezpitzal, Huella del Arco Iris",
+    "characters": []
+  },
+  {
+    "id": "natlan_weap_sacred_flower",
+    "name": "Dominio de Armas de Natlan",
+    "region": "Natlan",
+    "type": "weapon",
+    "resinCost": 20,
+    "days": [
+      2,
+      5,
+      0
+    ],
+    "familyKey": "sacred_flower",
+    "matName": "Máscara Divina del Sagrado Señor Delirante",
+    "matIds": [
+      "114065",
+      "114066",
+      "114067",
+      "114068"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114068.png",
+    "weaponsDesc": "Colmillo de la Montaña (Kinich), Rueda de los Días, Gancho de la Tierra",
+    "characters": []
+  },
+  {
+    "id": "natlan_weap_obsidian",
+    "name": "Dominio de Armas de Natlan",
+    "region": "Natlan",
+    "type": "weapon",
+    "resinCost": 20,
+    "days": [
+      3,
+      6,
+      0
+    ],
+    "familyKey": "obsidian",
+    "matName": "Revelación Espiritista de Obsidiana",
+    "matIds": [
+      "114069",
+      "114070",
+      "114071",
+      "114072"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114072.png",
+    "weaponsDesc": "Canción del Silencio, Astro del Destino, Garra de la Cazadora",
+    "characters": []
+  },
+  {
+    "id": "nodkrai_weap_artful_device",
+    "name": "Corte lunar perdida",
+    "region": "Nod-Krai",
+    "type": "weapon",
+    "resinCost": 20,
+    "days": [
+      1,
+      4,
+      0
+    ],
+    "familyKey": "artful_device",
+    "matName": "Instrumento misterioso",
+    "matIds": [
+      "114073",
+      "114074",
+      "114075",
+      "114076"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114076.png",
+    "characters": []
+  },
+  {
+    "id": "nodkrai_weap_long_night",
+    "name": "Corte lunar perdida",
+    "region": "Nod-Krai",
+    "type": "weapon",
+    "resinCost": 20,
+    "days": [
+      2,
+      5,
+      0
+    ],
+    "familyKey": "long_night",
+    "matName": "Fuego de la larga noche",
+    "matIds": [
+      "114077",
+      "114078",
+      "114079",
+      "114080"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114080.png",
+    "characters": []
+  },
+  {
+    "id": "nodkrai_weap_far_north",
+    "name": "Corte lunar perdida",
+    "region": "Nod-Krai",
+    "type": "weapon",
+    "resinCost": 20,
+    "days": [
+      3,
+      6,
+      0
+    ],
+    "familyKey": "far_north",
+    "matName": "Hijos del Lejano Norte",
+    "matIds": [
+      "114081",
+      "114082",
+      "114083",
+      "114084"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114084.png",
+    "characters": []
+  },
+  {
+    "id": "snezhnaya_weap_pale_star",
+    "name": "Scars of Cursed Obsession",
+    "region": "Snezhnaya",
+    "type": "weapon",
+    "resinCost": 20,
+    "days": [
+      1,
+      4,
+      0
+    ],
+    "familyKey": "pale_star",
+    "matName": "Ejército de la Estrella Albina",
+    "matIds": [
+      "114085",
+      "114086",
+      "114087",
+      "114088"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114088.png",
+    "characters": []
+  },
+  {
+    "id": "snezhnaya_weap_spiritual_nectar",
+    "name": "Scars of Cursed Obsession",
+    "region": "Snezhnaya",
+    "type": "weapon",
+    "resinCost": 20,
+    "days": [
+      2,
+      5,
+      0
+    ],
+    "familyKey": "spiritual_nectar",
+    "matName": "Néctar espiritual de la bodega",
+    "matIds": [
+      "114089",
+      "114090",
+      "114091",
+      "114092"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114092.png",
+    "characters": []
+  },
+  {
+    "id": "snezhnaya_weap_frost_emperor",
+    "name": "Scars of Cursed Obsession",
+    "region": "Snezhnaya",
+    "type": "weapon",
+    "resinCost": 20,
+    "days": [
+      3,
+      6,
+      0
+    ],
+    "familyKey": "frost_emperor",
+    "matName": "Emperador de la escarcha",
+    "matIds": [
+      "114093",
+      "114094",
+      "114095",
+      "114096"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114096.png",
+    "characters": [
+      "Edicto Selloastral"
+    ]
+  },
+  {
+    "id": "leyline_mora",
+    "name": "Líneas Ley: Brote de la Riqueza",
+    "region": "Teyvat (Todas las Regiones)",
+    "type": "leylines",
+    "resinCost": 20,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Mora (60,000 por brote)",
+    "matIds": [
+      "202"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_202.png",
+    "note": "Aporta ~60,000 Mora por 20 ✦ de Resina (o 120,000 por Resina Concentrada).",
+    "characters": [
+      "Mitya",
+      "Valeri",
+      "Edicto Selloastral"
+    ]
+  },
+  {
+    "id": "leyline_exp",
+    "name": "Líneas Ley: Brote de la Revelación",
+    "region": "Teyvat (Todas las Regiones)",
+    "type": "leylines",
+    "resinCost": 20,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Libros de EXP (Ingenio del Héroe)",
+    "matIds": [
+      "104001",
+      "104002",
+      "104003"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104003.png",
+    "note": "Aporta ~4-5 Ingenios del Héroe + ~6-7 EXP del Aventurero (~90,000 EXP de personaje) por 20 ✦.",
+    "characters": []
+  },
+  {
+    "id": "boss_tulpa",
+    "name": "Tulpa Hidromimético",
+    "region": "Fontaine",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Agua intrascendible",
+    "matIds": [
+      "113057"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113057.png",
+    "characters": [
+      "Furina",
+      "Sigewinne"
+    ]
+  },
+  {
+    "id": "boss_golem_legatus",
+    "name": "Gólem Legado",
+    "region": "Fontaine",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Núcleo de las ruinas arcanas",
+    "matIds": [
+      "113059"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113059.png",
+    "characters": [
+      "Arlecchino",
+      "Émilie"
+    ]
+  },
+  {
+    "id": "boss_coppelius",
+    "name": "Suite Criocéfiro (Coppélius)",
+    "region": "Fontaine",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Recambio mecánico de suite",
+    "matIds": [
+      "113050"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113050.png",
+    "characters": [
+      "Fréminet",
+      "Navia"
+    ]
+  },
+  {
+    "id": "boss_emperor_fire",
+    "name": "Emperador Piroacorazado",
+    "region": "Fontaine",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Resolución del juicio",
+    "matIds": [
+      "113051"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113051.png",
+    "characters": [
+      "Gaming",
+      "Lyney"
+    ]
+  },
+  {
+    "id": "boss_gravity_generator",
+    "name": "Generador de Campo Experimental",
+    "region": "Fontaine",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Dispositivo de gravedad",
+    "matIds": [
+      "113052"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113052.png",
+    "characters": [
+      "Charlotte",
+      "Wriothesley"
+    ]
+  },
+  {
+    "id": "boss_millennial_seahorse",
+    "name": "Corcel de Mar Perlamilenario",
+    "region": "Fontaine",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Escala de caballito de mar",
+    "matIds": [
+      "113053"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113053.png",
+    "characters": [
+      "Chevreuse",
+      "Clorinde",
+      "Neuvillette"
+    ]
+  },
+  {
+    "id": "boss_natlan_yumkasaur",
+    "name": "Rey Yumkasaurio Glotón",
+    "region": "Natlan",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Corazón ignívomo",
+    "matIds": [
+      "113065"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113065.png",
+    "characters": [
+      "Kachina",
+      "Kinich"
+    ]
+  },
+  {
+    "id": "boss_natlan_lava_golem",
+    "name": "Autómata Fuentenigma - Máquina configuracional",
+    "region": "Natlan",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Marca dorada de la cima",
+    "matIds": [
+      "113066"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113066.png",
+    "characters": [
+      "Lan Yan",
+      "Mavuika",
+      "Xilonen"
+    ]
+  },
+  {
+    "id": "boss_natlan_qucusaur",
+    "name": "Tirano Qucusaurio Aureoardiente",
+    "region": "Natlan",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Ojo del cielo ceniciento",
+    "matIds": [
+      "113064"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113064.png",
+    "characters": [
+      "Mualani",
+      "Ororon"
+    ]
+  },
+  {
+    "id": "boss_natlan_kukusaur",
+    "name": "Magmadragón Candente",
+    "region": "Natlan",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Agallas secretas de las profundidades",
+    "matIds": [
+      "113072"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113072.png",
+    "characters": [
+      "Ifá",
+      "Varesa"
+    ]
+  },
+  {
+    "id": "boss_suanni",
+    "name": "Suanni Ermitaña",
+    "region": "Liyue",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Ala de pluma pétrea",
+    "matIds": [
+      "113058"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113058.png",
+    "characters": [
+      "Sethos",
+      "Xianyun"
+    ]
+  },
+  {
+    "id": "boss_setekh_wenut",
+    "name": "Gusano de Sutej",
+    "region": "Sumeru",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Seudomartillo de arena",
+    "matIds": [
+      "113044"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113044.png",
+    "characters": [
+      "Alhacén",
+      "Mika"
+    ]
+  },
+  {
+    "id": "boss_dendro_hypo",
+    "name": "Hipóstasis Dendro",
+    "region": "Sumeru",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Trepadora supresora",
+    "matIds": [
+      "113040"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113040.png",
+    "characters": [
+      "Kaveh",
+      "Nahida",
+      "Yaoyao"
+    ]
+  },
+  {
+    "id": "boss_ruin_serpent",
+    "name": "Serpiente de las Ruinas",
+    "region": "Liyue (Sima)",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Colmillo de la sombra rúbica",
+    "matIds": [
+      "113035"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113035.png",
+    "characters": [
+      "Kuki Shinobu",
+      "Shikanoin Heizou",
+      "Yelan"
+    ]
+  },
+  {
+    "id": "boss_maguu_kenki",
+    "name": "Oni Espadachín",
+    "region": "Inazuma",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Engranaje marión",
+    "matIds": [
+      "113022"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113022.png",
+    "characters": [
+      "Kaedehara Kazuha",
+      "Sayu"
+    ]
+  },
+  {
+    "id": "boss_thunder_manifestation",
+    "name": "Manifestación del Trueno",
+    "region": "Inazuma",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Rencor de la tempestad",
+    "matIds": [
+      "113029"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113029.png",
+    "characters": [
+      "Kujou Sara",
+      "Shogun Raiden"
+    ]
+  },
+  {
+    "id": "boss_primo_geovishap",
+    "name": "Protodragarto Geo",
+    "region": "Liyue",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Cuerno juvenil",
+    "matIds": [
+      "113016"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113016.png",
+    "characters": [
+      "Hu Tao",
+      "Xiao",
+      "Yanfei"
+    ]
+  },
+  {
+    "id": "weekly_narwhal",
+    "name": "Sombra del Mar Primitivo (Narval Devorador)",
+    "region": "Fontaine",
+    "type": "weekly",
+    "resinCost": 60,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Materiales del Devorador Narval",
+    "matIds": [
+      "113054",
+      "113055",
+      "113056"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113056.png",
+    "characters": [
+      "Charlotte",
+      "Chevreuse",
+      "Chiori",
+      "Furina",
+      "Gaming",
+      "Mualani",
+      "Navia",
+      "Ororon",
+      "Sigewinne",
+      "Xianyun"
+    ]
+  },
+  {
+    "id": "weekly_arlecchino",
+    "name": "Teatro de la Vela Solitaria (Arlecchino)",
+    "region": "Fontaine",
+    "type": "weekly",
+    "resinCost": 60,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Materiales de Arlecchino",
+    "matIds": [
+      "113060",
+      "113061",
+      "113062"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113060.png",
+    "characters": [
+      "Aino",
+      "Arlecchino",
+      "Chasca",
+      "Citlalí",
+      "Émilie",
+      "Iansán",
+      "Kachina",
+      "Kinich",
+      "Yumemizuki Mizuki"
+    ]
+  },
+  {
+    "id": "weekly_apep",
+    "name": "Guardián del Oasis de Apep",
+    "region": "Sumeru",
+    "type": "weekly",
+    "resinCost": 60,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Materiales del Guardián Apep",
+    "matIds": [
+      "113046",
+      "113047",
+      "113048"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113046.png",
+    "characters": [
+      "Baizhu",
+      "Clorinde",
+      "Fréminet",
+      "Kaveh",
+      "Kirara",
+      "Lynette",
+      "Lyney",
+      "Neuvillette",
+      "Wriothesley"
+    ]
+  },
+  {
+    "id": "weekly_scaramouche",
+    "name": "Taller de Joururi (Scaramouche)",
+    "region": "Sumeru",
+    "type": "weekly",
+    "resinCost": 60,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Materiales de Scaramouche",
+    "matIds": [
+      "113041",
+      "113042",
+      "113043"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113041.png",
+    "characters": [
+      "Alhacén",
+      "Dehya",
+      "Faruzán",
+      "Laila",
+      "Mika",
+      "Nahida",
+      "Sethos",
+      "Trotamundos",
+      "Xilonen",
+      "Yaoyao"
+    ]
+  },
+  {
+    "id": "weekly_raiden",
+    "name": "Fin del Paraíso Ilusorio (Shogun Raiden)",
+    "region": "Inazuma",
+    "type": "weekly",
+    "resinCost": 60,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Materiales de la Shogun Raiden",
+    "matIds": [
+      "113032",
+      "113033",
+      "113034"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113032.png",
+    "characters": [
+      "Candace",
+      "Collei",
+      "Cyno",
+      "Kamisato Ayato",
+      "Kuki Shinobu",
+      "Nilou",
+      "Shikanoin Heizou",
+      "Tignari",
+      "Yae Miko"
+    ]
+  },
+  {
+    "id": "weekly_signora",
+    "name": "Mansión Tenshukaku (La Signora)",
+    "region": "Inazuma",
+    "type": "weekly",
+    "resinCost": 60,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Materiales de La Signora",
+    "matIds": [
+      "113025",
+      "113026",
+      "113027"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113025.png",
+    "characters": [
+      "Aloy",
+      "Arataki Itto",
+      "Gorou",
+      "Kujou Sara",
+      "Sangonomiya Kokomi",
+      "Shenhe",
+      "Shogun Raiden",
+      "Thoma",
+      "Yun Jin"
+    ]
+  },
+  {
+    "id": "weekly_azhdaha",
+    "name": "Bajo el Dragón Queller (Azhdaha)",
+    "region": "Liyue",
+    "type": "weekly",
+    "resinCost": 60,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Materiales de Azhdaha",
+    "matIds": [
+      "113017",
+      "113018",
+      "113019"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113017.png",
+    "characters": [
+      "Dori",
+      "Eula",
+      "Kaedehara Kazuha",
+      "Kamisato Ayaka",
+      "Sayu",
+      "Yanfei",
+      "Yelan",
+      "Yoimiya"
+    ]
+  },
+  {
+    "id": "weekly_childe",
+    "name": "Casa Dorada (Tartaglia)",
+    "region": "Liyue",
+    "type": "weekly",
+    "resinCost": 60,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Materiales de Tartaglia",
+    "matIds": [
+      "113013",
+      "113014",
+      "113015"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113013.png",
+    "characters": [
+      "Albedo",
+      "Diona",
+      "Ganyu",
+      "Hu Tao",
+      "Rosaria",
+      "Tartaglia",
+      "Xiao",
+      "Xinyan",
+      "Zhongli"
+    ]
+  },
+  {
+    "id": "weekly_andrius",
+    "name": "Lobo del Norte (Andrius)",
+    "region": "Mondstadt",
+    "type": "weekly",
+    "resinCost": 60,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Materiales de Andrius",
+    "matIds": [
+      "113006",
+      "113007",
+      "113008"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113006.png",
+    "characters": [
+      "Bárbara",
+      "Fischl",
+      "Kaeya",
+      "Keching",
+      "Klee",
+      "Mona",
+      "Ninguang",
+      "Qiqi",
+      "Sacarosa",
+      "Venti",
+      "Xingchiu"
+    ]
+  },
+  {
+    "id": "weekly_dvalin",
+    "name": "Guarida de Stormterror (Dvalin)",
+    "region": "Mondstadt",
+    "type": "weekly",
+    "resinCost": 60,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Materiales de Dvalin",
+    "matIds": [
+      "113003",
+      "113004",
+      "113005"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113003.png",
+    "characters": [
+      "Amber",
+      "Beidou",
+      "Bennett",
+      "Chongyun",
+      "Diluc",
+      "Jean",
+      "Lisa",
+      "Noelle",
+      "Razor",
+      "Xiangling"
+    ]
+  },
+  {
+    "id": "source_boss_113093",
+    "name": "Anclamareas",
+    "region": "Snezhnaya",
+    "type": "boss",
+    "resinCost": 40,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "matName": "Ancla estabilizadora rota",
+    "matIds": [
+      "113093"
+    ],
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113093.png",
+    "characters": [
+      "Mitya"
+    ],
+    "sourceKey": "113093",
+    "source": "https://gi.yatta.moe/api/v2/"
   }
 ];
 

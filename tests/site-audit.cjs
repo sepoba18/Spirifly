@@ -4,6 +4,7 @@ const vm = require('node:vm');
 const assert = require('node:assert/strict');
 const root = path.resolve(__dirname, '..');
 const context = vm.createContext({ console, state: { activePlans: [], realOwned: {}, lang: 'es' }, document: { getElementById: () => null } });
+context.materialIconAliases = JSON.parse(fs.readFileSync(path.join(root, 'tests/fixtures/material-icon-aliases.json'), 'utf8'));
 for (const file of ['data.js','data_real_genshin.js','assets/data/traveler-planner.js','assets/data/simulator-original.js','data_builds.js','planner_real.js','farming_engine.js']) {
   vm.runInContext(fs.readFileSync(path.join(root, file), 'utf8'), context);
 }
@@ -22,7 +23,7 @@ const audit = vm.runInContext(`(() => {
     const m = REAL_MASTER_MATERIALS[id];
     return !m || (d.type === 'boss' && m.rank >= 5) || (d.type === 'weekly' && m.rank < 5);
   }).map(id => ({ domain: d.id, id })));
-  const iconMismatch = materials.filter(m => !m.icon.includes('UI_ItemIcon_' + m.id + '.png')).map(m => ({ id:m.id, icon:m.icon }));
+  const iconMismatch = materials.filter(m => !m.icon.includes((materialIconAliases[m.id]?.filename || 'UI_ItemIcon_' + m.id) + '.png')).map(m => ({ id:m.id, icon:m.icon }));
   const missingTalentSources = materials.filter(m => m.id.startsWith('1043') && m.id !== '104319' && !FARMING_DOMAINS_REGISTRY.some(d => d.type === 'talent' && d.matIds.includes(m.id))).map(m => ({ id:m.id, name:m.name }));
   const missingBossSources = materials.filter(m => m.id.startsWith('113') && m.id !== '113021' && !FARMING_DOMAINS_REGISTRY.some(d => d.matIds.includes(m.id))).map(m => ({ id:m.id, name:m.name }));
   const missingSimulator = CHARACTER_BUILDS_DB.filter(c => !c.baseStats || !c.talentsData).map(c => c.name.es);
@@ -131,7 +132,9 @@ const weeklyFilter = vm.runInContext('FarmingEngine.getDomainsForDay(1,"60")',co
 assert.equal(weeklyFilter.length,14,'Calendario de los catorce jefes semanales');
 assert.ok(weeklyFilter.every(d=>d.type==='weekly'&&d.resinCost===60));
 const nativeAudit = vm.runInContext(`CHARACTER_BUILDS_DB.filter(b=>b.originalSource).map(build=>({id:build.id,stats:build.baseStats,talents:Object.values(build.talentsData)}))`,context);
-assert.equal(nativeAudit.length,70,'Fichas completadas con parámetros específicos');
+assert.ok(nativeAudit.length >= 70, 'Conservar las fichas completadas con parámetros específicos');
+const simulatorIds = vm.runInContext('Object.keys(ORIGINAL_SIMULATOR_DATA.characters)', context);
+assert.deepEqual(Array.from(nativeAudit, build => build.id).sort(), Array.from(simulatorIds).sort(), 'Cada ficha original tiene su build y parámetros específicos');
 for (const build of nativeAudit) {
   assert.ok(['hp90','atk90','def90'].every(key=>Number.isFinite(build.stats[key])&&build.stats[key]>0),build.id);
   for (const talent of build.talents) {

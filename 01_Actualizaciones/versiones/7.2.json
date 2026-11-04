@@ -1,0 +1,16 @@
+{
+  "version": "7.2",
+  "expectedCharacters": ["Mitya", "Valeriy"],
+  "officialReferences": [
+    "https://genshin.hoyoverse.com/m/en/news/detail/167098",
+    "https://www.gamespress.com/en-US/Genshin-Impact-Version-72-Arrives-on-November-4-as-Teyvats-Seven-Natio"
+  ],
+  "manualChecks": [
+    "Confirmar materiales, cantidades, fuentes y disponibilidad dentro del juego.",
+    "Revisar la mecanica Stellar-Conduct y su impacto en builds y equipos.",
+    "Verificar arma nueva, jefes, especialidades locales y nuevos dominios.",
+    "Validar traducciones e imagenes en es/en/pt/ja/ko.",
+    "Revisar constelaciones que aumentan niveles de talentos.",
+    "Completar builds con referencias y distinguir recomendaciones preliminares."
+  ]
+}

@@ -240,1667 +240,11 @@ const REAL_WEAP4_ORE_STEPS = {
 };
 
 const REAL_MASTER_MATERIALS = {
-  "113021": {
-    "id": "113021",
-    "name": "Solvente de sueños",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113021.png"
-  },
   "202": {
     "id": "202",
     "name": "Mora",
     "rank": 3,
     "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_202.png"
-  },
-  "104003": {
-    "id": "104003",
-    "name": "Ingenio del héroe",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104003.png"
-  },
-  "104002": {
-    "id": "104002",
-    "name": "Experiencia del aventurero",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104002.png"
-  },
-  "104013": {
-    "id": "104013",
-    "name": "Mineral de refinamiento místico",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104013.png"
-  },
-  "101257": {
-    "id": "101257",
-    "name": "Rodamiento portátil",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101257.png"
-  },
-  "104001": {
-    "id": "104001",
-    "name": "Consejo del errante",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104001.png"
-  },
-  "104121": {
-    "id": "104121",
-    "name": "Pedacito de lazurita varunada",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104121.png"
-  },
-  "104122": {
-    "id": "104122",
-    "name": "Fragmento de lazurita varunada",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104122.png"
-  },
-  "104123": {
-    "id": "104123",
-    "name": "Trozo de lazurita varunada",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104123.png"
-  },
-  "104124": {
-    "id": "104124",
-    "name": "Lazurita varunada",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104124.png"
-  },
-  "104319": {
-    "id": "104319",
-    "name": "Corona de la sabiduría",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104319.png"
-  },
-  "104359": {
-    "id": "104359",
-    "name": "Enseñanzas del paraíso",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104359.png"
-  },
-  "104360": {
-    "id": "104360",
-    "name": "Guía del paraíso",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104360.png"
-  },
-  "104361": {
-    "id": "104361",
-    "name": "Filosofía del paraíso",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104361.png"
-  },
-  "112122": {
-    "id": "112122",
-    "name": "Eje dañado",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112122.png"
-  },
-  "112123": {
-    "id": "112123",
-    "name": "Eje reforzado",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112123.png"
-  },
-  "112124": {
-    "id": "112124",
-    "name": "Eje refinado",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112124.png"
-  },
-  "113061": {
-    "id": "113061",
-    "name": "Pluma de seda",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113061.png"
-  },
-  "113077": {
-    "id": "113077",
-    "name": "Troquel de “estam-pato” de kuuvahki preciso",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113077.png"
-  },
-  "100023": {
-    "id": "100023",
-    "name": "Cecilia",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100023.png"
-  },
-  "104171": {
-    "id": "104171",
-    "name": "Pedacito de topacio prithiva",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104171.png"
-  },
-  "104172": {
-    "id": "104172",
-    "name": "Fragmento de topacio prithiva",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104172.png"
-  },
-  "104173": {
-    "id": "104173",
-    "name": "Trozo de topacio prithiva",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104173.png"
-  },
-  "104174": {
-    "id": "104174",
-    "name": "Topacio prithiva",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104174.png"
-  },
-  "104307": {
-    "id": "104307",
-    "name": "Enseñanzas de la poesía",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104307.png"
-  },
-  "104308": {
-    "id": "104308",
-    "name": "Guía de la poesía",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104308.png"
-  },
-  "104309": {
-    "id": "104309",
-    "name": "Filosofía de la poesía",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104309.png"
-  },
-  "112008": {
-    "id": "112008",
-    "name": "Pergamino guía",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112008.png"
-  },
-  "112009": {
-    "id": "112009",
-    "name": "Pergamino hechizado",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112009.png"
-  },
-  "112010": {
-    "id": "112010",
-    "name": "Pergamino maldito",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112010.png"
-  },
-  "113009": {
-    "id": "113009",
-    "name": "Pilar de basalto",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113009.png"
-  },
-  "113013": {
-    "id": "113013",
-    "name": "Cuerno de Monoceros Caeli",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113013.png"
-  },
-  "101222": {
-    "id": "101222",
-    "name": "Crisálida arenosa",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101222.png"
-  },
-  "104131": {
-    "id": "104131",
-    "name": "Pedacito de esmeralda nagadus",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104131.png"
-  },
-  "104132": {
-    "id": "104132",
-    "name": "Fragmento de esmeralda nagadus",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104132.png"
-  },
-  "104133": {
-    "id": "104133",
-    "name": "Trozo de esmeralda nagadus",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104133.png"
-  },
-  "104134": {
-    "id": "104134",
-    "name": "Esmeralda nagadus",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104134.png"
-  },
-  "104332": {
-    "id": "104332",
-    "name": "Enseñanzas del ingenio",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104332.png"
-  },
-  "104333": {
-    "id": "104333",
-    "name": "Guía del ingenio",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104333.png"
-  },
-  "104334": {
-    "id": "104334",
-    "name": "Filosofía del ingenio",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104334.png"
-  },
-  "112065": {
-    "id": "112065",
-    "name": "Satén rojo descolorido",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112065.png"
-  },
-  "112066": {
-    "id": "112066",
-    "name": "Seda roja bordada",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112066.png"
-  },
-  "112067": {
-    "id": "112067",
-    "name": "Brocado rojo lujoso",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112067.png"
-  },
-  "113042": {
-    "id": "113042",
-    "name": "Espejo del mushin",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113042.png"
-  },
-  "113044": {
-    "id": "113044",
-    "name": "Pseudoestambre",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113044.png"
-  },
-  "101276": {
-    "id": "101276",
-    "name": "Hierbalana",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101276.png"
-  },
-  "104141": {
-    "id": "104141",
-    "name": "Pedacito de amatista vajrada",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104141.png"
-  },
-  "104142": {
-    "id": "104142",
-    "name": "Fragmento de amatista vajrada",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104142.png"
-  },
-  "104143": {
-    "id": "104143",
-    "name": "Trozo de amatista vajrada",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104143.png"
-  },
-  "104144": {
-    "id": "104144",
-    "name": "Amatista vajrada",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104144.png"
-  },
-  "104368": {
-    "id": "104368",
-    "name": "Enseñanzas de la tenacidad",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104368.png"
-  },
-  "104369": {
-    "id": "104369",
-    "name": "Guía de la tenacidad",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104369.png"
-  },
-  "104370": {
-    "id": "104370",
-    "name": "Filosofía de la tenacidad",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104370.png"
-  },
-  "112149": {
-    "id": "112149",
-    "name": "Semilla quimérica",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112149.png"
-  },
-  "112150": {
-    "id": "112150",
-    "name": "Célula quimérica simbiótica",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112150.png"
-  },
-  "112151": {
-    "id": "112151",
-    "name": "Organismo quimérico primigenio",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112151.png"
-  },
-  "113083": {
-    "id": "113083",
-    "name": "Elixir herético",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113083.png"
-  },
-  "113091": {
-    "id": "113091",
-    "name": "Cola cercenada del surcacielos",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113091.png"
-  },
-  "101203": {
-    "id": "101203",
-    "name": "Médula cristalizada",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101203.png"
-  },
-  "104161": {
-    "id": "104161",
-    "name": "Pedacito de jade shivada",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104161.png"
-  },
-  "104162": {
-    "id": "104162",
-    "name": "Fragmento de jade shivada",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104162.png"
-  },
-  "104163": {
-    "id": "104163",
-    "name": "Trozo de jade shivada",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104163.png"
-  },
-  "104164": {
-    "id": "104164",
-    "name": "Jade shivada",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104164.png"
-  },
-  "104301": {
-    "id": "104301",
-    "name": "Enseñanzas de la libertad",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104301.png"
-  },
-  "104302": {
-    "id": "104302",
-    "name": "Guía de la libertad",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104302.png"
-  },
-  "104303": {
-    "id": "104303",
-    "name": "Filosofía de la libertad",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104303.png"
-  },
-  "112053": {
-    "id": "112053",
-    "name": "Caparazón espectral",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112053.png"
-  },
-  "112054": {
-    "id": "112054",
-    "name": "Corazón espectral",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112054.png"
-  },
-  "112055": {
-    "id": "112055",
-    "name": "Núcleo espectral",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112055.png"
-  },
-  "113020": {
-    "id": "113020",
-    "name": "Flor cristalina",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113020.png"
-  },
-  "113025": {
-    "id": "113025",
-    "name": "Momento del derretimiento",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113025.png"
-  },
-  "100055": {
-    "id": "100055",
-    "name": "Lucetta",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100055.png"
-  },
-  "104111": {
-    "id": "104111",
-    "name": "Pedacito de ágata agnidus",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104111.png"
-  },
-  "104112": {
-    "id": "104112",
-    "name": "Fragmento de ágata agnidus",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104112.png"
-  },
-  "104113": {
-    "id": "104113",
-    "name": "Trozo de ágata agnidus",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104113.png"
-  },
-  "104114": {
-    "id": "104114",
-    "name": "Ágata agnidus",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104114.png"
-  },
-  "112011": {
-    "id": "112011",
-    "name": "Flecha robusta",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112011.png"
-  },
-  "112012": {
-    "id": "112012",
-    "name": "Flecha afilada",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112012.png"
-  },
-  "112013": {
-    "id": "112013",
-    "name": "Flecha veterana",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112013.png"
-  },
-  "113005": {
-    "id": "113005",
-    "name": "Suspiro de Stormterror",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113005.png"
-  },
-  "113011": {
-    "id": "113011",
-    "name": "Semilla de fuego eterno",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113011.png"
-  },
-  "101201": {
-    "id": "101201",
-    "name": "Escaradiablo",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101201.png"
-  },
-  "104323": {
-    "id": "104323",
-    "name": "Enseñanzas de la elegancia",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104323.png"
-  },
-  "104324": {
-    "id": "104324",
-    "name": "Guía de la elegancia",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104324.png"
-  },
-  "104325": {
-    "id": "104325",
-    "name": "Filosofía de la elegancia",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104325.png"
-  },
-  "112002": {
-    "id": "112002",
-    "name": "Condensado de Slime",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112002.png"
-  },
-  "112003": {
-    "id": "112003",
-    "name": "Babas de Slime",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112003.png"
-  },
-  "112004": {
-    "id": "112004",
-    "name": "Esencia de Slime",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112004.png"
-  },
-  "113027": {
-    "id": "113027",
-    "name": "Corazón de las cenizas",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113027.png"
-  },
-  "113030": {
-    "id": "113030",
-    "name": "Cuerno del Rey Acechador",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113030.png"
-  },
-  "101236": {
-    "id": "101236",
-    "name": "Rosarcoíris",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101236.png"
-  },
-  "104344": {
-    "id": "104344",
-    "name": "Enseñanzas del orden",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104344.png"
-  },
-  "104345": {
-    "id": "104345",
-    "name": "Guía del orden",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104345.png"
-  },
-  "104346": {
-    "id": "104346",
-    "name": "Filosofía del orden",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104346.png"
-  },
-  "112032": {
-    "id": "112032",
-    "name": "Insignia del recluta",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112032.png"
-  },
-  "112033": {
-    "id": "112033",
-    "name": "Insignia del sargento",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112033.png"
-  },
-  "112034": {
-    "id": "112034",
-    "name": "Insignia del oficial",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112034.png"
-  },
-  "113059": {
-    "id": "113059",
-    "name": "Fragmento de melodía dorada",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113059.png"
-  },
-  "113060": {
-    "id": "113060",
-    "name": "Vela agonizante",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113060.png"
-  },
-  "100034": {
-    "id": "100034",
-    "name": "Campanita de cristal",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100034.png"
-  },
-  "104316": {
-    "id": "104316",
-    "name": "Enseñanzas del oro",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104316.png"
-  },
-  "104317": {
-    "id": "104317",
-    "name": "Guía del oro",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104317.png"
-  },
-  "104318": {
-    "id": "104318",
-    "name": "Filosofía del oro",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104318.png"
-  },
-  "112059": {
-    "id": "112059",
-    "name": "Espora fúngica",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112059.png"
-  },
-  "112060": {
-    "id": "112060",
-    "name": "Polen fluorescente",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112060.png"
-  },
-  "112061": {
-    "id": "112061",
-    "name": "Polvo quistecristalino",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112061.png"
-  },
-  "113045": {
-    "id": "113045",
-    "name": "Aro sombrioeterno",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113045.png"
-  },
-  "113046": {
-    "id": "113046",
-    "name": "Helecho del paraíso exuberante",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113046.png"
-  },
-  "100025": {
-    "id": "100025",
-    "name": "Seta filanemo",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100025.png"
-  },
-  "113007": {
-    "id": "113007",
-    "name": "Anillo de Boreas",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113007.png"
-  },
-  "113012": {
-    "id": "113012",
-    "name": "Corazón purificador",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113012.png"
-  },
-  "100028": {
-    "id": "100028",
-    "name": "Jade noctilucoso",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100028.png"
-  },
-  "112035": {
-    "id": "112035",
-    "name": "Insignia de cuervo de bronce",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112035.png"
-  },
-  "112036": {
-    "id": "112036",
-    "name": "Insignia de cuervo plateada",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112036.png"
-  },
-  "112037": {
-    "id": "112037",
-    "name": "Insignia de cuervo dorada",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112037.png"
-  },
-  "113002": {
-    "id": "113002",
-    "name": "Prisma del relámpago",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113002.png"
-  },
-  "100024": {
-    "id": "100024",
-    "name": "Margarita voladora",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100024.png"
-  },
-  "104304": {
-    "id": "104304",
-    "name": "Enseñanzas de la resistencia",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104304.png"
-  },
-  "104305": {
-    "id": "104305",
-    "name": "Guía de la resistencia",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104305.png"
-  },
-  "104306": {
-    "id": "104306",
-    "name": "Filosofía de la resistencia",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104306.png"
-  },
-  "113003": {
-    "id": "113003",
-    "name": "Pluma de Stormterror",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113003.png"
-  },
-  "101220": {
-    "id": "101220",
-    "name": "Añoraescarlata",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101220.png"
-  },
-  "104329": {
-    "id": "104329",
-    "name": "Enseñanzas de la exhortación",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104329.png"
-  },
-  "104330": {
-    "id": "104330",
-    "name": "Guía de la exhortación",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104330.png"
-  },
-  "104331": {
-    "id": "104331",
-    "name": "Filosofía de la exhortación",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104331.png"
-  },
-  "113033": {
-    "id": "113033",
-    "name": "Lágrima de la diosa del desastre",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113033.png"
-  },
-  "113039": {
-    "id": "113039",
-    "name": "Tetraedro guialuz",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113039.png"
-  },
-  "101232": {
-    "id": "101232",
-    "name": "Caracola azurescente",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101232.png"
-  },
-  "104341": {
-    "id": "104341",
-    "name": "Enseñanzas de la justicia",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104341.png"
-  },
-  "104342": {
-    "id": "104342",
-    "name": "Guía de la justicia",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104342.png"
-  },
-  "104343": {
-    "id": "104343",
-    "name": "Filosofía de la justicia",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104343.png"
-  },
-  "112083": {
-    "id": "112083",
-    "name": "Engranaje de malla",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112083.png"
-  },
-  "112084": {
-    "id": "112084",
-    "name": "Mecaengranaje recto",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112084.png"
-  },
-  "112085": {
-    "id": "112085",
-    "name": "Engranaje mecadinámico",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112085.png"
-  },
-  "113052": {
-    "id": "113052",
-    "name": "Dispositivo de Tubion",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113052.png"
-  },
-  "113054": {
-    "id": "113054",
-    "name": "Hilo de seda deslucido",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113054.png"
-  },
-  "101253": {
-    "id": "101253",
-    "name": "Purpuflor chamuscada",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101253.png"
-  },
-  "104151": {
-    "id": "104151",
-    "name": "Pedacito de turquesa vayuda",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104151.png"
-  },
-  "104152": {
-    "id": "104152",
-    "name": "Fragmento de turquesa vayuda",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104152.png"
-  },
-  "104153": {
-    "id": "104153",
-    "name": "Trozo de turquesa vayuda",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104153.png"
-  },
-  "104154": {
-    "id": "104154",
-    "name": "Turquesa vayuda",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104154.png"
-  },
-  "104353": {
-    "id": "104353",
-    "name": "Enseñanzas del conflicto",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104353.png"
-  },
-  "104354": {
-    "id": "104354",
-    "name": "Guía del conflicto",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104354.png"
-  },
-  "104355": {
-    "id": "104355",
-    "name": "Filosofía del conflicto",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104355.png"
-  },
-  "112101": {
-    "id": "112101",
-    "name": "Colmillo joven",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112101.png"
-  },
-  "112102": {
-    "id": "112102",
-    "name": "Colmillo veterano",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112102.png"
-  },
-  "112103": {
-    "id": "112103",
-    "name": "Colmillo de tirano",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112103.png"
-  },
-  "113067": {
-    "id": "113067",
-    "name": "Mirada abismática",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113067.png"
-  },
-  "101235": {
-    "id": "101235",
-    "name": "Campanilla lumidulce",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101235.png"
-  },
-  "113053": {
-    "id": "113053",
-    "name": "Cuerno de corcel fontamarino",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113053.png"
-  },
-  "113055": {
-    "id": "113055",
-    "name": "Ojo del vórtice deslucido",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113055.png"
-  },
-  "101204": {
-    "id": "101204",
-    "name": "Dendrobio",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101204.png"
-  },
-  "104326": {
-    "id": "104326",
-    "name": "Enseñanzas de la luz",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104326.png"
-  },
-  "104327": {
-    "id": "104327",
-    "name": "Guía de la luz",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104327.png"
-  },
-  "104328": {
-    "id": "104328",
-    "name": "Filosofía de la luz",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104328.png"
-  },
-  "113049": {
-    "id": "113049",
-    "name": "Recambio mecánico de Coppélia",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113049.png"
-  },
-  "100058": {
-    "id": "100058",
-    "name": "Cor lapis",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100058.png"
-  },
-  "104313": {
-    "id": "104313",
-    "name": "Enseñanzas del esfuerzo",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104313.png"
-  },
-  "104314": {
-    "id": "104314",
-    "name": "Guía del esfuerzo",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104314.png"
-  },
-  "104315": {
-    "id": "104315",
-    "name": "Filosofía del esfuerzo",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104315.png"
-  },
-  "112005": {
-    "id": "112005",
-    "name": "Máscara dañada",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112005.png"
-  },
-  "112006": {
-    "id": "112006",
-    "name": "Máscara sucia",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112006.png"
-  },
-  "112007": {
-    "id": "112007",
-    "name": "Máscara amenazante",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112007.png"
-  },
-  "113010": {
-    "id": "113010",
-    "name": "Núcleo de escarcha",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113010.png"
-  },
-  "101249": {
-    "id": "101249",
-    "name": "Quenepa",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101249.png"
-  },
-  "104350": {
-    "id": "104350",
-    "name": "Enseñanzas de las brasas",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104350.png"
-  },
-  "104351": {
-    "id": "104351",
-    "name": "Guía de las brasas",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104351.png"
-  },
-  "104352": {
-    "id": "104352",
-    "name": "Filosofía de las brasas",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104352.png"
-  },
-  "113062": {
-    "id": "113062",
-    "name": "Veredicto negativo",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113062.png"
-  },
-  "113071": {
-    "id": "113071",
-    "name": "Talismán de la tierra enigmática",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113071.png"
-  },
-  "101237": {
-    "id": "101237",
-    "name": "Lumistela",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101237.png"
-  },
-  "112080": {
-    "id": "112080",
-    "name": "Condensado extramarino",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112080.png"
-  },
-  "112081": {
-    "id": "112081",
-    "name": "Fragmento extramarino",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112081.png"
-  },
-  "112082": {
-    "id": "112082",
-    "name": "Cristalización cromática",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112082.png"
-  },
-  "113048": {
-    "id": "113048",
-    "name": "Instante del mar arbóreo",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113048.png"
-  },
-  "101213": {
-    "id": "101213",
-    "name": "Champiñón rukkhashava",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101213.png"
-  },
-  "104335": {
-    "id": "104335",
-    "name": "Enseñanzas de la praxis",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104335.png"
-  },
-  "104336": {
-    "id": "104336",
-    "name": "Guía de la praxis",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104336.png"
-  },
-  "104337": {
-    "id": "104337",
-    "name": "Filosofía de la praxis",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104337.png"
-  },
-  "113036": {
-    "id": "113036",
-    "name": "Picogancho fúngico",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113036.png"
-  },
-  "101268": {
-    "id": "101268",
-    "name": "Hierba invernal",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101268.png"
-  },
-  "104356": {
-    "id": "104356",
-    "name": "Enseñanzas de la luz lunar",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104356.png"
-  },
-  "104357": {
-    "id": "104357",
-    "name": "Guía de la luz lunar",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104357.png"
-  },
-  "104358": {
-    "id": "104358",
-    "name": "Filosofía de la luz lunar",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104358.png"
-  },
-  "113079": {
-    "id": "113079",
-    "name": "Asta radiante",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113079.png"
-  },
-  "113081": {
-    "id": "113081",
-    "name": "Máscara del doctor virtuoso",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113081.png"
-  },
-  "101225": {
-    "id": "101225",
-    "name": "Escarabajo dorado",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101225.png"
-  },
-  "113032": {
-    "id": "113032",
-    "name": "Mudra de la Shogun implacable",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113032.png"
-  },
-  "113037": {
-    "id": "113037",
-    "name": "Fruto atronador",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113037.png"
-  },
-  "100056": {
-    "id": "100056",
-    "name": "Lirio cala",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100056.png"
-  },
-  "113070": {
-    "id": "113070",
-    "name": "Plumaescama corroída",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113070.png"
-  },
-  "113076": {
-    "id": "113076",
-    "name": "Acumulador de aire fuentenigma",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113076.png"
-  },
-  "113041": {
-    "id": "113041",
-    "name": "Tubo de marioneta",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113041.png"
-  },
-  "113014": {
-    "id": "113014",
-    "name": "Fragmento de espada de Legado del mal",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113014.png"
-  },
-  "101217": {
-    "id": "101217",
-    "name": "Loto kalpa",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101217.png"
-  },
-  "113018": {
-    "id": "113018",
-    "name": "Rama de jade carmesí",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113018.png"
-  },
-  "101261": {
-    "id": "101261",
-    "name": "Flor velaescarcha",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101261.png"
-  },
-  "112125": {
-    "id": "112125",
-    "name": "Distintivo desgastado",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112125.png"
-  },
-  "112126": {
-    "id": "112126",
-    "name": "Distintivo sofisticado",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112126.png"
-  },
-  "112127": {
-    "id": "112127",
-    "name": "Distintivo escarchado",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112127.png"
-  },
-  "113069": {
-    "id": "113069",
-    "name": "Fuego solar corroído",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113069.png"
-  },
-  "113080": {
-    "id": "113080",
-    "name": "Núcleo kuuvahki de bucle militar",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113080.png"
-  },
-  "101238": {
-    "id": "101238",
-    "name": "Lirio lumilago",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101238.png"
-  },
-  "113068": {
-    "id": "113068",
-    "name": "Cuerno corroído",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113068.png"
-  },
-  "100057": {
-    "id": "100057",
-    "name": "Semilla de diente de león",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100057.png"
-  },
-  "113017": {
-    "id": "113017",
-    "name": "Corona del rey dragón",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113017.png"
-  },
-  "113008": {
-    "id": "113008",
-    "name": "Alma de Boreas",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113008.png"
-  },
-  "104362": {
-    "id": "104362",
-    "name": "Enseñanzas de la errancia",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104362.png"
-  },
-  "104363": {
-    "id": "104363",
-    "name": "Guía de la errancia",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104363.png"
-  },
-  "104364": {
-    "id": "104364",
-    "name": "Filosofía de la errancia",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104364.png"
-  },
-  "113075": {
-    "id": "113075",
-    "name": "Muestra ascendida: Reina",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113075.png"
-  },
-  "101233": {
-    "id": "101233",
-    "name": "Flor rociomarina",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101233.png"
-  },
-  "113050": {
-    "id": "113050",
-    "name": "Recambio mecánico de Coppélius",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113050.png"
-  },
-  "112038": {
-    "id": "112038",
-    "name": "Néctar de Megaflora",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112038.png"
-  },
-  "112039": {
-    "id": "112039",
-    "name": "Néctar brillante",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112039.png"
-  },
-  "112040": {
-    "id": "112040",
-    "name": "Néctar energético",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112040.png"
-  },
-  "113056": {
-    "id": "113056",
-    "name": "Masa deslucida",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113056.png"
-  },
-  "113057": {
-    "id": "113057",
-    "name": "Agua intrascendible",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113057.png"
-  },
-  "100033": {
-    "id": "100033",
-    "name": "Caracola estelar",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100033.png"
-  },
-  "104310": {
-    "id": "104310",
-    "name": "Enseñanzas de la prosperidad",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104310.png"
-  },
-  "104311": {
-    "id": "104311",
-    "name": "Guía de la prosperidad",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104311.png"
-  },
-  "104312": {
-    "id": "104312",
-    "name": "Filosofía de la prosperidad",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104312.png"
-  },
-  "113051": {
-    "id": "113051",
-    "name": "Providencia imperial",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113051.png"
-  },
-  "100031": {
-    "id": "100031",
-    "name": "Flor chingxin",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100031.png"
-  },
-  "113015": {
-    "id": "113015",
-    "name": "Sombra del guerrero",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113015.png"
-  },
-  "101207": {
-    "id": "101207",
-    "name": "Perla de coral",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101207.png"
-  },
-  "113023": {
-    "id": "113023",
-    "name": "Corazón de la eternidad",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113023.png"
-  },
-  "100029": {
-    "id": "100029",
-    "name": "Flor de seda",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100029.png"
-  },
-  "113016": {
-    "id": "113016",
-    "name": "Jade inmaduro",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113016.png"
-  },
-  "101255": {
-    "id": "101255",
-    "name": "Escamatita",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101255.png"
-  },
-  "104347": {
-    "id": "104347",
-    "name": "Enseñanzas de la contienda",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104347.png"
-  },
-  "104348": {
-    "id": "104348",
-    "name": "Guía de la contienda",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104348.png"
-  },
-  "104349": {
-    "id": "104349",
-    "name": "Filosofía de la contienda",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104349.png"
-  },
-  "112104": {
-    "id": "112104",
-    "name": "Silbato de madera del guardián",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112104.png"
-  },
-  "112105": {
-    "id": "112105",
-    "name": "Silbato de hierro del guerrero",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112105.png"
-  },
-  "112106": {
-    "id": "112106",
-    "name": "Silbato de oro del soldado sauriocoronado",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112106.png"
-  },
-  "101250": {
-    "id": "101250",
-    "name": "Pata de saurio",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101250.png"
-  },
-  "113072": {
-    "id": "113072",
-    "name": "Núcleo inerte magmadracónico",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113072.png"
-  },
-  "113074": {
-    "id": "113074",
-    "name": "Muestra ascendida: Torre",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113074.png"
-  },
-  "101269": {
-    "id": "101269",
-    "name": "Ámbar de pino",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101269.png"
-  },
-  "101252": {
-    "id": "101252",
-    "name": "Cornihongo luminoso",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101252.png"
-  },
-  "113073": {
-    "id": "113073",
-    "name": "Muestra ascendida: Caballo",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113073.png"
-  },
-  "113078": {
-    "id": "113078",
-    "name": "Ala rutilante",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113078.png"
-  },
-  "113001": {
-    "id": "113001",
-    "name": "Semilla de huracán",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113001.png"
-  },
-  "113065": {
-    "id": "113065",
-    "name": "Flamigranada muy madura",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113065.png"
-  },
-  "101206": {
-    "id": "101206",
-    "name": "Hongo marino",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101206.png"
-  },
-  "113019": {
-    "id": "113019",
-    "name": "Escama dorada",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113019.png"
-  },
-  "113022": {
-    "id": "113022",
-    "name": "Engranaje Oni",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113022.png"
-  },
-  "101202": {
-    "id": "101202",
-    "name": "Pétalos de cerezo",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101202.png"
-  },
-  "112044": {
-    "id": "112044",
-    "name": "Guardamano viejo",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112044.png"
-  },
-  "112045": {
-    "id": "112045",
-    "name": "Guardamano gemelo",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112045.png"
-  },
-  "112046": {
-    "id": "112046",
-    "name": "Guardamano célebre",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112046.png"
-  },
-  "113028": {
-    "id": "113028",
-    "name": "Rocío del rechazo",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113028.png"
-  },
-  "101223": {
-    "id": "101223",
-    "name": "Flor funeraria",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101223.png"
-  },
-  "113040": {
-    "id": "113040",
-    "name": "Trepadora supresora",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113040.png"
-  },
-  "113047": {
-    "id": "113047",
-    "name": "Floración primigenia del oasis",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113047.png"
-  },
-  "101208": {
-    "id": "101208",
-    "name": "Fruto amakumo",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101208.png"
-  },
-  "104320": {
-    "id": "104320",
-    "name": "Enseñanzas de la transitoriedad",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104320.png"
-  },
-  "104321": {
-    "id": "104321",
-    "name": "Guía de la transitoriedad",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104321.png"
-  },
-  "104322": {
-    "id": "104322",
-    "name": "Filosofía de la transitoriedad",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104322.png"
-  },
-  "113029": {
-    "id": "113029",
-    "name": "Abalorio de la tempestad",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113029.png"
-  },
-  "101205": {
-    "id": "101205",
-    "name": "Percibetormentas",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101205.png"
-  },
-  "113035": {
-    "id": "113035",
-    "name": "Colmillo rúnico",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113035.png"
-  },
-  "101215": {
-    "id": "101215",
-    "name": "Loto nilotpala",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101215.png"
-  },
-  "113038": {
-    "id": "113038",
-    "name": "Resorte perpetuo",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113038.png"
-  },
-  "101241": {
-    "id": "101241",
-    "name": "Jade cristalino",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101241.png"
-  },
-  "113066": {
-    "id": "113066",
-    "name": "Núcleo fuentenigmático con grabados de oro",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113066.png"
-  },
-  "101263": {
-    "id": "101263",
-    "name": "Plata lunacaída",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101263.png"
-  },
-  "101272": {
-    "id": "101272",
-    "name": "Polilla alaetérea",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101272.png"
-  },
-  "113086": {
-    "id": "113086",
-    "name": "Pluma celestecaída",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113086.png"
-  },
-  "100022": {
-    "id": "100022",
-    "name": "Valbaya",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100022.png"
-  },
-  "113004": {
-    "id": "113004",
-    "name": "Garra de Stormterror",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113004.png"
-  },
-  "113085": {
-    "id": "113085",
-    "name": "Cola prismática cortada",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113085.png"
-  },
-  "104338": {
-    "id": "104338",
-    "name": "Enseñanzas de la ecuanimidad",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104338.png"
-  },
-  "104339": {
-    "id": "104339",
-    "name": "Guía de la ecuanimidad",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104339.png"
-  },
-  "104340": {
-    "id": "104340",
-    "name": "Filosofía de la ecuanimidad",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104340.png"
   },
   "100021": {
     "id": "100021",
@@ -1908,41 +252,47 @@ const REAL_MASTER_MATERIALS = {
     "rank": 1,
     "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100021.png"
   },
-  "101247": {
-    "id": "101247",
-    "name": "Branquia plumaespuma",
+  "100022": {
+    "id": "100022",
+    "name": "Valbaya",
     "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101247.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100022.png"
   },
-  "113064": {
-    "id": "113064",
-    "name": "Sello de la bendición vinculante",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113064.png"
-  },
-  "101240": {
-    "id": "101240",
-    "name": "Gota de rocío primigenio",
+  "100023": {
+    "id": "100023",
+    "name": "Cecilia",
     "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101240.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100023.png"
   },
-  "113084": {
-    "id": "113084",
-    "name": "Vestigio de las alas del terror",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113084.png"
-  },
-  "113087": {
-    "id": "113087",
-    "name": "Resina falsa",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113087.png"
-  },
-  "101214": {
-    "id": "101214",
-    "name": "Orquídea padishá",
+  "100024": {
+    "id": "100024",
+    "name": "Margarita voladora",
     "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101214.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100024.png"
+  },
+  "100025": {
+    "id": "100025",
+    "name": "Seta filanemo",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100025.png"
+  },
+  "100027": {
+    "id": "100027",
+    "name": "Chile de Jueyun",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100027.png"
+  },
+  "100028": {
+    "id": "100028",
+    "name": "Jade noctilucoso",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100028.png"
+  },
+  "100029": {
+    "id": "100029",
+    "name": "Flor de seda",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100029.png"
   },
   "100030": {
     "id": "100030",
@@ -1950,119 +300,95 @@ const REAL_MASTER_MATERIALS = {
     "rank": 1,
     "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100030.png"
   },
-  "101275": {
-    "id": "101275",
-    "name": "Flor frigifeérica",
+  "100031": {
+    "id": "100031",
+    "name": "Flor chingxin",
     "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101275.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100031.png"
   },
-  "104365": {
-    "id": "104365",
-    "name": "Enseñanzas del amor",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104365.png"
-  },
-  "104366": {
-    "id": "104366",
-    "name": "Guía del amor",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104366.png"
-  },
-  "104367": {
-    "id": "104367",
-    "name": "Filosofía del amor",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104367.png"
-  },
-  "112146": {
-    "id": "112146",
-    "name": "Lumiesquirla etérea",
+  "100033": {
+    "id": "100033",
+    "name": "Caracola estelar",
     "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112146.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100033.png"
   },
-  "112147": {
-    "id": "112147",
-    "name": "Quiebracristal etéreo",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112147.png"
-  },
-  "112148": {
-    "id": "112148",
-    "name": "Petreoescama etérea",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112148.png"
-  },
-  "113088": {
-    "id": "113088",
-    "name": "Rama marchita retorcida",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113088.png"
-  },
-  "113090": {
-    "id": "113090",
-    "name": "Rama florida inmortal no chamuscada",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113090.png"
-  },
-  "113006": {
-    "id": "113006",
-    "name": "Cola de Boreas",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113006.png"
-  },
-  "101239": {
-    "id": "101239",
-    "name": "Unidad de subdetección",
+  "100034": {
+    "id": "100034",
+    "name": "Campanita de cristal",
     "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101239.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100034.png"
   },
-  "113082": {
-    "id": "113082",
-    "name": "Ataduras del demente",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113082.png"
-  },
-  "113026": {
-    "id": "113026",
-    "name": "Mariposa del fuego infernal",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113026.png"
-  },
-  "101224": {
-    "id": "101224",
-    "name": "Trishiraíta",
+  "100055": {
+    "id": "100055",
+    "name": "Lucetta",
     "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101224.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100055.png"
   },
-  "113043": {
-    "id": "113043",
-    "name": "Cascabel de anulación",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113043.png"
-  },
-  "113058": {
-    "id": "113058",
-    "name": "Nimboescama",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113058.png"
-  },
-  "113031": {
-    "id": "113031",
-    "name": "Pseudoaleta de dragón de las profundidades",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113031.png"
-  },
-  "113034": {
-    "id": "113034",
-    "name": "Máxima de la catástrofe",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113034.png"
-  },
-  "101254": {
-    "id": "101254",
-    "name": "Flor rocanubosa",
+  "100056": {
+    "id": "100056",
+    "name": "Lirio cala",
     "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101254.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100056.png"
+  },
+  "100057": {
+    "id": "100057",
+    "name": "Semilla de diente de león",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100057.png"
+  },
+  "100058": {
+    "id": "100058",
+    "name": "Cor lapis",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100058.png"
+  },
+  "101201": {
+    "id": "101201",
+    "name": "Escaradiablo",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101201.png"
+  },
+  "101202": {
+    "id": "101202",
+    "name": "Pétalos de cerezo",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101202.png"
+  },
+  "101203": {
+    "id": "101203",
+    "name": "Médula cristalizada",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101203.png"
+  },
+  "101204": {
+    "id": "101204",
+    "name": "Dendrobio",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101204.png"
+  },
+  "101205": {
+    "id": "101205",
+    "name": "Percibetormentas",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101205.png"
+  },
+  "101206": {
+    "id": "101206",
+    "name": "Hongo marino",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101206.png"
+  },
+  "101207": {
+    "id": "101207",
+    "name": "Perla de coral",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101207.png"
+  },
+  "101208": {
+    "id": "101208",
+    "name": "Fruto amakumo",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101208.png"
   },
   "101209": {
     "id": "101209",
@@ -2070,11 +396,221 @@ const REAL_MASTER_MATERIALS = {
     "rank": 1,
     "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101209.png"
   },
-  "113024": {
-    "id": "113024",
-    "name": "Perla abrasante",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113024.png"
+  "101213": {
+    "id": "101213",
+    "name": "Champiñón rukkhashava",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101213.png"
+  },
+  "101214": {
+    "id": "101214",
+    "name": "Orquídea padishá",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101214.png"
+  },
+  "101215": {
+    "id": "101215",
+    "name": "Loto nilotpala",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101215.png"
+  },
+  "101217": {
+    "id": "101217",
+    "name": "Loto kalpa",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101217.png"
+  },
+  "101220": {
+    "id": "101220",
+    "name": "Añoraescarlata",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101220.png"
+  },
+  "101222": {
+    "id": "101222",
+    "name": "Crisálida arenosa",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101222.png"
+  },
+  "101223": {
+    "id": "101223",
+    "name": "Flor funeraria",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101223.png"
+  },
+  "101224": {
+    "id": "101224",
+    "name": "Trishiraíta",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101224.png"
+  },
+  "101225": {
+    "id": "101225",
+    "name": "Escarabajo dorado",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101225.png"
+  },
+  "101232": {
+    "id": "101232",
+    "name": "Caracola azurescente",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101232.png"
+  },
+  "101233": {
+    "id": "101233",
+    "name": "Flor rociomarina",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101233.png"
+  },
+  "101235": {
+    "id": "101235",
+    "name": "Campanilla lumidulce",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101235.png"
+  },
+  "101236": {
+    "id": "101236",
+    "name": "Rosarcoíris",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101236.png"
+  },
+  "101237": {
+    "id": "101237",
+    "name": "Lumistela",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101237.png"
+  },
+  "101238": {
+    "id": "101238",
+    "name": "Lirio lumilago",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101238.png"
+  },
+  "101239": {
+    "id": "101239",
+    "name": "Unidad de subdetección",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101239.png"
+  },
+  "101240": {
+    "id": "101240",
+    "name": "Gota de rocío primigenio",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101240.png"
+  },
+  "101241": {
+    "id": "101241",
+    "name": "Jade cristalino",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101241.png"
+  },
+  "101247": {
+    "id": "101247",
+    "name": "Branquia plumaespuma",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101247.png"
+  },
+  "101248": {
+    "id": "101248",
+    "name": "Crisantemo resplandeciente",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101248.png"
+  },
+  "101249": {
+    "id": "101249",
+    "name": "Quenepa",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101249.png"
+  },
+  "101250": {
+    "id": "101250",
+    "name": "Pata de saurio",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101250.png"
+  },
+  "101252": {
+    "id": "101252",
+    "name": "Cornihongo luminoso",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101252.png"
+  },
+  "101253": {
+    "id": "101253",
+    "name": "Purpuflor chamuscada",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101253.png"
+  },
+  "101254": {
+    "id": "101254",
+    "name": "Flor rocanubosa",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101254.png"
+  },
+  "101255": {
+    "id": "101255",
+    "name": "Escamatita",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101255.png"
+  },
+  "101257": {
+    "id": "101257",
+    "name": "Rodamiento portátil",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101257.png"
+  },
+  "101261": {
+    "id": "101261",
+    "name": "Flor velaescarcha",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101261.png"
+  },
+  "101263": {
+    "id": "101263",
+    "name": "Plata lunacaída",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101263.png"
+  },
+  "101268": {
+    "id": "101268",
+    "name": "Hierba invernal",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101268.png"
+  },
+  "101269": {
+    "id": "101269",
+    "name": "Ámbar de pino",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101269.png"
+  },
+  "101272": {
+    "id": "101272",
+    "name": "Polilla alaetérea",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101272.png"
+  },
+  "101273": {
+    "id": "101273",
+    "name": "Artemisia feérica",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101273.png"
+  },
+  "101274": {
+    "id": "101274",
+    "name": "Sombrillarrugada cristalina",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101274.png"
+  },
+  "101275": {
+    "id": "101275",
+    "name": "Flor frigifeérica",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101275.png"
+  },
+  "101276": {
+    "id": "101276",
+    "name": "Hierbalana",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101276.png"
   },
   "101277": {
     "id": "101277",
@@ -2082,35 +618,47 @@ const REAL_MASTER_MATERIALS = {
     "rank": 1,
     "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101277.png"
   },
-  "104371": {
-    "id": "104371",
-    "name": "Enseñanzas de la gloria",
+  "101285": {
+    "id": "101285",
+    "name": "Alquequenje luminoso",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101285.png"
+  },
+  "104001": {
+    "id": "104001",
+    "name": "Consejo del errante",
     "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104371.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104001.png"
   },
-  "104372": {
-    "id": "104372",
-    "name": "Guía de la gloria",
+  "104002": {
+    "id": "104002",
+    "name": "Experiencia del aventurero",
     "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104372.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104002.png"
   },
-  "104373": {
-    "id": "104373",
-    "name": "Filosofía de la gloria",
+  "104003": {
+    "id": "104003",
+    "name": "Ingenio del héroe",
     "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104373.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104003.png"
   },
-  "113089": {
-    "id": "113089",
-    "name": "Brote blasfemo",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113089.png"
+  "104011": {
+    "id": "104011",
+    "name": "Mineral de refinamiento",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104011.png"
   },
-  "113092": {
-    "id": "113092",
-    "name": "Hombrera agrietada de la errabunda",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113092.png"
+  "104012": {
+    "id": "104012",
+    "name": "Mineral de refinamiento fino",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104012.png"
+  },
+  "104013": {
+    "id": "104013",
+    "name": "Mineral de refinamiento místico",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104013.png"
   },
   "104101": {
     "id": "104101",
@@ -2136,119 +684,683 @@ const REAL_MASTER_MATERIALS = {
     "rank": 5,
     "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104104.png"
   },
-  "113063": {
-    "id": "113063",
-    "name": "Piedra angular piroastral",
+  "104111": {
+    "id": "104111",
+    "name": "Pedacito de ágata agnidus",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104111.png"
+  },
+  "104112": {
+    "id": "104112",
+    "name": "Fragmento de ágata agnidus",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104112.png"
+  },
+  "104113": {
+    "id": "104113",
+    "name": "Trozo de ágata agnidus",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104113.png"
+  },
+  "104114": {
+    "id": "104114",
+    "name": "Ágata agnidus",
     "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113063.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104114.png"
   },
-  "100027": {
-    "id": "100027",
-    "name": "Chile de Jueyun",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100027.png"
-  },
-  "101248": {
-    "id": "101248",
-    "name": "Crisantemo resplandeciente",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101248.png"
-  },
-  "104011": {
-    "id": "104011",
-    "name": "Mineral de refinamiento",
-    "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104011.png"
-  },
-  "104012": {
-    "id": "104012",
-    "name": "Mineral de refinamiento fino",
+  "104121": {
+    "id": "104121",
+    "name": "Pedacito de lazurita varunada",
     "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104012.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104121.png"
   },
-  "112050": {
-    "id": "112050",
-    "name": "Prisma oscuro",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112050.png"
-  },
-  "112051": {
-    "id": "112051",
-    "name": "Prisma de cristal",
+  "104122": {
+    "id": "104122",
+    "name": "Fragmento de lazurita varunada",
     "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112051.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104122.png"
   },
-  "112052": {
-    "id": "112052",
-    "name": "Prisma polarizador",
+  "104123": {
+    "id": "104123",
+    "name": "Trozo de lazurita varunada",
     "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112052.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104123.png"
   },
-  "114029": {
-    "id": "114029",
-    "name": "Sabiduría de Narukami",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114029.png"
-  },
-  "114030": {
-    "id": "114030",
-    "name": "Júbilo de Narukami",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114030.png"
-  },
-  "114031": {
-    "id": "114031",
-    "name": "Afecto de Narukami",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114031.png"
-  },
-  "114032": {
-    "id": "114032",
-    "name": "Valentía de Narukami",
+  "104124": {
+    "id": "104124",
+    "name": "Lazurita varunada",
     "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114032.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104124.png"
   },
-  "112020": {
-    "id": "112020",
-    "name": "Rama seca de líneas ley",
+  "104131": {
+    "id": "104131",
+    "name": "Pedacito de esmeralda nagadus",
     "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112020.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104131.png"
   },
-  "112021": {
-    "id": "112021",
-    "name": "Hojas secas de líneas ley",
+  "104132": {
+    "id": "104132",
+    "name": "Fragmento de esmeralda nagadus",
     "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112021.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104132.png"
   },
-  "112022": {
-    "id": "112022",
-    "name": "Brotes de líneas ley",
+  "104133": {
+    "id": "104133",
+    "name": "Trozo de esmeralda nagadus",
     "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112022.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104133.png"
   },
-  "114005": {
-    "id": "114005",
-    "name": "Diente de leche de lobo boreal",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114005.png"
-  },
-  "114006": {
-    "id": "114006",
-    "name": "Diente roto de lobo boreal",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114006.png"
-  },
-  "114007": {
-    "id": "114007",
-    "name": "Colmillo roto de lobo boreal",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114007.png"
-  },
-  "114008": {
-    "id": "114008",
-    "name": "Nostalgia del lobo boreal",
+  "104134": {
+    "id": "104134",
+    "name": "Esmeralda nagadus",
     "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114008.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104134.png"
+  },
+  "104141": {
+    "id": "104141",
+    "name": "Pedacito de amatista vajrada",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104141.png"
+  },
+  "104142": {
+    "id": "104142",
+    "name": "Fragmento de amatista vajrada",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104142.png"
+  },
+  "104143": {
+    "id": "104143",
+    "name": "Trozo de amatista vajrada",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104143.png"
+  },
+  "104144": {
+    "id": "104144",
+    "name": "Amatista vajrada",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104144.png"
+  },
+  "104151": {
+    "id": "104151",
+    "name": "Pedacito de turquesa vayuda",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104151.png"
+  },
+  "104152": {
+    "id": "104152",
+    "name": "Fragmento de turquesa vayuda",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104152.png"
+  },
+  "104153": {
+    "id": "104153",
+    "name": "Trozo de turquesa vayuda",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104153.png"
+  },
+  "104154": {
+    "id": "104154",
+    "name": "Turquesa vayuda",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104154.png"
+  },
+  "104161": {
+    "id": "104161",
+    "name": "Pedacito de jade shivada",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104161.png"
+  },
+  "104162": {
+    "id": "104162",
+    "name": "Fragmento de jade shivada",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104162.png"
+  },
+  "104163": {
+    "id": "104163",
+    "name": "Trozo de jade shivada",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104163.png"
+  },
+  "104164": {
+    "id": "104164",
+    "name": "Jade shivada",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104164.png"
+  },
+  "104171": {
+    "id": "104171",
+    "name": "Pedacito de topacio prithiva",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104171.png"
+  },
+  "104172": {
+    "id": "104172",
+    "name": "Fragmento de topacio prithiva",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104172.png"
+  },
+  "104173": {
+    "id": "104173",
+    "name": "Trozo de topacio prithiva",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104173.png"
+  },
+  "104174": {
+    "id": "104174",
+    "name": "Topacio prithiva",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104174.png"
+  },
+  "104301": {
+    "id": "104301",
+    "name": "Enseñanzas de la libertad",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104301.png"
+  },
+  "104302": {
+    "id": "104302",
+    "name": "Guía de la libertad",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104302.png"
+  },
+  "104303": {
+    "id": "104303",
+    "name": "Filosofía de la libertad",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104303.png"
+  },
+  "104304": {
+    "id": "104304",
+    "name": "Enseñanzas de la resistencia",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104304.png"
+  },
+  "104305": {
+    "id": "104305",
+    "name": "Guía de la resistencia",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104305.png"
+  },
+  "104306": {
+    "id": "104306",
+    "name": "Filosofía de la resistencia",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104306.png"
+  },
+  "104307": {
+    "id": "104307",
+    "name": "Enseñanzas de la poesía",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104307.png"
+  },
+  "104308": {
+    "id": "104308",
+    "name": "Guía de la poesía",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104308.png"
+  },
+  "104309": {
+    "id": "104309",
+    "name": "Filosofía de la poesía",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104309.png"
+  },
+  "104310": {
+    "id": "104310",
+    "name": "Enseñanzas de la prosperidad",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104310.png"
+  },
+  "104311": {
+    "id": "104311",
+    "name": "Guía de la prosperidad",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104311.png"
+  },
+  "104312": {
+    "id": "104312",
+    "name": "Filosofía de la prosperidad",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104312.png"
+  },
+  "104313": {
+    "id": "104313",
+    "name": "Enseñanzas del esfuerzo",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104313.png"
+  },
+  "104314": {
+    "id": "104314",
+    "name": "Guía del esfuerzo",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104314.png"
+  },
+  "104315": {
+    "id": "104315",
+    "name": "Filosofía del esfuerzo",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104315.png"
+  },
+  "104316": {
+    "id": "104316",
+    "name": "Enseñanzas del oro",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104316.png"
+  },
+  "104317": {
+    "id": "104317",
+    "name": "Guía del oro",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104317.png"
+  },
+  "104318": {
+    "id": "104318",
+    "name": "Filosofía del oro",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104318.png"
+  },
+  "104319": {
+    "id": "104319",
+    "name": "Corona de la sabiduría",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104319.png"
+  },
+  "104320": {
+    "id": "104320",
+    "name": "Enseñanzas de la transitoriedad",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104320.png"
+  },
+  "104321": {
+    "id": "104321",
+    "name": "Guía de la transitoriedad",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104321.png"
+  },
+  "104322": {
+    "id": "104322",
+    "name": "Filosofía de la transitoriedad",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104322.png"
+  },
+  "104323": {
+    "id": "104323",
+    "name": "Enseñanzas de la elegancia",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104323.png"
+  },
+  "104324": {
+    "id": "104324",
+    "name": "Guía de la elegancia",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104324.png"
+  },
+  "104325": {
+    "id": "104325",
+    "name": "Filosofía de la elegancia",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104325.png"
+  },
+  "104326": {
+    "id": "104326",
+    "name": "Enseñanzas de la luz",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104326.png"
+  },
+  "104327": {
+    "id": "104327",
+    "name": "Guía de la luz",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104327.png"
+  },
+  "104328": {
+    "id": "104328",
+    "name": "Filosofía de la luz",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104328.png"
+  },
+  "104329": {
+    "id": "104329",
+    "name": "Enseñanzas de la exhortación",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104329.png"
+  },
+  "104330": {
+    "id": "104330",
+    "name": "Guía de la exhortación",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104330.png"
+  },
+  "104331": {
+    "id": "104331",
+    "name": "Filosofía de la exhortación",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104331.png"
+  },
+  "104332": {
+    "id": "104332",
+    "name": "Enseñanzas del ingenio",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104332.png"
+  },
+  "104333": {
+    "id": "104333",
+    "name": "Guía del ingenio",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104333.png"
+  },
+  "104334": {
+    "id": "104334",
+    "name": "Filosofía del ingenio",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104334.png"
+  },
+  "104335": {
+    "id": "104335",
+    "name": "Enseñanzas de la praxis",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104335.png"
+  },
+  "104336": {
+    "id": "104336",
+    "name": "Guía de la praxis",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104336.png"
+  },
+  "104337": {
+    "id": "104337",
+    "name": "Filosofía de la praxis",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104337.png"
+  },
+  "104338": {
+    "id": "104338",
+    "name": "Enseñanzas de la ecuanimidad",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104338.png"
+  },
+  "104339": {
+    "id": "104339",
+    "name": "Guía de la ecuanimidad",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104339.png"
+  },
+  "104340": {
+    "id": "104340",
+    "name": "Filosofía de la ecuanimidad",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104340.png"
+  },
+  "104341": {
+    "id": "104341",
+    "name": "Enseñanzas de la justicia",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104341.png"
+  },
+  "104342": {
+    "id": "104342",
+    "name": "Guía de la justicia",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104342.png"
+  },
+  "104343": {
+    "id": "104343",
+    "name": "Filosofía de la justicia",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104343.png"
+  },
+  "104344": {
+    "id": "104344",
+    "name": "Enseñanzas del orden",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104344.png"
+  },
+  "104345": {
+    "id": "104345",
+    "name": "Guía del orden",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104345.png"
+  },
+  "104346": {
+    "id": "104346",
+    "name": "Filosofía del orden",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104346.png"
+  },
+  "104347": {
+    "id": "104347",
+    "name": "Enseñanzas de la contienda",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104347.png"
+  },
+  "104348": {
+    "id": "104348",
+    "name": "Guía de la contienda",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104348.png"
+  },
+  "104349": {
+    "id": "104349",
+    "name": "Filosofía de la contienda",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104349.png"
+  },
+  "104350": {
+    "id": "104350",
+    "name": "Enseñanzas de las brasas",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104350.png"
+  },
+  "104351": {
+    "id": "104351",
+    "name": "Guía de las brasas",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104351.png"
+  },
+  "104352": {
+    "id": "104352",
+    "name": "Filosofía de las brasas",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104352.png"
+  },
+  "104353": {
+    "id": "104353",
+    "name": "Enseñanzas del conflicto",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104353.png"
+  },
+  "104354": {
+    "id": "104354",
+    "name": "Guía del conflicto",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104354.png"
+  },
+  "104355": {
+    "id": "104355",
+    "name": "Filosofía del conflicto",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104355.png"
+  },
+  "104356": {
+    "id": "104356",
+    "name": "Enseñanzas de la luz lunar",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104356.png"
+  },
+  "104357": {
+    "id": "104357",
+    "name": "Guía de la luz lunar",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104357.png"
+  },
+  "104358": {
+    "id": "104358",
+    "name": "Filosofía de la luz lunar",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104358.png"
+  },
+  "104359": {
+    "id": "104359",
+    "name": "Enseñanzas del paraíso",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104359.png"
+  },
+  "104360": {
+    "id": "104360",
+    "name": "Guía del paraíso",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104360.png"
+  },
+  "104361": {
+    "id": "104361",
+    "name": "Filosofía del paraíso",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104361.png"
+  },
+  "104362": {
+    "id": "104362",
+    "name": "Enseñanzas de la errancia",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104362.png"
+  },
+  "104363": {
+    "id": "104363",
+    "name": "Guía de la errancia",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104363.png"
+  },
+  "104364": {
+    "id": "104364",
+    "name": "Filosofía de la errancia",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104364.png"
+  },
+  "104365": {
+    "id": "104365",
+    "name": "Enseñanzas del amor",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104365.png"
+  },
+  "104366": {
+    "id": "104366",
+    "name": "Guía del amor",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104366.png"
+  },
+  "104367": {
+    "id": "104367",
+    "name": "Filosofía del amor",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104367.png"
+  },
+  "104368": {
+    "id": "104368",
+    "name": "Enseñanzas de la tenacidad",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104368.png"
+  },
+  "104369": {
+    "id": "104369",
+    "name": "Guía de la tenacidad",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104369.png"
+  },
+  "104370": {
+    "id": "104370",
+    "name": "Filosofía de la tenacidad",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104370.png"
+  },
+  "104371": {
+    "id": "104371",
+    "name": "Enseñanzas de la gloria",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104371.png"
+  },
+  "104372": {
+    "id": "104372",
+    "name": "Guía de la gloria",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104372.png"
+  },
+  "104373": {
+    "id": "104373",
+    "name": "Filosofía de la gloria",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104373.png"
+  },
+  "112002": {
+    "id": "112002",
+    "name": "Condensado de Slime",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112002.png"
+  },
+  "112003": {
+    "id": "112003",
+    "name": "Babas de Slime",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112003.png"
+  },
+  "112004": {
+    "id": "112004",
+    "name": "Esencia de Slime",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112004.png"
+  },
+  "112005": {
+    "id": "112005",
+    "name": "Máscara dañada",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112005.png"
+  },
+  "112006": {
+    "id": "112006",
+    "name": "Máscara sucia",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112006.png"
+  },
+  "112007": {
+    "id": "112007",
+    "name": "Máscara amenazante",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112007.png"
+  },
+  "112008": {
+    "id": "112008",
+    "name": "Pergamino guía",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112008.png"
+  },
+  "112009": {
+    "id": "112009",
+    "name": "Pergamino hechizado",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112009.png"
+  },
+  "112010": {
+    "id": "112010",
+    "name": "Pergamino maldito",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112010.png"
+  },
+  "112011": {
+    "id": "112011",
+    "name": "Flecha robusta",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112011.png"
+  },
+  "112012": {
+    "id": "112012",
+    "name": "Flecha afilada",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112012.png"
+  },
+  "112013": {
+    "id": "112013",
+    "name": "Flecha veterana",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112013.png"
   },
   "112014": {
     "id": "112014",
@@ -2268,29 +1380,833 @@ const REAL_MASTER_MATERIALS = {
     "rank": 4,
     "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112016.png"
   },
-  "114009": {
-    "id": "114009",
-    "name": "Grilletes de Diente de León",
+  "112017": {
+    "id": "112017",
+    "name": "Estatuilla oscura",
     "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114009.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112017.png"
   },
-  "114010": {
-    "id": "114010",
-    "name": "Cadena de Diente de León",
+  "112018": {
+    "id": "112018",
+    "name": "Estatuilla del amanecer",
     "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114010.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112018.png"
   },
-  "114011": {
-    "id": "114011",
-    "name": "Esposas de Diente de León",
+  "112019": {
+    "id": "112019",
+    "name": "Estatuilla de las profundidades",
     "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114011.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112019.png"
   },
-  "114012": {
-    "id": "114012",
-    "name": "Ideales de Diente de León",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114012.png"
+  "112020": {
+    "id": "112020",
+    "name": "Rama seca de líneas ley",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112020.png"
+  },
+  "112021": {
+    "id": "112021",
+    "name": "Hojas secas de líneas ley",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112021.png"
+  },
+  "112022": {
+    "id": "112022",
+    "name": "Brotes de líneas ley",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112022.png"
+  },
+  "112023": {
+    "id": "112023",
+    "name": "Dispositivo del caos",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112023.png"
+  },
+  "112024": {
+    "id": "112024",
+    "name": "Circuito del caos",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112024.png"
+  },
+  "112025": {
+    "id": "112025",
+    "name": "Caldera del caos",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112025.png"
+  },
+  "112026": {
+    "id": "112026",
+    "name": "Polen neblinoso",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112026.png"
+  },
+  "112027": {
+    "id": "112027",
+    "name": "Hierba neblinosa",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112027.png"
+  },
+  "112028": {
+    "id": "112028",
+    "name": "Lámpara de hierba neblinosa",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112028.png"
+  },
+  "112029": {
+    "id": "112029",
+    "name": "Daga de cacería",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112029.png"
+  },
+  "112030": {
+    "id": "112030",
+    "name": "Daga del agente",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112030.png"
+  },
+  "112031": {
+    "id": "112031",
+    "name": "Daga larga del inspector",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112031.png"
+  },
+  "112032": {
+    "id": "112032",
+    "name": "Insignia del recluta",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112032.png"
+  },
+  "112033": {
+    "id": "112033",
+    "name": "Insignia del sargento",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112033.png"
+  },
+  "112034": {
+    "id": "112034",
+    "name": "Insignia del oficial",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112034.png"
+  },
+  "112035": {
+    "id": "112035",
+    "name": "Insignia de cuervo de bronce",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112035.png"
+  },
+  "112036": {
+    "id": "112036",
+    "name": "Insignia de cuervo plateada",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112036.png"
+  },
+  "112037": {
+    "id": "112037",
+    "name": "Insignia de cuervo dorada",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112037.png"
+  },
+  "112038": {
+    "id": "112038",
+    "name": "Néctar de Megaflora",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112038.png"
+  },
+  "112039": {
+    "id": "112039",
+    "name": "Néctar brillante",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112039.png"
+  },
+  "112040": {
+    "id": "112040",
+    "name": "Néctar energético",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112040.png"
+  },
+  "112041": {
+    "id": "112041",
+    "name": "Fragmento de hueso frágil",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112041.png"
+  },
+  "112042": {
+    "id": "112042",
+    "name": "Fragmento de hueso sólido",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112042.png"
+  },
+  "112043": {
+    "id": "112043",
+    "name": "Fragmento de hueso fosilizado",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112043.png"
+  },
+  "112044": {
+    "id": "112044",
+    "name": "Guardamano viejo",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112044.png"
+  },
+  "112045": {
+    "id": "112045",
+    "name": "Guardamano gemelo",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112045.png"
+  },
+  "112046": {
+    "id": "112046",
+    "name": "Guardamano célebre",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112046.png"
+  },
+  "112047": {
+    "id": "112047",
+    "name": "Engranaje del caos",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112047.png"
+  },
+  "112048": {
+    "id": "112048",
+    "name": "Eje del caos",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112048.png"
+  },
+  "112049": {
+    "id": "112049",
+    "name": "Ojo del caos",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112049.png"
+  },
+  "112050": {
+    "id": "112050",
+    "name": "Prisma oscuro",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112050.png"
+  },
+  "112051": {
+    "id": "112051",
+    "name": "Prisma de cristal",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112051.png"
+  },
+  "112052": {
+    "id": "112052",
+    "name": "Prisma polarizador",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112052.png"
+  },
+  "112053": {
+    "id": "112053",
+    "name": "Caparazón espectral",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112053.png"
+  },
+  "112054": {
+    "id": "112054",
+    "name": "Corazón espectral",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112054.png"
+  },
+  "112055": {
+    "id": "112055",
+    "name": "Núcleo espectral",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112055.png"
+  },
+  "112056": {
+    "id": "112056",
+    "name": "Garra oculta",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112056.png"
+  },
+  "112057": {
+    "id": "112057",
+    "name": "Garra afilada oculta",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112057.png"
+  },
+  "112058": {
+    "id": "112058",
+    "name": "Garra fantasmal oculta",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112058.png"
+  },
+  "112059": {
+    "id": "112059",
+    "name": "Espora fúngica",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112059.png"
+  },
+  "112060": {
+    "id": "112060",
+    "name": "Polen fluorescente",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112060.png"
+  },
+  "112061": {
+    "id": "112061",
+    "name": "Polvo quistecristalino",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112061.png"
+  },
+  "112062": {
+    "id": "112062",
+    "name": "Núcleo fúngico inerte",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112062.png"
+  },
+  "112063": {
+    "id": "112063",
+    "name": "Núcleo fúngico inactivo",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112063.png"
+  },
+  "112064": {
+    "id": "112064",
+    "name": "Núcleo fúngico robusto",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112064.png"
+  },
+  "112065": {
+    "id": "112065",
+    "name": "Satén rojo descolorido",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112065.png"
+  },
+  "112066": {
+    "id": "112066",
+    "name": "Seda roja bordada",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112066.png"
+  },
+  "112067": {
+    "id": "112067",
+    "name": "Brocado rojo lujoso",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112067.png"
+  },
+  "112068": {
+    "id": "112068",
+    "name": "Contenedor del caos",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112068.png"
+  },
+  "112069": {
+    "id": "112069",
+    "name": "Módulo del caos",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112069.png"
+  },
+  "112070": {
+    "id": "112070",
+    "name": "Perno del caos",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112070.png"
+  },
+  "112071": {
+    "id": "112071",
+    "name": "Prisma dañado",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112071.png"
+  },
+  "112072": {
+    "id": "112072",
+    "name": "Prisma enturbiado",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112072.png"
+  },
+  "112073": {
+    "id": "112073",
+    "name": "Prisma radiante",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112073.png"
+  },
+  "112074": {
+    "id": "112074",
+    "name": "Caparazón desfigurado",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112074.png"
+  },
+  "112075": {
+    "id": "112075",
+    "name": "Caparazón sólido",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112075.png"
+  },
+  "112076": {
+    "id": "112076",
+    "name": "Caparazón grabado",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112076.png"
+  },
+  "112077": {
+    "id": "112077",
+    "name": "Flor encapullada de origen desconocido",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112077.png"
+  },
+  "112078": {
+    "id": "112078",
+    "name": "Flor velada",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112078.png"
+  },
+  "112079": {
+    "id": "112079",
+    "name": "Flor floreciente del trashumante",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112079.png"
+  },
+  "112080": {
+    "id": "112080",
+    "name": "Condensado extramarino",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112080.png"
+  },
+  "112081": {
+    "id": "112081",
+    "name": "Fragmento extramarino",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112081.png"
+  },
+  "112082": {
+    "id": "112082",
+    "name": "Cristalización cromática",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112082.png"
+  },
+  "112083": {
+    "id": "112083",
+    "name": "Engranaje de malla",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112083.png"
+  },
+  "112084": {
+    "id": "112084",
+    "name": "Mecaengranaje recto",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112084.png"
+  },
+  "112085": {
+    "id": "112085",
+    "name": "Engranaje mecadinámico",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112085.png"
+  },
+  "112086": {
+    "id": "112086",
+    "name": "Gota legamosa",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112086.png"
+  },
+  "112087": {
+    "id": "112087",
+    "name": "Cúmulo de légamo",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112087.png"
+  },
+  "112088": {
+    "id": "112088",
+    "name": "Ánima Legamosa neonata",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112088.png"
+  },
+  "112089": {
+    "id": "112089",
+    "name": "Núcleo de la fisura",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112089.png"
+  },
+  "112090": {
+    "id": "112090",
+    "name": "Sinapsis extrínseca",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112090.png"
+  },
+  "112091": {
+    "id": "112091",
+    "name": "Núcleo vital de otro mundo",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112091.png"
+  },
+  "112092": {
+    "id": "112092",
+    "name": "Reloj de bolsillo vetusto de Senescal",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112092.png"
+  },
+  "112093": {
+    "id": "112093",
+    "name": "Reloj de bolsillo estándar de Senescal",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112093.png"
+  },
+  "112094": {
+    "id": "112094",
+    "name": "Asiduidad de Senescal",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112094.png"
+  },
+  "112095": {
+    "id": "112095",
+    "name": "Aleta emplumada",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112095.png"
+  },
+  "112096": {
+    "id": "112096",
+    "name": "Aleta lunar",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112096.png"
+  },
+  "112097": {
+    "id": "112097",
+    "name": "Aleta luzabisal",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112097.png"
+  },
+  "112098": {
+    "id": "112098",
+    "name": "Empuñadura destrozada",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112098.png"
+  },
+  "112099": {
+    "id": "112099",
+    "name": "Empuñadura hendida",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112099.png"
+  },
+  "112100": {
+    "id": "112100",
+    "name": "Empuñadura imperecedera",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112100.png"
+  },
+  "112101": {
+    "id": "112101",
+    "name": "Colmillo joven",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112101.png"
+  },
+  "112102": {
+    "id": "112102",
+    "name": "Colmillo veterano",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112102.png"
+  },
+  "112103": {
+    "id": "112103",
+    "name": "Colmillo de tirano",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112103.png"
+  },
+  "112104": {
+    "id": "112104",
+    "name": "Silbato de madera del guardián",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112104.png"
+  },
+  "112105": {
+    "id": "112105",
+    "name": "Silbato de hierro del guerrero",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112105.png"
+  },
+  "112106": {
+    "id": "112106",
+    "name": "Silbato de oro del soldado sauriocoronado",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112106.png"
+  },
+  "112107": {
+    "id": "112107",
+    "name": "Fragmento de voluntad quebrantada",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112107.png"
+  },
+  "112108": {
+    "id": "112108",
+    "name": "Ídolo de voluntad manifiesta",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112108.png"
+  },
+  "112109": {
+    "id": "112109",
+    "name": "Sello de voluntad patrullera",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112109.png"
+  },
+  "112110": {
+    "id": "112110",
+    "name": "Roca ignífera",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112110.png"
+  },
+  "112111": {
+    "id": "112111",
+    "name": "Semilla vital ignífera",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112111.png"
+  },
+  "112112": {
+    "id": "112112",
+    "name": "Ojo vigía ignífero",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112112.png"
+  },
+  "112113": {
+    "id": "112113",
+    "name": "Eje fuentenigma",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112113.png"
+  },
+  "112114": {
+    "id": "112114",
+    "name": "Vaina mecánica fuentenigma",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112114.png"
+  },
+  "112115": {
+    "id": "112115",
+    "name": "Núcleo fuentenigma",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112115.png"
+  },
+  "112116": {
+    "id": "112116",
+    "name": "Brote refractor",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112116.png"
+  },
+  "112117": {
+    "id": "112117",
+    "name": "Hoja desconcertante",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112117.png"
+  },
+  "112118": {
+    "id": "112118",
+    "name": "Nucleofolio difuso",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112118.png"
+  },
+  "112119": {
+    "id": "112119",
+    "name": "Fragmento de caparazón agrietado por el frío",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112119.png"
+  },
+  "112120": {
+    "id": "112120",
+    "name": "Fragmento de caparazón con calor residual",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112120.png"
+  },
+  "112121": {
+    "id": "112121",
+    "name": "Fragmento de caparazón prismaflamígero",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112121.png"
+  },
+  "112122": {
+    "id": "112122",
+    "name": "Eje dañado",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112122.png"
+  },
+  "112123": {
+    "id": "112123",
+    "name": "Eje reforzado",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112123.png"
+  },
+  "112124": {
+    "id": "112124",
+    "name": "Eje refinado",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112124.png"
+  },
+  "112125": {
+    "id": "112125",
+    "name": "Distintivo desgastado",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112125.png"
+  },
+  "112126": {
+    "id": "112126",
+    "name": "Distintivo sofisticado",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112126.png"
+  },
+  "112127": {
+    "id": "112127",
+    "name": "Distintivo escarchado",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112127.png"
+  },
+  "112128": {
+    "id": "112128",
+    "name": "Destello de la noche escarchada",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112128.png"
+  },
+  "112129": {
+    "id": "112129",
+    "name": "Resplandor de la noche escarchada",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112129.png"
+  },
+  "112130": {
+    "id": "112130",
+    "name": "Fulgor de la noche escarchada",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112130.png"
+  },
+  "112131": {
+    "id": "112131",
+    "name": "Trozo de hueso apagado",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112131.png"
+  },
+  "112132": {
+    "id": "112132",
+    "name": "Restos centelleantes",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112132.png"
+  },
+  "112133": {
+    "id": "112133",
+    "name": "Hueso externo reluciente",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112133.png"
+  },
+  "112134": {
+    "id": "112134",
+    "name": "Condensado brumoso",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112134.png"
+  },
+  "112135": {
+    "id": "112135",
+    "name": "Fragmento de armadura brumoso",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112135.png"
+  },
+  "112136": {
+    "id": "112136",
+    "name": "Casco brumoso",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112136.png"
+  },
+  "112137": {
+    "id": "112137",
+    "name": "Ojo fracturado de las profundidades insondables",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112137.png"
+  },
+  "112138": {
+    "id": "112138",
+    "name": "Núcleo aberrante de las profundidades insondables",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112138.png"
+  },
+  "112139": {
+    "id": "112139",
+    "name": "Pico de las profundidades insondables",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112139.png"
+  },
+  "112140": {
+    "id": "112140",
+    "name": "Empuñadura flamígera apagada",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112140.png"
+  },
+  "112141": {
+    "id": "112141",
+    "name": "Empuñadura flamígera fracturada",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112141.png"
+  },
+  "112142": {
+    "id": "112142",
+    "name": "Empuñadura flamígera engarzada",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112142.png"
+  },
+  "112143": {
+    "id": "112143",
+    "name": "Hierro lunar fracturado",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112143.png"
+  },
+  "112144": {
+    "id": "112144",
+    "name": "Hierro lunar mermado",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112144.png"
+  },
+  "112145": {
+    "id": "112145",
+    "name": "Hierro lunar inmaculado",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112145.png"
+  },
+  "112146": {
+    "id": "112146",
+    "name": "Lumiesquirla etérea",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112146.png"
+  },
+  "112147": {
+    "id": "112147",
+    "name": "Quiebracristal etéreo",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112147.png"
+  },
+  "112148": {
+    "id": "112148",
+    "name": "Petreoescama etérea",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112148.png"
+  },
+  "112149": {
+    "id": "112149",
+    "name": "Semilla quimérica",
+    "rank": 1,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112149.png"
+  },
+  "112150": {
+    "id": "112150",
+    "name": "Célula quimérica simbiótica",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112150.png"
+  },
+  "112151": {
+    "id": "112151",
+    "name": "Organismo quimérico primigenio",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112151.png"
+  },
+  "112152": {
+    "id": "112152",
+    "name": "Fragmento sedimentado",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112152.png"
+  },
+  "112153": {
+    "id": "112153",
+    "name": "Masa sedimentada",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112153.png"
+  },
+  "112154": {
+    "id": "112154",
+    "name": "Acreción sedimentada",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112154.png"
   },
   "112155": {
     "id": "112155",
@@ -2310,71 +2226,581 @@ const REAL_MASTER_MATERIALS = {
     "rank": 4,
     "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112157.png"
   },
-  "114085": {
-    "id": "114085",
-    "name": "Ascenso del ejército de la Estrella Albina",
+  "112158": {
+    "id": "112158",
+    "name": "Corazón fragmentado níveo",
     "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114085.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112158.png"
   },
-  "114086": {
-    "id": "114086",
-    "name": "Congregación del ejército de la Estrella Albina",
+  "112159": {
+    "id": "112159",
+    "name": "Corazón especular níveo",
     "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114086.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112159.png"
   },
-  "114087": {
-    "id": "114087",
-    "name": "Mandato del ejército de la Estrella Albina",
+  "112160": {
+    "id": "112160",
+    "name": "Corazón de la ignorancia níveo",
     "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114087.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112160.png"
   },
-  "114088": {
-    "id": "114088",
-    "name": "Triunfo del ejército de la Estrella Albina",
+  "113001": {
+    "id": "113001",
+    "name": "Semilla de huracán",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113001.png"
+  },
+  "113002": {
+    "id": "113002",
+    "name": "Prisma del relámpago",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113002.png"
+  },
+  "113003": {
+    "id": "113003",
+    "name": "Pluma de Stormterror",
     "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114088.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113003.png"
   },
-  "112017": {
-    "id": "112017",
-    "name": "Estatuilla oscura",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112017.png"
-  },
-  "112018": {
-    "id": "112018",
-    "name": "Estatuilla del amanecer",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112018.png"
-  },
-  "112019": {
-    "id": "112019",
-    "name": "Estatuilla de las profundidades",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112019.png"
-  },
-  "114013": {
-    "id": "114013",
-    "name": "Arena brillante de Guyun",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114013.png"
-  },
-  "114014": {
-    "id": "114014",
-    "name": "Piedra reluciente de Guyun",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114014.png"
-  },
-  "114015": {
-    "id": "114015",
-    "name": "Reliquia de Guyun",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114015.png"
-  },
-  "114016": {
-    "id": "114016",
-    "name": "Cuerpo divino de Guyun",
+  "113004": {
+    "id": "113004",
+    "name": "Garra de Stormterror",
     "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114016.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113004.png"
+  },
+  "113005": {
+    "id": "113005",
+    "name": "Suspiro de Stormterror",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113005.png"
+  },
+  "113006": {
+    "id": "113006",
+    "name": "Cola de Boreas",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113006.png"
+  },
+  "113007": {
+    "id": "113007",
+    "name": "Anillo de Boreas",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113007.png"
+  },
+  "113008": {
+    "id": "113008",
+    "name": "Alma de Boreas",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113008.png"
+  },
+  "113009": {
+    "id": "113009",
+    "name": "Pilar de basalto",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113009.png"
+  },
+  "113010": {
+    "id": "113010",
+    "name": "Núcleo de escarcha",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113010.png"
+  },
+  "113011": {
+    "id": "113011",
+    "name": "Semilla de fuego eterno",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113011.png"
+  },
+  "113012": {
+    "id": "113012",
+    "name": "Corazón purificador",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113012.png"
+  },
+  "113013": {
+    "id": "113013",
+    "name": "Cuerno de Monoceros Caeli",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113013.png"
+  },
+  "113014": {
+    "id": "113014",
+    "name": "Fragmento de espada de Legado del mal",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113014.png"
+  },
+  "113015": {
+    "id": "113015",
+    "name": "Sombra del guerrero",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113015.png"
+  },
+  "113016": {
+    "id": "113016",
+    "name": "Jade inmaduro",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113016.png"
+  },
+  "113017": {
+    "id": "113017",
+    "name": "Corona del rey dragón",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113017.png"
+  },
+  "113018": {
+    "id": "113018",
+    "name": "Rama de jade carmesí",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113018.png"
+  },
+  "113019": {
+    "id": "113019",
+    "name": "Escama dorada",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113019.png"
+  },
+  "113020": {
+    "id": "113020",
+    "name": "Flor cristalina",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113020.png"
+  },
+  "113021": {
+    "id": "113021",
+    "name": "Solvente de sueños",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113021.png"
+  },
+  "113022": {
+    "id": "113022",
+    "name": "Engranaje Oni",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113022.png"
+  },
+  "113023": {
+    "id": "113023",
+    "name": "Corazón de la eternidad",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113023.png"
+  },
+  "113024": {
+    "id": "113024",
+    "name": "Perla abrasante",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113024.png"
+  },
+  "113025": {
+    "id": "113025",
+    "name": "Momento del derretimiento",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113025.png"
+  },
+  "113026": {
+    "id": "113026",
+    "name": "Mariposa del fuego infernal",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113026.png"
+  },
+  "113027": {
+    "id": "113027",
+    "name": "Corazón de las cenizas",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113027.png"
+  },
+  "113028": {
+    "id": "113028",
+    "name": "Rocío del rechazo",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113028.png"
+  },
+  "113029": {
+    "id": "113029",
+    "name": "Abalorio de la tempestad",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113029.png"
+  },
+  "113030": {
+    "id": "113030",
+    "name": "Cuerno del Rey Acechador",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113030.png"
+  },
+  "113031": {
+    "id": "113031",
+    "name": "Pseudoaleta de dragón de las profundidades",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113031.png"
+  },
+  "113032": {
+    "id": "113032",
+    "name": "Mudra de la Shogun implacable",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113032.png"
+  },
+  "113033": {
+    "id": "113033",
+    "name": "Lágrima de la diosa del desastre",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113033.png"
+  },
+  "113034": {
+    "id": "113034",
+    "name": "Máxima de la catástrofe",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113034.png"
+  },
+  "113035": {
+    "id": "113035",
+    "name": "Colmillo rúnico",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113035.png"
+  },
+  "113036": {
+    "id": "113036",
+    "name": "Picogancho fúngico",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113036.png"
+  },
+  "113037": {
+    "id": "113037",
+    "name": "Fruto atronador",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113037.png"
+  },
+  "113038": {
+    "id": "113038",
+    "name": "Resorte perpetuo",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113038.png"
+  },
+  "113039": {
+    "id": "113039",
+    "name": "Tetraedro guialuz",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113039.png"
+  },
+  "113040": {
+    "id": "113040",
+    "name": "Trepadora supresora",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113040.png"
+  },
+  "113041": {
+    "id": "113041",
+    "name": "Tubo de marioneta",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113041.png"
+  },
+  "113042": {
+    "id": "113042",
+    "name": "Espejo del mushin",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113042.png"
+  },
+  "113043": {
+    "id": "113043",
+    "name": "Cascabel de anulación",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113043.png"
+  },
+  "113044": {
+    "id": "113044",
+    "name": "Pseudoestambre",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113044.png"
+  },
+  "113045": {
+    "id": "113045",
+    "name": "Aro sombrioeterno",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113045.png"
+  },
+  "113046": {
+    "id": "113046",
+    "name": "Helecho del paraíso exuberante",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113046.png"
+  },
+  "113047": {
+    "id": "113047",
+    "name": "Floración primigenia del oasis",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113047.png"
+  },
+  "113048": {
+    "id": "113048",
+    "name": "Instante del mar arbóreo",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113048.png"
+  },
+  "113049": {
+    "id": "113049",
+    "name": "Recambio mecánico de Coppélia",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113049.png"
+  },
+  "113050": {
+    "id": "113050",
+    "name": "Recambio mecánico de Coppélius",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113050.png"
+  },
+  "113051": {
+    "id": "113051",
+    "name": "Providencia imperial",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113051.png"
+  },
+  "113052": {
+    "id": "113052",
+    "name": "Dispositivo de Tubion",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113052.png"
+  },
+  "113053": {
+    "id": "113053",
+    "name": "Cuerno de corcel fontamarino",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113053.png"
+  },
+  "113054": {
+    "id": "113054",
+    "name": "Hilo de seda deslucido",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113054.png"
+  },
+  "113055": {
+    "id": "113055",
+    "name": "Ojo del vórtice deslucido",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113055.png"
+  },
+  "113056": {
+    "id": "113056",
+    "name": "Masa deslucida",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113056.png"
+  },
+  "113057": {
+    "id": "113057",
+    "name": "Agua intrascendible",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113057.png"
+  },
+  "113058": {
+    "id": "113058",
+    "name": "Nimboescama",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113058.png"
+  },
+  "113059": {
+    "id": "113059",
+    "name": "Fragmento de melodía dorada",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113059.png"
+  },
+  "113060": {
+    "id": "113060",
+    "name": "Vela agonizante",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113060.png"
+  },
+  "113061": {
+    "id": "113061",
+    "name": "Pluma de seda",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113061.png"
+  },
+  "113062": {
+    "id": "113062",
+    "name": "Veredicto negativo",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113062.png"
+  },
+  "113063": {
+    "id": "113063",
+    "name": "Piedra angular piroastral",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113063.png"
+  },
+  "113064": {
+    "id": "113064",
+    "name": "Sello de la bendición vinculante",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113064.png"
+  },
+  "113065": {
+    "id": "113065",
+    "name": "Flamigranada muy madura",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113065.png"
+  },
+  "113066": {
+    "id": "113066",
+    "name": "Núcleo fuentenigmático con grabados de oro",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113066.png"
+  },
+  "113067": {
+    "id": "113067",
+    "name": "Mirada abismática",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113067.png"
+  },
+  "113068": {
+    "id": "113068",
+    "name": "Cuerno corroído",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113068.png"
+  },
+  "113069": {
+    "id": "113069",
+    "name": "Fuego solar corroído",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113069.png"
+  },
+  "113070": {
+    "id": "113070",
+    "name": "Plumaescama corroída",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113070.png"
+  },
+  "113071": {
+    "id": "113071",
+    "name": "Talismán de la tierra enigmática",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113071.png"
+  },
+  "113072": {
+    "id": "113072",
+    "name": "Núcleo inerte magmadracónico",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113072.png"
+  },
+  "113073": {
+    "id": "113073",
+    "name": "Muestra ascendida: Caballo",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113073.png"
+  },
+  "113074": {
+    "id": "113074",
+    "name": "Muestra ascendida: Torre",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113074.png"
+  },
+  "113075": {
+    "id": "113075",
+    "name": "Muestra ascendida: Reina",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113075.png"
+  },
+  "113076": {
+    "id": "113076",
+    "name": "Acumulador de aire fuentenigma",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113076.png"
+  },
+  "113077": {
+    "id": "113077",
+    "name": "Troquel de “estam-pato” de kuuvahki preciso",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113077.png"
+  },
+  "113078": {
+    "id": "113078",
+    "name": "Ala rutilante",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113078.png"
+  },
+  "113079": {
+    "id": "113079",
+    "name": "Asta radiante",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113079.png"
+  },
+  "113080": {
+    "id": "113080",
+    "name": "Núcleo kuuvahki de bucle militar",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113080.png"
+  },
+  "113081": {
+    "id": "113081",
+    "name": "Máscara del doctor virtuoso",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113081.png"
+  },
+  "113082": {
+    "id": "113082",
+    "name": "Ataduras del demente",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113082.png"
+  },
+  "113083": {
+    "id": "113083",
+    "name": "Elixir herético",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113083.png"
+  },
+  "113084": {
+    "id": "113084",
+    "name": "Vestigio de las alas del terror",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113084.png"
+  },
+  "113085": {
+    "id": "113085",
+    "name": "Cola prismática cortada",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113085.png"
+  },
+  "113086": {
+    "id": "113086",
+    "name": "Pluma celestecaída",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113086.png"
+  },
+  "113087": {
+    "id": "113087",
+    "name": "Resina falsa",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113087.png"
+  },
+  "113088": {
+    "id": "113088",
+    "name": "Rama marchita retorcida",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113088.png"
+  },
+  "113089": {
+    "id": "113089",
+    "name": "Brote blasfemo",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113089.png"
+  },
+  "113090": {
+    "id": "113090",
+    "name": "Rama florida inmortal no chamuscada",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113090.png"
+  },
+  "113091": {
+    "id": "113091",
+    "name": "Cola cercenada del surcacielos",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113091.png"
+  },
+  "113092": {
+    "id": "113092",
+    "name": "Hombrera agrietada de la errabunda",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113092.png"
+  },
+  "113093": {
+    "id": "113093",
+    "name": "Ancla estabilizadora rota",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113093.png"
   },
   "114001": {
     "id": "114001",
@@ -2400,347 +2826,77 @@ const REAL_MASTER_MATERIALS = {
     "rank": 5,
     "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114004.png"
   },
-  "112023": {
-    "id": "112023",
-    "name": "Dispositivo del caos",
+  "114005": {
+    "id": "114005",
+    "name": "Diente de leche de lobo boreal",
     "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112023.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114005.png"
   },
-  "112024": {
-    "id": "112024",
-    "name": "Circuito del caos",
+  "114006": {
+    "id": "114006",
+    "name": "Diente roto de lobo boreal",
     "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112024.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114006.png"
   },
-  "112025": {
-    "id": "112025",
-    "name": "Caldera del caos",
+  "114007": {
+    "id": "114007",
+    "name": "Colmillo roto de lobo boreal",
     "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112025.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114007.png"
   },
-  "112128": {
-    "id": "112128",
-    "name": "Destello de la noche escarchada",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112128.png"
-  },
-  "112129": {
-    "id": "112129",
-    "name": "Resplandor de la noche escarchada",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112129.png"
-  },
-  "112130": {
-    "id": "112130",
-    "name": "Fulgor de la noche escarchada",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112130.png"
-  },
-  "112056": {
-    "id": "112056",
-    "name": "Garra oculta",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112056.png"
-  },
-  "112057": {
-    "id": "112057",
-    "name": "Garra afilada oculta",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112057.png"
-  },
-  "112058": {
-    "id": "112058",
-    "name": "Garra fantasmal oculta",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112058.png"
-  },
-  "114033": {
-    "id": "114033",
-    "name": "Máscara del teniente maligno",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114033.png"
-  },
-  "114034": {
-    "id": "114034",
-    "name": "Máscara del mordisco de tigre",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114034.png"
-  },
-  "114035": {
-    "id": "114035",
-    "name": "Máscara del cuerno",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114035.png"
-  },
-  "114036": {
-    "id": "114036",
-    "name": "Máscara fantasmagórica",
+  "114008": {
+    "id": "114008",
+    "name": "Nostalgia del lobo boreal",
     "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114036.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114008.png"
   },
-  "114021": {
-    "id": "114021",
-    "name": "Grano de siderita oscura",
+  "114009": {
+    "id": "114009",
+    "name": "Grilletes de Diente de León",
     "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114021.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114009.png"
   },
-  "114022": {
-    "id": "114022",
-    "name": "Lámina de siderita oscura",
+  "114010": {
+    "id": "114010",
+    "name": "Cadena de Diente de León",
     "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114022.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114010.png"
   },
-  "114023": {
-    "id": "114023",
-    "name": "Fragmento de siderita oscura",
+  "114011": {
+    "id": "114011",
+    "name": "Esposas de Diente de León",
     "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114023.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114011.png"
   },
-  "114024": {
-    "id": "114024",
-    "name": "Trozo de siderita oscura",
+  "114012": {
+    "id": "114012",
+    "name": "Ideales de Diente de León",
     "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114024.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114012.png"
   },
-  "112068": {
-    "id": "112068",
-    "name": "Contenedor del caos",
+  "114013": {
+    "id": "114013",
+    "name": "Arena brillante de Guyun",
     "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112068.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114013.png"
   },
-  "112069": {
-    "id": "112069",
-    "name": "Módulo del caos",
+  "114014": {
+    "id": "114014",
+    "name": "Piedra reluciente de Guyun",
     "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112069.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114014.png"
   },
-  "112070": {
-    "id": "112070",
-    "name": "Perno del caos",
+  "114015": {
+    "id": "114015",
+    "name": "Reliquia de Guyun",
     "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112070.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114015.png"
   },
-  "114041": {
-    "id": "114041",
-    "name": "Reminiscencia del oasis exuberante",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114041.png"
-  },
-  "114042": {
-    "id": "114042",
-    "name": "Gracia del oasis exuberante",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114042.png"
-  },
-  "114043": {
-    "id": "114043",
-    "name": "Lamento del oasis exuberante",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114043.png"
-  },
-  "114044": {
-    "id": "114044",
-    "name": "Esencia del oasis exuberante",
+  "114016": {
+    "id": "114016",
+    "name": "Cuerpo divino de Guyun",
     "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114044.png"
-  },
-  "112041": {
-    "id": "112041",
-    "name": "Fragmento de hueso frágil",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112041.png"
-  },
-  "112042": {
-    "id": "112042",
-    "name": "Fragmento de hueso sólido",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112042.png"
-  },
-  "112043": {
-    "id": "112043",
-    "name": "Fragmento de hueso fosilizado",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112043.png"
-  },
-  "112137": {
-    "id": "112137",
-    "name": "Ojo fracturado de las profundidades insondables",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112137.png"
-  },
-  "112138": {
-    "id": "112138",
-    "name": "Núcleo aberrante de las profundidades insondables",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112138.png"
-  },
-  "112139": {
-    "id": "112139",
-    "name": "Pico de las profundidades insondables",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112139.png"
-  },
-  "112077": {
-    "id": "112077",
-    "name": "Flor encapullada de origen desconocido",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112077.png"
-  },
-  "112078": {
-    "id": "112078",
-    "name": "Flor velada",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112078.png"
-  },
-  "112079": {
-    "id": "112079",
-    "name": "Flor floreciente del trashumante",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112079.png"
-  },
-  "112074": {
-    "id": "112074",
-    "name": "Caparazón desfigurado",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112074.png"
-  },
-  "112075": {
-    "id": "112075",
-    "name": "Caparazón sólido",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112075.png"
-  },
-  "112076": {
-    "id": "112076",
-    "name": "Caparazón grabado",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112076.png"
-  },
-  "114037": {
-    "id": "114037",
-    "name": "Talismán de bronce del rocío",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114037.png"
-  },
-  "114038": {
-    "id": "114038",
-    "name": "Talismán de metal del rocío",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114038.png"
-  },
-  "114039": {
-    "id": "114039",
-    "name": "Talismán de plata del rocío",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114039.png"
-  },
-  "114040": {
-    "id": "114040",
-    "name": "Talismán de oro del rocío",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114040.png"
-  },
-  "112110": {
-    "id": "112110",
-    "name": "Roca ignífera",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112110.png"
-  },
-  "112111": {
-    "id": "112111",
-    "name": "Semilla vital ignífera",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112111.png"
-  },
-  "112112": {
-    "id": "112112",
-    "name": "Ojo vigía ignífero",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112112.png"
-  },
-  "114065": {
-    "id": "114065",
-    "name": "Decadencia del Sagrado Señor delirante",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114065.png"
-  },
-  "114066": {
-    "id": "114066",
-    "name": "Desconsuelo del Sagrado Señor delirante",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114066.png"
-  },
-  "114067": {
-    "id": "114067",
-    "name": "Esplendor del Sagrado Señor delirante",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114067.png"
-  },
-  "114068": {
-    "id": "114068",
-    "name": "Máscara divina del Sagrado Señor delirante",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114068.png"
-  },
-  "112095": {
-    "id": "112095",
-    "name": "Aleta emplumada",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112095.png"
-  },
-  "112096": {
-    "id": "112096",
-    "name": "Aleta lunar",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112096.png"
-  },
-  "112097": {
-    "id": "112097",
-    "name": "Aleta luzabisal",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112097.png"
-  },
-  "114053": {
-    "id": "114053",
-    "name": "Sedimento de rocío sagrado",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114053.png"
-  },
-  "114054": {
-    "id": "114054",
-    "name": "Sublimación de rocío sagrado",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114054.png"
-  },
-  "114055": {
-    "id": "114055",
-    "name": "Manantial de rocío sagrado",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114055.png"
-  },
-  "114056": {
-    "id": "114056",
-    "name": "Esencia de rocío sagrado",
-    "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114056.png"
-  },
-  "112026": {
-    "id": "112026",
-    "name": "Polen neblinoso",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112026.png"
-  },
-  "112027": {
-    "id": "112027",
-    "name": "Hierba neblinosa",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112027.png"
-  },
-  "112028": {
-    "id": "112028",
-    "name": "Lámpara de hierba neblinosa",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112028.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114016.png"
   },
   "114017": {
     "id": "114017",
@@ -2766,23 +2922,29 @@ const REAL_MASTER_MATERIALS = {
     "rank": 5,
     "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114020.png"
   },
-  "112047": {
-    "id": "112047",
-    "name": "Engranaje del caos",
+  "114021": {
+    "id": "114021",
+    "name": "Grano de siderita oscura",
     "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112047.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114021.png"
   },
-  "112048": {
-    "id": "112048",
-    "name": "Eje del caos",
+  "114022": {
+    "id": "114022",
+    "name": "Lámina de siderita oscura",
     "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112048.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114022.png"
   },
-  "112049": {
-    "id": "112049",
-    "name": "Ojo del caos",
+  "114023": {
+    "id": "114023",
+    "name": "Fragmento de siderita oscura",
     "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112049.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114023.png"
+  },
+  "114024": {
+    "id": "114024",
+    "name": "Trozo de siderita oscura",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114024.png"
   },
   "114025": {
     "id": "114025",
@@ -2808,107 +2970,101 @@ const REAL_MASTER_MATERIALS = {
     "rank": 5,
     "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114028.png"
   },
-  "112131": {
-    "id": "112131",
-    "name": "Trozo de hueso apagado",
+  "114029": {
+    "id": "114029",
+    "name": "Sabiduría de Narukami",
     "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112131.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114029.png"
   },
-  "112132": {
-    "id": "112132",
-    "name": "Restos centelleantes",
+  "114030": {
+    "id": "114030",
+    "name": "Júbilo de Narukami",
     "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112132.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114030.png"
   },
-  "112133": {
-    "id": "112133",
-    "name": "Hueso externo reluciente",
+  "114031": {
+    "id": "114031",
+    "name": "Afecto de Narukami",
     "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112133.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114031.png"
   },
-  "112086": {
-    "id": "112086",
-    "name": "Gota legamosa",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112086.png"
-  },
-  "112087": {
-    "id": "112087",
-    "name": "Cúmulo de légamo",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112087.png"
-  },
-  "112088": {
-    "id": "112088",
-    "name": "Ánima Legamosa neonata",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112088.png"
-  },
-  "114049": {
-    "id": "114049",
-    "name": "Fragmento de serenata arcaica",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114049.png"
-  },
-  "114050": {
-    "id": "114050",
-    "name": "Pieza de serenata arcaica",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114050.png"
-  },
-  "114051": {
-    "id": "114051",
-    "name": "Movimiento de serenata arcaica",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114051.png"
-  },
-  "114052": {
-    "id": "114052",
-    "name": "Reverberación de serenata arcaica",
+  "114032": {
+    "id": "114032",
+    "name": "Valentía de Narukami",
     "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114052.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114032.png"
   },
-  "112098": {
-    "id": "112098",
-    "name": "Empuñadura destrozada",
+  "114033": {
+    "id": "114033",
+    "name": "Máscara del teniente maligno",
     "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112098.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114033.png"
   },
-  "112099": {
-    "id": "112099",
-    "name": "Empuñadura hendida",
+  "114034": {
+    "id": "114034",
+    "name": "Máscara del mordisco de tigre",
     "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112099.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114034.png"
   },
-  "112100": {
-    "id": "112100",
-    "name": "Empuñadura imperecedera",
+  "114035": {
+    "id": "114035",
+    "name": "Máscara del cuerno",
     "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112100.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114035.png"
   },
-  "114057": {
-    "id": "114057",
-    "name": "Copa rota del mar impoluto",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114057.png"
-  },
-  "114058": {
-    "id": "114058",
-    "name": "Copa de vino del mar impoluto",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114058.png"
-  },
-  "114059": {
-    "id": "114059",
-    "name": "Copa de plata del mar impoluto",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114059.png"
-  },
-  "114060": {
-    "id": "114060",
-    "name": "Copa de oro del mar impoluto",
+  "114036": {
+    "id": "114036",
+    "name": "Máscara fantasmagórica",
     "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114060.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114036.png"
+  },
+  "114037": {
+    "id": "114037",
+    "name": "Talismán de bronce del rocío",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114037.png"
+  },
+  "114038": {
+    "id": "114038",
+    "name": "Talismán de metal del rocío",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114038.png"
+  },
+  "114039": {
+    "id": "114039",
+    "name": "Talismán de plata del rocío",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114039.png"
+  },
+  "114040": {
+    "id": "114040",
+    "name": "Talismán de oro del rocío",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114040.png"
+  },
+  "114041": {
+    "id": "114041",
+    "name": "Reminiscencia del oasis exuberante",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114041.png"
+  },
+  "114042": {
+    "id": "114042",
+    "name": "Gracia del oasis exuberante",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114042.png"
+  },
+  "114043": {
+    "id": "114043",
+    "name": "Lamento del oasis exuberante",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114043.png"
+  },
+  "114044": {
+    "id": "114044",
+    "name": "Esencia del oasis exuberante",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114044.png"
   },
   "114045": {
     "id": "114045",
@@ -2934,143 +3090,77 @@ const REAL_MASTER_MATERIALS = {
     "rank": 5,
     "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114048.png"
   },
-  "112089": {
-    "id": "112089",
-    "name": "Núcleo de la fisura",
+  "114049": {
+    "id": "114049",
+    "name": "Fragmento de serenata arcaica",
     "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112089.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114049.png"
   },
-  "112090": {
-    "id": "112090",
-    "name": "Sinapsis extrínseca",
+  "114050": {
+    "id": "114050",
+    "name": "Pieza de serenata arcaica",
     "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112090.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114050.png"
   },
-  "112091": {
-    "id": "112091",
-    "name": "Núcleo vital de otro mundo",
+  "114051": {
+    "id": "114051",
+    "name": "Movimiento de serenata arcaica",
     "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112091.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114051.png"
   },
-  "114073": {
-    "id": "114073",
-    "name": "Fragmento del instrumento misterioso",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114073.png"
-  },
-  "114074": {
-    "id": "114074",
-    "name": "Réplica del instrumento misterioso",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114074.png"
-  },
-  "114075": {
-    "id": "114075",
-    "name": "Legado del instrumento misterioso",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114075.png"
-  },
-  "114076": {
-    "id": "114076",
-    "name": "Aspiración del instrumento misterioso",
+  "114052": {
+    "id": "114052",
+    "name": "Reverberación de serenata arcaica",
     "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114076.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114052.png"
   },
-  "112092": {
-    "id": "112092",
-    "name": "Reloj de bolsillo vetusto de Senescal",
+  "114053": {
+    "id": "114053",
+    "name": "Sedimento de rocío sagrado",
     "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112092.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114053.png"
   },
-  "112093": {
-    "id": "112093",
-    "name": "Reloj de bolsillo estándar de Senescal",
+  "114054": {
+    "id": "114054",
+    "name": "Sublimación de rocío sagrado",
     "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112093.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114054.png"
   },
-  "112094": {
-    "id": "112094",
-    "name": "Asiduidad de Senescal",
+  "114055": {
+    "id": "114055",
+    "name": "Manantial de rocío sagrado",
     "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112094.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114055.png"
   },
-  "112116": {
-    "id": "112116",
-    "name": "Brote refractor",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112116.png"
-  },
-  "112117": {
-    "id": "112117",
-    "name": "Hoja desconcertante",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112117.png"
-  },
-  "112118": {
-    "id": "112118",
-    "name": "Nucleofolio difuso",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112118.png"
-  },
-  "114069": {
-    "id": "114069",
-    "name": "Reflexión espiritista vientonocturna",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114069.png"
-  },
-  "114070": {
-    "id": "114070",
-    "name": "Presentimiento espiritista vientonocturno",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114070.png"
-  },
-  "114071": {
-    "id": "114071",
-    "name": "Presagio espiritista vientonocturno",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114071.png"
-  },
-  "114072": {
-    "id": "114072",
-    "name": "Revelación espiritista vientonocturna",
+  "114056": {
+    "id": "114056",
+    "name": "Esencia de rocío sagrado",
     "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114072.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114056.png"
   },
-  "112029": {
-    "id": "112029",
-    "name": "Daga de cacería",
+  "114057": {
+    "id": "114057",
+    "name": "Copa rota del mar impoluto",
     "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112029.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114057.png"
   },
-  "112030": {
-    "id": "112030",
-    "name": "Daga del agente",
+  "114058": {
+    "id": "114058",
+    "name": "Copa de vino del mar impoluto",
     "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112030.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114058.png"
   },
-  "112031": {
-    "id": "112031",
-    "name": "Daga larga del inspector",
+  "114059": {
+    "id": "114059",
+    "name": "Copa de plata del mar impoluto",
     "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112031.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114059.png"
   },
-  "112119": {
-    "id": "112119",
-    "name": "Fragmento de caparazón agrietado por el frío",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112119.png"
-  },
-  "112120": {
-    "id": "112120",
-    "name": "Fragmento de caparazón con calor residual",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112120.png"
-  },
-  "112121": {
-    "id": "112121",
-    "name": "Fragmento de caparazón prismaflamígero",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112121.png"
+  "114060": {
+    "id": "114060",
+    "name": "Copa de oro del mar impoluto",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114060.png"
   },
   "114061": {
     "id": "114061",
@@ -3096,161 +3186,77 @@ const REAL_MASTER_MATERIALS = {
     "rank": 5,
     "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114064.png"
   },
-  "112140": {
-    "id": "112140",
-    "name": "Empuñadura flamígera apagada",
+  "114065": {
+    "id": "114065",
+    "name": "Decadencia del Sagrado Señor delirante",
     "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112140.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114065.png"
   },
-  "112141": {
-    "id": "112141",
-    "name": "Empuñadura flamígera fracturada",
+  "114066": {
+    "id": "114066",
+    "name": "Desconsuelo del Sagrado Señor delirante",
     "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112141.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114066.png"
   },
-  "112142": {
-    "id": "112142",
-    "name": "Empuñadura flamígera engarzada",
+  "114067": {
+    "id": "114067",
+    "name": "Esplendor del Sagrado Señor delirante",
     "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112142.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114067.png"
   },
-  "112113": {
-    "id": "112113",
-    "name": "Eje fuentenigma",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112113.png"
-  },
-  "112114": {
-    "id": "112114",
-    "name": "Vaina mecánica fuentenigma",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112114.png"
-  },
-  "112115": {
-    "id": "112115",
-    "name": "Núcleo fuentenigma",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112115.png"
-  },
-  "112152": {
-    "id": "112152",
-    "name": "Fragmento sedimentado",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112152.png"
-  },
-  "112153": {
-    "id": "112153",
-    "name": "Masa sedimentada",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112153.png"
-  },
-  "112154": {
-    "id": "112154",
-    "name": "Acreción sedimentada",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112154.png"
-  },
-  "114089": {
-    "id": "114089",
-    "name": "Vertimiento del néctar espiritual de la bodega",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114089.png"
-  },
-  "114090": {
-    "id": "114090",
-    "name": "Embriaguez del néctar espiritual de la bodega",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114090.png"
-  },
-  "114091": {
-    "id": "114091",
-    "name": "Júbilo del néctar espiritual de la bodega",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114091.png"
-  },
-  "114092": {
-    "id": "114092",
-    "name": "Capricho del néctar espiritual de la bodega",
+  "114068": {
+    "id": "114068",
+    "name": "Máscara divina del Sagrado Señor delirante",
     "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114092.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114068.png"
   },
-  "112107": {
-    "id": "112107",
-    "name": "Fragmento de voluntad quebrantada",
+  "114069": {
+    "id": "114069",
+    "name": "Reflexión espiritista vientonocturna",
     "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112107.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114069.png"
   },
-  "112108": {
-    "id": "112108",
-    "name": "Ídolo de voluntad manifiesta",
+  "114070": {
+    "id": "114070",
+    "name": "Presentimiento espiritista vientonocturno",
     "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112108.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114070.png"
   },
-  "112109": {
-    "id": "112109",
-    "name": "Sello de voluntad patrullera",
+  "114071": {
+    "id": "114071",
+    "name": "Presagio espiritista vientonocturno",
     "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112109.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114071.png"
   },
-  "112071": {
-    "id": "112071",
-    "name": "Prisma dañado",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112071.png"
-  },
-  "112072": {
-    "id": "112072",
-    "name": "Prisma enturbiado",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112072.png"
-  },
-  "112073": {
-    "id": "112073",
-    "name": "Prisma radiante",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112073.png"
-  },
-  "112143": {
-    "id": "112143",
-    "name": "Hierro lunar fracturado",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112143.png"
-  },
-  "112144": {
-    "id": "112144",
-    "name": "Hierro lunar mermado",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112144.png"
-  },
-  "112145": {
-    "id": "112145",
-    "name": "Hierro lunar inmaculado",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112145.png"
-  },
-  "114081": {
-    "id": "114081",
-    "name": "Gloria póstuma de los Hijos del Lejano Norte",
-    "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114081.png"
-  },
-  "114082": {
-    "id": "114082",
-    "name": "Obstinación de los Hijos del Lejano Norte",
-    "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114082.png"
-  },
-  "114083": {
-    "id": "114083",
-    "name": "Oblación de los Hijos del Lejano Norte",
-    "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114083.png"
-  },
-  "114084": {
-    "id": "114084",
-    "name": "Refulgencia de los Hijos del Lejano Norte",
+  "114072": {
+    "id": "114072",
+    "name": "Revelación espiritista vientonocturna",
     "rank": 5,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114084.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114072.png"
+  },
+  "114073": {
+    "id": "114073",
+    "name": "Fragmento del instrumento misterioso",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114073.png"
+  },
+  "114074": {
+    "id": "114074",
+    "name": "Réplica del instrumento misterioso",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114074.png"
+  },
+  "114075": {
+    "id": "114075",
+    "name": "Legado del instrumento misterioso",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114075.png"
+  },
+  "114076": {
+    "id": "114076",
+    "name": "Aspiración del instrumento misterioso",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114076.png"
   },
   "114077": {
     "id": "114077",
@@ -3276,41 +3282,77 @@ const REAL_MASTER_MATERIALS = {
     "rank": 5,
     "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114080.png"
   },
-  "112134": {
-    "id": "112134",
-    "name": "Condensado brumoso",
+  "114081": {
+    "id": "114081",
+    "name": "Gloria póstuma de los Hijos del Lejano Norte",
     "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112134.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114081.png"
   },
-  "112135": {
-    "id": "112135",
-    "name": "Fragmento de armadura brumoso",
+  "114082": {
+    "id": "114082",
+    "name": "Obstinación de los Hijos del Lejano Norte",
     "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112135.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114082.png"
   },
-  "112136": {
-    "id": "112136",
-    "name": "Casco brumoso",
+  "114083": {
+    "id": "114083",
+    "name": "Oblación de los Hijos del Lejano Norte",
     "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112136.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114083.png"
   },
-  "112062": {
-    "id": "112062",
-    "name": "Núcleo fúngico inerte",
+  "114084": {
+    "id": "114084",
+    "name": "Refulgencia de los Hijos del Lejano Norte",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114084.png"
+  },
+  "114085": {
+    "id": "114085",
+    "name": "Ascenso del ejército de la Estrella Albina",
     "rank": 2,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112062.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114085.png"
   },
-  "112063": {
-    "id": "112063",
-    "name": "Núcleo fúngico inactivo",
+  "114086": {
+    "id": "114086",
+    "name": "Congregación del ejército de la Estrella Albina",
     "rank": 3,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112063.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114086.png"
   },
-  "112064": {
-    "id": "112064",
-    "name": "Núcleo fúngico robusto",
+  "114087": {
+    "id": "114087",
+    "name": "Mandato del ejército de la Estrella Albina",
     "rank": 4,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112064.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114087.png"
+  },
+  "114088": {
+    "id": "114088",
+    "name": "Triunfo del ejército de la Estrella Albina",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114088.png"
+  },
+  "114089": {
+    "id": "114089",
+    "name": "Vertimiento del néctar espiritual de la bodega",
+    "rank": 2,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114089.png"
+  },
+  "114090": {
+    "id": "114090",
+    "name": "Embriaguez del néctar espiritual de la bodega",
+    "rank": 3,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114090.png"
+  },
+  "114091": {
+    "id": "114091",
+    "name": "Júbilo del néctar espiritual de la bodega",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114091.png"
+  },
+  "114092": {
+    "id": "114092",
+    "name": "Capricho del néctar espiritual de la bodega",
+    "rank": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114092.png"
   },
   "114093": {
     "id": "114093",
@@ -3335,6 +3377,12 @@ const REAL_MASTER_MATERIALS = {
     "name": "Adiós del emperador de la escarcha",
     "rank": 5,
     "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114096.png"
+  },
+  "220141": {
+    "id": "220141",
+    "name": "Estuche de accesorios de Mitya",
+    "rank": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_121736.png"
   }
 };
 
@@ -52047,6 +52095,804 @@ const REAL_CHARACTERS_DB = [
         "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113084.png"
       }
     }
+  },
+  {
+    "id": "10000136",
+    "name": "Mitya",
+    "rarity": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Mitya.png",
+    "ascensionCosts": {
+      "1": {
+        "coinCost": 20000,
+        "costItems": {
+          "101274": 3,
+          "104141": 1,
+          "112149": 3
+        }
+      },
+      "2": {
+        "coinCost": 40000,
+        "costItems": {
+          "101274": 10,
+          "104142": 3,
+          "112149": 15,
+          "113093": 2
+        }
+      },
+      "3": {
+        "coinCost": 60000,
+        "costItems": {
+          "101274": 20,
+          "104142": 6,
+          "112150": 12,
+          "113093": 4
+        }
+      },
+      "4": {
+        "coinCost": 80000,
+        "costItems": {
+          "101274": 30,
+          "104143": 3,
+          "112150": 18,
+          "113093": 8
+        }
+      },
+      "5": {
+        "coinCost": 100000,
+        "costItems": {
+          "101274": 45,
+          "104143": 6,
+          "112151": 12,
+          "113093": 12
+        }
+      },
+      "6": {
+        "coinCost": 120000,
+        "costItems": {
+          "101274": 60,
+          "104144": 6,
+          "112151": 24,
+          "113093": 20
+        }
+      }
+    },
+    "items": {
+      "202": {
+        "id": "202",
+        "name": "Mora",
+        "rank": 3,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_202.png"
+      },
+      "101274": {
+        "id": "101274",
+        "name": "Sombrillarrugada cristalina",
+        "rank": 1,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101274.png"
+      },
+      "104001": {
+        "id": "104001",
+        "name": "Consejo del errante",
+        "rank": 2,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104001.png"
+      },
+      "104002": {
+        "id": "104002",
+        "name": "Experiencia del aventurero",
+        "rank": 3,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104002.png"
+      },
+      "104003": {
+        "id": "104003",
+        "name": "Ingenio del héroe",
+        "rank": 4,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104003.png"
+      },
+      "104141": {
+        "id": "104141",
+        "name": "Pedacito de amatista vajrada",
+        "rank": 2,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104141.png"
+      },
+      "104142": {
+        "id": "104142",
+        "name": "Fragmento de amatista vajrada",
+        "rank": 3,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104142.png"
+      },
+      "104143": {
+        "id": "104143",
+        "name": "Trozo de amatista vajrada",
+        "rank": 4,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104143.png"
+      },
+      "104144": {
+        "id": "104144",
+        "name": "Amatista vajrada",
+        "rank": 5,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104144.png"
+      },
+      "104319": {
+        "id": "104319",
+        "name": "Corona de la sabiduría",
+        "rank": 5,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104319.png"
+      },
+      "104365": {
+        "id": "104365",
+        "name": "Enseñanzas del amor",
+        "rank": 2,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104365.png"
+      },
+      "104366": {
+        "id": "104366",
+        "name": "Guía del amor",
+        "rank": 3,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104366.png"
+      },
+      "104367": {
+        "id": "104367",
+        "name": "Filosofía del amor",
+        "rank": 4,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104367.png"
+      },
+      "112149": {
+        "id": "112149",
+        "name": "Semilla quimérica",
+        "rank": 1,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112149.png"
+      },
+      "112150": {
+        "id": "112150",
+        "name": "Célula quimérica simbiótica",
+        "rank": 2,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112150.png"
+      },
+      "112151": {
+        "id": "112151",
+        "name": "Organismo quimérico primigenio",
+        "rank": 3,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112151.png"
+      },
+      "113081": {
+        "id": "113081",
+        "name": "Máscara del doctor virtuoso",
+        "rank": 5,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113081.png"
+      },
+      "113093": {
+        "id": "113093",
+        "name": "Ancla estabilizadora rota",
+        "rank": 4,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113093.png"
+      }
+    },
+    "element": "Electro",
+    "weapon": "Catalyst",
+    "region": "SNEZHNAYA_STAR",
+    "namecard": null,
+    "talents": [
+      {
+        "name": "Reacción en cadena",
+        "icon": "https://gi.yatta.moe/assets/UI/Skill_A_Catalyst_MD.png",
+        "costs": {
+          "2": {
+            "coinCost": 12500,
+            "costItems": {
+              "104365": 3,
+              "112149": 6
+            }
+          },
+          "3": {
+            "coinCost": 17500,
+            "costItems": {
+              "104366": 2,
+              "112150": 3
+            }
+          },
+          "4": {
+            "coinCost": 25000,
+            "costItems": {
+              "104366": 4,
+              "112150": 4
+            }
+          },
+          "5": {
+            "coinCost": 30000,
+            "costItems": {
+              "104366": 6,
+              "112150": 6
+            }
+          },
+          "6": {
+            "coinCost": 37500,
+            "costItems": {
+              "104366": 9,
+              "112150": 9
+            }
+          },
+          "7": {
+            "coinCost": 120000,
+            "costItems": {
+              "104367": 4,
+              "112151": 4,
+              "113081": 1
+            }
+          },
+          "8": {
+            "coinCost": 260000,
+            "costItems": {
+              "104367": 6,
+              "112151": 6,
+              "113081": 1
+            }
+          },
+          "9": {
+            "coinCost": 450000,
+            "costItems": {
+              "104367": 12,
+              "112151": 9,
+              "113081": 2
+            }
+          },
+          "10": {
+            "coinCost": 700000,
+            "costItems": {
+              "104319": 1,
+              "104367": 16,
+              "112151": 12,
+              "113081": 2
+            }
+          }
+        }
+      },
+      {
+        "name": "Estipulación: Detección de variables",
+        "icon": "https://genshinlab.com/wp-content/uploads/Skill_S_Mitya_01.webp",
+        "costs": {
+          "2": {
+            "coinCost": 12500,
+            "costItems": {
+              "104365": 3,
+              "112149": 6
+            }
+          },
+          "3": {
+            "coinCost": 17500,
+            "costItems": {
+              "104366": 2,
+              "112150": 3
+            }
+          },
+          "4": {
+            "coinCost": 25000,
+            "costItems": {
+              "104366": 4,
+              "112150": 4
+            }
+          },
+          "5": {
+            "coinCost": 30000,
+            "costItems": {
+              "104366": 6,
+              "112150": 6
+            }
+          },
+          "6": {
+            "coinCost": 37500,
+            "costItems": {
+              "104366": 9,
+              "112150": 9
+            }
+          },
+          "7": {
+            "coinCost": 120000,
+            "costItems": {
+              "104367": 4,
+              "112151": 4,
+              "113081": 1
+            }
+          },
+          "8": {
+            "coinCost": 260000,
+            "costItems": {
+              "104367": 6,
+              "112151": 6,
+              "113081": 1
+            }
+          },
+          "9": {
+            "coinCost": 450000,
+            "costItems": {
+              "104367": 12,
+              "112151": 9,
+              "113081": 2
+            }
+          },
+          "10": {
+            "coinCost": 700000,
+            "costItems": {
+              "104319": 1,
+              "104367": 16,
+              "112151": 12,
+              "113081": 2
+            }
+          }
+        }
+      },
+      {
+        "name": "Análisis: Teorema del gradiente",
+        "icon": "https://gi.yatta.moe/assets/UI/Skill_E_Mitya_01.png",
+        "costs": {
+          "2": {
+            "coinCost": 12500,
+            "costItems": {
+              "104365": 3,
+              "112149": 6
+            }
+          },
+          "3": {
+            "coinCost": 17500,
+            "costItems": {
+              "104366": 2,
+              "112150": 3
+            }
+          },
+          "4": {
+            "coinCost": 25000,
+            "costItems": {
+              "104366": 4,
+              "112150": 4
+            }
+          },
+          "5": {
+            "coinCost": 30000,
+            "costItems": {
+              "104366": 6,
+              "112150": 6
+            }
+          },
+          "6": {
+            "coinCost": 37500,
+            "costItems": {
+              "104366": 9,
+              "112150": 9
+            }
+          },
+          "7": {
+            "coinCost": 120000,
+            "costItems": {
+              "104367": 4,
+              "112151": 4,
+              "113081": 1
+            }
+          },
+          "8": {
+            "coinCost": 260000,
+            "costItems": {
+              "104367": 6,
+              "112151": 6,
+              "113081": 1
+            }
+          },
+          "9": {
+            "coinCost": 450000,
+            "costItems": {
+              "104367": 12,
+              "112151": 9,
+              "113081": 2
+            }
+          },
+          "10": {
+            "coinCost": 700000,
+            "costItems": {
+              "104319": 1,
+              "104367": 16,
+              "112151": 12,
+              "113081": 2
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "10000137",
+    "name": "Valeri",
+    "rarity": 4,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Valeriy.png",
+    "ascensionCosts": {
+      "1": {
+        "coinCost": 20000,
+        "costItems": {
+          "101273": 3,
+          "104141": 1,
+          "112146": 3
+        }
+      },
+      "2": {
+        "coinCost": 40000,
+        "costItems": {
+          "101273": 10,
+          "104142": 3,
+          "112146": 15,
+          "113091": 2
+        }
+      },
+      "3": {
+        "coinCost": 60000,
+        "costItems": {
+          "101273": 20,
+          "104142": 6,
+          "112147": 12,
+          "113091": 4
+        }
+      },
+      "4": {
+        "coinCost": 80000,
+        "costItems": {
+          "101273": 30,
+          "104143": 3,
+          "112147": 18,
+          "113091": 8
+        }
+      },
+      "5": {
+        "coinCost": 100000,
+        "costItems": {
+          "101273": 45,
+          "104143": 6,
+          "112148": 12,
+          "113091": 12
+        }
+      },
+      "6": {
+        "coinCost": 120000,
+        "costItems": {
+          "101273": 60,
+          "104144": 6,
+          "112148": 24,
+          "113091": 20
+        }
+      }
+    },
+    "items": {
+      "202": {
+        "id": "202",
+        "name": "Mora",
+        "rank": 3,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_202.png"
+      },
+      "101273": {
+        "id": "101273",
+        "name": "Artemisia feérica",
+        "rank": 1,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101273.png"
+      },
+      "104001": {
+        "id": "104001",
+        "name": "Consejo del errante",
+        "rank": 2,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104001.png"
+      },
+      "104002": {
+        "id": "104002",
+        "name": "Experiencia del aventurero",
+        "rank": 3,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104002.png"
+      },
+      "104003": {
+        "id": "104003",
+        "name": "Ingenio del héroe",
+        "rank": 4,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104003.png"
+      },
+      "104141": {
+        "id": "104141",
+        "name": "Pedacito de amatista vajrada",
+        "rank": 2,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104141.png"
+      },
+      "104142": {
+        "id": "104142",
+        "name": "Fragmento de amatista vajrada",
+        "rank": 3,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104142.png"
+      },
+      "104143": {
+        "id": "104143",
+        "name": "Trozo de amatista vajrada",
+        "rank": 4,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104143.png"
+      },
+      "104144": {
+        "id": "104144",
+        "name": "Amatista vajrada",
+        "rank": 5,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104144.png"
+      },
+      "104319": {
+        "id": "104319",
+        "name": "Corona de la sabiduría",
+        "rank": 5,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104319.png"
+      },
+      "104371": {
+        "id": "104371",
+        "name": "Enseñanzas de la gloria",
+        "rank": 2,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104371.png"
+      },
+      "104372": {
+        "id": "104372",
+        "name": "Guía de la gloria",
+        "rank": 3,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104372.png"
+      },
+      "104373": {
+        "id": "104373",
+        "name": "Filosofía de la gloria",
+        "rank": 4,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104373.png"
+      },
+      "112146": {
+        "id": "112146",
+        "name": "Lumiesquirla etérea",
+        "rank": 1,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112146.png"
+      },
+      "112147": {
+        "id": "112147",
+        "name": "Quiebracristal etéreo",
+        "rank": 2,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112147.png"
+      },
+      "112148": {
+        "id": "112148",
+        "name": "Petreoescama etérea",
+        "rank": 3,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112148.png"
+      },
+      "113087": {
+        "id": "113087",
+        "name": "Resina falsa",
+        "rank": 5,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113087.png"
+      },
+      "113091": {
+        "id": "113091",
+        "name": "Cola cercenada del surcacielos",
+        "rank": 4,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_113091.png"
+      }
+    },
+    "element": "Electro",
+    "weapon": "Sword",
+    "region": "SNEZHNAYA",
+    "namecard": null,
+    "talents": [
+      {
+        "name": "Táctica de guardia: Espada y escudo",
+        "icon": "https://gi.yatta.moe/assets/UI/Skill_A_01.png",
+        "costs": {
+          "2": {
+            "coinCost": 12500,
+            "costItems": {
+              "104371": 3,
+              "112146": 6
+            }
+          },
+          "3": {
+            "coinCost": 17500,
+            "costItems": {
+              "104372": 2,
+              "112147": 3
+            }
+          },
+          "4": {
+            "coinCost": 25000,
+            "costItems": {
+              "104372": 4,
+              "112147": 4
+            }
+          },
+          "5": {
+            "coinCost": 30000,
+            "costItems": {
+              "104372": 6,
+              "112147": 6
+            }
+          },
+          "6": {
+            "coinCost": 37500,
+            "costItems": {
+              "104372": 9,
+              "112147": 9
+            }
+          },
+          "7": {
+            "coinCost": 120000,
+            "costItems": {
+              "104373": 4,
+              "112148": 4,
+              "113087": 1
+            }
+          },
+          "8": {
+            "coinCost": 260000,
+            "costItems": {
+              "104373": 6,
+              "112148": 6,
+              "113087": 1
+            }
+          },
+          "9": {
+            "coinCost": 450000,
+            "costItems": {
+              "104373": 12,
+              "112148": 9,
+              "113087": 2
+            }
+          },
+          "10": {
+            "coinCost": 700000,
+            "costItems": {
+              "104319": 1,
+              "104373": 16,
+              "112148": 12,
+              "113087": 2
+            }
+          }
+        }
+      },
+      {
+        "name": "Defensa ofensiva: Asedio blindado",
+        "icon": "https://gi.yatta.moe/assets/UI/Skill_S_Valeriy_01.png",
+        "costs": {
+          "2": {
+            "coinCost": 12500,
+            "costItems": {
+              "104371": 3,
+              "112146": 6
+            }
+          },
+          "3": {
+            "coinCost": 17500,
+            "costItems": {
+              "104372": 2,
+              "112147": 3
+            }
+          },
+          "4": {
+            "coinCost": 25000,
+            "costItems": {
+              "104372": 4,
+              "112147": 4
+            }
+          },
+          "5": {
+            "coinCost": 30000,
+            "costItems": {
+              "104372": 6,
+              "112147": 6
+            }
+          },
+          "6": {
+            "coinCost": 37500,
+            "costItems": {
+              "104372": 9,
+              "112147": 9
+            }
+          },
+          "7": {
+            "coinCost": 120000,
+            "costItems": {
+              "104373": 4,
+              "112148": 4,
+              "113087": 1
+            }
+          },
+          "8": {
+            "coinCost": 260000,
+            "costItems": {
+              "104373": 6,
+              "112148": 6,
+              "113087": 1
+            }
+          },
+          "9": {
+            "coinCost": 450000,
+            "costItems": {
+              "104373": 12,
+              "112148": 9,
+              "113087": 2
+            }
+          },
+          "10": {
+            "coinCost": 700000,
+            "costItems": {
+              "104319": 1,
+              "104373": 16,
+              "112148": 12,
+              "113087": 2
+            }
+          }
+        }
+      },
+      {
+        "name": "Fuego concentrado: Salva de electrometralla",
+        "icon": "https://gi.yatta.moe/assets/UI/Skill_E_Valeriy_01.png",
+        "costs": {
+          "2": {
+            "coinCost": 12500,
+            "costItems": {
+              "104371": 3,
+              "112146": 6
+            }
+          },
+          "3": {
+            "coinCost": 17500,
+            "costItems": {
+              "104372": 2,
+              "112147": 3
+            }
+          },
+          "4": {
+            "coinCost": 25000,
+            "costItems": {
+              "104372": 4,
+              "112147": 4
+            }
+          },
+          "5": {
+            "coinCost": 30000,
+            "costItems": {
+              "104372": 6,
+              "112147": 6
+            }
+          },
+          "6": {
+            "coinCost": 37500,
+            "costItems": {
+              "104372": 9,
+              "112147": 9
+            }
+          },
+          "7": {
+            "coinCost": 120000,
+            "costItems": {
+              "104373": 4,
+              "112148": 4,
+              "113087": 1
+            }
+          },
+          "8": {
+            "coinCost": 260000,
+            "costItems": {
+              "104373": 6,
+              "112148": 6,
+              "113087": 1
+            }
+          },
+          "9": {
+            "coinCost": 450000,
+            "costItems": {
+              "104373": 12,
+              "112148": 9,
+              "113087": 2
+            }
+          },
+          "10": {
+            "coinCost": 700000,
+            "costItems": {
+              "104319": 1,
+              "104373": 16,
+              "112148": 12,
+              "113087": 2
+            }
+          }
+        }
+      }
+    ]
   }
 ];
 
@@ -52110,7 +52956,7 @@ const REAL_WEAPONS_DB = [
   },
   {
     "id": "11302",
-    "name": "Hoja Fr\u00eda",
+    "name": "Hoja Fría",
     "rarity": 3,
     "type": "Sword",
     "icon": "https://enka.network/ui/UI_EquipIcon_Sword_Steel.png",
@@ -52452,7 +53298,7 @@ const REAL_WEAPONS_DB = [
   },
   {
     "id": "11308",
-    "name": "Sombra F\u00e9rrea",
+    "name": "Sombra Férrea",
     "rarity": 3,
     "type": "Claymore",
     "icon": "https://enka.network/ui/UI_EquipIcon_Claymore_Glaive.png",
@@ -52851,7 +53697,7 @@ const REAL_WEAPONS_DB = [
   },
   {
     "id": "11315",
-    "name": "Gu\u00eda M\u00e1gica",
+    "name": "Guía Mágica",
     "rarity": 3,
     "type": "Catalyst",
     "icon": "https://enka.network/ui/UI_EquipIcon_Catalyst_Intro.png",
@@ -84724,7 +85570,640 @@ const REAL_WEAPONS_DB = [
         "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114004.png"
       }
     }
+  },
+  {
+    "id": "14525",
+    "name": "Edicto Selloastral",
+    "rarity": 5,
+    "icon": "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Chernaya.png",
+    "ascensionCosts": {
+      "1": {
+        "coinCost": 10000,
+        "costItems": {
+          "112146": 3,
+          "112158": 5,
+          "114093": 5
+        }
+      },
+      "2": {
+        "coinCost": 20000,
+        "costItems": {
+          "112146": 12,
+          "112158": 18,
+          "114094": 5
+        }
+      },
+      "3": {
+        "coinCost": 30000,
+        "costItems": {
+          "112147": 9,
+          "112159": 9,
+          "114094": 9
+        }
+      },
+      "4": {
+        "coinCost": 45000,
+        "costItems": {
+          "112147": 14,
+          "112159": 18,
+          "114095": 5
+        }
+      },
+      "5": {
+        "coinCost": 55000,
+        "costItems": {
+          "112148": 9,
+          "112160": 14,
+          "114095": 9
+        }
+      },
+      "6": {
+        "coinCost": 65000,
+        "costItems": {
+          "112148": 18,
+          "112160": 27,
+          "114096": 6
+        }
+      }
+    },
+    "items": {
+      "202": {
+        "id": "202",
+        "name": "Mora",
+        "rank": 3,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_202.png"
+      },
+      "104011": {
+        "id": "104011",
+        "name": "Mineral de refinamiento",
+        "rank": 1,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104011.png"
+      },
+      "104012": {
+        "id": "104012",
+        "name": "Mineral de refinamiento fino",
+        "rank": 2,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104012.png"
+      },
+      "104013": {
+        "id": "104013",
+        "name": "Mineral de refinamiento místico",
+        "rank": 3,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_104013.png"
+      },
+      "112146": {
+        "id": "112146",
+        "name": "Lumiesquirla etérea",
+        "rank": 1,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112146.png"
+      },
+      "112147": {
+        "id": "112147",
+        "name": "Quiebracristal etéreo",
+        "rank": 2,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112147.png"
+      },
+      "112148": {
+        "id": "112148",
+        "name": "Petreoescama etérea",
+        "rank": 3,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112148.png"
+      },
+      "112158": {
+        "id": "112158",
+        "name": "Corazón fragmentado níveo",
+        "rank": 2,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112158.png"
+      },
+      "112159": {
+        "id": "112159",
+        "name": "Corazón especular níveo",
+        "rank": 3,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112159.png"
+      },
+      "112160": {
+        "id": "112160",
+        "name": "Corazón de la ignorancia níveo",
+        "rank": 4,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_112160.png"
+      },
+      "114093": {
+        "id": "114093",
+        "name": "Renacimiento del emperador de la escarcha",
+        "rank": 2,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114093.png"
+      },
+      "114094": {
+        "id": "114094",
+        "name": "Ceremonia del emperador de la escarcha",
+        "rank": 3,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114094.png"
+      },
+      "114095": {
+        "id": "114095",
+        "name": "Compasión del emperador de la escarcha",
+        "rank": 4,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114095.png"
+      },
+      "114096": {
+        "id": "114096",
+        "name": "Adiós del emperador de la escarcha",
+        "rank": 5,
+        "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_114096.png"
+      }
+    },
+    "type": "Catalyst"
   }
 ];
 
-const REAL_CHAR_TALENT_BOOSTS = {"Aino":{"C3":2,"C5":1},"Albedo":{"C3":1,"C5":2},"Alhacén":{"C3":1,"C5":2},"Aliosha":{"C3":1,"C5":2},"Aloy":{},"Amber":{"C3":2,"C5":1},"Arataki Itto":{"C3":1,"C5":2},"Arlecchino":{"C3":0,"C5":2},"Baizhu":{"C3":2,"C5":1},"Bárbara":{"C3":2,"C5":1},"Beidou":{"C3":1,"C5":2},"Bennett":{"C3":1,"C5":2},"Candace":{"C3":2,"C5":1},"Charlotte":{"C3":2,"C5":1},"Chasca":{"C3":1,"C5":2},"Chevreuse":{"C3":1,"C5":2},"Chiori":{"C3":1,"C5":2},"Chongyun":{"C3":2,"C5":1},"Citlalí":{"C3":1,"C5":2},"Clorinde":{"C3":1,"C5":2},"Collei":{"C3":1,"C5":2},"Colombina":{"C3":1,"C5":2},"Cyno":{"C3":2,"C5":1},"Dahlia":{"C3":2,"C5":1},"Dehya":{"C3":2,"C5":1},"Diluc":{"C3":1,"C5":2},"Diona":{"C3":2,"C5":1},"Dori":{"C3":2,"C5":1},"Durin":{"C3":2,"C5":1},"Émilie":{"C3":1,"C5":2},"Escoffier":{"C3":1,"C5":2},"Eula":{"C3":2,"C5":1},"Faruzán":{"C3":1,"C5":2},"Fischl":{"C3":1,"C5":2},"Flins":{"C3":2,"C5":1},"Fréminet":{"C3":0,"C5":1},"Furina":{"C3":2,"C5":1},"Gaming":{"C3":1,"C5":2},"Ganyu":{"C3":2,"C5":1},"Gorou":{"C3":1,"C5":2},"Hu Tao":{"C3":1,"C5":2},"Iansán":{"C3":1,"C5":2},"Ifá":{"C3":1,"C5":2},"Illuga":{"C3":2,"C5":1},"Ineffa":{"C3":1,"C5":2},"Jahoda":{"C3":2,"C5":1},"Jean":{"C3":2,"C5":1},"Kachina":{"C3":1,"C5":2},"Kaedehara Kazuha":{"C3":1,"C5":2},"Kaeya":{"C3":1,"C5":2},"Kamisato Ayaka":{"C3":2,"C5":1},"Kamisato Ayato":{"C3":1,"C5":2},"Kaveh":{"C3":2,"C5":1},"Keching":{"C3":2,"C5":1},"Kinich":{"C3":1,"C5":2},"Kirara":{"C3":1,"C5":2},"Klee":{"C3":1,"C5":2},"Kujou Sara":{"C3":2,"C5":1},"Kuki Shinobu":{"C3":1,"C5":2},"Laila":{"C3":1,"C5":2},"Lan Yan":{"C3":1,"C5":2},"Lauma":{"C3":2,"C5":1},"Linnéa":{"C3":1,"C5":2},"Lisa":{"C3":2,"C5":1},"Lohen":{"C3":1,"C5":2},"Lynette":{"C3":2,"C5":1},"Lyney":{"C3":0,"C5":2},"Mavuika":{"C3":2,"C5":1},"Mika":{"C3":2,"C5":1},"Mona":{"C3":2,"C5":1},"Mualani":{"C3":1,"C5":2},"Nahida":{"C3":1,"C5":2},"Navia":{"C3":1,"C5":2},"Néfer":{"C3":1,"C5":2},"Neuvillette":{"C3":0,"C5":2},"Nicole":{"C3":1,"C5":2},"Nilou":{"C3":2,"C5":1},"Ninguang":{"C3":2,"C5":1},"Noelle":{"C3":1,"C5":2},"Odette":{"C3":1,"C5":2},"Ororon":{"C3":2,"C5":1},"Prune":{"C3":2,"C5":1},"Qiqi":{"C3":2,"C5":1},"Razor":{"C3":2,"C5":1},"Rosaria":{"C3":1,"C5":2},"Sacarosa":{"C3":0,"C5":2},"Sandrone":{"C3":0,"C5":2},"Sangonomiya Kokomi":{"C3":2,"C5":1},"Sayu":{"C3":2,"C5":1},"Sethos":{"C3":0,"C5":2},"Shenhe":{"C3":1,"C5":2},"Shikanoin Heizou":{"C3":1,"C5":2},"Shogun Raiden":{"C3":2,"C5":1},"Sigewinne":{"C3":1,"C5":2},"Skirk":{"C3":2,"C5":1},"Tartaglia":{"C3":1,"C5":2},"Thoma":{"C3":1,"C5":2},"Tignari":{"C3":2,"C5":1},"Trotamundos":{"C3":2,"C5":1},"Varesa":{"C3":2,"C5":0},"Varka":{"C3":1,"C5":2},"Venti":{"C3":2,"C5":1},"Vesna":{"C3":1,"C5":2},"Viajero":{"C3":1,"C5":2},"Vodyanitsa":{"C3":1,"C5":2},"Wriothesley":{"C3":0,"C5":2},"Xiangling":{"C3":2,"C5":1},"Xianyun":{"C3":2,"C5":1},"Xiao":{"C3":1,"C5":2},"Xilonen":{"C3":1,"C5":2},"Xingchiu":{"C3":2,"C5":1},"Xinyan":{"C3":1,"C5":2},"Yae Miko":{"C3":1,"C5":2},"Yanfei":{"C3":1,"C5":2},"Yaoyao":{"C3":1,"C5":2},"Yelan":{"C3":2,"C5":1},"Yoimiya":{"C3":1,"C5":2},"Yumemizuki Mizuki":{"C3":1,"C5":2},"Yun Jin":{"C3":2,"C5":1},"Zhongli":{"C3":1,"C5":2},"Zibai":{"C3":1,"C5":2}};
+const REAL_CHAR_TALENT_BOOSTS = {
+  "Aino": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Albedo": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Alhacén": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Aliosha": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Aloy": {},
+  "Amber": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Arataki Itto": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Arlecchino": {
+    "C3": 0,
+    "C5": 2
+  },
+  "Baizhu": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Bárbara": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Beidou": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Bennett": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Candace": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Charlotte": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Chasca": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Chevreuse": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Chiori": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Chongyun": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Citlalí": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Clorinde": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Collei": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Colombina": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Cyno": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Dahlia": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Dehya": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Diluc": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Diona": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Dori": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Durin": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Émilie": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Escoffier": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Eula": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Faruzán": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Fischl": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Flins": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Fréminet": {
+    "C3": 0,
+    "C5": 1
+  },
+  "Furina": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Gaming": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Ganyu": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Gorou": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Hu Tao": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Iansán": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Ifá": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Illuga": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Ineffa": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Jahoda": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Jean": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Kachina": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Kaedehara Kazuha": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Kaeya": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Kamisato Ayaka": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Kamisato Ayato": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Kaveh": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Keching": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Kinich": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Kirara": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Klee": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Kujou Sara": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Kuki Shinobu": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Laila": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Lan Yan": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Lauma": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Linnéa": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Lisa": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Lohen": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Lynette": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Lyney": {
+    "C3": 0,
+    "C5": 2
+  },
+  "Mavuika": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Mika": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Mona": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Mualani": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Nahida": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Navia": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Néfer": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Neuvillette": {
+    "C3": 0,
+    "C5": 2
+  },
+  "Nicole": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Nilou": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Ninguang": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Noelle": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Odette": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Ororon": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Prune": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Qiqi": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Razor": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Rosaria": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Sacarosa": {
+    "C3": 0,
+    "C5": 2
+  },
+  "Sandrone": {
+    "C3": 0,
+    "C5": 2
+  },
+  "Sangonomiya Kokomi": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Sayu": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Sethos": {
+    "C3": 0,
+    "C5": 2
+  },
+  "Shenhe": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Shikanoin Heizou": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Shogun Raiden": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Sigewinne": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Skirk": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Tartaglia": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Thoma": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Tignari": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Trotamundos": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Varesa": {
+    "C3": 2,
+    "C5": 0
+  },
+  "Varka": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Venti": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Vesna": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Viajero": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Vodyanitsa": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Wriothesley": {
+    "C3": 0,
+    "C5": 2
+  },
+  "Xiangling": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Xianyun": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Xiao": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Xilonen": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Xingchiu": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Xinyan": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Yae Miko": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Yanfei": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Yaoyao": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Yelan": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Yoimiya": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Yumemizuki Mizuki": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Yun Jin": {
+    "C3": 2,
+    "C5": 1
+  },
+  "Zhongli": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Zibai": {
+    "C3": 1,
+    "C5": 2
+  },
+  "Mitya": {
+    "C3": 1,
+    "C5": 0
+  },
+  "Valeri": {
+    "C3": 0,
+    "C5": 1
+  }
+};
