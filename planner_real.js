@@ -724,9 +724,9 @@ function buildCustomCharacterObject(cfg) {
   }
 
   const talents = [
-    { name: "Ataque Normal", icon: "https://gi.yatta.moe/assets/UI/Skill_A_01.png", costs: singleTalentCosts },
-    { name: "Habilidad Elemental", icon: "https://gi.yatta.moe/assets/UI/Skill_S_01.png", costs: singleTalentCosts },
-    { name: "Habilidad Definitiva", icon: "https://gi.yatta.moe/assets/UI/Skill_E_01.png", costs: singleTalentCosts }
+    { name: "Ataque Normal", icon: "assets/ui/talent-normal.svg", costs: singleTalentCosts },
+    { name: "Habilidad Elemental", icon: "assets/ui/talent-elemental.svg", costs: singleTalentCosts },
+    { name: "Habilidad Definitiva", icon: "assets/ui/talent-burst.svg", costs: singleTalentCosts }
   ];
 
   const items = { "202": { id: "202", name: "Mora", rank: 3, icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_202.png" } };
