@@ -533,9 +533,22 @@ const TALENT_BOOK_BASE_IDS = [
 
 function getAllWorldBossMaterials() {
   if (typeof REAL_MASTER_MATERIALS === "undefined") return [];
+  const regions = new Map();
+  if (typeof FARMING_DOMAINS_REGISTRY !== "undefined") {
+    FARMING_DOMAINS_REGISTRY.filter((source) => source.type === "boss").forEach((source) => {
+      const region = REGION_ORDER.find((name) => source.region === name || source.region?.startsWith(`${name} (`)) || "Otras";
+      (source.matIds || []).forEach((id) => regions.set(String(id), region));
+    });
+  }
   return Object.values(REAL_MASTER_MATERIALS)
     .filter((m) => String(m.id).startsWith("113") && m.rank === 4 && String(m.id) !== "113021")
-    .sort((a, b) => a.name.localeCompare(b.name, "es"));
+    .map((m) => ({ ...m, region: regions.get(String(m.id)) || "Otras" }))
+    .sort((a, b) => {
+      const orderA = REGION_ORDER.indexOf(a.region);
+      const orderB = REGION_ORDER.indexOf(b.region);
+      return (orderA === -1 ? 999 : orderA) - (orderB === -1 ? 999 : orderB)
+        || a.name.localeCompare(b.name, "es");
+    });
 }
 
 function getAllWeeklyBossMaterials() {
@@ -2754,17 +2767,26 @@ function renderMaterialPickerGrid(type, filterText) {
 
   if (type === "boss") {
     const list = getAllWorldBossMaterials().filter((m) => {
-      if (!search) return true;
-      const plain = m.name.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
-      return plain.includes(search);
+      return !search || normalizeMaterialSearch(`${m.name} ${m.region}`).includes(search);
     });
+    let currentRegion = null;
     list.forEach((m) => {
+      if (m.region !== currentRegion && !search) {
+        currentRegion = m.region;
+        const header = document.createElement("div");
+        header.className = "seelie-picker-section-header";
+        header.textContent = m.region;
+        grid.appendChild(header);
+      }
       const card = document.createElement("div");
       const isSelected = customCharDraft && String(customCharDraft.bossMatId) === String(m.id);
       card.className = `seelie-picker-item-card ${isSelected ? "selected" : ""}`;
       card.innerHTML = `
         <img class="seelie-picker-item-img rar-bg-${m.rank || 4}" src="${m.icon}" alt="${escapeHtml(m.name)}" loading="lazy" />
-        <span class="seelie-picker-item-name">${escapeHtml(m.name)}</span>
+        <div style="display:flex;flex-direction:column;min-width:0;">
+          <span class="seelie-picker-item-name">${escapeHtml(m.name)}</span>
+          <small style="color:#94a3b8;font-size:0.7rem;">${escapeHtml(m.region)}</small>
+        </div>
       `;
       card.addEventListener("click", () => {
         if (customCharDraft) customCharDraft.bossMatId = String(m.id);
