@@ -778,6 +778,8 @@ function getCustomPendingCount(cfg) {
 
 function getWeaponInfo(weaponName) {
   if (!weaponName || weaponName === "none") return null;
+  const custom = [...state.activePlans, state.soloWeapDraft].find((p) => p && p.kind === "weapon" && p.isCustom && p.key === weaponName);
+  if (custom && typeof buildCustomWeaponObject === "function") return buildCustomWeaponObject(custom.customConfig);
   return REAL_WEAP_BY_NAME[weaponName] || null;
 }
 
@@ -1143,7 +1145,7 @@ function renderRosterModalGrid() {
 
       closeRosterModal();
 
-      openCustomCharModal();
+      openCustomTypeModal();
 
     });
 
@@ -1453,7 +1455,7 @@ function updateCharConfigModalUI() {
   });
 
   // 5. Pestana ARMA: solo armas mejorables del tipo del personaje (seleccion por icono)
-  const typeWeapons = REAL_UPGRADABLE_WEAPONS
+  const typeWeapons = getPlannerWeapons()
     .filter((w) => w.type === info.weapon)
     .sort((a, b) => b.rarity - a.rarity || a.name.localeCompare(b.name, "es"));
 
@@ -1801,7 +1803,7 @@ function renderWeaponRosterModalGrid() {
   const f = state.weaponRosterFilter || { rarity: null, weapon: null, search: "" };
   const search = f.search ? f.search.normalize("NFD").replace(/[\u0300-\u036f]/g, "") : "";
 
-  const filtered = REAL_UPGRADABLE_WEAPONS.filter((w) => {
+  const filtered = getPlannerWeapons().filter((w) => {
     if (f.rarity && w.rarity !== f.rarity) return false;
     if (f.weapon && w.type !== f.weapon) return false;
     if (search) {
@@ -1840,7 +1842,9 @@ function renderWeaponRosterModalGrid() {
 
   if (filtered.length === 0) {
     const pm = getPlannerModalI18n();
-    gridEl.innerHTML = `<div style="grid-column:1/-1;text-align:center;color:#94a3b8;padding:1.5rem;">${escapeHtml(pm.noWeapMatch)}</div>`;
+    const empty = document.createElement("div");
+    empty.textContent = pm.noWeapMatch;
+    gridEl.appendChild(empty);
   }
 }
 
@@ -1903,6 +1907,11 @@ function updateSoloWeaponConfigModalUI() {
   if (!d) return;
   const wp = getWeaponInfo(d.key || d.weaponKey);
   if (!wp) return;
+  const editBase = document.getElementById("btnEditCustomWeapon");
+  if (editBase) {
+    editBase.hidden = !d.isCustom;
+    editBase.onclick = () => { closeSoloWeaponConfigModal(true); openCustomWeaponModal(d.key); };
+  }
   const pm = getPlannerModalI18n();
 
   const limits = getArProgressionLimits();
@@ -2107,6 +2116,7 @@ function renderCharacterWeaponPlanner() {
             <div>
               <div style="display:flex;align-items:center;gap:0.4rem;">
                 <strong style="font-size:1.05rem;color:#ffffff;text-transform:uppercase;letter-spacing:0.3px;">${escapeHtml(dispWpPlanKey)}</strong>
+                ${plan.isCustom ? `<span class="seelie-custom-base-pill">BASE${["domainMatId", "commonMatId", "eliteMatId"].some((field) => plan.customConfig[field] === "unknown") ? " · PARCIAL" : ""}</span>` : ""}
                 <span style="display:inline-flex;align-items:center;gap:0.25rem;font-size:0.72rem;color:#cbd5e1;background:rgba(0,0,0,0.35);padding:1px 6px;border-radius:4px;">
                   ${weaponTypeImgHtml(wp.type, 14)} ${escapeHtml(getWeaponTypeLabel(wp.type))}
                 </span>
@@ -3066,7 +3076,7 @@ function initCustomCharEvents() {
 
   if (openBtn) {
 
-    openBtn.addEventListener("click", () => openCustomCharModal());
+    openBtn.addEventListener("click", openCustomTypeModal);
 
   }
 
