@@ -2169,6 +2169,7 @@ function initSeelieCharacterSystem() {
   if (typeof initCustomCharEvents === "function") {
     initCustomCharEvents();
   }
+  if (typeof initCustomWeaponEvents === "function") initCustomWeaponEvents();
 }
 
 function savePlansToStorage() {
