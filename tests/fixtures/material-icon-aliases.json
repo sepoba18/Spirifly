@@ -1,4 +1,9 @@
 {
+  "101268": {
+    "filename": "UI_ItemIcon_101266",
+    "source": "https://gi.yatta.moe/api/v2/es/material/101268",
+    "reason": "Hierba invernal usa UI_ItemIcon_101266 según filename_icon de la fuente guardada; el ID del material no coincide con el nombre del recurso gráfico."
+  },
   "220141": {
     "filename": "UI_ItemIcon_121736",
     "source": "https://gi.yatta.moe/api/v2/es/material/220141",

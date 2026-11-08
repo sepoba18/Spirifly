@@ -2164,6 +2164,11 @@ function initSeelieCharacterSystem() {
   if (typeof initSoloWeaponConfigEvents === "function") {
     initSoloWeaponConfigEvents();
   }
+
+  // Inicializar eventos del creador de personajes base / personalizados (Modal 3)
+  if (typeof initCustomCharEvents === "function") {
+    initCustomCharEvents();
+  }
 }
 
 function savePlansToStorage() {

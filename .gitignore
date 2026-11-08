@@ -24,6 +24,7 @@ Thumbs.db
 desktop.ini
 
 # Consultas de versiones: respuestas reproducibles, fuera del despliegue.
-/downloads/versiones/
-/downloads/respaldos_locales/
-/downloads/servicios_locales/
+/downloads/
+
+apply_styles_*.py
+.codex/

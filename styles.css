@@ -3407,6 +3407,546 @@ body {
 }
 
 /* =====================================================================
+   ESTILOS PARA PERSONAJES PERSONALIZADOS / BASE
+   ===================================================================== */
+.seelie-btn-add-custom {
+  background: linear-gradient(135deg, #059669 0%, #0d9488 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.35) !important;
+}
+.seelie-btn-add-custom:hover {
+  background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%) !important;
+  box-shadow: 0 6px 18px rgba(13, 148, 136, 0.5) !important;
+  transform: translateY(-1px);
+}
+
+.seelie-custom-dialog {
+  background: #1a1e30;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 780px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75);
+  overflow: hidden !important;
+  overflow-x: hidden !important;
+  position: relative;
+  animation: fadeIn 0.16s ease;
+}
+
+.seelie-custom-header {
+  padding: 0.95rem 1.25rem;
+  background: #21263d;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.seelie-custom-header-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #059669 0%, #0d9488 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(5, 150, 105, 0.35);
+}
+
+.seelie-custom-body {
+  padding: 1.1rem 1.25rem;
+  overflow-y: auto;
+  overflow-x: hidden !important;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.seelie-custom-preview-banner {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 42, 0.95) 100%);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  border-radius: 12px;
+  padding: 0.9rem 1.1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.seelie-custom-preview-left {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.seelie-custom-base-pill {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.18);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  padding: 1px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.seelie-custom-preview-gem-row {
+  margin-top: 0.35rem;
+  font-size: 0.78rem;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.seelie-custom-form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.seelie-custom-field {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.seelie-custom-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.seelie-custom-input {
+  background: #141826;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  padding: 0.55rem 0.85rem;
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-weight: 600;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.seelie-custom-input:focus {
+  border-color: #34d399;
+  box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.2);
+}
+
+.seelie-custom-row-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+@media (max-width: 680px) {
+  .seelie-custom-row-2 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.seelie-custom-row-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+}
+@media (max-width: 760px) {
+  .seelie-custom-row-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.seelie-custom-weapon-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.4rem;
+}
+
+.seelie-custom-choice-btn {
+  background: #161b2b;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 0.45rem 0.35rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  color: #cbd5e1;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.14s ease;
+}
+.seelie-custom-choice-btn img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+.seelie-custom-choice-btn:hover {
+  background: #232a42;
+  border-color: rgba(255, 255, 255, 0.28);
+}
+.seelie-custom-choice-btn.active {
+  background: rgba(59, 130, 246, 0.18);
+  border-color: #60a5fa;
+  color: #93c5fd;
+  box-shadow: 0 0 10px rgba(96, 165, 250, 0.3);
+}
+
+.seelie-custom-rarity-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.seelie-custom-rarity-btn {
+  background: #161b2b;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 0.45rem 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  cursor: pointer;
+  transition: all 0.14s ease;
+}
+.seelie-custom-rarity-btn .rar-star {
+  font-size: 0.95rem;
+  font-weight: 900;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+.seelie-custom-rarity-btn.r5 .rar-star {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fcd34d;
+}
+.seelie-custom-rarity-btn.r4 .rar-star {
+  background: rgba(168, 85, 247, 0.2);
+  color: #c084fc;
+}
+.seelie-custom-rarity-btn.r5.active {
+  background: rgba(245, 158, 11, 0.16);
+  border-color: #f59e0b;
+  color: #fbbf24;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.25);
+}
+.seelie-custom-rarity-btn.r4.active {
+  background: rgba(168, 85, 247, 0.16);
+  border-color: #a855f7;
+  color: #c084fc;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.25);
+}
+
+.seelie-custom-element-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.4rem;
+}
+@media (max-width: 520px) {
+  .seelie-custom-element-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.seelie-custom-el-btn {
+  background: #161b2b;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 0.45rem 0.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  color: #cbd5e1;
+  font-size: 0.73rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.14s ease;
+}
+.seelie-custom-el-btn img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+.seelie-custom-el-btn:hover {
+  background: #232a42;
+  border-color: rgba(255, 255, 255, 0.28);
+}
+.seelie-custom-el-btn.active {
+  background: rgba(16, 185, 129, 0.16);
+  border-color: #34d399;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(52, 211, 153, 0.35);
+}
+
+.seelie-custom-autogem-card {
+  background: #141826;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.seelie-custom-autogem-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.seelie-custom-autogem-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.seelie-custom-autogem-mini {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.seelie-custom-autogem-mini img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.seelie-custom-section-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.35rem 0;
+}
+.seelie-custom-section-divider span {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  color: #94a3b8;
+  white-space: normal;
+}
+.seelie-custom-section-divider::before,
+.seelie-custom-section-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.seelie-custom-picker-slot {
+  background: #141826;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  min-height: 56px;
+}
+.seelie-custom-picker-slot:hover {
+  background: #1b2135;
+  border-color: #34d399;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.seelie-custom-slot-left {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  overflow: hidden;
+}
+.seelie-custom-slot-icon-wrap {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.seelie-custom-slot-icon-wrap img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+.seelie-custom-slot-details {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.seelie-custom-slot-title {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.seelie-custom-slot-sub {
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+.seelie-custom-footer {
+  padding: 0.85rem 1.25rem;
+  background: #21263d;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+/* Material Picker Sheet (Overlay inside dialog) */
+.seelie-material-picker-sheet {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 20, 32, 0.96);
+  backdrop-filter: blur(8px);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.14s ease;
+}
+
+.seelie-picker-sheet-header {
+  padding: 0.85rem 1.25rem;
+  background: #21263d;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+@media (max-width: 480px) {
+  .seelie-picker-sheet-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .seelie-picker-sheet-header > div { min-width: 0; }
+  .seelie-picker-sheet-header > input {
+    grid-row: 2;
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: none !important;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  .seelie-custom-preview-left { flex-wrap: wrap; }
+  .seelie-custom-preview-left > div { min-width: 0; }
+  .seelie-custom-preview-gem-row { overflow-wrap: anywhere; }
+  .seelie-custom-weapon-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .seelie-custom-rarity-btn { min-width: 0; white-space: normal; }
+  .seelie-custom-header .seelie-modal-close { flex-shrink: 0; }
+  .seelie-picker-sheet-content > .chip-btn { white-space: normal; }
+}
+
+.seelie-picker-sheet-content {
+  flex: 1;
+  padding: 1rem 1.25rem;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 0.65rem;
+  align-content: start;
+}
+
+.seelie-picker-item-card {
+  background: #181d2f;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 0.55rem 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+.seelie-picker-item-card:hover {
+  background: #222942;
+  border-color: #34d399;
+  transform: translateY(-1px);
+}
+.seelie-picker-item-card.selected {
+  background: rgba(16, 185, 129, 0.18);
+  border-color: #34d399;
+  box-shadow: 0 0 10px rgba(52, 211, 153, 0.3);
+}
+
+.seelie-picker-item-img {
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.seelie-picker-item-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  line-height: 1.25;
+}
+
+/* Tile de agregar personalizado en el catálogo Roster */
+.seelie-roster-custom-tile .seelie-custom-portrait-card {
+  background: linear-gradient(135deg, #065f46 0%, #064e3b 100%);
+  border: 2px dashed #34d399;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+.seelie-roster-custom-tile:hover .seelie-custom-portrait-card {
+  border-color: #6ee7b7;
+  background: linear-gradient(135deg, #047857 0%, #065f46 100%);
+}
+.seelie-custom-plus-badge {
+  color: #34d399;
+  display: grid;
+  place-items: center;
+}
+.seelie-custom-tag-badge {
+  font-size: 0.65rem;
+  font-weight: 900;
+  color: #a7f3d0;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 1px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+/* =====================================================================
    ESTILOS VISUALES PARA FICHAS DE BUILDS META & SIMULADOR (THEORYCRAFTING)
    ===================================================================== */
 .tc-sim-load-btn {
@@ -5557,3 +6097,88 @@ body {
 .wish-share-actions { display: flex; gap: 12px; justify-content: flex-end; flex-wrap: wrap; margin-top: 16px; }
 .wish-share-actions a { text-decoration: none; }
 #btnShareWishes:disabled { opacity: .5; cursor: not-allowed; }
+
+/* Sección Header por Región en Picker */
+.seelie-picker-section-header {
+  grid-column: 1 / -1;
+  padding: 0.45rem 0.85rem;
+  margin-top: 0.6rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 3px solid #34d399;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #a7f3d0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.seelie-picker-section-header:first-child {
+  margin-top: 0;
+}
+
+/* Grilla especial para Libros de Talento con Fotos Grandes */
+.seelie-picker-sheet-content.seelie-picker-grid-talents {
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)) !important;
+  gap: 0.85rem !important;
+}
+
+.seelie-picker-talent-card {
+  background: #181d2f;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 0.95rem 0.65rem 0.8rem 0.65rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.55rem;
+  cursor: pointer;
+  transition: all 0.14s ease;
+}
+.seelie-picker-talent-card:hover {
+  background: #232a42;
+  border-color: #fbbf24;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+}
+.seelie-picker-talent-card.selected {
+  background: rgba(245, 158, 11, 0.16);
+  border-color: #fbbf24;
+  box-shadow: 0 0 14px rgba(251, 191, 36, 0.35);
+}
+
+.seelie-picker-talent-img-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
+  transition: transform 0.14s ease;
+}
+.seelie-picker-talent-card:hover .seelie-picker-talent-img-wrap {
+  transform: scale(1.06);
+  border-color: #fcd34d;
+}
+
+.seelie-picker-talent-img {
+  width: 62px;
+  height: 62px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6));
+}
+
+.seelie-picker-talent-name {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #f8fafc;
+  line-height: 1.2;
+  letter-spacing: 0.2px;
+}

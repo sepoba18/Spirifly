@@ -33,7 +33,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/ui/favicon-32x32.png?v=2" />
   <link rel="icon" type="image/png" sizes="16x16" href="assets/ui/favicon-16x16.png?v=2" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/ui/apple-touch-icon.png?v=2" />
-  <link rel="stylesheet" href="styles.css?v=2.10.9" />
+  <link rel="stylesheet" href="styles.css?v=2.10.13" />
   <!-- Script anti-flicker inmediato para evitar parpadeo al recargar pestañas -->
   <script>
     (function () {
@@ -487,6 +487,8 @@
             Personaje</button>
           <button class="seelie-btn-add seelie-btn-add-weapon" id="btnOpenWeaponRosterModal"
             title="Agregar arma independiente del catálogo">+ Arma</button>
+          <button class="seelie-btn-add seelie-btn-add-custom" id="btnOpenCustomCharModal"
+            title="Crear personaje base / personalizado">+ Personalizado</button>
         </div>
 
         <div style="display:flex;align-items:center;gap:0.65rem;flex-wrap:wrap;">
@@ -725,6 +727,11 @@
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
                     <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
                   </svg>
+                </button>
+                <button type="button" class="chip-btn" id="btnCfgEditCustomBase" title="Editar configuración base (elemento, arma, materiales)"
+                  style="display:none;font-size:0.75rem;padding:0.25rem 0.65rem;background:rgba(16,185,129,0.18);color:#34d399;border:1px solid rgba(16,185,129,0.4);border-radius:6px;align-items:center;gap:0.3rem;">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                  <span>Editar base</span>
                 </button>
               </div>
             </div>
@@ -1104,6 +1111,240 @@
                 </svg>
               </button>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           MODAL 3: CREADOR / EDITOR DE PERSONAJE PERSONALIZADO (BASE)
+           ======================================================== -->
+      <div class="seelie-modal-backdrop" id="seelieCustomCharModal">
+        <div class="seelie-custom-dialog" role="dialog" aria-label="Crear o Editar Personaje Base">
+          <!-- Cabecera del Modal -->
+          <div class="seelie-custom-header">
+            <div style="display:flex;align-items:center;gap:0.75rem;">
+              <div class="seelie-custom-header-badge">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+              </div>
+              <div>
+                <h3 id="customModalTitle" style="margin:0;font-size:1.12rem;font-weight:800;color:#ffffff;letter-spacing:0.3px;">Personaje Personalizado</h3>
+                <p style="margin:0;font-size:0.78rem;color:#94a3b8;">Elige los materiales conocidos. Deja los demás por confirmar: no se incluirán en el cálculo.</p>
+              </div>
+            </div>
+            <button type="button" class="seelie-modal-close" id="btnCloseCustomCharModal" title="Cerrar">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M18 6 6 18M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Cuerpo desplazable -->
+          <div class="seelie-custom-body">
+            <!-- Tarjeta de previsualización en tiempo real -->
+            <div class="seelie-custom-preview-banner" id="customCharPreviewBanner">
+              <div class="seelie-custom-preview-left">
+                <div class="seelie-avatar-wrap rar-bg-5" id="customPreviewAvatarWrap">
+                  <img class="seelie-avatar-img" id="customPreviewAvatarImg" src="" alt="Avatar" />
+                  <span class="seelie-el-corner" id="customPreviewElBadge">
+                    <img src="assets/elements/pyro.png" alt="Pyro" style="width:18px;height:18px;object-fit:contain;" />
+                  </span>
+                </div>
+                <div>
+                  <div style="display:flex;align-items:center;gap:0.45rem;flex-wrap:wrap;">
+                    <strong id="customPreviewName" style="font-size:1.15rem;color:#ffffff;text-transform:uppercase;letter-spacing:0.4px;">PERSONALIZADO</strong>
+                    <span id="customPreviewWeaponTag" style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.72rem;color:#cbd5e1;background:rgba(0,0,0,0.35);padding:2px 8px;border-radius:4px;">
+                      <img src="assets/weapon_types/sword.png" alt="" style="width:14px;height:14px;object-fit:contain;" /> Espada ligera
+                    </span>
+                    <span id="customPreviewRarityStars" style="font-size:0.8rem;font-weight:800;color:#fcd34d;">★★★★★</span>
+                    <span class="seelie-custom-base-pill">BASE</span>
+                  </div>
+                  <div id="customPreviewAutoGemText" class="seelie-custom-preview-gem-row"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Formulario de configuración -->
+            <div class="seelie-custom-form-grid">
+              <!-- 1. Nombre -->
+              <div class="seelie-custom-field">
+                <label class="seelie-custom-label" for="customCharNameInput">
+                  <span>1. Nombre del Personaje</span>
+                  <small style="color:#94a3b8;font-weight:normal;">(Cualquier nombre que desees)</small>
+                </label>
+                <input type="text" id="customCharNameInput" class="seelie-custom-input" placeholder="Ej: Dainsleif, Varka, Skirk, Mi Personaje..." value="Personalizado" maxlength="32" />
+              </div>
+
+              <!-- 2. Tipo de Arma y Rareza en 2 columnas -->
+              <div class="seelie-custom-row-2">
+                <!-- Tipo de Arma -->
+                <div class="seelie-custom-field">
+                  <label class="seelie-custom-label">2. Arma que va a ocupar</label>
+                  <div class="seelie-custom-weapon-grid" id="customCharWeaponSelector">
+                    <button type="button" class="seelie-custom-choice-btn active" data-wp="Sword" title="Espada Ligera">
+                      <img src="assets/weapon_types/sword.png" alt="Espada" />
+                      <span>Espada</span>
+                    </button>
+                    <button type="button" class="seelie-custom-choice-btn" data-wp="Claymore" title="Mandoble">
+                      <img src="assets/weapon_types/claymore.png" alt="Mandoble" />
+                      <span>Mandoble</span>
+                    </button>
+                    <button type="button" class="seelie-custom-choice-btn" data-wp="Polearm" title="Lanza">
+                      <img src="assets/weapon_types/polearm.png" alt="Lanza" />
+                      <span>Lanza</span>
+                    </button>
+                    <button type="button" class="seelie-custom-choice-btn" data-wp="Bow" title="Arco">
+                      <img src="assets/weapon_types/bow.png" alt="Arco" />
+                      <span>Arco</span>
+                    </button>
+                    <button type="button" class="seelie-custom-choice-btn" data-wp="Catalyst" title="Catalizador">
+                      <img src="assets/weapon_types/catalyst.png" alt="Catalizador" />
+                      <span>Catalizador</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Rareza 4 o 5 Estrellas -->
+                <div class="seelie-custom-field">
+                  <label class="seelie-custom-label">3. Rareza del Personaje</label>
+                  <div class="seelie-custom-rarity-row" id="customCharRaritySelector">
+                    <button type="button" class="seelie-custom-rarity-btn r5 active" data-rar="5">
+                      <span class="rar-star">5 ★</span>
+                      <span>Cinco Estrellas (Dorado)</span>
+                    </button>
+                    <button type="button" class="seelie-custom-rarity-btn r4" data-rar="4">
+                      <span class="rar-star">4 ★</span>
+                      <span>Cuatro Estrellas (Morado)</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 3. Elemento (y Gema automática) -->
+              <div class="seelie-custom-field">
+                <label class="seelie-custom-label">
+                  <span>4. Elemento</span>
+                  <small style="color:#60a5fa;font-weight:normal;">(Al escoger el elemento, la gema se escoge automáticamente)</small>
+                </label>
+                <div class="seelie-custom-element-grid" id="customCharElementSelector">
+                  <button type="button" class="seelie-custom-el-btn active" data-el="Pyro" title="Pyro">
+                    <img src="assets/elements/pyro.png" alt="Pyro" />
+                    <span>Pyro</span>
+                  </button>
+                  <button type="button" class="seelie-custom-el-btn" data-el="Hydro" title="Hydro">
+                    <img src="assets/elements/hydro.png" alt="Hydro" />
+                    <span>Hydro</span>
+                  </button>
+                  <button type="button" class="seelie-custom-el-btn" data-el="Anemo" title="Anemo">
+                    <img src="assets/elements/anemo.png" alt="Anemo" />
+                    <span>Anemo</span>
+                  </button>
+                  <button type="button" class="seelie-custom-el-btn" data-el="Electro" title="Electro">
+                    <img src="assets/elements/electro.png" alt="Electro" />
+                    <span>Electro</span>
+                  </button>
+                  <button type="button" class="seelie-custom-el-btn" data-el="Dendro" title="Dendro">
+                    <img src="assets/elements/dendro.png" alt="Dendro" />
+                    <span>Dendro</span>
+                  </button>
+                  <button type="button" class="seelie-custom-el-btn" data-el="Cryo" title="Cryo">
+                    <img src="assets/elements/cryo.png" alt="Cryo" />
+                    <span>Cryo</span>
+                  </button>
+                  <button type="button" class="seelie-custom-el-btn" data-el="Geo" title="Geo">
+                    <img src="assets/elements/geo.png" alt="Geo" />
+                    <span>Geo</span>
+                  </button>
+                </div>
+
+                <!-- Box de visualización de gemas automáticas -->
+                <div class="seelie-custom-autogem-card" id="customCharAutoGemCard"></div>
+              </div>
+
+              <div class="seelie-custom-section-divider">
+                <span>MATERIALES DE ASCENSIÓN (1 A 90)</span>
+              </div>
+
+              <!-- 4. Jefe de Mundo y Especialidad Local -->
+              <div class="seelie-custom-row-2">
+                <!-- Jefe de Mundo -->
+                <div class="seelie-custom-field">
+                  <label class="seelie-custom-label">
+                    <span>5. Jefe de Mundo (Boss Drop)</span>
+                    <small style="color:#94a3b8;font-weight:normal;">(46 drops en total)</small>
+                  </label>
+                  <div class="seelie-custom-picker-slot" id="btnPickBossMat" title="Haz clic para elegir jefe de mundo"></div>
+                </div>
+
+                <!-- Especialidad Local -->
+                <div class="seelie-custom-field">
+                  <label class="seelie-custom-label">
+                    <span>6. Especialidad Local Regional</span>
+                    <small style="color:#94a3b8;font-weight:normal;">(168 ítems en total)</small>
+                  </label>
+                  <div class="seelie-custom-picker-slot" id="btnPickLocalMat" title="Haz clic para elegir especialidad regional"></div>
+                </div>
+              </div>
+
+              <div class="seelie-custom-section-divider">
+                <span>MATERIALES DE TALENTOS Y COMUNES (1 A 10)</span>
+              </div>
+
+              <!-- Materiales de Talentos y Comunes -->
+              <div class="seelie-custom-row-2">
+                <!-- 7. Material Común -->
+                <div class="seelie-custom-field">
+                  <label class="seelie-custom-label">
+                    <span>7. Material Común</span>
+                    <small style="color:#94a3b8;font-weight:normal;">(Enemigos comunes)</small>
+                  </label>
+                  <div class="seelie-custom-picker-slot" id="btnPickCommonMat" title="Haz clic para elegir material común"></div>
+                </div>
+
+                <!-- 8. Libros de Talento -->
+                <div class="seelie-custom-field">
+                  <label class="seelie-custom-label">
+                    <span>8. Libros de Talento</span>
+                    <small style="color:#94a3b8;font-weight:normal;">(Serie de dominio)</small>
+                  </label>
+                  <div class="seelie-custom-picker-slot" id="btnPickTalentBook" title="Haz clic para elegir serie de talentos"></div>
+                </div>
+              </div>
+
+              <!-- 9. Jefe Semanal (Ubicado debajo de 7 y 8 sin desplazamiento horizontal) -->
+              <div class="seelie-custom-field" style="margin-top:0.2rem;">
+                <label class="seelie-custom-label">
+                  <span>9. Jefe Semanal</span>
+                  <small style="color:#94a3b8;font-weight:normal;">(Drop semanal - 18 para talentos 10/10/10)</small>
+                </label>
+                <div class="seelie-custom-picker-slot" id="btnPickWeeklyMat" title="Haz clic para elegir jefe semanal"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sub-panel deslizante: Selector visual rápido de materiales -->
+          <div class="seelie-material-picker-sheet" id="seelieMaterialPickerSheet" style="display:none;">
+            <div class="seelie-picker-sheet-header">
+              <div style="display:flex;align-items:center;gap:0.5rem;">
+                <span class="seelie-picker-sheet-icon" id="pickerSheetIcon">📦</span>
+                <h4 id="pickerSheetTitle" style="margin:0;font-size:0.96rem;color:#ffffff;font-weight:800;">Seleccionar</h4>
+              </div>
+              <input type="search" id="pickerSheetSearch" class="seelie-search-box" placeholder="Buscar..." style="max-width:240px;" />
+              <button type="button" class="seelie-circle-icon-btn" id="btnClosePickerSheet" title="Cerrar selector" style="width:28px;height:28px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+              </button>
+            </div>
+            <div class="seelie-picker-sheet-content" id="pickerSheetGrid"></div>
+          </div>
+
+          <!-- Pie del Modal: Acciones -->
+          <div class="seelie-custom-footer">
+            <button type="button" class="chip-btn" id="btnCancelCustomChar" style="padding:0.5rem 1.15rem;font-size:0.86rem;">Cancelar</button>
+            <button type="button" class="seelie-btn-add" id="btnSaveCustomChar" style="padding:0.52rem 1.4rem;font-size:0.9rem;background:linear-gradient(135deg,#059669 0%,#0d9488 100%);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+              <span>Guardar y Configurar</span>
+            </button>
           </div>
         </div>
       </div>
@@ -2124,12 +2365,12 @@
   </div>
 
   <script src="data.js?v=2.10.7"></script>
-  <script src="data_real_genshin.js?v=2.10.12"></script>
+  <script src="data_real_genshin.js?v=2.10.13"></script>
   <script src="assets/data/traveler-planner.js?v=2.10.3"></script>
   <script src="assets/data/simulator-original.js?v=2.10.12"></script>
   <script src="data_builds.js?v=2.10.12"></script>
   <script src="i18n_dictionary.js?v=2.10.12"></script>
-  <script src="planner_real.js?v=2.10.2"></script>
+  <script src="planner_real.js?v=2.10.13"></script>
   <script src="farming_engine.js?v=2.10.12"></script>
   <!-- Google Identity Services (GIS) para OAuth 2.0 y Google Drive API -->
   <script src="https://accounts.google.com/gsi/client" async defer></script>
@@ -2138,7 +2379,7 @@
   <script src="wish_engine.js?v=2.10.1"></script>
   <script src="assets/data/tutorial-i18n.js?v=2.10.6"></script>
   <script src="assets/wish-share.js?v=2.10.8"></script>
-  <script src="app.js?v=2.10.10"></script>
+  <script src="app.js?v=2.10.13"></script>
 
   <!-- ==============================================================
        MODAL: GUÍA RÁPIDA / TUTORIAL INTERACTIVO DE SPIRIFLY

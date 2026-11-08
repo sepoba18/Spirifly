@@ -34,6 +34,12 @@ assert.equal(audit.missingSimulator.length,0,'Todas las builds tienen estadísti
 assert.equal(audit.missingRefs.length, 0, 'Referencias y cantidades de materiales');
 assert.equal(audit.inconsistentDomains.length, 0, 'No mezclar materiales semanales y jefes normales');
 assert.equal(audit.iconMismatch.length, 0, 'Iconos de materiales corresponden a su ID');
+const inconsistentItemIcons = vm.runInContext(`
+  [...REAL_CHARACTERS_DB, ...REAL_WEAPONS_DB].flatMap(entity => Object.values(entity.items || {}))
+    .filter(mat => REAL_MASTER_MATERIALS[mat.id] && mat.icon !== REAL_MASTER_MATERIALS[mat.id].icon)
+    .map(mat => mat.id)
+`, context);
+assert.equal(inconsistentItemIcons.length, 0, 'El catálogo y las fichas deben usar la misma imagen de cada material');
 vm.runInContext(`
   state.activePlans = [{kind:'character', key:'Hu Tao', curState:0, tarState:13, talCur:[1,1,1], talTar:[10,10,10], incWeapon:false}];
 `, context);

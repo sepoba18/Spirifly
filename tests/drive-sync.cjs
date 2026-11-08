@@ -102,6 +102,15 @@ async function test(name,fn) { await fn(); passed++; console.log('PASS '+name); 
  await test('valid Aino plans survive restore and account switch',async()=>{
    const d=new Drive(),a=device(d);const payload=a.GoogleDriveSyncEngine.getLocalPayload();payload.data['main-goals']=[{key:'Aino',level:90}];await a.GoogleDriveSyncEngine.applyRemotePayload(payload);assert.equal(a.state.activePlans[0].key,'Aino');a.AccountManager.switchAccount('main');assert.equal(a.state.activePlans[0].key,'Aino');
  });
+ await test('custom character materials survive restore and account switch',async()=>{
+   const d=new Drive(),a=device(d);
+   const plan={kind:'character',key:'Futuro',isCustom:true,customConfig:{name:'Futuro',element:'Hydro',weapon:'Bow',rarity:5,localMatId:'101257',bossMatId:'unknown',commonMatId:'unknown',talentBookId:'104356',weeklyMatId:'unknown'},curState:0,tarState:13,talCur:[1,1,1],talTar:[1,8,8]};
+   const payload=a.GoogleDriveSyncEngine.getLocalPayload();payload.data['main-goals']=[plan];
+   await a.GoogleDriveSyncEngine.applyRemotePayload(payload);
+   assert.deepEqual(JSON.parse(JSON.stringify(a.state.activePlans[0])),plan);
+   a.AccountManager.switchAccount('main');
+   assert.deepEqual(JSON.parse(JSON.stringify(a.state.activePlans[0])),plan);
+ });
  await test('malformed remote data is rejected before restoring any keys',async()=>{
    const d=new Drive(),a=device(d);const payload=a.GoogleDriveSyncEngine.getLocalPayload();payload.data.gdrive_access_token='unexpected';await assert.rejects(a.GoogleDriveSyncEngine.applyRemotePayload(payload));assert.equal(a.localStorage.getItem('gdrive_access_token'),'test');
  });

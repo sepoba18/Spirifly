@@ -574,7 +574,7 @@ const REAL_MASTER_MATERIALS = {
     "id": "101268",
     "name": "Hierba invernal",
     "rank": 1,
-    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101268.png"
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101266.png"
   },
   "101269": {
     "id": "101269",

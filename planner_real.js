@@ -503,11 +503,264 @@ function isUpgradableWeapon(w) {
 }
 const REAL_UPGRADABLE_WEAPONS = REAL_WEAPONS_DB.filter(isUpgradableWeapon);
 
+/* =====================================================================
+   MÓDULO DE PERSONAJES PERSONALIZADOS / BASE (SEELIE ENGINE COMPATIBLE)
+   ===================================================================== */
+const ELEMENT_GEMS_MAP = {
+  Pyro: ["104111", "104112", "104113", "104114"],
+  Hydro: ["104121", "104122", "104123", "104124"],
+  Anemo: ["104151", "104152", "104153", "104154"],
+  Electro: ["104141", "104142", "104143", "104144"],
+  Dendro: ["104131", "104132", "104133", "104134"],
+  Cryo: ["104161", "104162", "104163", "104164"],
+  Geo: ["104171", "104172", "104173", "104174"]
+};
+
+const COMMON_DROP_BASE_IDS = [
+  "112002", "112005", "112008", "112011", "112032",
+  "112035", "112038", "112044", "112053", "112059",
+  "112065", "112080", "112083", "112101", "112104",
+  "112122", "112125", "112146", "112149"
+];
+
+const TALENT_BOOK_BASE_IDS = [
+  "104301", "104304", "104307", "104310", "104313",
+  "104316", "104320", "104323", "104326", "104329",
+  "104332", "104335", "104338", "104341", "104344",
+  "104347", "104350", "104353", "104356", "104359",
+  "104362", "104365", "104368", "104371"
+];
+
+function getAllWorldBossMaterials() {
+  if (typeof REAL_MASTER_MATERIALS === "undefined") return [];
+  return Object.values(REAL_MASTER_MATERIALS)
+    .filter((m) => String(m.id).startsWith("113") && m.rank === 4 && String(m.id) !== "113021")
+    .sort((a, b) => a.name.localeCompare(b.name, "es"));
+}
+
+function getAllWeeklyBossMaterials() {
+  if (typeof REAL_MASTER_MATERIALS === "undefined") return [];
+  return Object.values(REAL_MASTER_MATERIALS)
+    .filter((m) => String(m.id).startsWith("113") && m.rank === 5)
+    .sort((a, b) => a.name.localeCompare(b.name, "es"));
+}
+
+const LOCAL_SPECIALTY_REGIONS = {
+  // 1. Mondstadt (8 oficiales)
+  "100021": "Mondstadt", "100022": "Mondstadt", "100023": "Mondstadt", "100024": "Mondstadt",
+  "100025": "Mondstadt", "100055": "Mondstadt", "100056": "Mondstadt", "100057": "Mondstadt",
+
+  // 2. Liyue (9 oficiales)
+  "100027": "Liyue", "100028": "Liyue", "100029": "Liyue", "100030": "Liyue",
+  "100031": "Liyue", "100033": "Liyue", "100034": "Liyue", "100058": "Liyue",
+  "101241": "Liyue",
+
+  // 3. Inazuma (9 oficiales)
+  "101201": "Inazuma", "101202": "Inazuma", "101203": "Inazuma", "101204": "Inazuma",
+  "101205": "Inazuma", "101206": "Inazuma", "101207": "Inazuma", "101208": "Inazuma",
+  "101209": "Inazuma",
+
+  // 4. Sumeru (9 oficiales)
+  "101213": "Sumeru", "101214": "Sumeru", "101215": "Sumeru", "101217": "Sumeru",
+  "101220": "Sumeru", "101222": "Sumeru", "101223": "Sumeru", "101224": "Sumeru",
+  "101225": "Sumeru",
+
+  // 5. Fontaine (8 oficiales)
+  "101232": "Fontaine", "101233": "Fontaine", "101235": "Fontaine", "101236": "Fontaine",
+  "101237": "Fontaine", "101238": "Fontaine", "101239": "Fontaine", "101240": "Fontaine",
+
+  // 6. Natlan (8 oficiales)
+  "101247": "Natlan", "101248": "Natlan", "101249": "Natlan", "101250": "Natlan",
+  "101252": "Natlan", "101253": "Natlan", "101254": "Natlan", "101255": "Natlan",
+
+  // 7. Nod-Krai (6 especialidades del catálogo local)
+  "101257": "Nod-Krai", // Rodamiento portátil
+  "101261": "Nod-Krai", // Flor velaescarcha
+  "101263": "Nod-Krai", // Plata lunacaída
+  "101268": "Nod-Krai", // Hierba invernal (Colombina)
+  "101269": "Nod-Krai", // Ámbar de pino (Illuga, Nicole)
+  "101272": "Nod-Krai", // Polilla alaetérea (Linnéa)
+
+  // 8. Snezhnaya (6 especialidades)
+  "101273": "Snezhnaya", // Artemisia feérica
+  "101274": "Snezhnaya", // Sombrillarrugada cristalina
+  "101275": "Snezhnaya", // Flor frigifeérica
+  "101276": "Snezhnaya", // Hierbalana
+  "101277": "Snezhnaya", // Helecho áureo
+  "101285": "Snezhnaya"  // Alquequenje luminoso
+};
+
+const REGION_ORDER = [
+  "Mondstadt",
+  "Liyue",
+  "Inazuma",
+  "Sumeru",
+  "Fontaine",
+  "Natlan",
+  "Nod-Krai",
+  "Snezhnaya"
+];
+
+function getAllLocalSpecialties() {
+  if (typeof REAL_MASTER_MATERIALS === "undefined") return [];
+  const list = Object.values(REAL_MASTER_MATERIALS)
+    .filter((m) => Object.hasOwn(LOCAL_SPECIALTY_REGIONS, String(m.id)))
+    .map((m) => {
+      const region = LOCAL_SPECIALTY_REGIONS[String(m.id)] || "Otras";
+      return { ...m, region };
+    });
+
+  return list.sort((a, b) => {
+    const regIdxA = REGION_ORDER.indexOf(a.region);
+    const regIdxB = REGION_ORDER.indexOf(b.region);
+    const orderA = regIdxA === -1 ? 999 : regIdxA;
+    const orderB = regIdxB === -1 ? 999 : regIdxB;
+    if (orderA !== orderB) return orderA - orderB;
+    return a.name.localeCompare(b.name, "es");
+  });
+}
+
+function getAllCommonDropFamilies() {
+  return COMMON_DROP_BASE_IDS.map((baseId) => {
+    const id1 = baseId;
+    const id2 = String(Number(baseId) + 1);
+    const id3 = String(Number(baseId) + 2);
+    const m1 = getMat(id1);
+    const m2 = getMat(id2);
+    const m3 = getMat(id3);
+    const fullName = m1 && m3 ? `${m1.name} / ${m3.name}` : (m1 ? m1.name : baseId);
+    return {
+      baseId,
+      name: fullName,
+      shortName: m3 ? m3.name : (m1 ? m1.name : baseId),
+      items: [m1, m2, m3].filter(Boolean)
+    };
+  });
+}
+
+function getAllTalentBookFamilies() {
+  return TALENT_BOOK_BASE_IDS.map((baseId) => {
+    const id1 = baseId;
+    const id2 = String(Number(baseId) + 1);
+    const id3 = String(Number(baseId) + 2);
+    const m1 = getMat(id1);
+    const m2 = getMat(id2);
+    const m3 = getMat(id3);
+    const rawFam = m3 ? m3.name.replace(/^(Filosofía|Filosofías)\s+de(l|\s+la|\s+las)?\s+/i, "") : (m1 ? m1.name : baseId);
+    const familyName = rawFam.charAt(0).toUpperCase() + rawFam.slice(1);
+    return {
+      baseId,
+      familyName,
+      fullName: m3 ? m3.name : (m1 ? m1.name : baseId),
+      items: [m1, m2, m3].filter(Boolean)
+    };
+  });
+}
+
+function buildCustomCharacterObject(cfg) {
+  if (!cfg) return null;
+  const name = cfg.name || "Personalizado";
+  const rarity = Number(cfg.rarity) || 5;
+  const element = cfg.element || "Pyro";
+  const weapon = cfg.weapon || "Sword";
+  const gems = ELEMENT_GEMS_MAP[element] || ELEMENT_GEMS_MAP.Pyro;
+  const g1 = gems[0], g2 = gems[1], g3 = gems[2], g4 = gems[3];
+
+  const c1 = cfg.commonMatId === "unknown" ? null : (cfg.commonMatId || "112005");
+  const c2 = c1 ? String(Number(c1) + 1) : null;
+  const c3 = c1 ? String(Number(c1) + 2) : null;
+
+  const b1 = cfg.talentBookId === "unknown" ? null : (cfg.talentBookId || "104301");
+  const b2 = b1 ? String(Number(b1) + 1) : null;
+  const b3 = b1 ? String(Number(b1) + 2) : null;
+
+  const boss = cfg.bossMatId === "unknown" ? null : (cfg.bossMatId || "113011");
+  const local = cfg.localMatId === "unknown" ? null : (cfg.localMatId || "100025");
+  const weekly = cfg.weeklyMatId === "unknown" ? null : (cfg.weeklyMatId || "113003");
+  const crown = "104319";
+
+  const fallbackSvg = makeAvatarSvgDataUri(name, element, rarity);
+  let icon = fallbackSvg;
+  if (cfg.avatarChoice === "lumine") icon = "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_PlayerGirl.png";
+  else if (cfg.avatarChoice === "aether") icon = "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_PlayerBoy.png";
+
+  const ascensionCosts = {
+    "1": { coinCost: 20000, costItems: { [local]: 3, [g1]: 1, [c1]: 3 } },
+    "2": { coinCost: 40000, costItems: { [local]: 10, [g2]: 3, [c1]: 15, [boss]: 2 } },
+    "3": { coinCost: 60000, costItems: { [local]: 20, [g2]: 6, [c2]: 12, [boss]: 4 } },
+    "4": { coinCost: 80000, costItems: { [local]: 30, [g3]: 3, [c2]: 18, [boss]: 8 } },
+    "5": { coinCost: 100000, costItems: { [local]: 45, [g3]: 6, [c3]: 12, [boss]: 12 } },
+    "6": { coinCost: 120000, costItems: { [local]: 60, [g4]: 6, [c3]: 24, [boss]: 20 } }
+  };
+
+  const singleTalentCosts = {
+    "2": { coinCost: 12500, costItems: { [b1]: 3, [c1]: 6 } },
+    "3": { coinCost: 17500, costItems: { [b2]: 2, [c2]: 3 } },
+    "4": { coinCost: 25000, costItems: { [b2]: 4, [c2]: 4 } },
+    "5": { coinCost: 30000, costItems: { [b2]: 6, [c2]: 6 } },
+    "6": { coinCost: 37500, costItems: { [b2]: 9, [c2]: 9 } },
+    "7": { coinCost: 120000, costItems: { [b3]: 4, [c3]: 4, [weekly]: 1 } },
+    "8": { coinCost: 260000, costItems: { [b3]: 6, [c3]: 6, [weekly]: 1 } },
+    "9": { coinCost: 450000, costItems: { [b3]: 12, [c3]: 9, [weekly]: 2 } },
+    "10": { coinCost: 700000, costItems: { [crown]: 1, [b3]: 16, [c3]: 12, [weekly]: 2 } }
+  };
+
+  // Los materiales pendientes no deben convertirse en recursos ficticios del plan.
+  for (const step of [...Object.values(ascensionCosts), ...Object.values(singleTalentCosts)]) {
+    step.costItems = Object.fromEntries(Object.entries(step.costItems).filter(([id]) => getMat(id)));
+  }
+
+  const talents = [
+    { name: "Ataque Normal", icon: "https://gi.yatta.moe/assets/UI/Skill_A_01.png", costs: singleTalentCosts },
+    { name: "Habilidad Elemental", icon: "https://gi.yatta.moe/assets/UI/Skill_S_01.png", costs: singleTalentCosts },
+    { name: "Habilidad Definitiva", icon: "https://gi.yatta.moe/assets/UI/Skill_E_01.png", costs: singleTalentCosts }
+  ];
+
+  const items = { "202": { id: "202", name: "Mora", rank: 3, icon: "https://gi.yatta.moe/assets/UI/UI_ItemIcon_202.png" } };
+  [g1, g2, g3, g4, c1, c2, c3, b1, b2, b3, boss, local, weekly, crown].forEach((mid) => {
+    const m = getMat(mid);
+    if (m) items[mid] = m;
+  });
+
+  return {
+    id: cfg.id || `custom_${name.toLowerCase().replace(/[^a-z0-9]/g, "_")}`,
+    name,
+    rarity,
+    element,
+    weapon,
+    region: "BASE",
+    icon,
+    fallbackAvatar: fallbackSvg,
+    namecard: "",
+    isCustom: true,
+    customConfig: cfg,
+    talents,
+    ascensionCosts,
+    items
+  };
+}
+
 function getRosterCharInfo(charName) {
+  if (state && Array.isArray(state.activePlans)) {
+    const customPlan = state.activePlans.find(
+      (p) => p.kind === "character" && p.isCustom && (p.key === charName || (p.customConfig && p.customConfig.name === charName))
+    );
+    if (customPlan && customPlan.customConfig) {
+      return buildCustomCharacterObject(customPlan.customConfig);
+    }
+  }
+  if (state && state.cfgDraft && state.cfgDraft.isCustom && (state.cfgDraft.key === charName || (state.cfgDraft.customConfig && state.cfgDraft.customConfig.name === charName))) {
+    return buildCustomCharacterObject(state.cfgDraft.customConfig);
+  }
   const c = REAL_CHAR_BY_NAME[charName];
   if (!c) return null;
   if (!c.fallbackAvatar) c.fallbackAvatar = makeAvatarSvgDataUri(c.name, c.element, c.rarity);
   return c;
+}
+
+function getCustomPendingCount(cfg) {
+  return ["bossMatId", "localMatId", "commonMatId", "talentBookId", "weeklyMatId"]
+    .filter((field) => cfg && cfg[field] === "unknown").length;
 }
 
 function getWeaponInfo(weaponName) {
@@ -845,7 +1098,65 @@ function renderRosterModalGrid() {
   const f = state.rosterModalFilter;
   const search = f.search ? f.search.normalize("NFD").replace(/[\u0300-\u036f]/g, "") : "";
 
-  const filtered = REAL_CHAR_LIST.filter((ch) => {
+  // Botón/Tile especial para crear personaje personalizado
+
+  if (!f.hideAdded || !addedKeys.size) {
+
+    const customTile = document.createElement("div");
+
+    customTile.className = "seelie-roster-tile seelie-roster-custom-tile";
+
+    customTile.title = "Crear un personaje base / personalizado";
+
+    customTile.innerHTML = `
+
+      <div class="seelie-roster-portrait seelie-custom-portrait-card">
+
+        <div class="seelie-custom-plus-badge">
+
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+
+        </div>
+
+        <span class="seelie-custom-tag-badge">BASE</span>
+
+      </div>
+
+      <div class="seelie-roster-name" style="color:#34d399;font-weight:800;">+ Personalizado</div>
+
+    `;
+
+    customTile.addEventListener("click", () => {
+
+      closeRosterModal();
+
+      openCustomCharModal();
+
+    });
+
+    gridEl.appendChild(customTile);
+
+  }
+
+
+
+  // Incluir personajes personalizados del usuario en la búsqueda y catálogo
+
+  const userCustomChars = (state.activePlans || [])
+
+    .filter((p) => p.kind === "character" && p.isCustom && p.customConfig)
+
+    .map((p) => buildCustomCharacterObject(p.customConfig))
+
+    .filter(Boolean);
+
+
+
+  const allAvailableChars = [...userCustomChars, ...REAL_CHAR_LIST];
+
+
+
+  const filtered = allAvailableChars.filter((ch) => {
     if (f.element && ch.element !== f.element) return false;
     if (f.weapon && ch.weapon !== f.weapon) return false;
     if (f.rarity && ch.rarity !== f.rarity) return false;
@@ -991,8 +1302,24 @@ function updateCharConfigModalUI() {
   document.getElementById("cfgModalElBadge").innerHTML = elementImgHtml(info.element, 18);
   const curLang = (typeof state !== "undefined" && state.lang) || "es";
   const dispCharName = (typeof getCharacterTranslatedName === "function") ? getCharacterTranslatedName(d.key, curLang) : d.key;
-  document.getElementById("cfgModalCharName").textContent = dispCharName.toUpperCase();
+  const pendingCount = d.isCustom ? getCustomPendingCount(d.customConfig) : 0;
+  document.getElementById("cfgModalCharName").textContent = `${dispCharName.toUpperCase()}${pendingCount ? " · CÁLCULO PARCIAL" : ""}`;
   document.getElementById("btnCfgToggleActive").classList.toggle("off", d.active === false);
+
+  const editBaseBtn = document.getElementById("btnCfgEditCustomBase");
+  if (editBaseBtn) {
+    if (d.isCustom) {
+      editBaseBtn.style.display = "inline-flex";
+      editBaseBtn.onclick = (e) => {
+        e.stopPropagation();
+        closeCharConfigModal(true);
+        openCustomCharModal(d.key);
+      };
+    } else {
+      editBaseBtn.style.display = "none";
+      editBaseBtn.onclick = null;
+    }
+  }
 
   // 2. Notas, constelacion y favorito
   document.getElementById("cfgModalNotes").value = d.notes || "";
@@ -1866,6 +2193,7 @@ function renderCharacterWeaponPlanner() {
           <div>
             <div style="display:flex;align-items:center;gap:0.4rem;">
               <strong style="font-size:1.1rem;color:#ffffff;text-transform:uppercase;letter-spacing:0.3px;">${escapeHtml(dispCharPlanKey)}</strong>
+              ${plan.isCustom ? `<span class="seelie-custom-base-pill" title="${getCustomPendingCount(plan.customConfig) ? "Cálculo parcial: hay materiales por confirmar" : "Personaje base / personalizado"}">BASE${getCustomPendingCount(plan.customConfig) ? " · PARCIAL" : ""}</span>` : ""}
               <span style="display:inline-flex;align-items:center;gap:0.25rem;font-size:0.72rem;color:#cbd5e1;background:rgba(0,0,0,0.35);padding:1px 6px;border-radius:4px;">
                 ${weaponTypeImgHtml(info.weapon, 14)} ${escapeHtml(getWeaponTypeLabel(info.weapon))}
               </span>
@@ -1934,4 +2262,942 @@ function bindPlannerCardPause(card, plan) {
     if (!active && state.farmingCharFilter === key) state.farmingCharFilter = "all";
     savePlansToStorage();
   });
+}
+
+
+
+
+/* =====================================================================
+
+   CONTROLADOR Y EVENTOS DEL CREADOR DE PERSONAJE BASE / PERSONALIZADO
+
+   ===================================================================== */
+
+let customCharDraft = null;
+
+let currentPickerType = null;
+
+
+
+function getDefaultCustomConfig() {
+
+  return {
+
+    name: "Personalizado",
+
+    weapon: "Sword",
+
+    rarity: 5,
+
+    element: "Pyro",
+
+    bossMatId: "unknown",
+
+    localMatId: "unknown",
+
+    commonMatId: "unknown",
+
+    talentBookId: "unknown",
+
+    weeklyMatId: "unknown",
+
+    avatarChoice: "custom"
+
+  };
+
+}
+
+
+
+function openCustomCharModal(editKey) {
+
+  closeMaterialPicker();
+
+  if (editKey) {
+
+    const existing = state.activePlans.find((p) => p.kind === "character" && p.isCustom && p.key === editKey);
+
+    if (existing && existing.customConfig) {
+
+      customCharDraft = JSON.parse(JSON.stringify(existing.customConfig));
+
+      customCharDraft.originalKey = editKey;
+
+    } else {
+
+      customCharDraft = getDefaultCustomConfig();
+
+    }
+
+    const titleEl = document.getElementById("customModalTitle");
+
+    if (titleEl) titleEl.textContent = `Editar ${customCharDraft.name || "Personaje"}`;
+
+  } else {
+
+    customCharDraft = getDefaultCustomConfig();
+
+    const titleEl = document.getElementById("customModalTitle");
+
+    if (titleEl) titleEl.textContent = "Crear Personaje Personalizado";
+
+  }
+
+
+
+  const nameInput = document.getElementById("customCharNameInput");
+
+  if (nameInput) nameInput.value = customCharDraft.name || "Personalizado";
+
+
+
+  const modal = document.getElementById("seelieCustomCharModal");
+
+  if (modal) modal.classList.add("open");
+
+  updateCustomCharModalUI();
+
+}
+
+
+
+function closeCustomCharModal() {
+
+  closeMaterialPicker();
+
+  const modal = document.getElementById("seelieCustomCharModal");
+
+  if (modal) modal.classList.remove("open");
+
+  customCharDraft = null;
+
+}
+
+
+
+function updateCustomCharModalUI() {
+
+  if (!customCharDraft) return;
+
+  const cfg = customCharDraft;
+
+  const nameInput = document.getElementById("customCharNameInput");
+
+  if (nameInput && nameInput.value.trim() !== cfg.name) {
+
+    cfg.name = nameInput.value.trim() || "Personalizado";
+
+  }
+
+
+
+  // 1. Previsualización en banner
+
+  const namePreview = document.getElementById("customPreviewName");
+
+  if (namePreview) namePreview.textContent = (cfg.name || "PERSONALIZADO").toUpperCase();
+
+
+
+  const elBadge = document.getElementById("customPreviewElBadge");
+
+  if (elBadge) elBadge.innerHTML = `<img src="assets/elements/${cfg.element.toLowerCase()}.png" alt="${cfg.element}" style="width:18px;height:18px;object-fit:contain;" />`;
+
+
+
+  const banner = document.getElementById("customCharPreviewBanner");
+
+  if (banner) {
+
+    const bannerGrad = ELEMENT_BANNERS[cfg.element] || ELEMENT_BANNERS.Pyro;
+
+    banner.style.background = bannerGrad;
+
+  }
+
+
+
+  const avatarWrap = document.getElementById("customPreviewAvatarWrap");
+
+  if (avatarWrap) avatarWrap.className = `seelie-avatar-wrap rar-bg-${cfg.rarity}`;
+
+
+
+  const avatarImg = document.getElementById("customPreviewAvatarImg");
+
+  if (avatarImg) {
+
+    const svg = makeAvatarSvgDataUri(cfg.name, cfg.element, cfg.rarity);
+
+    avatarImg.src = svg;
+
+  }
+
+
+
+  const weaponTag = document.getElementById("customPreviewWeaponTag");
+
+  if (weaponTag) {
+
+    weaponTag.innerHTML = `<img src="assets/weapon_types/${cfg.weapon.toLowerCase()}.png" alt="" style="width:14px;height:14px;object-fit:contain;" /> ${escapeHtml(getWeaponTypeLabel(cfg.weapon))}`;
+
+  }
+
+
+
+  const rarityStars = document.getElementById("customPreviewRarityStars");
+
+  if (rarityStars) {
+
+    rarityStars.textContent = cfg.rarity === 5 ? "★★★★★" : "★★★★";
+
+    rarityStars.style.color = cfg.rarity === 5 ? "#fcd34d" : "#c084fc";
+
+  }
+
+
+
+  // 2. Selectores de Arma, Rareza y Elemento
+
+  document.querySelectorAll("#customCharWeaponSelector .seelie-custom-choice-btn").forEach((btn) => {
+
+    btn.classList.toggle("active", btn.dataset.wp === cfg.weapon);
+
+  });
+
+
+
+  document.querySelectorAll("#customCharRaritySelector .seelie-custom-rarity-btn").forEach((btn) => {
+
+    btn.classList.toggle("active", Number(btn.dataset.rar) === Number(cfg.rarity));
+
+  });
+
+
+
+  document.querySelectorAll("#customCharElementSelector .seelie-custom-el-btn").forEach((btn) => {
+
+    btn.classList.toggle("active", btn.dataset.el === cfg.element);
+
+  });
+
+
+
+  // 3. Gema elemental automática
+
+  const gems = ELEMENT_GEMS_MAP[cfg.element] || ELEMENT_GEMS_MAP.Pyro;
+
+  const gemObjs = gems.map((gid) => getMat(gid)).filter(Boolean);
+
+  const gemLastName = gemObjs.length ? gemObjs[gemObjs.length - 1].name : "Gema Elemental";
+
+  const gemIconsHtml = gemObjs
+
+    .map((g) => `<div class="seelie-custom-autogem-mini" title="${escapeHtml(g.name)}"><img src="${g.icon}" alt="${escapeHtml(g.name)}" /></div>`)
+
+    .join("");
+
+
+
+  const autoGemTextEl = document.getElementById("customPreviewAutoGemText");
+
+  if (autoGemTextEl) {
+
+    autoGemTextEl.innerHTML = `<span style="color:#fbbf24;font-weight:700;">💎 Gema automática:</span> ${escapeHtml(gemLastName)} <div style="display:inline-flex;align-items:center;gap:0.3rem;margin-left:0.4rem;">${gemIconsHtml}</div>`;
+
+  }
+
+
+
+  const autoGemCard = document.getElementById("customCharAutoGemCard");
+
+  if (autoGemCard) {
+
+    autoGemCard.innerHTML = `
+
+      <div class="seelie-custom-autogem-info">
+
+        <span style="font-size:1.15rem;">💎</span>
+
+        <div>
+
+          <strong style="font-size:0.86rem;color:#ffffff;display:block;">Gema de Ascensión: ${escapeHtml(gemLastName)}</strong>
+
+          <small style="color:#94a3b8;font-size:0.73rem;">Asignada automáticamente según el elemento ${escapeHtml(cfg.element)} (Pedacito, Fragmento, Trozo, Gema)</small>
+
+        </div>
+
+      </div>
+
+      <div class="seelie-custom-autogem-icons">${gemIconsHtml}</div>
+
+    `;
+
+  }
+
+
+
+  // 4. Slots de materiales (Jefe, Especialidad, Común, Talento, Semanal)
+  renderMaterialSlot("btnPickBossMat", getMat(cfg.bossMatId), "Jefe de Mundo", "46 necesarios", 4);
+  const localMat = getMat(cfg.localMatId);
+  const localRegion = LOCAL_SPECIALTY_REGIONS[String(cfg.localMatId)] || "";
+  const localSub = localRegion ? `${localRegion} • 168 necesarias` : "168 necesarias";
+  renderMaterialSlot("btnPickLocalMat", localMat, "Especialidad Local", localSub, 1);
+  // Material común (3 tiers)
+  const cFam = getAllCommonDropFamilies().find((f) => f.baseId === cfg.commonMatId);
+  if (cFam) renderFamilySlot("btnPickCommonMat", cFam, "Material Común");
+  else renderMaterialSlot("btnPickCommonMat", null, "Material Común", "", 1);
+  // Libros de talento (Foto grande y nombre)
+  const tFam = getAllTalentBookFamilies().find((f) => f.baseId === cfg.talentBookId);
+  if (tFam) renderTalentSlot("btnPickTalentBook", tFam);
+  else renderMaterialSlot("btnPickTalentBook", null, "Libros de talento", "", 2);
+  // Jefe semanal
+  renderMaterialSlot("btnPickWeeklyMat", getMat(cfg.weeklyMatId), "Jefe Semanal", "18 necesarios", 5);
+
+}
+
+
+
+function renderMaterialSlot(elId, mat, fallbackLabel, subText, rank) {
+
+  const el = document.getElementById(elId);
+
+  if (!el) return;
+
+  const name = mat ? mat.name : `${fallbackLabel}: por confirmar`;
+
+  const icon = mat ? mat.icon : "";
+
+  const rankClass = rank ? `rar-bg-${rank}` : "";
+
+  el.innerHTML = `
+
+    <div class="seelie-custom-slot-left">
+
+      <div class="seelie-custom-slot-icon-wrap ${rankClass}">
+
+        ${mat ? `<img src="${icon}" alt="${escapeHtml(name)}" onerror="this.style.visibility='hidden'" />` : '<span aria-hidden="true">?</span>'}
+
+      </div>
+
+      <div class="seelie-custom-slot-details">
+
+        <span class="seelie-custom-slot-title" title="${escapeHtml(name)}">${escapeHtml(name)}</span>
+
+        <span class="seelie-custom-slot-sub">${escapeHtml(mat ? subText : "Sin incluir en el cálculo")}</span>
+
+      </div>
+
+    </div>
+
+    <span class="chip-btn" style="font-size:0.75rem;padding:0.25rem 0.65rem;">Cambiar</span>
+
+  `;
+
+}
+
+
+
+function renderTalentSlot(elId, fam) {
+  const el = document.getElementById(elId);
+  if (!el || !fam) return;
+
+  const bookItem = fam.items[2] || fam.items[fam.items.length - 1] || fam.items[0];
+  const bookIcon = bookItem ? bookItem.icon : "";
+  const title = fam.familyName || fam.name;
+
+  el.innerHTML = `
+    <div class="seelie-custom-slot-left">
+      <div class="seelie-custom-slot-icon-wrap rar-bg-4" style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;">
+        <img src="${bookIcon}" alt="${escapeHtml(title)}" style="width:40px;height:40px;object-fit:contain;" onerror="this.style.visibility='hidden'" />
+      </div>
+      <div class="seelie-custom-slot-details" style="min-width:0;">
+        <span class="seelie-custom-slot-title" title="${escapeHtml(fam.fullName || title)}">${escapeHtml(title)}</span>
+        <span class="seelie-custom-slot-sub">Libro de Talento</span>
+      </div>
+    </div>
+    <span class="chip-btn" style="font-size:0.75rem;padding:0.25rem 0.65rem;">Cambiar</span>
+  `;
+}
+
+function renderFamilySlot(elId, fam, typeLabel) {
+
+  const el = document.getElementById(elId);
+
+  if (!el || !fam) return;
+
+  const iconsHtml = (fam.items || [])
+
+    .map((item) => `<img src="${item.icon}" alt="" style="width:28px;height:28px;object-fit:contain;" />`)
+
+    .join("");
+
+  const title = fam.familyName || fam.shortName || fam.name;
+
+  el.innerHTML = `
+
+    <div class="seelie-custom-slot-left">
+
+      <div class="seelie-custom-slot-icon-wrap" style="width:auto;padding:0 4px;gap:2px;">
+
+        ${iconsHtml}
+
+      </div>
+
+      <div class="seelie-custom-slot-details">
+
+        <span class="seelie-custom-slot-title" title="${escapeHtml(fam.fullName || fam.name)}">${escapeHtml(title)}</span>
+
+        <span class="seelie-custom-slot-sub">${escapeHtml(typeLabel)} (3 rangos)</span>
+
+      </div>
+
+    </div>
+
+    <span class="chip-btn" style="font-size:0.75rem;padding:0.25rem 0.65rem;">Cambiar</span>
+
+  `;
+
+}
+
+
+
+function openMaterialPicker(type) {
+
+  currentPickerType = type;
+
+  const sheet = document.getElementById("seelieMaterialPickerSheet");
+
+  if (!sheet) return;
+
+  const searchInput = document.getElementById("pickerSheetSearch");
+
+  if (searchInput) searchInput.value = "";
+
+
+
+  const titleEl = document.getElementById("pickerSheetTitle");
+
+  const iconEl = document.getElementById("pickerSheetIcon");
+
+  const titles = {
+
+    boss: ["Material de Jefe de Mundo (Boss)", "⚔️"],
+
+    local: ["Especialidad Local Regional", "🌱"],
+
+    common: ["Material Común de Enemigos", "🛡️"],
+
+    talent: ["Serie de Libros de Talento", "📖"],
+
+    weekly: ["Material de Jefe Semanal", "👑"]
+
+  };
+
+  const [tName, tIcon] = titles[type] || ["Seleccionar Material", "📦"];
+
+  if (titleEl) titleEl.textContent = tName;
+
+  if (iconEl) iconEl.textContent = tIcon;
+
+
+
+  sheet.style.display = "flex";
+
+  renderMaterialPickerGrid(type, "");
+
+  if (searchInput) searchInput.focus();
+
+}
+
+
+
+function closeMaterialPicker() {
+
+  currentPickerType = null;
+
+  const sheet = document.getElementById("seelieMaterialPickerSheet");
+
+  if (sheet) sheet.style.display = "none";
+
+}
+
+
+
+function normalizeMaterialSearch(value) {
+  return String(value || "").trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
+function renderMaterialPickerGrid(type, filterText) {
+  const grid = document.getElementById("pickerSheetGrid");
+  if (!grid) return;
+  grid.innerHTML = "";
+  const search = (filterText || "").trim().toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+
+  grid.classList.toggle("seelie-picker-grid-talents", type === "talent");
+
+  const field = { boss: "bossMatId", local: "localMatId", common: "commonMatId", talent: "talentBookId", weekly: "weeklyMatId" }[type];
+  if (!field) return;
+  if (!search || normalizeMaterialSearch("Por confirmar desconocido sin material").includes(search)) {
+    const pending = document.createElement("button");
+    pending.type = "button";
+    pending.className = "chip-btn";
+    pending.style.gridColumn = "1 / -1";
+    pending.textContent = "Por confirmar · no incluir este material";
+    pending.addEventListener("click", () => {
+      if (customCharDraft) customCharDraft[field] = "unknown";
+      closeMaterialPicker();
+      updateCustomCharModalUI();
+    });
+    grid.appendChild(pending);
+  }
+
+  if (type === "boss") {
+    const list = getAllWorldBossMaterials().filter((m) => {
+      if (!search) return true;
+      const plain = m.name.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+      return plain.includes(search);
+    });
+    list.forEach((m) => {
+      const card = document.createElement("div");
+      const isSelected = customCharDraft && String(customCharDraft.bossMatId) === String(m.id);
+      card.className = `seelie-picker-item-card ${isSelected ? "selected" : ""}`;
+      card.innerHTML = `
+        <img class="seelie-picker-item-img rar-bg-${m.rank || 4}" src="${m.icon}" alt="${escapeHtml(m.name)}" loading="lazy" />
+        <span class="seelie-picker-item-name">${escapeHtml(m.name)}</span>
+      `;
+      card.addEventListener("click", () => {
+        if (customCharDraft) customCharDraft.bossMatId = String(m.id);
+        closeMaterialPicker();
+        updateCustomCharModalUI();
+      });
+      grid.appendChild(card);
+    });
+  } else if (type === "local") {
+    const list = getAllLocalSpecialties().filter((m) => {
+      if (!search) return true;
+      const plain = `${m.name} ${m.region || ""}`.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+      return plain.includes(search);
+    });
+
+    let currentRegion = null;
+    list.forEach((m) => {
+      const reg = m.region || "Otras";
+      if (reg !== currentRegion && !search) {
+        currentRegion = reg;
+        const header = document.createElement("div");
+        header.className = "seelie-picker-section-header";
+        header.innerHTML = `<span>📍 ${escapeHtml(reg)}</span>`;
+        grid.appendChild(header);
+      }
+
+      const card = document.createElement("div");
+      const isSelected = customCharDraft && String(customCharDraft.localMatId) === String(m.id);
+      card.className = `seelie-picker-item-card ${isSelected ? "selected" : ""}`;
+      card.innerHTML = `
+        <img class="seelie-picker-item-img rar-bg-1" src="${m.icon}" alt="${escapeHtml(m.name)}" loading="lazy" />
+        <div style="display:flex;flex-direction:column;min-width:0;">
+          <span class="seelie-picker-item-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${escapeHtml(m.name)}</span>
+          <small style="color:#94a3b8;font-size:0.7rem;">${escapeHtml(reg)}</small>
+        </div>
+      `;
+      card.addEventListener("click", () => {
+        if (customCharDraft) customCharDraft.localMatId = String(m.id);
+        closeMaterialPicker();
+        updateCustomCharModalUI();
+      });
+      grid.appendChild(card);
+    });
+  } else if (type === "common") {
+    const list = getAllCommonDropFamilies().filter((f) => {
+      if (!search) return true;
+      const plain = `${f.name} ${f.shortName || ""}`.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+      return plain.includes(search);
+    });
+    list.forEach((f) => {
+      const card = document.createElement("div");
+      const isSelected = customCharDraft && String(customCharDraft.commonMatId) === String(f.baseId);
+      card.className = `seelie-picker-item-card ${isSelected ? "selected" : ""}`;
+      const imgsHtml = (f.items || [])
+        .map((it) => `<img src="${it.icon}" alt="" style="width:28px;height:28px;object-fit:contain;" />`)
+        .join("");
+      card.innerHTML = `
+        <div style="display:flex;align-items:center;gap:2px;flex-shrink:0;">${imgsHtml}</div>
+        <div style="display:flex;flex-direction:column;min-width:0;">
+          <strong class="seelie-picker-item-name">${escapeHtml(f.shortName || f.name)}</strong>
+          <small style="color:#94a3b8;font-size:0.7rem;">${escapeHtml(f.items[0]?.name || "")}</small>
+        </div>
+      `;
+      card.addEventListener("click", () => {
+        if (customCharDraft) customCharDraft.commonMatId = String(f.baseId);
+        closeMaterialPicker();
+        updateCustomCharModalUI();
+      });
+      grid.appendChild(card);
+    });
+  } else if (type === "talent") {
+    const list = getAllTalentBookFamilies().filter((f) => {
+      if (!search) return true;
+      const plain = `${f.familyName} ${f.fullName}`.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+      return plain.includes(search);
+    });
+    list.forEach((f) => {
+      const card = document.createElement("div");
+      const isSelected = customCharDraft && String(customCharDraft.talentBookId) === String(f.baseId);
+      card.className = `seelie-picker-talent-card ${isSelected ? "selected" : ""}`;
+
+      // Libro de rango 3 (filosofías) con el emblema más nítido y visible
+      const bookItem = f.items[2] || f.items[f.items.length - 1] || f.items[0];
+      const bookIcon = bookItem ? bookItem.icon : "";
+
+      card.innerHTML = `
+        <div class="seelie-picker-talent-img-wrap rar-bg-4">
+          <img class="seelie-picker-talent-img" src="${bookIcon}" alt="${escapeHtml(f.familyName)}" loading="lazy" />
+        </div>
+        <strong class="seelie-picker-talent-name">${escapeHtml(f.familyName)}</strong>
+      `;
+      card.addEventListener("click", () => {
+        if (customCharDraft) customCharDraft.talentBookId = String(f.baseId);
+        closeMaterialPicker();
+        updateCustomCharModalUI();
+      });
+      grid.appendChild(card);
+    });
+  } else if (type === "weekly") {
+    const list = getAllWeeklyBossMaterials().filter((m) => {
+      if (!search) return true;
+      const plain = m.name.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+      return plain.includes(search);
+    });
+    list.forEach((m) => {
+      const card = document.createElement("div");
+      const isSelected = customCharDraft && String(customCharDraft.weeklyMatId) === String(m.id);
+      card.className = `seelie-picker-item-card ${isSelected ? "selected" : ""}`;
+      card.innerHTML = `
+        <img class="seelie-picker-item-img rar-bg-5" src="${m.icon}" alt="${escapeHtml(m.name)}" loading="lazy" />
+        <span class="seelie-picker-item-name">${escapeHtml(m.name)}</span>
+      `;
+      card.addEventListener("click", () => {
+        if (customCharDraft) customCharDraft.weeklyMatId = String(m.id);
+        closeMaterialPicker();
+        updateCustomCharModalUI();
+      });
+      grid.appendChild(card);
+    });
+  }
+
+  if (!grid.children.length) {
+    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;color:#94a3b8;padding:2rem;">No se encontraron materiales que coincidan con "${escapeHtml(filterText)}"</div>`;
+  }
+}
+
+function saveCustomCharModal() {
+
+  if (!customCharDraft) return;
+
+  const nameInput = document.getElementById("customCharNameInput");
+
+  let finalName = (nameInput ? nameInput.value.trim() : "") || customCharDraft.name || "Personalizado";
+
+
+
+  // Prevenir colisión con personajes oficiales
+
+  if (REAL_CHAR_LIST.some((ch) => ch.name.toLowerCase() === finalName.toLowerCase())) {
+
+    alert(`El nombre "${finalName}" ya pertenece a un personaje oficial del juego. Por favor elige otro nombre (ej. "${finalName} Base").`);
+
+    return;
+
+  }
+
+
+
+  customCharDraft.name = finalName;
+
+  if (customCharDraft.originalKey && state.activePlans.some((p) =>
+    p.kind === "character" && p.key !== customCharDraft.originalKey && p.key.toLowerCase() === finalName.toLowerCase()
+  )) {
+    alert(`Ya existe un personaje llamado "${finalName}". Elige otro nombre.`);
+    return;
+  }
+
+  const limits = getArProgressionLimits();
+
+
+
+  // Si estamos editando un personaje existente
+
+  if (customCharDraft.originalKey) {
+
+    const existingIdx = state.activePlans.findIndex((p) => p.kind === "character" && p.key === customCharDraft.originalKey);
+
+    if (existingIdx !== -1) {
+
+      const p = state.activePlans[existingIdx];
+
+      const oldWeapon = p.customConfig ? p.customConfig.weapon : null;
+
+      p.key = finalName;
+
+      p.isCustom = true;
+
+      p.customConfig = JSON.parse(JSON.stringify(customCharDraft));
+
+      // Si cambió el tipo de arma, desequipar arma incompatible
+
+      if (oldWeapon && oldWeapon !== customCharDraft.weapon) {
+
+        p.weaponKey = "none";
+
+      }
+
+      // Actualizar favoritos si estaba en favoritos
+
+      if (state.starredChars.includes(customCharDraft.originalKey)) {
+
+        state.starredChars = state.starredChars.map((k) => (k === customCharDraft.originalKey ? finalName : k));
+
+        setSpiriflyStorage("starred", JSON.stringify(state.starredChars));
+
+      }
+
+    }
+
+  } else {
+
+    // Si ya existe un plan con ese mismo nombre
+
+    const duplicate = state.activePlans.find((p) => p.kind === "character" && p.key.toLowerCase() === finalName.toLowerCase());
+
+    if (duplicate) {
+
+      finalName = `${finalName} (${Date.now().toString().slice(-4)})`;
+
+      customCharDraft.name = finalName;
+
+    }
+
+
+
+    const newPlan = {
+
+      uid: `plan_custom_${Date.now()}`,
+
+      kind: "character",
+
+      key: finalName,
+
+      isCustom: true,
+
+      customConfig: JSON.parse(JSON.stringify(customCharDraft)),
+
+      active: true,
+
+      constellation: 0,
+
+      notes: "",
+
+      curState: 0,
+
+      tarState: limits.maxStateIdx,
+
+      incLevel: true,
+
+      talCur: [1, 1, 1],
+
+      talTar: [Math.min(1, limits.maxTalent), Math.min(8, limits.maxTalent), Math.min(8, limits.maxTalent)],
+
+      talInc: [true, true, true],
+
+      weaponKey: "none",
+
+      weapRefine: 1,
+
+      weapCurState: 0,
+
+      weapTarState: limits.maxStateIdx,
+
+      incWeapon: true
+
+    };
+
+    state.activePlans.unshift(newPlan);
+
+  }
+
+
+
+  savePlansToStorage();
+
+  closeCustomCharModal();
+
+  openCharConfigModal(finalName, false);
+
+}
+
+
+
+function initCustomCharEvents() {
+
+  const openBtn = document.getElementById("btnOpenCustomCharModal");
+
+  if (openBtn) {
+
+    openBtn.addEventListener("click", () => openCustomCharModal());
+
+  }
+
+
+
+  const closeBtn = document.getElementById("btnCloseCustomCharModal");
+
+  if (closeBtn) closeBtn.addEventListener("click", closeCustomCharModal);
+
+  const cancelBtn = document.getElementById("btnCancelCustomChar");
+
+  if (cancelBtn) cancelBtn.addEventListener("click", closeCustomCharModal);
+
+
+
+  const saveBtn = document.getElementById("btnSaveCustomChar");
+
+  if (saveBtn) saveBtn.addEventListener("click", saveCustomCharModal);
+
+
+
+  const nameInput = document.getElementById("customCharNameInput");
+
+  if (nameInput) {
+
+    nameInput.addEventListener("input", (e) => {
+
+      if (customCharDraft) {
+
+        customCharDraft.name = e.target.value.trim() || "Personalizado";
+
+        updateCustomCharModalUI();
+
+      }
+
+    });
+
+  }
+
+
+
+  document.querySelectorAll("#customCharWeaponSelector .seelie-custom-choice-btn").forEach((btn) => {
+
+    btn.addEventListener("click", () => {
+
+      if (!customCharDraft) return;
+
+      customCharDraft.weapon = btn.dataset.wp;
+
+      updateCustomCharModalUI();
+
+    });
+
+  });
+
+
+
+  document.querySelectorAll("#customCharRaritySelector .seelie-custom-rarity-btn").forEach((btn) => {
+
+    btn.addEventListener("click", () => {
+
+      if (!customCharDraft) return;
+
+      customCharDraft.rarity = parseInt(btn.dataset.rar, 10);
+
+      updateCustomCharModalUI();
+
+    });
+
+  });
+
+
+
+  document.querySelectorAll("#customCharElementSelector .seelie-custom-el-btn").forEach((btn) => {
+
+    btn.addEventListener("click", () => {
+
+      if (!customCharDraft) return;
+
+      customCharDraft.element = btn.dataset.el;
+
+      updateCustomCharModalUI();
+
+    });
+
+  });
+
+
+
+  const bossBtn = document.getElementById("btnPickBossMat");
+
+  if (bossBtn) bossBtn.addEventListener("click", () => openMaterialPicker("boss"));
+
+
+
+  const localBtn = document.getElementById("btnPickLocalMat");
+
+  if (localBtn) localBtn.addEventListener("click", () => openMaterialPicker("local"));
+
+
+
+  const commonBtn = document.getElementById("btnPickCommonMat");
+
+  if (commonBtn) commonBtn.addEventListener("click", () => openMaterialPicker("common"));
+
+
+
+  const talentBtn = document.getElementById("btnPickTalentBook");
+
+  if (talentBtn) talentBtn.addEventListener("click", () => openMaterialPicker("talent"));
+
+
+
+  const weeklyBtn = document.getElementById("btnPickWeeklyMat");
+
+  if (weeklyBtn) weeklyBtn.addEventListener("click", () => openMaterialPicker("weekly"));
+
+
+
+  const closeSheetBtn = document.getElementById("btnClosePickerSheet");
+
+  if (closeSheetBtn) closeSheetBtn.addEventListener("click", closeMaterialPicker);
+
+
+
+  const sheetSearch = document.getElementById("pickerSheetSearch");
+
+  if (sheetSearch) {
+
+    sheetSearch.addEventListener("input", (e) => {
+
+      if (currentPickerType) {
+
+        renderMaterialPickerGrid(currentPickerType, e.target.value);
+
+      }
+
+    });
+
+  }
+
+
+
+  const modal = document.getElementById("seelieCustomCharModal");
+
+  if (modal) {
+
+    modal.addEventListener("click", (e) => {
+
+      if (e.target.id === "seelieCustomCharModal") closeCustomCharModal();
+
+    });
+
+  }
+
 }
