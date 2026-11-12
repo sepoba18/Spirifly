@@ -7,8 +7,44 @@
   <meta name="description" content="Guía actualizada de Xilonen en Genshin Impact (7.2). Mejores armas, artefactos, estadísticas, sinergias y cálculo de materiales en Spirifly.">
   <link rel="canonical" href="https://spirifly.app/personajes/xilonen">
   <link rel="icon" href="../favicon.ico">
-  <link rel="stylesheet" href="../assets/site-info.css?v=2">
+  <link rel="stylesheet" href="../assets/site-info.css?v=3">
   <style>
+    .info-header nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.55rem;
+    }
+    .info-header nav a, .nav-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.42rem 0.95rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 999px;
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      line-height: 1.4;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+    .info-header nav a:hover, .nav-pill:hover {
+      background: rgba(59, 130, 246, 0.18);
+      border-color: #3b82f6;
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+    }
+    .info-header nav a.active, .nav-pill.active {
+      background: #2563eb;
+      border-color: #3b82f6;
+      color: #ffffff;
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+    }
     .char-hero {
       display: flex;
       flex-wrap: wrap;
@@ -100,45 +136,114 @@
     .guide-item {
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 8px;
+      border-radius: 10px;
       padding: 0.85rem 1rem;
+      transition: all 0.2s ease;
+    }
+    .guide-item-with-thumb {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 1rem;
+    }
+    .guide-item-with-thumb:hover {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(96, 165, 250, 0.35);
+      transform: translateX(2px);
+    }
+    .guide-thumb-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+      position: relative;
+      background: #111625;
+    }
+    .guide-thumb-wrap.rar-5 {
+      border: 1.5px solid rgba(251, 191, 36, 0.7);
+      background: radial-gradient(circle, rgba(251, 191, 36, 0.22) 0%, rgba(15, 23, 42, 0.8) 100%);
+      box-shadow: 0 0 10px rgba(251, 191, 36, 0.15);
+    }
+    .guide-thumb-wrap.rar-4 {
+      border: 1.5px solid rgba(168, 85, 247, 0.7);
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.22) 0%, rgba(15, 23, 42, 0.8) 100%);
+      box-shadow: 0 0 10px rgba(168, 85, 247, 0.15);
+    }
+    .guide-thumb-wrap.rar-3 {
+      border: 1.5px solid rgba(59, 130, 246, 0.7);
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.22) 0%, rgba(15, 23, 42, 0.8) 100%);
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.15);
+    }
+    .guide-thumb-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.2s ease;
+    }
+    .guide-item-with-thumb:hover .guide-thumb-img {
+      transform: scale(1.06);
+    }
+    .guide-item-content {
+      flex: 1;
+      min-width: 0;
     }
     .guide-item-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 0.5rem;
     }
     .guide-item-title {
       font-weight: 700;
       color: #ffffff;
-      font-size: 1rem;
+      font-size: 0.98rem;
+      line-height: 1.3;
     }
     .guide-rarity {
       color: #fbbf24;
-      font-size: 0.9rem;
-      letter-spacing: 2px;
+      font-size: 0.85rem;
+      letter-spacing: 1.5px;
+      flex-shrink: 0;
+    }
+    .guide-rarity.rar-stars-4 {
+      color: #c084fc;
+    }
+    .guide-rarity.rar-stars-3 {
+      color: #60a5fa;
     }
     .guide-tag {
       background: rgba(59,130,246,0.18);
+      border: 1px solid rgba(59, 130, 246, 0.35);
       color: #93c5fd;
       border-radius: 4px;
       padding: 0.15rem 0.5rem;
       font-size: 0.75rem;
       font-weight: 700;
+      white-space: nowrap;
+    }
+    .guide-tag-sub {
+      color: #93c5fd;
+      font-weight: 600;
+      margin-right: 0.35rem;
+      font-size: 0.8rem;
     }
     .guide-item-sub {
-      font-size: 0.83rem;
-      color: #94a3b8;
+      font-size: 0.82rem;
+      color: #cbd5e1;
       margin-top: 0.25rem;
+      line-height: 1.35;
     }
     .w-note {
-      color: #34d399;
-      margin-left: 0.4rem;
+      color: #94a3b8;
     }
     .art-bonus {
       font-size: 0.82rem;
       color: #cbd5e1;
-      margin: 0.4rem 0 0;
+      margin: 0.35rem 0 0;
       line-height: 1.4;
     }
     .stats-table {
@@ -270,10 +375,10 @@
   <header class="info-header">
     <a class="info-brand" href="/">Spirifly</a>
     <nav aria-label="Navegación principal">
-      <a href="/">Herramientas</a>
-      <a href="/personajes/">Catálogo de Builds</a>
-      <a href="../guide.html">Guía de uso</a>
-      <a href="../about.html">Proyecto</a>
+      <a href="/" class="nav-pill">Herramientas</a>
+      <a href="/personajes/" class="nav-pill active">Catálogo de Builds</a>
+      <a href="../guide.html" class="nav-pill">Guía de uso</a>
+      <a href="../about.html" class="nav-pill">Proyecto</a>
     </nav>
   </header>
 
@@ -285,73 +390,105 @@
         <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Xilonen.png" alt="Xilonen" loading="eager" />
       </div>
       <div class="char-meta">
-        <h1>
-          <span>Xilonen</span>
-          <span class="badge-el">Geo · Sword</span>
-          <span class="badge-tier">T0 Soporte Universal</span>
-        </h1>
-        <p class="char-subdesc">Reductora de Resistencias (-36% RES), Buffer (+40% DMG) & Healer · Región: Natlan</p>
+        <h1>Xilonen <span class="badge-el">Geo</span> <span class="badge-tier">T0.5 (S) Support</span></h1>
+        <p class="char-subdesc"><strong>Rol:</strong> Soporte Shredder & Healer Geo (Escala con RE y DEF) &nbsp;|&nbsp; <strong>Arma:</strong> Sword &nbsp;|&nbsp; <strong>Región:</strong> Natlan</p>
       </div>
     </div>
 
+    <!-- Bloque 1: Mejores Armas -->
     <section class="guide-block">
       <h2>Mejores Armas</h2>
       <p class="guide-block-desc">Opciones recomendadas ordenadas por rendimiento según el meta actual y compatibilidad con sus rotaciones:</p>
       <ul class="guide-list">
         
-        <li class="guide-item">
-          <div class="guide-item-top">
-            <span class="guide-item-title">Himno de las Cumbres</span>
-            <span class="guide-rarity">★★★★★</span>
+        <li class="guide-item guide-item-with-thumb">
+          <div class="guide-thumb-wrap rar-5">
+            <img src="https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_XochitlsTube.png" alt="Himno de las Cumbres" class="guide-thumb-img" loading="lazy" />
           </div>
-          <div class="guide-item-sub">Opción por rol <span class='w-note'>+25.6% Bono Daño Elemental al equipo al alcanzar 3,200 DEF y enorme DEF%.</span></div>
+          <div class="guide-item-content">
+            <div class="guide-item-top">
+              <span class="guide-item-title">Himno de las Cumbres</span>
+              <span class="guide-rarity rar-stars-5">★★★★★</span>
+            </div>
+            <div class="guide-item-sub"><span class="guide-tag-sub">BiS Firma</span><span class='w-note'>542 ATQ base, 82.7% DEF%; otorga hasta +25.6% Bono Elemental a todo el equipo con ~3,000 DEF.</span></div>
+          </div>
         </li>
-        <li class="guide-item">
-          <div class="guide-item-top">
-            <span class="guide-item-title">Espada de Favonius</span>
-            <span class="guide-rarity">★★★★</span>
+        <li class="guide-item guide-item-with-thumb">
+          <div class="guide-thumb-wrap rar-5">
+            <img src="https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Widsith.png" alt="Juramento por la Libertad" class="guide-thumb-img" loading="lazy" />
           </div>
-          <div class="guide-item-sub">Opción por rol <span class='w-note'>Batería universal para todo el equipo en cualquier rotación.</span></div>
+          <div class="guide-item-content">
+            <div class="guide-item-top">
+              <span class="guide-item-title">Juramento por la Libertad</span>
+              <span class="guide-rarity rar-stars-5">★★★★★</span>
+            </div>
+            <div class="guide-item-sub"><span class="guide-tag-sub">Alternativa Soporte 5★</span><span class='w-note'>608 ATQ base, 198 ME; otorga +20% ATQ y +16% Daño Normal/Cargado al activar Cristalización.</span></div>
+          </div>
         </li>
-        <li class="guide-item">
-          <div class="guide-item-top">
-            <span class="guide-item-title">Flauta de Ezpitzal</span>
-            <span class="guide-rarity">★★★★</span>
+        <li class="guide-item guide-item-with-thumb">
+          <div class="guide-thumb-wrap rar-4">
+            <img src="https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Zephyrus.png" alt="Espada de Favonius" class="guide-thumb-img" loading="lazy" />
           </div>
-          <div class="guide-item-sub">Opción por rol <span class='w-note'>Forja de Natlan: +69% DEF total de forma gratuita.</span></div>
+          <div class="guide-item-content">
+            <div class="guide-item-top">
+              <span class="guide-item-title">Espada de Favonius</span>
+              <span class="guide-rarity rar-stars-4">★★★★</span>
+            </div>
+            <div class="guide-item-sub"><span class="guide-tag-sub">Mejor 4★ General</span><span class='w-note'>454 ATQ base, 61.3% RE; genera partículas blancas para aliviar energía del equipo.</span></div>
+          </div>
         </li>
-        <li class="guide-item">
-          <div class="guide-item-top">
-            <span class="guide-item-title">Huso de Cinabrio</span>
-            <span class="guide-rarity">★★★★</span>
+        <li class="guide-item guide-item-with-thumb">
+          <div class="guide-thumb-wrap rar-4">
+            <img src="https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Isikhulu.png" alt="Flauta de Ezpitzal" class="guide-thumb-img" loading="lazy" />
           </div>
-          <div class="guide-item-sub">Opción por rol <span class='w-note'>Aporte masivo de DEF%.</span></div>
+          <div class="guide-item-content">
+            <div class="guide-item-top">
+              <span class="guide-item-title">Flauta de Ezpitzal</span>
+              <span class="guide-rarity rar-stars-4">★★★★</span>
+            </div>
+            <div class="guide-item-sub"><span class="guide-tag-sub">Mejor F2P Forja</span><span class='w-note'>454 ATQ base, 69.0% DEF%; excelente para llegar a 2,500+ DEF y mejorar curación.</span></div>
+          </div>
         </li>
       </ul>
     </section>
 
+    <!-- Bloque 2: Mejores Artefactos -->
     <section class="guide-block">
       <h2>Mejores Sets de Artefactos</h2>
       <p class="guide-block-desc">Combinaciones de 4 piezas o mezclas de 2 piezas para maximizar su contribución:</p>
       <ul class="guide-list">
         
-        <li class="guide-item">
-          <div class="guide-item-top">
-            <span class="guide-item-title">Pergamino del Héroe de la Ciudad de las Cenizas (4p)</span>
-            <span class="guide-tag">BiS Indiscutible</span>
+        <li class="guide-item guide-item-with-thumb">
+          <div class="guide-thumb-wrap rar-5">
+            <img src="../assets/artifacts/UI_RelicIcon_15037_4.png" alt="Scroll of the Hero of Cinder City (4 piezas)" class="guide-thumb-img" loading="lazy" />
           </div>
-          <p class='art-bonus'>+40% Daño Elemental a los elementos que reaccionan con Noctámbulo.</p>
+          <div class="guide-item-content">
+            <div class="guide-item-top">
+              <span class="guide-item-title">Scroll of the Hero of Cinder City (4 piezas)</span>
+              <span class="guide-tag">BiS Absoluto</span>
+            </div>
+            <p class='art-bonus'>+40% Bono Elemental para Pyro/Hydro/Cryo/Electro y Geo al cristalizar en Noctámbulo.</p>
+          </div>
         </li>
-        <li class="guide-item">
-          <div class="guide-item-top">
-            <span class="guide-item-title">Cáscara de Sueños Opulentos (4 piezas)</span>
-            <span class="guide-tag">Máxima DEF</span>
+        <li class="guide-item guide-item-with-thumb">
+          <div class="guide-thumb-wrap rar-5">
+            <img src="../assets/artifacts/UI_RelicIcon_15021_4.png" alt="Husk of Opulent Dreams (4 piezas)" class="guide-thumb-img" loading="lazy" />
           </div>
-          <p class='art-bonus'>+54% DEF y +24% Bono Geo (si se busca maximizar su curación y arma).</p>
+          <div class="guide-item-content">
+            <div class="guide-item-top">
+              <span class="guide-item-title">Husk of Opulent Dreams (4 piezas)</span>
+              <span class="guide-tag">Alternativa Sub-DPS/DEF</span>
+            </div>
+            <p class='art-bonus'>+30% DEF (2p) y hasta +24% DEF / Bono Geo si ya hay otro portador de Pergamino.</p>
+          </div>
         </li>
       </ul>
+    </section>
 
-      <h3 style="color:#93c5fd; margin-top:1.5rem;">Estadísticas Principales Recomendadas</h3>
+    <!-- Bloque 3: Estadísticas Recomendadas -->
+    <section class="guide-block">
+      <h2>Estadísticas Principales y Secundarias</h2>
+      <p class="guide-block-desc">Atributos prioritarios en artefactos para un balance óptimo de daño o soporte:</p>
       <table class="stats-table">
         <thead>
           <tr>
@@ -360,40 +497,48 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>Reloj (Arenas)</td><td>DEF%</td></tr>
-          <tr><td>Cáliz</td><td>DEF%</td></tr>
-          <tr><td>Corona (Tiara)</td><td>Bono de Curación% o DEF% (o Prob. CR con Favonius)</td></tr>
+          <tr>
+            <td><strong>Reloj (Arenas)</strong></td>
+            <td>Recarga de Energía / DEF%</td>
+          </tr>
+          <tr>
+            <td><strong>Cáliz</strong></td>
+            <td>DEF%</td>
+          </tr>
+          <tr>
+            <td><strong>Corona</strong></td>
+            <td>Bono de Curación / DEF%</td>
+          </tr>
         </tbody>
       </table>
-
-      <h3 style="color:#93c5fd; margin-top:1.2rem;">Prioridad de Subestadísticas</h3>
-      <ul style="color:#cbd5e1; font-size:0.9rem; line-height:1.6;">
-        <li>1. DEF% y DEF Plana (Meta: 3,200 DEF con arma 5★ / 2,800+ F2P)</li><li>2. Recarga de Energía% (160% - 190% ER)</li><li>3. Prob. Crítica (si usa Favonius)</li>
+      
+      <h3>Prioridad de Subestadísticas</h3>
+      <ul>
+        <li>Recarga de Energía (190%+) > DEF% (2,500–3,000) > Prob. Crítica (si usa Favonius).</li>
       </ul>
-      <p style="font-size:0.85rem; color:#94a3b8;"><strong>Prioridad de Talentos:</strong> Habilidad Elemental (E) >>> Definitiva (Q) >>> Ataques Normales (No subir)</p>
+
+      <h3>Prioridad de Talentos</h3>
+      <p>Habilidad Elemental (E) >>> Definitiva (Q) >>> Ataques Normales</p>
     </section>
 
+    <!-- Bloque 4: Sinergias y Equipos -->
     <section class="guide-block">
-      <h2>Equipos y Sinergias Meta</h2>
-      <p class="guide-block-desc">Composiciones óptimas para el Abismo y desafíos de alto nivel:</p>
+      <h2>Composiciones de Equipo Recomendadas</h2>
+      <p class="guide-block-desc">Alineaciones con mayor sinergia elemental y amplificación de daño en el Abismo y Teatro Fantasía:</p>
       
         <div class="team-card">
-          <h4>Neuvillette Hypercarry</h4>
-          <p class="team-members">Neuvillette • Furina • Xilonen • Kazuha</p>
-          
-        </div>
-        <div class="team-card">
-          <h4>Mavuika Melt Core</h4>
+          <h4>Mavuika Derretidos</h4>
           <p class="team-members">Mavuika • Citlali • Xilonen • Bennett</p>
-          
+          <p class='team-note'>Carga Espíritu Noctámbulo de Mavuika rapidísimo mientras aplica -36% RES Pyro.</p>
         </div>
         <div class="team-card">
-          <h4>Navia Geo-Bomb</h4>
-          <p class="team-members">Navia • Xilonen • Furina • Bennett</p>
-          
+          <h4>Neuvillette Hipercarry</h4>
+          <p class="team-members">Neuvillette • Furina • Kazuha • Xilonen</p>
+          <p class='team-note'>Doble reducción de RES + Pergamino Natlan + curación para Fanfarria.</p>
         </div>
     </section>
 
+    <!-- Bloque 5: Materiales de ascensión -->
     
         <section class="guide-block">
           <h2>Materiales de Ascensión (Nivel 1 al 90)</h2>
@@ -464,10 +609,11 @@
             </div></div>
         </section>
 
+    <!-- CTA hacia el planificador -->
     <div class="cta-banner">
-      <h3>¿Planeas subir a Xilonen?</h3>
-      <p>Cruza los materiales que ya tienes en tu mochila con los requisitos de Xilonen y calcula el ahorro exacto en la mesa de síntesis.</p>
-      <a href="/#planner" class="cta-btn">Abrir Xilonen en el Planificador de Spirifly</a>
+      <h3>¿Quieres farmear a Xilonen eficientemente?</h3>
+      <p>Calcula los días exactos, coste de resina original y sincroniza tus materiales en Spirifly.</p>
+      <a href="/#planner" class="cta-btn">Planificar Xilonen en Spirifly</a>
     </div>
 
   </main>
@@ -478,7 +624,7 @@
       <a href="../cookies.html">Cookies</a>
       <a href="../terms.html">Términos de uso</a>
     </nav>
-    <p>© 2026 Spirifly. Proyecto independiente, sin afiliación ni respaldo de HoYoverse. Las marcas y recursos de Genshin Impact pertenecen a sus respectivos titulares.</p>
+    <p>© 2026 Spirifly. Proyecto independiente, sin afiliación ni respaldo de HoYoverse. Las marcas y recursos pertenecen a sus respectivos titulares.</p>
   </footer>
 </body>
 </html>

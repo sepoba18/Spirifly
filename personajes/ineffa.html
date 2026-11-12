@@ -7,8 +7,44 @@
   <meta name="description" content="Guía actualizada de Ineffa en Genshin Impact (7.2). Mejores armas, artefactos, estadísticas, sinergias y cálculo de materiales en Spirifly.">
   <link rel="canonical" href="https://spirifly.app/personajes/ineffa">
   <link rel="icon" href="../favicon.ico">
-  <link rel="stylesheet" href="../assets/site-info.css?v=2">
+  <link rel="stylesheet" href="../assets/site-info.css?v=3">
   <style>
+    .info-header nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.55rem;
+    }
+    .info-header nav a, .nav-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.42rem 0.95rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 999px;
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      line-height: 1.4;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+    .info-header nav a:hover, .nav-pill:hover {
+      background: rgba(59, 130, 246, 0.18);
+      border-color: #3b82f6;
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+    }
+    .info-header nav a.active, .nav-pill.active {
+      background: #2563eb;
+      border-color: #3b82f6;
+      color: #ffffff;
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+    }
     .char-hero {
       display: flex;
       flex-wrap: wrap;
@@ -100,45 +136,114 @@
     .guide-item {
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 8px;
+      border-radius: 10px;
       padding: 0.85rem 1rem;
+      transition: all 0.2s ease;
+    }
+    .guide-item-with-thumb {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 1rem;
+    }
+    .guide-item-with-thumb:hover {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(96, 165, 250, 0.35);
+      transform: translateX(2px);
+    }
+    .guide-thumb-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+      position: relative;
+      background: #111625;
+    }
+    .guide-thumb-wrap.rar-5 {
+      border: 1.5px solid rgba(251, 191, 36, 0.7);
+      background: radial-gradient(circle, rgba(251, 191, 36, 0.22) 0%, rgba(15, 23, 42, 0.8) 100%);
+      box-shadow: 0 0 10px rgba(251, 191, 36, 0.15);
+    }
+    .guide-thumb-wrap.rar-4 {
+      border: 1.5px solid rgba(168, 85, 247, 0.7);
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.22) 0%, rgba(15, 23, 42, 0.8) 100%);
+      box-shadow: 0 0 10px rgba(168, 85, 247, 0.15);
+    }
+    .guide-thumb-wrap.rar-3 {
+      border: 1.5px solid rgba(59, 130, 246, 0.7);
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.22) 0%, rgba(15, 23, 42, 0.8) 100%);
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.15);
+    }
+    .guide-thumb-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.2s ease;
+    }
+    .guide-item-with-thumb:hover .guide-thumb-img {
+      transform: scale(1.06);
+    }
+    .guide-item-content {
+      flex: 1;
+      min-width: 0;
     }
     .guide-item-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 0.5rem;
     }
     .guide-item-title {
       font-weight: 700;
       color: #ffffff;
-      font-size: 1rem;
+      font-size: 0.98rem;
+      line-height: 1.3;
     }
     .guide-rarity {
       color: #fbbf24;
-      font-size: 0.9rem;
-      letter-spacing: 2px;
+      font-size: 0.85rem;
+      letter-spacing: 1.5px;
+      flex-shrink: 0;
+    }
+    .guide-rarity.rar-stars-4 {
+      color: #c084fc;
+    }
+    .guide-rarity.rar-stars-3 {
+      color: #60a5fa;
     }
     .guide-tag {
       background: rgba(59,130,246,0.18);
+      border: 1px solid rgba(59, 130, 246, 0.35);
       color: #93c5fd;
       border-radius: 4px;
       padding: 0.15rem 0.5rem;
       font-size: 0.75rem;
       font-weight: 700;
+      white-space: nowrap;
+    }
+    .guide-tag-sub {
+      color: #93c5fd;
+      font-weight: 600;
+      margin-right: 0.35rem;
+      font-size: 0.8rem;
     }
     .guide-item-sub {
-      font-size: 0.83rem;
-      color: #94a3b8;
+      font-size: 0.82rem;
+      color: #cbd5e1;
       margin-top: 0.25rem;
+      line-height: 1.35;
     }
     .w-note {
-      color: #34d399;
-      margin-left: 0.4rem;
+      color: #94a3b8;
     }
     .art-bonus {
       font-size: 0.82rem;
       color: #cbd5e1;
-      margin: 0.4rem 0 0;
+      margin: 0.35rem 0 0;
       line-height: 1.4;
     }
     .stats-table {
@@ -270,10 +375,10 @@
   <header class="info-header">
     <a class="info-brand" href="/">Spirifly</a>
     <nav aria-label="Navegación principal">
-      <a href="/">Herramientas</a>
-      <a href="/personajes/">Catálogo de Builds</a>
-      <a href="../guide.html">Guía de uso</a>
-      <a href="../about.html">Proyecto</a>
+      <a href="/" class="nav-pill">Herramientas</a>
+      <a href="/personajes/" class="nav-pill active">Catálogo de Builds</a>
+      <a href="../guide.html" class="nav-pill">Guía de uso</a>
+      <a href="../about.html" class="nav-pill">Proyecto</a>
     </nav>
   </header>
 
@@ -285,66 +390,117 @@
         <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Ineffa.png" alt="Ineffa" loading="eager" />
       </div>
       <div class="char-meta">
-        <h1>
-          <span>Ineffa</span>
-          <span class="badge-el">Electro · Polearm</span>
-          <span class="badge-tier">T0 Electro Sub-DPS</span>
-        </h1>
-        <p class="char-subdesc">Sub-DPS Electro de Invocación Lunar • Descargas de Alta Frecuencia · Región: Nodkrai</p>
+        <h1>Ineffa <span class="badge-el">Electro</span> <span class="badge-tier">T0 (SS) Sub-DPS</span></h1>
+        <p class="char-subdesc"><strong>Rol:</strong> Sub-DPS & Escudera Electro de Electrocargado Lunar (Escala con ATQ) &nbsp;|&nbsp; <strong>Arma:</strong> Polearm &nbsp;|&nbsp; <strong>Región:</strong> Nodkrai</p>
       </div>
     </div>
 
+    <!-- Bloque 1: Mejores Armas -->
     <section class="guide-block">
       <h2>Mejores Armas</h2>
       <p class="guide-block-desc">Opciones recomendadas ordenadas por rendimiento según el meta actual y compatibilidad con sus rotaciones:</p>
       <ul class="guide-list">
         
-        <li class="guide-item">
-          <div class="guide-item-top">
-            <span class="guide-item-title">Halo Fracturado</span>
-            <span class="guide-rarity">★★★★★</span>
+        <li class="guide-item guide-item-with-thumb">
+          <div class="guide-thumb-wrap rar-5">
+            <img src="https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Perdix.png" alt="Halo Fracturado" class="guide-thumb-img" loading="lazy" />
           </div>
-          <div class="guide-item-sub">Opción por rol <span class='w-note'>+Crítico y daño de descargas lunares.</span></div>
+          <div class="guide-item-content">
+            <div class="guide-item-top">
+              <span class="guide-item-title">Halo Fracturado</span>
+              <span class="guide-rarity rar-stars-5">★★★★★</span>
+            </div>
+            <div class="guide-item-sub"><span class="guide-tag-sub">BiS Firma</span><span class='w-note'>66.2% Daño Crítico; +24% ATQ y +40% Daño de Electrocargado Lunar para todo el equipo al crear escudo.</span></div>
+          </div>
         </li>
-        <li class="guide-item">
-          <div class="guide-item-top">
-            <span class="guide-item-title">Báculo de las Arenas Escarlatas</span>
-            <span class="guide-rarity">★★★★★</span>
+        <li class="guide-item guide-item-with-thumb">
+          <div class="guide-thumb-wrap rar-5">
+            <img src="https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Deshret.png" alt="Báculo de las Arenas Escarlatas" class="guide-thumb-img" loading="lazy" />
           </div>
-          <div class="guide-item-sub">Opción por rol <span class='w-note'>Convierte EM en ATQ.</span></div>
+          <div class="guide-item-content">
+            <div class="guide-item-top">
+              <span class="guide-item-title">Báculo de las Arenas Escarlatas</span>
+              <span class="guide-rarity rar-stars-5">★★★★★</span>
+            </div>
+            <div class="guide-item-sub"><span class="guide-tag-sub">Alternativa 5★</span><span class='w-note'>44.1% Prob. Crítica y convierte Maestría Elemental en ATQ.</span></div>
+          </div>
         </li>
-        <li class="guide-item">
-          <div class="guide-item-top">
-            <span class="guide-item-title">La Captura</span>
-            <span class="guide-rarity">★★★★</span>
+        <li class="guide-item guide-item-with-thumb">
+          <div class="guide-thumb-wrap rar-5">
+            <img src="https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_TummaLyhty.png" alt="Ruinas Ensangrentadas" class="guide-thumb-img" loading="lazy" />
           </div>
-          <div class="guide-item-sub">Opción por rol <span class='w-note'>+32% Daño Definitiva.</span></div>
+          <div class="guide-item-content">
+            <div class="guide-item-top">
+              <span class="guide-item-title">Ruinas Ensangrentadas</span>
+              <span class="guide-rarity rar-stars-5">★★★★★</span>
+            </div>
+            <div class="guide-item-sub"><span class="guide-tag-sub">Alternativa 5★</span><span class='w-note'>674 ATQ base, 22.1% Prob. Crítica y +36% Daño Electrocargado Lunar.</span></div>
+          </div>
+        </li>
+        <li class="guide-item guide-item-with-thumb">
+          <div class="guide-thumb-wrap rar-4">
+            <img src="https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Ilmarinen.png" alt="Azada Excavatesoros" class="guide-thumb-img" loading="lazy" />
+          </div>
+          <div class="guide-item-content">
+            <div class="guide-item-top">
+              <span class="guide-item-title">Azada Excavatesoros</span>
+              <span class="guide-rarity rar-stars-4">★★★★</span>
+            </div>
+            <div class="guide-item-sub"><span class="guide-tag-sub">Mejor F2P Forja</span><span class='w-note'>41.3% ATQ%; +48% Electrocargado y +24% Electrocargado Lunar.</span></div>
+          </div>
+        </li>
+        <li class="guide-item guide-item-with-thumb">
+          <div class="guide-thumb-wrap rar-4">
+            <img src="https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Bakufu.png" alt="Cruz de Kitain" class="guide-thumb-img" loading="lazy" />
+          </div>
+          <div class="guide-item-content">
+            <div class="guide-item-top">
+              <span class="guide-item-title">Cruz de Kitain</span>
+              <span class="guide-rarity rar-stars-4">★★★★</span>
+            </div>
+            <div class="guide-item-sub"><span class="guide-tag-sub">Opción 4★ Forja ER</span><span class='w-note'>110 ME y regenera Energía plana fuera de campo.</span></div>
+          </div>
         </li>
       </ul>
     </section>
 
+    <!-- Bloque 2: Mejores Artefactos -->
     <section class="guide-block">
       <h2>Mejores Sets de Artefactos</h2>
       <p class="guide-block-desc">Combinaciones de 4 piezas o mezclas de 2 piezas para maximizar su contribución:</p>
       <ul class="guide-list">
         
-        <li class="guide-item">
-          <div class="guide-item-top">
-            <span class="guide-item-title">Aubade of Morningstar and Moon (4 piezas)</span>
-            <span class="guide-tag">Principal</span>
+        <li class="guide-item guide-item-with-thumb">
+          <div class="guide-thumb-wrap rar-5">
+            <img src="../assets/artifacts/UI_RelicIcon_15043_4.png" alt="Aubade of Morningstar and Moon (4 piezas)" class="guide-thumb-img" loading="lazy" />
           </div>
-          <p class='art-bonus'>BiS Daño Lunar.</p>
+          <div class="guide-item-content">
+            <div class="guide-item-top">
+              <span class="guide-item-title">Aubade of Morningstar and Moon (4 piezas)</span>
+              <span class="guide-tag">BiS Daño Personal</span>
+            </div>
+            <p class='art-bonus'>+80 ME (2p); +20%/60% Daño de Reacción Lunar mientras está fuera de campo.</p>
+          </div>
         </li>
-        <li class="guide-item">
-          <div class="guide-item-top">
-            <span class="guide-item-title">Compañía Dorada (4 piezas)</span>
-            <span class="guide-tag">Principal</span>
+        <li class="guide-item guide-item-with-thumb">
+          <div class="guide-thumb-wrap rar-5">
+            <img src="../assets/artifacts/UI_RelicIcon_15042_4.png" alt="Silken Moon's Serenade (4 piezas)" class="guide-thumb-img" loading="lazy" />
           </div>
-          <p class='art-bonus'>+70% Daño Habilidad Elemental.</p>
+          <div class="guide-item-content">
+            <div class="guide-item-top">
+              <span class="guide-item-title">Silken Moon's Serenade (4 piezas)</span>
+              <span class="guide-tag">BiS Soporte Lunar</span>
+            </div>
+            <p class='art-bonus'>+20% ER; +60/120 ME al equipo y +10% Daño Lunar si Columbina lleva Aubade.</p>
+          </div>
         </li>
       </ul>
+    </section>
 
-      <h3 style="color:#93c5fd; margin-top:1.5rem;">Estadísticas Principales Recomendadas</h3>
+    <!-- Bloque 3: Estadísticas Recomendadas -->
+    <section class="guide-block">
+      <h2>Estadísticas Principales y Secundarias</h2>
+      <p class="guide-block-desc">Atributos prioritarios en artefactos para un balance óptimo de daño o soporte:</p>
       <table class="stats-table">
         <thead>
           <tr>
@@ -353,35 +509,48 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>Reloj (Arenas)</td><td>ATQ% / Maestría</td></tr>
-          <tr><td>Cáliz</td><td>ATQ% / Maestría</td></tr>
-          <tr><td>Corona (Tiara)</td><td>Prob. Crítica / Daño Crítico</td></tr>
+          <tr>
+            <td><strong>Reloj (Arenas)</strong></td>
+            <td>ATQ%</td>
+          </tr>
+          <tr>
+            <td><strong>Cáliz</strong></td>
+            <td>ATQ%</td>
+          </tr>
+          <tr>
+            <td><strong>Corona</strong></td>
+            <td>Prob. Crítica ≥ Daño Crítico</td>
+          </tr>
         </tbody>
       </table>
-
-      <h3 style="color:#93c5fd; margin-top:1.2rem;">Prioridad de Subestadísticas</h3>
-      <ul style="color:#cbd5e1; font-size:0.9rem; line-height:1.6;">
-        <li>Crítico > ATQ% > Maestría; recarga solo según uso de Q.</li>
+      
+      <h3>Prioridad de Subestadísticas</h3>
+      <ul>
+        <li>Daño Crítico > Prob. Crítica > ATQ% (meta 2,000) > Maestría Elemental (300+).</li>
       </ul>
-      <p style="font-size:0.85rem; color:#94a3b8;"><strong>Prioridad de Talentos:</strong> Nivel 90 > Habilidad (E) > Definitiva (Q). Normales sin subir.</p>
+
+      <h3>Prioridad de Talentos</h3>
+      <p>Habilidad Elemental (E) > Definitiva (Q) >>> Ataques Normales</p>
     </section>
 
+    <!-- Bloque 4: Sinergias y Equipos -->
     <section class="guide-block">
-      <h2>Equipos y Sinergias Meta</h2>
-      <p class="guide-block-desc">Composiciones óptimas para el Abismo y desafíos de alto nivel:</p>
+      <h2>Composiciones de Equipo Recomendadas</h2>
+      <p class="guide-block-desc">Alineaciones con mayor sinergia elemental y amplificación de daño en el Abismo y Teatro Fantasía:</p>
       
         <div class="team-card">
-          <h4>Ineffa Aggravate</h4>
-          <p class="team-members">Alhacén • Ineffa • Nahida • Zhongli</p>
-          
+          <h4>Electrocargado Lunar con Flins</h4>
+          <p class="team-members">Flins • Sucrose • Columbina • Ineffa</p>
+          <p class='team-note'>Equipo insignia de Electrocargado Lunar.</p>
         </div>
         <div class="team-card">
-          <h4>Ineffa Hyperbloom Battery</h4>
-          <p class="team-members">Ineffa • Xingqiu • Nahida • Kuki Shinobu</p>
-          
+          <h4>Núcleo Bineffa Universal</h4>
+          <p class="team-members">Columbina • Ineffa • Sucrose • Neuvillette</p>
+          <p class='team-note'>Core Columbina + Ineffa compatible con cualquier driver Hydro/Anemo.</p>
         </div>
     </section>
 
+    <!-- Bloque 5: Materiales de ascensión -->
     
         <section class="guide-block">
           <h2>Materiales de Ascensión (Nivel 1 al 90)</h2>
@@ -452,10 +621,11 @@
             </div></div>
         </section>
 
+    <!-- CTA hacia el planificador -->
     <div class="cta-banner">
-      <h3>¿Planeas subir a Ineffa?</h3>
-      <p>Cruza los materiales que ya tienes en tu mochila con los requisitos de Ineffa y calcula el ahorro exacto en la mesa de síntesis.</p>
-      <a href="/#planner" class="cta-btn">Abrir Ineffa en el Planificador de Spirifly</a>
+      <h3>¿Quieres farmear a Ineffa eficientemente?</h3>
+      <p>Calcula los días exactos, coste de resina original y sincroniza tus materiales en Spirifly.</p>
+      <a href="/#planner" class="cta-btn">Planificar Ineffa en Spirifly</a>
     </div>
 
   </main>
@@ -466,7 +636,7 @@
       <a href="../cookies.html">Cookies</a>
       <a href="../terms.html">Términos de uso</a>
     </nav>
-    <p>© 2026 Spirifly. Proyecto independiente, sin afiliación ni respaldo de HoYoverse. Las marcas y recursos de Genshin Impact pertenecen a sus respectivos titulares.</p>
+    <p>© 2026 Spirifly. Proyecto independiente, sin afiliación ni respaldo de HoYoverse. Las marcas y recursos pertenecen a sus respectivos titulares.</p>
   </footer>
 </body>
 </html>

@@ -7,8 +7,44 @@
   <meta name="description" content="Consulta las builds, mejores armas, artefactos y materiales de ascensión para los personajes meta de Genshin Impact 7.2.">
   <link rel="canonical" href="https://spirifly.app/personajes/">
   <link rel="icon" href="../favicon.ico">
-  <link rel="stylesheet" href="../assets/site-info.css?v=2">
+  <link rel="stylesheet" href="../assets/site-info.css?v=3">
   <style>
+    .info-header nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.55rem;
+    }
+    .info-header nav a, .nav-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.42rem 0.95rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 999px;
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      line-height: 1.4;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+    .info-header nav a:hover, .nav-pill:hover {
+      background: rgba(59, 130, 246, 0.18);
+      border-color: #3b82f6;
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+    }
+    .info-header nav a.active, .nav-pill.active {
+      background: #2563eb;
+      border-color: #3b82f6;
+      color: #ffffff;
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+    }
     .cat-lead {
       font-size: 1.15rem;
       color: #94a3b8;
@@ -100,10 +136,10 @@
   <header class="info-header">
     <a class="info-brand" href="/">Spirifly</a>
     <nav aria-label="Navegación principal">
-      <a href="/">Herramientas</a>
-      <a href="/personajes/">Catálogo de Builds</a>
-      <a href="../guide.html">Guía de uso</a>
-      <a href="../about.html">Proyecto</a>
+      <a href="/" class="nav-pill">Herramientas</a>
+      <a href="/personajes/" class="nav-pill active">Catálogo de Builds</a>
+      <a href="../guide.html" class="nav-pill">Guía de uso</a>
+      <a href="../about.html" class="nav-pill">Proyecto</a>
     </nav>
   </header>
 
@@ -121,10 +157,10 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Mitya</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#a855f7;">Electro</span>
-              <span class="p-badge-tier">Preliminar 7.2</span>
+              <span class="p-badge-el" style="color: #a855f7;">Electro</span>
+              <span class="p-badge-tier">T0 (SS) Main DPS</span>
             </div>
-            <p class="p-card-role">DPS en campo · Build preliminar 7.2</p>
+            <p class="p-card-role">Main DPS & Soporte Electro de Conducto Estelar (Baliza de Polestar)</p>
           </div>
         </a>
         <a class="p-card" href="sandrone.html" style="border-top: 3px solid #06b6d4;">
@@ -134,10 +170,10 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Sandrone (Marionette)</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#06b6d4;">Cryo</span>
-              <span class="p-badge-tier">T0 Stellar-Conduct DPS</span>
+              <span class="p-badge-el" style="color: #06b6d4;">Cryo</span>
+              <span class="p-badge-tier">T0 (SS) Main DPS</span>
             </div>
-            <p class="p-card-role">Main DPS / Sub-DPS Cryo de Conducto Estelar (Autómatas Mecánicos)</p>
+            <p class="p-card-role">Hypercarry Cryo de Conducto Estelar (Ataques Cargados + Autómata)</p>
           </div>
         </a>
         <a class="p-card" href="vesna.html" style="border-top: 3px solid #14b8a6;">
@@ -147,10 +183,10 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Vesna</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#14b8a6;">Anemo</span>
-              <span class="p-badge-tier">T0.5 Stellar-Swirl DPS</span>
+              <span class="p-badge-el" style="color: #14b8a6;">Anemo</span>
+              <span class="p-badge-tier">T0 (SS) Main DPS</span>
             </div>
-            <p class="p-card-role">Main DPS Anemo de Torbellino Estelar (Stellar-Swirl DPS)</p>
+            <p class="p-card-role">Hypercarry Anemo de Torbellino Estelar (Infusión Elemental E)</p>
           </div>
         </a>
         <a class="p-card" href="mavuika.html" style="border-top: 3px solid #ef4444;">
@@ -160,10 +196,10 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Mavuika</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#ef4444;">Pyro</span>
-              <span class="p-badge-tier">T0 Arconte Pyro</span>
+              <span class="p-badge-el" style="color: #ef4444;">Pyro</span>
+              <span class="p-badge-tier">T0 (SS) Main DPS</span>
             </div>
-            <p class="p-card-role">Hypercarry DPS en Campo & Aplicadora Pyro Off-Field</p>
+            <p class="p-card-role">Arconte Pyro • Hypercarry Melt/Vaporize & Sub-DPS Off-Field (Sin Energía)</p>
           </div>
         </a>
         <a class="p-card" href="nefer.html" style="border-top: 3px solid #22c55e;">
@@ -173,10 +209,10 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Nefer</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#22c55e;">Dendro</span>
-              <span class="p-badge-tier">T0 Lunar-Bloom DPS</span>
+              <span class="p-badge-el" style="color: #22c55e;">Dendro</span>
+              <span class="p-badge-tier">T0 (SS) Main DPS</span>
             </div>
-            <p class="p-card-role">DPS Dendro Lunar • Detonación Rápida de Semillas y Reacciones Bloom</p>
+            <p class="p-card-role">Main DPS Dendro de Florecimiento Lunar (Ataque Cargado Especial)</p>
           </div>
         </a>
         <a class="p-card" href="flins.html" style="border-top: 3px solid #a855f7;">
@@ -186,10 +222,10 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Flins</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#a855f7;">Electro</span>
-              <span class="p-badge-tier">T0 Lunar-Charged DPS</span>
+              <span class="p-badge-el" style="color: #a855f7;">Electro</span>
+              <span class="p-badge-tier">T0 (SS) Main DPS</span>
             </div>
-            <p class="p-card-role">DPS Principal de Nod-Krai • Daño Electro Lunar de Alta Cadencia</p>
+            <p class="p-card-role">Main DPS Electro de Electrocargado Lunar (Mini-Definitivas)</p>
           </div>
         </a>
         <a class="p-card" href="skirk.html" style="border-top: 3px solid #06b6d4;">
@@ -199,10 +235,10 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Skirk</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#06b6d4;">Cryo</span>
-              <span class="p-badge-tier">T0 Void Sword DPS</span>
+              <span class="p-badge-el" style="color: #06b6d4;">Cryo</span>
+              <span class="p-badge-tier">T0.5 (S) Main DPS</span>
             </div>
-            <p class="p-card-role">Maestra del Abismo • Hipercarry Cryo de Daño Cataclísmico</p>
+            <p class="p-card-role">Main DPS Cryo de Vacío (Sin Recarga de Energía tradicional)</p>
           </div>
         </a>
         <a class="p-card" href="zibai.html" style="border-top: 3px solid #f59e0b;">
@@ -212,10 +248,10 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Zibai</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#f59e0b;">Geo</span>
-              <span class="p-badge-tier">T0 Lunar-Crystallize DPS</span>
+              <span class="p-badge-el" style="color: #f59e0b;">Geo</span>
+              <span class="p-badge-tier">T0 (SS) Main DPS</span>
             </div>
-            <p class="p-card-role">DPS Geo de Filo Lunar • Cristalización Ofensiva de Alta Frecuencia</p>
+            <p class="p-card-role">Hypercarry Geo de Cristalización Lunar (Escala 100% con DEF)</p>
           </div>
         </a>
         <a class="p-card" href="varka.html" style="border-top: 3px solid #14b8a6;">
@@ -225,10 +261,10 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Varka</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#14b8a6;">Anemo</span>
-              <span class="p-badge-tier">T0 Hexerei Sovereign DPS</span>
+              <span class="p-badge-el" style="color: #14b8a6;">Anemo</span>
+              <span class="p-badge-tier">T0.5 (S) Main DPS</span>
             </div>
-            <p class="p-card-role">Gran Maestro de los Caballeros de Favonius • Mandoble Anemo de Fuerza Titánica</p>
+            <p class="p-card-role">Main DPS Anemo / Multi-Elemental Hexerei (Mandoble Rápido)</p>
           </div>
         </a>
         <a class="p-card" href="varesa.html" style="border-top: 3px solid #a855f7;">
@@ -238,8 +274,8 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Varesa</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#a855f7;">Electro</span>
-              <span class="p-badge-tier">T0 Electro Hypercarry</span>
+              <span class="p-badge-el" style="color: #a855f7;">Electro</span>
+              <span class="p-badge-tier">T1 (A+) Main DPS</span>
             </div>
             <p class="p-card-role">Hipercarry Electro • Rayos Crepusculares de Alto Impacto</p>
           </div>
@@ -251,10 +287,10 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Columbina (Damselette)</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#3b82f6;">Hydro</span>
-              <span class="p-badge-tier">T0 Sub-DPS & Buffer</span>
+              <span class="p-badge-el" style="color: #3b82f6;">Hydro</span>
+              <span class="p-badge-tier">T0 (SS) Sub-DPS</span>
             </div>
-            <p class="p-card-role">Heraldo de Fatui #3 (Damselette) • Buffer Universal y Sub-DPS Hydro Off-Field</p>
+            <p class="p-card-role">Habilitadora Universal y Sub-DPS Hydro de Reacciones Lunares (Escala HP)</p>
           </div>
         </a>
         <a class="p-card" href="odette.html" style="border-top: 3px solid #06b6d4;">
@@ -264,10 +300,10 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Odette</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#06b6d4;">Cryo</span>
-              <span class="p-badge-tier">T0.5 Stellar-Glimmer Sub-DPS</span>
+              <span class="p-badge-el" style="color: #06b6d4;">Cryo</span>
+              <span class="p-badge-tier">T0 (SS) Sub-DPS</span>
             </div>
-            <p class="p-card-role">Sub-DPS Cryo de Fulgor Estelar (Stellar-Glimmer Sub-DPS)</p>
+            <p class="p-card-role">Sub-DPS & Soporte Cryo Universal de Fulgor Estelar (Invocación Off-Field)</p>
           </div>
         </a>
         <a class="p-card" href="lauma.html" style="border-top: 3px solid #22c55e;">
@@ -277,10 +313,10 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Lauma</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#22c55e;">Dendro</span>
-              <span class="p-badge-tier">T0 Dendro Support</span>
+              <span class="p-badge-el" style="color: #22c55e;">Dendro</span>
+              <span class="p-badge-tier">T0 (SS) Support</span>
             </div>
-            <p class="p-card-role">Buffer y Soporte Dendro de Nod-Krai • Reducción de Resistencia y Cura Continua</p>
+            <p class="p-card-role">Soporte & Sub-DPS Dendro de Florecimiento Lunar (Meta 1,000 ME)</p>
           </div>
         </a>
         <a class="p-card" href="ineffa.html" style="border-top: 3px solid #a855f7;">
@@ -290,10 +326,10 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Ineffa</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#a855f7;">Electro</span>
-              <span class="p-badge-tier">T0 Electro Sub-DPS</span>
+              <span class="p-badge-el" style="color: #a855f7;">Electro</span>
+              <span class="p-badge-tier">T0 (SS) Sub-DPS</span>
             </div>
-            <p class="p-card-role">Sub-DPS Electro de Invocación Lunar • Descargas de Alta Frecuencia</p>
+            <p class="p-card-role">Sub-DPS & Escudera Electro de Electrocargado Lunar (Escala con ATQ)</p>
           </div>
         </a>
         <a class="p-card" href="xilonen.html" style="border-top: 3px solid #f59e0b;">
@@ -303,10 +339,10 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Xilonen</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#f59e0b;">Geo</span>
-              <span class="p-badge-tier">T0 Soporte Universal</span>
+              <span class="p-badge-el" style="color: #f59e0b;">Geo</span>
+              <span class="p-badge-tier">T0.5 (S) Support</span>
             </div>
-            <p class="p-card-role">Reductora de Resistencias (-36% RES), Buffer (+40% DMG) & Healer</p>
+            <p class="p-card-role">Soporte Shredder & Healer Geo (Escala con RE y DEF)</p>
           </div>
         </a>
         <a class="p-card" href="furina.html" style="border-top: 3px solid #3b82f6;">
@@ -316,10 +352,10 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Furina</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#3b82f6;">Hydro</span>
-              <span class="p-badge-tier">T0 Meta Universal</span>
+              <span class="p-badge-el" style="color: #3b82f6;">Hydro</span>
+              <span class="p-badge-tier">T0.5 (S) Sub-DPS</span>
             </div>
-            <p class="p-card-role">Off-Field Sub-DPS & Buffer Universal (Fanfarria)</p>
+            <p class="p-card-role">Sub-DPS & Buffer Universal Hydro (Fanfarria de Daño%)</p>
           </div>
         </a>
         <a class="p-card" href="linnea.html" style="border-top: 3px solid #f59e0b;">
@@ -329,10 +365,10 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Linnea</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#f59e0b;">Geo</span>
-              <span class="p-badge-tier">T0.5 Lunar-Crystallize Sub-DPS</span>
+              <span class="p-badge-el" style="color: #f59e0b;">Geo</span>
+              <span class="p-badge-tier">T0 (SS) Sub-DPS</span>
             </div>
-            <p class="p-card-role">Sub-DPS Geo de Cristalización Lunar (Escala con DEF%)</p>
+            <p class="p-card-role">Sub-DPS & Soporte Geo de Cristalización Lunar (Escala con DEF%)</p>
           </div>
         </a>
         <a class="p-card" href="escoffier.html" style="border-top: 3px solid #06b6d4;">
@@ -342,10 +378,10 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Escoffier</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#06b6d4;">Cryo</span>
-              <span class="p-badge-tier">T1 Cryo Sub-DPS</span>
+              <span class="p-badge-el" style="color: #06b6d4;">Cryo</span>
+              <span class="p-badge-tier">T0.5 (S) Sub-DPS</span>
             </div>
-            <p class="p-card-role">Cocinero Glacial de Fontaine • Sub-DPS Cryo y Aplicación Rápida</p>
+            <p class="p-card-role">Sub-DPS & Healer Cryo Especialista en Freeze (-55% RES Hydro/Cryo)</p>
           </div>
         </a>
         <a class="p-card" href="nicole.html" style="border-top: 3px solid #ef4444;">
@@ -355,10 +391,10 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Nicole</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#ef4444;">Pyro</span>
-              <span class="p-badge-tier">T0 Hexerei Pyro Support</span>
+              <span class="p-badge-el" style="color: #ef4444;">Pyro</span>
+              <span class="p-badge-tier">T0 (SS) Support</span>
             </div>
-            <p class="p-card-role">Soporte Premium del Aquelarre (Hexenzirkel / Hexerei Buffer de ATQ)</p>
+            <p class="p-card-role">Soporte & Escudera Pyro Hexerei (Meta 3,000–4,000 ATQ)</p>
           </div>
         </a>
         <a class="p-card" href="chasca.html" style="border-top: 3px solid #14b8a6;">
@@ -368,8 +404,8 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Chasca</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#14b8a6;">Anemo</span>
-              <span class="p-badge-tier">T0 Multi-Element Carry</span>
+              <span class="p-badge-el" style="color: #14b8a6;">Anemo</span>
+              <span class="p-badge-tier">T1 (A+) Main DPS</span>
             </div>
             <p class="p-card-role">Hypercarry Anemo & Proyectiles Multi-Elementales en Cañón Volador</p>
           </div>
@@ -381,10 +417,10 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Citlali</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#06b6d4;">Cryo</span>
-              <span class="p-badge-tier">T0 Escudo & Buffer Melt</span>
+              <span class="p-badge-el" style="color: #06b6d4;">Cryo</span>
+              <span class="p-badge-tier">T0 (SS) Support</span>
             </div>
-            <p class="p-card-role">Escudera Cryo Noctámbula, Reductora de Resistencias & Buffer de Derretido</p>
+            <p class="p-card-role">Soporte / Escudo Cryo para Derretidos & Congelados (Escala con ME)</p>
           </div>
         </a>
         <a class="p-card" href="kinich.html" style="border-top: 3px solid #22c55e;">
@@ -394,8 +430,8 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Kinich</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#22c55e;">Dendro</span>
-              <span class="p-badge-tier">T0 Loop Hypercarry</span>
+              <span class="p-badge-el" style="color: #22c55e;">Dendro</span>
+              <span class="p-badge-tier">T1 (A+) Main DPS</span>
             </div>
             <p class="p-card-role">Hypercarry Dendro en Campo (Enganche de Gancho & Cañonazos de Escamas)</p>
           </div>
@@ -407,8 +443,8 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Mualani</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#3b82f6;">Hydro</span>
-              <span class="p-badge-tier">T0 Hypercarry DPS</span>
+              <span class="p-badge-el" style="color: #3b82f6;">Hydro</span>
+              <span class="p-badge-tier">T1 (A+) Main DPS</span>
             </div>
             <p class="p-card-role">Hypercarry DPS en Campo (Mordiscos Vaporizados Masivos)</p>
           </div>
@@ -420,10 +456,10 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Arlecchino</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#ef4444;">Pyro</span>
-              <span class="p-badge-tier">T0 Hypercarry DPS</span>
+              <span class="p-badge-el" style="color: #ef4444;">Pyro</span>
+              <span class="p-badge-tier">T1.5 (A) Main DPS</span>
             </div>
-            <p class="p-card-role">Hypercarry Pyro On-Field (Pacto Perpetuo / Bond of Life)</p>
+            <p class="p-card-role">Main DPS Pyro On-Field de Pacto Vital (Tier A en 7.2)</p>
           </div>
         </a>
         <a class="p-card" href="clorinde.html" style="border-top: 3px solid #a855f7;">
@@ -433,8 +469,8 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Clorinde</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#a855f7;">Electro</span>
-              <span class="p-badge-tier">T0 Rapid-Fire Hypercarry</span>
+              <span class="p-badge-el" style="color: #a855f7;">Electro</span>
+              <span class="p-badge-tier">T2 (B) Main DPS</span>
             </div>
             <p class="p-card-role">Hypercarry Electro en Campo (Disparos de Pistola y Estocadas de Espada)</p>
           </div>
@@ -446,8 +482,8 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Navia</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#f59e0b;">Geo</span>
-              <span class="p-badge-tier">T0 Quickswap DPS</span>
+              <span class="p-badge-el" style="color: #f59e0b;">Geo</span>
+              <span class="p-badge-tier">T2 (B) Main DPS</span>
             </div>
             <p class="p-card-role">Hypercarry Geo de Disparos de Escopeta Paragüas (Cristalización)</p>
           </div>
@@ -459,8 +495,8 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Xianyun (Preservadora de Nubes)</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#14b8a6;">Anemo</span>
-              <span class="p-badge-tier">T0 Enabler Plunge</span>
+              <span class="p-badge-el" style="color: #14b8a6;">Anemo</span>
+              <span class="p-badge-tier">T1.5 (A) Support</span>
             </div>
             <p class="p-card-role">Habilitadora Universal de Ataques Descendentes, Healer de Equipo & Buffer de Daño Plano</p>
           </div>
@@ -472,8 +508,8 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Chevreuse</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#ef4444;">Pyro</span>
-              <span class="p-badge-tier">T0 Overload Buffer</span>
+              <span class="p-badge-el" style="color: #ef4444;">Pyro</span>
+              <span class="p-badge-tier">T0.5 (S) Support</span>
             </div>
             <p class="p-card-role">Buffer de Sobrecarga (-40% RES Pyro/Electro, +40% ATQ) & Healer</p>
           </div>
@@ -485,8 +521,8 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Kaedehara Kazuha</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#14b8a6;">Anemo</span>
-              <span class="p-badge-tier">T0 Buffer Universal</span>
+              <span class="p-badge-el" style="color: #14b8a6;">Anemo</span>
+              <span class="p-badge-tier">T1 (A+) Support</span>
             </div>
             <p class="p-card-role">Buffer de Daño Elemental (+40% DMG), Control de Masas (CC) & Reductor de Resistencias (-40% VV)</p>
           </div>
@@ -498,10 +534,10 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Bennett</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#ef4444;">Pyro</span>
-              <span class="p-badge-tier">T0 Buffer Universal</span>
+              <span class="p-badge-el" style="color: #ef4444;">Pyro</span>
+              <span class="p-badge-tier">T0 (SS) Support</span>
             </div>
-            <p class="p-card-role">Buffer de ATQ Masivo (+1,200 ATQ Plano) & Healer Veloz</p>
+            <p class="p-card-role">Soporte / Healer / Buffer Universal Pyro (Solo escala con ATQ Base)</p>
           </div>
         </a>
         <a class="p-card" href="nahida.html" style="border-top: 3px solid #22c55e;">
@@ -511,8 +547,8 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Nahida</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#22c55e;">Dendro</span>
-              <span class="p-badge-tier">T0 Arconte Dendro</span>
+              <span class="p-badge-el" style="color: #22c55e;">Dendro</span>
+              <span class="p-badge-tier">T1 (A+) Sub-DPS</span>
             </div>
             <p class="p-card-role">Aplicadora Dendro Suprema, Sub-DPS Off-Field (Tri-Karma) & Buffer (+250 EM)</p>
           </div>
@@ -524,8 +560,8 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Xiangling</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#ef4444;">Pyro</span>
-              <span class="p-badge-tier">T0 Off-Field DPS</span>
+              <span class="p-badge-el" style="color: #ef4444;">Pyro</span>
+              <span class="p-badge-tier">T1 (A+) Sub-DPS</span>
             </div>
             <p class="p-card-role">Reina del Sub-DPS Pyro Off-Field (Pyronado Sin ICD)</p>
           </div>
@@ -537,8 +573,8 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Alhacén (Alhaitham)</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#22c55e;">Dendro</span>
-              <span class="p-badge-tier">T0 Spread Hypercarry</span>
+              <span class="p-badge-el" style="color: #22c55e;">Dendro</span>
+              <span class="p-badge-tier">T2 (B) Main DPS</span>
             </div>
             <p class="p-card-role">Hypercarry Dendro en Campo (Lluvia de Espadas de Espejos Chisel-Light)</p>
           </div>
@@ -550,10 +586,10 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Neuvillette</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#3b82f6;">Hydro</span>
-              <span class="p-badge-tier">T0 Hypercarry DPS</span>
+              <span class="p-badge-el" style="color: #3b82f6;">Hydro</span>
+              <span class="p-badge-tier">T1.5 (A) Main DPS</span>
             </div>
-            <p class="p-card-role">Hypercarry DPS en Campo (Rayo Cargado en Área)</p>
+            <p class="p-card-role">Main DPS / Conductor Hydro de Ataque Cargado (Tier A en 7.2)</p>
           </div>
         </a>
         <a class="p-card" href="yelan.html" style="border-top: 3px solid #3b82f6;">
@@ -563,8 +599,8 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Yelan</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#3b82f6;">Hydro</span>
-              <span class="p-badge-tier">T0 Meta Universal</span>
+              <span class="p-badge-el" style="color: #3b82f6;">Hydro</span>
+              <span class="p-badge-tier">T1 (A+) Sub-DPS</span>
             </div>
             <p class="p-card-role">Off-Field Sub-DPS & Buffer de Daño Progresivo</p>
           </div>
@@ -576,8 +612,8 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Fischl</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#a855f7;">Electro</span>
-              <span class="p-badge-tier">T0 Sub-DPS Off-Field</span>
+              <span class="p-badge-el" style="color: #a855f7;">Electro</span>
+              <span class="p-badge-tier">T0.5 (S) Sub-DPS</span>
             </div>
             <p class="p-card-role">Reina del Sub-DPS Electro (Oz Incesante, Batería & Pasiva A4 en Aggravate)</p>
           </div>
@@ -589,8 +625,8 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Xingqiu</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#3b82f6;">Hydro</span>
-              <span class="p-badge-tier">T0 Meta Universal</span>
+              <span class="p-badge-el" style="color: #3b82f6;">Hydro</span>
+              <span class="p-badge-tier">T1 (A+) Sub-DPS</span>
             </div>
             <p class="p-card-role">Off-Field Sub-DPS, Aplicador Hydro & Reductor de Daño</p>
           </div>
@@ -602,8 +638,8 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Zhongli</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#f59e0b;">Geo</span>
-              <span class="p-badge-tier">T0 Escudo Absoluto</span>
+              <span class="p-badge-el" style="color: #f59e0b;">Geo</span>
+              <span class="p-badge-tier">T1.5 (A) Support</span>
             </div>
             <p class="p-card-role">Escudo Indestructible & Reductor de Resistencias Universal (-20% All RES)</p>
           </div>
@@ -615,8 +651,8 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Raiden Shogun</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#a855f7;">Electro</span>
-              <span class="p-badge-tier">T0 Battery & Burst DPS</span>
+              <span class="p-badge-el" style="color: #a855f7;">Electro</span>
+              <span class="p-badge-tier">T1.5 (A) Sub-DPS</span>
             </div>
             <p class="p-card-role">Batería Universal de Equipo, Buffer de Definitivas & Burst DPS</p>
           </div>
@@ -628,10 +664,10 @@
           <div class="p-card-body">
             <h3 class="p-card-name">Valeri</h3>
             <div class="p-card-meta">
-              <span class="p-badge-el" style="color:#a855f7;">Electro</span>
-              <span class="p-badge-tier">Preliminar 7.2</span>
+              <span class="p-badge-el" style="color: #a855f7;">Electro</span>
+              <span class="p-badge-tier">T0.5 (S) Support</span>
             </div>
-            <p class="p-card-role">Soporte con escudo · Build preliminar 7.2</p>
+            <p class="p-card-role">Escudero y Buffer Electro de Conducto Estelar (Escala 100% con ATQ)</p>
           </div>
         </a>
     </div>
