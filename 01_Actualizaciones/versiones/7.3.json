@@ -1,0 +1,14 @@
+{
+  "version": "7.3",
+  "expectedCharacters": ["Anastasya", "Danica"],
+  "officialReferences": [
+    "https://genshin.hoyoverse.com/"
+  ],
+  "manualChecks": [
+    "Confirmar materiales, cantidades, fuentes y disponibilidad dentro del juego.",
+    "Verificar armas nuevas, jefes, especialidades locales y nuevos dominios.",
+    "Validar traducciones e imagenes en es/en/pt/ja/ko.",
+    "Revisar constelaciones que aumentan niveles de talentos.",
+    "Completar builds con referencias KQM y distinguir recomendaciones preliminares."
+  ]
+}

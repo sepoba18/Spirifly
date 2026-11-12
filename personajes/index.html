@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Builds y Guías de Personajes (Versión 7.2) | Spirifly</title>
+  <meta name="description" content="Consulta las builds, mejores armas, artefactos y materiales de ascensión para los personajes meta de Genshin Impact 7.2.">
+  <link rel="canonical" href="https://spirifly.app/personajes/">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../assets/site-info.css?v=2">
+  <style>
+    .cat-lead {
+      font-size: 1.15rem;
+      color: #94a3b8;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    .p-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .p-card {
+      background: #171f33;
+      border: 1px solid #2d3b55;
+      border-radius: 12px;
+      padding: 1.1rem;
+      text-decoration: none;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+    .p-card:hover {
+      transform: translateY(-3px);
+      border-color: #60a5fa;
+      background: #1c2740;
+    }
+    .p-card-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 12px;
+      border: 2px solid #3b82f6;
+      background: rgba(0,0,0,0.3);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .p-card-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .p-card-body {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .p-card-name {
+      margin: 0 0 0.25rem;
+      font-size: 1.1rem;
+      color: #ffffff;
+      font-weight: 750;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .p-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-bottom: 0.35rem;
+    }
+    .p-badge-el {
+      font-size: 0.72rem;
+      font-weight: 700;
+      background: rgba(255,255,255,0.05);
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+    }
+    .p-badge-tier {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #fbbf24;
+      background: rgba(251,191,36,0.12);
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+    }
+    .p-card-role {
+      margin: 0;
+      font-size: 0.8rem;
+      color: #94a3b8;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  </style>
+</head>
+<body>
+  <header class="info-header">
+    <a class="info-brand" href="/">Spirifly</a>
+    <nav aria-label="Navegación principal">
+      <a href="/">Herramientas</a>
+      <a href="/personajes/">Catálogo de Builds</a>
+      <a href="../guide.html">Guía de uso</a>
+      <a href="../about.html">Proyecto</a>
+    </nav>
+  </header>
+
+  <main class="info-main">
+    <p class="info-kicker">Base de Datos de Builds · Versión 7.2</p>
+    <h1>Guías de Personajes y Builds del Meta</h1>
+    <p class="cat-lead">Explora las configuraciones óptimas de armas, conjuntos de artefactos, estadísticas recomendadas y tablas de materiales para los personajes que definen el meta de Genshin Impact.</p>
+
+    <div class="p-grid">
+      
+        <a class="p-card" href="mitya.html" style="border-top: 3px solid #a855f7;">
+          <div class="p-card-avatar" style="border-color: #a855f766;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Mitya.png" alt="Mitya" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Mitya</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#a855f7;">Electro</span>
+              <span class="p-badge-tier">Preliminar 7.2</span>
+            </div>
+            <p class="p-card-role">DPS en campo · Build preliminar 7.2</p>
+          </div>
+        </a>
+        <a class="p-card" href="sandrone.html" style="border-top: 3px solid #06b6d4;">
+          <div class="p-card-avatar" style="border-color: #06b6d466;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_MarionetteNew.png" alt="Sandrone (Marionette)" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Sandrone (Marionette)</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#06b6d4;">Cryo</span>
+              <span class="p-badge-tier">T0 Stellar-Conduct DPS</span>
+            </div>
+            <p class="p-card-role">Main DPS / Sub-DPS Cryo de Conducto Estelar (Autómatas Mecánicos)</p>
+          </div>
+        </a>
+        <a class="p-card" href="vesna.html" style="border-top: 3px solid #14b8a6;">
+          <div class="p-card-avatar" style="border-color: #14b8a666;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Vesna.png" alt="Vesna" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Vesna</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#14b8a6;">Anemo</span>
+              <span class="p-badge-tier">T0.5 Stellar-Swirl DPS</span>
+            </div>
+            <p class="p-card-role">Main DPS Anemo de Torbellino Estelar (Stellar-Swirl DPS)</p>
+          </div>
+        </a>
+        <a class="p-card" href="mavuika.html" style="border-top: 3px solid #ef4444;">
+          <div class="p-card-avatar" style="border-color: #ef444466;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Mavuika.png" alt="Mavuika" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Mavuika</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#ef4444;">Pyro</span>
+              <span class="p-badge-tier">T0 Arconte Pyro</span>
+            </div>
+            <p class="p-card-role">Hypercarry DPS en Campo & Aplicadora Pyro Off-Field</p>
+          </div>
+        </a>
+        <a class="p-card" href="nefer.html" style="border-top: 3px solid #22c55e;">
+          <div class="p-card-avatar" style="border-color: #22c55e66;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Nefer.png" alt="Nefer" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Nefer</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#22c55e;">Dendro</span>
+              <span class="p-badge-tier">T0 Lunar-Bloom DPS</span>
+            </div>
+            <p class="p-card-role">DPS Dendro Lunar • Detonación Rápida de Semillas y Reacciones Bloom</p>
+          </div>
+        </a>
+        <a class="p-card" href="flins.html" style="border-top: 3px solid #a855f7;">
+          <div class="p-card-avatar" style="border-color: #a855f766;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Flins.png" alt="Flins" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Flins</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#a855f7;">Electro</span>
+              <span class="p-badge-tier">T0 Lunar-Charged DPS</span>
+            </div>
+            <p class="p-card-role">DPS Principal de Nod-Krai • Daño Electro Lunar de Alta Cadencia</p>
+          </div>
+        </a>
+        <a class="p-card" href="skirk.html" style="border-top: 3px solid #06b6d4;">
+          <div class="p-card-avatar" style="border-color: #06b6d466;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_SkirkNew.png" alt="Skirk" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Skirk</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#06b6d4;">Cryo</span>
+              <span class="p-badge-tier">T0 Void Sword DPS</span>
+            </div>
+            <p class="p-card-role">Maestra del Abismo • Hipercarry Cryo de Daño Cataclísmico</p>
+          </div>
+        </a>
+        <a class="p-card" href="zibai.html" style="border-top: 3px solid #f59e0b;">
+          <div class="p-card-avatar" style="border-color: #f59e0b66;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Zibai.png" alt="Zibai" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Zibai</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#f59e0b;">Geo</span>
+              <span class="p-badge-tier">T0 Lunar-Crystallize DPS</span>
+            </div>
+            <p class="p-card-role">DPS Geo de Filo Lunar • Cristalización Ofensiva de Alta Frecuencia</p>
+          </div>
+        </a>
+        <a class="p-card" href="varka.html" style="border-top: 3px solid #14b8a6;">
+          <div class="p-card-avatar" style="border-color: #14b8a666;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Varka.png" alt="Varka" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Varka</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#14b8a6;">Anemo</span>
+              <span class="p-badge-tier">T0 Hexerei Sovereign DPS</span>
+            </div>
+            <p class="p-card-role">Gran Maestro de los Caballeros de Favonius • Mandoble Anemo de Fuerza Titánica</p>
+          </div>
+        </a>
+        <a class="p-card" href="varesa.html" style="border-top: 3px solid #a855f7;">
+          <div class="p-card-avatar" style="border-color: #a855f766;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Varesa.png" alt="Varesa" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Varesa</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#a855f7;">Electro</span>
+              <span class="p-badge-tier">T0 Electro Hypercarry</span>
+            </div>
+            <p class="p-card-role">Hipercarry Electro • Rayos Crepusculares de Alto Impacto</p>
+          </div>
+        </a>
+        <a class="p-card" href="columbina.html" style="border-top: 3px solid #3b82f6;">
+          <div class="p-card-avatar" style="border-color: #3b82f666;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Columbina.png" alt="Columbina (Damselette)" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Columbina (Damselette)</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#3b82f6;">Hydro</span>
+              <span class="p-badge-tier">T0 Sub-DPS & Buffer</span>
+            </div>
+            <p class="p-card-role">Heraldo de Fatui #3 (Damselette) • Buffer Universal y Sub-DPS Hydro Off-Field</p>
+          </div>
+        </a>
+        <a class="p-card" href="odette.html" style="border-top: 3px solid #06b6d4;">
+          <div class="p-card-avatar" style="border-color: #06b6d466;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Odette.png" alt="Odette" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Odette</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#06b6d4;">Cryo</span>
+              <span class="p-badge-tier">T0.5 Stellar-Glimmer Sub-DPS</span>
+            </div>
+            <p class="p-card-role">Sub-DPS Cryo de Fulgor Estelar (Stellar-Glimmer Sub-DPS)</p>
+          </div>
+        </a>
+        <a class="p-card" href="lauma.html" style="border-top: 3px solid #22c55e;">
+          <div class="p-card-avatar" style="border-color: #22c55e66;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Lauma.png" alt="Lauma" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Lauma</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#22c55e;">Dendro</span>
+              <span class="p-badge-tier">T0 Dendro Support</span>
+            </div>
+            <p class="p-card-role">Buffer y Soporte Dendro de Nod-Krai • Reducción de Resistencia y Cura Continua</p>
+          </div>
+        </a>
+        <a class="p-card" href="ineffa.html" style="border-top: 3px solid #a855f7;">
+          <div class="p-card-avatar" style="border-color: #a855f766;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Ineffa.png" alt="Ineffa" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Ineffa</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#a855f7;">Electro</span>
+              <span class="p-badge-tier">T0 Electro Sub-DPS</span>
+            </div>
+            <p class="p-card-role">Sub-DPS Electro de Invocación Lunar • Descargas de Alta Frecuencia</p>
+          </div>
+        </a>
+        <a class="p-card" href="xilonen.html" style="border-top: 3px solid #f59e0b;">
+          <div class="p-card-avatar" style="border-color: #f59e0b66;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Xilonen.png" alt="Xilonen" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Xilonen</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#f59e0b;">Geo</span>
+              <span class="p-badge-tier">T0 Soporte Universal</span>
+            </div>
+            <p class="p-card-role">Reductora de Resistencias (-36% RES), Buffer (+40% DMG) & Healer</p>
+          </div>
+        </a>
+        <a class="p-card" href="furina.html" style="border-top: 3px solid #3b82f6;">
+          <div class="p-card-avatar" style="border-color: #3b82f666;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Furina.png" alt="Furina" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Furina</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#3b82f6;">Hydro</span>
+              <span class="p-badge-tier">T0 Meta Universal</span>
+            </div>
+            <p class="p-card-role">Off-Field Sub-DPS & Buffer Universal (Fanfarria)</p>
+          </div>
+        </a>
+        <a class="p-card" href="linnea.html" style="border-top: 3px solid #f59e0b;">
+          <div class="p-card-avatar" style="border-color: #f59e0b66;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Linnea.png" alt="Linnea" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Linnea</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#f59e0b;">Geo</span>
+              <span class="p-badge-tier">T0.5 Lunar-Crystallize Sub-DPS</span>
+            </div>
+            <p class="p-card-role">Sub-DPS Geo de Cristalización Lunar (Escala con DEF%)</p>
+          </div>
+        </a>
+        <a class="p-card" href="escoffier.html" style="border-top: 3px solid #06b6d4;">
+          <div class="p-card-avatar" style="border-color: #06b6d466;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Escoffier.png" alt="Escoffier" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Escoffier</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#06b6d4;">Cryo</span>
+              <span class="p-badge-tier">T1 Cryo Sub-DPS</span>
+            </div>
+            <p class="p-card-role">Cocinero Glacial de Fontaine • Sub-DPS Cryo y Aplicación Rápida</p>
+          </div>
+        </a>
+        <a class="p-card" href="nicole.html" style="border-top: 3px solid #ef4444;">
+          <div class="p-card-avatar" style="border-color: #ef444466;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Nicole.png" alt="Nicole" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Nicole</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#ef4444;">Pyro</span>
+              <span class="p-badge-tier">T0 Hexerei Pyro Support</span>
+            </div>
+            <p class="p-card-role">Soporte Premium del Aquelarre (Hexenzirkel / Hexerei Buffer de ATQ)</p>
+          </div>
+        </a>
+        <a class="p-card" href="chasca.html" style="border-top: 3px solid #14b8a6;">
+          <div class="p-card-avatar" style="border-color: #14b8a666;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Chasca.png" alt="Chasca" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Chasca</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#14b8a6;">Anemo</span>
+              <span class="p-badge-tier">T0 Multi-Element Carry</span>
+            </div>
+            <p class="p-card-role">Hypercarry Anemo & Proyectiles Multi-Elementales en Cañón Volador</p>
+          </div>
+        </a>
+        <a class="p-card" href="citlali.html" style="border-top: 3px solid #06b6d4;">
+          <div class="p-card-avatar" style="border-color: #06b6d466;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Citlali.png" alt="Citlali" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Citlali</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#06b6d4;">Cryo</span>
+              <span class="p-badge-tier">T0 Escudo & Buffer Melt</span>
+            </div>
+            <p class="p-card-role">Escudera Cryo Noctámbula, Reductora de Resistencias & Buffer de Derretido</p>
+          </div>
+        </a>
+        <a class="p-card" href="kinich.html" style="border-top: 3px solid #22c55e;">
+          <div class="p-card-avatar" style="border-color: #22c55e66;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Kinich.png" alt="Kinich" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Kinich</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#22c55e;">Dendro</span>
+              <span class="p-badge-tier">T0 Loop Hypercarry</span>
+            </div>
+            <p class="p-card-role">Hypercarry Dendro en Campo (Enganche de Gancho & Cañonazos de Escamas)</p>
+          </div>
+        </a>
+        <a class="p-card" href="mualani.html" style="border-top: 3px solid #3b82f6;">
+          <div class="p-card-avatar" style="border-color: #3b82f666;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Mualani.png" alt="Mualani" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Mualani</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#3b82f6;">Hydro</span>
+              <span class="p-badge-tier">T0 Hypercarry DPS</span>
+            </div>
+            <p class="p-card-role">Hypercarry DPS en Campo (Mordiscos Vaporizados Masivos)</p>
+          </div>
+        </a>
+        <a class="p-card" href="arlecchino.html" style="border-top: 3px solid #ef4444;">
+          <div class="p-card-avatar" style="border-color: #ef444466;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Arlecchino.png" alt="Arlecchino" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Arlecchino</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#ef4444;">Pyro</span>
+              <span class="p-badge-tier">T0 Hypercarry DPS</span>
+            </div>
+            <p class="p-card-role">Hypercarry Pyro On-Field (Pacto Perpetuo / Bond of Life)</p>
+          </div>
+        </a>
+        <a class="p-card" href="clorinde.html" style="border-top: 3px solid #a855f7;">
+          <div class="p-card-avatar" style="border-color: #a855f766;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Clorinde.png" alt="Clorinde" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Clorinde</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#a855f7;">Electro</span>
+              <span class="p-badge-tier">T0 Rapid-Fire Hypercarry</span>
+            </div>
+            <p class="p-card-role">Hypercarry Electro en Campo (Disparos de Pistola y Estocadas de Espada)</p>
+          </div>
+        </a>
+        <a class="p-card" href="navia.html" style="border-top: 3px solid #f59e0b;">
+          <div class="p-card-avatar" style="border-color: #f59e0b66;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Navia.png" alt="Navia" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Navia</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#f59e0b;">Geo</span>
+              <span class="p-badge-tier">T0 Quickswap DPS</span>
+            </div>
+            <p class="p-card-role">Hypercarry Geo de Disparos de Escopeta Paragüas (Cristalización)</p>
+          </div>
+        </a>
+        <a class="p-card" href="xianyun.html" style="border-top: 3px solid #14b8a6;">
+          <div class="p-card-avatar" style="border-color: #14b8a666;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Liuyun.png" alt="Xianyun (Preservadora de Nubes)" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Xianyun (Preservadora de Nubes)</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#14b8a6;">Anemo</span>
+              <span class="p-badge-tier">T0 Enabler Plunge</span>
+            </div>
+            <p class="p-card-role">Habilitadora Universal de Ataques Descendentes, Healer de Equipo & Buffer de Daño Plano</p>
+          </div>
+        </a>
+        <a class="p-card" href="chevreuse.html" style="border-top: 3px solid #ef4444;">
+          <div class="p-card-avatar" style="border-color: #ef444466;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Chevreuse.png" alt="Chevreuse" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Chevreuse</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#ef4444;">Pyro</span>
+              <span class="p-badge-tier">T0 Overload Buffer</span>
+            </div>
+            <p class="p-card-role">Buffer de Sobrecarga (-40% RES Pyro/Electro, +40% ATQ) & Healer</p>
+          </div>
+        </a>
+        <a class="p-card" href="kazuha.html" style="border-top: 3px solid #14b8a6;">
+          <div class="p-card-avatar" style="border-color: #14b8a666;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Kazuha.png" alt="Kaedehara Kazuha" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Kaedehara Kazuha</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#14b8a6;">Anemo</span>
+              <span class="p-badge-tier">T0 Buffer Universal</span>
+            </div>
+            <p class="p-card-role">Buffer de Daño Elemental (+40% DMG), Control de Masas (CC) & Reductor de Resistencias (-40% VV)</p>
+          </div>
+        </a>
+        <a class="p-card" href="bennett.html" style="border-top: 3px solid #ef4444;">
+          <div class="p-card-avatar" style="border-color: #ef444466;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Bennett.png" alt="Bennett" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Bennett</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#ef4444;">Pyro</span>
+              <span class="p-badge-tier">T0 Buffer Universal</span>
+            </div>
+            <p class="p-card-role">Buffer de ATQ Masivo (+1,200 ATQ Plano) & Healer Veloz</p>
+          </div>
+        </a>
+        <a class="p-card" href="nahida.html" style="border-top: 3px solid #22c55e;">
+          <div class="p-card-avatar" style="border-color: #22c55e66;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Nahida.png" alt="Nahida" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Nahida</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#22c55e;">Dendro</span>
+              <span class="p-badge-tier">T0 Arconte Dendro</span>
+            </div>
+            <p class="p-card-role">Aplicadora Dendro Suprema, Sub-DPS Off-Field (Tri-Karma) & Buffer (+250 EM)</p>
+          </div>
+        </a>
+        <a class="p-card" href="xiangling.html" style="border-top: 3px solid #ef4444;">
+          <div class="p-card-avatar" style="border-color: #ef444466;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Xiangling.png" alt="Xiangling" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Xiangling</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#ef4444;">Pyro</span>
+              <span class="p-badge-tier">T0 Off-Field DPS</span>
+            </div>
+            <p class="p-card-role">Reina del Sub-DPS Pyro Off-Field (Pyronado Sin ICD)</p>
+          </div>
+        </a>
+        <a class="p-card" href="alhaitham.html" style="border-top: 3px solid #22c55e;">
+          <div class="p-card-avatar" style="border-color: #22c55e66;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Alhatham.png" alt="Alhacén (Alhaitham)" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Alhacén (Alhaitham)</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#22c55e;">Dendro</span>
+              <span class="p-badge-tier">T0 Spread Hypercarry</span>
+            </div>
+            <p class="p-card-role">Hypercarry Dendro en Campo (Lluvia de Espadas de Espejos Chisel-Light)</p>
+          </div>
+        </a>
+        <a class="p-card" href="neuvillette.html" style="border-top: 3px solid #3b82f6;">
+          <div class="p-card-avatar" style="border-color: #3b82f666;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Neuvillette.png" alt="Neuvillette" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Neuvillette</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#3b82f6;">Hydro</span>
+              <span class="p-badge-tier">T0 Hypercarry DPS</span>
+            </div>
+            <p class="p-card-role">Hypercarry DPS en Campo (Rayo Cargado en Área)</p>
+          </div>
+        </a>
+        <a class="p-card" href="yelan.html" style="border-top: 3px solid #3b82f6;">
+          <div class="p-card-avatar" style="border-color: #3b82f666;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Yelan.png" alt="Yelan" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Yelan</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#3b82f6;">Hydro</span>
+              <span class="p-badge-tier">T0 Meta Universal</span>
+            </div>
+            <p class="p-card-role">Off-Field Sub-DPS & Buffer de Daño Progresivo</p>
+          </div>
+        </a>
+        <a class="p-card" href="fischl.html" style="border-top: 3px solid #a855f7;">
+          <div class="p-card-avatar" style="border-color: #a855f766;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Fischl.png" alt="Fischl" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Fischl</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#a855f7;">Electro</span>
+              <span class="p-badge-tier">T0 Sub-DPS Off-Field</span>
+            </div>
+            <p class="p-card-role">Reina del Sub-DPS Electro (Oz Incesante, Batería & Pasiva A4 en Aggravate)</p>
+          </div>
+        </a>
+        <a class="p-card" href="xingqiu.html" style="border-top: 3px solid #3b82f6;">
+          <div class="p-card-avatar" style="border-color: #3b82f666;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Xingqiu.png" alt="Xingqiu" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Xingqiu</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#3b82f6;">Hydro</span>
+              <span class="p-badge-tier">T0 Meta Universal</span>
+            </div>
+            <p class="p-card-role">Off-Field Sub-DPS, Aplicador Hydro & Reductor de Daño</p>
+          </div>
+        </a>
+        <a class="p-card" href="zhongli.html" style="border-top: 3px solid #f59e0b;">
+          <div class="p-card-avatar" style="border-color: #f59e0b66;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Zhongli.png" alt="Zhongli" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Zhongli</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#f59e0b;">Geo</span>
+              <span class="p-badge-tier">T0 Escudo Absoluto</span>
+            </div>
+            <p class="p-card-role">Escudo Indestructible & Reductor de Resistencias Universal (-20% All RES)</p>
+          </div>
+        </a>
+        <a class="p-card" href="raiden.html" style="border-top: 3px solid #a855f7;">
+          <div class="p-card-avatar" style="border-color: #a855f766;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Shougun.png" alt="Raiden Shogun" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Raiden Shogun</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#a855f7;">Electro</span>
+              <span class="p-badge-tier">T0 Battery & Burst DPS</span>
+            </div>
+            <p class="p-card-role">Batería Universal de Equipo, Buffer de Definitivas & Burst DPS</p>
+          </div>
+        </a>
+        <a class="p-card" href="valeriy.html" style="border-top: 3px solid #a855f7;">
+          <div class="p-card-avatar" style="border-color: #a855f766;">
+            <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Valeriy.png" alt="Valeri" loading="lazy" />
+          </div>
+          <div class="p-card-body">
+            <h3 class="p-card-name">Valeri</h3>
+            <div class="p-card-meta">
+              <span class="p-badge-el" style="color:#a855f7;">Electro</span>
+              <span class="p-badge-tier">Preliminar 7.2</span>
+            </div>
+            <p class="p-card-role">Soporte con escudo · Build preliminar 7.2</p>
+          </div>
+        </a>
+    </div>
+  </main>
+
+  <footer class="info-footer">
+    <nav class="info-footer-links" aria-label="Privacidad y condiciones">
+      <a href="../privacy.html">Privacidad</a>
+      <a href="../cookies.html">Cookies</a>
+      <a href="../terms.html">Términos de uso</a>
+    </nav>
+    <p>© 2026 Spirifly. Proyecto independiente, sin afiliación ni respaldo de HoYoverse. Las marcas y recursos pertenecen a sus respectivos titulares.</p>
+  </footer>
+</body>
+</html>

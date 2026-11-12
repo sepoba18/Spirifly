@@ -28,3 +28,13 @@ desktop.ini
 
 apply_styles_*.py
 .codex/
+
+# Archivos de video, audio y render promocional
+*.mp4
+*.mp3
+*.wav
+*.ass
+*.srt
+screenshot_*.png
+video_temp/
+video_temp_b/

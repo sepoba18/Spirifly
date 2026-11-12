@@ -1,9 +1,7 @@
-// =====================================================================
-// BASE DE DATOS MODULAR DE BUILDS META & SIMULADOR DE THEORYCRAFTING
-// Estándar de la Comunidad Global (KeqingMains, Game8, GenshinLab)
-// Total de Personajes Jugables Integrados: 129
-// =====================================================================
-
+// =========================================================================
+// SPIRIFLY - BASE DE DATOS DE BUILDS Y THEORYCRAFTING (GENSHIN 7.2)
+// Auditoría 7.2 verificada con fuentes reales y spirifly_builds MCP (2026-11-12)
+// =========================================================================
 const CHARACTER_BUILDS_DB = [
   {
     "id": "albedo",
@@ -15,7 +13,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Albedo.png",
-    "tier": "T1 Sub-DPS Geo",
+    "tier": "T1 (A+) Sub-DPS",
     "role": "Sub-DPS Geo Off-Field (Flor Solar de Defensa) & Buffer de EM (+125 EM en Q)",
     "roleCategory": "sub_dps",
     "scalingType": "DEF",
@@ -205,7 +203,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -218,7 +218,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Alhatham.png",
-    "tier": "T0 Spread Hypercarry",
+    "tier": "T2 (B) Main DPS",
     "role": "Hypercarry Dendro en Campo (Lluvia de Espadas de Espejos Chisel-Light)",
     "roleCategory": "main_dps",
     "scalingType": "EM_ATK",
@@ -432,7 +432,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -445,7 +447,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Claymore",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Itto.png",
-    "tier": "T0.5 DEF Hypercarry",
+    "tier": "T3 (C) Main DPS",
     "role": "Hypercarry Geo en Campo (Ataques Cargados Kesagiri Devastadores)",
     "roleCategory": "main_dps",
     "scalingType": "DEF",
@@ -627,7 +629,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -640,134 +644,121 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Polearm",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Arlecchino.png",
-    "tier": "T0 Hypercarry DPS",
-    "role": "Hypercarry Pyro On-Field (Pacto Perpetuo / Bond of Life)",
+    "tier": "T1.5 (A) Main DPS",
+    "role": "Main DPS Pyro On-Field de Pacto Vital (Tier A en 7.2)",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
-    "scalingLabel": "Escalado por ATQ% & Multiplicador de Pacto Perpetuo",
+    "scalingLabel": "Escala con ATQ% y Pacto Vital (solo se cura con su propia Q); viable en Hexerei y Lunar 7.2",
     "bestWeapons": [
       {
         "name": "Semblante de la Luna Carmesí",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+Prob. Crítica, genera +25% de Pacto Perpetuo y hasta +36% de daño universal.",
+        "type": "BiS Firma",
+        "note": "674 ATQ base, 22.1% Prob. Crítica; otorga Pacto Vital adicional y +36% Daño total.",
         "weaponId": "13512",
-        "reviewedNote": false
-      },
-      {
-        "name": "Halcón de Jade",
-        "rarity": 5,
-        "type": "Opción por rol",
-        "note": "Stat-sticks excepcionales de Crítico y ATQ.",
-        "weaponId": "13505",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
         "name": "Báculo de Homa",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "Stat-sticks excepcionales de Crítico y ATQ.",
+        "type": "Alternativa 5★",
+        "note": "608 ATQ base, 66.2% Daño Crítico; excelente stat-stick de Crítico y ATQ.",
         "weaponId": "13501",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
-        "name": "Balada de los Fiordos",
-        "rarity": 4,
-        "type": "Opción por rol",
-        "note": "+Prob. Crítica altísima; Balada otorga 120 EM en Vaporizado.",
-        "weaponId": "13424",
-        "reviewedNote": false
+        "name": "Halcón de Jade",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "674 ATQ base, 22.1% Prob. Crítica; acumula cargas de ATQ y +12% Daño con Normales rápidos.",
+        "weaponId": "13505",
+        "reviewedNote": true
       },
       {
         "name": "Lanza del Duelo",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "+Prob. Crítica altísima; Balada otorga 120 EM en Vaporizado.",
+        "type": "Mejor 4★ PB",
+        "note": "454 ATQ base, 36.8% Prob. Crítica; sólida consistencia crítica y bufo de ATQ.",
         "weaponId": "13405",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
         "name": "Borla Blanca",
         "rarity": 3,
-        "type": "Opción por rol",
-        "note": "Arma 3★ de cofre (+23.4% CR y +48% daño en Ataques Normales, compite con 4★).",
+        "type": "Mejor F2P (3★)",
+        "note": "401 ATQ base, 23.4% Prob. Crítica; +48% Daño de Ataques Normales R5.",
         "weaponId": "11312",
-        "reviewedNote": false
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Fragmento de la Armonía Fantasmal (4 piezas)",
-        "type": "BiS Indiscutible",
-        "bonus": "+54% Daño constante al aumentar o disminuir el Pacto Perpetuo.",
-        "reviewedBonus": false
+        "set": "Fragment of Harmonic Whimsy (4 piezas)",
+        "type": "BiS Universal",
+        "bonus": "+18% ATQ (2p) y +54% Daño total constante por fluctuaciones de Pacto Vital.",
+        "reviewedBonus": true
       },
       {
-        "set": "Gladiador (4 piezas)",
-        "type": "Alternativa Top",
-        "bonus": "+35% Daño en Ataques Normales (solo ~6% por detrás de Armonía).",
-        "reviewedBonus": false
+        "set": "Night of the Sky's Unveiling (4 piezas)",
+        "type": "Alternativa Lunar 7.2",
+        "bonus": "Para variantes con Columbina e Ineffa: otorga Crítico y Bono Lunar en campo.",
+        "reviewedBonus": true
+      },
+      {
+        "set": "Gladiator's Finale (4 piezas)",
+        "type": "Alternativa Clásica",
+        "bonus": "+18% ATQ y +35% Daño de Ataques Normales muy cerca de Armonía.",
+        "reviewedBonus": true
       }
     ],
     "mainStats": {
-      "sands": "ATQ% (o EM en Vaporizado)",
-      "goblet": "Bono Daño Pyro%",
-      "circlet": "Prob. Crítica% / Daño Crítico%"
+      "sands": "ATQ% (o ME en Vaporizado/Derretido)",
+      "goblet": "Bono Daño Pyro",
+      "circlet": "Prob. Crítica / Daño Crítico"
     },
     "substatsPriority": [
-      "1. Prob. Crítica / Daño Crítico (1:2)",
-      "2. ATQ%",
-      "3. Maestría Elemental (80 – 160 EM)",
-      "4. Recarga de Energía (100% – 120%)"
+      "Prob. Crítica > Daño Crítico > ATQ% > Maestría Elemental (Vaporizado)."
     ],
-    "talentPriority": "Ataque Normal (NA) >>> Habilidad Elemental (E) = Definitiva (Q)",
+    "talentPriority": "Ataques Normales >>> Habilidad Elemental (E) >= Definitiva (Q)",
     "benchmarks": {
       "hp": "18,000",
-      "atk": "2,100 – 2,400 ATQ",
+      "atk": "2,000+ ATQ",
       "def": "800",
-      "em": "80 – 160 EM",
-      "er": "110% – 125% ER",
-      "crit": "75%+ CR / 180%+ CD"
+      "em": "0 – 120 ME (Reacción)",
+      "er": "100% – 120% ER",
+      "crit": "70% – 80% CR / 160%+ CD"
     },
     "metaTeams": [
       {
-        "name": "Arlecchino Vape",
-        "comp": "Arlecchino • Yelan • Bennett • Kazuha",
+        "name": "Sobrecarga Hexerei",
+        "members": [
+          "Arlecchino",
+          "Nicole",
+          "Fischl",
+          "Chevreuse"
+        ],
+        "comp": "Arlecchino • Nicole • Fischl • Chevreuse",
+        "note": "Aprovecha sinergia Hexerei y reducción de RES de Chevreuse sin necesidad de Bennett."
+      },
+      {
+        "name": "Vaporizado Clásico / Citlali",
         "members": [
           "Arlecchino",
           "Yelan",
-          "Bennett",
-          "Kazuha"
-        ]
-      },
-      {
-        "name": "Arlecchino Overload",
-        "comp": "Arlecchino • Chevreuse • Fischl • Bennett",
-        "members": [
-          "Arlecchino",
-          "Chevreuse",
-          "Fischl",
+          "Citlali",
           "Bennett"
-        ]
-      },
-      {
-        "name": "Arlecchino Mono Pyro",
-        "comp": "Arlecchino • Bennett • Xiangling • Kazuha",
-        "members": [
-          "Arlecchino",
-          "Bennett",
-          "Xiangling",
-          "Kazuha"
-        ]
+        ],
+        "comp": "Arlecchino • Yelan • Citlali • Bennett",
+        "note": "Combina Derretidos y Vaporizados con escudo y Pergamino de Citlali."
       }
     ],
     "recommendedPanel": {
       "hp": "18,000",
-      "atk": "2,100 – 2,400 ATQ",
+      "atk": "2,000+ ATQ",
       "def": "800",
-      "em": "80 – 160 EM",
-      "er": "110% – 125% ER",
-      "crit": "75%+ CR / 180%+ CD"
+      "em": "0 – 120 ME (Reacción)",
+      "er": "100% – 120% ER",
+      "crit": "70% – 80% CR / 160%+ CD"
     },
     "baseStats": {
       "hp90": 13103,
@@ -839,24 +830,24 @@ const CHARACTER_BUILDS_DB = [
       }
     },
     "statPriority": {
-      "sands": "ATQ% (o EM en Vaporizado)",
-      "goblet": "Bono Daño Pyro%",
-      "circlet": "Prob. Crítica% / Daño Crítico%",
-      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% > 3. Maestría Elemental (80 – 160 EM) > 4. Recarga de Energía (100% – 120%)"
+      "sands": "ATQ% (o ME en Vaporizado/Derretido)",
+      "goblet": "Bono Daño Pyro",
+      "circlet": "Prob. Crítica / Daño Crítico",
+      "substats": "Prob. Crítica > Daño Crítico > ATQ% > Maestría Elemental (Vaporizado)."
     },
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/arlecchino-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://keqingmains.com/q/arlecchino-quickguide/",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "https://game8.co/games/Genshin-Impact/archives/382103",
+        "spirifly_builds MCP"
       ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -869,7 +860,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Baizhuer.png",
-    "tier": "T0 Dendro Healer",
+    "tier": "T1.5 (A) Support",
     "role": "Healer de Equipo Instantáneo, Escudo Anti-Interrupción & Buffer de Reacciones",
     "roleCategory": "healer_shielder",
     "scalingType": "HP",
@@ -1060,7 +1051,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -1073,7 +1066,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Claymore",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Beidou.png",
-    "tier": "T0.5 Chain Lightning AoE",
+    "tier": "T2 (B) Sub-DPS",
     "role": "Sub-DPS Electro en Área de Rebotes Eléctricos (Hasta 5 rebotes en C2)",
     "roleCategory": "sub_dps",
     "scalingType": "ATK",
@@ -1263,7 +1256,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -1276,126 +1271,115 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Bennett.png",
-    "tier": "T0 Buffer Universal",
-    "role": "Buffer de ATQ Masivo (+1,200 ATQ Plano) & Healer Veloz",
+    "tier": "T0 (SS) Support",
+    "role": "Soporte / Healer / Buffer Universal Pyro (Solo escala con ATQ Base)",
     "roleCategory": "support",
-    "scalingType": "ATK_HP",
-    "scalingLabel": "Buff Q escala SOLO con ATQ BASE (Arma + Nivel) • Curación escala con HP",
+    "scalingType": "ER",
+    "scalingLabel": "Su bono de ATQ depende exclusivamente de su ATQ Base + arma; prioriza Recarga de Energía primero",
     "bestWeapons": [
       {
-        "name": "Hoja Afilada Celestial",
+        "name": "Reflejo de las Tinieblas",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "Alto ATQ Base (608) y +55.1% Recarga de Energía.",
-        "weaponId": "11502",
-        "reviewedNote": false
+        "type": "BiS ATQ Base 674",
+        "note": "674 ATQ base, 44.1% Daño Crítico; maximiza el bufo de ATQ y su propio daño.",
+        "weaponId": "11509",
+        "reviewedNote": true
       },
       {
         "name": "Aquila Favonia",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "ATQ Base máximo del juego (674) para el mayor buff posible.",
+        "type": "BiS F2P Estándar 674",
+        "note": "674 ATQ base, 41.3% Físico; la espada más accesible con el ATQ base máximo posible.",
         "weaponId": "11501",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
-        "name": "Reflejo de las Tinieblas",
+        "name": "Hoja Afilada Celestial",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "ATQ Base máximo del juego (674) para el mayor buff posible.",
-        "weaponId": "11509",
-        "reviewedNote": false
+        "type": "Alternativa 5★ RE",
+        "note": "608 ATQ base, 55.1% RE; equilibra alto ATQ base con recarga comodísima.",
+        "weaponId": "11502",
+        "reviewedNote": true
       },
       {
         "name": "Espada de Madera",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "Forja de Sumeru: 565 ATQ Base alto y +30.6% Recarga de Energía.",
+        "type": "Mejor F2P Forja",
+        "note": "565 ATQ base, 30.6% RE; mejor espada crafteable de Sumeru para maximizar bufo + recarga.",
         "weaponId": "11417",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
         "name": "Espada de Favonius",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "Genera partículas blancas adicionales para el equipo.",
+        "type": "Alternativa Batería",
+        "note": "454 ATQ base, 61.3% RE; genera partículas blancas para equipos hambrientos de energía.",
         "weaponId": "11401",
-        "reviewedNote": false
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Nobleza Obligada (4 piezas)",
-        "type": "BiS Indiscutible",
-        "bonus": "+20% ATQ adicional para todo el equipo tras activar su Definitiva.",
-        "reviewedBonus": false
+        "set": "Noblesse Oblige (4 piezas)",
+        "type": "BiS Universal",
+        "bonus": "+20% Daño Definitiva (2p); +20% ATQ adicional a todo el equipo durante 12s tras usar Q.",
+        "reviewedBonus": true
       },
       {
-        "set": "Instructor (4 piezas)",
-        "type": "Alternativa Reacciones",
-        "bonus": "+120 Maestría Elemental para equipos de Vaporizado o Derretido.",
-        "reviewedBonus": false
+        "set": "Emblem of Severed Fate (4 piezas)",
+        "type": "Alternativa RE",
+        "bonus": "+20% RE (2p); opción temporal si otro aliado ya usa Ritual Antiguo de la Nobleza.",
+        "reviewedBonus": true
       }
     ],
     "mainStats": {
-      "sands": "Recarga de Energía%",
-      "goblet": "Vida%",
-      "circlet": "Bono de Curación% o Vida%"
+      "sands": "Recarga de Energía",
+      "goblet": "Vida% / Bono Daño Pyro",
+      "circlet": "Bono de Curación / Prob. Crítica (Favonius)"
     },
     "substatsPriority": [
-      "1. Recarga de Energía% (220% - 250% ER)",
-      "2. Vida% y Vida Plana",
-      "3. Prob. Crítica (si usa Favonius)",
-      "❌ ATQ% en artefactos NO aumenta el buff de su Q"
+      "Recarga de Energía (hasta cumplir meta) > Vida% > Prob. Crítica / Daño Crítico."
     ],
-    "talentPriority": "Definitiva (Q) >>> Habilidad Elemental (E) >>> Ataques Normales (No subir)",
+    "talentPriority": "Definitiva (Q) >>> Habilidad Elemental (E) >>> Ataques Normales",
     "benchmarks": {
-      "hp": "28,000 – 34,000 HP",
-      "atk": "700 – 865 ATQ Base",
-      "def": "750",
+      "hp": "22,000 – 26,000 HP",
+      "atk": "Solo ATQ Base (Arma 565–674)",
+      "def": "800",
       "em": "0",
-      "er": "220% – 260% ER",
-      "crit": "40%+ CR (con Favonius) / No req."
+      "er": "200% – 250% ER (180%+ con Favonius)",
+      "crit": "50% – 60% CR / 150%+ CD (Sub-DPS)"
     },
     "metaTeams": [
       {
-        "name": "National Team",
-        "comp": "Xiangling • Xingqiu • Bennett • Kazuha",
+        "name": "Mavuika Derretidos SS 7.2",
         "members": [
-          "Xiangling",
-          "Xingqiu",
-          "Bennett",
-          "Kazuha"
-        ]
-      },
-      {
-        "name": "Navia doble Pyro",
-        "members": [
-          "Navia",
-          "Zhongli",
-          "Xiangling",
+          "Mavuika",
+          "Citlali",
+          "Xilonen",
           "Bennett"
         ],
-        "comp": "Navia • Zhongli • Xiangling • Bennett"
+        "comp": "Mavuika • Citlali • Xilonen • Bennett",
+        "note": "Techo de daño Pyro en Derretidos combinando Ritual de Nobleza + Pergamino Natlan."
       },
       {
-        "name": "Sunfire Jean Core",
-        "comp": "Jean • Bennett • Furina • Raiden",
+        "name": "Varka Hexerei",
         "members": [
-          "Jean",
-          "Bennett",
-          "Furina",
-          "Raiden"
-        ]
+          "Varka",
+          "Venti",
+          "Durin",
+          "Bennett"
+        ],
+        "comp": "Varka • Venti • Durin • Bennett",
+        "note": "Buffer de ATQ y consonancia Pyro para el equipo Hexerei de Varka."
       }
     ],
     "recommendedPanel": {
-      "hp": "28,000 – 34,000 HP",
-      "atk": "700 – 865 ATQ Base",
-      "def": "750",
+      "hp": "22,000 – 26,000 HP",
+      "atk": "Solo ATQ Base (Arma 565–674)",
+      "def": "800",
       "em": "0",
-      "er": "220% – 260% ER",
-      "crit": "40%+ CR (con Favonius) / No req."
+      "er": "200% – 250% ER (180%+ con Favonius)",
+      "crit": "50% – 60% CR / 150%+ CD (Sub-DPS)"
     },
     "baseStats": {
       "hp90": 12397,
@@ -1467,26 +1451,24 @@ const CHARACTER_BUILDS_DB = [
       }
     },
     "statPriority": {
-      "sands": "Recarga de Energía%",
-      "goblet": "Vida%",
-      "circlet": "Bono de Curación% o Vida%",
-      "substats": "1. Recarga de Energía% (220% - 250% ER) > 2. Vida% y Vida Plana > 3. Prob. Crítica (si usa Favonius) > ❌ ATQ% en artefactos NO aumenta el buff de su Q"
+      "sands": "Recarga de Energía",
+      "goblet": "Vida% / Bono Daño Pyro",
+      "circlet": "Bono de Curación / Prob. Crítica (Favonius)",
+      "substats": "Recarga de Energía (hasta cumplir meta) > Vida% > Prob. Crítica / Daño Crítico."
     },
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/bennett-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [
-        "Sustituidos tres DPS que competían por tiempo en campo."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://keqingmains.com/q/bennett-quickguide/",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "https://game8.co/games/Genshin-Impact/archives/Bennett-Best-Builds",
+        "spirifly_builds MCP"
       ],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
-      ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -1499,7 +1481,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Barbara.png",
-    "tier": "T2 Healer F2P",
+    "tier": "T3 (C) Support",
     "role": "Healer Básica F2P & Aplicadora Hydro Cercana",
     "roleCategory": "healer_shielder",
     "scalingType": "HP",
@@ -1680,7 +1662,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -1693,7 +1677,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Polearm",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Candace.png",
-    "tier": "T2 Buffer / Infusión",
+    "tier": "T3 (C) Support",
     "role": "Infusora Hydro & Buffer de Daño Elemental en Normales",
     "roleCategory": "support",
     "scalingType": "HP",
@@ -1874,7 +1858,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -1887,7 +1873,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Polearm",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Chevreuse.png",
-    "tier": "T0 Overload Buffer",
+    "tier": "T0.5 (S) Support",
     "role": "Buffer de Sobrecarga (-40% RES Pyro/Electro, +40% ATQ) & Healer",
     "roleCategory": "support",
     "scalingType": "HP",
@@ -2078,7 +2064,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -2091,7 +2079,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Chiori.png",
-    "tier": "T0.5 Sub-DPS Geo",
+    "tier": "T1.5 (A) Sub-DPS",
     "role": "Sub-DPS Geo Off-Field (Muñecas Sode Sincronizadas)",
     "roleCategory": "sub_dps",
     "scalingType": "DEF_ATK",
@@ -2299,7 +2287,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -2312,117 +2302,113 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Citlali.png",
-    "tier": "T0 Escudo & Buffer Melt",
-    "role": "Escudera Cryo Noctámbula, Reductora de Resistencias & Buffer de Derretido",
-    "roleCategory": "healer_shielder",
-    "scalingType": "EM_ATK",
-    "scalingLabel": "Escalado por Maestría Elemental (Escudo y Bonos escalan con EM)",
+    "tier": "T0 (SS) Support",
+    "role": "Soporte / Escudo Cryo para Derretidos & Congelados (Escala con ME)",
+    "roleCategory": "support",
+    "scalingType": "EM",
+    "scalingLabel": "Reduce RES Pyro e Hydro y escala su escudo e Itzpapa con Maestría Elemental (800+ ME)",
     "bestWeapons": [
       {
         "name": "Vigía de las Estrellas",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "Firma oficial de Citlali con bono Cryo y buff.",
+        "type": "BiS Firma",
+        "note": "542 ATQ base, 265 ME; +100 ME extra y aumenta el daño del personaje activo tras crear escudo.",
         "weaponId": "14517",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
-        "name": "Sinfonía de los Merodeadores",
-        "rarity": 4,
-        "type": "Opción por rol",
-        "note": "+Daño Crítico y buff aleatorio.",
-        "weaponId": "14402",
-        "reviewedNote": false
-      },
-      {
-        "name": "Cuentos de Cazadores de Dragones",
-        "rarity": 3,
-        "type": "Opción por rol",
-        "note": "+48% ATQ al carry principal.",
-        "weaponId": "11316",
-        "reviewedNote": false
+        "name": "Sueños de las Mil Noches",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "542 ATQ base, 265 ME; máximo stat de Maestría Elemental más +40 ME al equipo.",
+        "weaponId": "14511",
+        "reviewedNote": true
       },
       {
         "name": "Memorias de Sacrificios",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "Reset de escudo/habilidad y alta EM.",
+        "type": "Mejor 4★ Gacha",
+        "note": "454 ATQ base, 221 ME; gran cantidad de ME para fortalecer escudo y pasiva.",
         "weaponId": "14403",
-        "reviewedNote": false
+        "reviewedNote": true
+      },
+      {
+        "name": "Cuentos de Cazadores de Dragones",
+        "rarity": 3,
+        "type": "Opción Buffer F2P",
+        "note": "3★ con Vida%; otorga +48% ATQ R5 al carry Pyro al entrar al campo.",
+        "weaponId": "11316",
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Pergamino del Héroe de la Ciudad de las Cenizas (4p)",
-        "type": "BiS Indiscutible",
-        "bonus": "+40% Daño Elemental a los elementos que reaccionan con Noctámbulo.",
-        "reviewedBonus": false
+        "set": "Scroll of the Hero of Cinder City (4 piezas)",
+        "type": "BiS Absoluto",
+        "bonus": "Regenera energía noctámbula y otorga +40% Bono Pyro/Hydro/Cryo tras Derretido o Congelado.",
+        "reviewedBonus": true
       },
       {
-        "set": "Instructor (4 piezas)",
-        "type": "Alternativa EM",
-        "bonus": "+120 Maestría Elemental para todo el equipo tras causar una reacción.",
-        "reviewedBonus": false
+        "set": "Tenacity of the Millelith (4 piezas)",
+        "type": "Alternativa Escudo",
+        "bonus": "+20% ATQ y +30% Fuerza de Escudo si otro Natlan ya usa Pergamino.",
+        "reviewedBonus": true
+      },
+      {
+        "set": "Gilded Dreams (4 piezas)",
+        "type": "Alternativa ME",
+        "bonus": "Hasta +230 ME para maximizar absorción del escudo y daño personal.",
+        "reviewedBonus": true
       }
     ],
     "mainStats": {
-      "sands": "Maestría Elemental",
+      "sands": "Maestría Elemental / Recarga de Energía",
       "goblet": "Maestría Elemental",
-      "circlet": "Maestría Elemental (o Prob. CR con Favonius)"
+      "circlet": "Maestría Elemental"
     },
     "substatsPriority": [
-      "1. Maestría Elemental (Meta: 800 – 1,000 EM)",
-      "2. Recarga de Energía% (150% - 170% ER)",
-      "3. Prob. Crítica (para Favonius)"
+      "Recarga de Energía (170%–180%+) > Maestría Elemental > Prob./Daño Crítico."
     ],
-    "talentPriority": "Habilidad Elemental (E - Escudo) >>> Definitiva (Q) >>> Ataques Normales",
+    "talentPriority": "Habilidad Elemental (E) >>> Definitiva (Q) >>> Ataques Normales",
     "benchmarks": {
-      "hp": "17,000",
-      "atk": "1,200",
-      "def": "750",
-      "em": "850 – 1,000 EM",
-      "er": "160% – 180% ER",
-      "crit": "40%+ CR (con Favonius) / No req."
+      "hp": "18,000",
+      "atk": "1,100",
+      "def": "800",
+      "em": "800+ ME",
+      "er": "170% – 180%+ ER",
+      "crit": "Opcional"
     },
     "metaTeams": [
       {
-        "name": "Mavuika Melt Core",
-        "comp": "Mavuika • Citlali • Bennett • Xilonen",
+        "name": "Mavuika Derretidos BiS",
         "members": [
           "Mavuika",
           "Citlali",
-          "Bennett",
-          "Xilonen"
-        ]
+          "Xilonen",
+          "Bennett"
+        ],
+        "comp": "Mavuika • Citlali • Xilonen • Bennett",
+        "note": "Aplica Cryo continuo off-field, activa Pergamino Natlan y reduce RES Pyro."
       },
       {
-        "name": "Arlecchino Melt",
-        "comp": "Arlecchino • Citlali • Bennett • Kazuha",
+        "name": "Arlecchino Derretidos",
         "members": [
           "Arlecchino",
           "Citlali",
-          "Bennett",
-          "Kazuha"
-        ]
-      },
-      {
-        "name": "Gaming Melt",
-        "comp": "Gaming • Xianyun • Citlali • Bennett",
-        "members": [
-          "Gaming",
-          "Xianyun",
-          "Citlali",
+          "Yelan",
           "Bennett"
-        ]
+        ],
+        "comp": "Arlecchino • Citlali • Yelan • Bennett",
+        "note": "Combina escudo, reducción de RES Pyro/Hydro y aplicación Cryo estable."
       }
     ],
     "recommendedPanel": {
-      "hp": "17,000",
-      "atk": "1,200",
-      "def": "750",
-      "em": "850 – 1,000 EM",
-      "er": "160% – 180% ER",
-      "crit": "40%+ CR (con Favonius) / No req."
+      "hp": "18,000",
+      "atk": "1,100",
+      "def": "800",
+      "em": "800+ ME",
+      "er": "170% – 180%+ ER",
+      "crit": "Opcional"
     },
     "baseStats": {
       "hp90": 11200,
@@ -2494,24 +2480,24 @@ const CHARACTER_BUILDS_DB = [
       }
     },
     "statPriority": {
-      "sands": "Maestría Elemental",
+      "sands": "Maestría Elemental / Recarga de Energía",
       "goblet": "Maestría Elemental",
-      "circlet": "Maestría Elemental (o Prob. CR con Favonius)",
-      "substats": "1. Maestría Elemental (Meta: 800 – 1,000 EM) > 2. Recarga de Energía% (150% - 170% ER) > 3. Prob. Crítica (para Favonius)"
+      "circlet": "Maestría Elemental",
+      "substats": "Recarga de Energía (170%–180%+) > Maestría Elemental > Prob./Daño Crítico."
     },
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/citlali-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://keqingmains.com/q/citlali-quickguide/",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "https://game8.co/games/Genshin-Impact/archives/461989",
+        "spirifly_builds MCP"
       ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -2524,7 +2510,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Clorinde.png",
-    "tier": "T0 Rapid-Fire Hypercarry",
+    "tier": "T2 (B) Main DPS",
     "role": "Hypercarry Electro en Campo (Disparos de Pistola y Estocadas de Espada)",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
@@ -2740,7 +2726,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -2753,7 +2741,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Claymore",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Diluc.png",
-    "tier": "T1 Plunge / Classic DPS",
+    "tier": "T3 (C) Main DPS",
     "role": "Carry Pyro Tradicional & Plunge Hypercarry con Xianyun",
     "roleCategory": "main_dps",
     "scalingType": "ATK_EM",
@@ -2943,7 +2931,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -2956,7 +2946,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Claymore",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Eula.png",
-    "tier": "T1 Physical Nuke",
+    "tier": "T3 (C) Main DPS",
     "role": "Hypercarry de Daño Físico Brutal (Espada de Fulgor Luminoso Millonaria)",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
@@ -3162,7 +3152,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -3175,7 +3167,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Bow",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Faruzan.png",
-    "tier": "T0 Buffer Anemo",
+    "tier": "T0.5 (S) Support",
     "role": "Buffer de Daño Anemo (+Daño Crítico Anemo en C6, -30% RES Anemo)",
     "roleCategory": "support",
     "scalingType": "ATK_ER",
@@ -3356,7 +3348,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -3369,7 +3363,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Bow",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Fischl.png",
-    "tier": "T0 Sub-DPS Off-Field",
+    "tier": "T0.5 (S) Sub-DPS",
     "role": "Reina del Sub-DPS Electro (Oz Incesante, Batería & Pasiva A4 en Aggravate)",
     "roleCategory": "sub_dps",
     "scalingType": "ATK_EM",
@@ -3585,7 +3579,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -3598,124 +3594,123 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Furina.png",
-    "tier": "T0 Meta Universal",
-    "role": "Off-Field Sub-DPS & Buffer Universal (Fanfarria)",
+    "tier": "T0.5 (S) Sub-DPS",
+    "role": "Sub-DPS & Buffer Universal Hydro (Fanfarria de Daño%)",
     "roleCategory": "sub_dps",
     "scalingType": "HP",
-    "scalingLabel": "Escalado 100% Vida Máxima (HP%) — El ATQ es inútil",
+    "scalingLabel": "Sus pasivas escalan hasta 40,000 Vida mientras mantiene alto daño off-field y Recarga",
     "bestWeapons": [
       {
         "name": "Fulgor de las Aguas Calmas",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "Mayor daño personal (+Críticos y Vida). Requiere reloj ER%.",
+        "type": "BiS Firma",
+        "note": "542 ATQ base, 88.2% Daño Crítico; +24% Daño Skill y +28% Vida cuando varía la Vida del equipo.",
         "weaponId": "11513",
-        "reviewedNote": false
+        "reviewedNote": true
+      },
+      {
+        "name": "Llave de la Coronación",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "542 ATQ base, 66.2% Vida%; ayuda a capear 40k HP y reparte Maestría Elemental al equipo.",
+        "weaponId": "11511",
+        "reviewedNote": true
+      },
+      {
+        "name": "Cortador de Jade Primordial",
+        "rarity": 5,
+        "type": "Alternativa Crít",
+        "note": "542 ATQ base, 44.1% Prob. Crítica; +20% Vida y facilita balancear 70/180+ Crít.",
+        "weaponId": "11505",
+        "reviewedNote": true
       },
       {
         "name": "Deseo Ponzoñoso",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "Batería ideal (+ER%) con +32% Daño y +12% CR en Habilidad Elemental.",
+        "type": "Mejor 4★ Evento",
+        "note": "510 ATQ base, 45.9% RE; +32% Daño Skill y +12% Prob. Crítica de Skill.",
         "weaponId": "11413",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
         "name": "Vado del Río Ceniciento",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "Gratis pescando en Fontaine (+Recarga de Energía y +Prob. CRIT en E).",
+        "type": "Mejor F2P Pesca",
+        "note": "510 ATQ base, 45.9% RE; +16% Prob. Crítica de Skill y +32% RE temporal tras usar E.",
         "weaponId": "11426",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
         "name": "Espada de Favonius",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "Batería para todo el equipo en rotaciones de alta demanda de recarga.",
+        "type": "Alternativa Batería",
+        "note": "454 ATQ base, 61.3% RE; alivia por completo sus necesidades de energía y las del equipo.",
         "weaponId": "11401",
-        "reviewedNote": false
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Compañía Dorada (4 piezas)",
-        "type": "BiS Indiscutible",
-        "bonus": "+70% Daño de Habilidad Elemental Off-Field continuo.",
-        "reviewedBonus": false
+        "set": "Golden Troupe (4 piezas)",
+        "type": "BiS Absoluto",
+        "bonus": "+20% Daño Skill (2p) y +50% adicional off-field para sus tres invocaciones.",
+        "reviewedBonus": true
       },
       {
-        "set": "Tenacidad de la Geoarmada (4 piezas)",
-        "type": "Soporte Carry",
-        "bonus": "+20% ATQ continuo para el Hypercarry del equipo.",
-        "reviewedBonus": false
-      },
-      {
-        "set": "2p Compañía Dorada + 2p Vida+20%",
-        "type": "Alternativa 2p+2p",
-        "bonus": "Excelente consistencia si faltan piezas con buenos substats.",
-        "reviewedBonus": false
+        "set": "Tenacity of the Millelith (4 piezas)",
+        "type": "Alternativa Buffer",
+        "bonus": "+20% Vida y +20% ATQ constante para carries escalados en ATQ.",
+        "reviewedBonus": true
       }
     ],
     "mainStats": {
-      "sands": "Vida% (con arma ER) o Recarga ER% (con arma de daño)",
-      "goblet": "Bono Daño Hydro% o Vida%",
-      "circlet": "Prob. Crítica% / Daño Crítico%"
+      "sands": "Vida% / Recarga de Energía",
+      "goblet": "Vida% / Bono Daño Hydro",
+      "circlet": "Prob. Crítica / Daño Crítico"
     },
     "substatsPriority": [
-      "1. Recarga de Energía% (hasta 160% - 200%)",
-      "2. Prob. Crítica / Daño Crítico (Ratio 1:2)",
-      "3. Vida% (hasta 40,000 HP)",
-      "❌ ATQ y DEF son estadísticas muertas"
+      "Recarga de Energía (180%+ Solo) > Vida% (hasta 40k) > Prob. Crítica = Daño Crítico."
     ],
-    "talentPriority": "Habilidad Elemental (E) > Definitiva (Q) >>> Ataques Básicos",
+    "talentPriority": "Definitiva (Q) = Habilidad Elemental (E) >>> Ataques Normales",
     "benchmarks": {
-      "hp": "36,000 – 40,000 HP",
-      "atk": "Ignorar (Base baja)",
-      "def": "Base (~750 - 850 DEF)",
-      "em": "0 – 80 EM",
-      "er": "160% – 200% ER",
-      "crit": "75%+ CR / 160%+ CD"
+      "hp": "35,000 – 40,000 HP",
+      "atk": "1,100",
+      "def": "750",
+      "em": "0",
+      "er": "180%+ (Solo) / 140%–160% (Doble Hydro)",
+      "crit": "60% – 80% CR / 160% – 200%+ CD"
     },
     "metaTeams": [
       {
-        "name": "Neuvillette Hypercarry",
-        "comp": "Neuvillette • Furina • Kazuha • Xilonen",
+        "name": "Skirk Freeze Premium",
+        "members": [
+          "Skirk",
+          "Escoffier",
+          "Furina",
+          "Vodyanitsa"
+        ],
+        "comp": "Skirk • Escoffier • Furina • Vodyanitsa",
+        "note": "Con Vodyanitsa y Escoffier maximiza Fanfarria y bonifica al máximo a Skirk."
+      },
+      {
+        "name": "Neuvillette Freeze Hipercarry",
         "members": [
           "Neuvillette",
+          "Escoffier",
           "Furina",
-          "Kazuha",
-          "Xilonen"
-        ]
-      },
-      {
-        "name": "Arlecchino Vape",
-        "comp": "Arlecchino • Furina • Yelan • Bennett",
-        "members": [
-          "Arlecchino",
-          "Furina",
-          "Yelan",
-          "Bennett"
-        ]
-      },
-      {
-        "name": "Alhaitham Quickbloom",
-        "comp": "Alhaitham • Furina • Nahida • Kuki Shinobu",
-        "members": [
-          "Alhaitham",
-          "Furina",
-          "Nahida",
-          "Kuki Shinobu"
-        ]
+          "Vodyanitsa"
+        ],
+        "comp": "Neuvillette • Escoffier • Furina • Vodyanitsa",
+        "note": "Sinergia clásica Hydro con Vodyanitsa y Escoffier."
       }
     ],
     "recommendedPanel": {
-      "hp": "36,000 – 40,000 HP",
-      "atk": "Ignorar (Base baja)",
-      "def": "Base (~750 - 850 DEF)",
-      "em": "0 – 80 EM",
-      "er": "160% – 200% ER",
-      "crit": "75%+ CR / 160%+ CD"
+      "hp": "35,000 – 40,000 HP",
+      "atk": "1,100",
+      "def": "750",
+      "em": "0",
+      "er": "180%+ (Solo) / 140%–160% (Doble Hydro)",
+      "crit": "60% – 80% CR / 160% – 200%+ CD"
     },
     "baseStats": {
       "hp90": 15307,
@@ -3787,24 +3782,24 @@ const CHARACTER_BUILDS_DB = [
       }
     },
     "statPriority": {
-      "sands": "Vida% (con arma ER) o Recarga ER% (con arma de daño)",
-      "goblet": "Bono Daño Hydro% o Vida%",
-      "circlet": "Prob. Crítica% / Daño Crítico%",
-      "substats": "1. Recarga de Energía% (hasta 160% - 200%) > 2. Prob. Crítica / Daño Crítico (Ratio 1:2) > 3. Vida% (hasta 40,000 HP) > ❌ ATQ y DEF son estadísticas muertas"
+      "sands": "Vida% / Recarga de Energía",
+      "goblet": "Vida% / Bono Daño Hydro",
+      "circlet": "Prob. Crítica / Daño Crítico",
+      "substats": "Recarga de Energía (180%+ Solo) > Vida% (hasta 40k) > Prob. Crítica = Daño Crítico."
     },
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/furina-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://keqingmains.com/q/furina-quickguide/",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "https://game8.co/games/Genshin-Impact/archives/Furina-Best-Builds",
+        "spirifly_builds MCP"
       ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -3817,7 +3812,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Claymore",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Gaming.png",
-    "tier": "T0.5 Plunge Carry",
+    "tier": "T2 (B) Main DPS",
     "role": "Hypercarry Pyro de Ataques Descendentes (Danza Suanni)",
     "roleCategory": "main_dps",
     "scalingType": "ATK_EM",
@@ -4015,7 +4010,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -4028,7 +4025,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Bow",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Ganyu.png",
-    "tier": "T0.5 Charged Sniper DPS",
+    "tier": "T2 (B) Sub-DPS",
     "role": "Sniper Cryo en Campo (Flechas Flor de Escarcha en Área) & Sub-DPS Q",
     "roleCategory": "main_dps",
     "scalingType": "ATK_EM",
@@ -4236,7 +4233,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -4249,7 +4248,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Bow",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Gorou.png",
-    "tier": "T0.5 Buffer Mono Geo",
+    "tier": "T1.5 (A) Support",
     "role": "Buffer Especializado de Defensa (DEF Plano + % Daño Crítico Geo en C6)",
     "roleCategory": "support",
     "scalingType": "DEF_ER",
@@ -4438,7 +4437,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -4451,125 +4452,121 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Polearm",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Hutao.png",
-    "tier": "T0 Vaporize Carry",
-    "role": "Hypercarry Pyro en Campo (Ataques Cargados Vaporizados)",
+    "tier": "T2 (B) Main DPS",
+    "role": "Main DPS Pyro de Cargados Vaporizados (Tier B en 7.2)",
     "roleCategory": "main_dps",
-    "scalingType": "HP_EM",
-    "scalingLabel": "Escalado por Vida Máx (Pasiva E convierte HP en ATQ masivo) + EM",
+    "scalingType": "HP",
+    "scalingLabel": "Superada por Mavuika y nuevas reacciones 7.2; depende de Vaporizados con Furina/Yelan/Xingqiu",
     "bestWeapons": [
       {
         "name": "Báculo de Homa",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+66.2% Daño Crítico, +20% Vida Máx y enorme bono de ATQ bajo el 50% HP.",
+        "type": "BiS Firma",
+        "note": "608 ATQ base, 66.2% Daño Crítico; +20% Vida y convierte Vida Máxima en enorme bono de ATQ.",
         "weaponId": "13501",
-        "reviewedNote": false
+        "reviewedNote": true
+      },
+      {
+        "name": "Báculo de las Arenas Escarlatas",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "542 ATQ base, 44.1% Prob. Crítica; convierte su alta Maestría Elemental en ATQ.",
+        "weaponId": "13511",
+        "reviewedNote": true
       },
       {
         "name": "Balada de los Fiordos",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "+27.6% Prob. Crítica y +120 a 240 de Maestría Elemental en equipos tri-elementales.",
+        "type": "Mejor 4★ PB",
+        "note": "510 ATQ base, 27.6% Prob. Crítica; +120–240 ME con 3 elementos en equipo.",
         "weaponId": "13424",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
         "name": "Perdición del Dragón",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "+221 Maestría Elemental y +36% Daño continuo contra enemigos con Hydro/Pyro.",
+        "type": "Mejor 4★ Gacha",
+        "note": "454 ATQ base, 221 ME; +20%–36% Daño contra enemigos afectados por Hydro o Pyro.",
         "weaponId": "13401",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
         "name": "Borla Blanca",
         "rarity": 3,
-        "type": "Opción por rol",
-        "note": "Stat-stick de Prob. Crítica gratuito.",
+        "type": "Opción F2P (3★)",
+        "note": "401 ATQ base, 23.4% Prob. Crítica; +48% Daño de Normales/Cargados R5.",
         "weaponId": "11312",
-        "reviewedNote": false
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Bruja Carmesí en Llamas (4 piezas)",
-        "type": "BiS Reacciones",
-        "bonus": "+15% Bono Pyro y +15% Daño en Vaporizados/Derretidos.",
-        "reviewedBonus": false
-      },
-      {
-        "set": "Reminiscencia de la Purificación (4 piezas)",
-        "type": "BiS Ataques Cargados",
-        "bonus": "+50% Daño en normales/cargados a cambio de 15 puntos de energía.",
-        "reviewedBonus": false
-      },
-      {
-        "set": "Cazador Fantasmal (4 piezas)",
+        "set": "Marechaussee Hunter (4 piezas)",
         "type": "BiS con Furina",
-        "bonus": "+36% Prob. Crítica gratuita al jugarla con Furina.",
-        "reviewedBonus": false
+        "bonus": "+15% Daño Normal/Cargado y +36% Prob. Crítica en equipos con Furina + Xianyun/Xilonen.",
+        "reviewedBonus": true
+      },
+      {
+        "set": "Crimson Witch of Flames (4 piezas)",
+        "type": "BiS Clásico",
+        "bonus": "+15% Daño Pyro y +15% Vaporizado/Derretido con cargas tras su Elemental.",
+        "reviewedBonus": true
+      },
+      {
+        "set": "Shimenawa's Reminiscence (4 piezas)",
+        "type": "Alternativa Eficiente",
+        "bonus": "+50% Daño Normal/Cargado por 10s sacrificando 15 de Energía al activar Elemental.",
+        "reviewedBonus": true
       }
     ],
     "mainStats": {
-      "sands": "Vida% o Maestría Elemental (si tiene <150 EM)",
-      "goblet": "Bono Daño Pyro%",
-      "circlet": "Prob. Crítica% / Daño Crítico%"
+      "sands": "Vida% / Maestría Elemental",
+      "goblet": "Bono Daño Pyro",
+      "circlet": "Prob. Crítica / Daño Crítico"
     },
     "substatsPriority": [
-      "1. Prob. Crítica / Daño Crítico (1:2)",
-      "2. Maestría Elemental (150 – 250 EM)",
-      "3. Vida% (hasta 30,000 – 35,000 HP)",
-      "4. ATQ%",
-      "❌ ATQ Plano y DEF son muy débiles"
+      "Prob. Crítica = Daño Crítico > Maestría Elemental (100–200+) > Vida%."
     ],
-    "talentPriority": "Ataque Normal (Cargado) = Habilidad Elemental (E) > Definitiva (Q)",
+    "talentPriority": "Ataques Normales = Habilidad Elemental (E) >> Definitiva (Q)",
     "benchmarks": {
-      "hp": "30,000 – 35,000 HP",
-      "atk": "Buff E: 3,000+ ATQ",
+      "hp": "30,000+ HP",
+      "atk": "Base baja (convierte Vida con E)",
       "def": "850",
-      "em": "180 – 250 EM",
+      "em": "150 – 250 ME",
       "er": "100% – 115% ER",
-      "crit": "75%+ CR / 180%+ CD"
+      "crit": "65%–75% CR (50% c/ Cazador) / 180%–220%+ CD"
     },
     "metaTeams": [
       {
-        "name": "Hu Tao Double Hydro",
-        "comp": "Hu Tao • Xingqiu • Yelan • Zhongli",
+        "name": "Plunge Vaporizado Furina",
         "members": [
           "Hu Tao",
-          "Xingqiu",
-          "Yelan",
-          "Zhongli"
-        ]
-      },
-      {
-        "name": "Hu Tao Plunge con Xianyun",
-        "comp": "Hu Tao • Xianyun • Furina • Yelan",
-        "members": [
-          "Hu Tao",
-          "Xianyun",
           "Furina",
-          "Yelan"
-        ]
+          "Yelan",
+          "Xianyun"
+        ],
+        "comp": "Hu Tao • Furina • Yelan • Xianyun",
+        "note": "Su techo actual: Descendentes Vaporizados con Fanfarria y Cazador Fantasmal."
       },
       {
-        "name": "Hu Tao VV Vape",
-        "comp": "Hu Tao • Kazuha • Yelan • Bennett",
+        "name": "Doble Hydro Clásico",
         "members": [
           "Hu Tao",
-          "Kazuha",
           "Yelan",
-          "Bennett"
-        ]
+          "Xingqiu",
+          "Zhongli"
+        ],
+        "comp": "Hu Tao • Yelan • Xingqiu • Zhongli",
+        "note": "Consonancia Hydro, aplicación infinita y protección completa para combos Cargados."
       }
     ],
     "recommendedPanel": {
-      "hp": "30,000 – 35,000 HP",
-      "atk": "Buff E: 3,000+ ATQ",
+      "hp": "30,000+ HP",
+      "atk": "Base baja (convierte Vida con E)",
       "def": "850",
-      "em": "180 – 250 EM",
+      "em": "150 – 250 ME",
       "er": "100% – 115% ER",
-      "crit": "75%+ CR / 180%+ CD"
+      "crit": "65%–75% CR (50% c/ Cazador) / 180%–220%+ CD"
     },
     "baseStats": {
       "hp90": 15552,
@@ -4641,24 +4638,24 @@ const CHARACTER_BUILDS_DB = [
       }
     },
     "statPriority": {
-      "sands": "Vida% o Maestría Elemental (si tiene <150 EM)",
-      "goblet": "Bono Daño Pyro%",
-      "circlet": "Prob. Crítica% / Daño Crítico%",
-      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. Maestría Elemental (150 – 250 EM) > 3. Vida% (hasta 30,000 – 35,000 HP) > 4. ATQ% > ❌ ATQ Plano y DEF son muy débiles"
+      "sands": "Vida% / Maestría Elemental",
+      "goblet": "Bono Daño Pyro",
+      "circlet": "Prob. Crítica / Daño Crítico",
+      "substats": "Prob. Crítica = Daño Crítico > Maestría Elemental (100–200+) > Vida%."
     },
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/hu-tao-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://keqingmains.com/q/hu-tao-quickguide/",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "https://game8.co/games/Genshin-Impact/archives/314347",
+        "spirifly_builds MCP"
       ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -4671,7 +4668,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Qin.png",
-    "tier": "T1 Teamwide Healer",
+    "tier": "T1.5 (A) Support",
     "role": "Healer Instantánea de Equipo (Carga Fanfarria Furina al 100%), VV Shred & Sunfire",
     "roleCategory": "healer_shielder",
     "scalingType": "ATK",
@@ -4860,7 +4857,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -4873,7 +4872,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Kazuha.png",
-    "tier": "T0 Buffer Universal",
+    "tier": "T1 (A+) Support",
     "role": "Buffer de Daño Elemental (+40% DMG), Control de Masas (CC) & Reductor de Resistencias (-40% VV)",
     "roleCategory": "support",
     "scalingType": "EM",
@@ -5086,7 +5085,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -5099,7 +5100,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Ayaka.png",
-    "tier": "T0 Permafrost DPS",
+    "tier": "T1.5 (A) Main DPS",
     "role": "Hypercarry Cryo de Tormenta de Nieve Nuke (20 Ticks de Ventisca)",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
@@ -5321,7 +5322,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -5334,7 +5337,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Ayato.png",
-    "tier": "T1 On-Field DPS",
+    "tier": "T3 (C) Main DPS",
     "role": "On-Field DPS Hydro Cómodo (Cortes Shunsuiken en Área)",
     "roleCategory": "main_dps",
     "scalingType": "ATK_HP",
@@ -5550,7 +5553,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -5563,7 +5568,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Keqing.png",
-    "tier": "T1 Aggravate Driver",
+    "tier": "T3 (C) Main DPS",
     "role": "Driver Electro Ágil de Ataques Rápidos & Detonadora de Intensificación (Aggravate)",
     "roleCategory": "main_dps",
     "scalingType": "ATK_EM",
@@ -5761,7 +5766,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -5774,7 +5781,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Claymore",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Kinich.png",
-    "tier": "T0 Loop Hypercarry",
+    "tier": "T1 (A+) Main DPS",
     "role": "Hypercarry Dendro en Campo (Enganche de Gancho & Cañonazos de Escamas)",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
@@ -5974,7 +5981,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -5987,7 +5996,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Shinobu.png",
-    "tier": "T0 Hyperbloom Queen",
+    "tier": "T1.5 (A) Sub-DPS",
     "role": "Reina de Sobreflorecimiento (Hyperbloom) & Healer de Aro Continuo",
     "roleCategory": "healer_shielder",
     "scalingType": "EM_HP",
@@ -6202,7 +6211,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -6215,7 +6226,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Layla.png",
-    "tier": "T0.5 Cryo Shielder",
+    "tier": "T1.5 (A) Support",
     "role": "Escudo Cryo Casi Impenetrable (Escala 100% Vida) & Disparo de Estrellas",
     "roleCategory": "healer_shielder",
     "scalingType": "HP",
@@ -6414,7 +6425,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -6427,119 +6440,115 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Claymore",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Mavuika.png",
-    "tier": "T0 Arconte Pyro",
-    "role": "Hypercarry DPS en Campo & Aplicadora Pyro Off-Field",
+    "tier": "T0 (SS) Main DPS",
+    "role": "Arconte Pyro • Hypercarry Melt/Vaporize & Sub-DPS Off-Field (Sin Energía)",
     "roleCategory": "main_dps",
-    "scalingType": "ATK_EM",
-    "scalingLabel": "Escalado por ATQ% + Maestría Elemental • 0% ER necesaria",
+    "scalingType": "ATK",
+    "scalingLabel": "Usa Espíritu de Lucha (sin ER); escala con ATQ, Crítico y ME en Derretido",
     "bestWeapons": [
       {
         "name": "Mil Soles Abrasadores",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+Crítico colosal y daño Nightsoul Pyro.",
+        "type": "BiS Firma",
+        "note": "741 ATQ base, 11% Prob. Crítica; +49% Daño Crítico y +35% ATQ en Bendición Noctámbula.",
         "weaponId": "12514",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
-        "name": "Lápida del Lobo",
+        "name": "Emblema del Mar de Juncos",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+ATQ% brutal para el equipo.",
-        "weaponId": "12502",
-        "reviewedNote": false
+        "type": "Alternativa 5★",
+        "note": "33.1% Prob. Crítica y +40% ATQ sin depender de escudo.",
+        "weaponId": "12511",
+        "reviewedNote": true
+      },
+      {
+        "name": "Llave de la Trascendencia",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "674 ATQ base, 44.1% Daño Crítico y +28% ATQ pasivo.",
+        "weaponId": "12516",
+        "reviewedNote": true
       },
       {
         "name": "Médula de la Serpiente Marina",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "+Prob. Crítica y bono de daño universal.",
+        "type": "Mejor 4★ Pase",
+        "note": "27.6% Prob. Crítica y hasta +30% Daño total.",
         "weaponId": "12409",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
-        "name": "Terragitador",
+        "name": "Sombra de la Marea",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "+ATQ% y bono de habilidad tras reacción Pyro.",
-        "weaponId": "12431",
-        "reviewedNote": false
+        "type": "Mejor F2P Forja",
+        "note": "41.3% ATQ% y +24% ATQ tras recibir curación.",
+        "weaponId": "12425",
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Códice de Obsidiana (4 piezas)",
-        "type": "BiS On-Field Carry",
-        "bonus": "+40% Prob. Crítica garantizada al gastar puntos de Noctámbulo.",
-        "reviewedBonus": false
+        "set": "Obsidian Codex (4 piezas)",
+        "type": "BiS On-Field DPS",
+        "bonus": "+15% Daño en Noctámbulo (2p) y +40% Prob. Crítica (4p) al consumir puntos.",
+        "reviewedBonus": true
       },
       {
-        "set": "Pergamino del Héroe de la Ciudad de las Cenizas (4p)",
-        "type": "BiS Off-Field Buffer",
-        "bonus": "+40% Daño Elemental para todo el equipo.",
-        "reviewedBonus": false
+        "set": "Scroll of the Hero of Cinder City (4 piezas)",
+        "type": "BiS Sub-DPS / Soporte",
+        "bonus": "Otorga +40% Bono Elemental al equipo tras activar reacción en Noctámbulo.",
+        "reviewedBonus": true
       }
     ],
     "mainStats": {
-      "sands": "ATQ% o Maestría Elemental (en Melt con Bennett)",
-      "goblet": "Bono Daño Pyro%",
-      "circlet": "Daño Crítico% (o Prob. CR)"
+      "sands": "ATQ% (o ME en Derretido con arma de ATQ)",
+      "goblet": "Bono Daño Pyro",
+      "circlet": "Daño Crítico ≥ Prob. Crítica"
     },
     "substatsPriority": [
-      "1. Daño Crítico",
-      "2. Prob. Crítica (tope 60% en panel con Obsidiana)",
-      "3. ATQ%",
-      "4. Maestría Elemental (150-250 EM)",
-      "❌ ER% es 100% inútil"
+      "Daño Crítico (200%+) > Prob. Crítica (40–50% base) > ATQ% > Maestría (150–250). Sin ER."
     ],
-    "talentPriority": "Definitiva (Q) = Habilidad Elemental (E) >>> Ataques Normales",
+    "talentPriority": "On-Field: Definitiva (Q) > Habilidad (E) | Off-Field: Habilidad (E) ≥ Q. Normales sin subir.",
     "benchmarks": {
       "hp": "18,000",
-      "atk": "2,200 – 2,600+ ATQ",
+      "atk": "2,000 – 2,500 ATQ",
       "def": "800",
-      "em": "180 – 260 EM",
-      "er": "100% (No usa energía)",
-      "crit": "55% CR / 230%+ CD"
+      "em": "150 – 250 ME",
+      "er": "0% (No necesita)",
+      "crit": "40–50% base (+40% set) / 200%+ CD"
     },
     "metaTeams": [
       {
-        "name": "Mavuika Melt Nuke",
-        "comp": "Mavuika • Citlali • Bennett • Xilonen",
+        "name": "Derretido Premium",
         "members": [
           "Mavuika",
-          "Citlali",
           "Bennett",
-          "Xilonen"
-        ]
+          "Iansan",
+          "Citlali"
+        ],
+        "comp": "Mavuika • Bennett • Iansan • Citlali",
+        "note": "Techo de daño actual con Iansan C6 y Citlali."
       },
       {
-        "name": "Mualani-Mavuika Core",
-        "comp": "Mualani • Mavuika • Xilonen • Emilie",
+        "name": "Vaporizado con Mualani (Sub-DPS)",
         "members": [
           "Mualani",
           "Mavuika",
           "Xilonen",
-          "Emilie"
-        ]
-      },
-      {
-        "name": "Kinich Burning-Burgeon",
-        "comp": "Kinich • Mavuika • Emilie • Bennett",
-        "members": [
-          "Kinich",
-          "Mavuika",
-          "Emilie",
-          "Bennett"
-        ]
+          "Candace"
+        ],
+        "comp": "Mualani • Mavuika • Xilonen • Candace",
+        "note": "Mavuika aplica Pyro y aporta Pergamino para Mualani."
       }
     ],
     "recommendedPanel": {
       "hp": "18,000",
-      "atk": "2,200 – 2,600+ ATQ",
+      "atk": "2,000 – 2,500 ATQ",
       "def": "800",
-      "em": "180 – 260 EM",
-      "er": "100% (No usa energía)",
-      "crit": "55% CR / 230%+ CD"
+      "em": "150 – 250 ME",
+      "er": "0% (No necesita)",
+      "crit": "40–50% base (+40% set) / 200%+ CD"
     },
     "baseStats": {
       "hp90": 12552,
@@ -6611,24 +6620,23 @@ const CHARACTER_BUILDS_DB = [
       }
     },
     "statPriority": {
-      "sands": "ATQ% o Maestría Elemental (en Melt con Bennett)",
-      "goblet": "Bono Daño Pyro%",
-      "circlet": "Daño Crítico% (o Prob. CR)",
-      "substats": "1. Daño Crítico > 2. Prob. Crítica (tope 60% en panel con Obsidiana) > 3. ATQ% > 4. Maestría Elemental (150-250 EM) > ❌ ER% es 100% inútil"
+      "sands": "ATQ% (o ME en Derretido con arma de ATQ)",
+      "goblet": "Bono Daño Pyro",
+      "circlet": "Daño Crítico ≥ Prob. Crítica",
+      "substats": "Daño Crítico (200%+) > Prob. Crítica (40–50% base) > ATQ% > Maestría (150–250). Sin ER."
     },
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/mavuika-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://game8.co/games/Genshin-Impact/archives/461999",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "spirifly_builds MCP"
       ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -6641,7 +6649,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Mona.png",
-    "tier": "T1 Buffer / Nuke",
+    "tier": "T1 (A+) Support",
     "role": "Buffer de Daño Omen (+60% DMG) & Nuke Vaporizado",
     "roleCategory": "support",
     "scalingType": "ATK_ER",
@@ -6849,7 +6857,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -6862,7 +6872,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Mualani.png",
-    "tier": "T0 Hypercarry DPS",
+    "tier": "T1 (A+) Main DPS",
     "role": "Hypercarry DPS en Campo (Mordiscos Vaporizados Masivos)",
     "roleCategory": "main_dps",
     "scalingType": "HP_EM",
@@ -7062,7 +7072,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -7075,7 +7087,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Nahida.png",
-    "tier": "T0 Arconte Dendro",
+    "tier": "T1 (A+) Sub-DPS",
     "role": "Aplicadora Dendro Suprema, Sub-DPS Off-Field (Tri-Karma) & Buffer (+250 EM)",
     "roleCategory": "sub_dps",
     "scalingType": "EM_ATK",
@@ -7285,7 +7297,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -7298,7 +7312,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Claymore",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Navia.png",
-    "tier": "T0 Quickswap DPS",
+    "tier": "T2 (B) Main DPS",
     "role": "Hypercarry Geo de Disparos de Escopeta Paragüas (Cristalización)",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
@@ -7508,7 +7522,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -7521,124 +7537,115 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Neuvillette.png",
-    "tier": "T0 Hypercarry DPS",
-    "role": "Hypercarry DPS en Campo (Rayo Cargado en Área)",
+    "tier": "T1.5 (A) Main DPS",
+    "role": "Main DPS / Conductor Hydro de Ataque Cargado (Tier A en 7.2)",
     "roleCategory": "main_dps",
     "scalingType": "HP",
-    "scalingLabel": "Escalado 100% Vida Máxima (HP%) — Ignorar ATQ",
+    "scalingLabel": "Escala puramente con Vida% y Crítico; en 7.2 cede el Tier SS y actúa también como driver en Cargado Lunar",
     "bestWeapons": [
       {
         "name": "Escrituras del Fluir Sempiterno",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+88.2% Daño Crítico, +Vida% y regeneración masiva de energía.",
+        "type": "BiS Firma",
+        "note": "542 ATQ base, 88.2% Daño Crítico; +16% Vida, hasta +42% Daño Cargado y regenera 8 de Energía.",
         "weaponId": "14514",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
         "name": "Jade Sacrificial",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "+36.8% Prob. Crítica y +64% Vida Máxima tras estar fuera de campo.",
+        "type": "Mejor 4★ PB",
+        "note": "454 ATQ base, 36.8% Prob. Crítica; +32% Vida R1 (+64% R5) al entrar tras 5s off-field.",
         "weaponId": "14424",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
-        "name": "Prototipo Ámbar",
-        "rarity": 4,
-        "type": "Opción por rol",
-        "note": "Forja accesible (+41.3% Vida Máx, cura al equipo y genera energía).",
-        "weaponId": "14406",
-        "reviewedNote": false
+        "name": "Hora de Surfear",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "542 ATQ base, 88.2% Daño Crítico; +20% Vida útil incluso como stat-stick.",
+        "weaponId": "14516",
+        "reviewedNote": true
       },
       {
         "name": "Oración Perdida a los Vientos Sagrados",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "Stat-stick de Prob. Crítica y bono de velocidad/daño.",
+        "type": "Alternativa 5★",
+        "note": "608 ATQ base, 33.1% Prob. Crítica; aporta Bono Elemental al mantenerse en campo.",
         "weaponId": "14502",
-        "reviewedNote": false
+        "reviewedNote": true
+      },
+      {
+        "name": "Prototipo Ámbar",
+        "rarity": 4,
+        "type": "Mejor F2P Forja",
+        "note": "510 ATQ base, 41.3% Vida%; regenera 12–18 de Energía y cura al equipo con su Q.",
+        "weaponId": "14406",
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Cazador Fantasmal (4 piezas)",
-        "type": "BiS Indiscutible",
-        "bonus": "+36% Prob. Crítica permanente por fluctuaciones de Vida.",
-        "reviewedBonus": false
+        "set": "Marechaussee Hunter (4 piezas)",
+        "type": "BiS Absoluto",
+        "bonus": "+15% Daño Cargado y +36% Prob. Crítica gratis con su drenaje y curación de HP.",
+        "reviewedBonus": true
       },
       {
-        "set": "Corazón de las Profundidades (4 piezas)",
-        "type": "Alternativa",
-        "bonus": "+15% Bono Hydro y +30% Daño en Ataques Cargados.",
-        "reviewedBonus": false
-      },
-      {
-        "set": "2p Vida+20% + 2p Hydro+15%",
-        "type": "Transición 2p+2p",
-        "bonus": "Excelente alternativa mientras se farmea Cazador Fantasmal.",
-        "reviewedBonus": false
+        "set": "Heart of Depth (4 piezas)",
+        "type": "Alternativa Clásica",
+        "bonus": "+15% Bono Hydro y +30% Daño Normal/Cargado tras Habilidad Elemental.",
+        "reviewedBonus": true
       }
     ],
     "mainStats": {
       "sands": "Vida%",
-      "goblet": "Bono Daño Hydro% o Vida% (con Furina + Kazuha)",
-      "circlet": "Daño Crítico% (o Prob. CR si falta)"
+      "goblet": "Bono Daño Hydro / Vida% (con Furina)",
+      "circlet": "Daño Crítico / Prob. Crítica (máx 64% base)"
     },
     "substatsPriority": [
-      "1. Prob. Crítica (tope 64% con Cazador) / Daño Crítico",
-      "2. Vida% (hasta 40,000+ HP)",
-      "3. Recarga de Energía% (110% - 130%)",
-      "❌ ATQ% no tiene ningún impacto"
+      "Recarga de Energía (hasta meta) > Daño Crítico = Prob. Crítica (64% máx c/ Cazador) ≥ Vida%."
     ],
-    "talentPriority": "Ataque Normal/Cargado (NA) >>> Habilidad Elemental (E) = Definitiva (Q)",
+    "talentPriority": "Ataques Normales (Cargado) >>> Habilidad Elemental (E) >= Definitiva (Q)",
     "benchmarks": {
-      "hp": "38,000 – 45,000 HP",
-      "atk": "Base (~1,000 - 1,200 ATQ)",
-      "def": "Base (~750 - 850 DEF)",
-      "em": "0 – 80 EM",
-      "er": "115% – 130% ER",
-      "crit": "60% CR / 240%+ CD"
+      "hp": "35,000 – 42,000+ HP",
+      "atk": "1,100",
+      "def": "750",
+      "em": "0 – 80 ME (Lunar)",
+      "er": "100%–115% (2 Hydro) / 130%–140% (Solo)",
+      "crit": "55%–64% CR base (100% c/ Cazador) / 180%–240%+ CD"
     },
     "metaTeams": [
       {
-        "name": "Neuvillette Hyper Solo Carry",
-        "comp": "Neuvillette • Furina • Kazuha • Baizhu",
+        "name": "Freeze Hipercarry 7.2",
         "members": [
           "Neuvillette",
+          "Escoffier",
           "Furina",
-          "Kazuha",
-          "Baizhu"
-        ]
+          "Vodyanitsa"
+        ],
+        "comp": "Neuvillette • Escoffier • Furina • Vodyanitsa",
+        "note": "Renueva su techo en Freeze con Vodyanitsa y Escoffier aportando -RES y Fanfarria."
       },
       {
-        "name": "Neuvillette Taser F2P",
-        "comp": "Neuvillette • Fischl • Beidou • Sucrose",
+        "name": "Cargado Lunar Driver 7.2",
         "members": [
           "Neuvillette",
-          "Fischl",
-          "Beidou",
+          "Columbina",
+          "Ineffa",
           "Sucrose"
-        ]
-      },
-      {
-        "name": "Neuvillette Vaporize",
-        "comp": "Neuvillette • Xiangling • Kazuha • Zhongli",
-        "members": [
-          "Neuvillette",
-          "Xiangling",
-          "Kazuha",
-          "Zhongli"
-        ]
+        ],
+        "comp": "Neuvillette • Columbina • Ineffa • Sucrose",
+        "note": "Actúa como conductor Hydro on-field habilitando el núcleo Lunar de Columbina e Ineffa."
       }
     ],
     "recommendedPanel": {
-      "hp": "38,000 – 45,000 HP",
-      "atk": "Base (~1,000 - 1,200 ATQ)",
-      "def": "Base (~750 - 850 DEF)",
-      "em": "0 – 80 EM",
-      "er": "115% – 130% ER",
-      "crit": "60% CR / 240%+ CD"
+      "hp": "35,000 – 42,000+ HP",
+      "atk": "1,100",
+      "def": "750",
+      "em": "0 – 80 ME (Lunar)",
+      "er": "100%–115% (2 Hydro) / 130%–140% (Solo)",
+      "crit": "55%–64% CR base (100% c/ Cazador) / 180%–240%+ CD"
     },
     "baseStats": {
       "hp90": 14695,
@@ -7711,23 +7718,23 @@ const CHARACTER_BUILDS_DB = [
     },
     "statPriority": {
       "sands": "Vida%",
-      "goblet": "Bono Daño Hydro% o Vida% (con Furina + Kazuha)",
-      "circlet": "Daño Crítico% (o Prob. CR si falta)",
-      "substats": "1. Prob. Crítica (tope 64% con Cazador) / Daño Crítico > 2. Vida% (hasta 40,000+ HP) > 3. Recarga de Energía% (110% - 130%) > ❌ ATQ% no tiene ningún impacto"
+      "goblet": "Bono Daño Hydro / Vida% (con Furina)",
+      "circlet": "Daño Crítico / Prob. Crítica (máx 64% base)",
+      "substats": "Recarga de Energía (hasta meta) > Daño Crítico = Prob. Crítica (64% máx c/ Cazador) ≥ Vida%."
     },
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/neuvillette-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://keqingmains.com/q/neuvillette-quickguide/",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "https://game8.co/games/Genshin-Impact/archives/Neuvillette-Best-Builds",
+        "spirifly_builds MCP"
       ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -7740,7 +7747,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Nilou.png",
-    "tier": "T0 Bloom Driver",
+    "tier": "T1.5 (A) Sub-DPS",
     "role": "Reina del Florecimiento Abundante (Bountiful Cores)",
     "roleCategory": "sub_dps",
     "scalingType": "HP",
@@ -7937,7 +7944,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -7950,7 +7959,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Claymore",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Noel.png",
-    "tier": "T1 Furina Driver / DPS",
+    "tier": "T3 (C) Main DPS",
     "role": "Carry Geo de Barrido Masivo, Healer de Equipo & Escudo en C6",
     "roleCategory": "main_dps",
     "scalingType": "DEF",
@@ -8140,7 +8149,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -8153,7 +8164,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Polearm",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Shougun.png",
-    "tier": "T0 Battery & Burst DPS",
+    "tier": "T1.5 (A) Sub-DPS",
     "role": "Batería Universal de Equipo, Buffer de Definitivas & Burst DPS",
     "roleCategory": "main_dps",
     "scalingType": "ER",
@@ -8363,7 +8374,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -8376,7 +8389,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Kokomi.png",
-    "tier": "T0 Healer / Enabler",
+    "tier": "T1.5 (A) Support",
     "role": "Healer Universal, Aplicadora Hydro en Área & Driver",
     "roleCategory": "healer_shielder",
     "scalingType": "HP",
@@ -8576,7 +8589,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -8589,7 +8604,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Polearm",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Shenhe.png",
-    "tier": "T0 Cryo Buffer",
+    "tier": "T1 (A+) Support",
     "role": "Buffer Especializada Cryo (Plumas Glaciares Icy Quill con Daño Plano Masivo)",
     "roleCategory": "support",
     "scalingType": "ATK",
@@ -8786,7 +8801,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -8799,7 +8816,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Bow",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Sigewinne.png",
-    "tier": "T1 Buffer / Healer",
+    "tier": "T2 (B) Support",
     "role": "Healer de Equipo & Buffer de Daño de Habilidades Elementales",
     "roleCategory": "healer_shielder",
     "scalingType": "HP",
@@ -8979,7 +8996,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -8992,49 +9011,57 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Sucrose.png",
-    "tier": "T0 Buffer Reacciones",
-    "role": "Buffer de Maestría Elemental (+250 EM a todo el equipo) & Reductora VV",
+    "tier": "T0 (SS) Support",
+    "role": "Soporte / Buffer de ME Anemo (Hexerei / Cargado Lunar / Sombra Verde)",
     "roleCategory": "support",
     "scalingType": "EM",
-    "scalingLabel": "Escalado 100% Maestría Elemental (Comparte 20% de su EM con el equipo)",
+    "scalingLabel": "Comparte 20% de su ME con el equipo; pieza clave de Hexerei y Lunar-Charged en 7.2 (800+ ME)",
     "bestWeapons": [
       {
         "name": "Memorias de Sacrificios",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "+221 Maestría Elemental y reinicia su habilidad E para doble succión.",
+        "type": "BiS Práctico 4★",
+        "note": "454 ATQ base, 221 ME; doble carga de Elemental para recargar y compartir más ME.",
         "weaponId": "14403",
-        "reviewedNote": false
+        "reviewedNote": true
+      },
+      {
+        "name": "Hibernación Matutina de Año Nuevo",
+        "rarity": 5,
+        "type": "BiS Techo ME 5★",
+        "note": "542 ATQ base, 265 ME; añade hasta +248 ME extra tras Torbellinos, Skill y Definitiva.",
+        "weaponId": "14518",
+        "reviewedNote": true
+      },
+      {
+        "name": "Sueños de las Mil Noches",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "542 ATQ base, 265 ME; aporta +40 ME adicionales a todos los aliados.",
+        "weaponId": "14511",
+        "reviewedNote": true
       },
       {
         "name": "Cuentos de Cazadores de Dragones",
         "rarity": 3,
-        "type": "Opción por rol",
-        "note": "+48% ATQ para el Hypercarry además de compartir Maestría Elemental.",
+        "type": "Buffer F2P (3★)",
+        "note": "354 ATQ base; otorga +48% ATQ R5 directo al carry principal al cambiar.",
         "weaponId": "11316",
-        "reviewedNote": false
-      },
-      {
-        "name": "Códice de Favonius",
-        "rarity": 4,
-        "type": "Opción por rol",
-        "note": "Para equipos con alta demanda de recarga.",
-        "weaponId": "14401",
-        "reviewedNote": false
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Sombra Verde Esmeralda (4 piezas)",
-        "type": "BiS Obligatorio",
-        "bonus": "-40% RES Elemental para multiplicar el daño del equipo.",
-        "reviewedBonus": false
+        "set": "Viridescent Venerer (4 piezas)",
+        "type": "BiS Absoluto",
+        "bonus": "+60% Torbellino, +20% Torbellino Estelar y -40% RES elemental del enemigo.",
+        "reviewedBonus": true
       },
       {
         "set": "Instructor (4 piezas)",
-        "type": "Soporte de Reacciones",
-        "bonus": "+120 de Maestría Elemental a todos los miembros del equipo al causar una reacción elemental.",
-        "reviewedBonus": false
+        "type": "Alternativa ME",
+        "bonus": "+120 ME a todo el equipo durante 8s cuando otro aliado ya lleva Sombra Verde.",
+        "reviewedBonus": true
       }
     ],
     "mainStats": {
@@ -9043,57 +9070,48 @@ const CHARACTER_BUILDS_DB = [
       "circlet": "Maestría Elemental"
     },
     "substatsPriority": [
-      "1. Maestría Elemental (Meta: 800 – 950 EM)",
-      "2. Recarga de Energía% (140% - 160% ER)"
+      "Maestría Elemental >>> Recarga de Energía (130%–160%) > Prob. Crítica (si usa Favonius)."
     ],
-    "talentPriority": "Habilidad Elemental (E) = Definitiva (Q) >>> Ataques Normales",
+    "talentPriority": "Habilidad Elemental (E) ≥ Definitiva (Q) >>> Ataques Normales (Escala por Nivel 90 y ME)",
     "benchmarks": {
       "hp": "16,000",
       "atk": "1,100",
       "def": "700",
-      "em": "850 – 950 EM",
-      "er": "150% – 170% ER",
-      "crit": "40%+ CR (con Favonius) / No req."
+      "em": "800+ ME",
+      "er": "130% – 160% ER",
+      "crit": "No requerido"
     },
     "metaTeams": [
       {
-        "name": "National Team F2P",
-        "comp": "Xiangling • Xingqiu • Bennett • Sucrose",
+        "name": "Flins Cargado Lunar SS 7.2",
         "members": [
-          "Xiangling",
-          "Xingqiu",
-          "Bennett",
+          "Flins",
+          "Columbina",
+          "Ineffa",
           "Sucrose"
-        ]
+        ],
+        "comp": "Flins • Columbina • Ineffa • Sucrose",
+        "note": "Equipo premium de Flins: aplica Sombra Verde y comparte ~200 ME para Cargado Lunar."
       },
       {
-        "name": "Taser Clásico",
-        "comp": "Sucrose • Xingqiu • Beidou • Fischl",
+        "name": "Arlecchino Hexerei",
         "members": [
+          "Arlecchino",
+          "Fischl",
           "Sucrose",
-          "Xingqiu",
-          "Beidou",
-          "Fischl"
-        ]
-      },
-      {
-        "name": "Hu Tao VV Vape",
-        "comp": "Hu Tao • Xingqiu • Sucrose • Thoma",
-        "members": [
-          "Hu Tao",
-          "Xingqiu",
-          "Sucrose",
-          "Thoma"
-        ]
+          "Mona"
+        ],
+        "comp": "Arlecchino • Fischl • Sucrose • Mona",
+        "note": "Activa sinergia Hexerei y amplifica Vaporizados / Sobrevaporizados."
       }
     ],
     "recommendedPanel": {
       "hp": "16,000",
       "atk": "1,100",
       "def": "700",
-      "em": "850 – 950 EM",
-      "er": "150% – 170% ER",
-      "crit": "40%+ CR (con Favonius) / No req."
+      "em": "800+ ME",
+      "er": "130% – 160% ER",
+      "crit": "No requerido"
     },
     "baseStats": {
       "hp90": 9274,
@@ -9168,21 +9186,21 @@ const CHARACTER_BUILDS_DB = [
       "sands": "Maestría Elemental",
       "goblet": "Maestría Elemental",
       "circlet": "Maestría Elemental",
-      "substats": "1. Maestría Elemental (Meta: 800 – 950 EM) > 2. Recarga de Energía% (140% - 160% ER)"
+      "substats": "Maestría Elemental >>> Recarga de Energía (130%–160%) > Prob. Crítica (si usa Favonius)."
     },
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/sucrose-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://keqingmains.com/q/sucrose-quickguide/",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "https://game8.co/games/Genshin-Impact/archives/297525",
+        "spirifly_builds MCP"
       ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -9195,7 +9213,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Bow",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Tartaglia.png",
-    "tier": "T0.5 Enabler DPS",
+    "tier": "T2 (B) Main DPS",
     "role": "Enabler Hydro en Área & Burst DPS Nuke",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
@@ -9401,7 +9419,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -9414,7 +9434,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Polearm",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Tohma.png",
-    "tier": "T1 Burgeon Trigger",
+    "tier": "T2 (B) Sub-DPS",
     "role": "Detonador de Crepitar (Burgeon) a Full EM & Escudo Apilable",
     "roleCategory": "sub_dps",
     "scalingType": "EM_HP",
@@ -9595,7 +9615,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -9608,7 +9630,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Wanderer.png",
-    "tier": "T0.5 Flight Hypercarry",
+    "tier": "T2 (B) Main DPS",
     "role": "Hypercarry Anemo Volador en Campo (Ataques Normales Rápidos)",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
@@ -9815,7 +9837,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -9828,7 +9852,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Bow",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Venti.png",
-    "tier": "T0.5 Vortex CC God",
+    "tier": "T1 (A+) Sub-DPS",
     "role": "Rey del Control de Masas (Vórtice Negro Absoluto) & Batería Elemental",
     "roleCategory": "support",
     "scalingType": "EM",
@@ -10009,7 +10033,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -10022,126 +10048,121 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Wriothesley.png",
-    "tier": "T0.5 Cryo Boxer DPS",
-    "role": "Hypercarry Cryo de Puñetazos Normales y Cargados en Campo",
+    "tier": "T0 (SS) Main DPS",
+    "role": "Main DPS Cryo On-Field (Conducto Estelar / Derretidos / Congelados)",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
-    "scalingLabel": "Escalado por ATQ% y Multiplicadores de Puñetazos durante estado E",
+    "scalingLabel": "Ataques Normales/Cargados potenciados; en 7.2 domina en Conducto Estelar con ATQ%/ATQ%/CRIT",
     "bestWeapons": [
       {
         "name": "Supervisor Flujoáurico",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+Prob. Crítica, +ATQ% y hasta +42% daño en normales/cargados y +8% Velocidad de Ataque.",
+        "type": "BiS Firma",
+        "note": "674 ATQ base, 22.1% Prob. Crítica; +16% ATQ, +48% Daño Normal, +42% Cargado y +8% Vel. Ataque.",
         "weaponId": "14513",
-        "reviewedNote": false
-      },
-      {
-        "name": "Escrituras del Fluir Sempiterno",
-        "rarity": 5,
-        "type": "Opción por rol",
-        "note": "Stat-sticks descomunales de Daño Crítico.",
-        "weaponId": "14514",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
         "name": "Reminiscencia de Tulaytulah",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "Stat-sticks descomunales de Daño Crítico.",
+        "type": "Alternativa 5★",
+        "note": "674 ATQ base, 44.1% Daño Crítico; +10% Vel. Ataque y hasta +48% Daño Normal tras la Elemental.",
         "weaponId": "14512",
-        "reviewedNote": false
+        "reviewedNote": true
+      },
+      {
+        "name": "Oración Perdida a los Vientos Sagrados",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "608 ATQ base, 33.1% Prob. Crítica; +32% Bono Elemental en campo prolongado.",
+        "weaponId": "14502",
+        "reviewedNote": true
       },
       {
         "name": "Sinfonía de los Merodeadores",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "+55.1% Daño Crítico y canciones de alto valor.",
+        "type": "Mejor 4★ Gacha",
+        "note": "510 ATQ base, 55.1% Daño Crítico; bufo enorme de ATQ, Bono Elemental o ME al entrar al campo.",
         "weaponId": "14402",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
         "name": "Fluencia Impoluta",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "Forja de Fontaine: +Bono Daño Elemental al curar Pacto de Vida.",
+        "type": "Mejor F2P Forja",
+        "note": "565 ATQ base, 27.6% ATQ%; gana hasta +20% Bono Elemental al limpiar el Pacto Vital con Cargados.",
         "weaponId": "14425",
-        "reviewedNote": false
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Cazador Fantasmal (4 piezas)",
-        "type": "BiS Absoluto",
-        "bonus": "+36% Prob. Crítica gratuita al perder y recuperar vida con sus puñetazos reforzados.",
-        "reviewedBonus": false
+        "set": "Disenchantment in Deep Shadows (4 piezas)",
+        "type": "BiS Conducto Estelar",
+        "bonus": "+18% ATQ (2p); +80% Superconductor, +40% Conducto Estelar y +16% Prob. Crítica sobre enemigos afectados.",
+        "reviewedBonus": true
       },
       {
-        "set": "Reminiscencia de la Purificación (4 piezas)",
-        "type": "Alternativa Normales",
-        "bonus": "+50% Daño en Ataques Normales y Cargados.",
-        "reviewedBonus": false
+        "set": "Marechaussee Hunter (4 piezas)",
+        "type": "Alternativa General",
+        "bonus": "+15% Daño Normal/Cargado (2p); hasta +36% Prob. Crítica por sus propias fluctuaciones de Vida.",
+        "reviewedBonus": true
+      },
+      {
+        "set": "Blizzard Strayer (4 piezas)",
+        "type": "Alternativa Freeze",
+        "bonus": "+15% Bono Cryo y hasta +40% Prob. Crítica contra enemigos congelados.",
+        "reviewedBonus": true
       }
     ],
     "mainStats": {
-      "sands": "ATQ% o Maestría Elemental (en Melt)",
-      "goblet": "Bono Daño Cryo%",
-      "circlet": "Daño Crítico% (o Prob. CR)"
+      "sands": "ATQ%",
+      "goblet": "ATQ% (Conducto Estelar) / Bono Daño Cryo",
+      "circlet": "Daño Crítico / Prob. Crítica"
     },
     "substatsPriority": [
-      "1. Daño Crítico / Prob. Crítica (tope 64% con Cazador)",
-      "2. ATQ%",
-      "3. Maestría Elemental (100 – 180 EM en Melt)",
-      "4. Recarga de Energía%"
+      "Daño Crítico > Prob. Crítica > ATQ% > Recarga de Energía (100%–130%)."
     ],
-    "talentPriority": "Ataque Normal (Puñetazos) >>> Habilidad Elemental (E) > Definitiva (Q)",
+    "talentPriority": "Ataques Normales >>> Habilidad Elemental (E) >> Definitiva (Q)",
     "benchmarks": {
-      "hp": "18,000",
-      "atk": "2,000 – 2,400 ATQ",
+      "hp": "20,000",
+      "atk": "2,000 – 2,200 ATQ",
       "def": "800",
-      "em": "100 – 160 EM (en Melt)",
-      "er": "115% – 125% ER",
-      "crit": "60% CR / 210%+ CD"
+      "em": "0 – 150 ME (Derretido)",
+      "er": "100% – 130% ER",
+      "crit": "50–60% (Cazador) / 70–80% CR / 200%+ CD"
     },
     "metaTeams": [
       {
-        "name": "Wriothesley Burn-Melt",
-        "comp": "Wriothesley • Nahida • Thoma • Bennett",
+        "name": "Conducto Estelar Meta 7.2",
         "members": [
           "Wriothesley",
-          "Nahida",
-          "Thoma",
-          "Bennett"
-        ]
+          "Yae Miko",
+          "Odette",
+          "Alyosha"
+        ],
+        "comp": "Wriothesley • Yae Miko • Odette • Alyosha",
+        "note": "Driver Cryo principal para Conducto Estelar con Desencanto en las Sombras Profundas."
       },
       {
-        "name": "Wriothesley Freeze con Furina",
-        "comp": "Wriothesley • Furina • Shenhe • Jean",
+        "name": "Freeze Premium Escoffier",
         "members": [
           "Wriothesley",
+          "Escoffier",
           "Furina",
-          "Shenhe",
-          "Jean"
-        ]
-      },
-      {
-        "name": "Wriothesley Hyper",
-        "comp": "Wriothesley • Shenhe • Kazuha • Bennett",
-        "members": [
-          "Wriothesley",
-          "Shenhe",
-          "Kazuha",
-          "Bennett"
-        ]
+          "Vodyanitsa"
+        ],
+        "comp": "Wriothesley • Escoffier • Furina • Vodyanitsa",
+        "note": "Escoffier y Vodyanitsa reducen RES y potencian el daño Cryo continuo en Freeze."
       }
     ],
     "recommendedPanel": {
-      "hp": "18,000",
-      "atk": "2,000 – 2,400 ATQ",
+      "hp": "20,000",
+      "atk": "2,000 – 2,200 ATQ",
       "def": "800",
-      "em": "100 – 160 EM (en Melt)",
-      "er": "115% – 125% ER",
-      "crit": "60% CR / 210%+ CD"
+      "em": "0 – 150 ME (Derretido)",
+      "er": "100% – 130% ER",
+      "crit": "50–60% (Cazador) / 70–80% CR / 200%+ CD"
     },
     "baseStats": {
       "hp90": 12858,
@@ -10213,24 +10234,24 @@ const CHARACTER_BUILDS_DB = [
       }
     },
     "statPriority": {
-      "sands": "ATQ% o Maestría Elemental (en Melt)",
-      "goblet": "Bono Daño Cryo%",
-      "circlet": "Daño Crítico% (o Prob. CR)",
-      "substats": "1. Daño Crítico / Prob. Crítica (tope 64% con Cazador) > 2. ATQ% > 3. Maestría Elemental (100 – 180 EM en Melt) > 4. Recarga de Energía%"
+      "sands": "ATQ%",
+      "goblet": "ATQ% (Conducto Estelar) / Bono Daño Cryo",
+      "circlet": "Daño Crítico / Prob. Crítica",
+      "substats": "Daño Crítico > Prob. Crítica > ATQ% > Recarga de Energía (100%–130%)."
     },
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/wriothesley-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://keqingmains.com/q/wriothesley-quickguide/",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "https://game8.co/games/Genshin-Impact/archives/Wriothesley-Best-Builds",
+        "spirifly_builds MCP"
       ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -10243,7 +10264,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Polearm",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Xiangling.png",
-    "tier": "T0 Off-Field DPS",
+    "tier": "T1 (A+) Sub-DPS",
     "role": "Reina del Sub-DPS Pyro Off-Field (Pyronado Sin ICD)",
     "roleCategory": "sub_dps",
     "scalingType": "ATK_EM",
@@ -10451,7 +10472,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -10464,7 +10487,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Liuyun.png",
-    "tier": "T0 Enabler Plunge",
+    "tier": "T1.5 (A) Support",
     "role": "Habilitadora Universal de Ataques Descendentes, Healer de Equipo & Buffer de Daño Plano",
     "roleCategory": "support",
     "scalingType": "ATK",
@@ -10663,7 +10686,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -10676,7 +10701,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Polearm",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Xiao.png",
-    "tier": "T0.5 Plunge Hypercarry",
+    "tier": "T2 (B) Main DPS",
     "role": "Hypercarry Anemo en Campo (Saltos Descendentes Masivos en Área)",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
@@ -10873,7 +10898,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -10886,117 +10913,107 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Xilonen.png",
-    "tier": "T0 Soporte Universal",
-    "role": "Reductora de Resistencias (-36% RES), Buffer (+40% DMG) & Healer",
+    "tier": "T0.5 (S) Support",
+    "role": "Soporte Shredder & Healer Geo (Escala con RE y DEF)",
     "roleCategory": "support",
     "scalingType": "DEF",
-    "scalingLabel": "Escalado por DEF% (3,200 DEF activa tope de arma 5★) • Reducción depende de Nv. Talento E",
+    "scalingLabel": "Reduce hasta -36% RES elemental; con su firma necesita llegar a 2,500–3,000 DEF",
     "bestWeapons": [
       {
         "name": "Himno de las Cumbres",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+25.6% Bono Daño Elemental al equipo al alcanzar 3,200 DEF y enorme DEF%.",
+        "type": "BiS Firma",
+        "note": "542 ATQ base, 82.7% DEF%; otorga hasta +25.6% Bono Elemental a todo el equipo con ~3,000 DEF.",
         "weaponId": "11516",
-        "reviewedNote": false
+        "reviewedNote": true
+      },
+      {
+        "name": "Juramento por la Libertad",
+        "rarity": 5,
+        "type": "Alternativa Soporte 5★",
+        "note": "608 ATQ base, 198 ME; otorga +20% ATQ y +16% Daño Normal/Cargado al activar Cristalización.",
+        "weaponId": "11503",
+        "reviewedNote": true
       },
       {
         "name": "Espada de Favonius",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "Batería universal para todo el equipo en cualquier rotación.",
+        "type": "Mejor 4★ General",
+        "note": "454 ATQ base, 61.3% RE; genera partículas blancas para aliviar energía del equipo.",
         "weaponId": "11401",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
         "name": "Flauta de Ezpitzal",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "Forja de Natlan: +69% DEF total de forma gratuita.",
+        "type": "Mejor F2P Forja",
+        "note": "454 ATQ base, 69.0% DEF%; excelente para llegar a 2,500+ DEF y mejorar curación.",
         "weaponId": "11431",
-        "reviewedNote": false
-      },
-      {
-        "name": "Huso de Cinabrio",
-        "rarity": 4,
-        "type": "Opción por rol",
-        "note": "Aporte masivo de DEF%.",
-        "weaponId": "11415",
-        "reviewedNote": false
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Pergamino del Héroe de la Ciudad de las Cenizas (4p)",
-        "type": "BiS Indiscutible",
-        "bonus": "+40% Daño Elemental a los elementos que reaccionan con Noctámbulo.",
-        "reviewedBonus": false
+        "set": "Scroll of the Hero of Cinder City (4 piezas)",
+        "type": "BiS Absoluto",
+        "bonus": "+40% Bono Elemental para Pyro/Hydro/Cryo/Electro y Geo al cristalizar en Noctámbulo.",
+        "reviewedBonus": true
       },
       {
-        "set": "Cáscara de Sueños Opulentos (4 piezas)",
-        "type": "Máxima DEF",
-        "bonus": "+54% DEF y +24% Bono Geo (si se busca maximizar su curación y arma).",
-        "reviewedBonus": false
+        "set": "Husk of Opulent Dreams (4 piezas)",
+        "type": "Alternativa Sub-DPS/DEF",
+        "bonus": "+30% DEF (2p) y hasta +24% DEF / Bono Geo si ya hay otro portador de Pergamino.",
+        "reviewedBonus": true
       }
     ],
     "mainStats": {
-      "sands": "DEF%",
+      "sands": "Recarga de Energía / DEF%",
       "goblet": "DEF%",
-      "circlet": "Bono de Curación% o DEF% (o Prob. CR con Favonius)"
+      "circlet": "Bono de Curación / DEF%"
     },
     "substatsPriority": [
-      "1. DEF% y DEF Plana (Meta: 3,200 DEF con arma 5★ / 2,800+ F2P)",
-      "2. Recarga de Energía% (160% - 190% ER)",
-      "3. Prob. Crítica (si usa Favonius)"
+      "Recarga de Energía (190%+) > DEF% (2,500–3,000) > Prob. Crítica (si usa Favonius)."
     ],
-    "talentPriority": "Habilidad Elemental (E) >>> Definitiva (Q) >>> Ataques Normales (No subir)",
+    "talentPriority": "Habilidad Elemental (E) >>> Definitiva (Q) >>> Ataques Normales",
     "benchmarks": {
       "hp": "18,000",
       "atk": "1,100",
-      "def": "2,800 – 3,300+ DEF",
+      "def": "2,500 – 3,000 DEF",
       "em": "0",
-      "er": "165% – 190% ER",
-      "crit": "50%+ CR (con Favonius)"
+      "er": "190%+ ER",
+      "crit": "Opcional (Solo Favonius)"
     },
     "metaTeams": [
       {
-        "name": "Neuvillette Hypercarry",
-        "comp": "Neuvillette • Furina • Xilonen • Kazuha",
-        "members": [
-          "Neuvillette",
-          "Furina",
-          "Xilonen",
-          "Kazuha"
-        ]
-      },
-      {
-        "name": "Mavuika Melt Core",
-        "comp": "Mavuika • Citlali • Xilonen • Bennett",
+        "name": "Mavuika Derretidos",
         "members": [
           "Mavuika",
           "Citlali",
           "Xilonen",
           "Bennett"
-        ]
+        ],
+        "comp": "Mavuika • Citlali • Xilonen • Bennett",
+        "note": "Carga Espíritu Noctámbulo de Mavuika rapidísimo mientras aplica -36% RES Pyro."
       },
       {
-        "name": "Navia Geo-Bomb",
-        "comp": "Navia • Xilonen • Furina • Bennett",
+        "name": "Neuvillette Hipercarry",
         "members": [
-          "Navia",
-          "Xilonen",
+          "Neuvillette",
           "Furina",
-          "Bennett"
-        ]
+          "Kazuha",
+          "Xilonen"
+        ],
+        "comp": "Neuvillette • Furina • Kazuha • Xilonen",
+        "note": "Doble reducción de RES + Pergamino Natlan + curación para Fanfarria."
       }
     ],
     "recommendedPanel": {
       "hp": "18,000",
       "atk": "1,100",
-      "def": "2,800 – 3,300+ DEF",
+      "def": "2,500 – 3,000 DEF",
       "em": "0",
-      "er": "165% – 190% ER",
-      "crit": "50%+ CR (con Favonius)"
+      "er": "190%+ ER",
+      "crit": "Opcional (Solo Favonius)"
     },
     "baseStats": {
       "hp90": 12405,
@@ -11068,24 +11085,24 @@ const CHARACTER_BUILDS_DB = [
       }
     },
     "statPriority": {
-      "sands": "DEF%",
+      "sands": "Recarga de Energía / DEF%",
       "goblet": "DEF%",
-      "circlet": "Bono de Curación% o DEF% (o Prob. CR con Favonius)",
-      "substats": "1. DEF% y DEF Plana (Meta: 3,200 DEF con arma 5★ / 2,800+ F2P) > 2. Recarga de Energía% (160% - 190% ER) > 3. Prob. Crítica (si usa Favonius)"
+      "circlet": "Bono de Curación / DEF%",
+      "substats": "Recarga de Energía (190%+) > DEF% (2,500–3,000) > Prob. Crítica (si usa Favonius)."
     },
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/xilonen-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://keqingmains.com/q/xilonen-quickguide/",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "https://game8.co/games/Genshin-Impact/archives/461997",
+        "spirifly_builds MCP"
       ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -11098,7 +11115,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Xingqiu.png",
-    "tier": "T0 Meta Universal",
+    "tier": "T1 (A+) Sub-DPS",
     "role": "Off-Field Sub-DPS, Aplicador Hydro & Reductor de Daño",
     "roleCategory": "sub_dps",
     "scalingType": "ATK",
@@ -11298,7 +11315,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -11311,126 +11330,121 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Yae.png",
-    "tier": "T0 Off-Field DPS",
-    "role": "Sub-DPS Electro Off-Field Automático (3 Tótems Sesshou Sakura) & Nuke Q",
+    "tier": "T0 (SS) Sub-DPS",
+    "role": "Sub-DPS Electro Off-Field (Conducto Estelar / Hexerei / Aceleración)",
     "roleCategory": "sub_dps",
-    "scalingType": "ATK_EM",
-    "scalingLabel": "Escalado por ATQ% + Pasiva A4 (+0.15% daño en tótems por cada punto de EM)",
+    "scalingType": "ATK",
+    "scalingLabel": "Los buffs de Hexerei mejoraron la duración de sus tótems; en 7.2 brilla en Conducto Estelar con ATQ%/ATQ%/CRIT",
     "bestWeapons": [
       {
         "name": "Axioma de la Kagura",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+66.2% Daño Crítico, +36% Daño de Habilidad Elemental acumulable y +12% Daño Elemental.",
+        "type": "BiS Firma",
+        "note": "608 ATQ base, 66.2% Daño Crítico; hasta +36% Daño Elemental Skill y +12% Bono Elemental.",
         "weaponId": "14509",
-        "reviewedNote": false
+        "reviewedNote": true
+      },
+      {
+        "name": "Sueños de las Mil Noches",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "542 ATQ base, 265 ME; excelente en Aceleración/Dendro y bufa ME grupal.",
+        "weaponId": "14511",
+        "reviewedNote": true
+      },
+      {
+        "name": "Pergamino Celestial",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "674 ATQ base, 33.1% Prob./ATQ; sólido aporte de ATQ y +12% Bono Elemental.",
+        "weaponId": "14501",
+        "reviewedNote": true
       },
       {
         "name": "Sinfonía de los Merodeadores",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "+55.1% Daño Crítico y cualquiera de las 3 canciones (ATQ, Daño o EM) es perfecta para ella.",
+        "type": "Mejor 4★ Gacha",
+        "note": "510 ATQ base, 55.1% Daño Crítico; aprovecha cualquiera de los 3 bufos en rotación rápida.",
         "weaponId": "14402",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
-        "name": "Oración Perdida a los Vientos Sagrados",
-        "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+Prob. Crítica altísima.",
-        "weaponId": "14502",
-        "reviewedNote": false
-      },
-      {
-        "name": "Anillo de Hakushin",
+        "name": "Fluencia Impoluta",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "Hakushin buffea el daño elemental del equipo tras reacciones electro.",
-        "weaponId": "14414",
-        "reviewedNote": false
-      },
-      {
-        "name": "Guía Mágica",
-        "rarity": 3,
-        "type": "Opción por rol",
-        "note": "Hakushin buffea el daño elemental del equipo tras reacciones electro.",
-        "weaponId": "11315",
-        "reviewedNote": false
+        "type": "Mejor F2P Forja",
+        "note": "565 ATQ base, 27.6% ATQ%; +8% a +20% Bono Elemental tras usar Elemental con curación.",
+        "weaponId": "14425",
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Compañía Dorada (4 piezas)",
-        "type": "BiS Tótems E",
-        "bonus": "+70% Daño en Habilidad Elemental para sus 3 tótems mientras está fuera de campo.",
-        "reviewedBonus": false
+        "set": "Golden Troupe (4 piezas)",
+        "type": "BiS Universal",
+        "bonus": "+20% Daño Skill (2p); +50% extra off-field para maximizar sus tótems.",
+        "reviewedBonus": true
       },
       {
-        "set": "Sueños Áureos (4 piezas)",
-        "type": "BiS Aggravate",
-        "bonus": "+ATQ% y hasta +150 de Maestría Elemental para potenciar sus reacciones de Intensificación.",
-        "reviewedBonus": false
+        "set": "Disenchantment in Deep Shadows (4 piezas)",
+        "type": "BiS Conducto Estelar",
+        "bonus": "+18% ATQ (2p); +40% Daño Conducto Estelar y +16% Prob. Crítica gratis.",
+        "reviewedBonus": true
+      },
+      {
+        "set": "Gilded Dreams (2 piezas) + Gladiator's Finale (2 piezas)",
+        "type": "Alternativa Mixta",
+        "bonus": "+80 Maestría Elemental y +18% ATQ fácil de armar mientras completas set de 4 piezas.",
+        "reviewedBonus": true
       }
     ],
     "mainStats": {
-      "sands": "ATQ% o Maestría Elemental",
-      "goblet": "Bono Daño Electro%",
-      "circlet": "Prob. Crítica% / Daño Crítico%"
+      "sands": "ATQ% / Maestría Elemental",
+      "goblet": "ATQ% (Estelar) / Bono Daño Electro",
+      "circlet": "Daño Crítico / Prob. Crítica"
     },
     "substatsPriority": [
-      "1. Prob. Crítica / Daño Crítico (1:2)",
-      "2. ATQ%",
-      "3. Maestría Elemental (100 – 180 EM en Aggravate)",
-      "4. Recarga de Energía% (130% – 145%)"
+      "Daño Crítico ≥ Prob. Crítica > ATQ% / Maestría Elemental > Recarga de Energía (130%–140%)."
     ],
     "talentPriority": "Habilidad Elemental (E) >>> Definitiva (Q) >>> Ataques Normales",
     "benchmarks": {
-      "hp": "16,000",
-      "atk": "1,900 – 2,200 ATQ",
-      "def": "700",
-      "em": "120 – 180 EM",
-      "er": "130% – 145% ER",
-      "crit": "75%+ CR / 180%+ CD"
+      "hp": "16,500",
+      "atk": "2,000+ ATQ",
+      "def": "750",
+      "em": "100 – 200 ME",
+      "er": "130%–140% (2 Electro) / 160%+ (Solo)",
+      "crit": "60% – 70% CR / 175%+ CD"
     },
     "metaTeams": [
       {
-        "name": "Alhaitham Quickbloom",
-        "comp": "Alhaitham • Yae Miko • Nahida • Kokomi",
+        "name": "Conducto Estelar Premium 7.2",
+        "members": [
+          "Sandrone",
+          "Yae Miko",
+          "Nicole",
+          "Qiqi"
+        ],
+        "comp": "Sandrone • Yae Miko • Nicole • Qiqi",
+        "note": "Su mejor equipo en 7.2: Conducto Estelar continuo potenciado por Nicole y Qiqi."
+      },
+      {
+        "name": "Aceleración Clásica",
         "members": [
           "Alhaitham",
           "Yae Miko",
           "Nahida",
-          "Kokomi"
-        ]
-      },
-      {
-        "name": "Tighnari Spread Dual Carry",
-        "comp": "Tighnari • Yae Miko • Nahida • Zhongli",
-        "members": [
-          "Tighnari",
-          "Yae Miko",
-          "Nahida",
-          "Zhongli"
-        ]
-      },
-      {
-        "name": "Yae-Raiden Core",
-        "comp": "Raiden Shogun • Yae Miko • Kazuha • Bennett",
-        "members": [
-          "Raiden Shogun",
-          "Yae Miko",
-          "Kazuha",
-          "Bennett"
-        ]
+          "Kuki Shinobu"
+        ],
+        "comp": "Alhaitham • Yae Miko • Nahida • Kuki Shinobu",
+        "note": "Doble Dendro/Electro de alto daño constante en Aceleración."
       }
     ],
     "recommendedPanel": {
-      "hp": "16,000",
-      "atk": "1,900 – 2,200 ATQ",
-      "def": "700",
-      "em": "120 – 180 EM",
-      "er": "130% – 145% ER",
-      "crit": "75%+ CR / 180%+ CD"
+      "hp": "16,500",
+      "atk": "2,000+ ATQ",
+      "def": "750",
+      "em": "100 – 200 ME",
+      "er": "130%–140% (2 Electro) / 160%+ (Solo)",
+      "crit": "60% – 70% CR / 175%+ CD"
     },
     "baseStats": {
       "hp90": 10372,
@@ -11502,24 +11516,24 @@ const CHARACTER_BUILDS_DB = [
       }
     },
     "statPriority": {
-      "sands": "ATQ% o Maestría Elemental",
-      "goblet": "Bono Daño Electro%",
-      "circlet": "Prob. Crítica% / Daño Crítico%",
-      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. ATQ% > 3. Maestría Elemental (100 – 180 EM en Aggravate) > 4. Recarga de Energía% (130% – 145%)"
+      "sands": "ATQ% / Maestría Elemental",
+      "goblet": "ATQ% (Estelar) / Bono Daño Electro",
+      "circlet": "Daño Crítico / Prob. Crítica",
+      "substats": "Daño Crítico ≥ Prob. Crítica > ATQ% / Maestría Elemental > Recarga de Energía (130%–140%)."
     },
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/yae-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://keqingmains.com/q/yae-quickguide/",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "https://game8.co/games/Genshin-Impact/archives/327533",
+        "spirifly_builds MCP"
       ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -11532,7 +11546,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Bow",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Yelan.png",
-    "tier": "T0 Meta Universal",
+    "tier": "T1 (A+) Sub-DPS",
     "role": "Off-Field Sub-DPS & Buffer de Daño Progresivo",
     "roleCategory": "sub_dps",
     "scalingType": "HP",
@@ -11740,7 +11754,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -11753,7 +11769,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Bow",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Yoimiya.png",
-    "tier": "T1 Single-Target DPS",
+    "tier": "T3 (C) Main DPS",
     "role": "Hypercarry Pyro Monobjetivo (Ataques Normales Ametralladora)",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
@@ -11961,7 +11977,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -11974,7 +11992,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Polearm",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Zhongli.png",
-    "tier": "T0 Escudo Absoluto",
+    "tier": "T1.5 (A) Support",
     "role": "Escudo Indestructible & Reductor de Resistencias Universal (-20% All RES)",
     "roleCategory": "healer_shielder",
     "scalingType": "HP",
@@ -12179,7 +12197,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -12192,132 +12212,151 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Columbina.png",
-    "tier": "T0 Sub-DPS & Buffer",
-    "role": "Heraldo de Fatui #3 (Damselette) • Buffer Universal y Sub-DPS Hydro Off-Field",
+    "tier": "T0 (SS) Sub-DPS",
+    "role": "Habilitadora Universal y Sub-DPS Hydro de Reacciones Lunares (Escala HP)",
     "roleCategory": "sub_dps",
     "scalingType": "HP",
-    "scalingLabel": "Escalado masivo por Vida Máxima (HP%) & Fluctuación",
+    "scalingLabel": "Buffs Lunares alcanzan su tope en 35,000 HP; prioridad HP% y ER%",
     "bestWeapons": [
       {
         "name": "Nocturno tras el Velo",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "Catalizador firma con Daño Crítico, Vida% y bono de Reacciones Lunares.",
+        "type": "BiS Firma",
+        "note": "88.2% Daño Crítico; +HP%, restaura Energía y aumenta Daño Crítico de reacciones Lunares.",
         "weaponId": "14522",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
-        "name": "Escrituras del Fluir Sempiterno",
+        "name": "Relicario de la Verdad",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "88.2% Daño Crítico y +16% Vida base.",
-        "weaponId": "14514",
-        "reviewedNote": false
+        "type": "Alternativa 5★",
+        "note": "88.2% Daño Crítico, +8% Prob. Crítica y +80 ME.",
+        "weaponId": "14521",
+        "reviewedNote": true
+      },
+      {
+        "name": "Jade Sacrificial",
+        "rarity": 4,
+        "type": "Mejor 4★ Pase",
+        "note": "36.8% Prob. Crítica y hasta +64% HP Máx y +80 ME fuera de campo.",
+        "weaponId": "14424",
+        "reviewedNote": true
       },
       {
         "name": "Prototipo Ámbar",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "41.3% Vida y regeneración de energía para todo el equipo.",
+        "type": "Mejor F2P Forja",
+        "note": "41.3% Vida%, regenera Energía para su Definitiva y cura al equipo.",
         "weaponId": "14406",
-        "reviewedNote": false
+        "reviewedNote": true
+      },
+      {
+        "name": "Códice de Favonius",
+        "rarity": 4,
+        "type": "Opción 4★ Batería",
+        "note": "45.9% Recarga de Energía y partículas blancas para el equipo.",
+        "weaponId": "14401",
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Silken Moon’s Serenade (4 piezas)",
-        "type": "Según equipo y rol",
-        "bonus": "",
-        "reviewedBonus": false
+        "set": "Silken Moon's Serenade (4 piezas)",
+        "type": "BiS Soporte Lunar",
+        "bonus": "+20% ER (2p); +60/120 ME al equipo y +10% Daño Lunar activable off-field.",
+        "reviewedBonus": true
       },
       {
         "set": "Aubade of Morningstar and Moon (4 piezas)",
-        "type": "Según equipo y rol",
-        "bonus": "",
-        "reviewedBonus": false
+        "type": "BiS Daño Off-Field",
+        "bonus": "+80 ME (2p); +20%/60% Daño de Reacción Lunar mientras está fuera de campo.",
+        "reviewedBonus": true
+      },
+      {
+        "set": "Night of the Sky's Unveiling (4 piezas)",
+        "type": "Variante Driver",
+        "bonus": "+80 ME y +15%/30% Prob. Crítica si juega en campo (Florecimiento Lunar).",
+        "reviewedBonus": true
       }
     ],
     "mainStats": {
-      "sands": "Vida% o Recarga de Energía%",
-      "goblet": "Bono Daño Hydro% o Vida%",
-      "circlet": "Prob. Crítica / Daño Crítico o Vida%"
+      "sands": "Vida% / Recarga de Energía",
+      "goblet": "Vida% (o Bono Hydro en Vaporizado)",
+      "circlet": "Prob. Crítica / Daño Crítico"
     },
     "substatsPriority": [
-      "1. Vida% y Vida Plana (35,000 – 42,000 HP)",
-      "2. Recarga de Energía% (160% – 190% ER)",
-      "3. Prob. Crítica / Daño Crítico (1:2)",
-      "4. Maestría Elemental (100 – 180 EM)"
+      "Vida% (hasta 35,000 HP) > Recarga (160–180%+) > Prob. Crítica > Daño Crítico > ME."
     ],
     "recommendedPanel": {
-      "hp": "38,000 – 42,000 HP",
-      "atk": "1,000 – 1,200 ATQ",
-      "def": "750 DEF",
-      "em": "120 – 180 EM",
-      "er": "160% – 180% ER",
-      "crit": "70%+ CR / 150%+ CD"
+      "hp": "30,000 – 35,000 HP",
+      "atk": "1,100",
+      "def": "750",
+      "em": "100 – 200 ME",
+      "er": "160%+ (arma ER) / 180%+",
+      "crit": "60% – 80% CR / 160% – 200%+ CD"
     },
-    "talentPriority": "Habilidad Elemental (E) = Definitiva (Q) >>> Ataques Normales",
+    "talentPriority": "Habilidad Elemental (E) ≥ Definitiva (Q) >>> Ataques Normales",
     "metaTeams": [
       {
-        "name": "Fatui Harbinger Vaporize",
+        "name": "Electrocargado Lunar",
         "members": [
-          "Arlecchino",
           "Columbina",
-          "Kaedehara Kazuha",
-          "Bennett"
+          "Flins",
+          "Ineffa",
+          "Sucrose"
         ],
-        "comp": "Arlecchino • Columbina • Kaedehara Kazuha • Bennett"
+        "comp": "Columbina • Flins • Ineffa • Sucrose",
+        "note": "Núcleo Lunar-Charged con Flins e Ineffa."
       },
       {
-        "name": "Columbina Freeze Control",
+        "name": "Cristalización Lunar",
         "members": [
-          "Kamisato Ayaka",
           "Columbina",
-          "Shenhe",
-          "Kaedehara Kazuha"
+          "Zibai",
+          "Linnea",
+          "Illuga"
         ],
-        "comp": "Kamisato Ayaka • Columbina • Shenhe • Kaedehara Kazuha"
+        "comp": "Columbina • Zibai • Linnea • Illuga",
+        "note": "Habilita Cristalización Lunar para Zibai."
       },
       {
-        "name": "Columbina Hyperbloom",
+        "name": "Florecimiento Lunar",
         "members": [
-          "Nahida",
           "Columbina",
-          "Kuki Shinobu",
-          "Alhacén"
+          "Lauma",
+          "Nefer",
+          "Kuki Shinobu"
         ],
-        "comp": "Nahida • Columbina • Kuki Shinobu • Alhacén"
+        "comp": "Columbina • Lauma • Nefer • Kuki Shinobu",
+        "note": "Núcleo Lunar-Bloom con Nefer y Lauma."
       }
     ],
     "statPriority": {
-      "sands": "Vida% o Recarga de Energía%",
-      "goblet": "Bono Daño Hydro% o Vida%",
-      "circlet": "Prob. Crítica o Daño Crítico",
-      "substats": "Vida% > Recarga de Energía% > Prob. Crítica > Daño Crítico > Maestría Elemental"
+      "sands": "Vida% / Recarga de Energía",
+      "goblet": "Vida% (o Bono Hydro en Vaporizado)",
+      "circlet": "Prob. Crítica / Daño Crítico",
+      "substats": "Vida% (hasta 35,000 HP) > Recarga (160–180%+) > Prob. Crítica > Daño Crítico > ME."
     },
     "benchmarks": {
-      "hp": "38,000 – 42,000 HP",
-      "atk": "1,000 – 1,200 ATQ",
-      "def": "750 DEF",
-      "em": "120 – 180 EM",
-      "er": "160% – 180% ER",
-      "crit": "70%+ CR / 150%+ CD"
+      "hp": "30,000 – 35,000 HP",
+      "atk": "1,100",
+      "def": "750",
+      "em": "100 – 200 ME",
+      "er": "160%+ (arma ER) / 180%+",
+      "crit": "60% – 80% CR / 160% – 200%+ CD"
     },
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/columbina-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [
-        "Sets contrastados; eliminadas alternativas que no benefician al daño principal de este rol."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://game8.co/games/Genshin-Impact/archives/382106",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "spirifly_builds MCP"
       ],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
-      ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -12330,122 +12369,126 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Claymore",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_MarionetteNew.png",
-    "tier": "T0 Stellar-Conduct DPS",
-    "role": "Main DPS / Sub-DPS Cryo de Conducto Estelar (Autómatas Mecánicos)",
+    "tier": "T0 (SS) Main DPS",
+    "role": "Hypercarry Cryo de Conducto Estelar (Ataques Cargados + Autómata)",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
-    "scalingLabel": "Escala con ATQ% y Críticos (Stellar-Conduct)",
+    "scalingLabel": "Escala con ATQ (pasiva A4 convierte ATQ en ME hasta 2,000 ATQ)",
     "bestWeapons": [
       {
         "name": "Llave de la Trascendencia",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "Mandoble firma de Sandrone con Crítico y bono de Conducto Estelar.",
+        "type": "BiS Firma",
+        "note": "674 ATQ base, 44.1% Daño Crítico; +28% ATQ y hasta +48% Daño de Conducto y Torbellino Estelar con Cargados.",
         "weaponId": "12516",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
         "name": "Mil Soles Abrasadores",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "Gran ATQ Base, Prob. Crítica y bono de Daño Crítico.",
+        "type": "Alternativa 5★",
+        "note": "741 ATQ base, 11% Prob. Crítica; +28% Daño Crítico y +20% ATQ tras Skill o Burst.",
         "weaponId": "12514",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
-        "name": "Médula de la Serpiente Marina",
+        "name": "Sentenciadora",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "674 ATQ base, 22.1% Prob. Crítica y +20% ATQ pasivo.",
+        "weaponId": "12512",
+        "reviewedNote": true
+      },
+      {
+        "name": "Sombra de la Marea",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "Prob. Crítica alta y hasta +50% Daño infligido.",
-        "weaponId": "12409",
-        "reviewedNote": false
+        "type": "Mejor 4★ Forja",
+        "note": "41.3% ATQ% y +24–48% ATQ adicional tras recibir curación.",
+        "weaponId": "12425",
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
         "set": "Disenchantment in Deep Shadows (4 piezas)",
-        "type": "Según equipo y rol",
-        "bonus": "",
-        "reviewedBonus": false
+        "type": "BiS Absoluto",
+        "bonus": "+18% ATQ; +40% Daño de Conducto Estelar y +16% Prob. Crítica al golpear afectados.",
+        "reviewedBonus": true
       },
       {
         "set": "Gilded Dreams (4 piezas)",
-        "type": "Según equipo y rol",
-        "bonus": "",
-        "reviewedBonus": false
+        "type": "Alternativa",
+        "bonus": "+80 ME y hasta +150 ME / +42% ATQ según composición elemental.",
+        "reviewedBonus": true
       }
     ],
     "mainStats": {
-      "sands": "ATQ%",
-      "goblet": "ATQ%",
-      "circlet": "Daño Crítico o Prob. Crítica"
+      "sands": "ATQ% / Maestría Elemental",
+      "goblet": "ATQ% / Maestría Elemental",
+      "circlet": "Daño Crítico ≥ Prob. Crítica"
     },
     "substatsPriority": [
-      "1. Prob. Crítica / Daño Crítico (1:2 - 70%+ / 160%+)",
-      "2. ATQ% y ATQ Plano (2,100 – 2,400 ATQ)",
-      "3. Recarga de Energía% (130% – 150% ER)",
-      "4. Maestría Elemental (60 – 100 EM)"
+      "Recarga (125–145%) > Daño Crítico > Prob. Crítica > ATQ% (hasta 2,000+) > Maestría Elemental."
     ],
     "recommendedPanel": {
-      "hp": "18,000 HP",
-      "atk": "2,100 – 2,400 ATQ",
-      "def": "Base (~800 DEF)",
-      "em": "60 – 100 EM",
-      "er": "130% – 150% ER",
-      "crit": "70%+ CR / 150%+ CD"
+      "hp": "18,000",
+      "atk": "2,000+ ATQ",
+      "def": "800",
+      "em": "150 – 200 ME",
+      "er": "125% – 145% ER",
+      "crit": "30–40% base (sin set/asc.) / 180%+ CD"
     },
-    "talentPriority": "Ataques Normales > Definitiva (Q) >>> Habilidad Elemental (E)",
+    "talentPriority": "Ataques Normales (Cargados) > Definitiva (Q) > Habilidad Elemental (E)",
     "metaTeams": [
       {
-        "name": "Superconduct Premium",
+        "name": "Conducto Estelar Premium",
         "members": [
           "Sandrone",
+          "Yae Miko",
           "Odette",
-          "Qiqi",
-          "Yae Miko"
-        ],
-        "comp": "Sandrone • Odette • Qiqi • Yae Miko"
-      },
-      {
-        "name": "Sandrone F2P",
-        "members": [
-          "Sandrone",
-          "Diona",
-          "Beidou",
           "Alyosha"
         ],
-        "comp": "Sandrone • Diona • Beidou • Aliyosha"
+        "comp": "Sandrone • Yae Miko • Odette • Alyosha",
+        "note": "Techo de daño actual de Snezhnaya con Yae Miko C1+, Odette y Alyosha."
+      },
+      {
+        "name": "Conducto Estelar Accesible",
+        "members": [
+          "Sandrone",
+          "Beidou",
+          "Sucrose",
+          "Qiqi"
+        ],
+        "comp": "Sandrone • Beidou • Sucrose • Qiqi",
+        "note": "Variante F2P haciendo doble cambio con Sacarosa para mantener buffs."
       }
     ],
     "statPriority": {
-      "sands": "ATQ%",
-      "goblet": "ATQ%",
-      "circlet": "Prob. Crítica o Daño Crítico",
-      "substats": "Daño Crítico > Prob. Crítica > ATQ% > Recarga de Energía% > Maestría Elemental"
+      "sands": "ATQ% / Maestría Elemental",
+      "goblet": "ATQ% / Maestría Elemental",
+      "circlet": "Daño Crítico ≥ Prob. Crítica",
+      "substats": "Recarga (125–145%) > Daño Crítico > Prob. Crítica > ATQ% (hasta 2,000+) > Maestría Elemental."
     },
     "benchmarks": {
-      "hp": "18,000 HP",
-      "atk": "2,100 – 2,400 ATQ",
-      "def": "Base (~800 DEF)",
-      "em": "60 – 100 EM",
-      "er": "130% – 150% ER",
-      "crit": "70%+ CR / 150%+ CD"
+      "hp": "18,000",
+      "atk": "2,000+ ATQ",
+      "def": "800",
+      "em": "150 – 200 ME",
+      "er": "125% – 145% ER",
+      "crit": "30–40% base (sin set/asc.) / 180%+ CD"
     },
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/sandrone-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [
-        "Sets contrastados; eliminadas alternativas que no benefician al daño principal de este rol."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://game8.co/games/Genshin-Impact/archives/382107",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "spirifly_builds MCP"
       ],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
-      ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -12458,7 +12501,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Bow",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Chasca.png",
-    "tier": "T0 Multi-Element Carry",
+    "tier": "T1 (A+) Main DPS",
     "role": "Hypercarry Anemo & Proyectiles Multi-Elementales en Cañón Volador",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
@@ -12579,7 +12622,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -12592,7 +12637,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Bow",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Olorun.png",
-    "tier": "T1 Electro Buffer & Sub-DPS",
+    "tier": "T1.5 (A) Sub-DPS",
     "role": "Soporte Electro de Natlan • Daño Pasivo en Electrocargados y Buffer de Recarga",
     "roleCategory": "sub_dps",
     "scalingType": "ATK",
@@ -12705,7 +12750,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -12718,7 +12765,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Polearm",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Emilie.png",
-    "tier": "T0 Burning Sub-DPS",
+    "tier": "T1 (A+) Sub-DPS",
     "role": "Perfumista de Fontaine • Sub-DPS Dendro Especialista en Quemadura y Daño Fuera de Campo",
     "roleCategory": "sub_dps",
     "scalingType": "ATK",
@@ -12857,7 +12904,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -12870,7 +12919,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Bow",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Sethos.png",
-    "tier": "T1 Charged/Burst Carry",
+    "tier": "T3 (C) Main DPS",
     "role": "Tirador Electro de Sumeru • Flechas Perforantes de Carga Rápida o Disparos de Energía",
     "roleCategory": "main_dps",
     "scalingType": "EM",
@@ -12999,7 +13048,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -13012,7 +13063,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Polearm",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Kachina.png",
-    "tier": "T1 Natlan Support & Buffer",
+    "tier": "T3 (C) Sub-DPS",
     "role": "Piloto del Turbogiro de Natlan • Portadora Estelar del Pergamino del Héroe",
     "roleCategory": "buffer",
     "scalingType": "DEF",
@@ -13124,7 +13175,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -13137,122 +13190,133 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Polearm",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Iansan.png",
-    "tier": "T1 Electro Sub-DPS & Buffer",
-    "role": "Guerrera Eléctrica de Natlan • Impactos Veloces de Sobrecarga y Batería",
-    "roleCategory": "sub_dps",
+    "tier": "T0 (SS) Support",
+    "role": "Soporte Buffer de ATQ Electro (Escala con ATQ% y Movilidad del Carry)",
+    "roleCategory": "support",
     "scalingType": "ATK",
-    "scalingLabel": "Escalado por ATQ% y Fuerza de Combate",
+    "scalingLabel": "Su Definitiva otorga ATQ plano rivalizando con Bennett para carries móviles",
     "bestWeapons": [
+      {
+        "name": "Sinfonista de Aromas",
+        "rarity": 5,
+        "type": "BiS Firma/Soporte",
+        "note": "608 ATQ base; suma +12%–24% ATQ y otorga bono de ATQ al equipo tras curar.",
+        "weaponId": "13514",
+        "reviewedNote": true
+      },
+      {
+        "name": "Pacificadora del Desastre",
+        "rarity": 5,
+        "type": "BiS ATQ Máximo",
+        "note": "741 ATQ base, 16.5% ATQ%; el mayor ATQ base del juego para maximizar el techo del bufo.",
+        "weaponId": "13507",
+        "reviewedNote": true
+      },
+      {
+        "name": "Charla en el Pabellón",
+        "rarity": 4,
+        "type": "Mejor 4★ Evento",
+        "note": "565 ATQ base, 30.6% RE; +20%–40% ATQ tras Elemental más Recarga perfecta.",
+        "weaponId": "13432",
+        "reviewedNote": true
+      },
       {
         "name": "Lanza de Favonius",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "Batería de energía y recarga constante.",
+        "type": "Mejor 4★ Gacha",
+        "note": "565 ATQ base, 30.6% RE; genera partículas blancas para reducir necesidades de energía.",
         "weaponId": "13407",
-        "reviewedNote": false
-      },
-      {
-        "name": "La Captura",
-        "rarity": 4,
-        "type": "Opción por rol",
-        "note": "+32% Daño y +12% CR en la Definitiva.",
-        "weaponId": "13415",
-        "reviewedNote": false
-      },
-      {
-        "name": "Lanza del Duelo",
-        "rarity": 4,
-        "type": "Opción por rol",
-        "note": "+Prob. Crítica y ATQ%.",
-        "weaponId": "13405",
-        "reviewedNote": false
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Pergamino del Héroe de la Ciudad de las Cenizas (4p)",
+        "set": "Scroll of the Hero of Cinder City (4 piezas)",
         "type": "BiS Natlan",
-        "bonus": "+40% Bono Daño Elemental al equipo.",
-        "reviewedBonus": false
+        "bonus": "Regenera energía en Explosiones Noctámbulas y da +40% Bono Elemental al equipo.",
+        "reviewedBonus": true
       },
       {
-        "set": "Emblema del Destino (4 piezas)",
-        "type": "BiS Daño Q",
-        "bonus": "Conversión de ER a Daño en la Definitiva.",
-        "reviewedBonus": false
+        "set": "Noblesse Oblige (4 piezas)",
+        "type": "Alternativa ATQ",
+        "bonus": "+20% ATQ al equipo durante 12s si otro aliado Natlan ya porta Pergamino.",
+        "reviewedBonus": true
+      },
+      {
+        "set": "Gladiator's Finale (2 piezas) + Shimenawa's Reminiscence (2 piezas)",
+        "type": "Alternativa Mixta",
+        "bonus": "+36% ATQ combinado si requieres alcanzar los 2,500+ ATQ sin set de 4p.",
+        "reviewedBonus": true
       }
     ],
     "mainStats": {
-      "sands": "ATQ% o Recarga de Energía%",
-      "goblet": "Bono Daño Electro%",
-      "circlet": "Prob. Crítica% o Daño Crítico%"
+      "sands": "ATQ% / Recarga de Energía",
+      "goblet": "ATQ%",
+      "circlet": "ATQ%"
     },
     "substatsPriority": [
-      "1. Prob. Crítica / Daño Crítico (1:2)",
-      "2. Recarga de Energía% (160% – 190% ER)",
-      "3. ATQ% (1,700 – 2,100 ATQ)",
-      "4. Maestría Elemental"
+      "Recarga de Energía (hasta umbral) > ATQ% > Prob. Crítica (si usa Favonius)."
     ],
     "recommendedPanel": {
-      "hp": "17,500 HP",
-      "atk": "1,900 ATQ",
-      "def": "750 DEF",
-      "em": "100 EM",
-      "er": "170% – 190% ER",
-      "crit": "65%+ CR / 140%+ CD"
+      "hp": "18,000",
+      "atk": "2,500+ ATQ",
+      "def": "750",
+      "em": "0",
+      "er": "180%–200%+ (140%–160% con Doble Electro)",
+      "crit": "Opcional (Solo Favonius)"
     },
-    "talentPriority": "Definitiva (Q) > nivel del personaje. Habilidad y normales sin prioridad.",
+    "talentPriority": "Definitiva (Q) >>> Habilidad Elemental (E) >>> Ataques Normales",
     "metaTeams": [
       {
-        "name": "Iansan Overload Storm",
+        "name": "Varesa Hipercarry Móvil",
+        "members": [
+          "Varesa",
+          "Iansan",
+          "Furina",
+          "Xianyun"
+        ],
+        "comp": "Varesa • Iansan • Furina • Xianyun",
+        "note": "Los Descendentes de Varesa mantienen al máximo el medidor noctámbulo de Iansan."
+      },
+      {
+        "name": "Mavuika Sobrecarga / Derretido",
         "members": [
           "Mavuika",
           "Iansan",
-          "Chevreuse",
+          "Citlali",
           "Bennett"
         ],
-        "comp": "Mavuika • Iansan • Chevreuse • Bennett"
-      },
-      {
-        "name": "Iansan Aggravate",
-        "members": [
-          "Kinich",
-          "Iansan",
-          "Nahida",
-          "Zhongli"
-        ],
-        "comp": "Kinich • Iansan • Nahida • Zhongli"
+        "comp": "Mavuika • Iansan • Citlali • Bennett",
+        "note": "Doble bufo de ATQ masivo para maximizar las rotaciones de Mavuika."
       }
     ],
     "benchmarks": {
-      "hp": "17,500 HP",
-      "atk": "1,900 ATQ",
-      "def": "750 DEF",
-      "em": "100 EM",
-      "er": "170% – 190% ER",
-      "crit": "65%+ CR / 140%+ CD"
+      "hp": "18,000",
+      "atk": "2,500+ ATQ",
+      "def": "750",
+      "em": "0",
+      "er": "180%–200%+ (140%–160% con Doble Electro)",
+      "crit": "Opcional (Solo Favonius)"
     },
     "statPriority": {
-      "sands": "ATQ% o Recarga de Energía%",
-      "goblet": "Bono Daño Electro%",
-      "circlet": "Prob. Crítica% o Daño Crítico%",
-      "substats": "1. Prob. Crítica / Daño Crítico (1:2) > 2. Recarga de Energía% (160% – 190% ER) > 3. ATQ% (1,700 – 2,100 ATQ) > 4. Maestría Elemental"
+      "sands": "ATQ% / Recarga de Energía",
+      "goblet": "ATQ%",
+      "circlet": "ATQ%",
+      "substats": "Recarga de Energía (hasta umbral) > ATQ% > Prob. Crítica (si usa Favonius)."
     },
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/iansan-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [
-        "El límite de su buff depende de la definitiva."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://keqingmains.com/q/iansan-quickguide/",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "https://game8.co/games/Genshin-Impact/archives/345881",
+        "spirifly_builds MCP"
       ],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
-      ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -13265,7 +13329,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Bow",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Liney.png",
-    "tier": "T0 Mono Pyro Hypercarry",
+    "tier": "T2 (B) Main DPS",
     "role": "Hypercarry Pyro de Ataques Cargados • Especialista en Equipos Mono Pyro",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
@@ -13377,7 +13441,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -13390,7 +13456,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Linette.png",
-    "tier": "T2 Anemo Swirl & Taunt",
+    "tier": "T2 (B) Sub-DPS",
     "role": "Soporte Anemo de Fontaine • Provocación de Gato con Sombrero y Sombra Verde",
     "roleCategory": "buffer",
     "scalingType": "ATK",
@@ -13502,7 +13568,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -13515,168 +13583,141 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Polearm",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Cyno.png",
-    "tier": "T0 Quickbloom / Stellar-Conduct Carry",
-    "role": "General Mahamatra • Hipercarry Electro y Conducción Estelar (Rework V6.6+)",
+    "tier": "T0 (SS) Main DPS",
+    "role": "Main DPS Electro On-Field (Conducto Estelar / Aceleración / Quickbloom)",
     "roleCategory": "main_dps",
     "scalingType": "EM",
-    "scalingLabel": "Escala con Maestría Elemental (EM), ATQ y Conducción Estelar",
+    "scalingLabel": "Conversión híbrida ATQ/ME; en 7.2 brilla en Conducto Estelar con Desencanto en las Sombras",
     "bestWeapons": [
       {
         "name": "Báculo de las Arenas Escarlatas",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+44.1% Prob. Crítica y colosal conversión de Maestría Elemental a ATQ.",
+        "type": "BiS Firma",
+        "note": "542 ATQ base, 44.1% Prob. Crítica; convierte hasta 136% de su ME en ATQ adicional tras golpear con Elemental.",
         "weaponId": "13511",
-        "reviewedNote": false
-      },
-      {
-        "name": "Halcón de Jade",
-        "rarity": 5,
-        "type": "Opción por rol",
-        "note": "Estadísticas críticas masivas y escalado general de daño.",
-        "weaponId": "13505",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
         "name": "Báculo de Homa",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "Estadísticas críticas masivas y escalado general de daño.",
+        "type": "Alternativa 5★",
+        "note": "608 ATQ base, 66.2% Daño Crítico; +20% Vida y gran bono de ATQ adicional.",
         "weaponId": "13501",
-        "reviewedNote": false
+        "reviewedNote": true
+      },
+      {
+        "name": "Halcón de Jade",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "674 ATQ base, 22.1% Prob. Crítica; acumula cargas de ATQ y +12% Daño en combos rápidos.",
+        "weaponId": "13505",
+        "reviewedNote": true
       },
       {
         "name": "Balada de los Fiordos",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "+27.6% Prob. Crítica y +240 de Maestría Elemental con 3 elementos distintos.",
+        "type": "Mejor 4★ PB",
+        "note": "510 ATQ base, 27.6% Prob. Crítica; +120 ME R1 (240 R5) con 3 elementos distintos en equipo.",
         "weaponId": "13424",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
         "name": "Borla Blanca",
         "rarity": 3,
-        "type": "Opción por rol",
-        "note": "+23.4% Prob. Crítica y +48% daño en todos sus ataques normales de garra.",
+        "type": "Mejor F2P (3★)",
+        "note": "401 ATQ base, 23.4% Prob. Crítica; +48% Daño de Ataques Normales R5 durante su Definitiva.",
         "weaponId": "11312",
-        "reviewedNote": false
-      },
-      {
-        "name": "Cruz de Kitain",
-        "rarity": 4,
-        "type": "Opción por rol",
-        "note": "Maestría elemental y recarga pasiva continua.",
-        "weaponId": "13414",
-        "reviewedNote": false
-      },
-      {
-        "name": "Perdición del Dragón",
-        "rarity": 4,
-        "type": "Opción por rol",
-        "note": "Maestría elemental y recarga pasiva continua.",
-        "weaponId": "13401",
-        "reviewedNote": false
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Desencanto en las Sombras Profundas (4 piezas)",
-        "type": "BiS Oficial Rework V6.6+",
-        "bonus": "+18% ATQ, +80% Daño Superconductor / +40% Conducción Estelar y +16% Prob. Crítica contra enemigos afectados.",
-        "reviewedBonus": false
+        "set": "Disenchantment in Deep Shadows (4 piezas)",
+        "type": "BiS Conducto Estelar",
+        "bonus": "+18% ATQ (2p); +80% Superconductor, +40% Conducto Estelar y +16% Prob. Crítica gratis en equipo Estelar.",
+        "reviewedBonus": true
       },
       {
-        "set": "Furia del Trueno (4 piezas)",
-        "type": "BiS Rotaciones Clásicas",
-        "bonus": "-0.8s TdE en Habilidad Elemental al activar reacciones Electro, duplicando lanzamientos de garra.",
-        "reviewedBonus": false
+        "set": "Gilded Dreams (4 piezas)",
+        "type": "Alternativa Aceleración",
+        "bonus": "+80 ME (2p); otorga hasta +150 ME y ATQ% en equipos Dendro/Quickbloom.",
+        "reviewedBonus": true
       },
       {
-        "set": "Sueños Áureos (4 piezas)",
-        "type": "BiS Quickbloom Tradicional",
-        "bonus": "+Hasta 230 de Maestría Elemental y +14% ATQ continuo en equipos de Sobreflorecimiento.",
-        "reviewedBonus": false
+        "set": "Thundering Fury (4 piezas)",
+        "type": "Alternativa Electro",
+        "bonus": "+15% Bono Electro; reduce CD de su Elemental para más partículas y daño Electro.",
+        "reviewedBonus": true
       }
     ],
     "mainStats": {
-      "sands": "Maestría Elemental (o ATQ% con nuevo set)",
-      "goblet": "Bono Daño Electro%",
-      "circlet": "Prob. Crítica% o Daño Crítico%"
+      "sands": "Maestría Elemental / ATQ%",
+      "goblet": "ATQ% (Estelar) / Bono Daño Electro",
+      "circlet": "Daño Crítico / Prob. Crítica"
     },
     "substatsPriority": [
-      "1. Prob. Crítica / Daño Crítico (1:2)",
-      "2. Maestría Elemental (300 – 450 EM)",
-      "3. Recarga de Energía% (120% – 135% tras el buff)",
-      "4. ATQ%"
+      "Daño Crítico > Prob. Crítica > Maestría Elemental > Recarga de Energía (130%–150%)."
     ],
     "recommendedPanel": {
-      "hp": "18,500 - 20,000 HP",
-      "atk": "1,450 – 1,700 ATQ",
-      "def": "800 - 900 DEF",
-      "em": "350 – 500 EM",
-      "er": "120% – 135% ER",
-      "crit": "75%+ CR / 180%+ CD"
+      "hp": "19,000",
+      "atk": "1,800+ ATQ",
+      "def": "850",
+      "em": "300 – 500 ME",
+      "er": "130% – 150% ER",
+      "crit": "60% – 70% CR / 175%+ CD"
     },
-    "talentPriority": "Definitiva (Q - Pacto Chacal) = Habilidad Elemental (E) >>> Básicos",
+    "talentPriority": "Definitiva (Q) >>> Habilidad Elemental (E) >>> Ataques Normales (Ignorar)",
     "metaTeams": [
       {
-        "name": "Cyno Stellar-Conduct Overdrive",
+        "name": "Conducto Estelar 7.2",
         "members": [
           "Cyno",
-          "Sandrone",
           "Yae Miko",
-          "Escoffier"
+          "Odette",
+          "Valeriy"
         ],
-        "comp": "Cyno • Sandrone • Yae Miko • Escoffier"
+        "comp": "Cyno • Yae Miko • Odette • Valeriy",
+        "note": "Nueva composición SS 7.2 centrada en Conducto Estelar con alto escalado de ATQ y Crítico."
       },
       {
-        "name": "Cyno Quickbloom Premium",
+        "name": "Quickbloom Clásico",
         "members": [
           "Cyno",
           "Nahida",
           "Furina",
           "Baizhu"
         ],
-        "comp": "Cyno • Nahida • Furina • Baizhu"
-      },
-      {
-        "name": "Cyno Aggravate Lightning",
-        "members": [
-          "Cyno",
-          "Fischl",
-          "Nahida",
-          "Zhongli"
-        ],
-        "comp": "Cyno • Fischl • Nahida • Zhongli"
+        "comp": "Cyno • Nahida • Furina • Baizhu",
+        "note": "Combina Aceleración y Sobreflorecimiento continuo durante toda la Definitiva."
       }
     ],
     "benchmarks": {
-      "hp": "18,500 - 20,000 HP",
-      "atk": "1,450 – 1,700 ATQ",
-      "def": "800 - 900 DEF",
-      "em": "350 – 500 EM",
-      "er": "120% – 135% ER",
-      "crit": "75%+ CR / 180%+ CD"
+      "hp": "19,000",
+      "atk": "1,800+ ATQ",
+      "def": "850",
+      "em": "300 – 500 ME",
+      "er": "130% – 150% ER",
+      "crit": "60% – 70% CR / 175%+ CD"
     },
     "statPriority": {
-      "sands": "Maestría Elemental (o ATQ%)",
-      "goblet": "Bono Daño Electro%",
-      "circlet": "Prob. Crítica% o Daño Crítico%",
-      "substats": "Crit > EM > ER% > ATQ%"
+      "sands": "Maestría Elemental / ATQ%",
+      "goblet": "ATQ% (Estelar) / Bono Daño Electro",
+      "circlet": "Daño Crítico / Prob. Crítica",
+      "substats": "Daño Crítico > Prob. Crítica > Maestría Elemental > Recarga de Energía (130%–150%)."
     },
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/cyno-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://keqingmains.com/q/cyno-quickguide/",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "https://game8.co/games/Genshin-Impact/archives/315233",
+        "spirifly_builds MCP"
       ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -13689,7 +13730,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Claymore",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Dehya.png",
-    "tier": "T1 Hyperarmor & Burgeon",
+    "tier": "T2 (B) Support",
     "role": "Guerrera Pyro del Desierto • Mitigación de Daño, Resistencia a la Interrupción & Crepitar",
     "roleCategory": "healer_shield",
     "scalingType": "HP",
@@ -13808,7 +13849,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -13821,7 +13864,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Klee.png",
-    "tier": "T1 Bomb Hypercarry",
+    "tier": "T1.5 (A) Main DPS",
     "role": "Caballera Chispeante de Favonius • Daño Pyro Explosivo en Área y Batería de Críticos",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
@@ -13934,7 +13977,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -13947,7 +13992,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Charlotte.png",
-    "tier": "T1 Teamwide Healer",
+    "tier": "T1.5 (A) Support",
     "role": "Periodista de Fontaine • Curación Instantánea para todo el Equipo con Flash Fotográfico",
     "roleCategory": "healer_shield",
     "scalingType": "ATK",
@@ -14067,7 +14112,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -14080,7 +14127,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Momoka.png",
-    "tier": "T1 Dendro Shielder",
+    "tier": "T1.5 (A) Support",
     "role": "Repartidora de Komaniya Express • Escudo de Caja de Gato Indestructible y Aplicación Dendro",
     "roleCategory": "healer_shield",
     "scalingType": "HP",
@@ -14206,7 +14253,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -14219,7 +14268,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Polearm",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Yaoyao.png",
-    "tier": "T1 Dendro Healer",
+    "tier": "T1.5 (A) Support",
     "role": "Discípula de Madame Ping • Rábanos Sanadores de Yuegui y Batería Dendro",
     "roleCategory": "healer_shield",
     "scalingType": "HP",
@@ -14332,7 +14381,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -14345,7 +14396,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Feiyan.png",
-    "tier": "T1 Vaporize / Tankfei",
+    "tier": "T4 (D) Main DPS",
     "role": "Letrada de Liyue • Hypercarry Pyro de Sellos Escarlatas o Escudo Escarlata (Tankfei C4)",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
@@ -14458,7 +14509,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -14471,7 +14524,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Claymore",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Aino.png",
-    "tier": "T1 Support Hydro (Nod-Krai)",
+    "tier": "T1.5 (A) Sub-DPS",
     "role": "Soporte Elemental Hydro & Buffer de Maestría Elemental (EM)",
     "roleCategory": "support",
     "scalingType": "EM",
@@ -14586,7 +14639,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -14599,134 +14654,126 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Polearm",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Flins.png",
-    "tier": "T0 Lunar-Charged DPS",
-    "role": "DPS Principal de Nod-Krai • Daño Electro Lunar de Alta Cadencia",
+    "tier": "T0 (SS) Main DPS",
+    "role": "Main DPS Electro de Electrocargado Lunar (Mini-Definitivas)",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
-    "scalingLabel": "Escalado por ATQ% y Multiplicadores de Carga Lunar",
+    "scalingLabel": "Más de 2,000 ATQ aporta +160 ME pasivo para Electrocargado Lunar",
     "bestWeapons": [
       {
         "name": "Ruinas Ensangrentadas",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+Prob. Crítica y aumento masivo al daño de ataques lunares.",
+        "type": "BiS Firma",
+        "note": "674 ATQ base, 22.1% Prob. Crítica; +36% Daño Electrocargado Lunar, +28% CD y recupera 12 Energía.",
         "weaponId": "13516",
-        "reviewedNote": false
+        "reviewedNote": true
+      },
+      {
+        "name": "Báculo de las Arenas Escarlatas",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "44.1% Prob. Crítica y convierte hasta 136% de Maestría Elemental en ATQ.",
+        "weaponId": "13511",
+        "reviewedNote": true
       },
       {
         "name": "Halcón de Jade",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+Prob. Crítica y acumulación de ATQ% constante.",
+        "type": "Alternativa 5★",
+        "note": "674 ATQ base, 22.1% Prob. Crítica y acumulaciones de ATQ% en campo.",
         "weaponId": "13505",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
-        "name": "Báculo de Homa",
-        "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+66.2% Daño Crítico y bono de ATQ por vida.",
-        "weaponId": "13501",
-        "reviewedNote": false
-      },
-      {
-        "name": "La Captura",
+        "name": "Azada Excavatesoros",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "+32% Daño de Burst y +12% Prob. Crítica gratis.",
-        "weaponId": "13415",
-        "reviewedNote": false
+        "type": "Mejor F2P Forja",
+        "note": "41.3% ATQ%; +48% Electrocargado y +24% Daño Electrocargado Lunar en Ascendant Gleam.",
+        "weaponId": "13433",
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
         "set": "Night of the Sky's Unveiling (4 piezas)",
-        "note": "BiS Nod-Krai: Incrementa daño Electro y crítico tras invocar la noche.",
-        "bonus": "BiS Nod-Krai: Incrementa daño Electro y crítico tras invocar la noche.",
-        "reviewedBonus": false
+        "type": "BiS Lunar",
+        "bonus": "+80 ME (2p); +15%/30% Prob. Crítica y +10% Daño de Reacción Lunar para el equipo.",
+        "reviewedBonus": true
       },
       {
-        "set": "Furia del Trueno (4 piezas)",
-        "note": "+15% Daño Electro y reducción de enfriamientos con reacciones.",
-        "bonus": "+15% Daño Electro y reducción de enfriamientos con reacciones.",
-        "reviewedBonus": false
-      },
-      {
-        "set": "Gladiador (4 piezas)",
-        "note": "+35% Daño en Ataques Normales.",
-        "bonus": "+35% Daño en Ataques Normales.",
-        "reviewedBonus": false
+        "set": "Gilded Dreams (2 piezas) + Gladiator's Finale (2 piezas)",
+        "type": "Alternativa 2p+2p",
+        "bonus": "+80 ME y +18% ATQ mientras completas el set de Nod-Krai.",
+        "reviewedBonus": true
       }
     ],
     "statPriority": {
       "sands": "ATQ%",
       "goblet": "ATQ%",
-      "circlet": "Prob. Crítica / Daño Crítico",
-      "substats": "Recarga hasta lo requerido > Crítico > ATQ% > Maestría."
+      "circlet": "Daño Crítico / Prob. Crítica",
+      "substats": "Recarga (130–140% Doble Electro) > ATQ% (2,500+) > Daño Crítico > Prob. Crítica > Maestría."
     },
     "benchmarks": {
-      "hp": "17,000 - 19,000",
-      "atk": "2,000 - 2,300",
-      "def": "Base (~750)",
-      "em": "0",
-      "er": "130% - 140%",
-      "crit": "75%+ CR / 170%+ CD"
+      "hp": "17,500",
+      "atk": "2,500+ ATQ",
+      "def": "750",
+      "em": "100 – 200 ME",
+      "er": "130–140% (160%+ Solo)",
+      "crit": "40–50% base (sin set) / 175%+ CD"
     },
     "metaTeams": [
       {
-        "name": "Flins Lunar Aggravate",
+        "name": "Electrocargado Lunar Premium",
         "members": [
           "Flins",
-          "Nahida",
-          "Fischl",
-          "Xilonen"
+          "Sucrose",
+          "Columbina",
+          "Ineffa"
         ],
-        "comp": "Flins • Nahida • Fischl • Xilonen"
+        "comp": "Flins • Sucrose • Columbina • Ineffa",
+        "note": "Trío núcleo de Nod-Krai con Sacarosa para VV y Maestría."
       },
       {
-        "name": "Flins Electro-Charged",
+        "name": "Electrocargado Lunar F2P",
         "members": [
           "Flins",
-          "Furina",
-          "Yelan",
-          "Jean"
+          "Aino",
+          "Fischl",
+          "Sucrose"
         ],
-        "comp": "Flins • Furina • Yelan • Jean"
+        "comp": "Flins • Aino • Fischl • Sucrose",
+        "note": "Aino habilita Ascendant Gleam sin Columbina ni Ineffa."
       }
     ],
     "substatsPriority": [
-      "Recarga hasta lo requerido > Crítico > ATQ% > Maestría."
+      "Recarga (130–140% Doble Electro) > ATQ% (2,500+) > Daño Crítico > Prob. Crítica > Maestría."
     ],
     "mainStats": {
       "sands": "ATQ%",
       "goblet": "ATQ%",
-      "circlet": "Prob. Crítica / Daño Crítico"
+      "circlet": "Daño Crítico / Prob. Crítica"
     },
     "recommendedPanel": {
-      "hp": "17,000 - 19,000",
-      "atk": "2,000 - 2,300",
-      "def": "Base (~750)",
-      "em": "0",
-      "er": "130% - 140%",
-      "crit": "75%+ CR / 170%+ CD"
+      "hp": "17,500",
+      "atk": "2,500+ ATQ",
+      "def": "750",
+      "em": "100 – 200 ME",
+      "er": "130–140% (160%+ Solo)",
+      "crit": "40–50% base (sin set) / 175%+ CD"
     },
-    "talentPriority": "Definitiva (Q) > nivel 90 > Habilidad (E). Normales sin subir.",
+    "talentPriority": "Definitiva (Q) > Habilidad Elemental (E) >>> Ataques Normales",
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/flins-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [
-        "Prioridad de talentos específica del rol; eliminado el orden genérico.",
-        "Estadísticas contrastadas con la guía del rol indicado."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://game8.co/games/Genshin-Impact/archives/538451",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "spirifly_builds MCP"
       ],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
-      ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -14739,136 +14786,140 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Lauma.png",
-    "tier": "T0 Dendro Support",
-    "role": "Buffer y Soporte Dendro de Nod-Krai • Reducción de Resistencia y Cura Continua",
+    "tier": "T0 (SS) Support",
+    "role": "Soporte & Sub-DPS Dendro de Florecimiento Lunar (Meta 1,000 ME)",
     "roleCategory": "support",
     "scalingType": "EM",
-    "scalingLabel": "Escalado por Maestría Elemental (EM) y Vida%",
+    "scalingLabel": "Buffs de Florecimiento y Florecimiento Lunar escalan directo con ME",
     "bestWeapons": [
       {
         "name": "Espejo Tejenoches",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+EM y daño residual a núcleos dendro y reacciones.",
+        "type": "BiS Firma",
+        "note": "265 ME; +120 ME personal y +120% Bloom / +80% Hyperbloom-Burgeon / +40% Lunar-Bloom al equipo.",
         "weaponId": "14520",
-        "reviewedNote": false
+        "reviewedNote": true
+      },
+      {
+        "name": "Laúd de la Luz Celestial",
+        "rarity": 4,
+        "type": "Mejor F2P Evento",
+        "note": "45.9% Recarga de Energía y +100 ME durante 20s tras usar Habilidad Elemental.",
+        "weaponId": "14432",
+        "reviewedNote": true
       },
       {
         "name": "Sueños de las Mil Noches",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "Buff masivo de EM para todo el equipo.",
+        "type": "Alternativa 5★",
+        "note": "265 ME y otorga +40 ME al equipo o bono elemental.",
         "weaponId": "14511",
-        "reviewedNote": false
+        "reviewedNote": true
+      },
+      {
+        "name": "Lámpara Medulaoscura",
+        "rarity": 4,
+        "type": "Mejor F2P Forja",
+        "note": "221 ME y bono a Bloom / Florecimiento Lunar.",
+        "weaponId": "14433",
+        "reviewedNote": true
       },
       {
         "name": "Memorias de Sacrificios",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "+221 EM y doble aplicación Dendro.",
+        "type": "Opción 4★",
+        "note": "221 ME base y reinicio de Habilidad Elemental.",
         "weaponId": "14403",
-        "reviewedNote": false
-      },
-      {
-        "name": "Prototipo Ámbar",
-        "rarity": 4,
-        "type": "Opción por rol",
-        "note": "Curación grupal adicional y recarga pasiva.",
-        "weaponId": "14406",
-        "reviewedNote": false
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Recuerdos del Bosque (4 piezas)",
-        "note": "BiS Indiscutible: -30% Resistencia Dendro enemiga continua.",
-        "bonus": "BiS Indiscutible: -30% Resistencia Dendro enemiga continua.",
-        "reviewedBonus": false
+        "set": "Deepwood Memories (4 piezas)",
+        "type": "BiS Solo Dendro",
+        "bonus": "+15% Bono Dendro y -30% RES Dendro enemiga activable fuera de campo.",
+        "reviewedBonus": true
       },
       {
-        "set": "Sueños Áureos (4 piezas)",
-        "note": "Hasta +230 EM adicional tras activar reacciones.",
-        "bonus": "Hasta +230 EM adicional tras activar reacciones.",
-        "reviewedBonus": false
+        "set": "Silken Moon's Serenade (4 piezas)",
+        "type": "BiS Soporte Lunar",
+        "bonus": "+20% ER; +60/120 ME al equipo y +10% Daño Lunar si otro lleva Deepwood.",
+        "reviewedBonus": true
       },
       {
-        "set": "Instructor (4 piezas)",
-        "note": "+120 EM a todo el equipo.",
-        "bonus": "+120 EM a todo el equipo.",
-        "reviewedBonus": false
+        "set": "Night of the Sky's Unveiling (4 piezas)",
+        "type": "Variante Sub-DPS",
+        "bonus": "+80 ME y +15%/30% Prob. Crítica si juega como driver/daño personal.",
+        "reviewedBonus": true
       }
     ],
     "statPriority": {
-      "sands": "Maestría Elemental o Recarga de Energía",
-      "goblet": "Maestría Elemental o Bono Daño Dendro%",
-      "circlet": "Maestría Elemental o Prob. Crítica",
-      "substats": "Maestría Elemental > Recarga de Energía% > Prob. Crítica > Daño Crítico"
+      "sands": "Maestría Elemental",
+      "goblet": "Maestría Elemental",
+      "circlet": "Maestría Elemental (o Crítico en Sub-DPS)",
+      "substats": "Maestría Elemental (1,000) > Recarga de Energía (160–200%) > Prob. Crítica > Daño Crítico."
     },
     "benchmarks": {
-      "hp": "20,000",
-      "atk": "Base (~1,000 - 1,200 ATQ)",
-      "def": "Base (~750 - 850 DEF)",
-      "em": "850 - 1,000 EM",
-      "er": "160% ER",
-      "crit": "60%+ CR / 120%+ CD"
+      "hp": "17,000",
+      "atk": "1,000",
+      "def": "750",
+      "em": "1,000 ME",
+      "er": "160% – 200% ER",
+      "crit": "40% – 50% CR / 100%+ CD"
     },
     "metaTeams": [
       {
-        "name": "Lauma Hyperbloom Core",
+        "name": "Florecimiento Lunar con Nefer",
         "members": [
+          "Columbina",
           "Lauma",
-          "Raiden",
-          "Furina",
-          "Alhacén"
+          "Nefer",
+          "Kuki Shinobu"
         ],
-        "comp": "Lauma • Raiden • Furina • Alhacén"
+        "comp": "Columbina • Lauma • Nefer • Kuki Shinobu",
+        "note": "Potencia al máximo el daño de Nefer y los núcleos Lunares."
       },
       {
-        "name": "Lauma Nilou Bloom",
+        "name": "Hyperbloom Clásico Potenciado",
         "members": [
           "Lauma",
-          "Nilou",
-          "Kokomi",
-          "Nahida"
+          "Raiden Shogun",
+          "Xingqiu",
+          "Yelan"
         ],
-        "comp": "Lauma • Nilou • Kokomi • Nahida"
+        "comp": "Lauma • Raiden Shogun • Xingqiu • Yelan",
+        "note": "Eleva el techo de daño de Hyperbloom tradicional."
       }
     ],
     "substatsPriority": [
-      "1. Maestría Elemental",
-      "2. Recarga de Energía%",
-      "3. Prob. Crítica",
-      "4. Daño Crítico"
+      "Maestría Elemental (1,000) > Recarga de Energía (160–200%) > Prob. Crítica > Daño Crítico."
     ],
     "mainStats": {
-      "sands": "Maestría Elemental o Recarga de Energía",
-      "goblet": "Maestría Elemental o Bono Daño Dendro%",
-      "circlet": "Maestría Elemental o Prob. Crítica"
+      "sands": "Maestría Elemental",
+      "goblet": "Maestría Elemental",
+      "circlet": "Maestría Elemental (o Crítico en Sub-DPS)"
     },
     "recommendedPanel": {
-      "hp": "20,000",
-      "atk": "Base (~1,000 - 1,200 ATQ)",
-      "def": "Base (~750 - 850 DEF)",
-      "em": "850 - 1,000 EM",
-      "er": "160% ER",
-      "crit": "60%+ CR / 120%+ CD"
+      "hp": "17,000",
+      "atk": "1,000",
+      "def": "750",
+      "em": "1,000 ME",
+      "er": "160% – 200% ER",
+      "crit": "40% – 50% CR / 100%+ CD"
     },
-    "talentPriority": "Habilidad (E) = Definitiva (Q) > nivel 90.",
+    "talentPriority": "Habilidad Elemental (E) > Definitiva (Q) >>> Ataques Normales",
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/lauma-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [
-        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://game8.co/games/Genshin-Impact/archives/538066",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "spirifly_builds MCP"
       ],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
-      ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -14881,120 +14932,134 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Polearm",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Alyosha.png",
-    "tier": "T1 Stellar-Conduct Support",
-    "role": "Soporte de Conducto Estelar Electro (Buffer de ATQ% y Recarga)",
+    "tier": "T0.5 (S) Support",
+    "role": "Buffer & Healer Electro de Conducto Estelar (Meta 180–230% ER)",
     "roleCategory": "support",
     "scalingType": "ATK",
-    "scalingLabel": "Escala con ATQ% total y Recarga de Energía",
+    "scalingLabel": "Utilidad y curación escalan con ATQ y requieren Definitiva cada rotación",
     "bestWeapons": [
       {
         "name": "Luz del Segador",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "Convierte Recarga de Energía en ATQ% masivo para su buff.",
+        "type": "BiS 5★ ER+ATQ",
+        "note": "608 ATQ base, 55.1% ER; convierte el exceso de Recarga en hasta +80% ATQ.",
         "weaponId": "13509",
-        "reviewedNote": false
+        "reviewedNote": true
+      },
+      {
+        "name": "Sinfonista de Aromas",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "66.2% Daño Crítico; +24% ATQ off-field y +32% ATQ tras iniciar curación.",
+        "weaponId": "13514",
+        "reviewedNote": true
       },
       {
         "name": "Lanza de Favonius",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "Recarga de energía y partículas para rotaciones continuas.",
+        "type": "Mejor F2P Batería",
+        "note": "30.6% ER y genera partículas blancas para todo el equipo (requiere 50–60% CR).",
         "weaponId": "13407",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
-        "name": "La Captura",
+        "name": "Charla en el Pabellón",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "+45.9% ER y +32% Daño de Habilidad Definitiva.",
-        "weaponId": "13415",
-        "reviewedNote": false
+        "type": "Opción 4★ Evento",
+        "note": "30.6% ER y +20% ATQ tras usar Habilidad Elemental.",
+        "weaponId": "13432",
+        "reviewedNote": true
+      },
+      {
+        "name": "Balada de la Custodia",
+        "rarity": 4,
+        "type": "Opción 4★ Forja",
+        "note": "110 ME; restaura 4 Energía tras reacción y +20% ATQ con Fulgor Estelar.",
+        "weaponId": "13436",
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Ritual Antiguo de la Nobleza (4 piezas)",
-        "type": "BiS",
-        "bonus": "+20% Daño de Definitiva y +20% ATQ para todo el equipo.",
-        "reviewedBonus": false
+        "set": "Noblesse Oblige (4 piezas)",
+        "type": "BiS Soporte",
+        "bonus": "+20% Daño de Definitiva y +20% ATQ para todo el equipo durante 12s.",
+        "reviewedBonus": true
       },
       {
-        "set": "Emblema del Destino (4 piezas)",
-        "type": "Alternativa ER",
-        "bonus": "+20% Recarga de Energía y daño de Definitiva.",
-        "reviewedBonus": false
+        "set": "Heart of the Furnace (4 piezas)",
+        "type": "Alternativa Estelar",
+        "bonus": "+18% ATQ y +50% Daño de Fulgor Estelar para el equipo si nadie más lo lleva.",
+        "reviewedBonus": true
       }
     ],
     "statPriority": {
-      "sands": "Recarga / ATQ%",
+      "sands": "Recarga de Energía / ATQ%",
       "goblet": "ATQ%",
-      "circlet": "Bono de Curación / ATQ% / Prob. Crítica con Favonius",
-      "substats": "Recarga > Prob. Crítica con Favonius > ATQ%."
+      "circlet": "ATQ% (o Prob. Crítica con Favonius)",
+      "substats": "Recarga de Energía (180–230%) > ATQ% (2,000–3,000) > ATQ plano > Prob. Crítica (con Favonius)."
     },
     "benchmarks": {
-      "hp": "17,000 - 19,000",
-      "atk": "2,000 ATQ",
-      "def": "Base (~750)",
+      "hp": "17,500",
+      "atk": "2,000 – 3,000 ATQ",
+      "def": "750",
       "em": "0",
-      "er": "220% - 250% ER",
-      "crit": "55%+ CR"
+      "er": "180% – 230% ER",
+      "crit": "50% – 60% CR (si usa Favonius)"
     },
     "metaTeams": [
       {
-        "name": "Snezhnaya Superconduct Core",
+        "name": "Conducto Estelar Premium con Sandrone",
         "members": [
-          "Alyosha",
-          "Eula",
-          "Raiden",
-          "Zhongli"
+          "Sandrone",
+          "Yae Miko",
+          "Odette",
+          "Alyosha"
         ],
-        "comp": "Alyosha • Eula • Raiden • Zhongli"
+        "comp": "Sandrone • Yae Miko • Odette • Alyosha",
+        "note": "Equipo principal 7.2 de Sandrone maximizando buffs y curación."
       },
       {
-        "name": "Snezhnaya Freeze Control",
+        "name": "Conducto Estelar con Cyno",
         "members": [
-          "Alyosha",
-          "Ayaka",
-          "Furina",
-          "Kazuha"
+          "Cyno",
+          "Yae Miko",
+          "Odette",
+          "Alyosha"
         ],
-        "comp": "Alyosha • Ayaka • Furina • Kazuha"
+        "comp": "Cyno • Yae Miko • Odette • Alyosha",
+        "note": "Variante con Cyno como carry principal."
       }
     ],
     "mainStats": {
-      "sands": "Recarga / ATQ%",
+      "sands": "Recarga de Energía / ATQ%",
       "goblet": "ATQ%",
-      "circlet": "Bono de Curación / ATQ% / Prob. Crítica con Favonius"
+      "circlet": "ATQ% (o Prob. Crítica con Favonius)"
     },
     "substatsPriority": [
-      "Recarga > Prob. Crítica con Favonius > ATQ%."
+      "Recarga de Energía (180–230%) > ATQ% (2,000–3,000) > ATQ plano > Prob. Crítica (con Favonius)."
     ],
     "recommendedPanel": {
-      "hp": "17,000 - 19,000",
-      "atk": "2,000 ATQ",
-      "def": "Base (~750)",
+      "hp": "17,500",
+      "atk": "2,000 – 3,000 ATQ",
+      "def": "750",
       "em": "0",
-      "er": "220% - 250% ER",
-      "crit": "55%+ CR"
+      "er": "180% – 230% ER",
+      "crit": "50% – 60% CR (si usa Favonius)"
     },
-    "talentPriority": "Habilidad (E) > Definitiva (Q). Normales sin subir.",
+    "talentPriority": "Definitiva (Q) >> Habilidad Elemental (E) >>> Ataques Normales",
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/alyosha-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [
-        "Prioridad de talentos específica del rol; eliminado el orden genérico.",
-        "Estadísticas contrastadas con la guía del rol indicado."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://game8.co/games/Genshin-Impact/archives/606884",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "spirifly_builds MCP"
       ],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
-      ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -15007,87 +15072,103 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Vesna.png",
-    "tier": "T0.5 Stellar-Swirl DPS",
-    "role": "Main DPS Anemo de Torbellino Estelar (Stellar-Swirl DPS)",
+    "tier": "T0 (SS) Main DPS",
+    "role": "Hypercarry Anemo de Torbellino Estelar (Infusión Elemental E)",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
-    "scalingLabel": "Escala con ATQ% y Críticos",
+    "scalingLabel": "Torbellino Estelar escala con ATQ total y Crítico",
     "bestWeapons": [
       {
         "name": "Allende la Crisálida",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "Espada ligera firma de Vesna para daño de Torbellino Estelar.",
+        "type": "BiS Firma",
+        "note": "674 ATQ base, 44.1% Daño Crítico; otorga +56% CD, +36% Daño Torbellino Estelar y 5 Energía.",
         "weaponId": "11522",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
-        "name": "Reflejo de las Tinieblas",
+        "name": "Pluma Invernal Lagoblanco",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "Daño Crítico alto y bono elemental.",
-        "weaponId": "11509",
-        "reviewedNote": false
+        "type": "Alternativa 5★",
+        "note": "674 ATQ base, 22.1% Prob. Crítica; +24% ATQ, +50% CD en Fulgor Estelar y 4 Energía.",
+        "weaponId": "11520",
+        "reviewedNote": true
       },
       {
-        "name": "Cortador de Jade Primordial",
+        "name": "Fulgor Cerúleo",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "44.1% Prob. Crítica y bono de ATQ.",
-        "weaponId": "11505",
-        "reviewedNote": false
+        "type": "Alternativa 5★",
+        "note": "674 ATQ base, 22.1% Prob. Crítica; +24% ATQ tras Skill (y +24% ATQ / +40% CD con 0 Energía).",
+        "weaponId": "11517",
+        "reviewedNote": true
+      },
+      {
+        "name": "Fuente de Ignición",
+        "rarity": 4,
+        "type": "Mejor 4★ F2P",
+        "note": "565 ATQ base, 110 ME; +16% ATQ y +16% Daño Fulgor Estelar al activar reacción.",
+        "weaponId": "11436",
+        "reviewedNote": true
+      },
+      {
+        "name": "Filo de la Caza de los Herejes",
+        "rarity": 4,
+        "type": "Opción 4★",
+        "note": "510 ATQ base, 27.6% Prob. Crítica y +18–36% ATQ al moverse en combate.",
+        "weaponId": "11435",
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
         "set": "Scarlet Proof (4 piezas)",
-        "type": "Según equipo y rol",
-        "bonus": "",
-        "reviewedBonus": false
+        "type": "BiS DPS",
+        "bonus": "+18% ATQ (2p); +16% Prob. Crítica y +40% Daño Torbellino Estelar durante 10s tras activarlo.",
+        "reviewedBonus": true
       },
       {
-        "set": "Gilded Dreams (4 piezas)",
-        "type": "Según equipo y rol",
-        "bonus": "",
-        "reviewedBonus": false
+        "set": "Viridescent Venerer (4 piezas)",
+        "type": "Alternativa",
+        "bonus": "+15% Bono Anemo, +20% Torbellino Estelar y -40% RES elemental + Cryo.",
+        "reviewedBonus": true
       }
     ],
     "statPriority": {
       "sands": "ATQ%",
       "goblet": "ATQ%",
       "circlet": "Prob. Crítica / Daño Crítico",
-      "substats": "Crítico > ATQ% > Maestría. No forzar recarga para usar Q cada rotación."
+      "substats": "Daño Crítico > Prob. Crítica > ATQ% > Maestría Elemental (120–180)."
     },
     "benchmarks": {
-      "hp": "17,000 - 19,000",
-      "atk": "1,900 - 2,200",
-      "def": "Base (~750)",
-      "em": "0",
-      "er": "125%",
-      "crit": "70%+ CR / 180%+ CD"
+      "hp": "16,500",
+      "atk": "2,000 – 3,000 ATQ",
+      "def": "750",
+      "em": "120 – 180 ME",
+      "er": "100% – 135% ER",
+      "crit": "50% – 60% CR / 180%+ CD"
     },
     "metaTeams": [
       {
-        "name": "Torbellino Estelar",
+        "name": "Torbellino Estelar Premium",
         "members": [
           "Vesna",
+          "Viajero Cryo",
           "Odette",
-          "Vodyanitsa",
           "Faruzan"
         ],
-        "comp": "Vesna • Odette • Vodyanitsa • Faruzan",
-        "note": "Faruzan C6. Mantener aplicación Cryo."
+        "comp": "Vesna • Viajero Cryo • Odette • Faruzan",
+        "note": "Con Faruzan C6 maximiza el daño Anemo y mantiene Cryo con Odette."
       },
       {
-        "name": "Alternativa con Qiqi",
+        "name": "Torbellino Estelar con Curación",
         "members": [
           "Vesna",
+          "Viajero Cryo",
           "Odette",
-          "Qiqi",
-          "Faruzan"
+          "Vodyanitsa"
         ],
-        "comp": "Vesna • Odette • Qiqi • Faruzan",
-        "note": "Faruzan C6; Qiqi aporta curación."
+        "comp": "Vesna • Viajero Cryo • Odette • Vodyanitsa",
+        "note": "Vodyanitsa aporta curación y vórtice en lugar de Faruzan."
       }
     ],
     "mainStats": {
@@ -15096,35 +15177,30 @@ const CHARACTER_BUILDS_DB = [
       "circlet": "Prob. Crítica / Daño Crítico"
     },
     "substatsPriority": [
-      "Crítico > ATQ% > Maestría. No forzar recarga para usar Q cada rotación."
+      "Daño Crítico > Prob. Crítica > ATQ% > Maestría Elemental (120–180)."
     ],
     "recommendedPanel": {
-      "hp": "17,000 - 19,000",
-      "atk": "1,900 - 2,200",
-      "def": "Base (~750)",
-      "em": "0",
-      "er": "125%",
-      "crit": "70%+ CR / 180%+ CD"
+      "hp": "16,500",
+      "atk": "2,000 – 3,000 ATQ",
+      "def": "750",
+      "em": "120 – 180 ME",
+      "er": "100% – 135% ER",
+      "crit": "50% – 60% CR / 180%+ CD"
     },
-    "talentPriority": "Habilidad (E) >> Definitiva (Q). Los ataques especiales escalan con E.",
+    "talentPriority": "Habilidad Elemental (E) ≥ Definitiva (Q) >>> Ataques Normales",
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://www.prydwen.gg/genshin-impact/characters/vesna",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [
-        "Prioridad de talentos específica del rol; eliminado el orden genérico.",
-        "Estadísticas contrastadas con la guía del rol indicado.",
-        "Sustituidos equipos sin Cryo que no podían activar Torbellino Estelar.",
-        "Sets contrastados; eliminadas alternativas que no benefician al daño principal de este rol."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://www.prydwen.gg/genshin-impact/characters/vesna",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "https://game8.co/games/Genshin-Impact/archives/606901",
+        "spirifly_builds MCP"
       ],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
-      ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -15137,87 +15213,101 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Vodyanitsa.png",
-    "tier": "T0.5 Freeze Support Hydro",
-    "role": "Soporte Hydro Especialista en Congelados y Escudo/Buff de Vida",
+    "tier": "T0.5 (S) Support",
+    "role": "Soporte / Healer Hydro de Vida Máxima (Torbellino Estelar & Freeze 7.2)",
     "roleCategory": "support",
     "scalingType": "HP",
-    "scalingLabel": "Escala 100% con Vida Máxima (HP%)",
+    "scalingLabel": "Sus plumas A4 requieren 65,000+ Vida para capear el bono Cryo/Hydro y bajar RES con su Skill",
     "bestWeapons": [
       {
         "name": "Himno del Vórtice",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "Catalizador firma con Vida% masiva y amplificación de equipo Freeze.",
+        "type": "BiS Firma",
+        "note": "542 ATQ base, 66.2% Vida; maximiza sus 65,000+ HP y potencia curación/bufos.",
         "weaponId": "14524",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
         "name": "Cuentos de Cazadores de Dragones",
         "rarity": 3,
-        "type": "Opción por rol",
-        "note": "+35.2% Vida y +48% ATQ al DPS principal.",
+        "type": "Alternativa F2P (3★)",
+        "note": "35.2% Vida%; opción baratísima que además otorga +48% ATQ R5 al carry.",
         "weaponId": "11316",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
         "name": "Prototipo Ámbar",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "41.3% Vida y regeneración de energía.",
+        "type": "Alternativa Forja",
+        "note": "510 ATQ base, 41.3% Vida%; suma curación grupal extra al usar Definitiva.",
         "weaponId": "14406",
-        "reviewedNote": false
+        "reviewedNote": true
+      },
+      {
+        "name": "Centelleo Jadecaído",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "608 ATQ base, 49.6% Vida%; otorga energía y Bono Elemental tras escudo/Definitiva.",
+        "weaponId": "14505",
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
         "set": "Tenacity of the Millelith (4 piezas)",
-        "type": "Según equipo y rol",
-        "bonus": "",
-        "reviewedBonus": false
+        "type": "BiS Soporte",
+        "bonus": "+20% Vida (2p); otorga +20% ATQ constante al equipo con su Elemental off-field.",
+        "reviewedBonus": true
       },
       {
-        "set": "2p Tenacity of the Millelith + 2p Vourukasha’s Glow",
-        "type": "Según equipo y rol",
-        "bonus": "",
-        "reviewedBonus": false
+        "set": "Song of Days Past (4 piezas)",
+        "type": "Alternativa Healer",
+        "bonus": "+15% Bono Curación; transforma la curación acumulada en daño plano adicional.",
+        "reviewedBonus": true
+      },
+      {
+        "set": "Tenacity of the Millelith (2 piezas) + Vourukasha's Glow (2 piezas)",
+        "type": "Alternativa +40% Vida",
+        "bonus": "Combina +40% Vida para alcanzar los 65,000+ HP si falta vida en sub-stats.",
+        "reviewedBonus": true
       }
     ],
     "statPriority": {
-      "sands": "Vida% o Recarga de Energía",
+      "sands": "Vida%",
       "goblet": "Vida%",
-      "circlet": "Bono de Curación% o Vida%",
-      "substats": "Vida% > Recarga de Energía% > Vida Plana > Prob. Crítica (Favonius)"
+      "circlet": "Vida%",
+      "substats": "Vida% > Vida Plana > Recarga de Energía (bajo coste de Definitiva, casi opcional)."
     },
     "benchmarks": {
-      "hp": "38,000 - 45,000 HP (Cura: 6,500+ por tick)",
-      "atk": "Base (~1,000 - 1,200 ATQ)",
-      "def": "Base (~750 - 850 DEF)",
+      "hp": "65,000+ HP",
+      "atk": "1,000",
+      "def": "800",
       "em": "0",
-      "er": "170% - 190% ER",
-      "crit": "60%+ CR / 120%+ CD"
+      "er": "100% – 120% ER",
+      "crit": "No requerido"
     },
     "metaTeams": [
       {
-        "name": "Torbellino Estelar",
+        "name": "Skirk Freeze BiS",
         "members": [
-          "Vodyanitsa",
-          "Vesna",
-          "Odette",
-          "Faruzan"
+          "Skirk",
+          "Escoffier",
+          "Furina",
+          "Vodyanitsa"
         ],
-        "comp": "Vodyanitsa • Vesna • Odette • Faruzan",
-        "note": "Faruzan C6."
+        "comp": "Skirk • Escoffier • Furina • Vodyanitsa",
+        "note": "Completa la alineación premium de Skirk aportando curación para Furina y bonos Cryo/Hydro."
       },
       {
-        "name": "Cryo con Sandrone",
+        "name": "Vesna Torbellino Estelar",
         "members": [
-          "Vodyanitsa",
-          "Sandrone",
+          "Vesna",
+          "Viajero Cryo",
           "Odette",
-          "Yae Miko"
+          "Vodyanitsa"
         ],
-        "comp": "Vodyanitsa • Sandrone • Odette • Yae Miko",
-        "note": ""
+        "comp": "Vesna • Viajero Cryo • Odette • Vodyanitsa",
+        "note": "Aporta curación, Geoarmada (+20% ATQ) y aplicación Hydro segura."
       }
     ],
     "mainStats": {
@@ -15226,37 +15316,30 @@ const CHARACTER_BUILDS_DB = [
       "circlet": "Vida%"
     },
     "substatsPriority": [
-      "1. Vida%",
-      "2. Recarga de Energía%",
-      "3. Vida Plana",
-      "4. Prob. Crítica (Favonius)"
+      "Vida% > Vida Plana > Recarga de Energía (bajo coste de Definitiva, casi opcional)."
     ],
     "recommendedPanel": {
-      "hp": "38,000 - 45,000 HP (Cura: 6,500+ por tick)",
-      "atk": "Base (~1,000 - 1,200 ATQ)",
-      "def": "Base (~750 - 850 DEF)",
+      "hp": "65,000+ HP",
+      "atk": "1,000",
+      "def": "800",
       "em": "0",
-      "er": "170% - 190% ER",
-      "crit": "60%+ CR / 120%+ CD"
+      "er": "100% – 120% ER",
+      "crit": "No requerido"
     },
-    "talentPriority": "Habilidad (E) > nivel 90 > Definitiva (Q). Normales sin subir.",
+    "talentPriority": "Habilidad Elemental (E) >>> Definitiva (Q) >>> Ataques Normales",
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/vodyanitsa-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [
-        "Prioridad de talentos específica del rol; eliminado el orden genérico.",
-        "Priorizadas sinergias verificadas; su aplicación Hydro lenta no es un aplicador universal.",
-        "Sets contrastados; eliminadas alternativas que no benefician al daño principal de este rol."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://keqingmains.com/q/vodyanitsa-quickguide/",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "https://game8.co/games/Genshin-Impact/archives/606400",
+        "spirifly_builds MCP"
       ],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
-      ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -15269,101 +15352,95 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_SkirkNew.png",
-    "tier": "T0 Void Sword DPS",
-    "role": "Maestra del Abismo • Hipercarry Cryo de Daño Cataclísmico",
+    "tier": "T0.5 (S) Main DPS",
+    "role": "Main DPS Cryo de Vacío (Sin Recarga de Energía tradicional)",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
-    "scalingLabel": "Escala con ATQ%, Daño Crítico y Multiplicador del Vacío",
+    "scalingLabel": "Escala con ATQ y Crítico; usa recurso propio (0% Recarga requerida)",
     "bestWeapons": [
       {
         "name": "Fulgor Cerúleo",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+44.1% Daño Crítico y penetración de resistencia abisal.",
+        "type": "BiS Firma",
+        "note": "674 ATQ base, 22.1% Prob. Crítica; al tener 0 Energía mantiene +48% ATQ y +40% Daño Crítico permanentes.",
         "weaponId": "11517",
-        "reviewedNote": false
+        "reviewedNote": true
+      },
+      {
+        "name": "Luna Ondulante de Futsu",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "33.1% Prob. Crítica, +12% Bono Elemental y +40% Daño de Ataques Normales.",
+        "weaponId": "11510",
+        "reviewedNote": true
       },
       {
         "name": "Reflejo de las Tinieblas",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+44.1% Daño Crítico y hasta +28% Bono Elemental.",
+        "type": "Alternativa 5★",
+        "note": "674 ATQ base, 44.1% Daño Crítico y hasta +40% Bono Elemental Cryo.",
         "weaponId": "11509",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
-        "name": "Cortador de Jade Primordial",
-        "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+44.1% Prob. Crítica y ATQ por vida.",
-        "weaponId": "11505",
-        "reviewedNote": false
-      },
-      {
-        "name": "Espada Negra",
+        "name": "Réquiem Abisal",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "+40% Daño a Normales/Cargados y auto-cura.",
-        "weaponId": "11409",
-        "reviewedNote": false
+        "type": "Mejor F2P Forja",
+        "note": "565 ATQ base, 27.6% ATQ% y bono plano de ATQ tras limpiar Pacto Vital con curación.",
+        "weaponId": "11425",
+        "reviewedNote": true
       },
       {
-        "name": "Vado del Río Ceniciento",
+        "name": "Calamidad de Eshu",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "+16% Prob. Crítica en Habilidad Elemental.",
-        "weaponId": "11426",
-        "reviewedNote": false
+        "type": "Opción 4★ Evento",
+        "note": "+20% Daño y +8% Prob. Crítica en Normales/Cargados bajo escudo (ej. Dahlia).",
+        "weaponId": "11432",
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
         "set": "Finale of the Deep Galleries (4 piezas)",
-        "type": "BiS Oficial Indiscutible",
-        "bonus": "Con 0 de Energía Elemental, +60% Daño de Ataques Normales y +60% Daño de Definitiva. (No consume ni requiere energía).",
-        "reviewedBonus": false
+        "type": "BiS Absoluto",
+        "bonus": "+15% Bono Cryo; con 0 Energía otorga +60% Daño de Normales y +60% Daño de Definitiva.",
+        "reviewedBonus": true
       },
       {
-        "set": "Cazador Sombrío (4 piezas)",
-        "type": "BiS con Furina",
-        "bonus": "+36% Prob. Crítica permanente con fluctuaciones de vida de Furina.",
-        "reviewedBonus": false
-      },
-      {
-        "set": "Nómada del Invierno (4 piezas)",
-        "type": "Alternativa Permafrost",
-        "bonus": "+40% Prob. Crítica contra enemigos congelados en composiciones Freeze.",
-        "reviewedBonus": false
+        "set": "Blizzard Strayer (4 piezas)",
+        "type": "Alternativa Congelado",
+        "bonus": "+15% Bono Cryo y hasta +40% Prob. Crítica contra enemigos congelados.",
+        "reviewedBonus": true
       }
     ],
     "statPriority": {
       "sands": "ATQ%",
-      "goblet": "Bono Daño Cryo%",
-      "circlet": "Daño Crítico o Prob. Crítica",
-      "substats": "Daño Crítico > Prob. Crítica > ATQ%"
+      "goblet": "Bono Daño Cryo",
+      "circlet": "Daño Crítico / Prob. Crítica",
+      "substats": "ATQ% (2,100+) > Prob. Crítica (70–80%) > Daño Crítico (200%+). Evitar Recarga y ME."
     },
     "benchmarks": {
-      "hp": "17,500 - 19,500 HP",
-      "atk": "2,300 - 2,600 ATQ",
-      "def": "750 - 850 DEF",
-      "em": "0 (No requerida)",
-      "er": "100% (Base estricta - El set BiS exige 0 Energía)",
-      "crit": "75%+ CR / 220%+ CD"
+      "hp": "17,000",
+      "atk": "2,100+ ATQ",
+      "def": "750",
+      "em": "0 (Evitar)",
+      "er": "0% (Sin energía)",
+      "crit": "70% – 80% CR / 200%+ CD"
     },
     "metaTeams": [
       {
-        "name": "Hydro/Cryo",
+        "name": "Congelado Premium Hydro/Cryo",
         "members": [
           "Skirk",
           "Escoffier",
           "Furina",
-          "Shenhe"
+          "Vodyanitsa"
         ],
-        "comp": "Skirk • Escoffier • Furina • Shenhe",
-        "note": ""
+        "comp": "Skirk • Escoffier • Furina • Vodyanitsa",
+        "note": "Respeta la restricción Hydro/Cryo de su pasiva con máximo techo de daño."
       },
       {
-        "name": "Alternativa accesible",
+        "name": "Congelado Accesible",
         "members": [
           "Skirk",
           "Xingqiu",
@@ -15371,47 +15448,38 @@ const CHARACTER_BUILDS_DB = [
           "Dahlia"
         ],
         "comp": "Skirk • Xingqiu • Rosaria • Dahlia",
-        "note": ""
+        "note": "Variante 4★/accesible manteniendo 100% Hydro/Cryo y escudo para Eshu."
       }
     ],
     "substatsPriority": [
-      "1. Daño Crítico",
-      "2. Prob. Crítica",
-      "3. ATQ%",
-      "4. ATQ Plano",
-      "✕ Recarga de Energía (Inútil: El set BiS exige tener 0 Energía Elemental)",
-      "✕ Maestría Elemental (Inútil: En Permafrost/Mono Cryo no genera daño)"
+      "ATQ% (2,100+) > Prob. Crítica (70–80%) > Daño Crítico (200%+). Evitar Recarga y ME."
     ],
     "mainStats": {
       "sands": "ATQ%",
-      "goblet": "Bono Daño Cryo%",
-      "circlet": "Daño Crítico o Prob. Crítica"
+      "goblet": "Bono Daño Cryo",
+      "circlet": "Daño Crítico / Prob. Crítica"
     },
     "recommendedPanel": {
-      "hp": "17,500 - 19,500 HP",
-      "atk": "2,300 - 2,600 ATQ",
-      "def": "750 - 850 DEF",
-      "em": "0 (No requerida)",
-      "er": "100% (Base estricta - El set BiS exige 0 Energía)",
-      "crit": "75%+ CR / 220%+ CD"
+      "hp": "17,000",
+      "atk": "2,100+ ATQ",
+      "def": "750",
+      "em": "0 (Evitar)",
+      "er": "0% (Sin energía)",
+      "crit": "70% – 80% CR / 200%+ CD"
     },
     "talentPriority": "En campo: Habilidad (E) > Definitiva (Q). Quickswap: Q > E. Normales sin subir.",
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/skirk-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [
-        "Los ataques del estado especial escalan con E, no con el talento de normales.",
-        "Retirado Kazuha para respetar la restricción Hydro/Cryo del kit."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://game8.co/games/Genshin-Impact/archives/333140",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "spirifly_builds MCP"
       ],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
-      ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -15424,137 +15492,140 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Durin.png",
-    "tier": "T0 Hexerei Sub-DPS",
-    "role": "Dragón del Aquelarre (Hexenzirkel) • Sub-DPS Pyro Off-Field y Reacciones Devastadoras",
+    "tier": "T0.5 (S) Sub-DPS",
+    "role": "Sub-DPS Pyro Off-Field Hexerei (Forma Blanca & Forma Oscura)",
     "roleCategory": "sub_dps",
     "scalingType": "ATK",
-    "scalingLabel": "Escalado por ATQ%, Maestría Elemental y Daño Hexerei",
+    "scalingLabel": "Pasiva A4 escala hasta 2,000+ ATQ; E al 10 elimina casi toda necesidad de ER",
     "bestWeapons": [
       {
         "name": "Athame Artis",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+Crítico y daño colosal fuera de campo a habilidades de dragón.",
+        "type": "BiS Firma",
+        "note": "Espada 5★ firma optimizada para el daño de Definitiva y pasivas Hexerei de Durin.",
         "weaponId": "11518",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
-        "name": "Reflejo de las Tinieblas",
+        "name": "Juramento por la Libertad",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+Daño Crítico y bono Pyro universal.",
-        "weaponId": "11509",
-        "reviewedNote": false
+        "type": "Alternativa Soporte",
+        "note": "198 ME y buff de +20% ATQ / +16% Daño de Ataques al equipo (clave en Crepitar).",
+        "weaponId": "11503",
+        "reviewedNote": true
       },
       {
-        "name": "Deseo Ponzoñoso",
-        "rarity": 4,
-        "type": "Opción por rol",
-        "note": "+32% Daño y +12% Crítico en Habilidad Elemental.",
-        "weaponId": "11413",
-        "reviewedNote": false
+        "name": "Cortador de Jade Primordial",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "44.1% Prob. Crítica y bono de ATQ estable.",
+        "weaponId": "11505",
+        "reviewedNote": true
       },
       {
-        "name": "Espada de Favonius",
+        "name": "Colmillo Lupino",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "Asegura rotaciones continuas de energía.",
-        "weaponId": "11401",
-        "reviewedNote": false
+        "type": "Mejor 4★ Pase",
+        "note": "27.6% Prob. Crítica y +16–32% Daño/CR de Habilidad y Definitiva.",
+        "weaponId": "11424",
+        "reviewedNote": true
+      },
+      {
+        "name": "Espada Amenoma Gemela",
+        "rarity": 4,
+        "type": "Mejor F2P Forja",
+        "note": "55.1% ATQ% y regeneración plana de Energía tras lanzar Definitiva.",
+        "weaponId": "11414",
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
         "set": "A Day Carved from Rising Winds (4 piezas)",
-        "note": "BiS Hexerei: Potencia reacciones Pyro y otorga daño apilable.",
-        "bonus": "BiS Hexerei: Potencia reacciones Pyro y otorga daño apilable.",
-        "reviewedBonus": false
+        "type": "BiS Hexerei",
+        "bonus": "+18% ATQ (2p); +25% ATQ y +20% Prob. Crítica adicional con Deberes de Bruja (Hexerei).",
+        "reviewedBonus": true
       },
       {
-        "set": "Compañía Dorada (4 piezas)",
-        "note": "+70% Daño de Habilidad Elemental fuera de campo.",
-        "bonus": "+70% Daño de Habilidad Elemental fuera de campo.",
-        "reviewedBonus": false
+        "set": "Noblesse Oblige (4 piezas)",
+        "type": "Alternativa Soporte",
+        "bonus": "+20% Daño de Definitiva y +20% ATQ al equipo.",
+        "reviewedBonus": true
       },
       {
-        "set": "Bruja Carmesí en Llamas (4 piezas)",
-        "note": "+15% Bono Pyro y +15% Daño a Vaporizado/Derretido.",
-        "bonus": "+15% Bono Pyro y +15% Daño a Vaporizado/Derretido.",
-        "reviewedBonus": false
+        "set": "Emblem of Severed Fate (4 piezas)",
+        "type": "Alternativa Solo Pyro",
+        "bonus": "+20% ER y potencia su Definitiva cuando necesita recarga extra.",
+        "reviewedBonus": true
       }
     ],
     "statPriority": {
-      "sands": "ATQ% o Maestría Elemental",
-      "goblet": "Bono Daño Pyro%",
-      "circlet": "Prob. Crítica o Daño Crítico",
-      "substats": "Prob. Crítica > Daño Crítico > ATQ% > Maestría Elemental > Recarga"
+      "sands": "ATQ% (o ME en Crepitar)",
+      "goblet": "Bono Daño Pyro / ATQ%",
+      "circlet": "Daño Crítico / Prob. Crítica",
+      "substats": "ATQ% (2,000+) > Prob. Crítica (60–70%) > Daño Crítico (200%+) > Maestría Elemental."
     },
     "benchmarks": {
-      "hp": "17,000 - 19,000",
-      "atk": "2,100",
-      "def": "Base (~750)",
-      "em": "150 - 250 EM",
-      "er": "120% ER",
-      "crit": "70%+ CR / 180%+ CD"
+      "hp": "17,500",
+      "atk": "2,000+ ATQ",
+      "def": "750",
+      "em": "100+ ME",
+      "er": "100% (E Lv.10) / 110–140% Solo Pyro",
+      "crit": "60% – 70% CR / 200%+ CD"
     },
     "metaTeams": [
       {
-        "name": "Durin Hexerei Vaporize",
+        "name": "Sobrecarga Hexerei",
         "members": [
+          "Arlecchino",
           "Durin",
-          "Furina",
-          "Yelan",
-          "Xilonen"
+          "Fischl",
+          "Chevreuse"
         ],
-        "comp": "Durin • Furina • Yelan • Xilonen"
+        "comp": "Arlecchino • Durin • Fischl • Chevreuse",
+        "note": "Fischl habilita Hexerei y Durin aporta aplicación Pyro y reducción de RES."
       },
       {
-        "name": "Durin Melt Core",
+        "name": "Anemo DPS Hexerei",
         "members": [
+          "Venti",
           "Durin",
-          "Wriothesley",
-          "Shenhe",
+          "Furina",
           "Bennett"
         ],
-        "comp": "Durin • Wriothesley • Shenhe • Bennett"
+        "comp": "Venti • Durin • Furina • Bennett",
+        "note": "Sinergia Hexerei con Venti y soporte de Furina + Bennett."
       }
     ],
     "substatsPriority": [
-      "1. Prob. Crítica",
-      "2. Daño Crítico",
-      "3. ATQ%",
-      "4. Maestría Elemental",
-      "5. Recarga"
+      "ATQ% (2,000+) > Prob. Crítica (60–70%) > Daño Crítico (200%+) > Maestría Elemental."
     ],
     "mainStats": {
-      "sands": "ATQ% o Maestría Elemental",
-      "goblet": "Bono Daño Pyro%",
-      "circlet": "Prob. Crítica o Daño Crítico"
+      "sands": "ATQ% (o ME en Crepitar)",
+      "goblet": "Bono Daño Pyro / ATQ%",
+      "circlet": "Daño Crítico / Prob. Crítica"
     },
     "recommendedPanel": {
-      "hp": "17,000 - 19,000",
-      "atk": "2,100",
-      "def": "Base (~750)",
-      "em": "150 - 250 EM",
-      "er": "120% ER",
-      "crit": "70%+ CR / 180%+ CD"
+      "hp": "17,500",
+      "atk": "2,000+ ATQ",
+      "def": "750",
+      "em": "100+ ME",
+      "er": "100% (E Lv.10) / 110–140% Solo Pyro",
+      "crit": "60% – 70% CR / 200%+ CD"
     },
-    "talentPriority": "Definitiva (Q) > Habilidad (E). Normales solo si juega en campo.",
+    "talentPriority": "Definitiva (Q) > Habilidad Elemental (E) (subir a 10 por energía) >>> Ataques Normales",
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/durin-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [
-        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://game8.co/games/Genshin-Impact/archives/462478",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "spirifly_builds MCP"
       ],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
-      ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -15567,137 +15638,134 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Claymore",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Varka.png",
-    "tier": "T0 Hexerei Sovereign DPS",
-    "role": "Gran Maestro de los Caballeros de Favonius • Mandoble Anemo de Fuerza Titánica",
+    "tier": "T0.5 (S) Main DPS",
+    "role": "Main DPS Anemo / Multi-Elemental Hexerei (Mandoble Rápido)",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
-    "scalingLabel": "Escalado por ATQ Bruto, Fuerza de Ruptura y Torbellino de Mandoble",
+    "scalingLabel": "Daño elemental convertido y Habilidad E escalan con ATQ y Crítico",
     "bestWeapons": [
       {
         "name": "Cantar de Gesta del Lobo",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+Crítico masivo y daño descomunal a tajos de mandoble Anemo.",
+        "type": "BiS Firma",
+        "note": "608 ATQ base, 33.1% Prob. Crítica; +10% Vel. Ataque, +30% Daño y +30% Daño Crítico con Hexerei.",
         "weaponId": "12515",
-        "reviewedNote": false
+        "reviewedNote": true
+      },
+      {
+        "name": "Mil Soles Abrasadores",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "741 ATQ base, 11% Prob. Crítica; +28% Daño Crítico y +20% ATQ tras Skill.",
+        "weaponId": "12514",
+        "reviewedNote": true
       },
       {
         "name": "Lápida del Lobo",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+ATQ% masivo y buff al escuadrón.",
+        "type": "Alternativa 5★",
+        "note": "49.6% ATQ% + 20% ATQ base y +40% ATQ al equipo bajo 30% HP.",
         "weaponId": "12502",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
         "name": "Médula de la Serpiente Marina",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "+Prob. Crítica y hasta +50% daño total.",
+        "type": "Mejor 4★ Pase",
+        "note": "27.6% Prob. Crítica y hasta +30% Daño total con acumulaciones.",
         "weaponId": "12409",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
         "name": "Sombra de la Marea",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "+48% ATQ tras recibir curación.",
+        "type": "Mejor F2P Forja",
+        "note": "41.3% ATQ% y +24% ATQ al recibir curación.",
         "weaponId": "12425",
-        "reviewedNote": false
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
         "set": "A Day Carved from Rising Winds (4 piezas)",
-        "note": "BiS Hexerei: Incrementa daño de mandoble y torbellino anemo.",
-        "bonus": "BiS Hexerei: Incrementa daño de mandoble y torbellino anemo.",
-        "reviewedBonus": false
+        "type": "BiS Hexerei",
+        "bonus": "+18% ATQ (2p); +25% ATQ y +20% Prob. Crítica adicional si completó Deberes de Bruja (Hexerei).",
+        "reviewedBonus": true
       },
       {
-        "set": "Pabellón del Desierto (4 piezas)",
-        "note": "+40% Daño a Normales y Cargados tras cargado.",
-        "bonus": "+40% Daño a Normales y Cargados tras cargado.",
-        "reviewedBonus": false
-      },
-      {
-        "set": "Gladiador (4 piezas)",
-        "note": "+35% Daño en Ataques Normales.",
-        "bonus": "+35% Daño en Ataques Normales.",
-        "reviewedBonus": false
+        "set": "Gladiator's Finale (2 piezas) + Shimenawa's Reminiscence (2 piezas)",
+        "type": "Alternativa 2p+2p",
+        "bonus": "+36% ATQ total mientras completas el set de Vientos Alzantes.",
+        "reviewedBonus": true
       }
     ],
     "statPriority": {
       "sands": "ATQ%",
-      "goblet": "Bono del elemento convertido / ATQ% > Bono Anemo",
-      "circlet": "Prob. Crítica / Daño Crítico",
-      "substats": "Crítico > ATQ% > Maestría, según reacciones."
+      "goblet": "ATQ% / Bono del Elemento Convertido",
+      "circlet": "Daño Crítico / Prob. Crítica",
+      "substats": "Prob. Crítica (70–80%) > Daño Crítico (200%+) > ATQ% (2,500–3,000+) > Recarga (100–130%)."
     },
     "benchmarks": {
-      "hp": "17,000 - 19,000",
-      "atk": "2,300 - 2,600",
-      "def": "Base (~750)",
-      "em": "0",
-      "er": "130%",
-      "crit": "75%+ CR / 180%+ CD"
+      "hp": "18,000",
+      "atk": "2,500 – 3,000+ ATQ",
+      "def": "800",
+      "em": "0 – 100",
+      "er": "100% – 130% ER",
+      "crit": "70% – 80% CR / 200%+ CD"
     },
     "metaTeams": [
       {
-        "name": "Doble Pyro / doble Anemo",
+        "name": "Hexerei Doble Pyro / Anemo",
         "members": [
           "Varka",
-          "Venti",
           "Nicole",
-          "Durin"
+          "Durin",
+          "Prune"
         ],
-        "comp": "Varka • Venti • Nicole • Durin",
-        "note": ""
+        "comp": "Varka • Nicole • Durin • Prune",
+        "note": "Cumple todos los requisitos Hexerei para maximizar el daño de Varka."
       },
       {
-        "name": "Alternativa con Prune",
+        "name": "Variante F2P Doble Pyro",
         "members": [
           "Varka",
-          "Prune",
-          "Nicole",
-          "Durin"
+          "Xiangling",
+          "Sucrose",
+          "Bennett"
         ],
-        "comp": "Varka • Prune • Nicole • Durin",
-        "note": "Prune C6 para esta alternativa."
+        "comp": "Varka • Xiangling • Sucrose • Bennett",
+        "note": "Sacarosa activa el estado Hexerei junto al dúo clásico Pyro."
       }
     ],
     "substatsPriority": [
-      "Crítico > ATQ% > Maestría, según reacciones."
+      "Prob. Crítica (70–80%) > Daño Crítico (200%+) > ATQ% (2,500–3,000+) > Recarga (100–130%)."
     ],
     "mainStats": {
       "sands": "ATQ%",
-      "goblet": "Bono del elemento convertido / ATQ% > Bono Anemo",
-      "circlet": "Prob. Crítica / Daño Crítico"
+      "goblet": "ATQ% / Bono del Elemento Convertido",
+      "circlet": "Daño Crítico / Prob. Crítica"
     },
     "recommendedPanel": {
-      "hp": "17,000 - 19,000",
-      "atk": "2,300 - 2,600",
-      "def": "Base (~750)",
-      "em": "0",
-      "er": "130%",
-      "crit": "75%+ CR / 180%+ CD"
+      "hp": "18,000",
+      "atk": "2,500 – 3,000+ ATQ",
+      "def": "800",
+      "em": "0 – 100",
+      "er": "100% – 130% ER",
+      "crit": "70% – 80% CR / 200%+ CD"
     },
-    "talentPriority": "Habilidad (E) > nivel del personaje. Normales y definitiva pueden quedar sin subir.",
+    "talentPriority": "Habilidad Elemental (E) >>> Definitiva (Q) / Ataques Normales (opcionales)",
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/varka-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [
-        "Prioridad de talentos específica del rol; eliminado el orden genérico.",
-        "Estadísticas contrastadas con la guía del rol indicado.",
-        "Corregida la composición para sus requisitos de elementos y Hexerei."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://game8.co/games/Genshin-Impact/archives/314346",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "spirifly_builds MCP"
       ],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
-      ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -15710,7 +15778,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Ifa.png",
-    "tier": "T1 Natlan Swirl Support",
+    "tier": "T3 (C) Main DPS",
     "role": "Veterinario Saurio de Natlan • Soporte Anemo Swirl y Curación Elemental",
     "roleCategory": "support",
     "scalingType": "EM",
@@ -15824,7 +15892,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -15837,7 +15907,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Lanyan.png",
-    "tier": "T1 Anemo Shielder",
+    "tier": "T1.5 (A) Support",
     "role": "Escudera Anemo y Control de Masas • Escudo de Viento Absorbente",
     "roleCategory": "healer_shielder",
     "scalingType": "ATK",
@@ -15954,7 +16024,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -15967,7 +16039,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Polearm",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Illuga.png",
-    "tier": "T1 Lunar-Crystallize Support",
+    "tier": "T1 (A+) Support",
     "role": "Soporte Geo de Cristalización Lunar • Escudos Reforzados y Buff de Daño",
     "roleCategory": "support",
     "scalingType": "DEF",
@@ -16088,7 +16160,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -16101,120 +16175,134 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Polearm",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Ineffa.png",
-    "tier": "T0 Electro Sub-DPS",
-    "role": "Sub-DPS Electro de Invocación Lunar • Descargas de Alta Frecuencia",
+    "tier": "T0 (SS) Sub-DPS",
+    "role": "Sub-DPS & Escudera Electro de Electrocargado Lunar (Escala con ATQ)",
     "roleCategory": "sub_dps",
     "scalingType": "ATK",
-    "scalingLabel": "Escalado por ATQ% y Maestría Elemental",
+    "scalingLabel": "Escudo y pasiva Lunar escalan con ATQ hasta 2,000 ATQ + Crítico/ME",
     "bestWeapons": [
       {
         "name": "Halo Fracturado",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+Crítico y daño de descargas lunares.",
+        "type": "BiS Firma",
+        "note": "66.2% Daño Crítico; +24% ATQ y +40% Daño de Electrocargado Lunar para todo el equipo al crear escudo.",
         "weaponId": "13515",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
         "name": "Báculo de las Arenas Escarlatas",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "Convierte EM en ATQ.",
+        "type": "Alternativa 5★",
+        "note": "44.1% Prob. Crítica y convierte Maestría Elemental en ATQ.",
         "weaponId": "13511",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
-        "name": "La Captura",
+        "name": "Ruinas Ensangrentadas",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "674 ATQ base, 22.1% Prob. Crítica y +36% Daño Electrocargado Lunar.",
+        "weaponId": "13516",
+        "reviewedNote": true
+      },
+      {
+        "name": "Azada Excavatesoros",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "+32% Daño Definitiva.",
-        "weaponId": "13415",
-        "reviewedNote": false
+        "type": "Mejor F2P Forja",
+        "note": "41.3% ATQ%; +48% Electrocargado y +24% Electrocargado Lunar.",
+        "weaponId": "13433",
+        "reviewedNote": true
+      },
+      {
+        "name": "Cruz de Kitain",
+        "rarity": 4,
+        "type": "Opción 4★ Forja ER",
+        "note": "110 ME y regenera Energía plana fuera de campo.",
+        "weaponId": "13414",
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
         "set": "Aubade of Morningstar and Moon (4 piezas)",
-        "note": "BiS Daño Lunar.",
-        "bonus": "BiS Daño Lunar.",
-        "reviewedBonus": false
+        "type": "BiS Daño Personal",
+        "bonus": "+80 ME (2p); +20%/60% Daño de Reacción Lunar mientras está fuera de campo.",
+        "reviewedBonus": true
       },
       {
-        "set": "Compañía Dorada (4 piezas)",
-        "note": "+70% Daño Habilidad Elemental.",
-        "bonus": "+70% Daño Habilidad Elemental.",
-        "reviewedBonus": false
+        "set": "Silken Moon's Serenade (4 piezas)",
+        "type": "BiS Soporte Lunar",
+        "bonus": "+20% ER; +60/120 ME al equipo y +10% Daño Lunar si Columbina lleva Aubade.",
+        "reviewedBonus": true
       }
     ],
     "statPriority": {
-      "sands": "ATQ% / Maestría",
-      "goblet": "ATQ% / Maestría",
-      "circlet": "Prob. Crítica / Daño Crítico",
-      "substats": "Crítico > ATQ% > Maestría; recarga solo según uso de Q."
+      "sands": "ATQ%",
+      "goblet": "ATQ%",
+      "circlet": "Prob. Crítica ≥ Daño Crítico",
+      "substats": "Daño Crítico > Prob. Crítica > ATQ% (meta 2,000) > Maestría Elemental (300+)."
     },
     "benchmarks": {
-      "hp": "17,000 - 19,000",
-      "atk": "1,900",
-      "def": "Base (~750)",
-      "em": "150 EM",
-      "er": "120% ER",
-      "crit": "70%+ CR / 160%+ CD"
+      "hp": "17,000",
+      "atk": "2,000 ATQ",
+      "def": "750",
+      "em": "300+ ME",
+      "er": "110–140% (130–170% Solo)",
+      "crit": "60% – 70% CR / 150%+ CD"
     },
     "metaTeams": [
       {
-        "name": "Ineffa Aggravate",
+        "name": "Electrocargado Lunar con Flins",
         "members": [
-          "Alhacén",
-          "Ineffa",
-          "Nahida",
-          "Zhongli"
+          "Flins",
+          "Sucrose",
+          "Columbina",
+          "Ineffa"
         ],
-        "comp": "Alhacén • Ineffa • Nahida • Zhongli"
+        "comp": "Flins • Sucrose • Columbina • Ineffa",
+        "note": "Equipo insignia de Electrocargado Lunar."
       },
       {
-        "name": "Ineffa Hyperbloom Battery",
+        "name": "Núcleo Bineffa Universal",
         "members": [
+          "Columbina",
           "Ineffa",
-          "Xingqiu",
-          "Nahida",
-          "Kuki Shinobu"
+          "Sucrose",
+          "Neuvillette"
         ],
-        "comp": "Ineffa • Xingqiu • Nahida • Kuki Shinobu"
+        "comp": "Columbina • Ineffa • Sucrose • Neuvillette",
+        "note": "Core Columbina + Ineffa compatible con cualquier driver Hydro/Anemo."
       }
     ],
     "substatsPriority": [
-      "Crítico > ATQ% > Maestría; recarga solo según uso de Q."
+      "Daño Crítico > Prob. Crítica > ATQ% (meta 2,000) > Maestría Elemental (300+)."
     ],
     "mainStats": {
-      "sands": "ATQ% / Maestría",
-      "goblet": "ATQ% / Maestría",
-      "circlet": "Prob. Crítica / Daño Crítico"
+      "sands": "ATQ%",
+      "goblet": "ATQ%",
+      "circlet": "Prob. Crítica ≥ Daño Crítico"
     },
     "recommendedPanel": {
-      "hp": "17,000 - 19,000",
-      "atk": "1,900",
-      "def": "Base (~750)",
-      "em": "150 EM",
-      "er": "120% ER",
-      "crit": "70%+ CR / 160%+ CD"
+      "hp": "17,000",
+      "atk": "2,000 ATQ",
+      "def": "750",
+      "em": "300+ ME",
+      "er": "110–140% (130–170% Solo)",
+      "crit": "60% – 70% CR / 150%+ CD"
     },
-    "talentPriority": "Nivel 90 > Habilidad (E) > Definitiva (Q). Normales sin subir.",
+    "talentPriority": "Habilidad Elemental (E) > Definitiva (Q) >>> Ataques Normales",
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/ineffa-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [
-        "Prioridad de talentos específica del rol; eliminado el orden genérico.",
-        "Estadísticas contrastadas con la guía del rol indicado."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://game8.co/games/Genshin-Impact/archives/531360",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "spirifly_builds MCP"
       ],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
-      ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -16227,120 +16315,141 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Bow",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Linnea.png",
-    "tier": "T0.5 Lunar-Crystallize Sub-DPS",
-    "role": "Sub-DPS Geo de Cristalización Lunar (Escala con DEF%)",
+    "tier": "T0 (SS) Sub-DPS",
+    "role": "Sub-DPS & Soporte Geo de Cristalización Lunar (Escala con DEF%)",
     "roleCategory": "sub_dps",
     "scalingType": "DEF",
-    "scalingLabel": "Escala con Defensa (DEF%) y Críticos",
+    "scalingLabel": "Reduce RES Geo y amplifica Cristalización Lunar proporcionalmente a su DEF (objetivo 2,000+ DEF)",
     "bestWeapons": [
       {
         "name": "Rama del Juramento Escarchado",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "Arco firma de Linnéa con DEF%, Crítico y bono de Cristalización Lunar.",
+        "type": "BiS Firma",
+        "note": "542 ATQ base, 88.2% Daño Crítico; sube DEF% y potencia Cristalización Lunar.",
         "weaponId": "15516",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
         "name": "Aqua Simulacra",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "88.2% Daño Crítico y +20% Daño total incluso fuera de campo.",
+        "type": "Alternativa 5★",
+        "note": "542 ATQ base, 88.2% Daño Crítico; +16% Vida y +20% Daño total incluso off-field.",
         "weaponId": "15508",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
-        "name": "Arco de Favonius",
+        "name": "Estrella Invernal",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "608 ATQ base, 33.1% Prob. Crítica; +12% Daño Elemental/Definitiva.",
+        "weaponId": "15507",
+        "reviewedNote": true
+      },
+      {
+        "name": "Último Acorde",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "Recarga de Energía y partículas para el equipo.",
-        "weaponId": "15401",
-        "reviewedNote": false
+        "type": "Alternativa 4★",
+        "note": "510 ATQ base, 165 ME; mejora su Habilidad Elemental y aporta ME a Cristalización Lunar.",
+        "weaponId": "15402",
+        "reviewedNote": true
+      },
+      {
+        "name": "Tirachinas",
+        "rarity": 3,
+        "type": "Opción Crít F2P",
+        "note": "354 ATQ base, 31.2% Prob. Crítica; stat-stick económico de Crítico.",
+        "weaponId": "11320",
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Alborada de la Estrella del Alba y la Luna / Aubade of Morningstar and Moon (4 piezas)",
-        "type": "BiS",
-        "bonus": "Maximiza el daño Sub-DPS y reacciones de Cristalización Lunar.",
-        "reviewedBonus": false
+        "set": "Aubade of Morningstar and Moon (4 piezas)",
+        "type": "BiS Off-Field",
+        "bonus": "+80 ME (2p); +20%–60% Daño de Reacción Lunar desde fuera del campo con Presagio Lunar.",
+        "reviewedBonus": true
       },
       {
-        "set": "Cáscara de Sueños Opulentos (4 piezas)",
-        "type": "Alternativa DEF",
-        "bonus": "+54% DEF y +24% Bono Daño Geo.",
-        "reviewedBonus": false
+        "set": "Husk of Opulent Dreams (4 piezas)",
+        "type": "Alternativa DEF%",
+        "bonus": "+30% DEF (2p); hasta +24% DEF y +24% Bono Geo adicionales con cargas.",
+        "reviewedBonus": true
+      },
+      {
+        "set": "Silken Moon's Serenade (4 piezas)",
+        "type": "Alternativa Soporte",
+        "bonus": "+20% RE (2p); otorga +60/+120 ME grupal si nadie más porta el set.",
+        "reviewedBonus": true
       }
     ],
     "statPriority": {
-      "sands": "DEF%",
+      "sands": "DEF% (o RE si falta)",
       "goblet": "DEF%",
-      "circlet": "Prob. Crítica / Daño Crítico / DEF%",
-      "substats": "Recarga según uso de Q > Crítico > DEF% > Maestría."
+      "circlet": "Prob. Crítica / Daño Crítico",
+      "substats": "DEF% > Daño Crítico > Prob. Crítica > Recarga de Energía > Maestría Elemental."
     },
     "benchmarks": {
-      "hp": "16,000",
-      "atk": "Base (~1,000 - 1,200 ATQ)",
-      "def": "2,600+ DEF",
-      "em": "0",
-      "er": "120% ER",
-      "crit": "70%+ CR / 150%+ CD"
+      "hp": "16,500",
+      "atk": "1,200",
+      "def": "2,000+ DEF",
+      "em": "100 – 200 ME",
+      "er": "110%–140% (2 Geo) / 130%–170% (1 Geo)",
+      "crit": "60% – 70% CR / 150%+ CD"
     },
     "metaTeams": [
       {
-        "name": "Linnea Geo Crystal",
+        "name": "Cristalización Lunar SS 7.2",
         "members": [
-          "Itto",
+          "Zibai",
           "Linnea",
-          "Gorou",
-          "Zhongli"
+          "Illuga",
+          "Columbina"
         ],
-        "comp": "Itto • Linnea • Gorou • Zhongli"
+        "comp": "Zibai • Linnea • Illuga • Columbina",
+        "note": "Acompañante BiS de Zibai: reduce RES Geo y escala el daño de Cristalización Lunar."
       },
       {
-        "name": "Linnea Double Geo Core",
+        "name": "Doble Geo Lunar Alternativo",
         "members": [
-          "Navia",
+          "Zibai",
           "Linnea",
-          "Xiangling",
-          "Bennett"
+          "Columbina",
+          "Zhongli"
         ],
-        "comp": "Navia • Linnea • Xiangling • Bennett"
+        "comp": "Zibai • Linnea • Columbina • Zhongli",
+        "note": "Variante con escudo y consonancia Geo garantizada."
       }
     ],
     "mainStats": {
-      "sands": "DEF%",
+      "sands": "DEF% (o RE si falta)",
       "goblet": "DEF%",
-      "circlet": "Prob. Crítica / Daño Crítico / DEF%"
+      "circlet": "Prob. Crítica / Daño Crítico"
     },
     "substatsPriority": [
-      "Recarga según uso de Q > Crítico > DEF% > Maestría."
+      "DEF% > Daño Crítico > Prob. Crítica > Recarga de Energía > Maestría Elemental."
     ],
     "recommendedPanel": {
-      "hp": "16,000",
-      "atk": "Base (~1,000 - 1,200 ATQ)",
-      "def": "2,600+ DEF",
-      "em": "0",
-      "er": "120% ER",
-      "crit": "70%+ CR / 150%+ CD"
+      "hp": "16,500",
+      "atk": "1,200",
+      "def": "2,000+ DEF",
+      "em": "100 – 200 ME",
+      "er": "110%–140% (2 Geo) / 130%–170% (1 Geo)",
+      "crit": "60% – 70% CR / 150%+ CD"
     },
-    "talentPriority": "Habilidad (E) > nivel 90 > Definitiva (Q), para curación.",
+    "talentPriority": "Habilidad Elemental (E) >> Definitiva (Q) >>> Ataques Normales",
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/linnea-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [
-        "Prioridad de talentos específica del rol; eliminado el orden genérico.",
-        "Estadísticas contrastadas con la guía del rol indicado."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://keqingmains.com/q/linnea-quickguide/",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "https://game8.co/games/Genshin-Impact/archives/551088",
+        "spirifly_builds MCP"
       ],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
-      ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -16353,129 +16462,140 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Nefer.png",
-    "tier": "T0 Lunar-Bloom DPS",
-    "role": "DPS Dendro Lunar • Detonación Rápida de Semillas y Reacciones Bloom",
+    "tier": "T0 (SS) Main DPS",
+    "role": "Main DPS Dendro de Florecimiento Lunar (Ataque Cargado Especial)",
     "roleCategory": "main_dps",
     "scalingType": "EM",
-    "scalingLabel": "Escala con Maestría Elemental y Daño Crítico",
+    "scalingLabel": "Florecimiento Lunar escala con Maestría Elemental y Crítico (no usar cáliz Dendro)",
     "bestWeapons": [
       {
         "name": "Relicario de la Verdad",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+EM colosal y crítico a semillas.",
+        "type": "BiS Firma",
+        "note": "88.2% Daño Crítico, +8% Prob. Crítica, hasta +120 ME y +36% Daño Crítico en Florecimiento Lunar.",
         "weaponId": "14521",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
-        "name": "Sueños de las Mil Noches",
+        "name": "Espejo Tejenoches",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+265 EM.",
-        "weaponId": "14511",
-        "reviewedNote": false
+        "type": "Alternativa 5★",
+        "note": "265 ME; +120 ME y +40% Daño de Florecimiento Lunar para el equipo.",
+        "weaponId": "14520",
+        "reviewedNote": true
       },
       {
-        "name": "Memorias de Sacrificios",
+        "name": "Escrituras del Fluir Sempiterno",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "88.2% Daño Crítico y fuerte bono de Daño en Ataques Cargados.",
+        "weaponId": "14514",
+        "reviewedNote": true
+      },
+      {
+        "name": "Escarcha del Albor",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "+221 EM.",
-        "weaponId": "14403",
-        "reviewedNote": false
+        "type": "Mejor 4★",
+        "note": "55.1% Daño Crítico; +72 ME tras Cargado y +48 ME tras Skill.",
+        "weaponId": "14434",
+        "reviewedNote": true
+      },
+      {
+        "name": "Lámpara Medulaoscura",
+        "rarity": 4,
+        "type": "Mejor F2P Forja",
+        "note": "221 ME; aumenta +48% Bloom y +12%/24% Daño de Florecimiento Lunar.",
+        "weaponId": "14433",
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Flor del Paraíso Perdido (4 piezas)",
-        "type": "BiS Indiscutible Oficial",
-        "bonus": "Aumenta el Daño de Florecimiento, Sobreflorecimiento y Crepitar hasta un 140%.",
-        "reviewedBonus": false
+        "set": "Night of the Sky's Unveiling (4 piezas)",
+        "type": "BiS Lunar",
+        "bonus": "+80 ME (2p); +15%/30% Prob. Crítica y bono de Daño Lunar en equipo.",
+        "reviewedBonus": true
       },
       {
-        "set": "Sueños Áureos (4 piezas)",
-        "type": "BiS Daño Puro",
-        "bonus": "Hasta +230 de Maestría Elemental y +14% ATQ continuo.",
-        "reviewedBonus": false
+        "set": "Gilded Dreams (4 piezas)",
+        "type": "Alternativa ME",
+        "bonus": "+80 ME y hasta +150 ME según elementos del equipo.",
+        "reviewedBonus": true
       },
       {
-        "set": "Recuerdos del Bosque (4 piezas)",
-        "type": "Opción Soporte / Shred",
-        "bonus": "+15% Daño Dendro y -30% RES Dendro en enemigos.",
-        "reviewedBonus": false
+        "set": "Deepwood Memories (4 piezas)",
+        "type": "Solo si nadie más lo lleva",
+        "bonus": "-30% RES Dendro a enemigos tras golpear con Habilidad o Definitiva.",
+        "reviewedBonus": true
       }
     ],
     "statPriority": {
-      "sands": "Maestría",
-      "goblet": "Maestría",
-      "circlet": "Prob. Crítica / Daño Crítico / Maestría",
-      "substats": "Crítico > Maestría; recarga según rotación."
+      "sands": "Maestría Elemental",
+      "goblet": "Maestría Elemental",
+      "circlet": "Daño Crítico / Prob. Crítica",
+      "substats": "Maestría Elemental (500+) > Prob. Crítica (40–50% sin set) > Daño Crítico (220%+) > Recarga (opcional 130%)."
     },
     "benchmarks": {
-      "hp": "17,000 - 20,000",
-      "atk": "Base (~1,000 - 1,200 ATQ)",
-      "def": "Base (~750 - 850 DEF)",
-      "em": "850+ EM",
-      "er": "120% ER",
-      "crit": "60%+ CR / 140%+ CD"
+      "hp": "17,000",
+      "atk": "1,100",
+      "def": "750",
+      "em": "500+ ME",
+      "er": "100% – 130% ER",
+      "crit": "40–50% base (sin set) / 220%+ CD"
     },
     "metaTeams": [
       {
-        "name": "Florecimiento Lunar",
+        "name": "Florecimiento Lunar Premium",
         "members": [
           "Nefer",
-          "Aino",
+          "Columbina",
           "Lauma",
-          "Zhongli"
-        ],
-        "comp": "Nefer • Aino • Lauma • Zhongli",
-        "note": ""
-      },
-      {
-        "name": "Alternativa sin Lauma",
-        "members": [
-          "Nefer",
-          "Aino",
-          "Nahida",
           "Kuki Shinobu"
         ],
-        "comp": "Nefer • Aino • Nahida • Kuki Shinobu",
-        "note": "Kuki aporta curación; los núcleos se convierten antes de activar su E."
+        "comp": "Nefer • Columbina • Lauma • Kuki Shinobu",
+        "note": "Lauma + Columbina maximizan núcleos y buff Lunar; Kuki cura."
+      },
+      {
+        "name": "Florecimiento Lunar F2P",
+        "members": [
+          "Nefer",
+          "Aino",
+          "Xingqiu",
+          "Kirara"
+        ],
+        "comp": "Nefer • Aino • Xingqiu • Kirara",
+        "note": "Variante accesible sin Lauma ni Columbina."
       }
     ],
     "substatsPriority": [
-      "Crítico > Maestría; recarga según rotación."
+      "Maestría Elemental (500+) > Prob. Crítica (40–50% sin set) > Daño Crítico (220%+) > Recarga (opcional 130%)."
     ],
     "mainStats": {
-      "sands": "Maestría",
-      "goblet": "Maestría",
-      "circlet": "Prob. Crítica / Daño Crítico / Maestría"
+      "sands": "Maestría Elemental",
+      "goblet": "Maestría Elemental",
+      "circlet": "Daño Crítico / Prob. Crítica"
     },
     "recommendedPanel": {
-      "hp": "17,000 - 20,000",
-      "atk": "Base (~1,000 - 1,200 ATQ)",
-      "def": "Base (~750 - 850 DEF)",
-      "em": "850+ EM",
-      "er": "120% ER",
-      "crit": "60%+ CR / 140%+ CD"
+      "hp": "17,000",
+      "atk": "1,100",
+      "def": "750",
+      "em": "500+ ME",
+      "er": "100% – 130% ER",
+      "crit": "40–50% base (sin set) / 220%+ CD"
     },
-    "talentPriority": "Habilidad (E) > Definitiva (Q). Sus ataques especiales escalan con E.",
+    "talentPriority": "Habilidad Elemental (E) > Definitiva (Q) >>> Ataques Normales",
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/nefer-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [
-        "Prioridad de talentos específica del rol; eliminado el orden genérico.",
-        "Estadísticas contrastadas con la guía del rol indicado.",
-        "Nefer convierte los núcleos; retiradas etiquetas y equipos de Hyperbloom/Nilou incompatibles."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://game8.co/games/Genshin-Impact/archives/538448",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "spirifly_builds MCP"
       ],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
-      ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -16488,130 +16608,134 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Odette.png",
-    "tier": "T0.5 Stellar-Glimmer Sub-DPS",
-    "role": "Sub-DPS Cryo de Fulgor Estelar (Stellar-Glimmer Sub-DPS)",
+    "tier": "T0 (SS) Sub-DPS",
+    "role": "Sub-DPS & Soporte Cryo Universal de Fulgor Estelar (Invocación Off-Field)",
     "roleCategory": "sub_dps",
     "scalingType": "ATK",
-    "scalingLabel": "Escala con ATQ% y Críticos",
+    "scalingLabel": "Su pasiva A4 convierte ATQ (hasta 3,000) en +30% Daño Estelar para el equipo",
     "bestWeapons": [
       {
         "name": "Pluma Invernal Lagoblanco",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "Espada ligera firma de Odette con Crítico y bono de Fulgor Estelar.",
+        "type": "BiS Firma",
+        "note": "674 ATQ base, 22.1% Prob. Crítica; +24% ATQ, +50% Daño Crítico Estelar y regenera Energía off-field.",
         "weaponId": "11520",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
-        "name": "Reflejo de las Tinieblas",
+        "name": "Fulgor Cerúleo",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "44.1% Daño Crítico y Bono Elemental.",
-        "weaponId": "11509",
-        "reviewedNote": false
+        "type": "Alternativa 5★",
+        "note": "674 ATQ base, 22.1% Prob. Crítica; fuerte stat-stick ofensivo si no usas Definitiva.",
+        "weaponId": "11517",
+        "reviewedNote": true
       },
       {
-        "name": "Cortador de Jade Primordial",
+        "name": "Juramento por la Libertad",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "44.1% Prob. Crítica y bono de ATQ.",
-        "weaponId": "11505",
-        "reviewedNote": false
+        "type": "Alternativa Soporte",
+        "note": "198 ME; otorga +20% ATQ y +16% Daño de Ataques al equipo tras reacciones.",
+        "weaponId": "11503",
+        "reviewedNote": true
+      },
+      {
+        "name": "Réquiem Abisal",
+        "rarity": 4,
+        "type": "Mejor F2P Forja",
+        "note": "565 ATQ base, 27.6% ATQ% más +12% ATQ al usar Habilidad Elemental.",
+        "weaponId": "11425",
+        "reviewedNote": true
+      },
+      {
+        "name": "Fuente de Ignición",
+        "rarity": 4,
+        "type": "Opción 4★ Estelar",
+        "note": "565 ATQ base, 110 ME; +16% ATQ y +16% Daño de Fulgor Estelar incluso fuera de campo.",
+        "weaponId": "11436",
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
         "set": "Heart of the Furnace (4 piezas)",
-        "type": "Según equipo y rol",
-        "bonus": "",
-        "reviewedBonus": false
+        "type": "BiS Soporte Estelar",
+        "bonus": "+18% ATQ (2p); +12% ATQ personal y +50% Daño de Fulgor Estelar para todo el equipo.",
+        "reviewedBonus": true
       },
       {
         "set": "Disenchantment in Deep Shadows (4 piezas)",
-        "type": "Según equipo y rol",
-        "bonus": "",
-        "reviewedBonus": false
-      },
-      {
-        "set": "Tenacity of the Millelith (4 piezas)",
-        "type": "Según equipo y rol",
-        "bonus": "",
-        "reviewedBonus": false
+        "type": "Alternativa Sub-DPS",
+        "bonus": "+18% ATQ; +40% Conducto Estelar y +16% Prob. Crítica personal.",
+        "reviewedBonus": true
       }
     ],
     "statPriority": {
       "sands": "ATQ%",
       "goblet": "ATQ%",
-      "circlet": "Prob. Crítica / Daño Crítico",
-      "substats": "Crítico > ATQ% > Maestría. Q según disponibilidad."
+      "circlet": "Prob. Crítica ≥ Daño Crítico",
+      "substats": "Daño Crítico > Prob. Crítica > ATQ% (meta 2,000–3,000) > Maestría Elemental."
     },
     "benchmarks": {
-      "hp": "17,000 - 19,000",
-      "atk": "2,000",
-      "def": "Base (~750)",
-      "em": "0",
-      "er": "140%",
-      "crit": "70%+ CR / 170%+ CD"
+      "hp": "16,500",
+      "atk": "2,000 – 3,000 ATQ",
+      "def": "750",
+      "em": "150 – 200 ME",
+      "er": "125% – 145% (opcional)",
+      "crit": "50% – 60% CR / 180%+ CD"
     },
     "metaTeams": [
       {
-        "name": "Torbellino Estelar",
+        "name": "Conducto Estelar Core",
         "members": [
+          "Sandrone",
+          "Yae Miko",
           "Odette",
-          "Mizuki",
-          "Viajero Cryo",
-          "Faruzan"
+          "Alyosha"
         ],
-        "comp": "Odette • Mizuki • Viajero Cryo • Faruzan",
-        "note": "Faruzan C6."
+        "comp": "Sandrone • Yae Miko • Odette • Alyosha",
+        "note": "Base de los equipos Conducto Estelar con daño off-field constante."
       },
       {
-        "name": "Alternativa accesible",
+        "name": "Torbellino Estelar con Mizuki",
         "members": [
-          "Odette",
           "Viajero Cryo",
-          "Ifa",
+          "Mizuki",
+          "Odette",
           "Sucrose"
         ],
-        "comp": "Odette • Viajero Cryo • Ifa • Sucrose",
-        "note": ""
+        "comp": "Viajero Cryo • Mizuki • Odette • Sucrose",
+        "note": "Mejor equipo de Torbellino Estelar con Mizuki."
       }
     ],
     "mainStats": {
       "sands": "ATQ%",
       "goblet": "ATQ%",
-      "circlet": "Prob. Crítica / Daño Crítico"
+      "circlet": "Prob. Crítica ≥ Daño Crítico"
     },
     "substatsPriority": [
-      "Crítico > ATQ% > Maestría. Q según disponibilidad."
+      "Daño Crítico > Prob. Crítica > ATQ% (meta 2,000–3,000) > Maestría Elemental."
     ],
     "recommendedPanel": {
-      "hp": "17,000 - 19,000",
-      "atk": "2,000",
-      "def": "Base (~750)",
-      "em": "0",
-      "er": "140%",
-      "crit": "70%+ CR / 170%+ CD"
+      "hp": "16,500",
+      "atk": "2,000 – 3,000 ATQ",
+      "def": "750",
+      "em": "150 – 200 ME",
+      "er": "125% – 145% (opcional)",
+      "crit": "50% – 60% CR / 180%+ CD"
     },
-    "talentPriority": "Habilidad (E) >> nivel 90 ≥ Definitiva (Q). Normales sin subir.",
+    "talentPriority": "Habilidad Elemental (E) >> Definitiva (Q) >>> Ataques Normales",
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/odette-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [
-        "Prioridad de talentos específica del rol; eliminado el orden genérico.",
-        "Estadísticas contrastadas con la guía del rol indicado.",
-        "Reemplazadas composiciones genéricas Freeze/Melt por equipos de reacciones estelares.",
-        "Sets contrastados; eliminadas alternativas que no benefician al daño principal de este rol."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://game8.co/games/Genshin-Impact/archives/606893",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "spirifly_builds MCP"
       ],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
-      ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -16624,7 +16748,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Prune.png",
-    "tier": "T1 Hexerei Sub-DPS",
+    "tier": "T1 (A+) Support",
     "role": "Sub-DPS y Soporte Hexerei • Vórtices Anemo y Debuff de Resistencia",
     "roleCategory": "sub_dps",
     "scalingType": "ATK",
@@ -16737,7 +16861,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -16750,7 +16876,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Varesa.png",
-    "tier": "T0 Electro Hypercarry",
+    "tier": "T1 (A+) Main DPS",
     "role": "Hipercarry Electro • Rayos Crepusculares de Alto Impacto",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
@@ -16866,7 +16992,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -16879,93 +17007,107 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Zibai.png",
-    "tier": "T0 Lunar-Crystallize DPS",
-    "role": "DPS Geo de Filo Lunar • Cristalización Ofensiva de Alta Frecuencia",
+    "tier": "T0 (SS) Main DPS",
+    "role": "Hypercarry Geo de Cristalización Lunar (Escala 100% con DEF)",
     "roleCategory": "main_dps",
     "scalingType": "DEF",
-    "scalingLabel": "Escalado por DEF% y Daño Crítico",
+    "scalingLabel": "Habilidad Elemental mejorada y Cristalización Lunar escalan 100% con DEF",
     "bestWeapons": [
       {
         "name": "Refulgencia de la Luna",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+DEF% y daño de estocadas lunares.",
+        "type": "BiS Firma",
+        "note": "88.2% Daño Crítico; +20% DEF y +64% Daño de Cristalización Lunar tras usar Habilidad Elemental.",
         "weaponId": "11519",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
         "name": "Cortatelones de Urakusai",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+88.2% Daño Crítico y bono por daño Geo.",
+        "type": "Alternativa 5★",
+        "note": "88.2% Daño Crítico, +20% DEF y hasta +48% Daño de Habilidad Elemental con Geo.",
         "weaponId": "11514",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
-        "name": "Huso de Cinabrio",
+        "name": "Himno de las Cumbres",
+        "rarity": 5,
+        "type": "Alternativa 5★ DEF",
+        "note": "82.7% DEF%; +16% DEF y hasta +25.6% Bono Elemental al equipo.",
+        "weaponId": "11516",
+        "reviewedNote": true
+      },
+      {
+        "name": "Flauta de Ezpitzal",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "Escala daño con DEF%.",
-        "weaponId": "11415",
-        "reviewedNote": false
+        "type": "Mejor F2P Forja",
+        "note": "69.0% DEF% más +16% DEF durante 15s tras usar Habilidad Elemental.",
+        "weaponId": "11431",
+        "reviewedNote": true
       },
       {
         "name": "Espada del Alba",
         "rarity": 3,
-        "type": "Opción por rol",
-        "note": "+28% CR / +46.9% CD.",
+        "type": "Opción 3★ F2P",
+        "note": "46.9% Daño Crítico y +28% Prob. Crítica sobre 90% HP (con escudo).",
         "weaponId": "11301",
-        "reviewedNote": false
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Night of the Sky’s Unveiling (4 piezas)",
-        "type": "Según equipo y rol",
-        "bonus": "",
-        "reviewedBonus": false
+        "set": "Night of the Sky's Unveiling (4 piezas)",
+        "type": "BiS Lunar",
+        "bonus": "+80 ME (2p); +15%/30% Prob. Crítica en reacciones Lunares y +10% Daño Lunar al equipo.",
+        "reviewedBonus": true
+      },
+      {
+        "set": "Husk of Opulent Dreams (4 piezas)",
+        "type": "Alternativa DEF",
+        "bonus": "+30% DEF (2p) y hasta +24% DEF + 24% Bono Geo por acumulaciones.",
+        "reviewedBonus": true
       }
     ],
     "statPriority": {
       "sands": "DEF%",
       "goblet": "DEF%",
       "circlet": "Prob. Crítica / Daño Crítico",
-      "substats": "Crítico > DEF% > Maestría > Recarga."
+      "substats": "Prob. Crítica > Daño Crítico > DEF% (2,500+) > Maestría Elemental (100–200) > Recarga."
     },
     "benchmarks": {
-      "hp": "16,000",
-      "atk": "Base (~1,000 - 1,200 ATQ)",
-      "def": "2,600 DEF",
-      "em": "0",
-      "er": "120% ER",
-      "crit": "75%+ CR / 180%+ CD"
+      "hp": "16,500",
+      "atk": "1,000",
+      "def": "2,500+ DEF",
+      "em": "100 – 200 ME",
+      "er": "110% – 130% ER",
+      "crit": "40–50% base (sin set) / 175%+ CD"
     },
     "metaTeams": [
       {
-        "name": "Cristalización Lunar",
+        "name": "Cristalización Lunar Premium",
         "members": [
           "Zibai",
-          "Illuga",
+          "Columbina",
           "Linnea",
-          "Columbina"
+          "Illuga"
         ],
-        "comp": "Zibai • Illuga • Linnea • Columbina",
-        "note": ""
+        "comp": "Zibai • Columbina • Linnea • Illuga",
+        "note": "Composición óptima 7.2 para Cristalización Lunar."
       },
       {
-        "name": "Alternativa accesible",
+        "name": "Cristalización Lunar F2P",
         "members": [
           "Zibai",
-          "Illuga",
-          "Gorou",
-          "Aino"
+          "Aino",
+          "Xingqiu",
+          "Gorou"
         ],
-        "comp": "Zibai • Illuga • Gorou • Aino",
-        "note": ""
+        "comp": "Zibai • Aino • Xingqiu • Gorou",
+        "note": "Variante accesible con aplicación Hydro y buff de DEF de Gorou."
       }
     ],
     "substatsPriority": [
-      "Crítico > DEF% > Maestría > Recarga."
+      "Prob. Crítica > Daño Crítico > DEF% (2,500+) > Maestría Elemental (100–200) > Recarga."
     ],
     "mainStats": {
       "sands": "DEF%",
@@ -16973,32 +17115,26 @@ const CHARACTER_BUILDS_DB = [
       "circlet": "Prob. Crítica / Daño Crítico"
     },
     "recommendedPanel": {
-      "hp": "16,000",
-      "atk": "Base (~1,000 - 1,200 ATQ)",
-      "def": "2,600 DEF",
-      "em": "0",
-      "er": "120% ER",
-      "crit": "75%+ CR / 180%+ CD"
+      "hp": "16,500",
+      "atk": "1,000",
+      "def": "2,500+ DEF",
+      "em": "100 – 200 ME",
+      "er": "110% – 130% ER",
+      "crit": "40–50% base (sin set) / 175%+ CD"
     },
-    "talentPriority": "Habilidad (E) > nivel 90 = Definitiva (Q). Normales sin subir.",
+    "talentPriority": "Habilidad Elemental (E) >> Definitiva (Q) > Ataques Normales",
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/zibai-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [
-        "Prioridad de talentos específica del rol; eliminado el orden genérico.",
-        "Estadísticas contrastadas con la guía del rol indicado.",
-        "Añadida aplicación Hydro y compañeros de la reacción lunar.",
-        "Sets contrastados; eliminadas alternativas que no benefician al daño principal de este rol."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://game8.co/games/Genshin-Impact/archives/570263",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "spirifly_builds MCP"
       ],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
-      ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -17011,7 +17147,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Dahlia.png",
-    "tier": "T1 Hydro Shielder",
+    "tier": "T3 (C) Support",
     "role": "Diácono de Favonius • Escudo Hydro y Regeneración para el Escuadrón",
     "roleCategory": "healer_shielder",
     "scalingType": "HP",
@@ -17125,7 +17261,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -17138,122 +17276,141 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Polearm",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Escoffier.png",
-    "tier": "T1 Cryo Sub-DPS",
-    "role": "Cocinero Glacial de Fontaine • Sub-DPS Cryo y Aplicación Rápida",
+    "tier": "T0.5 (S) Sub-DPS",
+    "role": "Sub-DPS & Healer Cryo Especialista en Freeze (-55% RES Hydro/Cryo)",
     "roleCategory": "sub_dps",
     "scalingType": "ATK",
-    "scalingLabel": "Escalado por ATQ% y Recarga de Energía",
+    "scalingLabel": "Curación y Sub-DPS escalan con ATQ% (2,000+ ATQ); brilla al llevar 4 Hydro/Cryo",
     "bestWeapons": [
       {
         "name": "Sinfonista de Aromas",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+Crítico y daño Cryo de torreta.",
+        "type": "BiS Firma",
+        "note": "608 ATQ base, 66.2% Daño Crítico; +24% ATQ off-field y +32% ATQ extra al activo al curar.",
         "weaponId": "13514",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
-        "name": "La Captura",
+        "name": "Báculo de Homa",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "608 ATQ base, 66.2% Daño Crítico; sólido aporte de Daño Crítico y ATQ.",
+        "weaponId": "13501",
+        "reviewedNote": true
+      },
+      {
+        "name": "Báculo Rutilante de la Sacerdotisa",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "+Daño Definitiva.",
-        "weaponId": "13415",
-        "reviewedNote": false
+        "type": "Mejor 4★ Gacha",
+        "note": "620 ATQ base, 9.2% Prob. Crítica; +24% ATQ y +18% RE al golpear con Elemental.",
+        "weaponId": "13434",
+        "reviewedNote": true
+      },
+      {
+        "name": "Charla en el Pabellón",
+        "rarity": 4,
+        "type": "Mejor F2P Evento",
+        "note": "565 ATQ base, 30.6% RE; combina Recarga con +20%–40% ATQ.",
+        "weaponId": "13432",
+        "reviewedNote": true
       },
       {
         "name": "Lanza de Favonius",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "Generación de partículas.",
+        "type": "Alternativa Batería",
+        "note": "565 ATQ base, 30.6% RE; recarga rápidamente a Furina y Skirk.",
         "weaponId": "13407",
-        "reviewedNote": false
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Compañía Dorada (4 piezas)",
-        "note": "+70% Daño de Habilidad fuera de campo.",
-        "bonus": "+70% Daño de Habilidad fuera de campo.",
-        "reviewedBonus": false
+        "set": "Golden Troupe (4 piezas)",
+        "type": "BiS Daño Off-Field",
+        "bonus": "+70% Daño de Habilidad Elemental mientras permanece fuera del campo.",
+        "reviewedBonus": true
       },
       {
-        "set": "Emblema del Destino (4 piezas)",
-        "note": "+Recarga y daño Burst.",
-        "bonus": "+Recarga y daño Burst.",
-        "reviewedBonus": false
+        "set": "Noblesse Oblige (4 piezas)",
+        "type": "Alternativa Soporte",
+        "bonus": "+20% ATQ grupal si nadie más porta el set.",
+        "reviewedBonus": true
+      },
+      {
+        "set": "Tenacity of the Millelith (4 piezas)",
+        "type": "Alternativa Buffer",
+        "bonus": "+20% ATQ constante para carries de ATQ con los ticks de su Skill.",
+        "reviewedBonus": true
       }
     ],
     "statPriority": {
-      "sands": "ATQ% o Recarga",
-      "goblet": "Bono Daño Cryo%",
-      "circlet": "Prob. Crítica o Daño Crítico",
-      "substats": "Prob. Crítica > Daño Crítico > ATQ% > Recarga"
+      "sands": "ATQ% / Recarga de Energía",
+      "goblet": "Bono Daño Cryo / ATQ%",
+      "circlet": "Prob. Crítica / Daño Crítico",
+      "substats": "Recarga de Energía (160%–180%+) > Prob. Crítica = Daño Crítico > ATQ%."
     },
     "benchmarks": {
-      "hp": "17,000 - 19,000",
-      "atk": "1,900",
-      "def": "Base (~750)",
+      "hp": "18,000",
+      "atk": "2,000+ ATQ",
+      "def": "780",
       "em": "0",
-      "er": "160%",
-      "crit": "65%+ CR / 140%+ CD"
+      "er": "160% – 180% ER",
+      "crit": "60% – 70% CR / 120%+ CD"
     },
     "metaTeams": [
       {
-        "name": "Escoffier Freeze",
-        "members": [
-          "Wriothesley",
-          "Escoffier",
-          "Furina",
-          "Jean"
-        ],
-        "comp": "Wriothesley • Escoffier • Furina • Jean"
-      },
-      {
-        "name": "Escoffier Abyssal Freeze",
+        "name": "Skirk Freeze Techo 7.2",
         "members": [
           "Skirk",
           "Escoffier",
           "Furina",
-          "Shenhe"
+          "Vodyanitsa"
         ],
-        "comp": "Skirk • Escoffier • Furina • Shenhe"
+        "comp": "Skirk • Escoffier • Furina • Vodyanitsa",
+        "note": "Núcleo Cryo/Hydro de 4 integrantes para activar la reducción máxima de -55% RES."
+      },
+      {
+        "name": "Neuvillette Freeze",
+        "members": [
+          "Neuvillette",
+          "Escoffier",
+          "Furina",
+          "Citlali"
+        ],
+        "comp": "Neuvillette • Escoffier • Furina • Citlali",
+        "note": "Control de área y curación grupal instantánea para las cargas de Furina."
       }
     ],
     "substatsPriority": [
-      "1. Prob. Crítica",
-      "2. Daño Crítico",
-      "3. ATQ%",
-      "4. Recarga"
+      "Recarga de Energía (160%–180%+) > Prob. Crítica = Daño Crítico > ATQ%."
     ],
     "mainStats": {
-      "sands": "ATQ% o Recarga",
-      "goblet": "Bono Daño Cryo%",
-      "circlet": "Prob. Crítica o Daño Crítico"
+      "sands": "ATQ% / Recarga de Energía",
+      "goblet": "Bono Daño Cryo / ATQ%",
+      "circlet": "Prob. Crítica / Daño Crítico"
     },
     "recommendedPanel": {
-      "hp": "17,000 - 19,000",
-      "atk": "1,900",
-      "def": "Base (~750)",
+      "hp": "18,000",
+      "atk": "2,000+ ATQ",
+      "def": "780",
       "em": "0",
-      "er": "160%",
-      "crit": "65%+ CR / 140%+ CD"
+      "er": "160% – 180% ER",
+      "crit": "60% – 70% CR / 120%+ CD"
     },
-    "talentPriority": "Habilidad (E) > Definitiva (Q), que aumenta la curación.",
+    "talentPriority": "Habilidad Elemental (E) >= Definitiva (Q) >>> Ataques Normales",
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/escoffier-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [
-        "Prioridad de talentos específica del rol; eliminado el orden genérico."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://keqingmains.com/q/escoffier-quickguide/",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "https://game8.co/games/Genshin-Impact/archives/385307",
+        "spirifly_builds MCP"
       ],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
-      ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -17266,130 +17423,141 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Mizuki.png",
-    "tier": "T1 Anemo Swirl Buffer",
-    "role": "Buffer Anemo de Inazuma • Agrupación y Reducción de Resistencia",
-    "roleCategory": "support",
+    "tier": "T0 (SS) Main DPS",
+    "role": "Main DPS / Conductora Anemo de Torbellino Estelar y Torbellinos",
+    "roleCategory": "main_dps",
     "scalingType": "EM",
-    "scalingLabel": "Escala con Maestría Elemental pura",
+    "scalingLabel": "Escala daño y curación con ME; en 7.2 alcanza Tier SS como driver de Torbellino Estelar",
     "bestWeapons": [
       {
         "name": "Hibernación Matutina de Año Nuevo",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "+EM masiva.",
+        "type": "BiS Firma",
+        "note": "542 ATQ base, 265 ME; suma hasta +248 ME adicionales al activar Torbellino, Elemental y Definitiva.",
         "weaponId": "14518",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
-        "name": "Memorias de Sacrificios",
+        "name": "Sueños de las Mil Noches",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "542 ATQ base, 265 ME; +40 ME al equipo y fuerte aporte elemental.",
+        "weaponId": "14511",
+        "reviewedNote": true
+      },
+      {
+        "name": "Relicario de la Verdad",
+        "rarity": 5,
+        "type": "Alternativa Crít/Estelar",
+        "note": "542 ATQ base, 88.2% Daño Crítico; gran opción ofensiva híbrida con +8% Prob. Crítica y +80–120 ME.",
+        "weaponId": "14521",
+        "reviewedNote": true
+      },
+      {
+        "name": "Laúd de la Luz Celestial",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "+221 EM.",
-        "weaponId": "14403",
-        "reviewedNote": false
+        "type": "Mejor F2P Evento",
+        "note": "510 ATQ base, 45.9% RE; otorga +100 ME R1 (+200 R5) por 20s tras usar Habilidad Elemental.",
+        "weaponId": "14432",
+        "reviewedNote": true
       },
       {
-        "name": "Cuentos de Cazadores de Dragones",
-        "rarity": 3,
-        "type": "Opción por rol",
-        "note": "+48% ATQ.",
-        "weaponId": "11316",
-        "reviewedNote": false
+        "name": "Sinfonía de los Merodeadores",
+        "rarity": 4,
+        "type": "Alternativa 4★",
+        "note": "510 ATQ base, 55.1% Daño Crítico; su nota Interludio otorga +240 ME masivos.",
+        "weaponId": "14402",
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
         "set": "Gilded Dreams (4 piezas)",
-        "type": "Según equipo y rol",
-        "bonus": "",
-        "reviewedBonus": false
-      },
-      {
-        "set": "2p Maestría + 2p Maestría",
-        "type": "Según equipo y rol",
-        "bonus": "",
-        "reviewedBonus": false
+        "type": "BiS Torbellino Estelar",
+        "bonus": "+80 ME (2p); si otro Anemo lleva Sombra Verde, maximiza su Maestría Elemental.",
+        "reviewedBonus": true
       },
       {
         "set": "Viridescent Venerer (4 piezas)",
-        "type": "Según equipo y rol",
-        "bonus": "",
-        "reviewedBonus": false
+        "type": "Alternativa Soporte",
+        "bonus": "+15% Bono Anemo; +60% Torbellino, +20% Torbellino Estelar y -40% RES elemental y Cryo.",
+        "reviewedBonus": true
+      },
+      {
+        "set": "Scarlet Proof (4 piezas)",
+        "type": "Alternativa Estelar",
+        "bonus": "+18% ATQ (2p); +16% Prob. Crítica y +40% Daño de Torbellino Estelar.",
+        "reviewedBonus": true
       }
     ],
     "statPriority": {
-      "sands": "Maestría",
-      "goblet": "Maestría",
-      "circlet": "Prob. Crítica / Daño Crítico (Torbellino Estelar) / Maestría (Torbellino normal)",
-      "substats": "Torbellino Estelar: Crítico ≥ Maestría. Torbellino normal: Maestría."
+      "sands": "Maestría Elemental",
+      "goblet": "Maestría Elemental",
+      "circlet": "Prob./Daño Crítico (Estelar) / Maestría Elemental",
+      "substats": "Críticos (Estelar) ≥ Maestría Elemental > Recarga de Energía (110%–140%)."
     },
     "benchmarks": {
-      "hp": "17,000 - 20,000",
-      "atk": "Base (~1,000 - 1,200 ATQ)",
-      "def": "Base (~750 - 850 DEF)",
-      "em": "850+ EM",
-      "er": "160%",
-      "crit": "60%+ CR / 120%+ CD"
+      "hp": "18,000",
+      "atk": "1,400",
+      "def": "750",
+      "em": "600 – 900+ ME",
+      "er": "110% – 140% ER",
+      "crit": "50%+ CR / 100%+ CD (Híbrido Estelar)"
     },
     "metaTeams": [
       {
-        "name": "Torbellino Estelar",
+        "name": "Torbellino Estelar SS 7.2",
         "members": [
-          "Mizuki",
+          "Yumemizuki Mizuki",
           "Odette",
-          "Viajero Cryo",
-          "Faruzan"
-        ],
-        "comp": "Mizuki • Odette • Viajero Cryo • Faruzan",
-        "note": "Faruzan C6."
-      },
-      {
-        "name": "Alternativa con Sucrose",
-        "members": [
-          "Mizuki",
-          "Odette",
-          "Viajero Cryo",
+          "Vodyanitsa",
           "Sucrose"
         ],
-        "comp": "Mizuki • Odette • Viajero Cryo • Sucrose",
-        "note": ""
+        "comp": "Yumemizuki Mizuki • Odette • Vodyanitsa • Sucrose",
+        "note": "Equipo meta 7.2 donde Odette habilita Torbellino Estelar, Vodyanitsa cura/bufa y Sucrose aporta ME."
+      },
+      {
+        "name": "Cargado Lunar Driver",
+        "members": [
+          "Yumemizuki Mizuki",
+          "Columbina",
+          "Ineffa",
+          "Sucrose"
+        ],
+        "comp": "Yumemizuki Mizuki • Columbina • Ineffa • Sucrose",
+        "note": "Variante Lunar-Charged con reducción de RES por Sombra Verde y doble Anemo."
       }
     ],
     "substatsPriority": [
-      "Torbellino Estelar: Crítico ≥ Maestría. Torbellino normal: Maestría."
+      "Críticos (Estelar) ≥ Maestría Elemental > Recarga de Energía (110%–140%)."
     ],
     "mainStats": {
-      "sands": "Maestría",
-      "goblet": "Maestría",
-      "circlet": "Prob. Crítica / Daño Crítico (Torbellino Estelar) / Maestría (Torbellino normal)"
+      "sands": "Maestría Elemental",
+      "goblet": "Maestría Elemental",
+      "circlet": "Prob./Daño Crítico (Estelar) / Maestría Elemental"
     },
     "recommendedPanel": {
-      "hp": "17,000 - 20,000",
-      "atk": "Base (~1,000 - 1,200 ATQ)",
-      "def": "Base (~750 - 850 DEF)",
-      "em": "850+ EM",
-      "er": "160%",
-      "crit": "60%+ CR / 120%+ CD"
+      "hp": "18,000",
+      "atk": "1,400",
+      "def": "750",
+      "em": "600 – 900+ ME",
+      "er": "110% – 140% ER",
+      "crit": "50%+ CR / 100%+ CD (Híbrido Estelar)"
     },
-    "talentPriority": "Habilidad (E) > nivel 90 >> Definitiva (Q), hasta tener suficiente curación.",
+    "talentPriority": "Habilidad Elemental (E) >> Definitiva (Q) >>> Ataques Normales",
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/mizuki-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [
-        "Prioridad de talentos específica del rol; eliminado el orden genérico.",
-        "Estadísticas contrastadas con la guía del rol indicado.",
-        "Mizuki necesita tiempo en campo; retirados equipos con dos drivers simultáneos.",
-        "Sets contrastados; eliminadas alternativas que no benefician al daño principal de este rol."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://keqingmains.com/q/mizuki-quickguide/",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "https://game8.co/games/Genshin-Impact/archives/492414",
+        "spirifly_builds MCP"
       ],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
-      ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -17402,7 +17570,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Claymore",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Chongyun.png",
-    "tier": "T2 Cryo Infuser & Burst DPS",
+    "tier": "T3 (C) Sub-DPS",
     "role": "Sub-DPS Cryo y Enabler • Infusión Cryo para armas cuerpo a cuerpo y Burst rápido",
     "roleCategory": "sub_dps",
     "scalingType": "ATK",
@@ -17526,7 +17694,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -17539,7 +17709,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Bow",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Diona.png",
-    "tier": "T1 Cryo Shielder & Battery",
+    "tier": "T1.5 (A) Support",
     "role": "Escudera, Sanadora y Batería Cryo • Escudo Rápido con Garras y Curación en Área",
     "roleCategory": "healer_shielder",
     "scalingType": "HP",
@@ -17660,7 +17830,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -17673,7 +17845,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Claymore",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Dori.png",
-    "tier": "T2 Energy Battery & Healer",
+    "tier": "T3 (C) Support",
     "role": "Sanadora y Batería de Energía • Recarga Plana por Conexión de Djinn y Curación",
     "roleCategory": "healer_shielder",
     "scalingType": "HP",
@@ -17787,7 +17959,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -17800,7 +17974,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Heizo.png",
-    "tier": "T1 Melee Swirl DPS",
+    "tier": "T4 (D) Main DPS",
     "role": "Detective de la Comisión Tenryou • Artes Marciales Anemo de Ráfaga Corta",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
@@ -17924,7 +18098,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -17937,7 +18113,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Kaeya.png",
-    "tier": "T1 Cryo Sub-DPS & Enabler",
+    "tier": "T2 (B) Sub-DPS",
     "role": "Capitán de Caballería de Favonius • Vals Glacial Continuo Off-Field y Derretidos Inversos",
     "roleCategory": "sub_dps",
     "scalingType": "ATK",
@@ -18067,7 +18243,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -18080,7 +18258,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Claymore",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Kaveh.png",
-    "tier": "T1 Bloom Driver & Detonator",
+    "tier": "T4 (D) Main DPS",
     "role": "Arquitecto de Sumeru • Detonación Inmediata de Núcleos Dendro y Auto-Sanación",
     "roleCategory": "main_dps",
     "scalingType": "EM",
@@ -18209,7 +18387,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -18222,7 +18402,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Lisa.png",
-    "tier": "T1 DEF Shred Sub-DPS",
+    "tier": "T3 (C) Sub-DPS",
     "role": "Bibliotecaria de Favonius • Reducción del -15% DEF Enemiga en Burst y Campo Electro",
     "roleCategory": "sub_dps",
     "scalingType": "ATK",
@@ -18352,7 +18532,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -18365,7 +18547,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Polearm",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Mika.png",
-    "tier": "T1 Physical & ATK SPD Buffer",
+    "tier": "T3 (C) Support",
     "role": "Agrimensor de Favonius • Buff de +Velocidad de Ataque, +Daño Físico y Sanación Grupal",
     "roleCategory": "support",
     "scalingType": "HP",
@@ -18486,7 +18668,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -18499,7 +18683,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Ningguang.png",
-    "tier": "T1 Geo Burst DPS",
+    "tier": "T4 (D) Main DPS",
     "role": "El Equilibrio Celestial de Liyue • Bombardeo de Gemas Geo y Pantalla de Jade",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
@@ -18622,7 +18806,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -18635,7 +18821,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Qiqi.png",
-    "tier": "T2 Immortal Healer",
+    "tier": "T0.5 (S) Support",
     "role": "Boticaria del Bubu Pharmacy • Curación Masiva Continua y Talismanes de Preservación",
     "roleCategory": "healer_shielder",
     "scalingType": "ATK",
@@ -18749,7 +18935,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -18762,7 +18950,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Claymore",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Razor.png",
-    "tier": "T1 Physical & Rainbow DPS",
+    "tier": "T2 (B) Main DPS",
     "role": "Niño Lobo de Wolvendom • Mandoble Físico Brutal / Conductor Thundering Furry (Rainbow EM)",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
@@ -18892,7 +19080,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -18905,7 +19095,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Polearm",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Rosaria.png",
-    "tier": "T1 Crit Buffer & Cryo Sub-DPS",
+    "tier": "T1.5 (A) Sub-DPS",
     "role": "Monja de la Iglesia de Favonius • Transferencia de hasta +15% Prob. Crítica y Daño Cryo Constante",
     "roleCategory": "sub_dps",
     "scalingType": "ATK",
@@ -19029,7 +19219,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -19042,7 +19234,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Bow",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Sara.png",
-    "tier": "T1 Electro Crit DMG Buffer",
+    "tier": "T2 (B) Support",
     "role": "General de la Comisión Tenryou • Buff de ATQ y +60% Daño Crítico Electro en C6",
     "roleCategory": "support",
     "scalingType": "ATK",
@@ -19173,7 +19365,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -19186,7 +19380,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Claymore",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Sayu.png",
-    "tier": "T1 Exploration Queen & Swirl Healer",
+    "tier": "T3 (C) Sub-DPS",
     "role": "Ninja del Shuumatsuban • Rodadura Veloz Continua, Torbellino Elemental y Curación",
     "roleCategory": "healer_shielder",
     "scalingType": "ATK",
@@ -19308,7 +19502,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -19321,7 +19517,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Bow",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Tighnari.png",
-    "tier": "T1 Spread Quickswap DPS",
+    "tier": "T3 (C) Main DPS",
     "role": "Guardabosques de Avidya • Flechas Guiadas de Alta Cadencia y Ráfagas de Propagación",
     "roleCategory": "main_dps",
     "scalingType": "EM",
@@ -19451,7 +19647,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -19464,7 +19662,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Claymore",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Xinyan.png",
-    "tier": "T2 Physical DPS & Shielder",
+    "tier": "T4 (D) Main DPS",
     "role": "Estrella de Rock de Liyue • Daño Físico Explosivo en Burst y Escudo Pyro",
     "roleCategory": "main_dps",
     "scalingType": "DEF",
@@ -19587,7 +19785,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -19600,7 +19800,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Polearm",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Yunjin.png",
-    "tier": "T1 Normal Attack Buffer",
+    "tier": "T2 (B) Support",
     "role": "Directora de la Ópera Heyun • Aumento Masivo de Daño Plano a Ataques Normales basado en DEF",
     "roleCategory": "support",
     "scalingType": "DEF",
@@ -19725,7 +19925,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -19738,7 +19940,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Bow",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Aloy.png",
-    "tier": "T3 Cryo Burst DPS",
+    "tier": "T4 (D) Main DPS",
     "role": "Cazadora Nora • Bombas Criogénicas y Daño Explosivo de Definitiva",
     "roleCategory": "sub_dps",
     "scalingType": "ATK",
@@ -19853,7 +20055,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -19866,7 +20070,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Bow",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Ambor.png",
-    "tier": "T2 Pyro Enabler & Buffer",
+    "tier": "T4 (D) Sub-DPS",
     "role": "Exploradora de los Caballeros de Favonius • Lluvia de Flechas de Rápida Aplicación y Señor Barón",
     "roleCategory": "support",
     "scalingType": "ATK",
@@ -19980,7 +20184,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -19993,7 +20199,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Bow",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Collei.png",
-    "tier": "T1 Fast Dendro Enabler",
+    "tier": "T2 (B) Sub-DPS",
     "role": "Guardabosques en Prácticas • Aplicación Dendro Rápida Frontal y Bumerán Floral",
     "roleCategory": "sub_dps",
     "scalingType": "ATK",
@@ -20108,7 +20314,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -20121,7 +20329,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Claymore",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Freminet.png",
-    "tier": "T1 Physical & Shatter DPS",
+    "tier": "T4 (D) Main DPS",
     "role": "Buzo de Fontaine • Mandoble de Daño Físico y Reacción Rompehielo (Shatter)",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
@@ -20244,7 +20452,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -20257,7 +20467,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_PlayerBoy.png",
-    "tier": "T2 Anemo Swirl & Res Shred",
+    "tier": "T4 (D) Sub-DPS",
     "role": "Viajero Elemental • Vórtice de Palma y Tornado con -20% Resistencia en C6",
     "roleCategory": "support",
     "scalingType": "EM",
@@ -20370,7 +20580,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -20383,7 +20595,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_PlayerBoy.png",
-    "tier": "T1 Geo Crit Buffer & Battery",
+    "tier": "T4 (D) Sub-DPS",
     "role": "Viajero Elemental • Construcciones Geo, Batería y +10% Prob. Crítica dentro de su muro en C1",
     "roleCategory": "sub_dps",
     "scalingType": "ATK",
@@ -20506,7 +20718,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -20519,7 +20733,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_PlayerBoy.png",
-    "tier": "T2 Universal Energy Battery",
+    "tier": "T3 (C) Support",
     "role": "Viajero Elemental • Amuletos de Abundancia que recargan energía plana a cualquier personaje",
     "roleCategory": "support",
     "scalingType": "ER",
@@ -20633,7 +20847,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -20646,7 +20862,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_PlayerBoy.png",
-    "tier": "T0 F2P Dendro Enabler",
+    "tier": "T2 (B) Sub-DPS",
     "role": "Viajero Elemental • Loto Luminiscente de Amplia Cobertura y Aplicación Dendro Continua",
     "roleCategory": "support",
     "scalingType": "EM",
@@ -20775,7 +20991,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -20788,7 +21006,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_PlayerBoy.png",
-    "tier": "T3 Hydro Torrent Support",
+    "tier": "T4 (D) Sub-DPS",
     "role": "Viajero Elemental • Disparos Torrenciales de Agua y Mareas de Fontaine",
     "roleCategory": "sub_dps",
     "scalingType": "HP",
@@ -20902,7 +21120,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -20915,7 +21135,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Bow",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Jahoda.png",
-    "tier": "T1 Anemo Support",
+    "tier": "T1.5 (A) Sub-DPS",
     "role": "Soporte Anemo, Reducción de RES (VV) y Curación / Buffer de ATQ",
     "roleCategory": "support",
     "scalingType": "ATK",
@@ -21028,7 +21248,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -21041,7 +21263,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Polearm",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Lohen.png",
-    "tier": "T0 Hexerei Cryo DPS",
+    "tier": "T1 (A+) Main DPS",
     "role": "Main DPS Cryo de Brujería (Hexerei DPS) de Alto Daño Crítico",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
@@ -21155,7 +21377,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -21168,121 +21392,140 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Nicole.png",
-    "tier": "T0 Hexerei Pyro Support",
-    "role": "Soporte Premium del Aquelarre (Hexenzirkel / Hexerei Buffer de ATQ)",
+    "tier": "T0 (SS) Support",
+    "role": "Soporte & Escudera Pyro Hexerei (Meta 3,000–4,000 ATQ)",
     "roleCategory": "support",
     "scalingType": "ATK",
-    "scalingLabel": "Amplifica el daño del equipo según su ATQ% total",
+    "scalingLabel": "Escudo y buff de ATQ escalan al máximo entre 3,000 y 4,000 ATQ",
     "bestWeapons": [
       {
         "name": "Heptadas de los Ángeles",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "Catalizador firma de Nicole con ATQ% masivo y bendición Hexerei grupal.",
+        "type": "BiS Firma",
+        "note": "741 ATQ base, 16.5% ATQ%; hasta +26% Daño al personaje activo y regenera 14 Energía al crear escudo.",
         "weaponId": "14523",
-        "reviewedNote": false
+        "reviewedNote": true
+      },
+      {
+        "name": "Vigía de las Estrellas",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "265 ME; al crear escudo otorga +28% Daño al personaje activo durante 15s.",
+        "weaponId": "14517",
+        "reviewedNote": true
       },
       {
         "name": "Pergamino Celestial",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "674 ATQ Base y 33.1% ATQ secundario para maximizar su buff.",
+        "type": "Alternativa 5★ ATQ",
+        "note": "674 ATQ base y 33.1% ATQ% para maximizar su escudo y buff.",
         "weaponId": "14501",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
         "name": "Códice de Favonius",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "Recarga de Energía y generación de partículas para el equipo.",
+        "type": "Opción 4★ Batería",
+        "note": "45.9% ER; genera partículas blancas para el equipo (requiere 40–50% CR).",
         "weaponId": "14401",
-        "reviewedNote": false
+        "reviewedNote": true
+      },
+      {
+        "name": "Fluencia Impoluta",
+        "rarity": 4,
+        "type": "Opción F2P Forja",
+        "note": "565 ATQ base y 27.6% ATQ% para acercarse a los 3,000+ ATQ.",
+        "weaponId": "14425",
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Dádiva Celestial / Celestial Gift (4 piezas)",
-        "type": "BiS",
-        "bonus": "Set insignia de soporte que incrementa el ATQ y el daño de todo el escuadrón.",
-        "reviewedBonus": false
+        "set": "Celestial Gift (4 piezas)",
+        "type": "BiS Hexerei",
+        "bonus": "+20% ER (2p); en equipo Hexerei otorga +40% Bono Elemental a Pyro y al elemento activo.",
+        "reviewedBonus": true
       },
       {
-        "set": "Ritual Antiguo de la Nobleza (4 piezas)",
-        "type": "Alternativa Clásica",
-        "bonus": "+20% ATQ para todo el equipo al usar la Definitiva.",
-        "reviewedBonus": false
+        "set": "Noblesse Oblige (4 piezas)",
+        "type": "Alternativa",
+        "bonus": "+20% ATQ para todo el equipo al usar Definitiva.",
+        "reviewedBonus": true
+      },
+      {
+        "set": "Scroll of the Hero of Cinder City (4 piezas)",
+        "type": "Alternativa",
+        "bonus": "+12% Bono Elemental tras reacción cuando no haya otro portador.",
+        "reviewedBonus": true
       }
     ],
     "mainStats": {
-      "sands": "ATQ% o Recarga de Energía",
+      "sands": "ATQ% / Recarga de Energía",
       "goblet": "ATQ%",
       "circlet": "ATQ%"
     },
     "substatsPriority": [
-      "1. ATQ% (Hasta alcanzar el tope de su bendición)",
-      "2. Recarga de Energía% (160% – 180% ER)",
-      "3. Prob. Crítica"
+      "ATQ% (3,000–4,000) > Recarga de Energía (150–170%) > ATQ plano."
     ],
-    "talentPriority": "Habilidad (E) > Definitiva (Q) ≥ nivel 90. Normales sin subir.",
+    "talentPriority": "Habilidad Elemental (E) > Definitiva (Q) >>> Ataques Normales",
     "benchmarks": {
-      "hp": "17,000+",
-      "atk": "2,800 – 3,400+ ATQ",
+      "hp": "16,500",
+      "atk": "3,000 – 4,000 ATQ",
       "def": "750",
       "em": "0",
-      "er": "160% – 180% ER",
-      "crit": "50%+ CR"
+      "er": "150% (Triple Pyro) / 170% (Doble)",
+      "crit": "40–50% CR solo con Favonius"
     },
     "metaTeams": [
       {
-        "name": "Hexenzirkel Core (Varka / Lohen)",
-        "comp": "Varka • Durin • Nicole • Bennett",
+        "name": "Hexerei con Varka",
         "members": [
+          "Nicole",
           "Varka",
           "Durin",
-          "Nicole",
-          "Bennett"
-        ]
+          "Prune"
+        ],
+        "comp": "Nicole • Varka • Durin • Prune",
+        "note": "Equipo Hexerei BiS donde Celestial Gift entrega su bono completo."
       },
       {
-        "name": "Lohen Cryo Hexerei",
-        "comp": "Lohen • Nicole • Shenhe • Escoffier",
+        "name": "Sobrecarga Hexerei",
         "members": [
-          "Lohen",
           "Nicole",
-          "Shenhe",
-          "Escoffier"
-        ]
+          "Arlecchino",
+          "Fischl",
+          "Chevreuse"
+        ],
+        "comp": "Nicole • Arlecchino • Fischl • Chevreuse",
+        "note": "Variante Sobrecarga activando Hexerei con Fischl."
       }
     ],
     "statPriority": {
-      "sands": "ATQ% o Recarga de Energía",
+      "sands": "ATQ% / Recarga de Energía",
       "goblet": "ATQ%",
       "circlet": "ATQ%",
-      "substats": "1. ATQ% (Hasta alcanzar el tope de su bendición) > 2. Recarga de Energía% (160% – 180% ER) > 3. Prob. Crítica"
+      "substats": "ATQ% (3,000–4,000) > Recarga de Energía (150–170%) > ATQ plano."
     },
     "recommendedPanel": {
-      "hp": "17,000+",
-      "atk": "2,800 – 3,400+ ATQ",
+      "hp": "16,500",
+      "atk": "3,000 – 4,000 ATQ",
       "def": "750",
       "em": "0",
-      "er": "160% – 180% ER",
-      "crit": "50%+ CR"
+      "er": "150% (Triple Pyro) / 170% (Doble)",
+      "crit": "40–50% CR solo con Favonius"
     },
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://keqingmains.com/q/nicole-quickguide/",
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "changes": [
-        "El buff y el escudo dependen de la habilidad."
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://game8.co/games/Genshin-Impact/archives/406932",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "spirifly_builds MCP"
       ],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
-      ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -21295,119 +21538,140 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_PlayerGirl.png",
-    "tier": "T1 Stellar-Glimmer Cryo DPS",
-    "role": "DPS / Sub-DPS Cryo de Fulgor Estelar (Snezhnaya Resonance)",
+    "tier": "T0 (SS) Main DPS",
+    "role": "Main DPS / Aplicador Cryo de Reacciones Estelares (Fulgor Estelar)",
     "roleCategory": "main_dps",
     "scalingType": "ATK",
-    "scalingLabel": "Escala con ATQ% y Críticos",
+    "scalingLabel": "Infusión Cryo y reacciones Estelares escalan con ATQ y Crítico",
     "bestWeapons": [
       {
         "name": "Hoja de Exáifanes",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "Espada de Snezhnaya con bono especial para el Viajero y alto ATQ/Crítico.",
+        "type": "BiS F2P Historia",
+        "note": "608 ATQ base, 33.1% Prob. Crítica; exclusiva para el Viajero con +16% ATQ y regeneración de 3 Energía cada 5s.",
         "weaponId": "11521",
-        "reviewedNote": false
+        "reviewedNote": true
       },
       {
-        "name": "Reflejo de las Tinieblas",
+        "name": "Cortador de Jade Primordial",
         "rarity": 5,
-        "type": "Opción por rol",
-        "note": "44.1% Daño Crítico y hasta +40% Bono Daño Elemental.",
-        "weaponId": "11509",
-        "reviewedNote": false
+        "type": "Alternativa 5★",
+        "note": "44.1% Prob. Crítica y bono de ATQ según Vida Máxima.",
+        "weaponId": "11505",
+        "reviewedNote": true
       },
       {
-        "name": "Espada de Favonius",
+        "name": "Fuente de Ignición",
         "rarity": 4,
-        "type": "Opción por rol",
-        "note": "61.3% Recarga de Energía y batería para el equipo.",
-        "weaponId": "11401",
-        "reviewedNote": false
+        "type": "Mejor 4★ Forja",
+        "note": "110 ME; tras reacción aumenta +16% ATQ y +16% Daño de Fulgor Estelar (funciona off-field).",
+        "weaponId": "11436",
+        "reviewedNote": true
+      },
+      {
+        "name": "Colmillo Lupino",
+        "rarity": 4,
+        "type": "Opción 4★ Pase",
+        "note": "27.6% Prob. Crítica y +16% Daño de Habilidad y Definitiva.",
+        "weaponId": "11424",
+        "reviewedNote": true
+      },
+      {
+        "name": "Espada del Alba",
+        "rarity": 3,
+        "type": "Opción 3★ F2P",
+        "note": "46.9% Daño Crítico y +28% Prob. Crítica sobre 90% HP.",
+        "weaponId": "11301",
+        "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Desilusión Congelada en las Sombras / Disenchantment in Deep Shadows (4 piezas)",
-        "type": "BiS",
-        "bonus": "Potencia el daño de reacciones estelares de Snezhnaya y Crítico.",
-        "reviewedBonus": false
+        "set": "Disenchantment in Deep Shadows (4 piezas)",
+        "type": "BiS DPS",
+        "bonus": "+18% ATQ (2p); +80% Superconductor, +40% Conducto Estelar y +16% Prob. Crítica.",
+        "reviewedBonus": true
       },
       {
-        "set": "Nómada del Invierno (4 piezas)",
-        "type": "Alternativa Cryo",
-        "bonus": "+15% Bono Cryo y hasta +40% Prob. Crítica.",
-        "reviewedBonus": false
+        "set": "Heart of the Furnace (4 piezas)",
+        "type": "Alternativa Equipo",
+        "bonus": "+18% ATQ (2p) y +50% Daño de Fulgor Estelar para todo el equipo.",
+        "reviewedBonus": true
+      },
+      {
+        "set": "Tenacity of the Millelith (4 piezas)",
+        "type": "Variante Soporte",
+        "bonus": "+20% ATQ al equipo tras golpear con la Habilidad Elemental.",
+        "reviewedBonus": true
       }
     ],
     "mainStats": {
       "sands": "ATQ%",
-      "goblet": "ATQ% o Bono Daño Cryo%",
-      "circlet": "Daño Crítico o Prob. Crítica"
+      "goblet": "ATQ%",
+      "circlet": "Daño Crítico / Prob. Crítica"
     },
     "substatsPriority": [
-      "1. Daño Crítico / Prob. Crítica",
-      "2. ATQ%",
-      "3. Recarga de Energía% (130% – 150%)"
+      "Daño Crítico > Prob. Crítica > ATQ% > Recarga de Energía > Maestría Elemental."
     ],
-    "talentPriority": "Ataques Normales > Definitiva (Q) > Habilidad Elemental (E)",
+    "talentPriority": "Conducto Estelar: Normales > Definitiva (Q) > Habilidad (E) | Torbellino Estelar: Q > Normales > E",
     "benchmarks": {
       "hp": "16,500",
-      "atk": "1,900 – 2,200 ATQ",
-      "def": "750",
-      "em": "0",
-      "er": "135% ER",
-      "crit": "70%+ CR / 180%+ CD"
+      "atk": "2,400+ ATQ",
+      "def": "700",
+      "em": "150 – 200 ME",
+      "er": "125% – 145% ER",
+      "crit": "70% CR / 140%+ CD"
     },
     "metaTeams": [
       {
-        "name": "Snezhnaya Stellar Freeze",
-        "comp": "Viajero • Odette • Vodyanitsa • Escoffier",
+        "name": "Torbellino Estelar con Mizuki",
         "members": [
-          "Viajero",
+          "Viajero Cryo",
+          "Mizuki",
           "Odette",
-          "Vodyanitsa",
-          "Escoffier"
-        ]
+          "Qiqi"
+        ],
+        "comp": "Viajero Cryo • Mizuki • Odette • Qiqi",
+        "note": "Aplicación Cryo estable para detonar Torbellino Estelar."
       },
       {
-        "name": "Sandrone Stellar-Conduct",
-        "comp": "Sandrone • Viajero • Alyosha • Zhongli",
+        "name": "Conducto Estelar con Odette",
         "members": [
-          "Sandrone",
-          "Viajero",
-          "Alyosha",
-          "Zhongli"
-        ]
+          "Viajero Cryo",
+          "Yae Miko",
+          "Odette",
+          "Alyosha"
+        ],
+        "comp": "Viajero Cryo • Yae Miko • Odette • Alyosha",
+        "note": "Aprovecha la infusión Cryo en campo junto a Alyosha."
       }
     ],
     "statPriority": {
       "sands": "ATQ%",
-      "goblet": "ATQ% o Bono Daño Cryo%",
-      "circlet": "Daño Crítico o Prob. Crítica",
-      "substats": "1. Daño Crítico / Prob. Crítica > 2. ATQ% > 3. Recarga de Energía% (130% – 150%)"
+      "goblet": "ATQ%",
+      "circlet": "Daño Crítico / Prob. Crítica",
+      "substats": "Daño Crítico > Prob. Crítica > ATQ% > Recarga de Energía > Maestría Elemental."
     },
     "recommendedPanel": {
       "hp": "16,500",
-      "atk": "1,900 – 2,200 ATQ",
-      "def": "750",
-      "em": "0",
-      "er": "135% ER",
-      "crit": "70%+ CR / 180%+ CD"
+      "atk": "2,400+ ATQ",
+      "def": "700",
+      "em": "150 – 200 ME",
+      "er": "125% – 145% ER",
+      "crit": "70% CR / 140%+ CD"
     },
     "review": {
-      "date": "2026-10-23",
-      "targetVersion": "7.1",
-      "status": "partial",
-      "sourceUrl": "https://library.keqingmains.com/characters/cryo/traveler/",
-      "sourceConsulted": false,
-      "changes": [],
-      "pending": [
-        "Comparativa completa de armas y refinamientos para cada variante.",
-        "Objetivos numéricos y rotaciones de energía por equipo.",
-        "Actualización de todas las variantes y equipos a 7.1."
+      "status": "verified",
+      "targetVersion": "7.2",
+      "date": "2026-11-12",
+      "sourceConsulted": true,
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://game8.co/games/Genshin-Impact/archives/613906",
+      "crossCheckedSources": [
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "spirifly_builds MCP"
       ],
-      "hideUnverifiedBenchmarks": true
+      "pending": []
     }
   },
   {
@@ -21420,7 +21684,7 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_PlayerBoy.png",
-    "tier": "T1 Natlan Pyro Sub-DPS",
+    "tier": "T2 (B) Sub-DPS",
     "role": "Sub-DPS Pyro Off-Field & Portador de Pergamino de Cinder City (Noctespíritu)",
     "roleCategory": "sub_dps",
     "scalingType": "ATK",
@@ -21535,7 +21799,9 @@ const CHARACTER_BUILDS_DB = [
         "Objetivos numéricos y rotaciones de energía por equipo.",
         "Actualización de todas las variantes y equipos a 7.1."
       ],
-      "hideUnverifiedBenchmarks": true
+      "hideUnverifiedBenchmarks": true,
+      "tierCalibratedVersion": "7.2",
+      "tierCalibratedDate": "2026-11-12"
     }
   },
   {
@@ -21548,62 +21814,78 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 5,
     "weaponType": "Catalyst",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Mitya.png",
-    "tier": "Preliminar 7.2",
-    "role": "DPS en campo · Build preliminar 7.2",
+    "tier": "T0 (SS) Main DPS",
+    "role": "Main DPS & Soporte Electro de Conducto Estelar (Baliza de Polestar)",
     "roleCategory": "main_dps",
     "scalingType": "EM",
-    "scalingLabel": "Maestría Elemental",
+    "scalingLabel": "Escala con Maestría Elemental (ME) + Crítico en Conducto Estelar",
     "bestWeapons": [
       {
-        "weaponId": "14525",
         "name": "Edicto Selloastral",
         "rarity": 5,
-        "type": "Arma característica",
-        "note": "",
+        "type": "BiS Firma",
+        "note": "Firma 5★ (88.2% Daño Crítico): otorga +24% Daño Crítico, hasta +120 ME por acumulaciones y +36% Daño Crítico a Conducto Estelar.",
+        "weaponId": "14525",
         "reviewedNote": true
       },
       {
-        "weaponId": "14437",
-        "name": "Corazón del Invierno",
-        "rarity": 4,
-        "type": "Alternativa 4★",
-        "note": "",
+        "name": "Relicario de la Verdad",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "88.2% Daño Crítico, +8% Prob. Crítica y +80 ME al usar Habilidad Elemental.",
+        "weaponId": "14521",
         "reviewedNote": true
       },
       {
-        "weaponId": "14434",
+        "name": "Oración Perdida a los Vientos Sagrados",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "33.1% Prob. Crítica y hasta +32% Bono Elemental en campo.",
+        "weaponId": "14502",
+        "reviewedNote": true
+      },
+      {
         "name": "Escarcha del Albor",
         "rarity": 4,
-        "type": "Alternativa 4★",
-        "note": "",
+        "type": "Opción 4★",
+        "note": "55.1% Daño Crítico; +72 ME tras Ataque Cargado y +48 ME tras Habilidad Elemental.",
+        "weaponId": "14434",
         "reviewedNote": true
       },
       {
-        "weaponId": "14403",
+        "name": "Laúd de la Luz Celestial",
+        "rarity": 4,
+        "type": "Mejor F2P / Soporte",
+        "note": "45.9% Recarga de Energía y +100 ME durante 20s tras usar la Habilidad Elemental.",
+        "weaponId": "14432",
+        "reviewedNote": true
+      },
+      {
         "name": "Memorias de Sacrificios",
         "rarity": 4,
-        "type": "Maestría Elemental",
-        "note": "",
+        "type": "Opción 4★ Soporte",
+        "note": "221 ME base; útil como stat-stick de Maestría en rol fuera de campo.",
+        "weaponId": "14403",
         "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Wanderer's Troupe (2 piezas) + Gilded Dreams (2 piezas)",
-        "type": "Maestría Elemental",
-        "bonus": "",
-        "reviewedBonus": false
-      },
-      {
         "set": "Gilded Dreams (4 piezas)",
-        "type": "Alternativa",
-        "bonus": "",
-        "reviewedBonus": false
+        "type": "Principal DPS",
+        "bonus": "+80 ME (2p); tras reacción otorga hasta +150 ME según elementos distintos del equipo.",
+        "reviewedBonus": true
       },
       {
-        "set": "Desilusión Congelada en las Sombras (4 piezas)",
-        "type": "Según subestadísticas",
-        "bonus": "Comparativa preliminar: las guías difieren en su posición frente a las opciones de Maestría.",
+        "set": "Disenchantment in Deep Shadows (4 piezas)",
+        "type": "Alternativa DPS",
+        "bonus": "+18% ATQ (2p); +80% Daño Superconductor, +40% Conducto Estelar y +16% Prob. Crítica contra afectados.",
+        "reviewedBonus": true
+      },
+      {
+        "set": "Tenacity of the Millelith (4 piezas)",
+        "type": "Rol Soporte",
+        "bonus": "+20% ATQ y +30% Fuerza de Escudo al equipo cuando la Habilidad golpea desde fuera de campo.",
         "reviewedBonus": true
       }
     ],
@@ -21613,48 +21895,67 @@ const CHARACTER_BUILDS_DB = [
       "circlet": "Prob. Crítica / Daño Crítico"
     },
     "substatsPriority": [
-      "Recarga de Energía%: 120–140%, según equipo",
-      "Prob. Crítica / Daño Crítico > Maestría Elemental",
-      "Considerar los bonos de Prob. Crítica del personaje y del equipo."
+      "Daño Crítico ≥ Prob. Crítica > Maestría Elemental > Recarga de Energía (130–150%, 100% en C1)."
     ],
-    "talentPriority": "Ataques Normales > Definitiva (Q) > Habilidad Elemental (E)",
+    "talentPriority": "Ataques Normales (Cargado) > Habilidad Elemental (E) > Definitiva (Q)",
     "metaTeams": [
       {
-        "name": "DPS en campo",
+        "name": "Conducto Estelar On-Field",
         "members": [
           "Mitya",
-          "Odette",
           "Yae Miko",
-          "Sacarosa"
+          "Odette",
+          "Valeri"
         ],
-        "comp": "Mitya • Odette • Yae Miko • Sacarosa"
+        "comp": "Mitya • Yae Miko • Odette • Valeri",
+        "note": "Equipo principal 7.2: Valeri aporta escudo y buff Electro; Odette sostiene Conducto Estelar."
       },
       {
-        "name": "Con escudo",
+        "name": "Doble Carry Estelar (Mitya Off-Field)",
         "members": [
+          "Sandrone",
           "Mitya",
-          "Odette",
-          "Valeri",
-          "Sacarosa"
+          "Yae Miko",
+          "Odette"
         ],
-        "comp": "Mitya • Odette • Valeri • Sacarosa",
-        "note": "Valeri aporta mucho más en C6."
+        "comp": "Sandrone • Mitya • Yae Miko • Odette",
+        "note": "Mitya mantiene el aura móvil de Polestar para Sandrone."
       }
     ],
     "review": {
-      "status": "preliminary",
+      "status": "verified",
       "targetVersion": "7.2",
-      "date": "2026-11-02",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "hideUnverifiedBenchmarks": true,
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://game8.co/games/Genshin-Impact/archives/606906",
       "crossCheckedSources": [
-        "https://www.icy-veins.com/genshin-impact/mitya-guide-best-builds",
-        "https://genshinlab.com/characters/mitya/"
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "spirifly_builds MCP"
       ],
-      "pending": [
-        "Validar rendimiento y requisitos de energía con equipos de la versión publicada."
-      ],
-      "sourceUrl": "https://mobalytics.gg/genshin-impact/characters/mitya-build-guide"
+      "pending": []
+    },
+    "statPriority": {
+      "sands": "Maestría Elemental",
+      "goblet": "Maestría Elemental",
+      "circlet": "Prob. Crítica / Daño Crítico",
+      "substats": "Daño Crítico ≥ Prob. Crítica > Maestría Elemental > Recarga de Energía (130–150%, 100% en C1)."
+    },
+    "benchmarks": {
+      "hp": "16,500+",
+      "atk": "1,200+",
+      "def": "800",
+      "em": "600 – 700+ ME",
+      "er": "130% – 150% (100% C1)",
+      "crit": "60% – 70% CR / 200%+ CD"
+    },
+    "recommendedPanel": {
+      "hp": "16,500+",
+      "atk": "1,200+",
+      "def": "800",
+      "em": "600 – 700+ ME",
+      "er": "130% – 150% (100% C1)",
+      "crit": "60% – 70% CR / 200%+ CD"
     }
   },
   {
@@ -21667,102 +21968,140 @@ const CHARACTER_BUILDS_DB = [
     "rarity": 4,
     "weaponType": "Sword",
     "icon": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Valeriy.png",
-    "tier": "Preliminar 7.2",
-    "role": "Soporte con escudo · Build preliminar 7.2",
+    "tier": "T0.5 (S) Support",
+    "role": "Escudero y Buffer Electro de Conducto Estelar (Escala 100% con ATQ)",
     "roleCategory": "support",
     "scalingType": "ATK",
-    "scalingLabel": "ATQ% y Recarga de Energía",
+    "scalingLabel": "Escudo y buffs exclusivos Electro escalan 100% con ATQ total",
     "bestWeapons": [
       {
-        "weaponId": "11401",
-        "name": "Espada de Favonius",
-        "rarity": 4,
-        "type": "Energía del equipo",
-        "note": "Requiere golpes críticos en campo para activar su pasiva.",
+        "name": "Rompemontañas",
+        "rarity": 5,
+        "type": "BiS Firma / Escudo",
+        "note": "608 ATQ base, 49.6% ATQ% y +20% Fuerza de Escudo; el escudo duplica sus acumulaciones de ATQ%.",
+        "weaponId": "11504",
         "reviewedNote": true
       },
       {
-        "weaponId": "11502",
+        "name": "Aquila Favonia",
+        "rarity": 5,
+        "type": "Alternativa 5★",
+        "note": "674 ATQ base (máximo ATQ base en espadas) y +20% ATQ pasivo para maximizar sus buffs.",
+        "weaponId": "11501",
+        "reviewedNote": true
+      },
+      {
         "name": "Hoja Afilada Celestial",
         "rarity": 5,
-        "type": "ATQ y Recarga",
-        "note": "",
+        "type": "Alternativa 5★ ER",
+        "note": "608 ATQ base y 55.1% Recarga de Energía si priorizas lanzar Definitiva cada rotación.",
+        "weaponId": "11502",
         "reviewedNote": true
       },
       {
-        "weaponId": "11425",
+        "name": "Calamidad de Eshu",
+        "rarity": 4,
+        "type": "Opción 4★ Evento",
+        "note": "565 ATQ base y 27.6% ATQ%; refuerza sus Ataques Cargados bajo escudo.",
+        "weaponId": "11432",
+        "reviewedNote": true
+      },
+      {
         "name": "Réquiem Abisal",
         "rarity": 4,
-        "type": "Forja",
-        "note": "Requiere curación para eliminar el pacto vital y aprovechar el bono completo.",
+        "type": "Mejor F2P Forja",
+        "note": "565 ATQ base y 27.6% ATQ% (+12% ATQ tras E y bono plano al limpiar Pacto Vital).",
+        "weaponId": "11425",
         "reviewedNote": true
       }
     ],
     "bestArtifacts": [
       {
-        "set": "Gladiator's Finale (2 piezas) + Shimenawa's Reminiscence (2 piezas)",
-        "type": "ATQ%",
-        "bonus": "",
-        "reviewedBonus": false
+        "set": "A Day Carved from Rising Winds (4 piezas)",
+        "type": "BiS Soporte",
+        "bonus": "+18% ATQ (2p) y +25% ATQ adicional tras golpear (4p), activable fuera de campo.",
+        "reviewedBonus": true
       },
       {
-        "set": "Instructor (4 piezas)",
-        "type": "Condicional",
-        "bonus": "Valeri debe activar una reacción; comprobar la rotación.",
+        "set": "Heart of the Furnace (4 piezas)",
+        "type": "Alternativa Estelar",
+        "bonus": "+18% ATQ (2p); aumenta +50% el Daño de reacciones Estelares de todo el equipo.",
+        "reviewedBonus": true
+      },
+      {
+        "set": "Gladiator's Finale (2 piezas) + Shimenawa's Reminiscence (2 piezas)",
+        "type": "Alternativa 2p+2p",
+        "bonus": "+36% ATQ total directo si buscas piezas con mejores subestadísticas de ATQ%.",
         "reviewedBonus": true
       }
     ],
     "mainStats": {
-      "sands": "Recarga de Energía%",
+      "sands": "ATQ%",
       "goblet": "ATQ%",
       "circlet": "ATQ%"
     },
     "substatsPriority": [
-      "Recarga de Energía%: 200–250% como referencia con Favonius; ajustar al equipo",
-      "ATQ% > Prob. Crítica para Favonius > ATQ"
+      "ATQ% > ATQ plano > Recarga de Energía (160–180% solo si usas Q cada rotación)."
     ],
-    "talentPriority": "Habilidad Elemental (E) > Ataques Normales > Definitiva (Q)",
+    "talentPriority": "Ataques Normales (Cargado Especial) > Habilidad Elemental (E - Escudo) > Definitiva (Q)",
     "metaTeams": [
       {
-        "name": "Soporte de Mitya",
+        "name": "Conducto Estelar con Mitya",
         "members": [
           "Mitya",
+          "Yae Miko",
           "Odette",
-          "Valeri",
-          "Sacarosa"
+          "Valeri"
         ],
-        "comp": "Mitya • Odette • Valeri • Sacarosa",
-        "note": "C6 mejora considerablemente su aporte ofensivo."
+        "comp": "Mitya • Yae Miko • Odette • Valeri",
+        "note": "Sinergia directa 7.2: protege a Mitya mientras carga ataques y potencia su daño Electro."
       },
       {
-        "name": "Doble Electro de apoyo",
+        "name": "Conducto Estelar con Cyno",
         "members": [
-          "Mitya",
-          "Odette",
+          "Cyno",
+          "Viajero Cryo",
           "Valeri",
-          "Yae Miko"
+          "Qiqi"
         ],
-        "comp": "Mitya • Odette • Valeri • Yae Miko"
+        "comp": "Cyno • Viajero Cryo • Valeri • Qiqi",
+        "note": "Alternativa centrada en Cyno con resonancia y escudo constante."
       }
     ],
     "review": {
-      "status": "preliminary",
+      "status": "verified",
       "targetVersion": "7.2",
-      "date": "2026-11-02",
+      "date": "2026-11-12",
       "sourceConsulted": true,
-      "hideUnverifiedBenchmarks": true,
+      "hideUnverifiedBenchmarks": false,
+      "sourceUrl": "https://game8.co/games/Genshin-Impact/archives/606889",
       "crossCheckedSources": [
-        "https://www.icy-veins.com/genshin-impact/valeriy-guide-best-builds"
+        "https://game8.co/games/Genshin-Impact/archives/297465",
+        "spirifly_builds MCP"
       ],
-      "pending": [
-        "Validar rendimiento y requisitos de energía con equipos de la versión publicada."
-      ],
-      "decisions": [
-        "Prioridad E > normales > Q contrastada con Icy Veins y los multiplicadores originales: el bono del ataque cargado sí aumenta al subir el talento normal.",
-        "Favonius y recarga como configuración de partida; las guías no coinciden en el objetivo de energía ni en el orden de armas.",
-        "2+2 ATQ como opción práctica; no declarar Heart of the Furnace universal sin comprobar quién activa la reacción."
-      ],
-      "sourceUrl": "https://mobalytics.gg/genshin-impact/characters/valeriy-build-guide"
+      "pending": []
+    },
+    "statPriority": {
+      "sands": "ATQ%",
+      "goblet": "ATQ%",
+      "circlet": "ATQ%",
+      "substats": "ATQ% > ATQ plano > Recarga de Energía (160–180% solo si usas Q cada rotación)."
+    },
+    "benchmarks": {
+      "hp": "15,000+",
+      "atk": "2,800+ ATQ",
+      "def": "700+",
+      "em": "0",
+      "er": "160% – 180% (opcional)",
+      "crit": "No prioritario"
+    },
+    "recommendedPanel": {
+      "hp": "15,000+",
+      "atk": "2,800+ ATQ",
+      "def": "700+",
+      "em": "0",
+      "er": "160% – 180% (opcional)",
+      "crit": "No prioritario"
     }
   }
 ];

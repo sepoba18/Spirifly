@@ -492,21 +492,33 @@ function showSynthToast(msg) {
 }
 
 /**
- * Calcula cuántos materiales de este ítem se pueden sintetizar 3:1
- * protegiendo estrictamente los materiales de menor rareza requeridos por tus personajes/armas.
+ * Calcula cuántos materiales de este ítem se pueden sintetizar al estilo Seelie.me.
+ * Si aprietas en un nivel superior (ej. el más raro), calcula la cascada de síntesis
+ * desde los niveles inferiores, asegurando que cada nivel inferior cubra primero
+ * exactamente su requerimiento activo y permitiendo que todo el excedente ascienda
+ * hacia el ítem seleccionado.
  */
 function getSafeCraftableCount(item, reqMap) {
   if (!item || !item.family || item.tier <= 1) return 0;
-  const lowerItem = REAL_INVENTORY_ITEMS.find(
-    (x) => x.family === item.family && x.tier === item.tier - 1
-  );
-  if (!lowerItem) return 0;
+  const fam = REAL_INVENTORY_ITEMS
+    .filter((x) => x.family === item.family && x.tier <= item.tier)
+    .sort((a, b) => a.tier - b.tier);
 
-  const ownedLower = getRealOwned(lowerItem.id);
-  const requiredLower = (reqMap && reqMap[lowerItem.id]) || 0;
-  const safeSurplusLower = Math.max(0, ownedLower - requiredLower);
+  if (fam.length < 2) return 0;
 
-  return Math.floor(safeSurplusLower / 3);
+  let availPool = 0;
+  for (const it of fam) {
+    if (it.tier < item.tier) {
+      const owned = getRealOwned(it.id);
+      const req = (reqMap && reqMap[it.id]) || 0;
+      const tot = owned + availPool;
+      const surplus = Math.max(0, tot - req);
+      availPool = Math.floor(surplus / 3);
+    } else {
+      return availPool;
+    }
+  }
+  return availPool;
 }
 
 function synthesizeSingleItem(targetItemId, maxSurplus = false) {
@@ -514,14 +526,15 @@ function synthesizeSingleItem(targetItemId, maxSurplus = false) {
   const targetItem = REAL_INVENTORY_ITEMS.find((x) => x.id === targetItemId);
   if (!targetItem || !targetItem.family || targetItem.tier <= 1) return;
 
-  const lowerItem = REAL_INVENTORY_ITEMS.find(
-    (x) => x.family === targetItem.family && x.tier === targetItem.tier - 1
-  );
-  if (!lowerItem) return;
+  const fam = REAL_INVENTORY_ITEMS
+    .filter((x) => x.family === targetItem.family && x.tier <= targetItem.tier)
+    .sort((a, b) => a.tier - b.tier);
 
-  const safeCraftable = getSafeCraftableCount(targetItem, reqMap);
-  if (safeCraftable <= 0) {
-    showSynthToast(`<img src="assets/ui/sparkle.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> No tienes excedentes seguros de "${lowerItem.name}" para sintetizar.`);
+  if (fam.length < 2) return;
+
+  const maxCraftable = getSafeCraftableCount(targetItem, reqMap);
+  if (maxCraftable <= 0) {
+    showSynthToast(`<img src="assets/ui/sparkle.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> No hay materiales excedentes suficientes en los niveles inferiores para sintetizar "${targetItem.name}" protegiendo tus metas activas.`);
     return;
   }
 
@@ -530,50 +543,106 @@ function synthesizeSingleItem(targetItemId, maxSurplus = false) {
   const missingTarget = Math.max(0, reqTarget - ownedTarget);
 
   let amountToCraft = 1;
-  if (maxSurplus) {
-    amountToCraft = safeCraftable;
-  } else if (missingTarget > 0) {
-    amountToCraft = Math.min(safeCraftable, missingTarget);
+  if (maxSurplus || missingTarget === 0) {
+    amountToCraft = maxCraftable;
+  } else {
+    amountToCraft = Math.min(maxCraftable, missingTarget);
   }
-  amountToCraft = Math.max(1, Math.min(amountToCraft, safeCraftable));
+  amountToCraft = Math.max(1, Math.min(amountToCraft, maxCraftable));
 
-  state.realOwned[lowerItem.id] = Math.max(0, getRealOwned(lowerItem.id) - (amountToCraft * 3));
-  state.realOwned[targetItem.id] = ownedTarget + amountToCraft;
+  // 1. Determinar cuánto debe entregar cada nivel inferior hacia arriba
+  const transferUp = {};
+  for (const it of fam) {
+    transferUp[it.tier] = 0;
+  }
+  transferUp[targetItem.tier - 1] = amountToCraft * 3;
+
+  for (let i = targetItem.tier - 1; i >= 2; i--) {
+    const curIt = fam.find((x) => x.tier === i);
+    if (!curIt) continue;
+    const req_i = (reqMap && reqMap[curIt.id]) || 0;
+    const needed_i = req_i + transferUp[i];
+    const owned_i = getRealOwned(curIt.id);
+    const shortfall = Math.max(0, needed_i - owned_i);
+    transferUp[i - 1] = shortfall * 3;
+  }
+
+  // 2. Aplicar transferencias de abajo hacia arriba en el inventario real
+  for (let i = 1; i < targetItem.tier; i++) {
+    const curIt = fam.find((x) => x.tier === i);
+    const nextIt = fam.find((x) => x.tier === i + 1);
+    const consumed = transferUp[i];
+    if (consumed > 0 && curIt && nextIt) {
+      const produced = Math.floor(consumed / 3);
+      state.realOwned[curIt.id] = Math.max(0, getRealOwned(curIt.id) - consumed);
+      state.realOwned[nextIt.id] = getRealOwned(nextIt.id) + produced;
+    }
+  }
 
   saveRealOwned();
   triggerDriveSyncStamp();
   renderVisualInventory();
   renderCharacterWeaponPlanner();
 
-  showSynthToast(`<img src="assets/ui/sparkle.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> <strong>Alquimia:</strong> Sintetizaste +${amountToCraft} de "${targetItem.name}" (usando ${amountToCraft * 3} de "${lowerItem.name}").`);
+  showSynthToast(`<img src="assets/ui/sparkle.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> <strong>Alquimia Seelie:</strong> Sintetizaste +${amountToCraft} de "${targetItem.name}" ajustando los niveles inferiores para dejar cubiertas tus metas.`);
 }
 
 function synthesizeAllSafe() {
   let totalCrafted = 0;
   const reqMap = getRequiredMaterialsMap();
 
-  for (let tierStep = 2; tierStep <= 5; tierStep++) {
-    REAL_INVENTORY_ITEMS.filter((x) => x.tier === tierStep).forEach((item) => {
-      const owned = getRealOwned(item.id);
-      const needed = (reqMap && reqMap[item.id]) || 0;
-      const missing = Math.max(0, needed - owned);
-      const safeCraft = getSafeCraftableCount(item, reqMap);
+  // Agrupar familias de materiales
+  const families = new Set(REAL_INVENTORY_ITEMS.filter((x) => x.family).map((x) => x.family));
 
-      const higherItemsNeed = REAL_INVENTORY_ITEMS.some(
-        (h) => h.family === item.family && h.tier > item.tier && ((reqMap && reqMap[h.id]) || 0) > getRealOwned(h.id)
-      );
+  families.forEach((famId) => {
+    const fam = REAL_INVENTORY_ITEMS
+      .filter((x) => x.family === famId)
+      .sort((a, b) => a.tier - b.tier);
 
-      if (safeCraft > 0 && (missing > 0 || higherItemsNeed)) {
-        const lowerItem = REAL_INVENTORY_ITEMS.find((x) => x.family === item.family && x.tier === item.tier - 1);
-        const qty = missing > 0 && !higherItemsNeed ? Math.min(safeCraft, missing) : safeCraft;
-        if (qty > 0 && lowerItem) {
-          state.realOwned[lowerItem.id] = Math.max(0, getRealOwned(lowerItem.id) - (qty * 3));
-          state.realOwned[item.id] = owned + qty;
+    if (fam.length < 2) return;
+
+    for (let t = 2; t <= fam.length; t++) {
+      const targetItem = fam.find((x) => x.tier === t);
+      if (!targetItem) continue;
+
+      const owned = getRealOwned(targetItem.id);
+      const req = (reqMap && reqMap[targetItem.id]) || 0;
+      const missing = Math.max(0, req - owned);
+      const craftable = getSafeCraftableCount(targetItem, reqMap);
+
+      if (craftable > 0 && missing > 0) {
+        const qty = Math.min(craftable, missing);
+        if (qty > 0) {
+          // Ejecutar síntesis de esta cantidad hacia targetItem
+          const transferUp = {};
+          for (const it of fam) transferUp[it.tier] = 0;
+          transferUp[targetItem.tier - 1] = qty * 3;
+
+          for (let i = targetItem.tier - 1; i >= 2; i--) {
+            const curIt = fam.find((x) => x.tier === i);
+            if (!curIt) continue;
+            const req_i = (reqMap && reqMap[curIt.id]) || 0;
+            const needed_i = req_i + transferUp[i];
+            const owned_i = getRealOwned(curIt.id);
+            const shortfall = Math.max(0, needed_i - owned_i);
+            transferUp[i - 1] = shortfall * 3;
+          }
+
+          for (let i = 1; i < targetItem.tier; i++) {
+            const curIt = fam.find((x) => x.tier === i);
+            const nextIt = fam.find((x) => x.tier === i + 1);
+            const consumed = transferUp[i];
+            if (consumed > 0 && curIt && nextIt) {
+              const produced = Math.floor(consumed / 3);
+              state.realOwned[curIt.id] = Math.max(0, getRealOwned(curIt.id) - consumed);
+              state.realOwned[nextIt.id] = getRealOwned(nextIt.id) + produced;
+            }
+          }
           totalCrafted += qty;
         }
       }
-    });
-  }
+    }
+  });
 
   saveRealOwned();
   triggerDriveSyncStamp();
@@ -581,9 +650,9 @@ function synthesizeAllSafe() {
   renderCharacterWeaponPlanner();
 
   if (totalCrafted > 0) {
-    showSynthToast(`<img src="assets/ui/check.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> <strong>¡Alquimia completada!</strong> Se sintetizaron ${totalCrafted} materiales de mayor nivel protegiendo todos los requerimientos de tus personajes.`);
+    showSynthToast(`<img src="assets/ui/check.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> <strong>¡Alquimia completada!</strong> Se sintetizaron ${totalCrafted} materiales de mayor rareza protegiendo todas las metas de tus niveles inferiores.`);
   } else {
-    showSynthToast(`<img src="assets/ui/sparkle.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> Todos tus materiales actuales están reservados para las metas de tus personajes o no hay excedentes 3:1 disponibles.`);
+    showSynthToast(`<img src="assets/ui/sparkle.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> Todos tus materiales están ajustados a las metas de tus personajes o no hay excedentes combinables disponibles.`);
   }
 }
 

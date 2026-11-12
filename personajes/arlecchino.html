@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía y Build de Arlecchino (Versión 7.2) | Materiales y Farmeo en Spirifly</title>
+  <meta name="description" content="Guía actualizada de Arlecchino en Genshin Impact (7.2). Mejores armas, artefactos, estadísticas, sinergias y cálculo de materiales en Spirifly.">
+  <link rel="canonical" href="https://spirifly.app/personajes/arlecchino">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../assets/site-info.css?v=2">
+  <style>
+    .char-hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem;
+      background: #151c2e;
+      border: 1px solid #33405a;
+      border-radius: 14px;
+      padding: 1.6rem;
+      margin: 1.5rem 0 2rem;
+    }
+    .char-avatar-box {
+      position: relative;
+      width: 104px;
+      height: 104px;
+      border-radius: 16px;
+      background: radial-gradient(circle, #ef444433 0%, rgba(15,23,42,0.8) 100%);
+      border: 2px solid #ef4444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .char-avatar-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .char-meta h1 {
+      margin: 0 0 0.4rem;
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .badge-el {
+      font-size: 0.78rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      background: #ef444422;
+      border: 1px solid #ef444488;
+      color: #ef4444;
+      font-weight: 700;
+    }
+    .badge-tier {
+      font-size: 0.78rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      background: #fbbf2422;
+      border: 1px solid #fbbf2488;
+      color: #fbbf24;
+      font-weight: 800;
+    }
+    .char-subdesc {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      margin: 0.3rem 0 0;
+      line-height: 1.5;
+    }
+    .guide-block {
+      background: #171f33;
+      border: 1px solid #2d3b55;
+      border-radius: 12px;
+      padding: 1.4rem;
+      margin-bottom: 1.8rem;
+    }
+    .guide-block h2 {
+      margin-top: 0;
+      font-size: 1.25rem;
+      color: #f5d996;
+      border-bottom: 1px solid #2d3b55;
+      padding-bottom: 0.6rem;
+    }
+    .guide-block-desc {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      margin-bottom: 1rem;
+    }
+    .guide-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .guide-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+    }
+    .guide-item-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .guide-item-title {
+      font-weight: 700;
+      color: #ffffff;
+      font-size: 1rem;
+    }
+    .guide-rarity {
+      color: #fbbf24;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+    }
+    .guide-tag {
+      background: rgba(59,130,246,0.18);
+      color: #93c5fd;
+      border-radius: 4px;
+      padding: 0.15rem 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .guide-item-sub {
+      font-size: 0.83rem;
+      color: #94a3b8;
+      margin-top: 0.25rem;
+    }
+    .w-note {
+      color: #34d399;
+      margin-left: 0.4rem;
+    }
+    .art-bonus {
+      font-size: 0.82rem;
+      color: #cbd5e1;
+      margin: 0.4rem 0 0;
+      line-height: 1.4;
+    }
+    .stats-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    .stats-table th, .stats-table td {
+      padding: 0.65rem 0.85rem;
+      border: 1px solid #2d3b55;
+      font-size: 0.9rem;
+    }
+    .stats-table th {
+      background: rgba(0,0,0,0.25);
+      color: #f5d996;
+      text-align: left;
+    }
+    .team-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      margin-bottom: 0.75rem;
+    }
+    .team-card h4 {
+      margin: 0 0 0.25rem;
+      color: #60a5fa;
+      font-size: 0.95rem;
+    }
+    .team-members {
+      margin: 0;
+      font-weight: 700;
+      color: #e2e8f0;
+      font-size: 0.9rem;
+    }
+    .team-note {
+      margin: 0.35rem 0 0;
+      font-size: 0.82rem;
+      color: #94a3b8;
+    }
+    .mat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 0.75rem;
+    }
+    .mat-chip {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      background: rgba(0,0,0,0.3);
+      border: 1px solid #2d3b55;
+      border-radius: 8px;
+      padding: 0.5rem 0.75rem;
+    }
+    .mat-chip img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+    }
+    .mat-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .mat-name {
+      font-size: 0.8rem;
+      color: #f1f5f9;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+    .mat-qty {
+      font-size: 0.75rem;
+      color: #fbbf24;
+      font-weight: 700;
+    }
+    .cta-banner {
+      background: linear-gradient(135deg, #1e3a8a 0%, #172554 100%);
+      border: 1px solid #3b82f6;
+      border-radius: 14px;
+      padding: 1.8rem;
+      text-align: center;
+      margin: 2.5rem 0;
+    }
+    .cta-banner h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.4rem;
+      color: #ffffff;
+    }
+    .cta-banner p {
+      color: #bfdbfe;
+      margin: 0 0 1.2rem;
+      font-size: 0.95rem;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: #2563eb;
+      color: #ffffff !important;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 0.75rem 1.75rem;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(37,99,235,0.4);
+      transition: all 0.2s;
+    }
+    .cta-btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Guía y Build de Arlecchino (Versión 7.2) - Genshin Impact",
+    "description": "Mejores armas, artefactos, sinergias y materiales de ascensión para Arlecchino en Genshin Impact.",
+    "author": {
+      "@type": "Organization",
+      "name": "Spirifly"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Spirifly",
+      "url": "https://spirifly.app"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="info-header">
+    <a class="info-brand" href="/">Spirifly</a>
+    <nav aria-label="Navegación principal">
+      <a href="/">Herramientas</a>
+      <a href="/personajes/">Catálogo de Builds</a>
+      <a href="../guide.html">Guía de uso</a>
+      <a href="../about.html">Proyecto</a>
+    </nav>
+  </header>
+
+  <main class="info-main">
+    <p class="info-kicker">Genshin Impact · Versión 7.2</p>
+    
+    <div class="char-hero">
+      <div class="char-avatar-box">
+        <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Arlecchino.png" alt="Arlecchino" loading="eager" />
+      </div>
+      <div class="char-meta">
+        <h1>
+          <span>Arlecchino</span>
+          <span class="badge-el">Pyro · Polearm</span>
+          <span class="badge-tier">T0 Hypercarry DPS</span>
+        </h1>
+        <p class="char-subdesc">Hypercarry Pyro On-Field (Pacto Perpetuo / Bond of Life) · Región: Fatui</p>
+      </div>
+    </div>
+
+    <section class="guide-block">
+      <h2>Mejores Armas</h2>
+      <p class="guide-block-desc">Opciones recomendadas ordenadas por rendimiento según el meta actual y compatibilidad con sus rotaciones:</p>
+      <ul class="guide-list">
+        
+        <li class="guide-item">
+          <div class="guide-item-top">
+            <span class="guide-item-title">Semblante de la Luna Carmesí</span>
+            <span class="guide-rarity">★★★★★</span>
+          </div>
+          <div class="guide-item-sub">Opción por rol <span class='w-note'>+Prob. Crítica, genera +25% de Pacto Perpetuo y hasta +36% de daño universal.</span></div>
+        </li>
+        <li class="guide-item">
+          <div class="guide-item-top">
+            <span class="guide-item-title">Halcón de Jade</span>
+            <span class="guide-rarity">★★★★★</span>
+          </div>
+          <div class="guide-item-sub">Opción por rol <span class='w-note'>Stat-sticks excepcionales de Crítico y ATQ.</span></div>
+        </li>
+        <li class="guide-item">
+          <div class="guide-item-top">
+            <span class="guide-item-title">Báculo de Homa</span>
+            <span class="guide-rarity">★★★★★</span>
+          </div>
+          <div class="guide-item-sub">Opción por rol <span class='w-note'>Stat-sticks excepcionales de Crítico y ATQ.</span></div>
+        </li>
+        <li class="guide-item">
+          <div class="guide-item-top">
+            <span class="guide-item-title">Balada de los Fiordos</span>
+            <span class="guide-rarity">★★★★</span>
+          </div>
+          <div class="guide-item-sub">Opción por rol <span class='w-note'>+Prob. Crítica altísima; Balada otorga 120 EM en Vaporizado.</span></div>
+        </li>
+        <li class="guide-item">
+          <div class="guide-item-top">
+            <span class="guide-item-title">Lanza del Duelo</span>
+            <span class="guide-rarity">★★★★</span>
+          </div>
+          <div class="guide-item-sub">Opción por rol <span class='w-note'>+Prob. Crítica altísima; Balada otorga 120 EM en Vaporizado.</span></div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="guide-block">
+      <h2>Mejores Sets de Artefactos</h2>
+      <p class="guide-block-desc">Combinaciones de 4 piezas o mezclas de 2 piezas para maximizar su contribución:</p>
+      <ul class="guide-list">
+        
+        <li class="guide-item">
+          <div class="guide-item-top">
+            <span class="guide-item-title">Fragmento de la Armonía Fantasmal (4 piezas)</span>
+            <span class="guide-tag">BiS Indiscutible</span>
+          </div>
+          <p class='art-bonus'>+54% Daño constante al aumentar o disminuir el Pacto Perpetuo.</p>
+        </li>
+        <li class="guide-item">
+          <div class="guide-item-top">
+            <span class="guide-item-title">Gladiador (4 piezas)</span>
+            <span class="guide-tag">Alternativa Top</span>
+          </div>
+          <p class='art-bonus'>+35% Daño en Ataques Normales (solo ~6% por detrás de Armonía).</p>
+        </li>
+      </ul>
+
+      <h3 style="color:#93c5fd; margin-top:1.5rem;">Estadísticas Principales Recomendadas</h3>
+      <table class="stats-table">
+        <thead>
+          <tr>
+            <th>Pieza</th>
+            <th>Estadística Principal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Reloj (Arenas)</td><td>ATQ% (o EM en Vaporizado)</td></tr>
+          <tr><td>Cáliz</td><td>Bono Daño Pyro%</td></tr>
+          <tr><td>Corona (Tiara)</td><td>Prob. Crítica% / Daño Crítico%</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="color:#93c5fd; margin-top:1.2rem;">Prioridad de Subestadísticas</h3>
+      <ul style="color:#cbd5e1; font-size:0.9rem; line-height:1.6;">
+        <li>1. Prob. Crítica / Daño Crítico (1:2)</li><li>2. ATQ%</li><li>3. Maestría Elemental (80 – 160 EM)</li><li>4. Recarga de Energía (100% – 120%)</li>
+      </ul>
+      <p style="font-size:0.85rem; color:#94a3b8;"><strong>Prioridad de Talentos:</strong> Ataque Normal (NA) >>> Habilidad Elemental (E) = Definitiva (Q)</p>
+    </section>
+
+    <section class="guide-block">
+      <h2>Equipos y Sinergias Meta</h2>
+      <p class="guide-block-desc">Composiciones óptimas para el Abismo y desafíos de alto nivel:</p>
+      
+        <div class="team-card">
+          <h4>Arlecchino Vape</h4>
+          <p class="team-members">Arlecchino • Yelan • Bennett • Kazuha</p>
+          
+        </div>
+        <div class="team-card">
+          <h4>Arlecchino Overload</h4>
+          <p class="team-members">Arlecchino • Chevreuse • Fischl • Bennett</p>
+          
+        </div>
+        <div class="team-card">
+          <h4>Arlecchino Mono Pyro</h4>
+          <p class="team-members">Arlecchino • Bennett • Xiangling • Kazuha</p>
+          
+        </div>
+    </section>
+
+    
+        <section class="guide-block">
+          <h2>Materiales de Ascensión (Nivel 1 al 90)</h2>
+          <p class="guide-block-desc">Recursos totales requeridos para desbloquear las 6 fases de ascensión de Arlecchino:</p>
+          <div class="mat-grid">
+            <div class="mat-chip" title="Rosarcoíris">
+              <img src='https://gi.yatta.moe/assets/UI/UI_ItemIcon_101236.png' alt='Rosarcoíris' loading='lazy' />
+              <div class="mat-info">
+                <span class="mat-name">Rosarcoíris</span>
+                <span class="mat-qty">x168</span>
+              </div>
+            </div>
+            <div class="mat-chip" title="Pedacito de ágata agnidus">
+              <img src='https://gi.yatta.moe/assets/UI/UI_ItemIcon_104111.png' alt='Pedacito de ágata agnidus' loading='lazy' />
+              <div class="mat-info">
+                <span class="mat-name">Pedacito de ágata agnidus</span>
+                <span class="mat-qty">x1</span>
+              </div>
+            </div>
+            <div class="mat-chip" title="Insignia del recluta">
+              <img src='https://gi.yatta.moe/assets/UI/UI_ItemIcon_112032.png' alt='Insignia del recluta' loading='lazy' />
+              <div class="mat-info">
+                <span class="mat-name">Insignia del recluta</span>
+                <span class="mat-qty">x18</span>
+              </div>
+            </div>
+            <div class="mat-chip" title="Fragmento de ágata agnidus">
+              <img src='https://gi.yatta.moe/assets/UI/UI_ItemIcon_104112.png' alt='Fragmento de ágata agnidus' loading='lazy' />
+              <div class="mat-info">
+                <span class="mat-name">Fragmento de ágata agnidus</span>
+                <span class="mat-qty">x9</span>
+              </div>
+            </div>
+            <div class="mat-chip" title="Fragmento de melodía dorada">
+              <img src='https://gi.yatta.moe/assets/UI/UI_ItemIcon_113059.png' alt='Fragmento de melodía dorada' loading='lazy' />
+              <div class="mat-info">
+                <span class="mat-name">Fragmento de melodía dorada</span>
+                <span class="mat-qty">x46</span>
+              </div>
+            </div>
+            <div class="mat-chip" title="Insignia del sargento">
+              <img src='https://gi.yatta.moe/assets/UI/UI_ItemIcon_112033.png' alt='Insignia del sargento' loading='lazy' />
+              <div class="mat-info">
+                <span class="mat-name">Insignia del sargento</span>
+                <span class="mat-qty">x30</span>
+              </div>
+            </div>
+            <div class="mat-chip" title="Trozo de ágata agnidus">
+              <img src='https://gi.yatta.moe/assets/UI/UI_ItemIcon_104113.png' alt='Trozo de ágata agnidus' loading='lazy' />
+              <div class="mat-info">
+                <span class="mat-name">Trozo de ágata agnidus</span>
+                <span class="mat-qty">x9</span>
+              </div>
+            </div>
+            <div class="mat-chip" title="Insignia del oficial">
+              <img src='https://gi.yatta.moe/assets/UI/UI_ItemIcon_112034.png' alt='Insignia del oficial' loading='lazy' />
+              <div class="mat-info">
+                <span class="mat-name">Insignia del oficial</span>
+                <span class="mat-qty">x36</span>
+              </div>
+            </div>
+            <div class="mat-chip" title="Ágata agnidus">
+              <img src='https://gi.yatta.moe/assets/UI/UI_ItemIcon_104114.png' alt='Ágata agnidus' loading='lazy' />
+              <div class="mat-info">
+                <span class="mat-name">Ágata agnidus</span>
+                <span class="mat-qty">x6</span>
+              </div>
+            </div></div>
+        </section>
+
+    <div class="cta-banner">
+      <h3>¿Planeas subir a Arlecchino?</h3>
+      <p>Cruza los materiales que ya tienes en tu mochila con los requisitos de Arlecchino y calcula el ahorro exacto en la mesa de síntesis.</p>
+      <a href="/#planner" class="cta-btn">Abrir Arlecchino en el Planificador de Spirifly</a>
+    </div>
+
+  </main>
+
+  <footer class="info-footer">
+    <nav class="info-footer-links" aria-label="Privacidad y condiciones">
+      <a href="../privacy.html">Privacidad</a>
+      <a href="../cookies.html">Cookies</a>
+      <a href="../terms.html">Términos de uso</a>
+    </nav>
+    <p>© 2026 Spirifly. Proyecto independiente, sin afiliación ni respaldo de HoYoverse. Las marcas y recursos de Genshin Impact pertenecen a sus respectivos titulares.</p>
+  </footer>
+</body>
+</html>
