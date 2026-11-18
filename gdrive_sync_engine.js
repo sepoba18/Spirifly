@@ -560,7 +560,7 @@
   // --- TOAST GLOBAL FLOTANTE PARA FEEDBACK INMEDIATO AL USUARIO ---
   function showDriveToast(msg, type = "info") {
     if (typeof showSynthToast === "function") {
-      try { showSynthToast(msg); } catch (_) {}
+      try { showSynthToast(escapeHtmlStr(String(msg || ""))); } catch (_) {}
     }
     if (typeof document === "undefined" || !document.body) return;
     try {
@@ -575,7 +575,9 @@
         : type === "warning" || type === "error"
         ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>'
         : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>';
-      toast.innerHTML = `<span class="global-toast-icon">${icon}</span><span class="global-toast-msg">${msg}</span>`;
+      toast.innerHTML = `<span class="global-toast-icon">${icon}</span><span class="global-toast-msg"></span>`;
+      const toastMsgEl = toast.querySelector(".global-toast-msg");
+      if (toastMsgEl) toastMsgEl.textContent = String(msg || "");
       toast.className = `spirifly-global-toast visible toast-${type}`;
       clearTimeout(showDriveToast._timer);
       showDriveToast._timer = setTimeout(() => {
@@ -603,7 +605,7 @@
             GoogleDriveSyncEngine.setStatus('auth');
             console.error("Error en autorización de Google:", tokenResponse.error);
             if (typeof showSynthToast === "function") {
-              showSynthToast("⚠️ Error en autorización de Google: " + (tokenResponse.error_description || tokenResponse.error));
+              showSynthToast("⚠️ Error en autorización de Google: " + escapeHtmlStr(tokenResponse.error_description || tokenResponse.error || ""));
             }
             return;
           }
@@ -1081,7 +1083,7 @@
         return payload;
       } catch (error) {
         this.setStatus(error.status === 401 ? 'auth' : 'error', error.message);
-        if (typeof showSynthToast === 'function') showSynthToast(`No se completó la sincronización: ${error.message}`);
+        if (typeof showSynthToast === 'function') showSynthToast(`No se completó la sincronización: ${escapeHtmlStr(error.message || "")}`);
         throw error;
       } finally {
         this._uploading = false;
@@ -1195,7 +1197,7 @@
       } catch (error) {
         this.setStatus(error.status === 401 ? 'auth' : 'error', error.message);
         if (error.status === 401 && isUserTriggered) connectGoogleDrive();
-        if (typeof showSynthToast === 'function') showSynthToast(error.message);
+        if (typeof showSynthToast === 'function') showSynthToast(escapeHtmlStr(error.message || ""));
         throw error;
       }
     }

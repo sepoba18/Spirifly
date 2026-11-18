@@ -1,9 +1,11 @@
 const fs = require('node:fs');
 const vm = require('node:vm');
 const assert = require('node:assert/strict');
+const path = require('node:path');
+const root = path.resolve(__dirname, '..');
 const context = vm.createContext({ state: {lang:'es'}, escapeHtml: value => String(value) });
-for (const file of ['assets/data/simulator-original.js','data_builds.js']) vm.runInContext(fs.readFileSync(file,'utf8'),context);
-const app = fs.readFileSync('app.js','utf8');
+for (const file of ['assets/data/simulator-original.js','data_builds.js']) vm.runInContext(fs.readFileSync(path.join(root, file),'utf8'),context);
+const app = fs.readFileSync(path.join(root, 'app.js'),'utf8');
 vm.runInContext(app.slice(app.indexOf('const BASE_STATS_I18N'),app.indexOf('function renderTheorycraft()')),context);
 vm.runInContext(`
 for (const build of CHARACTER_BUILDS_DB) {

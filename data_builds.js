@@ -244,7 +244,7 @@ const CHARACTER_BUILDS_DB = [
         "name": "Reflejo de las Tinieblas",
         "rarity": 5,
         "type": "Opción por rol",
-        "note": "Stat-sticks de Crítico y ATQ masivos.",
+        "note": "+44.1% Daño Crítico y hasta +40% Bono Daño Elemental en ataques normales.",
         "weaponId": "11509",
         "reviewedNote": false
       },
@@ -260,7 +260,7 @@ const CHARACTER_BUILDS_DB = [
         "name": "Diluvio Florífero",
         "rarity": 4,
         "type": "Opción por rol",
-        "note": "Forja y evento gratuitos con +165 de Maestría Elemental y daño elemental.",
+        "note": "Arma de evento gratuita con +165 ME y +32% daño sobre el objetivo marcado.",
         "weaponId": "11422",
         "reviewedNote": false
       },
@@ -2536,7 +2536,7 @@ const CHARACTER_BUILDS_DB = [
         "name": "Cortador de Jade Primordial",
         "rarity": 5,
         "type": "Opción por rol",
-        "note": "Stat-sticks excepcionales de Crítico.",
+        "note": "+44.1% Prob. Crítica pura que facilita balancear alto Daño Crítico en artefactos.",
         "weaponId": "11505",
         "reviewedNote": false
       },
@@ -2560,7 +2560,7 @@ const CHARACTER_BUILDS_DB = [
         "name": "Espada de Madera",
         "rarity": 4,
         "type": "Opción por rol",
-        "note": "Opciones F2P funcionales.",
+        "note": "Forja de Sumeru con Recarga de Energía y hoja de Maestría Elemental.",
         "weaponId": "11417",
         "reviewedNote": false
       }
@@ -3381,7 +3381,7 @@ const CHARACTER_BUILDS_DB = [
         "name": "Aqua Simulacra",
         "rarity": 5,
         "type": "Opción por rol",
-        "note": "Stat-sticks de Crítico y aumentos directos de daño elemental para Oz.",
+        "note": "+88.2% Daño Crítico y +20% de daño universal incluso fuera del campo con Oz.",
         "weaponId": "15508",
         "reviewedNote": false
       },
@@ -3405,7 +3405,7 @@ const CHARACTER_BUILDS_DB = [
         "name": "Vals Nocturno",
         "rarity": 4,
         "type": "Opción por rol",
-        "note": "Aumentan el daño mientras está fuera de campo.",
+        "note": "Potencia el daño de Habilidad Elemental tras golpes normales o en builds híbridas.",
         "weaponId": "15412",
         "reviewedNote": false
       },
@@ -4914,7 +4914,7 @@ const CHARACTER_BUILDS_DB = [
         "name": "Diluvio Florífero",
         "rarity": 4,
         "type": "Opción por rol",
-        "note": "Forja accesible que aporta +165 de Maestría Elemental pura.",
+        "note": "Espada de evento gratuita con +165 ME ideal para amplificar Torbellino.",
         "weaponId": "11422",
         "reviewedNote": false
       }
@@ -7129,7 +7129,7 @@ const CHARACTER_BUILDS_DB = [
         "name": "Ojo del Juramento",
         "rarity": 4,
         "type": "Opción por rol",
-        "note": "Vagabundo comparte ATQ según su EM; Sinfonía otorga Daño Crítico alto.",
+        "note": "Aporta ATQ% y +48% de Recarga de Energía tras usar su Habilidad Elemental.",
         "weaponId": "14415",
         "reviewedNote": false
       }
@@ -7346,7 +7346,7 @@ const CHARACTER_BUILDS_DB = [
         "name": "Espadón Cornirrojo",
         "rarity": 5,
         "type": "Opción por rol",
-        "note": "Stat-sticks descomunales de ATQ% o Daño Crítico.",
+        "note": "+88.2% Daño Crítico puro para maximizar explosiones de Fragmentos.",
         "weaponId": "12510",
         "reviewedNote": false
       },
@@ -8198,7 +8198,7 @@ const CHARACTER_BUILDS_DB = [
         "name": "Báculo de Homa",
         "rarity": 5,
         "type": "Opción por rol",
-        "note": "Stat-sticks de Crítico descomunales.",
+        "note": "+66.2% Daño Crítico y bono adicional de ATQ escalado con Vida Máxima.",
         "weaponId": "13501",
         "reviewedNote": false
       },
@@ -10290,7 +10290,7 @@ const CHARACTER_BUILDS_DB = [
         "name": "Báculo de Homa",
         "rarity": 5,
         "type": "Opción por rol",
-        "note": "Arenas Escarlatas convierte su EM en ATQ masivo.",
+        "note": "+66.2% Daño Crítico y sólido ATQ adicional para maximizar Pyronado.",
         "weaponId": "13501",
         "reviewedNote": false
       },
@@ -11572,7 +11572,7 @@ const CHARACTER_BUILDS_DB = [
         "name": "Estrella Invernal",
         "rarity": 5,
         "type": "Opción por rol",
-        "note": "Elegía aporta gran recarga y buff de ATQ y EM a todo el equipo.",
+        "note": "+33.1% Prob. Crítica y fuerte aumento de daño en Habilidad Elemental y Definitiva.",
         "weaponId": "15507",
         "reviewedNote": false
       },

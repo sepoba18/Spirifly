@@ -4,7 +4,21 @@
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**"
+      "**/node_modules/**",
+      "tests/**",
+      "research/**",
+      "01_Actualizaciones/**",
+      "scripts/**",
+      "herramientas_parches/**",
+      "NVIDIA Corporation/**",
+      "video_temp*/**",
+      "*.ps1",
+      "*.py",
+      "*.mp3",
+      "*.mp4",
+      "*.wav",
+      "*.tmp",
+      "*.bak*"
     ]
   }
 }

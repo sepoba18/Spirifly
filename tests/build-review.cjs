@@ -1,7 +1,8 @@
-const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'..');
 const context=vm.createContext({console});
 context.baselineBuildIds=JSON.parse(fs.readFileSync(require('node:path').join(__dirname,'fixtures/baseline-build-ids.json'),'utf8'));
-for(const file of ['data_real_genshin.js','assets/data/simulator-original.js','data_builds.js','i18n_dictionary.js'])vm.runInContext(fs.readFileSync(file,'utf8'),context);
+for(const file of ['data_real_genshin.js','assets/data/simulator-original.js','data_builds.js','i18n_dictionary.js'])vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),context);
 vm.runInContext(`
 if(CHARACTER_BUILDS_DB.length<baselineBuildIds.length||baselineBuildIds.some(id=>!CHARACTER_BUILDS_DB.some(c=>c.id===id)))throw Error('Cobertura del catálogo: se perdio una ficha existente');
 if(new Set(CHARACTER_BUILDS_DB.map(c=>c.id)).size!==CHARACTER_BUILDS_DB.length)throw Error('IDs de builds duplicados');
@@ -16,7 +17,7 @@ for(const [name,en] of [['Semblante de la Luna Carmesí',"Crimson Moon's Semblan
  assert.equal(context.getWeaponTranslatedName(name,'es'),name);
  assert.equal(context.getWeaponTranslatedName(name,'en'),en);
 }
-const app=fs.readFileSync('app.js','utf8');
+const app=fs.readFileSync(path.join(root,'app.js'),'utf8');
 vm.runInContext(app.slice(app.indexOf('function getWeaponDisplayData('),app.indexOf('// Diccionario Oficial y Verificado de Sets')),context);
 context.getWeaponFallbackIcon=()=> 'fallback';
 const actual=context.getWeaponDisplayData('Semblante de la Luna Carmesí',5,'Polearm','13512');

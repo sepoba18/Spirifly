@@ -1334,13 +1334,20 @@ function applyStaticTranslations(t) {
     if (allPs.length > 1) allPs[allPs.length - 1].textContent = ex.pmRegionNote;
   }
 
-  const ftLinks = document.querySelectorAll(".site-footer .footer-links a");
-  if (ftLinks.length >= 5) {
-    ftLinks[0].textContent = ex.ftPrivacy;
-    ftLinks[1].textContent = ex.ftTerms;
-    ftLinks[2].textContent = ex.ftCookies;
-    ftLinks[3].textContent = ex.ftDonate;
-    ftLinks[4].textContent = ex.ftMap;
+  const ftPriv = document.querySelector('.site-footer .footer-links a[href="privacy.html"]');
+  if (ftPriv) ftPriv.textContent = ex.ftPrivacy;
+  const ftTerms = document.querySelector('.site-footer .footer-links a[href="terms.html"]');
+  if (ftTerms) ftTerms.textContent = ex.ftTerms;
+  const ftCookies = document.querySelector('.site-footer .footer-links a[href="cookies.html"]');
+  if (ftCookies) ftCookies.textContent = ex.ftCookies;
+  const ftDonate = document.getElementById("footerDonateLink");
+  if (ftDonate) ftDonate.textContent = ex.ftDonate;
+  const ftMap = document.querySelector('.site-footer .footer-links a[href*="hoyolab.com"]');
+  if (ftMap) ftMap.textContent = ex.ftMap;
+  const ftGuides = document.querySelector('.site-footer .footer-links a[href="/personajes/"]');
+  if (ftGuides) {
+    const guidesMap = { es: "Guías y Builds Meta 7.2", en: "Meta 7.2 Guides & Builds", pt: "Guias e Builds Meta 7.2", ja: "Meta 7.2 ビルドガイド", ko: "메타 7.2 캐릭터 가이드" };
+    ftGuides.textContent = guidesMap[state.lang] || guidesMap.es;
   }
 }
 
@@ -3687,7 +3694,7 @@ function loadBuildIntoSimulator(charKey) {
   loadCharacterRecommendedStats(charKey);
   calculateFullCharacterTheorycraft();
   document.getElementById("sec-theory").scrollIntoView({ behavior: "smooth" });
-  showSynthToast(`¡Cargadas estadísticas meta de ${charKey} en el Simulador de Daño!`);
+  showSynthToast(`¡Cargadas estadísticas meta de ${escapeHtml(charKey)} en el Simulador de Daño!`);
 }
 
 
@@ -4042,7 +4049,7 @@ async function renderWishesDashboard() {
   if (accSelect) {
     const accounts = WishEngine.getStoredAccounts();
     if (accounts.length === 0) accounts.push(state.activeWishUid || "default");
-    accSelect.innerHTML = accounts.map((uid) => `<option value="${uid}" ${uid === state.activeWishUid ? "selected" : ""}>UID: ${uid}</option>`).join("");
+    accSelect.innerHTML = accounts.map((uid) => `<option value="${escapeHtml(uid)}" ${uid === state.activeWishUid ? "selected" : ""}>UID: ${escapeHtml(uid)}</option>`).join("");
   }
 
   // 4. Actualizar subtítulos en las 4 pestañas de banner
@@ -4618,7 +4625,9 @@ async function handleLoadRecentWishes() {
       throw new Error("El archivo 'deseos_recientes.json' no contiene tiradas.");
     }
 
-    let fileUid = importedWishes[0].uid || state.activeWishUid || "default";
+    let rawFileUid = importedWishes[0].uid;
+    let fileUid = (rawFileUid && rawFileUid !== "Spirifly_User") ? String(rawFileUid) : (state.activeWishUid || "default");
+    const existingForUid = (fileUid && fileUid !== "default") ? ((await WishEngine.loadWishesFromStorage(fileUid)) || []) : [];
     state.activeWishUid = fileUid;
     WishEngine.setActiveAccountUid(fileUid);
     if (typeof AccountManager !== "undefined" && fileUid !== "default") {
@@ -4633,8 +4642,8 @@ async function handleLoadRecentWishes() {
       createdAt: new Date().toISOString()
     });
 
-    const isOnlySeed = state.rawWishes.length > 0 && state.rawWishes.every((w) => w.id && w.id.startsWith("seed_"));
-    state.rawWishes = isOnlySeed ? importedWishes : WishEngine.mergeWishes(state.rawWishes, importedWishes);
+    const isOnlySeed = existingForUid.length > 0 && existingForUid.every((w) => w.id && w.id.startsWith("seed_"));
+    state.rawWishes = isOnlySeed ? importedWishes : WishEngine.mergeWishes(existingForUid, importedWishes);
     await WishEngine.saveWishesToStorage(fileUid, state.rawWishes);
 
     if (progressFill) progressFill.style.width = "100%";
@@ -4642,7 +4651,7 @@ async function handleLoadRecentWishes() {
 
     if (msgEl) {
       msgEl.style.color = "#4ade80";
-      msgEl.innerHTML = `<img src="assets/ui/check.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> ¡${importedWishes.length.toLocaleString()} deseos del UID ${fileUid} cargados con éxito! Pity y estadísticas actualizados.`;
+      msgEl.innerHTML = `<img src="assets/ui/check.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> ¡${importedWishes.length.toLocaleString()} deseos del UID ${escapeHtml(fileUid)} cargados con éxito! Pity y estadísticas actualizados.`;
     }
 
     setTimeout(() => { if (progressWrapper) progressWrapper.style.display = "none"; }, 1200);
@@ -4655,7 +4664,7 @@ async function handleLoadRecentWishes() {
     if (progressWrapper) progressWrapper.style.display = "none";
     if (msgEl) {
       msgEl.style.color = "#f87171";
-      msgEl.innerHTML = `<img src="assets/ui/sparkle.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> ${err.message}<br><span style="font-size:0.75rem;color:#94a3b8;">Si abres la web directamente como archivo local (file://), arrastra <strong>deseos_recientes.json</strong> o <strong>deseos_genshin_backup.json</strong> desde tu Escritorio a la pestaña de Archivos.</span>`;
+      msgEl.innerHTML = `<img src="assets/ui/sparkle.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> ${escapeHtml(err.message)}<br><span style="font-size:0.75rem;color:#94a3b8;">Si abres la web directamente como archivo local (file://), arrastra <strong>deseos_recientes.json</strong> o <strong>deseos_genshin_backup.json</strong> desde tu Escritorio a la pestaña de Archivos.</span>`;
     }
   }
 }
@@ -4697,9 +4706,14 @@ async function handleWishUrlImport() {
         throw new Error("No se encontraron tiradas válidas en los datos pegados.");
       }
 
-      const activeUid = importedWishes[0].uid || state.activeWishUid || "";
+      const rawPasteUid = importedWishes[0].uid;
+      const activeUid = (rawPasteUid && rawPasteUid !== "Spirifly_User") ? String(rawPasteUid) : (state.activeWishUid || "default");
+      const existingForUid = (activeUid && activeUid !== "default") ? ((await WishEngine.loadWishesFromStorage(activeUid)) || []) : [];
       state.activeWishUid = activeUid;
       WishEngine.setActiveAccountUid(activeUid);
+      if (typeof AccountManager !== "undefined" && activeUid !== "default") {
+        AccountManager.setAccountUid(AccountManager.getActiveAccountId(), activeUid);
+      }
       WishEngine.saveProfile({
         uid: activeUid,
         name: "UID: " + activeUid,
@@ -4707,10 +4721,10 @@ async function handleWishUrlImport() {
         createdAt: new Date().toISOString()
       });
 
-      const isOnlySeed = state.rawWishes.length > 0 && state.rawWishes.every((w) => w.id && w.id.startsWith("seed_"));
+      const isOnlySeed = existingForUid.length > 0 && existingForUid.every((w) => w.id && w.id.startsWith("seed_"));
       const mergeResult = isOnlySeed
         ? { mergedWishes: importedWishes, addedCount: importedWishes.length, duplicatesCount: 0, totalCount: importedWishes.length }
-        : WishEngine.mergeWishesDetailed(state.rawWishes, importedWishes);
+        : WishEngine.mergeWishesDetailed(existingForUid, importedWishes);
 
       state.rawWishes = mergeResult.mergedWishes;
       await WishEngine.saveWishesToStorage(activeUid, state.rawWishes);
@@ -4725,9 +4739,9 @@ async function handleWishUrlImport() {
       if (msgEl) {
         msgEl.style.color = "#4ade80";
         if (mergeResult.addedCount > 0) {
-          msgEl.innerHTML = `<img src="assets/ui/check.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> ¡<strong>${mergeResult.addedCount.toLocaleString()}</strong> tiradas nuevas agregadas al historial!<br><span style="font-size:0.8rem;color:#cbd5e1;">• ${mergeResult.duplicatesCount.toLocaleString()} tiradas ya existían previamente y se mantuvieron sin duplicar.<br>• Total en tu cuenta: <strong>${mergeResult.totalCount.toLocaleString()} tiradas</strong> (UID ${activeUid}).</span>`;
+          msgEl.innerHTML = `<img src="assets/ui/check.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> ¡<strong>${mergeResult.addedCount.toLocaleString()}</strong> tiradas nuevas agregadas al historial!<br><span style="font-size:0.8rem;color:#cbd5e1;">• ${mergeResult.duplicatesCount.toLocaleString()} tiradas ya existían previamente y se mantuvieron sin duplicar.<br>• Total en tu cuenta: <strong>${mergeResult.totalCount.toLocaleString()} tiradas</strong> (UID ${escapeHtml(activeUid)}).</span>`;
         } else {
-          msgEl.innerHTML = `<img src="assets/ui/check.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> Tu historial ya estaba al día con HoYoverse.<br><span style="font-size:0.8rem;color:#cbd5e1;">Se verificaron <strong>${importedWishes.length.toLocaleString()}</strong> tiradas y no hubo registros nuevos.<br>• Historial total conservado: <strong>${mergeResult.totalCount.toLocaleString()} tiradas</strong> (UID ${activeUid}).</span>`;
+          msgEl.innerHTML = `<img src="assets/ui/check.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> Tu historial ya estaba al día con HoYoverse.<br><span style="font-size:0.8rem;color:#cbd5e1;">Se verificaron <strong>${importedWishes.length.toLocaleString()}</strong> tiradas y no hubo registros nuevos.<br>• Historial total conservado: <strong>${mergeResult.totalCount.toLocaleString()} tiradas</strong> (UID ${escapeHtml(activeUid)}).</span>`;
         }
       }
 
@@ -4861,6 +4875,9 @@ async function handleWishUrlImport() {
     }
 
     const activeUid = detectedUid || state.activeWishUid || "default";
+    const existingForUid = (typeof WishEngine !== "undefined" && activeUid && activeUid !== "default")
+      ? ((await WishEngine.loadWishesFromStorage(activeUid)) || [])
+      : [];
     state.activeWishUid = activeUid;
     if (typeof AccountManager !== "undefined" && activeUid !== "default") {
       AccountManager.setAccountUid(AccountManager.getActiveAccountId(), activeUid);
@@ -4888,10 +4905,10 @@ async function handleWishUrlImport() {
       id: String(w.id || "")
     }));
 
-    const isOnlySeed = state.rawWishes.length > 0 && state.rawWishes.every((w) => w.id && w.id.startsWith("seed_"));
+    const isOnlySeed = existingForUid.length > 0 && existingForUid.every((w) => w.id && w.id.startsWith("seed_"));
     const mergeResult = isOnlySeed
       ? { mergedWishes: normalizedWishes, addedCount: normalizedWishes.length, duplicatesCount: 0, totalCount: normalizedWishes.length }
-      : WishEngine.mergeWishesDetailed(state.rawWishes, normalizedWishes);
+      : WishEngine.mergeWishesDetailed(existingForUid, normalizedWishes);
 
     state.rawWishes = mergeResult.mergedWishes;
     await WishEngine.saveWishesToStorage(activeUid, state.rawWishes);
@@ -4906,9 +4923,9 @@ async function handleWishUrlImport() {
     if (msgEl) {
       msgEl.style.color = "#4ade80";
       if (mergeResult.addedCount > 0) {
-        msgEl.innerHTML = `<img src="assets/ui/check.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> ¡<strong>${mergeResult.addedCount.toLocaleString()}</strong> tiradas nuevas agregadas al historial!<br><span style="font-size:0.8rem;color:#cbd5e1;">• ${mergeResult.duplicatesCount.toLocaleString()} tiradas ya existían previamente y se mantuvieron sin duplicar.<br>• Total en tu cuenta: <strong>${mergeResult.totalCount.toLocaleString()} tiradas</strong> (UID ${activeUid}).</span>`;
+        msgEl.innerHTML = `<img src="assets/ui/check.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> ¡<strong>${mergeResult.addedCount.toLocaleString()}</strong> tiradas nuevas agregadas al historial!<br><span style="font-size:0.8rem;color:#cbd5e1;">• ${mergeResult.duplicatesCount.toLocaleString()} tiradas ya existían previamente y se mantuvieron sin duplicar.<br>• Total en tu cuenta: <strong>${mergeResult.totalCount.toLocaleString()} tiradas</strong> (UID ${escapeHtml(activeUid)}).</span>`;
       } else {
-        msgEl.innerHTML = `<img src="assets/ui/check.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> Tu historial ya estaba al día con HoYoverse.<br><span style="font-size:0.8rem;color:#cbd5e1;">Se verificaron <strong>${downloadedWishes.length.toLocaleString()}</strong> tiradas y no hubo registros nuevos que duplicar.<br>• Historial total conservado: <strong>${mergeResult.totalCount.toLocaleString()} tiradas</strong> (UID ${activeUid}).</span>`;
+        msgEl.innerHTML = `<img src="assets/ui/check.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> Tu historial ya estaba al día con HoYoverse.<br><span style="font-size:0.8rem;color:#cbd5e1;">Se verificaron <strong>${downloadedWishes.length.toLocaleString()}</strong> tiradas y no hubo registros nuevos que duplicar.<br>• Historial total conservado: <strong>${mergeResult.totalCount.toLocaleString()} tiradas</strong> (UID ${escapeHtml(activeUid)}).</span>`;
       }
     }
 
@@ -4968,7 +4985,7 @@ async function handleDevClearWishes() {
   const msgEl = document.getElementById("importStatusMsg");
   if (msgEl) {
     msgEl.style.color = "#fbbf24";
-    msgEl.innerHTML = `<img src="assets/ui/trash.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> Deseos del UID ${activeUid} borrados con éxito. El historial está vacío para tus pruebas.`;
+    msgEl.innerHTML = `<img src="assets/ui/trash.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> Deseos del UID ${escapeHtml(activeUid)} borrados con éxito. El historial está vacío para tus pruebas.`;
   }
   
   const urlInput = document.getElementById("wishUrlInput");
@@ -5023,16 +5040,22 @@ function processWishFile(file) {
         throw new Error("No se encontraron tiradas válidas en el archivo seleccionado.");
       }
 
-      let fileUid = importedWishes[0].uid || state.activeWishUid;
-      if (fileUid) state.activeWishUid = fileUid;
+      let rawFileUid = importedWishes[0].uid;
+      let fileUid = (rawFileUid && rawFileUid !== "Spirifly_User") ? String(rawFileUid) : (state.activeWishUid || "default");
+      const existingForUid = (fileUid && fileUid !== "default") ? ((await WishEngine.loadWishesFromStorage(fileUid)) || []) : [];
+      state.activeWishUid = fileUid;
+      WishEngine.setActiveAccountUid(fileUid);
+      if (typeof AccountManager !== "undefined" && fileUid !== "default") {
+        AccountManager.setAccountUid(AccountManager.getActiveAccountId(), fileUid);
+      }
 
-      const isOnlySeed = state.rawWishes.length > 0 && state.rawWishes.every((w) => w.id && w.id.startsWith("seed_"));
+      const isOnlySeed = existingForUid.length > 0 && existingForUid.every((w) => w.id && w.id.startsWith("seed_"));
       const mergeResult = isOnlySeed
         ? { mergedWishes: importedWishes, addedCount: importedWishes.length, duplicatesCount: 0, totalCount: importedWishes.length }
-        : WishEngine.mergeWishesDetailed(state.rawWishes, importedWishes);
+        : WishEngine.mergeWishesDetailed(existingForUid, importedWishes);
 
       state.rawWishes = mergeResult.mergedWishes;
-      await WishEngine.saveWishesToStorage(state.activeWishUid, state.rawWishes);
+      await WishEngine.saveWishesToStorage(fileUid, state.rawWishes);
 
       if (msgEl) {
         msgEl.style.color = "#4ade80";
@@ -5088,16 +5111,22 @@ async function handlePasteCsvImport() {
       throw new Error("No se detectaron columnas de deseos válidas (se requiere encabezado Type,Name,Time...).");
     }
 
-    let fileUid = importedWishes[0].uid || state.activeWishUid;
-    if (fileUid) state.activeWishUid = fileUid;
+    let rawCsvUid = importedWishes[0].uid;
+    let fileUid = (rawCsvUid && rawCsvUid !== "Spirifly_User") ? String(rawCsvUid) : (state.activeWishUid || "default");
+    const existingForUid = (fileUid && fileUid !== "default") ? ((await WishEngine.loadWishesFromStorage(fileUid)) || []) : [];
+    state.activeWishUid = fileUid;
+    WishEngine.setActiveAccountUid(fileUid);
+    if (typeof AccountManager !== "undefined" && fileUid !== "default") {
+      AccountManager.setAccountUid(AccountManager.getActiveAccountId(), fileUid);
+    }
 
-    const isOnlySeed = state.rawWishes.length > 0 && state.rawWishes.every((w) => w.id && w.id.startsWith("seed_"));
+    const isOnlySeed = existingForUid.length > 0 && existingForUid.every((w) => w.id && w.id.startsWith("seed_"));
     const mergeResult = isOnlySeed
       ? { mergedWishes: importedWishes, addedCount: importedWishes.length, duplicatesCount: 0, totalCount: importedWishes.length }
-      : WishEngine.mergeWishesDetailed(state.rawWishes, importedWishes);
+      : WishEngine.mergeWishesDetailed(existingForUid, importedWishes);
 
     state.rawWishes = mergeResult.mergedWishes;
-    await WishEngine.saveWishesToStorage(state.activeWishUid, state.rawWishes);
+    await WishEngine.saveWishesToStorage(fileUid, state.rawWishes);
 
     if (msgEl) {
       msgEl.style.color = "#4ade80";
@@ -5160,7 +5189,7 @@ async function handleAddManual5Star() {
   for (let p = 1; p < pity; p++) {
     newWishes.push({
       id: "man_" + Date.now() + "_" + p,
-      uid: state.activeWishUid || "700123456",
+      uid: state.activeWishUid || "default",
       gacha_type: gachaType,
       item_id: "",
       count: "1",
@@ -5176,7 +5205,7 @@ async function handleAddManual5Star() {
   const isGuar = condition === "guaranteed";
   newWishes.push({
     id: "man_5star_" + Date.now(),
-    uid: state.activeWishUid || "700123456",
+    uid: state.activeWishUid || "default",
     gacha_type: gachaType,
     item_id: "",
     count: "1",

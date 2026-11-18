@@ -38,3 +38,5 @@ apply_styles_*.py
 screenshot_*.png
 video_temp/
 video_temp_b/
+NVIDIA Corporation/
+*.tmp

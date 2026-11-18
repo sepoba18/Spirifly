@@ -623,7 +623,7 @@
         const id = 'pm_' + gacha + '_' + cleanTime + '_' + rollNum + '_' + idx;
 
         rawList.push({
-          uid: 'Spirifly_User',
+          uid: '',
           gacha_type: gacha,
           item_id: '',
           count: '1',
@@ -721,7 +721,7 @@
       const id = 'csv_' + gacha + '_' + cleanTime + '_' + rollVal + '_' + i;
 
       rawList.push({
-        uid: 'Spirifly_User',
+        uid: '',
         gacha_type: gacha,
         item_id: '',
         count: '1',
