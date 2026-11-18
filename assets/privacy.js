@@ -87,7 +87,7 @@
     panel.setAttribute("aria-labelledby", "analytics-consent-title");
     panel.innerHTML = '<div><h2 id="analytics-consent-title">Analítica opcional</h2>' +
       '<p>¿Permites Google Analytics para medir el uso de Spirifly? Puedes rechazarlo y seguir usando todas las herramientas. ' +
-      'Esta elección no autoriza publicidad personalizada. <a href="/privacy.html">Privacidad</a> · <a href="/cookies.html">Cookies</a></p></div>' +
+      'Esta elección no autoriza publicidad personalizada. <a href="/privacy">Privacidad</a> · <a href="/cookies">Cookies</a></p></div>' +
       '<div class="privacy-actions"><button type="button" data-analytics-reject>Rechazar analítica</button>' +
       '<button type="button" data-analytics-accept>Permitir analítica</button></div>';
     document.body.appendChild(panel);

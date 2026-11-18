@@ -1334,11 +1334,11 @@ function applyStaticTranslations(t) {
     if (allPs.length > 1) allPs[allPs.length - 1].textContent = ex.pmRegionNote;
   }
 
-  const ftPriv = document.querySelector('.site-footer .footer-links a[href="privacy.html"]');
+  const ftPriv = document.querySelector('.site-footer .footer-links a[href="/privacy"], .site-footer .footer-links a[href="privacy.html"]');
   if (ftPriv) ftPriv.textContent = ex.ftPrivacy;
-  const ftTerms = document.querySelector('.site-footer .footer-links a[href="terms.html"]');
+  const ftTerms = document.querySelector('.site-footer .footer-links a[href="/terms"], .site-footer .footer-links a[href="terms.html"]');
   if (ftTerms) ftTerms.textContent = ex.ftTerms;
-  const ftCookies = document.querySelector('.site-footer .footer-links a[href="cookies.html"]');
+  const ftCookies = document.querySelector('.site-footer .footer-links a[href="/cookies"], .site-footer .footer-links a[href="cookies.html"]');
   if (ftCookies) ftCookies.textContent = ex.ftCookies;
   const ftDonate = document.getElementById("footerDonateLink");
   if (ftDonate) ftDonate.textContent = ex.ftDonate;
