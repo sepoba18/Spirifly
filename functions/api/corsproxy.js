@@ -10,7 +10,7 @@ function resolveAllowedOrigin(origin) {
   try {
     const u = new URL(origin);
     const h = u.hostname.toLowerCase();
-    if (h === 'spirifly.app' || h === 'www.spirifly.app' || h.endsWith('.pages.dev') || h === 'localhost' || h === '127.0.0.1') {
+    if (h === 'spirifly.app' || h === 'www.spirifly.app' || h === 'spirifly.pages.dev' || h.endsWith('.spirifly.pages.dev') || h === 'localhost' || h === '127.0.0.1') {
       return origin;
     }
   } catch {}

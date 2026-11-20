@@ -1,5 +1,11 @@
 User-agent: *
 Allow: /
+Disallow: /tests/
+Disallow: /01_Actualizaciones/
+Disallow: /research/
+Disallow: /scripts/
+Disallow: /herramientas_parches/
+Disallow: /cdn-cgi/
 
 User-agent: Mediapartners-Google
 Allow: /

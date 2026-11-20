@@ -4,137 +4,287 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catálogo de Builds y Guías de Personajes (Versión 7.2) | Spirifly</title>
-  <meta name="description" content="Consulta las builds, mejores armas, artefactos y materiales de ascensión para los personajes meta de Genshin Impact 7.2.">
+  <meta name="description" content="Consulta las builds, mejores armas, artefactos, talentos y materiales de ascensión para los personajes meta de Genshin Impact 7.2.">
   <link rel="canonical" href="https://spirifly.app/personajes/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Spirifly">
+  <meta property="og:title" content="Catálogo de Builds y Guías de Personajes (Versión 7.2) | Spirifly">
+  <meta property="og:description" content="Consulta las builds, mejores armas, artefactos, talentos y materiales de ascensión para los personajes meta de Genshin Impact 7.2.">
+  <meta property="og:url" content="https://spirifly.app/personajes/">
+  <meta property="og:image" content="https://spirifly.app/assets/ui/logo_spirifly.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Catálogo de Builds y Guías de Personajes (Versión 7.2) | Spirifly">
+  <meta name="twitter:description" content="Consulta las builds, mejores armas, artefactos, talentos y materiales de ascensión para los personajes meta de Genshin Impact 7.2.">
   <meta name="google-adsense-account" content="ca-pub-4245858516736505">
   <link rel="icon" href="../favicon.ico">
   <link rel="stylesheet" href="../assets/site-info.css?v=3">
+  <link rel="stylesheet" href="../assets/guides.css?v=1">
   <link rel="stylesheet" href="../assets/privacy.css?v=1">
-  <script src="../assets/privacy.js?v=1"></script>
+  <script src="../assets/privacy.js?v=2"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4245858516736505" crossorigin="anonymous"></script>
-  <style>
-    .info-header nav {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.55rem;
-    }
-    .info-header nav a, .nav-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.42rem 0.95rem;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 999px;
-      color: #cbd5e1;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 600;
-      line-height: 1.4;
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    }
-    .info-header nav a:hover, .nav-pill:hover {
-      background: rgba(59, 130, 246, 0.18);
-      border-color: #3b82f6;
-      color: #ffffff;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
-    }
-    .info-header nav a.active, .nav-pill.active {
-      background: #2563eb;
-      border-color: #3b82f6;
-      color: #ffffff;
-      font-weight: 700;
-      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
-    }
-    .cat-lead {
-      font-size: 1.15rem;
-      color: #94a3b8;
-      margin-bottom: 2rem;
-      line-height: 1.6;
-    }
-    .p-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.25rem;
-      margin-top: 1.5rem;
-    }
-    .p-card {
-      background: #171f33;
-      border: 1px solid #2d3b55;
-      border-radius: 12px;
-      padding: 1.1rem;
-      text-decoration: none;
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-      transition: all 0.2s ease;
-    }
-    .p-card:hover {
-      transform: translateY(-3px);
-      border-color: #60a5fa;
-      background: #1c2740;
-    }
-    .p-card-avatar {
-      width: 64px;
-      height: 64px;
-      border-radius: 12px;
-      border: 2px solid #3b82f6;
-      background: rgba(0,0,0,0.3);
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-    .p-card-avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .p-card-body {
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-    .p-card-name {
-      margin: 0 0 0.25rem;
-      font-size: 1.1rem;
-      color: #ffffff;
-      font-weight: 750;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .p-card-meta {
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-      margin-bottom: 0.35rem;
-    }
-    .p-badge-el {
-      font-size: 0.72rem;
-      font-weight: 700;
-      background: rgba(255,255,255,0.05);
-      padding: 0.15rem 0.45rem;
-      border-radius: 4px;
-    }
-    .p-badge-tier {
-      font-size: 0.72rem;
-      font-weight: 800;
-      color: #fbbf24;
-      background: rgba(251,191,36,0.12);
-      padding: 0.15rem 0.45rem;
-      border-radius: 4px;
-    }
-    .p-card-role {
-      margin: 0;
-      font-size: 0.8rem;
-      color: #94a3b8;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-  </style>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Catálogo de Builds y Guías de Personajes (Versión 7.2) | Spirifly",
+  "description": "Consulta las builds, mejores armas, artefactos, talentos y materiales de ascensión para los personajes meta de Genshin Impact 7.2.",
+  "url": "https://spirifly.app/personajes/",
+  "inLanguage": "es",
+  "dateModified": "2026-11-19",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Spirifly",
+    "url": "https://spirifly.app"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": 40,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Mitya",
+        "url": "https://spirifly.app/personajes/mitya"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Sandrone (Marionette)",
+        "url": "https://spirifly.app/personajes/sandrone"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Vesna",
+        "url": "https://spirifly.app/personajes/vesna"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Mavuika",
+        "url": "https://spirifly.app/personajes/mavuika"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Nefer",
+        "url": "https://spirifly.app/personajes/nefer"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "Flins",
+        "url": "https://spirifly.app/personajes/flins"
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "name": "Skirk",
+        "url": "https://spirifly.app/personajes/skirk"
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "name": "Zibai",
+        "url": "https://spirifly.app/personajes/zibai"
+      },
+      {
+        "@type": "ListItem",
+        "position": 9,
+        "name": "Varka",
+        "url": "https://spirifly.app/personajes/varka"
+      },
+      {
+        "@type": "ListItem",
+        "position": 10,
+        "name": "Varesa",
+        "url": "https://spirifly.app/personajes/varesa"
+      },
+      {
+        "@type": "ListItem",
+        "position": 11,
+        "name": "Columbina (Damselette)",
+        "url": "https://spirifly.app/personajes/columbina"
+      },
+      {
+        "@type": "ListItem",
+        "position": 12,
+        "name": "Odette",
+        "url": "https://spirifly.app/personajes/odette"
+      },
+      {
+        "@type": "ListItem",
+        "position": 13,
+        "name": "Lauma",
+        "url": "https://spirifly.app/personajes/lauma"
+      },
+      {
+        "@type": "ListItem",
+        "position": 14,
+        "name": "Ineffa",
+        "url": "https://spirifly.app/personajes/ineffa"
+      },
+      {
+        "@type": "ListItem",
+        "position": 15,
+        "name": "Xilonen",
+        "url": "https://spirifly.app/personajes/xilonen"
+      },
+      {
+        "@type": "ListItem",
+        "position": 16,
+        "name": "Furina",
+        "url": "https://spirifly.app/personajes/furina"
+      },
+      {
+        "@type": "ListItem",
+        "position": 17,
+        "name": "Linnea",
+        "url": "https://spirifly.app/personajes/linnea"
+      },
+      {
+        "@type": "ListItem",
+        "position": 18,
+        "name": "Escoffier",
+        "url": "https://spirifly.app/personajes/escoffier"
+      },
+      {
+        "@type": "ListItem",
+        "position": 19,
+        "name": "Nicole",
+        "url": "https://spirifly.app/personajes/nicole"
+      },
+      {
+        "@type": "ListItem",
+        "position": 20,
+        "name": "Chasca",
+        "url": "https://spirifly.app/personajes/chasca"
+      },
+      {
+        "@type": "ListItem",
+        "position": 21,
+        "name": "Citlali",
+        "url": "https://spirifly.app/personajes/citlali"
+      },
+      {
+        "@type": "ListItem",
+        "position": 22,
+        "name": "Kinich",
+        "url": "https://spirifly.app/personajes/kinich"
+      },
+      {
+        "@type": "ListItem",
+        "position": 23,
+        "name": "Mualani",
+        "url": "https://spirifly.app/personajes/mualani"
+      },
+      {
+        "@type": "ListItem",
+        "position": 24,
+        "name": "Arlecchino",
+        "url": "https://spirifly.app/personajes/arlecchino"
+      },
+      {
+        "@type": "ListItem",
+        "position": 25,
+        "name": "Clorinde",
+        "url": "https://spirifly.app/personajes/clorinde"
+      },
+      {
+        "@type": "ListItem",
+        "position": 26,
+        "name": "Navia",
+        "url": "https://spirifly.app/personajes/navia"
+      },
+      {
+        "@type": "ListItem",
+        "position": 27,
+        "name": "Xianyun (Preservadora de Nubes)",
+        "url": "https://spirifly.app/personajes/xianyun"
+      },
+      {
+        "@type": "ListItem",
+        "position": 28,
+        "name": "Chevreuse",
+        "url": "https://spirifly.app/personajes/chevreuse"
+      },
+      {
+        "@type": "ListItem",
+        "position": 29,
+        "name": "Kaedehara Kazuha",
+        "url": "https://spirifly.app/personajes/kazuha"
+      },
+      {
+        "@type": "ListItem",
+        "position": 30,
+        "name": "Bennett",
+        "url": "https://spirifly.app/personajes/bennett"
+      },
+      {
+        "@type": "ListItem",
+        "position": 31,
+        "name": "Nahida",
+        "url": "https://spirifly.app/personajes/nahida"
+      },
+      {
+        "@type": "ListItem",
+        "position": 32,
+        "name": "Xiangling",
+        "url": "https://spirifly.app/personajes/xiangling"
+      },
+      {
+        "@type": "ListItem",
+        "position": 33,
+        "name": "Alhacén (Alhaitham)",
+        "url": "https://spirifly.app/personajes/alhaitham"
+      },
+      {
+        "@type": "ListItem",
+        "position": 34,
+        "name": "Neuvillette",
+        "url": "https://spirifly.app/personajes/neuvillette"
+      },
+      {
+        "@type": "ListItem",
+        "position": 35,
+        "name": "Yelan",
+        "url": "https://spirifly.app/personajes/yelan"
+      },
+      {
+        "@type": "ListItem",
+        "position": 36,
+        "name": "Fischl",
+        "url": "https://spirifly.app/personajes/fischl"
+      },
+      {
+        "@type": "ListItem",
+        "position": 37,
+        "name": "Xingqiu",
+        "url": "https://spirifly.app/personajes/xingqiu"
+      },
+      {
+        "@type": "ListItem",
+        "position": 38,
+        "name": "Zhongli",
+        "url": "https://spirifly.app/personajes/zhongli"
+      },
+      {
+        "@type": "ListItem",
+        "position": 39,
+        "name": "Raiden Shogun",
+        "url": "https://spirifly.app/personajes/raiden"
+      },
+      {
+        "@type": "ListItem",
+        "position": 40,
+        "name": "Valeri",
+        "url": "https://spirifly.app/personajes/valeriy"
+      }
+    ]
+  }
+}
+  </script>
 </head>
 <body>
   <header class="info-header">
@@ -150,7 +300,12 @@
   <main class="info-main">
     <p class="info-kicker">Base de Datos de Builds · Versión 7.2</p>
     <h1>Guías de Personajes y Builds del Meta</h1>
-    <p class="cat-lead">Explora las configuraciones óptimas de armas, conjuntos de artefactos, estadísticas recomendadas y tablas de materiales para los personajes que definen el meta de Genshin Impact.</p>
+    <p class="cat-lead">Explora las configuraciones óptimas de armas, conjuntos de artefactos, estadísticas recomendadas, talentos y tablas de materiales para los personajes que definen el meta de Genshin Impact.</p>
+
+    <section class="catalog-intro">
+      <h2>Cómo aprovechar estas guías junto con el Planificador</h2>
+      <p>Cada ficha detalla el atributo de escalado principal del personaje, sus mejores opciones de armas de 5 y 4 estrellas, prioridades de subestadísticas, sinergias elementales y el desglose completo de materiales desde nivel 1 hasta ascensión 90 y talentos nivel 10. Una vez que definas tu prioridad de mejora, abre el <a href="/#planner">Planificador de Spirifly</a> para cruzar tus metas con tu inventario actual, calcular la síntesis 3:1 y organizar tus días de dominio según el uso de resina.</p>
+    </section>
 
     <div class="p-grid">
       
@@ -164,7 +319,7 @@
               <span class="p-badge-el" style="color: #a855f7;">Electro</span>
               <span class="p-badge-tier">T0 (SS) Main DPS</span>
             </div>
-            <p class="p-card-role">Main DPS & Soporte Electro de Conducto Estelar (Baliza de Polestar)</p>
+            <p class="p-card-role">Main DPS &amp; Soporte Electro de Conducto Estelar (Baliza de Polestar)</p>
           </div>
         </a>
         <a class="p-card" href="/personajes/sandrone" style="border-top: 3px solid #06b6d4;">
@@ -203,7 +358,7 @@
               <span class="p-badge-el" style="color: #ef4444;">Pyro</span>
               <span class="p-badge-tier">T0 (SS) Main DPS</span>
             </div>
-            <p class="p-card-role">Arconte Pyro • Hypercarry Melt/Vaporize & Sub-DPS Off-Field (Sin Energía)</p>
+            <p class="p-card-role">Arconte Pyro • Hypercarry Melt/Vaporize &amp; Sub-DPS Off-Field (Sin Energía)</p>
           </div>
         </a>
         <a class="p-card" href="/personajes/nefer" style="border-top: 3px solid #22c55e;">
@@ -307,7 +462,7 @@
               <span class="p-badge-el" style="color: #06b6d4;">Cryo</span>
               <span class="p-badge-tier">T0 (SS) Sub-DPS</span>
             </div>
-            <p class="p-card-role">Sub-DPS & Soporte Cryo Universal de Fulgor Estelar (Invocación Off-Field)</p>
+            <p class="p-card-role">Sub-DPS &amp; Soporte Cryo Universal de Fulgor Estelar (Invocación Off-Field)</p>
           </div>
         </a>
         <a class="p-card" href="/personajes/lauma" style="border-top: 3px solid #22c55e;">
@@ -320,7 +475,7 @@
               <span class="p-badge-el" style="color: #22c55e;">Dendro</span>
               <span class="p-badge-tier">T0 (SS) Support</span>
             </div>
-            <p class="p-card-role">Soporte & Sub-DPS Dendro de Florecimiento Lunar (Meta 1,000 ME)</p>
+            <p class="p-card-role">Soporte &amp; Sub-DPS Dendro de Florecimiento Lunar (Meta 1,000 ME)</p>
           </div>
         </a>
         <a class="p-card" href="/personajes/ineffa" style="border-top: 3px solid #a855f7;">
@@ -333,7 +488,7 @@
               <span class="p-badge-el" style="color: #a855f7;">Electro</span>
               <span class="p-badge-tier">T0 (SS) Sub-DPS</span>
             </div>
-            <p class="p-card-role">Sub-DPS & Escudera Electro de Electrocargado Lunar (Escala con ATQ)</p>
+            <p class="p-card-role">Sub-DPS &amp; Escudera Electro de Electrocargado Lunar (Escala con ATQ)</p>
           </div>
         </a>
         <a class="p-card" href="/personajes/xilonen" style="border-top: 3px solid #f59e0b;">
@@ -346,7 +501,7 @@
               <span class="p-badge-el" style="color: #f59e0b;">Geo</span>
               <span class="p-badge-tier">T0.5 (S) Support</span>
             </div>
-            <p class="p-card-role">Soporte Shredder & Healer Geo (Escala con RE y DEF)</p>
+            <p class="p-card-role">Soporte Shredder &amp; Healer Geo (Escala con RE y DEF)</p>
           </div>
         </a>
         <a class="p-card" href="/personajes/furina" style="border-top: 3px solid #3b82f6;">
@@ -359,7 +514,7 @@
               <span class="p-badge-el" style="color: #3b82f6;">Hydro</span>
               <span class="p-badge-tier">T0.5 (S) Sub-DPS</span>
             </div>
-            <p class="p-card-role">Sub-DPS & Buffer Universal Hydro (Fanfarria de Daño%)</p>
+            <p class="p-card-role">Sub-DPS &amp; Buffer Universal Hydro (Fanfarria de Daño%)</p>
           </div>
         </a>
         <a class="p-card" href="/personajes/linnea" style="border-top: 3px solid #f59e0b;">
@@ -372,7 +527,7 @@
               <span class="p-badge-el" style="color: #f59e0b;">Geo</span>
               <span class="p-badge-tier">T0 (SS) Sub-DPS</span>
             </div>
-            <p class="p-card-role">Sub-DPS & Soporte Geo de Cristalización Lunar (Escala con DEF%)</p>
+            <p class="p-card-role">Sub-DPS &amp; Soporte Geo de Cristalización Lunar (Escala con DEF%)</p>
           </div>
         </a>
         <a class="p-card" href="/personajes/escoffier" style="border-top: 3px solid #06b6d4;">
@@ -385,7 +540,7 @@
               <span class="p-badge-el" style="color: #06b6d4;">Cryo</span>
               <span class="p-badge-tier">T0.5 (S) Sub-DPS</span>
             </div>
-            <p class="p-card-role">Sub-DPS & Healer Cryo Especialista en Freeze (-55% RES Hydro/Cryo)</p>
+            <p class="p-card-role">Sub-DPS &amp; Healer Cryo Especialista en Freeze (-55% RES Hydro/Cryo)</p>
           </div>
         </a>
         <a class="p-card" href="/personajes/nicole" style="border-top: 3px solid #ef4444;">
@@ -398,7 +553,7 @@
               <span class="p-badge-el" style="color: #ef4444;">Pyro</span>
               <span class="p-badge-tier">T0 (SS) Support</span>
             </div>
-            <p class="p-card-role">Soporte & Escudera Pyro Hexerei (Meta 3,000–4,000 ATQ)</p>
+            <p class="p-card-role">Soporte &amp; Escudera Pyro Hexerei (Meta 3,000–4,000 ATQ)</p>
           </div>
         </a>
         <a class="p-card" href="/personajes/chasca" style="border-top: 3px solid #14b8a6;">
@@ -411,7 +566,7 @@
               <span class="p-badge-el" style="color: #14b8a6;">Anemo</span>
               <span class="p-badge-tier">T1 (A+) Main DPS</span>
             </div>
-            <p class="p-card-role">Hypercarry Anemo & Proyectiles Multi-Elementales en Cañón Volador</p>
+            <p class="p-card-role">Hypercarry Anemo &amp; Proyectiles Multi-Elementales en Cañón Volador</p>
           </div>
         </a>
         <a class="p-card" href="/personajes/citlali" style="border-top: 3px solid #06b6d4;">
@@ -424,7 +579,7 @@
               <span class="p-badge-el" style="color: #06b6d4;">Cryo</span>
               <span class="p-badge-tier">T0 (SS) Support</span>
             </div>
-            <p class="p-card-role">Soporte / Escudo Cryo para Derretidos & Congelados (Escala con ME)</p>
+            <p class="p-card-role">Soporte / Escudo Cryo para Derretidos &amp; Congelados (Escala con ME)</p>
           </div>
         </a>
         <a class="p-card" href="/personajes/kinich" style="border-top: 3px solid #22c55e;">
@@ -437,7 +592,7 @@
               <span class="p-badge-el" style="color: #22c55e;">Dendro</span>
               <span class="p-badge-tier">T1 (A+) Main DPS</span>
             </div>
-            <p class="p-card-role">Hypercarry Dendro en Campo (Enganche de Gancho & Cañonazos de Escamas)</p>
+            <p class="p-card-role">Hypercarry Dendro en Campo (Enganche de Gancho &amp; Cañonazos de Escamas)</p>
           </div>
         </a>
         <a class="p-card" href="/personajes/mualani" style="border-top: 3px solid #3b82f6;">
@@ -502,7 +657,7 @@
               <span class="p-badge-el" style="color: #14b8a6;">Anemo</span>
               <span class="p-badge-tier">T1.5 (A) Support</span>
             </div>
-            <p class="p-card-role">Habilitadora Universal de Ataques Descendentes, Healer de Equipo & Buffer de Daño Plano</p>
+            <p class="p-card-role">Habilitadora Universal de Ataques Descendentes, Healer de Equipo &amp; Buffer de Daño Plano</p>
           </div>
         </a>
         <a class="p-card" href="/personajes/chevreuse" style="border-top: 3px solid #ef4444;">
@@ -515,7 +670,7 @@
               <span class="p-badge-el" style="color: #ef4444;">Pyro</span>
               <span class="p-badge-tier">T0.5 (S) Support</span>
             </div>
-            <p class="p-card-role">Buffer de Sobrecarga (-40% RES Pyro/Electro, +40% ATQ) & Healer</p>
+            <p class="p-card-role">Buffer de Sobrecarga (-40% RES Pyro/Electro, +40% ATQ) &amp; Healer</p>
           </div>
         </a>
         <a class="p-card" href="/personajes/kazuha" style="border-top: 3px solid #14b8a6;">
@@ -528,7 +683,7 @@
               <span class="p-badge-el" style="color: #14b8a6;">Anemo</span>
               <span class="p-badge-tier">T1 (A+) Support</span>
             </div>
-            <p class="p-card-role">Buffer de Daño Elemental (+40% DMG), Control de Masas (CC) & Reductor de Resistencias (-40% VV)</p>
+            <p class="p-card-role">Buffer de Daño Elemental (+40% DMG), Control de Masas (CC) &amp; Reductor de Resistencias (-40% VV)</p>
           </div>
         </a>
         <a class="p-card" href="/personajes/bennett" style="border-top: 3px solid #ef4444;">
@@ -554,7 +709,7 @@
               <span class="p-badge-el" style="color: #22c55e;">Dendro</span>
               <span class="p-badge-tier">T1 (A+) Sub-DPS</span>
             </div>
-            <p class="p-card-role">Aplicadora Dendro Suprema, Sub-DPS Off-Field (Tri-Karma) & Buffer (+250 EM)</p>
+            <p class="p-card-role">Aplicadora Dendro Suprema, Sub-DPS Off-Field (Tri-Karma) &amp; Buffer (+250 EM)</p>
           </div>
         </a>
         <a class="p-card" href="/personajes/xiangling" style="border-top: 3px solid #ef4444;">
@@ -606,7 +761,7 @@
               <span class="p-badge-el" style="color: #3b82f6;">Hydro</span>
               <span class="p-badge-tier">T1 (A+) Sub-DPS</span>
             </div>
-            <p class="p-card-role">Off-Field Sub-DPS & Buffer de Daño Progresivo</p>
+            <p class="p-card-role">Off-Field Sub-DPS &amp; Buffer de Daño Progresivo</p>
           </div>
         </a>
         <a class="p-card" href="/personajes/fischl" style="border-top: 3px solid #a855f7;">
@@ -619,7 +774,7 @@
               <span class="p-badge-el" style="color: #a855f7;">Electro</span>
               <span class="p-badge-tier">T0.5 (S) Sub-DPS</span>
             </div>
-            <p class="p-card-role">Reina del Sub-DPS Electro (Oz Incesante, Batería & Pasiva A4 en Aggravate)</p>
+            <p class="p-card-role">Reina del Sub-DPS Electro (Oz Incesante, Batería &amp; Pasiva A4 en Aggravate)</p>
           </div>
         </a>
         <a class="p-card" href="/personajes/xingqiu" style="border-top: 3px solid #3b82f6;">
@@ -632,7 +787,7 @@
               <span class="p-badge-el" style="color: #3b82f6;">Hydro</span>
               <span class="p-badge-tier">T1 (A+) Sub-DPS</span>
             </div>
-            <p class="p-card-role">Off-Field Sub-DPS, Aplicador Hydro & Reductor de Daño</p>
+            <p class="p-card-role">Off-Field Sub-DPS, Aplicador Hydro &amp; Reductor de Daño</p>
           </div>
         </a>
         <a class="p-card" href="/personajes/zhongli" style="border-top: 3px solid #f59e0b;">
@@ -645,7 +800,7 @@
               <span class="p-badge-el" style="color: #f59e0b;">Geo</span>
               <span class="p-badge-tier">T1.5 (A) Support</span>
             </div>
-            <p class="p-card-role">Escudo Indestructible & Reductor de Resistencias Universal (-20% All RES)</p>
+            <p class="p-card-role">Escudo Indestructible &amp; Reductor de Resistencias Universal (-20% All RES)</p>
           </div>
         </a>
         <a class="p-card" href="/personajes/raiden" style="border-top: 3px solid #a855f7;">
@@ -658,7 +813,7 @@
               <span class="p-badge-el" style="color: #a855f7;">Electro</span>
               <span class="p-badge-tier">T1.5 (A) Sub-DPS</span>
             </div>
-            <p class="p-card-role">Batería Universal de Equipo, Buffer de Definitivas & Burst DPS</p>
+            <p class="p-card-role">Batería Universal de Equipo, Buffer de Definitivas &amp; Burst DPS</p>
           </div>
         </a>
         <a class="p-card" href="/personajes/valeriy" style="border-top: 3px solid #a855f7;">

@@ -4,375 +4,73 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guía y Build de Escoffier (Versión 7.2) | Materiales y Farmeo en Spirifly</title>
-  <meta name="description" content="Guía actualizada de Escoffier en Genshin Impact (7.2). Mejores armas, artefactos, estadísticas, sinergias y cálculo de materiales en Spirifly.">
+  <meta name="description" content="Guía actualizada de Escoffier en Genshin Impact (7.2). Mejores armas, artefactos, estadísticas, talentos, sinergias y cálculo de materiales en Spirifly.">
   <link rel="canonical" href="https://spirifly.app/personajes/escoffier">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Spirifly">
+  <meta property="og:title" content="Guía y Build de Escoffier (Versión 7.2) | Materiales y Farmeo en Spirifly">
+  <meta property="og:description" content="Guía actualizada de Escoffier en Genshin Impact (7.2). Mejores armas, artefactos, estadísticas, talentos, sinergias y cálculo de materiales en Spirifly.">
+  <meta property="og:url" content="https://spirifly.app/personajes/escoffier">
+  <meta property="og:image" content="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Escoffier.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Guía y Build de Escoffier (Versión 7.2) | Materiales y Farmeo en Spirifly">
+  <meta name="twitter:description" content="Guía actualizada de Escoffier en Genshin Impact (7.2). Mejores armas, artefactos, estadísticas, talentos, sinergias y cálculo de materiales en Spirifly.">
   <meta name="google-adsense-account" content="ca-pub-4245858516736505">
   <link rel="icon" href="../favicon.ico">
   <link rel="stylesheet" href="../assets/site-info.css?v=3">
+  <link rel="stylesheet" href="../assets/guides.css?v=1">
   <link rel="stylesheet" href="../assets/privacy.css?v=1">
-  <script src="../assets/privacy.js?v=1"></script>
+  <script src="../assets/privacy.js?v=2"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4245858516736505" crossorigin="anonymous"></script>
-  <style>
-    .info-header nav {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.55rem;
-    }
-    .info-header nav a, .nav-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.42rem 0.95rem;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 999px;
-      color: #cbd5e1;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 600;
-      line-height: 1.4;
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    }
-    .info-header nav a:hover, .nav-pill:hover {
-      background: rgba(59, 130, 246, 0.18);
-      border-color: #3b82f6;
-      color: #ffffff;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
-    }
-    .info-header nav a.active, .nav-pill.active {
-      background: #2563eb;
-      border-color: #3b82f6;
-      color: #ffffff;
-      font-weight: 700;
-      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
-    }
-    .char-hero {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1.5rem;
-      background: #151c2e;
-      border: 1px solid #33405a;
-      border-radius: 14px;
-      padding: 1.6rem;
-      margin: 1.5rem 0 2rem;
-    }
-    .char-avatar-box {
-      position: relative;
-      width: 104px;
-      height: 104px;
-      border-radius: 16px;
-      background: radial-gradient(circle, #06b6d433 0%, rgba(15,23,42,0.8) 100%);
-      border: 2px solid #06b6d4;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-    .char-avatar-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .char-meta h1 {
-      margin: 0 0 0.4rem;
-      font-size: 2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      flex-wrap: wrap;
-    }
-    .badge-el {
-      font-size: 0.78rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 6px;
-      background: #06b6d422;
-      border: 1px solid #06b6d488;
-      color: #06b6d4;
-      font-weight: 700;
-    }
-    .badge-tier {
-      font-size: 0.78rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 6px;
-      background: #fbbf2422;
-      border: 1px solid #fbbf2488;
-      color: #fbbf24;
-      font-weight: 800;
-    }
-    .char-subdesc {
-      color: #94a3b8;
-      font-size: 0.95rem;
-      margin: 0.3rem 0 0;
-      line-height: 1.5;
-    }
-    .guide-block {
-      background: #171f33;
-      border: 1px solid #2d3b55;
-      border-radius: 12px;
-      padding: 1.4rem;
-      margin-bottom: 1.8rem;
-    }
-    .guide-block h2 {
-      margin-top: 0;
-      font-size: 1.25rem;
-      color: #f5d996;
-      border-bottom: 1px solid #2d3b55;
-      padding-bottom: 0.6rem;
-    }
-    .guide-block-desc {
-      font-size: 0.9rem;
-      color: #cbd5e1;
-      margin-bottom: 1rem;
-    }
-    .guide-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-    .guide-item {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 10px;
-      padding: 0.85rem 1rem;
-      transition: all 0.2s ease;
-    }
-    .guide-item-with-thumb {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 0.75rem 1rem;
-    }
-    .guide-item-with-thumb:hover {
-      background: rgba(255,255,255,0.05);
-      border-color: rgba(96, 165, 250, 0.35);
-      transform: translateX(2px);
-    }
-    .guide-thumb-wrap {
-      width: 52px;
-      height: 52px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      flex-shrink: 0;
-      position: relative;
-      background: #111625;
-    }
-    .guide-thumb-wrap.rar-5 {
-      border: 1.5px solid rgba(251, 191, 36, 0.7);
-      background: radial-gradient(circle, rgba(251, 191, 36, 0.22) 0%, rgba(15, 23, 42, 0.8) 100%);
-      box-shadow: 0 0 10px rgba(251, 191, 36, 0.15);
-    }
-    .guide-thumb-wrap.rar-4 {
-      border: 1.5px solid rgba(168, 85, 247, 0.7);
-      background: radial-gradient(circle, rgba(168, 85, 247, 0.22) 0%, rgba(15, 23, 42, 0.8) 100%);
-      box-shadow: 0 0 10px rgba(168, 85, 247, 0.15);
-    }
-    .guide-thumb-wrap.rar-3 {
-      border: 1.5px solid rgba(59, 130, 246, 0.7);
-      background: radial-gradient(circle, rgba(59, 130, 246, 0.22) 0%, rgba(15, 23, 42, 0.8) 100%);
-      box-shadow: 0 0 10px rgba(59, 130, 246, 0.15);
-    }
-    .guide-thumb-img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      transition: transform 0.2s ease;
-    }
-    .guide-item-with-thumb:hover .guide-thumb-img {
-      transform: scale(1.06);
-    }
-    .guide-item-content {
-      flex: 1;
-      min-width: 0;
-    }
-    .guide-item-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .guide-item-title {
-      font-weight: 700;
-      color: #ffffff;
-      font-size: 0.98rem;
-      line-height: 1.3;
-    }
-    .guide-rarity {
-      color: #fbbf24;
-      font-size: 0.85rem;
-      letter-spacing: 1.5px;
-      flex-shrink: 0;
-    }
-    .guide-rarity.rar-stars-4 {
-      color: #c084fc;
-    }
-    .guide-rarity.rar-stars-3 {
-      color: #60a5fa;
-    }
-    .guide-tag {
-      background: rgba(59,130,246,0.18);
-      border: 1px solid rgba(59, 130, 246, 0.35);
-      color: #93c5fd;
-      border-radius: 4px;
-      padding: 0.15rem 0.5rem;
-      font-size: 0.75rem;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-    .guide-tag-sub {
-      color: #93c5fd;
-      font-weight: 600;
-      margin-right: 0.35rem;
-      font-size: 0.8rem;
-    }
-    .guide-item-sub {
-      font-size: 0.82rem;
-      color: #cbd5e1;
-      margin-top: 0.25rem;
-      line-height: 1.35;
-    }
-    .w-note {
-      color: #94a3b8;
-    }
-    .art-bonus {
-      font-size: 0.82rem;
-      color: #cbd5e1;
-      margin: 0.35rem 0 0;
-      line-height: 1.4;
-    }
-    .stats-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1rem 0;
-    }
-    .stats-table th, .stats-table td {
-      padding: 0.65rem 0.85rem;
-      border: 1px solid #2d3b55;
-      font-size: 0.9rem;
-    }
-    .stats-table th {
-      background: rgba(0,0,0,0.25);
-      color: #f5d996;
-      text-align: left;
-    }
-    .team-card {
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 8px;
-      padding: 0.85rem 1rem;
-      margin-bottom: 0.75rem;
-    }
-    .team-card h4 {
-      margin: 0 0 0.25rem;
-      color: #60a5fa;
-      font-size: 0.95rem;
-    }
-    .team-members {
-      margin: 0;
-      font-weight: 700;
-      color: #e2e8f0;
-      font-size: 0.9rem;
-    }
-    .team-note {
-      margin: 0.35rem 0 0;
-      font-size: 0.82rem;
-      color: #94a3b8;
-    }
-    .mat-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-      gap: 0.75rem;
-    }
-    .mat-chip {
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      background: rgba(0,0,0,0.3);
-      border: 1px solid #2d3b55;
-      border-radius: 8px;
-      padding: 0.5rem 0.75rem;
-    }
-    .mat-chip img {
-      width: 36px;
-      height: 36px;
-      object-fit: contain;
-    }
-    .mat-info {
-      display: flex;
-      flex-direction: column;
-    }
-    .mat-name {
-      font-size: 0.8rem;
-      color: #f1f5f9;
-      font-weight: 600;
-      line-height: 1.25;
-    }
-    .mat-qty {
-      font-size: 0.75rem;
-      color: #fbbf24;
-      font-weight: 700;
-    }
-    .cta-banner {
-      background: linear-gradient(135deg, #1e3a8a 0%, #172554 100%);
-      border: 1px solid #3b82f6;
-      border-radius: 14px;
-      padding: 1.8rem;
-      text-align: center;
-      margin: 2.5rem 0;
-    }
-    .cta-banner h3 {
-      margin: 0 0 0.5rem;
-      font-size: 1.4rem;
-      color: #ffffff;
-    }
-    .cta-banner p {
-      color: #bfdbfe;
-      margin: 0 0 1.2rem;
-      font-size: 0.95rem;
-    }
-    .cta-btn {
-      display: inline-block;
-      background: #2563eb;
-      color: #ffffff !important;
-      font-weight: 800;
-      font-size: 0.95rem;
-      padding: 0.75rem 1.75rem;
-      border-radius: 999px;
-      text-decoration: none;
-      box-shadow: 0 4px 15px rgba(37,99,235,0.4);
-      transition: all 0.2s;
-    }
-    .cta-btn:hover {
-      background: #1d4ed8;
-      transform: translateY(-2px);
-    }
-  </style>
+  <style>:root { --el-color: #06b6d4; }</style>
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Guía y Build de Escoffier (Versión 7.2) - Genshin Impact",
-    "description": "Mejores armas, artefactos, sinergias y materiales de ascensión para Escoffier en Genshin Impact.",
-    "author": {
-      "@type": "Organization",
-      "name": "Spirifly"
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Guía y Build de Escoffier (Versión 7.2) - Genshin Impact",
+      "description": "Guía actualizada de Escoffier en Genshin Impact (7.2). Mejores armas, artefactos, estadísticas, talentos, sinergias y cálculo de materiales en Spirifly.",
+      "image": "https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Escoffier.png",
+      "inLanguage": "es",
+      "dateModified": "2026-11-19",
+      "mainEntityOfPage": "https://spirifly.app/personajes/escoffier",
+      "author": {
+        "@type": "Organization",
+        "name": "Spirifly"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Spirifly",
+        "url": "https://spirifly.app"
+      }
     },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Spirifly",
-      "url": "https://spirifly.app"
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://spirifly.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Catálogo de Builds",
+          "item": "https://spirifly.app/personajes/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Escoffier",
+          "item": "https://spirifly.app/personajes/escoffier"
+        }
+      ]
     }
-  }
+  ]
+}
   </script>
 </head>
 <body>
@@ -387,19 +85,28 @@
   </header>
 
   <main class="info-main">
+    <nav class="breadcrumb" aria-label="Ruta de navegación">
+      <a href="/">Inicio</a> <span aria-hidden="true">›</span> <a href="/personajes/">Personajes</a> <span aria-hidden="true">›</span> <span>Escoffier</span>
+    </nav>
     <p class="info-kicker">Genshin Impact · Versión 7.2</p>
-    
+
     <div class="char-hero">
       <div class="char-avatar-box">
         <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Escoffier.png" alt="Escoffier" loading="eager" />
       </div>
       <div class="char-meta">
         <h1>Escoffier <span class="badge-el">Cryo</span> <span class="badge-tier">T0.5 (S) Sub-DPS</span></h1>
-        <p class="char-subdesc"><strong>Rol:</strong> Sub-DPS & Healer Cryo Especialista en Freeze (-55% RES Hydro/Cryo) &nbsp;|&nbsp; <strong>Arma:</strong> Lanza &nbsp;|&nbsp; <strong>Región:</strong> Fontaine</p>
+        <p class="char-subdesc"><strong>Rol:</strong> Sub-DPS &amp; Healer Cryo Especialista en Freeze (-55% RES Hydro/Cryo) &nbsp;|&nbsp; <strong>Arma:</strong> Lanza &nbsp;|&nbsp; <strong>Región:</strong> Fontaine</p>
       </div>
     </div>
 
-    <!-- Bloque 1: Mejores Armas -->
+    <section class="guide-block">
+      <h2>Análisis del Rol y Escalado</h2>
+      <div class="analysis-prose">
+        <p><strong>Escoffier</strong> es un personaje de elemento <strong>Cryo</strong> originario de <strong>Fontaine</strong> que utiliza <strong>Lanza</strong> y se posiciona en el tier <strong>T0.5 (S) Sub-DPS</strong> dentro del rol de <em>Sub-DPS &amp; Healer Cryo Especialista en Freeze (-55% RES Hydro/Cryo)</em>. Su rendimiento en combate gira en torno a este eje principal: <strong>Curación y Sub-DPS escalan con ATQ% (2,000+ ATQ); brilla al llevar 4 Hydro/Cryo</strong>.</p>
+        <p>Para maximizar su aporte en el equipo, la configuración prioritaria combina <strong>Sinfonista de Aromas</strong> con el conjunto de artefactos <strong>Golden Troupe (4 piezas)</strong>, respetando la jerarquía de estadísticas <strong>Recarga de Energía (160%–180%+) &gt; Prob. Crítica = Daño Crítico &gt; ATQ%.</strong> y subiendo sus habilidades en orden: <strong>Habilidad Elemental (E) &gt;= Definitiva (Q) &gt;&gt;&gt; Ataques Normales</strong>.</p>
+      </div>
+    </section>
     <section class="guide-block">
       <h2>Mejores Armas</h2>
       <p class="guide-block-desc">Opciones recomendadas ordenadas por rendimiento según el meta actual y compatibilidad con sus rotaciones:</p>
@@ -468,7 +175,6 @@
       </ul>
     </section>
 
-    <!-- Bloque 2: Mejores Artefactos -->
     <section class="guide-block">
       <h2>Mejores Sets de Artefactos</h2>
       <p class="guide-block-desc">Combinaciones de 4 piezas o mezclas de 2 piezas para maximizar su contribución:</p>
@@ -513,7 +219,6 @@
       </ul>
     </section>
 
-    <!-- Bloque 3: Estadísticas Recomendadas -->
     <section class="guide-block">
       <h2>Estadísticas Principales y Secundarias</h2>
       <p class="guide-block-desc">Atributos prioritarios en artefactos para un balance óptimo de daño o soporte:</p>
@@ -539,38 +244,137 @@
           </tr>
         </tbody>
       </table>
-      
+
       <h3>Prioridad de Subestadísticas</h3>
       <ul>
-        <li>Recarga de Energía (160%–180%+) > Prob. Crítica = Daño Crítico > ATQ%.</li>
+        <li>Recarga de Energía (160%–180%+) &gt; Prob. Crítica = Daño Crítico &gt; ATQ%.</li>
       </ul>
 
       <h3>Prioridad de Talentos</h3>
-      <p>Habilidad Elemental (E) >= Definitiva (Q) >>> Ataques Normales</p>
+      <p>Habilidad Elemental (E) &gt;= Definitiva (Q) &gt;&gt;&gt; Ataques Normales</p>
     </section>
 
-    <!-- Bloque 4: Sinergias y Equipos -->
+    <section class="guide-block">
+      <h2>Objetivos de Estadísticas (Nivel 90)</h2>
+      <p class="guide-block-desc">Valores de referencia verificados para evaluar el equipamiento de Escoffier en nivel 90 con artefactos de 5 estrellas:</p>
+      <table class="benchmark-table">
+        <thead>
+          <tr><th>Atributo</th><th>Meta Recomendada</th></tr>
+        </thead>
+        <tbody><tr><td><strong>Vida</strong></td><td>18,000</td></tr><tr><td><strong>Ataque</strong></td><td>2,000+ ATQ</td></tr><tr><td><strong>Defensa</strong></td><td>780</td></tr><tr><td><strong>Maestría Elemental</strong></td><td>0</td></tr><tr><td><strong>Recarga de Energía</strong></td><td>160% – 180% ER</td></tr><tr><td><strong>Balance Crítico</strong></td><td>60% – 70% CR / 120%+ CD</td></tr></tbody>
+      </table>
+    </section>
+
+    <section class="guide-block">
+      <h2>Talentos de Combate y Materiales (Nivel 1 al 10)</h2>
+      <p class="guide-block-desc">Habilidades principales de Escoffier y desglose exacto de libros, materiales y Mora para mejorar sus talentos:</p>
+      <div class="talent-card-grid">
+        <div class="talent-card">
+          <img src="https://gi.yatta.moe/assets/UI/Skill_A_03.png" alt="Habilidades culinarias" loading="lazy" />
+          <div class="talent-card-meta">
+            <span class="talent-card-kind">Ataque Normal</span>
+            <span class="talent-card-name">Habilidades culinarias</span>
+          </div>
+        </div>
+        <div class="talent-card">
+          <img src="https://gi.yatta.moe/assets/UI/Skill_S_Escoffier_01.png" alt="Cocina a baja temperatura" loading="lazy" />
+          <div class="talent-card-meta">
+            <span class="talent-card-kind">Habilidad Elemental (E)</span>
+            <span class="talent-card-name">Cocina a baja temperatura</span>
+          </div>
+        </div>
+        <div class="talent-card">
+          <img src="https://gi.yatta.moe/assets/UI/Skill_E_Escoffier_01.png" alt="Técnica de corte" loading="lazy" />
+          <div class="talent-card-meta">
+            <span class="talent-card-kind">Habilidad Definitiva (Q)</span>
+            <span class="talent-card-name">Técnica de corte</span>
+          </div>
+        </div>
+      </div>
+      <div class="talent-costs-summary">
+        <strong>Orden recomendado:</strong> Habilidad Elemental (E) &gt;= Definitiva (Q) &gt;&gt;&gt; Ataques Normales. &nbsp;|&nbsp;
+        <strong>Coste por talento (1 → 10):</strong> 1.652.500 Mora &nbsp;|&nbsp;
+        <strong>Coste total triple corona (3 talentos al 10):</strong> 4.957.500 Mora.
+      </div>
+      <div class="mat-grid">
+        <div class="mat-chip" title="Enseñanzas de la justicia">
+          <img src="https://gi.yatta.moe/assets/UI/UI_ItemIcon_104341.png" alt="Enseñanzas de la justicia" loading="lazy" />
+          <div class="mat-info">
+            <span class="mat-name">Enseñanzas de la justicia</span>
+            <span class="mat-qty">x3 (x9 para 3 talentos)</span>
+          </div>
+        </div>
+        <div class="mat-chip" title="Engranaje de malla">
+          <img src="https://gi.yatta.moe/assets/UI/UI_ItemIcon_112083.png" alt="Engranaje de malla" loading="lazy" />
+          <div class="mat-info">
+            <span class="mat-name">Engranaje de malla</span>
+            <span class="mat-qty">x6 (x18 para 3 talentos)</span>
+          </div>
+        </div>
+        <div class="mat-chip" title="Guía de la justicia">
+          <img src="https://gi.yatta.moe/assets/UI/UI_ItemIcon_104342.png" alt="Guía de la justicia" loading="lazy" />
+          <div class="mat-info">
+            <span class="mat-name">Guía de la justicia</span>
+            <span class="mat-qty">x21 (x63 para 3 talentos)</span>
+          </div>
+        </div>
+        <div class="mat-chip" title="Mecaengranaje recto">
+          <img src="https://gi.yatta.moe/assets/UI/UI_ItemIcon_112084.png" alt="Mecaengranaje recto" loading="lazy" />
+          <div class="mat-info">
+            <span class="mat-name">Mecaengranaje recto</span>
+            <span class="mat-qty">x22 (x66 para 3 talentos)</span>
+          </div>
+        </div>
+        <div class="mat-chip" title="Filosofía de la justicia">
+          <img src="https://gi.yatta.moe/assets/UI/UI_ItemIcon_104343.png" alt="Filosofía de la justicia" loading="lazy" />
+          <div class="mat-info">
+            <span class="mat-name">Filosofía de la justicia</span>
+            <span class="mat-qty">x38 (x114 para 3 talentos)</span>
+          </div>
+        </div>
+        <div class="mat-chip" title="Engranaje mecadinámico">
+          <img src="https://gi.yatta.moe/assets/UI/UI_ItemIcon_112085.png" alt="Engranaje mecadinámico" loading="lazy" />
+          <div class="mat-info">
+            <span class="mat-name">Engranaje mecadinámico</span>
+            <span class="mat-qty">x31 (x93 para 3 talentos)</span>
+          </div>
+        </div>
+        <div class="mat-chip" title="Cuerno corroído">
+          <img src="https://gi.yatta.moe/assets/UI/UI_ItemIcon_113068.png" alt="Cuerno corroído" loading="lazy" />
+          <div class="mat-info">
+            <span class="mat-name">Cuerno corroído</span>
+            <span class="mat-qty">x6 (x18 para 3 talentos)</span>
+          </div>
+        </div>
+        <div class="mat-chip" title="Corona de la sabiduría">
+          <img src="https://gi.yatta.moe/assets/UI/UI_ItemIcon_104319.png" alt="Corona de la sabiduría" loading="lazy" />
+          <div class="mat-info">
+            <span class="mat-name">Corona de la sabiduría</span>
+            <span class="mat-qty">x1 (x3 para 3 talentos)</span>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="guide-block">
       <h2>Composiciones de Equipo Recomendadas</h2>
       <p class="guide-block-desc">Alineaciones con mayor sinergia elemental y amplificación de daño en el Abismo y Teatro Fantasía:</p>
       
         <div class="team-card">
           <h4>Skirk Freeze Techo 7.2</h4>
-          <p class="team-members">Skirk • Escoffier • Furina • Vodyanitsa</p>
+          <p class="team-members"><a class="team-member-link" href="/personajes/skirk">Skirk</a> • Escoffier • <a class="team-member-link" href="/personajes/furina">Furina</a> • Vodyanitsa</p>
           <p class='team-note'>Núcleo Cryo/Hydro de 4 integrantes para activar la reducción máxima de -55% RES.</p>
         </div>
         <div class="team-card">
           <h4>Neuvillette Freeze</h4>
-          <p class="team-members">Neuvillette • Escoffier • Furina • Citlali</p>
+          <p class="team-members"><a class="team-member-link" href="/personajes/neuvillette">Neuvillette</a> • Escoffier • <a class="team-member-link" href="/personajes/furina">Furina</a> • <a class="team-member-link" href="/personajes/citlali">Citlali</a></p>
           <p class='team-note'>Control de área y curación grupal instantánea para las cargas de Furina.</p>
         </div>
     </section>
 
-    <!-- Bloque 5: Materiales de ascensión -->
     
         <section class="guide-block">
           <h2>Materiales de Ascensión (Nivel 1 al 90)</h2>
-          <p class="guide-block-desc">Recursos totales requeridos para desbloquear las 6 fases de ascensión de Escoffier:</p>
+          <p class="guide-block-desc">Recursos totales requeridos para desbloquear las 6 fases de ascensión de Escoffier. Coste total de Mora en ascensiones: <strong>420.000 Mora</strong>.</p>
           <div class="mat-grid">
             <div class="mat-chip" title="Caracola azurescente">
               <img src='https://gi.yatta.moe/assets/UI/UI_ItemIcon_101232.png' alt='Caracola azurescente' loading='lazy' />
@@ -637,7 +441,40 @@
             </div></div>
         </section>
 
-    <!-- CTA hacia el planificador -->
+    <section class="guide-block">
+      <h2>Sinergias y Guías Relacionadas</h2>
+      <p class="guide-block-desc">Explora las fichas de armas, artefactos y materiales de los principales compañeros de equipo para Escoffier:</p>
+      <div class="related-guides-grid">
+        <a class="related-guide-card" href="/personajes/skirk">
+          <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_SkirkNew.png" alt="Skirk" loading="lazy" />
+          <div class="related-guide-info">
+            <span class="related-guide-name">Skirk</span>
+            <span class="related-guide-meta">Cryo · T0.5 (S) Main DPS</span>
+          </div>
+        </a>
+        <a class="related-guide-card" href="/personajes/furina">
+          <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Furina.png" alt="Furina" loading="lazy" />
+          <div class="related-guide-info">
+            <span class="related-guide-name">Furina</span>
+            <span class="related-guide-meta">Hydro · T0.5 (S) Sub-DPS</span>
+          </div>
+        </a>
+        <a class="related-guide-card" href="/personajes/neuvillette">
+          <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Neuvillette.png" alt="Neuvillette" loading="lazy" />
+          <div class="related-guide-info">
+            <span class="related-guide-name">Neuvillette</span>
+            <span class="related-guide-meta">Hydro · T1.5 (A) Main DPS</span>
+          </div>
+        </a>
+        <a class="related-guide-card" href="/personajes/citlali">
+          <img src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_Citlali.png" alt="Citlali" loading="lazy" />
+          <div class="related-guide-info">
+            <span class="related-guide-name">Citlali</span>
+            <span class="related-guide-meta">Cryo · T0 (SS) Support</span>
+          </div>
+        </a>
+      </div>
+    </section>
     <div class="cta-banner">
       <h3>¿Quieres farmear a Escoffier eficientemente?</h3>
       <p>Calcula los días exactos, coste de resina original y sincroniza tus materiales en Spirifly.</p>
