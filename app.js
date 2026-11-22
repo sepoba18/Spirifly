@@ -3705,7 +3705,7 @@ function loadBuildIntoSimulator(charKey) {
 let cachedFullWishResults = null;
 
 function initWishCounterEvents() {
-  document.getElementById("btnShareWishes").addEventListener("click", () => WishShare.open(cachedFullWishResults, state.lang));
+  document.getElementById("btnShareWishes").addEventListener("click", () => WishShare.open(cachedFullWishResults, state.lang, { uid: state.activeWishUid }));
   // 1. Abrir y Cerrar Drawer
   const btnToggle = document.getElementById("btnToggleImport");
   const drawer = document.getElementById("importDrawer");
