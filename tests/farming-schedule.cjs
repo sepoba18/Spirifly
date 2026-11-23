@@ -95,3 +95,53 @@ for (const kind of ['character','weapon']) {
   assert.equal(context.state.activePlans.length,1);
 }
 console.log('OK: pausa en avatares de personajes y armas del planificador.');
+
+// Paso 3: Filtrado de materiales completados (conservando familias multi-tier incompletas) y formato de Mora.
+context.state.activePlans = [{kind:'character', key:'Amber', target:90}];
+context.state.realOwned = {
+  '202': 10057755,
+  '104319': 3,
+  '112002': 36,
+  '112003': 96,
+  '112004': 50,
+  '113060': 6,
+  '113061': 2
+};
+const filteredOut = vm.runInContext(`FarmingEngine.getSeelieFarmingData("all", {
+  "202": 10057755,
+  "104319": 2,
+  "112002": 36,
+  "112003": 96,
+  "112004": 129,
+  "113060": 6,
+  "113061": 6
+})`, context);
+const allVisibleCards = filteredOut.sections.flatMap(s => s.cards);
+assert.equal(allVisibleCards.some(c => c.id === 'leyline_mora'), false, 'Mora completada debe ocultarse');
+assert.equal(allVisibleCards.some(c => c.id === 'special_crown'), false, 'Corona completada debe ocultarse');
+const slimeCard = allVisibleCards.find(c => c.id === 'elite_112002');
+assert.ok(slimeCard, 'Familia de 3 con un tier faltante debe seguir visible');
+assert.equal(slimeCard.items.length, 3, 'La familia de 3 conserva sus 3 ítems mientras falte uno');
+assert.equal(slimeCard.items.filter(it => it.deficit === 0).length, 2);
+assert.equal(slimeCard.items.find(it => it.id === '112004').deficit, 79);
+const weeklyCard = allVisibleCards.find(c => c.tagType === 'weekly');
+assert.ok(weeklyCard, 'Jefe semanal con un drop faltante permanece visible');
+assert.deepEqual(Array.from(weeklyCard.items.map(it => it.id)), ['113061'], 'Jefe semanal oculta drops individuales completados');
+
+// Al completar el último tier faltante de la familia de 3, la tarjeta completa desaparece.
+context.state.realOwned['112004'] = 129;
+const completedSlime = vm.runInContext(`FarmingEngine.getSeelieFarmingData("all", {
+  "202": 10057755,
+  "104319": 2,
+  "112002": 36,
+  "112003": 96,
+  "112004": 129
+})`, context);
+assert.equal(completedSlime.sections.flatMap(s => s.cards).length, 0, 'Todas las tarjetas completas deben ocultarse');
+
+vm.runInContext(app.slice(app.indexOf('function formatFarmingBadgeCount('), app.indexOf('function renderSeelieSourceCard(')), context);
+assert.equal(context.formatFarmingBadgeCount(10057755, true), '10.1M');
+assert.equal(context.formatFarmingBadgeCount(2450000, true), '2.45M');
+assert.equal(context.formatFarmingBadgeCount(850000, true), '850k');
+assert.equal(context.formatFarmingBadgeCount(452, false), 'x452');
+console.log('OK: ocultamiento de completados, preservación de familias multi-tier y formato compacto de Mora.');

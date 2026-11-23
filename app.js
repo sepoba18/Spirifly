@@ -5579,7 +5579,10 @@ function renderSeelieFarmingSections(sections, activeFilterDay, currentDayIdx) {
     currentDayIdx = getActiveServerDay();
   }
 
-  if (!sections || sections.length === 0) {
+  const totalAllCards = Array.isArray(sections)
+    ? sections.reduce((sum, s) => sum + ((s.cards && s.cards.length) || 0), 0)
+    : 0;
+  if (!sections || sections.length === 0 || totalAllCards === 0) {
     container.innerHTML = `
       <div style="text-align:center;padding:3rem 1.5rem;background:#141a29;border-radius:12px;border:1px dashed rgba(255,255,255,0.15);margin-top:1rem;">
         <img src="assets/ui/icon_primogem.png" style="width:48px;height:48px;display:block;margin:0 auto 0.5rem auto;" alt="Completado" />
@@ -5700,6 +5703,19 @@ function renderSeelieFarmingSections(sections, activeFilterDay, currentDayIdx) {
   });
 }
 
+function formatFarmingBadgeCount(num, isMora) {
+  const n = Math.max(0, Number(num) || 0);
+  if (n >= 1000000) {
+    const decimals = n >= 10000000 ? 1 : 2;
+    return `${(n / 1000000).toFixed(decimals).replace(/\.?0+$/, "")}M`;
+  }
+  if (n >= 10000) {
+    const decimals = n >= 100000 ? 0 : 1;
+    return `${(n / 1000).toFixed(decimals).replace(/\.0$/, "")}k`;
+  }
+  return isMora ? n.toLocaleString("es-CL") : `x${n}`;
+}
+
 function renderSeelieSourceCard(card, currentDayIdx, activeFilterDay) {
   if (typeof currentDayIdx === "undefined") {
     currentDayIdx = getActiveServerDay();
@@ -5782,17 +5798,26 @@ function renderSeelieSourceCard(card, currentDayIdx, activeFilterDay) {
   // Grid de materiales
   const matsHtml = card.items.map((it) => {
     const isCompleted = it.deficit <= 0;
+    const isMora = it.id === "202";
     const rarClass = `rar-${Math.max(1, Math.min(5, it.rank || 1))}`;
-    const badgeText = isCompleted ? `x${it.required}` : `x${it.deficit}`;
+    const rawQty = isCompleted ? it.required : it.deficit;
+    const badgeText = formatFarmingBadgeCount(rawQty, isMora);
     const checkBadge = isCompleted ? `<span class="seelie-mat-check-badge" title="Completado"><img src="assets/ui/check.svg" style="width:11px;height:11px;vertical-align:top;" alt="✓" /></span>` : "";
-    const tooltip = `${it.name}\nTienes: ${it.owned.toLocaleString()} / Requeridos: ${it.required.toLocaleString()}${it.deficit > 0 ? ` (Faltan ${it.deficit.toLocaleString()})` : " (Completo)"}`;
+    const tooltip = `${it.name}\nTienes: ${it.owned.toLocaleString("es-CL")} / Requeridos: ${it.required.toLocaleString("es-CL")}${it.deficit > 0 ? ` (Faltan ${it.deficit.toLocaleString("es-CL")})` : " (Completo)"}`;
+    const moraSummaryHtml = (isMora && it.deficit > 0)
+      ? `<div class="seelie-mora-summary">
+           <span class="seelie-mora-deficit">${escapeHtml(it.deficit.toLocaleString("es-CL"))} Mora</span>
+           <span class="seelie-mora-detail">${escapeHtml(it.owned.toLocaleString("es-CL"))} / ${escapeHtml(it.required.toLocaleString("es-CL"))}</span>
+         </div>`
+      : "";
 
     return `
       <div class="seelie-mat-box ${rarClass}" title="${escapeHtml(tooltip)}">
         <img src="${it.icon}" alt="${escapeHtml(it.name)}" onerror="this.src='https://gi.yatta.moe/assets/UI/UI_ItemIcon_202.png'" />
         ${checkBadge}
-        <span class="seelie-mat-deficit-badge">${badgeText}</span>
+        <span class="seelie-mat-deficit-badge">${escapeHtml(badgeText)}</span>
       </div>
+      ${moraSummaryHtml}
     `;
   }).join("");
 

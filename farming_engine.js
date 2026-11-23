@@ -4879,6 +4879,22 @@ const FarmingEngine = {
         if (it.deficit > maxDeficit) maxDeficit = it.deficit;
       });
 
+      card.totalDeficit = totalCardDeficit;
+
+      // Familias multi-tier conservan todos sus niveles hasta completar toda la familia.
+      const isTierFamily = (
+        card.id.startsWith("elite_")
+        || card.id.startsWith("talent_")
+        || card.id.startsWith("weapon_")
+        || card.id.startsWith("boss_gem_")
+        || card.id === "leyline_exp"
+        || card.id === "expedition_ore"
+        || card.id === "adventure_rank_diamond"
+      );
+      if (!isTierFamily) {
+        card.items = card.items.filter((it) => it.deficit > 0);
+      }
+
       if (card.cost === 20) {
         if (card.id === "leyline_mora") {
           card.runs = Math.ceil(totalCardDeficit / 60000);
@@ -4987,6 +5003,7 @@ const FarmingEngine = {
     ];
 
     sourceCardsMap.forEach((card) => {
+      if (!card.totalDeficit || card.totalDeficit <= 0 || card.items.length === 0) return;
       if (card.cost === 0) sections[0].cards.push(card);
       else if (card.cost === 20) sections[1].cards.push(card);
       else if (card.cost === 40) sections[2].cards.push(card);
@@ -5002,7 +5019,10 @@ const FarmingEngine = {
     });
 
     const daysResin = Math.ceil(totalResinNeeded / 180 * 10) / 10;
-    const condResin = Array.from(sourceCardsMap.values()).reduce((sum, card) => sum + card.condResin, 0);
+    const condResin = Array.from(sourceCardsMap.values()).reduce(
+      (sum, card) => sum + (card.totalDeficit > 0 ? card.condResin : 0),
+      0
+    );
 
     return {
       activeCharList,
