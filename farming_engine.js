@@ -4040,6 +4040,85 @@ FARMING_DOMAINS_REGISTRY.forEach((domain) => {
     .map((character) => character.name);
 });
 
+const NON_CRAFTABLE_GEMS = new Set(["104101", "104102", "104103", "104104"]);
+
+/**
+ * Construye las familias sintetizables 3:1 (enemigos, armas, gemas elementales y talentos)
+ * ordenadas de menor a mayor rareza usando el catálogo maestro de materiales.
+ */
+function buildCraftableFamilies(matsMaster) {
+  const mats = matsMaster || {};
+  const allMats = Object.values(mats);
+  const families = [];
+
+  const pushChunks = (list, chunkSize) => {
+    list.sort((a, b) => Number(a.id) - Number(b.id));
+    for (let i = 0; i < list.length; i += chunkSize) {
+      const slice = list.slice(i, i + chunkSize).map((m) => String(m.id));
+      if (slice.length >= 2) families.push(slice);
+    }
+  };
+
+  pushChunks(allMats.filter((m) => String(m.id).startsWith("112")), 3);
+  pushChunks(allMats.filter((m) => String(m.id).startsWith("114")), 4);
+  pushChunks(allMats.filter((m) => String(m.id).startsWith("1043") && String(m.id) !== "104319"), 3);
+
+  const gemGroups = {};
+  allMats
+    .filter((m) => String(m.id).startsWith("1041") && !NON_CRAFTABLE_GEMS.has(String(m.id)))
+    .sort((a, b) => Number(a.id) - Number(b.id))
+    .forEach((m) => {
+      const prefix = String(m.id).slice(0, 5);
+      if (!gemGroups[prefix]) gemGroups[prefix] = [];
+      gemGroups[prefix].push(String(m.id));
+    });
+  Object.values(gemGroups).forEach((group) => {
+    if (group.length >= 2) families.push(group);
+  });
+
+  return families;
+}
+
+/**
+ * Calcula el déficit real por material descontando la síntesis en cascada 3:1
+ * desde los niveles inferiores hacia los superiores, protegiendo las metas de cada nivel.
+ */
+function computeEffectiveMaterialDeficits(totalReqs, ownedMap, matsMaster) {
+  const reqs = totalReqs || {};
+  const owned = ownedMap || {};
+  const deficits = {};
+  const craftable = {};
+  const effectiveOwned = {};
+
+  Object.entries(reqs).forEach(([mid, reqQty]) => {
+    const curOwned = Math.max(0, Number(owned[mid]) || 0);
+    const req = Math.max(0, Number(reqQty) || 0);
+    deficits[mid] = Math.max(0, req - curOwned);
+    craftable[mid] = 0;
+    effectiveOwned[mid] = curOwned;
+  });
+
+  const families = buildCraftableFamilies(matsMaster);
+  families.forEach((fam) => {
+    const hasRelevantReq = fam.some((mid) => (Number(reqs[mid]) || 0) > 0);
+    if (!hasRelevantReq) return;
+
+    let craftedFromBelow = 0;
+    fam.forEach((mid) => {
+      const curOwned = Math.max(0, Number(owned[mid]) || 0);
+      const req = Math.max(0, Number(reqs[mid]) || 0);
+      const eff = curOwned + craftedFromBelow;
+      craftable[mid] = craftedFromBelow;
+      effectiveOwned[mid] = eff;
+      deficits[mid] = Math.max(0, req - eff);
+      const surplus = Math.max(0, eff - req);
+      craftedFromBelow = Math.floor(surplus / 3);
+    });
+  });
+
+  return { deficits, craftable, effectiveOwned };
+}
+
 const FarmingEngine = {
   /**
    * Obtiene la lista de planes a consultar (todos o filtrados por nombre de personaje/arma).
@@ -4072,6 +4151,7 @@ const FarmingEngine = {
 
     const owned = state.realOwned || {};
     const matsMaster = typeof REAL_MASTER_MATERIALS !== "undefined" ? REAL_MASTER_MATERIALS : {};
+    const effData = computeEffectiveMaterialDeficits(totalReqs, owned, matsMaster);
 
     // Clasificación y déficit
     const materialsList = [];
@@ -4090,7 +4170,7 @@ const FarmingEngine = {
 
     Object.entries(totalReqs).forEach(([matId, reqQty]) => {
       const curOwned = owned[matId] || 0;
-      const deficit = Math.max(0, reqQty - curOwned);
+      const deficit = effData.deficits[matId] !== undefined ? effData.deficits[matId] : Math.max(0, reqQty - curOwned);
       const matInfo = matsMaster[matId] || { id: matId, name: `Material #${matId}`, rank: 3, icon: "" };
       const idStr = String(matId);
 
@@ -4223,7 +4303,7 @@ const FarmingEngine = {
     let todayMatchesCount = 0;
     FARMING_DOMAINS_REGISTRY.forEach((dom) => {
       if (dom.days.includes(todayDayIdx)) {
-        const hasReq = dom.matIds.some((mid) => (totalReqs[mid] || 0) > (owned[mid] || 0));
+        const hasReq = dom.matIds.some((mid) => (effData.deficits[mid] || 0) > 0);
         if (hasReq) todayMatchesCount++;
       }
     });
@@ -4245,22 +4325,29 @@ const FarmingEngine = {
   getDomainsForDay(dayIdx, costFilter) {
     const activePlans = (state.activePlans || []).filter((p) => p.active !== false);
     const owned = state.realOwned || {};
+    const matsMaster = typeof REAL_MASTER_MATERIALS !== "undefined" ? REAL_MASTER_MATERIALS : {};
 
     // Obtener qué materialIds necesita el plan actual
     const neededMatIds = new Map();
+    const totalReqs = {};
     activePlans.forEach((p) => {
       const planReq = (typeof computePlanRequirements === "function") ? computePlanRequirements(p) : {};
       Object.entries(planReq).forEach(([mid, qty]) => {
         if (qty > 0) {
+          totalReqs[mid] = (totalReqs[mid] || 0) + qty;
           if (!neededMatIds.has(mid)) neededMatIds.set(mid, []);
           neededMatIds.get(mid).push({ charName: p.key || p.name, deficit: qty });
         }
       });
     });
 
-    // Descontar el inventario una sola vez entre todos los planes.
+    const effData = computeEffectiveMaterialDeficits(totalReqs, owned, matsMaster);
+
+    // Descontar el inventario (incluyendo lo cubierto por síntesis) una sola vez entre todos los planes.
     neededMatIds.forEach((entries, mid) => {
-      let available = Math.max(0, Number(owned[mid]) || 0);
+      const totalReq = totalReqs[mid] || 0;
+      const effDef = effData.deficits[mid] !== undefined ? effData.deficits[mid] : Math.max(0, totalReq - (Number(owned[mid]) || 0));
+      let available = Math.max(0, totalReq - effDef);
       const missing = entries.map((entry) => {
         const used = Math.min(available, entry.deficit);
         available -= used;
@@ -4623,9 +4710,13 @@ const FarmingEngine = {
       };
     });
 
+    const effData = computeEffectiveMaterialDeficits(totalReqs, owned, matsMaster);
+
     Object.entries(totalReqs).forEach(([mid, reqQty]) => {
       const curOwned = owned[mid] || 0;
-      const deficit = Math.max(0, reqQty - curOwned);
+      const deficit = effData.deficits[mid] !== undefined ? effData.deficits[mid] : Math.max(0, reqQty - curOwned);
+      const craftable = effData.craftable[mid] || 0;
+      const effectiveOwned = effData.effectiveOwned[mid] !== undefined ? effData.effectiveOwned[mid] : curOwned;
       const matInfo = matsMaster[mid] || { id: mid, name: `Material #${mid}`, rank: 3, icon: "" };
       const idStr = String(mid);
 
@@ -4854,6 +4945,8 @@ const FarmingEngine = {
         icon: matInfo.icon || "",
         required: reqQty,
         owned: curOwned,
+        craftable: craftable,
+        effectiveOwned: effectiveOwned,
         deficit: deficit
       });
 

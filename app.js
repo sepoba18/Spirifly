@@ -229,6 +229,7 @@ function buildRealInventoryItems() {
         cat: "gem",
         family: famId,
         tier: idx + 1,
+        nonCraftable: ["104101", "104102", "104103", "104104"].includes(String(m.id)),
         icon: m.icon
       });
     });
@@ -499,7 +500,7 @@ function showSynthToast(msg) {
  * hacia el ítem seleccionado.
  */
 function getSafeCraftableCount(item, reqMap) {
-  if (!item || !item.family || item.tier <= 1) return 0;
+  if (!item || !item.family || item.nonCraftable || item.tier <= 1) return 0;
   const fam = REAL_INVENTORY_ITEMS
     .filter((x) => x.family === item.family && x.tier <= item.tier)
     .sort((a, b) => a.tier - b.tier);
@@ -524,7 +525,7 @@ function getSafeCraftableCount(item, reqMap) {
 function synthesizeSingleItem(targetItemId, maxSurplus = false) {
   const reqMap = getRequiredMaterialsMap();
   const targetItem = REAL_INVENTORY_ITEMS.find((x) => x.id === targetItemId);
-  if (!targetItem || !targetItem.family || targetItem.tier <= 1) return;
+  if (!targetItem || !targetItem.family || targetItem.nonCraftable || targetItem.tier <= 1) return;
 
   const fam = REAL_INVENTORY_ITEMS
     .filter((x) => x.family === targetItem.family && x.tier <= targetItem.tier)
@@ -592,7 +593,7 @@ function synthesizeAllSafe() {
   const reqMap = getRequiredMaterialsMap();
 
   // Agrupar familias de materiales
-  const families = new Set(REAL_INVENTORY_ITEMS.filter((x) => x.family).map((x) => x.family));
+  const families = new Set(REAL_INVENTORY_ITEMS.filter((x) => x.family && !x.nonCraftable).map((x) => x.family));
 
   families.forEach((famId) => {
     const fam = REAL_INVENTORY_ITEMS
@@ -1609,6 +1610,19 @@ function renderTopCurrencySection() {
   container.appendChild(row3);
 }
 
+function refreshInventoryFamilyTiles(familyId, reqMap, usersMap, catLabels) {
+  const matrix = document.getElementById("seelieMatrix");
+  if (!matrix || !familyId) return;
+  REAL_INVENTORY_ITEMS
+    .filter((x) => x.family === familyId)
+    .forEach((famItem) => {
+      const existing = matrix.querySelector(`.seelie-card-tile[data-mat-id="${famItem.id}"]`);
+      if (existing) {
+        existing.replaceWith(createInventoryTile(famItem, reqMap, usersMap, catLabels));
+      }
+    });
+}
+
 function createInventoryTile(item, reqMap, usersMap, catLabels) {
   const owned = getRealOwned(item.id);
   const required = (reqMap && reqMap[item.id]) || 0;
@@ -1616,17 +1630,32 @@ function createInventoryTile(item, reqMap, usersMap, catLabels) {
   const safeCraftable = getSafeCraftableCount(item, reqMap);
   const hasTarget = required > 0;
   const targetOk = hasTarget && owned >= required;
+  const craftOk = hasTarget && !targetOk && (owned + safeCraftable >= required);
+  const effectiveMissing = Math.max(0, required - (owned + safeCraftable));
   const users = (usersMap && usersMap[item.id]) || [];
 
   const tile = document.createElement("div");
-  tile.className = `seelie-card-tile ${hasTarget ? "needed" : ""} ${targetOk ? "complete" : ""}`;
+  tile.className = `seelie-card-tile ${hasTarget ? "needed" : ""} ${targetOk ? "complete" : (craftOk ? "craft-complete" : "")}`;
   tile.dataset.matId = item.id;
+
+  let metaLine = "Sin requerimiento activo";
+  if (required > 0) {
+    if (targetOk) {
+      metaLine = `Meta actual: ${required} (Completo)`;
+    } else if (craftOk) {
+      metaLine = `Meta actual: ${required} (Completo con síntesis: ${owned} + ${safeCraftable} sintetizables)`;
+    } else if (safeCraftable > 0) {
+      metaLine = `Meta actual: ${required} (Con síntesis: ${owned + safeCraftable}, faltan: ${effectiveMissing})`;
+    } else {
+      metaLine = `Meta actual: ${required} (Faltan: ${missing})`;
+    }
+  }
 
   const tooltipLines = [
     `${item.name}`,
     `${item.rarity}★ • ${catLabels[item.cat] || item.cat}`,
     `Tienes: ${owned}`,
-    required > 0 ? `Meta actual: ${required}${missing > 0 ? ` (Faltan: ${missing})` : " (Completo)"}` : "Sin requerimiento activo"
+    metaLine
   ];
   if (users.length) {
     tooltipLines.push(`Usado por: ${users.join(", ")}`);
@@ -1641,8 +1670,10 @@ function createInventoryTile(item, reqMap, usersMap, catLabels) {
   if (hasTarget) {
     if (targetOk) {
       statusHtml = `<span class="seelie-card-status target-ok" title="¡Meta cubierta!"><img src="assets/ui/check.svg" style="width:10px;height:10px;vertical-align:-1px;margin-right:2px;" alt="" /> ${required}</span>`;
+    } else if (craftOk) {
+      statusHtml = `<span class="seelie-card-status craft-ok" title="¡Meta cubierta con síntesis (+${safeCraftable})!"><img src="assets/ui/check.svg" style="width:10px;height:10px;vertical-align:-1px;margin-right:2px;" alt="" /> ${required}</span>`;
     } else {
-      statusHtml = `<span class="seelie-card-status has-target" title="Faltan ${missing}"><img src="assets/ui/sparkle.svg" style="width:10px;height:10px;vertical-align:-1px;margin-right:2px;" alt="" /> ${required}</span>`;
+      statusHtml = `<span class="seelie-card-status has-target" title="Faltan ${effectiveMissing}"><img src="assets/ui/sparkle.svg" style="width:10px;height:10px;vertical-align:-1px;margin-right:2px;" alt="" /> ${required}</span>`;
     }
   }
 
@@ -1681,18 +1712,22 @@ function createInventoryTile(item, reqMap, usersMap, catLabels) {
       const next = Math.max(0, cur + (delta * multiplier));
       state.realOwned[item.id] = next;
       saveRealOwned();
-      tile.querySelector(".seelie-card-qty-num").textContent = next;
 
-      const newOk = hasTarget && next >= required;
-      tile.classList.toggle("complete", newOk);
-      const statusEl = tile.querySelector(".seelie-card-status");
-      if (hasTarget && statusEl) {
-        if (newOk) {
-          statusEl.className = "seelie-card-status target-ok";
-          statusEl.innerHTML = `<img src="assets/ui/check.svg" style="width:10px;height:10px;vertical-align:-1px;margin-right:2px;" alt="" /> ${required}`;
-        } else {
-          statusEl.className = "seelie-card-status has-target";
-          statusEl.innerHTML = `<img src="assets/ui/sparkle.svg" style="width:10px;height:10px;vertical-align:-1px;margin-right:2px;" alt="" /> ${required}`;
+      if (item.family && !item.nonCraftable) {
+        refreshInventoryFamilyTiles(item.family, reqMap, usersMap, catLabels);
+      } else {
+        tile.querySelector(".seelie-card-qty-num").textContent = next;
+        const newOk = hasTarget && next >= required;
+        tile.classList.toggle("complete", newOk);
+        const statusEl = tile.querySelector(".seelie-card-status");
+        if (hasTarget && statusEl) {
+          if (newOk) {
+            statusEl.className = "seelie-card-status target-ok";
+            statusEl.innerHTML = `<img src="assets/ui/check.svg" style="width:10px;height:10px;vertical-align:-1px;margin-right:2px;" alt="" /> ${required}`;
+          } else {
+            statusEl.className = "seelie-card-status has-target";
+            statusEl.innerHTML = `<img src="assets/ui/sparkle.svg" style="width:10px;height:10px;vertical-align:-1px;margin-right:2px;" alt="" /> ${required}`;
+          }
         }
       }
       renderCharacterWeaponPlanner();
@@ -5803,7 +5838,11 @@ function renderSeelieSourceCard(card, currentDayIdx, activeFilterDay) {
     const rawQty = isCompleted ? it.required : it.deficit;
     const badgeText = formatFarmingBadgeCount(rawQty, isMora);
     const checkBadge = isCompleted ? `<span class="seelie-mat-check-badge" title="Completado"><img src="assets/ui/check.svg" style="width:11px;height:11px;vertical-align:top;" alt="✓" /></span>` : "";
-    const tooltip = `${it.name}\nTienes: ${it.owned.toLocaleString("es-CL")} / Requeridos: ${it.required.toLocaleString("es-CL")}${it.deficit > 0 ? ` (Faltan ${it.deficit.toLocaleString("es-CL")})` : " (Completo)"}`;
+    const craftNote = it.craftable > 0 ? ` (+${it.craftable.toLocaleString("es-CL")} sintetizables)` : "";
+    const statusNote = it.deficit > 0
+      ? ` (Faltan ${it.deficit.toLocaleString("es-CL")})`
+      : (it.craftable > 0 ? " (Completo con síntesis)" : " (Completo)");
+    const tooltip = `${it.name}\nTienes: ${it.owned.toLocaleString("es-CL")}${craftNote} / Requeridos: ${it.required.toLocaleString("es-CL")}${statusNote}`;
     const moraSummaryHtml = (isMora && it.deficit > 0)
       ? `<div class="seelie-mora-summary">
            <span class="seelie-mora-deficit">${escapeHtml(it.deficit.toLocaleString("es-CL"))} Mora</span>

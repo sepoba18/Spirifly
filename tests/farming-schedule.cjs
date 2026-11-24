@@ -145,3 +145,101 @@ assert.equal(context.formatFarmingBadgeCount(2450000, true), '2.45M');
 assert.equal(context.formatFarmingBadgeCount(850000, true), '850k');
 assert.equal(context.formatFarmingBadgeCount(452, false), 'x452');
 console.log('OK: ocultamiento de completados, preservación de familias multi-tier y formato compacto de Mora.');
+
+// Paso 4: Síntesis 3:1 en cascada entre Inventario y Farmeo (gemas, libros, armas y enemigos).
+// Caso exacto reportado: Cryo (500/15/0/0 vs req 1/9/9/6) y Electro (1254/403/1/0 vs req 1/9/9/6) -> 0 déficit en Farmeo.
+context.state.activePlans = [{kind:'character', key:'Amber', active:true, target:90}];
+context.state.realOwned = {
+  '104161': 500, '104162': 15, '104163': 0, '104164': 0,
+  '104141': 1254, '104142': 403, '104143': 1, '104144': 0
+};
+const fullSynthGems = vm.runInContext(`FarmingEngine.getSeelieFarmingData("all", {
+  "104161": 1, "104162": 9, "104163": 9, "104164": 6,
+  "104141": 1, "104142": 9, "104143": 9, "104144": 6
+})`, context);
+assert.equal(fullSynthGems.sections.flatMap(s => s.cards).length, 0, 'Gemas completables por síntesis deben ocultarse en Farmeo');
+assert.equal(fullSynthGems.totals.totalResin, 0, 'Resina total debe ser 0 cuando la síntesis cubre todo');
+
+// Caso solo tiers altos requeridos (sin req en T1/T2) usando stock de T1/T2 en inventario.
+context.state.realOwned = {'104161': 81, '104162': 0, '104163': 0, '104164': 0};
+const highTierOnly = vm.runInContext(`FarmingEngine.getSeelieFarmingData("all", {"104163": 3, "104164": 2})`, context);
+assert.equal(highTierOnly.sections.flatMap(s => s.cards).length, 0, '81 verdes cubren 3 moradas + 2 doradas por cascada');
+
+// Caso síntesis parcial: 18 azules (req 9 -> 9 excedentes -> 3 moradas), faltan 6 moradas y 6 doradas.
+context.state.realOwned = {'104161': 1, '104162': 18, '104163': 0, '104164': 0};
+const partialSynth = vm.runInContext(`FarmingEngine.getSeelieFarmingData("all", {
+  "104161": 1, "104162": 9, "104163": 9, "104164": 6
+})`, context);
+const cryoCard = partialSynth.sections.flatMap(s => s.cards).find(c => c.id === 'boss_gem_10416');
+assert.ok(cryoCard, 'Tarjeta permanece en Farmeo si aún faltan gemas tras sintetizar');
+assert.equal(cryoCard.items.find(it => it.id === '104163').deficit, 6, 'Déficit morado debe descontar las 3 sintetizables');
+assert.equal(cryoCard.items.find(it => it.id === '104164').deficit, 6, 'Déficit dorado permanece en 6');
+
+// No se sintetiza hacia abajo: sobrar en T3 no cubre déficit de T1.
+context.state.realOwned = {'104161': 0, '104163': 20};
+const noDowngrade = vm.runInContext(`FarmingEngine.getSeelieFarmingData("all", {"104161": 1, "104163": 1})`, context);
+const noDowngradeCard = noDowngrade.sections.flatMap(s => s.cards).find(c => c.id === 'boss_gem_10416');
+assert.ok(noDowngradeCard);
+assert.equal(noDowngradeCard.items.find(it => it.id === '104161').deficit, 1);
+assert.equal(noDowngradeCard.items.find(it => it.id === '104163').deficit, 0);
+
+// Diamantes brillantes del Viajero (104101-104104) NO son sintetizables.
+context.state.realOwned = {'104101': 99, '104102': 0};
+const nonCraftableDiamonds = vm.runInContext(`FarmingEngine.getSeelieFarmingData("all", {"104102": 3})`, context);
+const diamondCard = nonCraftableDiamonds.sections.flatMap(s => s.cards).find(c => c.id === 'adventure_rank_diamond');
+assert.ok(diamondCard);
+assert.equal(diamondCard.items.find(it => it.id === '104102').deficit, 3, 'Diamantes del Viajero no deben sintetizarse');
+
+// getDomainsForDay también respeta la síntesis en libros de talento.
+context.state.activePlans = [{kind:'character', key:'Amber', active:true}];
+context.state.realOwned = {'104301': 27, '104302': 0, '104303': 0};
+const prevCompute = context.computePlanRequirements;
+context.computePlanRequirements = () => ({'104303': 3});
+const domLiberty = vm.runInContext('FarmingEngine.getDomainsForDay(1, "all").find(d => d.id === "mond_talent_freedom")', context);
+assert.equal(domLiberty.isPriority, false, 'Dominio cubierto por síntesis no debe marcarse como faltante');
+assert.equal(domLiberty.totalDeficit, 0);
+context.computePlanRequirements = prevCompute;
+
+// Inventario: createInventoryTile marca craft-complete / craft-ok cuando la síntesis cubre la meta.
+const invCtx = vm.createContext({
+  console,
+  escapeHtml: s => String(s),
+  getRealOwned: id => invCtx.state.realOwned[id] || 0,
+  saveRealOwned: () => {},
+  renderCharacterWeaponPlanner: () => {},
+  document: {
+    createElement: () => ({
+      className: '',
+      dataset: {},
+      title: '',
+      innerHTML: '',
+      querySelector: () => ({addEventListener: () => {}}),
+      querySelectorAll: () => []
+    })
+  },
+  state: {
+    realOwned: {'104161': 500, '104162': 15, '104163': 0, '104164': 0}
+  }
+});
+vm.runInContext(fs.readFileSync(path.join(root, 'data_real_genshin.js'), 'utf8'), invCtx);
+vm.runInContext(app.slice(app.indexOf('const SEELIE_ORDER_112'), app.indexOf('const IS_ADMIN_VIEW')), invCtx);
+vm.runInContext(app.slice(app.indexOf('function getSafeCraftableCount('), app.indexOf('function synthesizeSingleItem(')), invCtx);
+vm.runInContext(app.slice(app.indexOf('function createInventoryTile('), app.indexOf('function updateOnlyNeededButton(')), invCtx);
+const cryoReqMap = {'104161': 1, '104162': 9, '104163': 9, '104164': 6};
+const cryoPurpleItem = vm.runInContext('REAL_INVENTORY_ITEMS.find(x => x.id === "104163")', invCtx);
+const cryoOrangeItem = vm.runInContext('REAL_INVENTORY_ITEMS.find(x => x.id === "104164")', invCtx);
+const purpleTile = invCtx.createInventoryTile(cryoPurpleItem, cryoReqMap, {}, {gem: 'Gemas'});
+const orangeTile = invCtx.createInventoryTile(cryoOrangeItem, cryoReqMap, {}, {gem: 'Gemas'});
+assert.ok(purpleTile.className.includes('craft-complete'), 'Gema morada completable por síntesis debe marcarse craft-complete');
+assert.ok(purpleTile.innerHTML.includes('craft-ok'), 'Estado de gema morada debe ser craft-ok');
+assert.ok(purpleTile.innerHTML.includes('+57'), 'Botón de síntesis debe seguir mostrando +57');
+assert.ok(orangeTile.className.includes('craft-complete'), 'Gema dorada completable por síntesis debe marcarse craft-complete');
+assert.ok(orangeTile.innerHTML.includes('+16'), 'Botón de síntesis debe seguir mostrando +16');
+
+// Si falta incluso sintetizando, debe permanecer en estado needed / has-target (no craft-complete).
+invCtx.state.realOwned = {'104161': 1, '104162': 18, '104163': 0, '104164': 0};
+const partialPurpleTile = invCtx.createInventoryTile(cryoPurpleItem, cryoReqMap, {}, {gem: 'Gemas'});
+assert.ok(!partialPurpleTile.className.includes('craft-complete'), 'Síntesis insuficiente no debe marcarse craft-complete');
+assert.ok(partialPurpleTile.innerHTML.includes('has-target'), 'Síntesis insuficiente debe mantener estado pendiente');
+assert.ok(partialPurpleTile.innerHTML.includes('+3'), 'Síntesis insuficiente muestra +3 disponibles');
+console.log('OK: síntesis 3:1 en cascada consistente entre Inventario, Farmeo y Dominios.');
