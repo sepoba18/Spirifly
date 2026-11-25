@@ -3197,6 +3197,181 @@ body {
   transform: scale(1.05);
 }
 
+/* =========================================================
+   MODAL DE SUBIDA PROGRESIVA + SÍNTESIS AUTOMÁTICA 3:1
+   ========================================================= */
+.seelie-lvlup-backdrop {
+  z-index: 2100;
+}
+.seelie-lvlup-dialog {
+  max-width: 600px;
+}
+.seelie-lvlup-quick-bar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.45rem;
+  margin-bottom: 0.7rem;
+  flex-wrap: wrap;
+}
+.seelie-lvlup-section {
+  background: #161b29;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 0.75rem 0.85rem;
+  margin-bottom: 0.65rem;
+}
+.seelie-lvlup-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #93c5fd;
+  letter-spacing: 0.35px;
+  margin-bottom: 0.5rem;
+}
+.seelie-lvlup-range {
+  color: #fbbf24;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+}
+.seelie-14-grid.compact-7 {
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+}
+.seelie-14-circle-btn.compact {
+  width: 42px;
+  height: 42px;
+  font-size: 0.86rem;
+}
+.seelie-14-circle-btn.compact .asc-star-svg {
+  width: 14px;
+  height: 14px;
+}
+.seelie-14-circle-btn.compact:disabled {
+  opacity: 0.22;
+  cursor: not-allowed;
+  transform: none;
+}
+.seelie-14-circle-btn.current-marker {
+  border-color: rgba(251, 191, 36, 0.75);
+  background: #475569;
+}
+.seelie-lvlup-talent-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 0.55rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 9px;
+  padding: 0.45rem 0.6rem;
+}
+.seelie-lvlup-hint,
+.seelie-lvlup-empty {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.82rem;
+  padding: 0.85rem;
+  background: rgba(15, 23, 42, 0.55);
+  border-radius: 10px;
+  border: 1px dashed rgba(148, 163, 184, 0.25);
+}
+.seelie-lvlup-synth-box {
+  margin-top: 0.65rem;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(129, 140, 248, 0.35);
+  border-radius: 10px;
+  padding: 0.6rem 0.75rem;
+}
+.seelie-lvlup-box-title {
+  display: flex;
+  align-items: center;
+  gap: 0.38rem;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #c7d2fe;
+  margin-bottom: 0.4rem;
+}
+.seelie-lvlup-synth-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.seelie-lvlup-synth-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  font-size: 0.78rem;
+  color: #e2e8f0;
+}
+.seelie-lvlup-synth-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: rgba(15, 23, 42, 0.55);
+  padding: 0.16rem 0.48rem;
+  border-radius: 6px;
+}
+.seelie-lvlup-synth-item img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+.lvlup-synth-tag {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #c7d2fe;
+  background: rgba(99, 102, 241, 0.28);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+.seelie-lvlup-info-box {
+  margin-top: 0.5rem;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.32);
+  color: #bae6fd;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.45rem 0.65rem;
+  border-radius: 8px;
+}
+.seelie-lvlup-warn-box {
+  margin-top: 0.5rem;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #fde68a;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.45rem 0.65rem;
+  border-radius: 8px;
+}
+.seelie-lvlup-confirm-btn {
+  background: #6366f1;
+  color: #ffffff;
+  border: none;
+  border-radius: 9px;
+  padding: 0.55rem 1.05rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+  transition: background 0.14s, transform 0.12s, opacity 0.14s;
+}
+.seelie-lvlup-confirm-btn:hover:not(:disabled) {
+  background: #4f46e5;
+  transform: translateY(-1px);
+}
+.seelie-lvlup-confirm-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
 
 /* =========================================================
    FILTROS DE RAREZA (ESTRELLA DE 4 PUNTAS), POPOVER Y PILDORAS DE MATERIAL
@@ -5541,6 +5716,13 @@ body {
     max-width: 288px;
     left: 50% !important;
     transform: translateX(-50%) !important;
+  }
+  .seelie-14-grid.compact-7 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+  }
+  .seelie-lvlup-talent-row {
+    grid-template-columns: auto 1fr;
   }
 
   /* 6. Footer de modales y barras de filtro */

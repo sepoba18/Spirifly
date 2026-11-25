@@ -87,7 +87,26 @@ const PLANNER_MODAL_I18N = {
     popWeapCur: "Seleccionar nivel actual del arma",
     popWeapTar: "Seleccionar nivel objetivo del arma",
     ascendedWord: "ascendido",
-    unascendedWord: "sin ascender"
+    unascendedWord: "sin ascender",
+    lvlUpTitle: "Registrar subida en el juego",
+    lvlUpSubtitle: "Elige hasta dónde subiste para descontar solo esos materiales.",
+    lvlUpMatchAll: "Todo al objetivo",
+    lvlUpReset: "Sin cambios",
+    lvlUpCharLevel: "NIVEL DEL PERSONAJE",
+    lvlUpWeapLevel: "NIVEL DEL ARMA",
+    lvlUpTalents: "TALENTOS",
+    lvlUpPreviewTitle: "MATERIALES A DESCONTAR",
+    lvlUpSynthTitle: "Síntesis automática aplicada (3:1)",
+    lvlUpPickHint: "Elige un nivel, talento o arma superior al actual para ver qué materiales se descontarán.",
+    lvlUpNothingPending: "Todas las metas incluidas ya están completas.",
+    lvlUpUnmetWarn: "Algunos materiales no estaban completos en tu inventario; quedarán en 0.",
+    lvlUpSharedWarn: "Prioridad aplicada: se sintetizaron materiales que también usa otro plan activo.",
+    lvlUpConfirm: "Confirmar y descontar",
+    lvlUpCancel: "Cancelar",
+    lvlUpDoneToast: "Subida registrada y materiales descontados del inventario.",
+    lvlUpSynthToastLabel: "síntesis 3:1",
+    lvlUpAlreadyDone: "Ya está en el nivel objetivo",
+    lvlUpMaxBtn: "Al objetivo"
   },
   en: {
     filter: "FILTER",
@@ -136,7 +155,26 @@ const PLANNER_MODAL_I18N = {
     popWeapCur: "Select current weapon level",
     popWeapTar: "Select target weapon level",
     ascendedWord: "ascended",
-    unascendedWord: "unascended"
+    unascendedWord: "unascended",
+    lvlUpTitle: "Record in-game upgrade",
+    lvlUpSubtitle: "Choose how far you leveled up to deduct only those materials.",
+    lvlUpMatchAll: "All to target",
+    lvlUpReset: "No changes",
+    lvlUpCharLevel: "CHARACTER LEVEL",
+    lvlUpWeapLevel: "WEAPON LEVEL",
+    lvlUpTalents: "TALENTS",
+    lvlUpPreviewTitle: "MATERIALS TO DEDUCT",
+    lvlUpSynthTitle: "Automatic synthesis applied (3:1)",
+    lvlUpPickHint: "Select a level, talent, or weapon higher than current to preview material deductions.",
+    lvlUpNothingPending: "All included goals are already complete.",
+    lvlUpUnmetWarn: "Some materials were missing from your inventory; they will be set to 0.",
+    lvlUpSharedWarn: "Priority applied: materials shared with another active plan were synthesized.",
+    lvlUpConfirm: "Confirm & deduct",
+    lvlUpCancel: "Cancel",
+    lvlUpDoneToast: "Upgrade recorded and materials deducted from inventory.",
+    lvlUpSynthToastLabel: "3:1 syntheses",
+    lvlUpAlreadyDone: "Already at target level",
+    lvlUpMaxBtn: "To target"
   },
   pt: {
     filter: "FILTRAR",
@@ -185,7 +223,26 @@ const PLANNER_MODAL_I18N = {
     popWeapCur: "Selecionar nível atual da arma",
     popWeapTar: "Selecionar nível alvo da arma",
     ascendedWord: "ascendido",
-    unascendedWord: "sem ascensão"
+    unascendedWord: "sem ascensão",
+    lvlUpTitle: "Registrar elevação no jogo",
+    lvlUpSubtitle: "Escolha até onde você subiu para descontar apenas esses materiais.",
+    lvlUpMatchAll: "Tudo ao alvo",
+    lvlUpReset: "Sem alterações",
+    lvlUpCharLevel: "NÍVEL DO PERSONAGEM",
+    lvlUpWeapLevel: "NÍVEL DA ARMA",
+    lvlUpTalents: "TALENTOS",
+    lvlUpPreviewTitle: "MATERIAIS A DESCONTAR",
+    lvlUpSynthTitle: "Síntese automática aplicada (3:1)",
+    lvlUpPickHint: "Escolha um nível, talento ou arma acima do atual para ver os materiais.",
+    lvlUpNothingPending: "Todas as metas incluídas já estão concluídas.",
+    lvlUpUnmetWarn: "Alguns materiais não estavam completos no inventário; ficarão em 0.",
+    lvlUpSharedWarn: "Prioridade aplicada: materiais usados por outro plano ativo foram sintetizados.",
+    lvlUpConfirm: "Confirmar e descontar",
+    lvlUpCancel: "Cancelar",
+    lvlUpDoneToast: "Elevação registrada e materiais descontados do inventário.",
+    lvlUpSynthToastLabel: "sínteses 3:1",
+    lvlUpAlreadyDone: "Já está no nível alvo",
+    lvlUpMaxBtn: "Ao alvo"
   },
   ja: {
     filter: "フィルター",
@@ -234,7 +291,26 @@ const PLANNER_MODAL_I18N = {
     popWeapCur: "現在の武器レベルを選択",
     popWeapTar: "目標の武器レベルを選択",
     ascendedWord: "突破済み",
-    unascendedWord: "未突破"
+    unascendedWord: "未突破",
+    lvlUpTitle: "ゲーム内の強化を記録",
+    lvlUpSubtitle: "どこまで強化したかを選ぶと、使用した素材だけを差し引きます。",
+    lvlUpMatchAll: "すべて目標へ",
+    lvlUpReset: "変更なし",
+    lvlUpCharLevel: "キャラレベル",
+    lvlUpWeapLevel: "武器レベル",
+    lvlUpTalents: "天賦",
+    lvlUpPreviewTitle: "消費する素材",
+    lvlUpSynthTitle: "自動合成を適用 (3:1)",
+    lvlUpPickHint: "現在より高いレベル・天賦・武器を選ぶと消費素材が表示されます。",
+    lvlUpNothingPending: "含まれている目標はすべて達成済みです。",
+    lvlUpUnmetWarn: "所持数が不足している素材は 0 になります。",
+    lvlUpSharedWarn: "優先適用：他の有効な計画と共有する素材を合成しました。",
+    lvlUpConfirm: "確定して差し引く",
+    lvlUpCancel: "キャンセル",
+    lvlUpDoneToast: "強化を記録し、素材を差し引きました。",
+    lvlUpSynthToastLabel: "件の 3:1 合成",
+    lvlUpAlreadyDone: "目標レベルに到達済み",
+    lvlUpMaxBtn: "目標まで"
   },
   ko: {
     filter: "필터",
@@ -283,7 +359,26 @@ const PLANNER_MODAL_I18N = {
     popWeapCur: "현재 무기 레벨 선택",
     popWeapTar: "목표 무기 레벨 선택",
     ascendedWord: "돌파 완료",
-    unascendedWord: "미돌파"
+    unascendedWord: "미돌파",
+    lvlUpTitle: "게임 내 육성 기록",
+    lvlUpSubtitle: "어디까지 올렸는지 선택하면 사용한 재료만 차감됩니다.",
+    lvlUpMatchAll: "모두 목표까지",
+    lvlUpReset: "변경 없음",
+    lvlUpCharLevel: "캐릭터 레벨",
+    lvlUpWeapLevel: "무기 레벨",
+    lvlUpTalents: "특성",
+    lvlUpPreviewTitle: "차감할 재료",
+    lvlUpSynthTitle: "자동 합성 적용 (3:1)",
+    lvlUpPickHint: "현재보다 높은 레벨, 특성 또는 무기를 선택하면 차감될 재료가 표시됩니다.",
+    lvlUpNothingPending: "포함된 목표가 모두 완료되었습니다.",
+    lvlUpUnmetWarn: "인벤토리에 부족한 재료는 0으로 설정됩니다.",
+    lvlUpSharedWarn: "우선 적용: 다른 활성 계획과 공유된 재료를 합성했습니다.",
+    lvlUpConfirm: "확인 및 차감",
+    lvlUpCancel: "취소",
+    lvlUpDoneToast: "육성이 기록되었고 재료가 인벤토리에서 차감되었습니다.",
+    lvlUpSynthToastLabel: "건 3:1 합성",
+    lvlUpAlreadyDone: "목표 레벨 도달",
+    lvlUpMaxBtn: "목표까지"
   }
 };
 
@@ -1728,15 +1823,16 @@ function initCfgModalExtras() {
       "• TALENTOS: cada talento se calcula por separado (marca o desmarca su casilla) con su nivel actual y objetivo.\n" +
       "• ARMA: elige el arma equipada, su refinamiento y su nivel actual y objetivo.\n" +
       "• Botón verde: guarda el personaje en tu planificador.\n" +
-      "• Botón morado (flecha): úsalo cuando ya subiste todo en el juego; descuenta los materiales y deja Actual = Objetivo."
+      "• Botón morado (flecha): elige hasta qué nivel, talento o arma subiste en el juego y descuenta esos materiales (con síntesis 3:1 automática)."
     );
   });
   document.getElementById("btnCfgSaveChar").addEventListener("click", () => saveDraftCharacterToPlans(false));
-  document.getElementById("btnCfgConsumeLevelUp").addEventListener("click", () => saveDraftCharacterToPlans(true));
+  document.getElementById("btnCfgConsumeLevelUp").addEventListener("click", () => openLevelUpProgressModalForCharDraft());
+  initLevelUpProgressModalEvents();
 }
 
 /* =====================================================================
-   GUARDAR / CONSUMIR
+   GUARDAR / CONSUMIR (CON SUBIDA PROGRESIVA Y SÍNTESIS AUTOMÁTICA 3:1)
    ===================================================================== */
 function consumeRequirementsFromOwned(reqs) {
   Object.entries(reqs).forEach(([matId, qty]) => {
@@ -1762,22 +1858,671 @@ function markPlanAsCompleted(plan) {
   }
 }
 
+/**
+ * Calcula los materiales requeridos solo para el tramo seleccionado en la subida progresiva.
+ */
+function computePartialUpgradeRequirements(plan, selection) {
+  if (!plan || !selection) return {};
+  if (plan.kind === "weapon") {
+    const cur = plan.curState || 0;
+    const next = Math.max(cur, Math.min(plan.tarState || 0, selection.newCurState ?? cur));
+    if (next <= cur) return {};
+    return computePlanRequirements({
+      ...plan,
+      active: true,
+      curState: cur,
+      tarState: next
+    });
+  }
+  if (plan.kind !== "character") return {};
+
+  const curLv = plan.curState || 0;
+  const nextLv = Math.max(curLv, Math.min(plan.tarState || 0, selection.newCurState ?? curLv));
+  const curTal = plan.talCur || [1, 1, 1];
+  const tarTal = plan.talTar || [1, 1, 1];
+  const nextTal = [0, 1, 2].map((t) => {
+    const sel = selection.newTalCur && selection.newTalCur[t] != null ? selection.newTalCur[t] : curTal[t];
+    return Math.max(curTal[t] || 1, Math.min(tarTal[t] || 1, sel));
+  });
+  const curWeap = plan.weapCurState || 0;
+  const nextWeap = Math.max(curWeap, Math.min(plan.weapTarState || 0, selection.newWeapCurState ?? curWeap));
+
+  return computePlanRequirements({
+    ...plan,
+    active: true,
+    travelerFullLevel: true,
+    incLevel: plan.incLevel !== false && nextLv > curLv,
+    curState: curLv,
+    tarState: nextLv,
+    talCur: [...curTal],
+    talTar: nextTal,
+    talInc: [0, 1, 2].map((t) => (!plan.talInc || plan.talInc[t] !== false) && nextTal[t] > (curTal[t] || 1)),
+    incWeapon: plan.incWeapon !== false && !!plan.weaponKey && plan.weaponKey !== "none" && nextWeap > curWeap,
+    weapCurState: curWeap,
+    weapTarState: nextWeap
+  });
+}
+
+function getOtherPlansRequirementsMap(excludePlan) {
+  const reqMap = {};
+  (state.activePlans || []).forEach((p) => {
+    if (!p || p.active === false) return;
+    if (excludePlan && (p === excludePlan || (p.uid && p.uid === excludePlan.uid) || (p.kind === excludePlan.kind && p.key === excludePlan.key))) {
+      return;
+    }
+    const r = computePlanRequirements(p);
+    Object.entries(r).forEach(([matId, qty]) => {
+      reqMap[matId] = (reqMap[matId] || 0) + qty;
+    });
+  });
+  return reqMap;
+}
+
+/**
+ * Simula el descuento de materiales requeridos intentando cubrir faltantes
+ * mediante síntesis 3:1 en cascada desde los tiers inferiores de la misma familia.
+ */
+function planInventoryConsumptionWithSynthesis(reqs, ownedMap, inventoryItems, otherReqs) {
+  const invList = Array.isArray(inventoryItems)
+    ? inventoryItems
+    : (typeof REAL_INVENTORY_ITEMS !== "undefined" ? REAL_INVENTORY_ITEMS : []);
+  const owned = ownedMap || state.realOwned || {};
+  const other = otherReqs || {};
+
+  const byId = {};
+  const byFamily = {};
+  invList.forEach((item) => {
+    if (!item || !item.id) return;
+    const id = String(item.id);
+    byId[id] = item;
+    if (item.family && !item.nonCraftable) {
+      if (!byFamily[item.family]) byFamily[item.family] = [];
+      byFamily[item.family].push(item);
+    }
+  });
+  Object.values(byFamily).forEach((fam) => fam.sort((a, b) => a.tier - b.tier));
+
+  const nextOwned = {};
+  const deductions = [];
+  const stepAgg = {};
+  const unmetItems = [];
+  const handledIds = new Set();
+  let sharedPriorityUsed = false;
+
+  const activeFamilies = new Set();
+  Object.entries(reqs || {}).forEach(([matId, need]) => {
+    if (!need || need <= 0) return;
+    const item = byId[String(matId)];
+    if (item && item.family && !item.nonCraftable && (byFamily[item.family] || []).length >= 2) {
+      activeFamilies.add(item.family);
+    }
+  });
+
+  activeFamilies.forEach((famId) => {
+    const fam = byFamily[famId];
+    const tierMap = {};
+    const origByTier = {};
+    const bal = {};
+    const needByTier = {};
+    const directUsed = {};
+    const craftedUsed = {};
+    const shortfall = {};
+
+    fam.forEach((it) => {
+      handledIds.add(String(it.id));
+      tierMap[it.tier] = it;
+      const curOwned = Math.max(0, Number(owned[it.id]) || 0);
+      origByTier[it.tier] = curOwned;
+      bal[it.tier] = curOwned;
+      const need = Math.max(0, Number(reqs[it.id]) || 0);
+      needByTier[it.tier] = need;
+      const direct = Math.min(curOwned, need);
+      directUsed[it.tier] = direct;
+      bal[it.tier] -= direct;
+      shortfall[it.tier] = need - direct;
+      craftedUsed[it.tier] = 0;
+    });
+
+    fam.forEach((it) => {
+      const needCraft = shortfall[it.tier] || 0;
+      if (it.tier <= 1 || needCraft <= 0) return;
+
+      let availPool = 0;
+      for (const lower of fam) {
+        if (lower.tier >= it.tier) break;
+        availPool = Math.floor(((bal[lower.tier] || 0) + availPool) / 3);
+      }
+      const craftQty = Math.min(needCraft, availPool);
+      if (craftQty <= 0) return;
+
+      const transferUp = {};
+      fam.forEach((x) => { transferUp[x.tier] = 0; });
+      transferUp[it.tier - 1] = craftQty * 3;
+      for (let i = it.tier - 1; i >= 2; i--) {
+        const needed_i = transferUp[i] || 0;
+        const have_i = bal[i] || 0;
+        const short_i = Math.max(0, needed_i - have_i);
+        transferUp[i - 1] = short_i * 3;
+      }
+
+      for (let i = 1; i < it.tier; i++) {
+        const consumed = transferUp[i] || 0;
+        if (consumed <= 0) continue;
+        const produced = Math.floor(consumed / 3);
+        const fromIt = tierMap[i];
+        const toIt = tierMap[i + 1];
+        bal[i] = Math.max(0, (bal[i] || 0) - consumed);
+        if (i + 1 < it.tier) {
+          bal[i + 1] = (bal[i + 1] || 0) + produced;
+        }
+        if (fromIt && toIt) {
+          const key = `${fromIt.id}->${toIt.id}`;
+          if (!stepAgg[key]) {
+            stepAgg[key] = { fromId: String(fromIt.id), toId: String(toIt.id), consumed: 0, produced: 0 };
+          }
+          stepAgg[key].consumed += consumed;
+          stepAgg[key].produced += produced;
+        }
+      }
+
+      craftedUsed[it.tier] += craftQty;
+      shortfall[it.tier] -= craftQty;
+    });
+
+    fam.forEach((it) => {
+      const id = String(it.id);
+      const after = Math.max(0, bal[it.tier] || 0);
+      if (after !== origByTier[it.tier]) {
+        nextOwned[id] = after;
+      }
+      const synthSpent = (origByTier[it.tier] - directUsed[it.tier]) - after;
+      if (synthSpent > 0 && (other[id] || 0) > 0 && after < other[id]) {
+        sharedPriorityUsed = true;
+      }
+      const need = needByTier[it.tier];
+      if (need > 0) {
+        const unmet = shortfall[it.tier];
+        deductions.push({
+          matId: id,
+          need,
+          owned: origByTier[it.tier],
+          directUsed: directUsed[it.tier],
+          craftedUsed: craftedUsed[it.tier],
+          unmet,
+          after
+        });
+        if (unmet > 0) unmetItems.push({ matId: id, unmet });
+      }
+    });
+  });
+
+  Object.entries(reqs || {}).forEach(([matId, rawNeed]) => {
+    const id = String(matId);
+    const need = Math.max(0, Number(rawNeed) || 0);
+    if (need <= 0 || handledIds.has(id)) return;
+    const curOwned = Math.max(0, Number(owned[id]) || 0);
+    const direct = Math.min(curOwned, need);
+    const unmet = need - direct;
+    const after = Math.max(0, curOwned - need);
+    if (after !== curOwned) {
+      nextOwned[id] = after;
+    }
+    deductions.push({
+      matId: id,
+      need,
+      owned: curOwned,
+      directUsed: direct,
+      craftedUsed: 0,
+      unmet,
+      after
+    });
+    if (unmet > 0) unmetItems.push({ matId: id, unmet });
+  });
+
+  return {
+    hasChanges: Object.keys(nextOwned).length > 0 || deductions.length > 0,
+    nextOwned,
+    deductions,
+    synthConversions: Object.values(stepAgg),
+    unmetItems,
+    sharedPriorityUsed
+  };
+}
+
+function applyInventoryConsumptionPlan(consumptionPlan) {
+  if (!consumptionPlan || !consumptionPlan.nextOwned) return;
+  Object.entries(consumptionPlan.nextOwned).forEach(([matId, qty]) => {
+    state.realOwned[matId] = Math.max(0, Number(qty) || 0);
+  });
+  saveRealOwned();
+}
+
+function applyPartialPlanUpgrade(plan, selection) {
+  if (!plan || !selection) return;
+  if (plan.kind === "weapon") {
+    plan.curState = Math.max(plan.curState || 0, Math.min(plan.tarState || 0, selection.newCurState ?? (plan.curState || 0)));
+    return;
+  }
+  if (plan.kind !== "character") return;
+  if (plan.incLevel !== false && selection.newCurState != null) {
+    const nextLv = Math.max(plan.curState || 0, Math.min(plan.tarState || 0, selection.newCurState));
+    if (nextLv > (plan.curState || 0)) {
+      plan.curState = nextLv;
+      syncTravelerLevel(plan);
+    }
+  }
+  for (let t = 0; t < 3; t++) {
+    if ((!plan.talInc || plan.talInc[t] !== false) && selection.newTalCur && selection.newTalCur[t] != null) {
+      const curT = (plan.talCur && plan.talCur[t]) || 1;
+      const tarT = (plan.talTar && plan.talTar[t]) || 1;
+      plan.talCur[t] = Math.max(curT, Math.min(tarT, selection.newTalCur[t]));
+    }
+  }
+  if (plan.incWeapon !== false && plan.weaponKey && plan.weaponKey !== "none" && selection.newWeapCurState != null) {
+    plan.weapCurState = Math.max(plan.weapCurState || 0, Math.min(plan.weapTarState || 0, selection.newWeapCurState));
+  }
+}
+
+/* =====================================================================
+   MODAL DE SUBIDA PROGRESIVA (NIVEL / TALENTOS / ARMA + SÍNTESIS 3:1)
+   ===================================================================== */
+let levelUpModalState = null;
+
+function openLevelUpProgressModalForPlanIdx(idx) {
+  const plan = state.activePlans[idx];
+  if (!plan) return;
+  openLevelUpProgressModal(plan, { mode: "plan", idx });
+}
+
+function openLevelUpProgressModalForCharDraft() {
+  if (!state.cfgDraft) return;
+  openLevelUpProgressModal(state.cfgDraft, { mode: "charDraft" });
+}
+
+function openLevelUpProgressModalForSoloWeapDraft() {
+  if (!state.soloWeapDraft) return;
+  openLevelUpProgressModal(state.soloWeapDraft, { mode: "soloWeapDraft" });
+}
+
+function openLevelUpProgressModal(plan, meta) {
+  const modal = document.getElementById("seelieLevelUpProgressModal");
+  if (!modal) return;
+  closeAllLevelPopovers();
+
+  const curTal = plan.kind === "character" ? [...(plan.talCur || [1, 1, 1])] : [1, 1, 1];
+  levelUpModalState = {
+    plan,
+    meta: meta || { mode: "plan" },
+    selection: {
+      newCurState: plan.curState || 0,
+      newTalCur: curTal,
+      newWeapCurState: plan.weapCurState || 0
+    }
+  };
+  modal.classList.add("open");
+  updateLevelUpProgressModalUI();
+}
+
+function closeLevelUpProgressModal() {
+  const modal = document.getElementById("seelieLevelUpProgressModal");
+  if (modal) modal.classList.remove("open");
+  levelUpModalState = null;
+}
+
+function buildCompact14LevelGridHtml(minIdx, maxIdx, selectedIdx, roleAttr) {
+  const pm = getPlannerModalI18n();
+  return REAL_LEVEL_14_STATES.map((s) => {
+    const outOfRange = s.idx < minIdx || s.idx > maxIdx;
+    const isCurrent = s.idx === minIdx;
+    const isSelected = s.idx === selectedIdx;
+    const title = `${pm.lvPrefix} ${s.lv} (${s.ascended ? pm.ascendedWord : pm.unascendedWord})`;
+    const classes = [
+      "seelie-14-circle-btn",
+      "compact",
+      isSelected ? "selected" : "",
+      isCurrent && !isSelected ? "current-marker" : ""
+    ].filter(Boolean).join(" ");
+    return `<button type="button" class="${classes}" ${roleAttr}="${s.idx}" ${outOfRange ? "disabled" : ""} title="${escapeHtml(title)}">${levelCircleInnerHtml(s.idx)}</button>`;
+  }).join("");
+}
+
+function updateLevelUpProgressModalUI() {
+  if (!levelUpModalState) return;
+  const { plan, selection } = levelUpModalState;
+  const pm = getPlannerModalI18n();
+  const curLang = (typeof state !== "undefined" && state.lang) || "es";
+
+  const titleEl = document.getElementById("lvlUpModalTitle");
+  const subEl = document.getElementById("lvlUpModalSubtitle");
+  const avatarImg = document.getElementById("lvlUpModalAvatar");
+  const avatarWrap = document.getElementById("lvlUpModalAvatarWrap");
+  const banner = document.getElementById("lvlUpModalBanner");
+  const matchAllBtn = document.getElementById("btnLvlUpMatchAll");
+  const resetBtn = document.getElementById("btnLvlUpReset");
+  const cancelBtn = document.getElementById("btnLvlUpCancel");
+  const confirmBtn = document.getElementById("btnLvlUpConfirm");
+
+  if (subEl) subEl.textContent = pm.lvlUpSubtitle;
+  if (matchAllBtn) matchAllBtn.textContent = pm.lvlUpMatchAll;
+  if (resetBtn) resetBtn.textContent = pm.lvlUpReset;
+  if (cancelBtn) cancelBtn.textContent = pm.lvlUpCancel;
+  if (confirmBtn) confirmBtn.textContent = pm.lvlUpConfirm;
+
+  if (plan.kind === "weapon") {
+    const wp = getWeaponInfo(plan.key || plan.weaponKey);
+    const dispWp = wp ? ((typeof getWeaponTranslatedName === "function") ? getWeaponTranslatedName(wp.name, curLang) : wp.name) : plan.key;
+    if (titleEl) titleEl.textContent = `${pm.lvlUpTitle} · ${dispWp}`;
+    if (avatarImg && wp) avatarImg.src = wp.icon;
+    if (avatarWrap && wp) avatarWrap.className = `seelie-config-avatar rar-bg-${wp.rarity}`;
+    if (banner && wp) {
+      banner.className = `seelie-config-banner ${wp.rarity >= 5 ? "weap-card-banner-5" : (wp.rarity === 4 ? "weap-card-banner-4" : "weap-card-banner-3")}`;
+      banner.style.background = "";
+    }
+  } else {
+    const info = getRosterCharInfo(plan.key);
+    const dispCh = (typeof getCharacterTranslatedName === "function") ? getCharacterTranslatedName(plan.key, curLang) : plan.key;
+    if (titleEl) titleEl.textContent = `${pm.lvlUpTitle} · ${dispCh}`;
+    if (avatarImg && info) {
+      avatarImg.src = info.icon;
+      avatarImg.onerror = () => { avatarImg.onerror = null; avatarImg.src = info.fallbackAvatar; };
+    }
+    if (avatarWrap && info) avatarWrap.className = `seelie-config-avatar rar-bg-${info.rarity}`;
+    if (banner && info) {
+      banner.className = "seelie-config-banner";
+      const grad = ELEMENT_BANNERS[info.element] || ELEMENT_BANNERS.Hydro;
+      banner.style.background = info.namecard
+        ? `linear-gradient(90deg, rgba(10,14,25,0.85) 0%, rgba(10,14,25,0.45) 100%), url('${info.namecard}') center/cover no-repeat, ${grad}`
+        : grad;
+    }
+  }
+
+  const bodyEl = document.getElementById("lvlUpModalSections");
+  if (!bodyEl) return;
+
+  const sections = [];
+  let hasAnyPending = false;
+
+  // 1. Nivel del personaje o del arma independiente
+  const lvInc = plan.kind === "weapon" || plan.incLevel !== false;
+  const minLv = plan.curState || 0;
+  const maxLv = plan.tarState || 0;
+  if (lvInc && minLv < maxLv) {
+    hasAnyPending = true;
+    const lvTitle = plan.kind === "weapon" ? pm.lvlUpWeapLevel : pm.lvlUpCharLevel;
+    sections.push(`
+      <div class="seelie-lvlup-section">
+        <div class="seelie-lvlup-section-head">
+          <span>${escapeHtml(lvTitle)}</span>
+          <span class="seelie-lvlup-range">${levelStateInline(minLv)} <span style="color:#94a3b8;">»</span> ${levelStateInline(selection.newCurState)} <span style="color:#64748b;font-weight:600;">(${escapeHtml(pm.tarLabel)}: ${weaponLevelLabel(maxLv)})</span></span>
+        </div>
+        <div class="seelie-14-legend" style="margin-bottom:0.45rem;">${escapeHtml(pm.starHint)}</div>
+        <div class="seelie-14-grid compact-7">${buildCompact14LevelGridHtml(minLv, maxLv, selection.newCurState, "data-lvlup-char")}</div>
+      </div>`);
+  }
+
+  // 2. Talentos del personaje
+  if (plan.kind === "character") {
+    const info = getRosterCharInfo(plan.key);
+    const pendingTalents = [];
+    if (info && info.talents) {
+      info.talents.slice(0, 3).forEach((tal, t) => {
+        const included = !plan.talInc || plan.talInc[t] !== false;
+        const curT = (plan.talCur && plan.talCur[t]) || 1;
+        const tarT = (plan.talTar && plan.talTar[t]) || 1;
+        if (!included || curT >= tarT) return;
+        hasAnyPending = true;
+        const opts = [];
+        for (let lv = curT; lv <= tarT; lv++) {
+          const isCrown = lv === 10 || (getTalentConstBonus(plan.key, t, plan.constellation) > 0 && lv === 13);
+          const lbl = isCrown ? `${pm.lvPrefix} ${lv} (${pm.crown})` : `${pm.lvPrefix} ${lv}`;
+          opts.push(`<option value="${lv}" ${selection.newTalCur[t] === lv ? "selected" : ""}>${escapeHtml(lbl)}</option>`);
+        }
+        pendingTalents.push(`
+          <div class="seelie-lvlup-talent-row">
+            <div class="seelie-talent-icon-circle" style="width:32px;height:32px;padding:3px;"><img src="${tal.icon}" alt="" onerror="this.style.visibility='hidden'" /></div>
+            <div style="min-width:0;">
+              <div style="font-size:0.82rem;font-weight:800;color:#e2e8f0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${escapeHtml(tal.name)}</div>
+              <div style="font-size:0.7rem;color:#94a3b8;">${escapeHtml(pm.lvPrefix)} ${curT} » ${escapeHtml(pm.tarLabel)} ${tarT}</div>
+            </div>
+            <select class="seelie-big-level-select" data-lvlup-tal="${t}" style="padding:0.3rem 0.45rem;font-size:0.82rem;">${opts.join("")}</select>
+            <button type="button" class="chip-btn" data-lvlup-talmax="${t}" style="padding:0.28rem 0.55rem;font-size:0.72rem;">${escapeHtml(pm.lvlUpMaxBtn)}</button>
+          </div>`);
+      });
+    }
+    if (pendingTalents.length) {
+      sections.push(`
+        <div class="seelie-lvlup-section">
+          <div class="seelie-lvlup-section-head"><span>${escapeHtml(pm.lvlUpTalents)}</span></div>
+          <div style="display:flex;flex-direction:column;gap:0.45rem;">${pendingTalents.join("")}</div>
+        </div>`);
+    }
+
+    // 3. Arma equipada del personaje
+    const wp = plan.incWeapon !== false && plan.weaponKey && plan.weaponKey !== "none" ? getWeaponInfo(plan.weaponKey) : null;
+    const minW = plan.weapCurState || 0;
+    const maxW = plan.weapTarState || 0;
+    if (wp && minW < maxW) {
+      hasAnyPending = true;
+      const dispWp = (typeof getWeaponTranslatedName === "function") ? getWeaponTranslatedName(wp.name, curLang) : wp.name;
+      sections.push(`
+        <div class="seelie-lvlup-section">
+          <div class="seelie-lvlup-section-head">
+            <span style="display:inline-flex;align-items:center;gap:0.4rem;">
+              <img src="${wp.icon}" alt="" style="width:20px;height:20px;object-fit:contain;" onerror="this.style.visibility='hidden'" />
+              ${escapeHtml(pm.lvlUpWeapLevel)} · ${escapeHtml(dispWp)}
+            </span>
+            <span class="seelie-lvlup-range">${levelStateInline(minW)} <span style="color:#94a3b8;">»</span> ${levelStateInline(selection.newWeapCurState)} <span style="color:#64748b;font-weight:600;">(${escapeHtml(pm.tarLabel)}: ${weaponLevelLabel(maxW)})</span></span>
+          </div>
+          <div class="seelie-14-grid compact-7">${buildCompact14LevelGridHtml(minW, maxW, selection.newWeapCurState, "data-lvlup-weap")}</div>
+        </div>`);
+    }
+  }
+
+  if (!hasAnyPending) {
+    sections.push(`<div class="seelie-lvlup-empty">${escapeHtml(pm.lvlUpNothingPending)}</div>`);
+  }
+  bodyEl.innerHTML = sections.join("");
+
+  bodyEl.querySelectorAll("[data-lvlup-char]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      selection.newCurState = parseInt(btn.dataset.lvlupChar, 10);
+      updateLevelUpProgressModalUI();
+    });
+  });
+  bodyEl.querySelectorAll("[data-lvlup-weap]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      selection.newWeapCurState = parseInt(btn.dataset.lvlupWeap, 10);
+      updateLevelUpProgressModalUI();
+    });
+  });
+  bodyEl.querySelectorAll("[data-lvlup-tal]").forEach((sel) => {
+    sel.addEventListener("change", () => {
+      const t = parseInt(sel.dataset.lvlupTal, 10);
+      selection.newTalCur[t] = parseInt(sel.value, 10);
+      updateLevelUpProgressModalUI();
+    });
+  });
+  bodyEl.querySelectorAll("[data-lvlup-talmax]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const t = parseInt(btn.dataset.lvlupTalmax, 10);
+      selection.newTalCur[t] = (plan.talTar && plan.talTar[t]) || selection.newTalCur[t];
+      updateLevelUpProgressModalUI();
+    });
+  });
+
+  // 4. Vista previa de materiales + síntesis 3:1
+  const previewEl = document.getElementById("lvlUpModalPreview");
+  const deltaReqs = computePartialUpgradeRequirements(plan, selection);
+  const reqKeys = Object.keys(deltaReqs);
+  const hasUpgradeSelected = hasAnyPending && (
+    (plan.kind === "weapon" && selection.newCurState > (plan.curState || 0)) ||
+    (plan.kind === "character" && (
+      (plan.incLevel !== false && selection.newCurState > (plan.curState || 0)) ||
+      [0, 1, 2].some((t) => (!plan.talInc || plan.talInc[t] !== false) && selection.newTalCur[t] > ((plan.talCur && plan.talCur[t]) || 1)) ||
+      (plan.incWeapon !== false && !!plan.weaponKey && plan.weaponKey !== "none" && selection.newWeapCurState > (plan.weapCurState || 0))
+    ))
+  );
+
+  if (confirmBtn) confirmBtn.disabled = !hasUpgradeSelected;
+  if (matchAllBtn) matchAllBtn.disabled = !hasAnyPending;
+  if (resetBtn) resetBtn.disabled = !hasUpgradeSelected;
+
+  if (!previewEl) return;
+  if (!hasUpgradeSelected || reqKeys.length === 0) {
+    previewEl.innerHTML = hasAnyPending
+      ? `<div class="seelie-lvlup-hint">${escapeHtml(pm.lvlUpPickHint)}</div>`
+      : "";
+    return;
+  }
+
+  const invItems = typeof REAL_INVENTORY_ITEMS !== "undefined" ? REAL_INVENTORY_ITEMS : [];
+  const otherReqs = getOtherPlansRequirementsMap(plan);
+  const consumption = planInventoryConsumptionWithSynthesis(deltaReqs, state.realOwned, invItems, otherReqs);
+  const deductionById = {};
+  consumption.deductions.forEach((d) => { deductionById[d.matId] = d; });
+
+  const pillsHtml = sortedReqEntries(deltaReqs).map(([matId, reqQty]) => {
+    const mat = getMat(matId);
+    const ded = deductionById[String(matId)] || { owned: getRealOwned(matId), craftedUsed: 0, unmet: 0 };
+    const name = escapeHtml(mat ? mat.name : matId);
+    const covered = ded.unmet === 0;
+    const pillClass = covered ? (ded.craftedUsed > 0 ? "done synth-covered" : "done") : "missing";
+    const synthTag = ded.craftedUsed > 0 ? `<span class="lvlup-synth-tag" title="Cubierto con síntesis 3:1">+${ded.craftedUsed} 3:1</span>` : "";
+    return `
+      <div class="mat-pill ${pillClass}" title="${name}">
+        <img src="${mat ? mat.icon : ""}" alt="${name}" onerror="this.style.visibility='hidden'" />
+        <span>${ded.owned.toLocaleString()}</span>
+        <span class="mat-pill-req">− ${reqQty.toLocaleString()}</span>
+        ${synthTag}
+      </div>`;
+  }).join("");
+
+  const synthBoxHtml = consumption.synthConversions.length
+    ? `<div class="seelie-lvlup-synth-box">
+        <div class="seelie-lvlup-box-title"><img src="assets/ui/sparkle.svg" alt="" style="width:14px;height:14px;" /> ${escapeHtml(pm.lvlUpSynthTitle)}</div>
+        <div class="seelie-lvlup-synth-list">
+          ${consumption.synthConversions.map((conv) => {
+            const fromMat = getMat(conv.fromId);
+            const toMat = getMat(conv.toId);
+            return `<div class="seelie-lvlup-synth-row">
+              <span class="seelie-lvlup-synth-item"><img src="${fromMat ? fromMat.icon : ""}" alt="" /> <strong>−${conv.consumed}</strong> ${escapeHtml(fromMat ? fromMat.name : conv.fromId)}</span>
+              <span style="color:#94a3b8;font-weight:900;">→</span>
+              <span class="seelie-lvlup-synth-item"><img src="${toMat ? toMat.icon : ""}" alt="" /> <strong>+${conv.produced}</strong> ${escapeHtml(toMat ? toMat.name : conv.toId)}</span>
+            </div>`;
+          }).join("")}
+        </div>
+      </div>`
+    : "";
+
+  const sharedWarnHtml = consumption.sharedPriorityUsed
+    ? `<div class="seelie-lvlup-info-box">${escapeHtml(pm.lvlUpSharedWarn)}</div>`
+    : "";
+
+  const unmetWarnHtml = consumption.unmetItems.length
+    ? `<div class="seelie-lvlup-warn-box">${escapeHtml(pm.lvlUpUnmetWarn)}</div>`
+    : "";
+
+  previewEl.innerHTML = `
+    <div style="font-size:0.76rem;color:#94a3b8;font-weight:800;margin-bottom:0.45rem;letter-spacing:0.4px;">${escapeHtml(pm.lvlUpPreviewTitle)}</div>
+    <div class="mat-pill-wrap" style="max-height:190px;overflow-y:auto;">${pillsHtml}</div>
+    ${synthBoxHtml}
+    ${sharedWarnHtml}
+    ${unmetWarnHtml}`;
+}
+
+function confirmLevelUpProgressModal() {
+  if (!levelUpModalState) return;
+  const { plan, meta, selection } = levelUpModalState;
+  const pm = getPlannerModalI18n();
+  const deltaReqs = computePartialUpgradeRequirements(plan, selection);
+  if (!Object.keys(deltaReqs).length) {
+    closeLevelUpProgressModal();
+    return;
+  }
+
+  const invItems = typeof REAL_INVENTORY_ITEMS !== "undefined" ? REAL_INVENTORY_ITEMS : [];
+  const otherReqs = getOtherPlansRequirementsMap(plan);
+  const consumption = planInventoryConsumptionWithSynthesis(deltaReqs, state.realOwned, invItems, otherReqs);
+
+  applyInventoryConsumptionPlan(consumption);
+  applyPartialPlanUpgrade(plan, selection);
+  closeLevelUpProgressModal();
+
+  if (meta && meta.mode === "charDraft") {
+    closeCharConfigModal(true);
+  } else if (meta && meta.mode === "soloWeapDraft") {
+    closeSoloWeaponConfigModal(true);
+  } else {
+    savePlansToStorage();
+  }
+
+  if (typeof showSynthToast === "function") {
+    const synthCount = consumption.synthConversions.reduce((acc, s) => acc + s.produced, 0);
+    const suffix = synthCount > 0 ? ` (${synthCount} ${escapeHtml(pm.lvlUpSynthToastLabel)})` : "";
+    showSynthToast(`<img src="assets/ui/check.svg" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;" alt="" /> ${escapeHtml(pm.lvlUpDoneToast)}${suffix}`);
+  }
+}
+
+function initLevelUpProgressModalEvents() {
+  const modal = document.getElementById("seelieLevelUpProgressModal");
+  if (!modal || modal.dataset.bound === "1") return;
+  modal.dataset.bound = "1";
+
+  modal.addEventListener("click", (e) => {
+    if (e.target.id === "seelieLevelUpProgressModal") closeLevelUpProgressModal();
+  });
+
+  const closeBtn = document.getElementById("btnLvlUpClose");
+  if (closeBtn) closeBtn.addEventListener("click", closeLevelUpProgressModal);
+  const cancelBtn = document.getElementById("btnLvlUpCancel");
+  if (cancelBtn) cancelBtn.addEventListener("click", closeLevelUpProgressModal);
+
+  const matchAllBtn = document.getElementById("btnLvlUpMatchAll");
+  if (matchAllBtn) matchAllBtn.addEventListener("click", () => {
+    if (!levelUpModalState) return;
+    const { plan, selection } = levelUpModalState;
+    if (plan.kind === "weapon") {
+      selection.newCurState = plan.tarState || 0;
+    } else {
+      if (plan.incLevel !== false) selection.newCurState = plan.tarState || 0;
+      for (let t = 0; t < 3; t++) {
+        if (!plan.talInc || plan.talInc[t] !== false) {
+          selection.newTalCur[t] = (plan.talTar && plan.talTar[t]) || selection.newTalCur[t];
+        }
+      }
+      if (plan.incWeapon !== false && plan.weaponKey && plan.weaponKey !== "none") {
+        selection.newWeapCurState = plan.weapTarState || 0;
+      }
+    }
+    updateLevelUpProgressModalUI();
+  });
+
+  const resetBtn = document.getElementById("btnLvlUpReset");
+  if (resetBtn) resetBtn.addEventListener("click", () => {
+    if (!levelUpModalState) return;
+    const { plan, selection } = levelUpModalState;
+    selection.newCurState = plan.curState || 0;
+    selection.newTalCur = plan.kind === "character" ? [...(plan.talCur || [1, 1, 1])] : [1, 1, 1];
+    selection.newWeapCurState = plan.weapCurState || 0;
+    updateLevelUpProgressModalUI();
+  });
+
+  const confirmBtn = document.getElementById("btnLvlUpConfirm");
+  if (confirmBtn) confirmBtn.addEventListener("click", confirmLevelUpProgressModal);
+}
+
 function saveDraftCharacterToPlans(consumeMaterialsNow) {
   const d = state.cfgDraft;
   if (!d) return;
   if (consumeMaterialsNow) {
-    consumeRequirementsFromOwned(computePlanRequirements({ ...d, travelerFullLevel: true }));
-    markPlanAsCompleted(d);
+    openLevelUpProgressModalForCharDraft();
+    return;
   }
   closeCharConfigModal(true);
 }
 
 function completeAndConsumePlan(idx) {
-  const plan = state.activePlans[idx];
-  if (!plan) return;
-  consumeRequirementsFromOwned(computePlanRequirements({ ...plan, travelerFullLevel: true }));
-  markPlanAsCompleted(plan);
-  savePlansToStorage();
+  openLevelUpProgressModalForPlanIdx(idx);
 }
 
 /* =====================================================================
@@ -1982,8 +2727,8 @@ function saveDraftWeaponToPlans(consumeMaterialsNow) {
   const d = state.soloWeapDraft;
   if (!d) return;
   if (consumeMaterialsNow) {
-    consumeRequirementsFromOwned(computePlanRequirements(d));
-    markPlanAsCompleted(d);
+    openLevelUpProgressModalForSoloWeapDraft();
+    return;
   }
   closeSoloWeaponConfigModal(true);
 }
@@ -2059,7 +2804,7 @@ function initSoloWeaponConfigEvents() {
   if (saveBtn) saveBtn.addEventListener("click", () => saveDraftWeaponToPlans(false));
 
   const consumeBtn = document.getElementById("btnSoloWeapConsumeLevelUp");
-  if (consumeBtn) consumeBtn.addEventListener("click", () => saveDraftWeaponToPlans(true));
+  if (consumeBtn) consumeBtn.addEventListener("click", () => openLevelUpProgressModalForSoloWeapDraft());
 }
 
 /* =====================================================================
