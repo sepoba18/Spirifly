@@ -2,7 +2,7 @@ const ICON_CDN = "https://enka.network/ui/";
 
 const I18N = {
   es: {
-    siteTitle: "Spirifly — Personajes, Inventario, Deseos y Builds",
+    siteTitle: "Spirifly — Planificador de Farmeo, Inventario, Deseos y Builds de Genshin Impact",
     heroTitle: "Ecosistema Integral Genshin Impact: Personajes, Farmeo, Inventario y Builds",
     donateBtn: "Donación",
     adsToggle: "Vista Anuncios AdSense",
@@ -169,7 +169,7 @@ const I18N = {
     }
   },
   en: {
-    siteTitle: "Spirifly — Characters, Inventory, Wishes & Builds",
+    siteTitle: "Spirifly — Genshin Impact Farming Planner, Inventory, Wishes & Builds",
     heroTitle: "All-in-One Genshin Impact Hub: Characters, Smart Inventory & Builds",
     donateBtn: "Donation",
     adsToggle: "Preview AdSense Slots",
@@ -336,7 +336,7 @@ const I18N = {
     }
   },
   pt: {
-    siteTitle: "Spirifly — Personagens, Inventário, Tiros e Builds",
+    siteTitle: "Spirifly — Planejador de Farm, Inventário, Tiros e Builds de Genshin Impact",
     heroTitle: "Ecossistema Genshin Impact: Personagens, Inventário Inteligente e Builds",
     donateBtn: "Apoiar",
     adsToggle: "Ver Espaços AdSense",

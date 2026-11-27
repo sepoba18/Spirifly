@@ -712,7 +712,12 @@ function initApp() {
       } else if (state.activeTab === "wishes") {
         renderWishesDashboard();
       } else if (state.activeTab === "theory") {
+        renderTheorycraftFilters();
         renderTheorycraft();
+        calculateFullCharacterTheorycraft();
+      } else if (state.activeTab === "sync") {
+        updateSyncDisplay();
+        renderProfileManager();
       } else if (state.activeTab === "planner") {
         if (typeof renderCharacterWeaponPlanner === "function") {
           renderCharacterWeaponPlanner();
@@ -728,10 +733,13 @@ function initApp() {
     });
   }
 
-  document.getElementById("adsToggleBtn").addEventListener("click", () => {
-    state.showAds = !state.showAds;
-    renderAdsState();
-  });
+  const adsToggleBtn = document.getElementById("adsToggleBtn");
+  if (adsToggleBtn) {
+    adsToggleBtn.addEventListener("click", () => {
+      state.showAds = !state.showAds;
+      renderAdsState();
+    });
+  }
 
   // Eventos de cuenta de Google Drive (Seleccionar/Cambiar cuenta, Sincronizar ahora, Quitar Drive)
   const btnOpenDriveForm = document.getElementById("btnOpenDriveAccountForm");
@@ -889,25 +897,17 @@ function initApp() {
   });
 
   ["simPageviews", "simMarket"].forEach((id) => {
-    document.getElementById(id).addEventListener("input", calculateAdSenseSim);
+    const el = document.getElementById(id);
+    if (el) el.addEventListener("input", calculateAdSenseSim);
   });
 
   // Profile Manager events
   initProfileManagerEvents();
 
-  loadCharacterRecommendedStats(state.tcCharKey);
-  renderAll();
-
-  // Renderizado específico según la pestaña activa inicial
-  if (state.activeTab === "inventory") {
-    renderVisualInventory();
-  } else if (state.activeTab === "farming") {
-    renderFarming();
-  } else if (state.activeTab === "wishes") {
-    renderWishesDashboard();
-  } else if (state.activeTab === "theory") {
-    renderTheorycraft();
+  if (document.getElementById("tcSimCharSelect")) {
+    loadCharacterRecommendedStats(state.tcCharKey);
   }
+  renderAll();
 
   window.addEventListener("hashchange", () => {
     const hashTab = (window.location.hash || "").replace("#", "").replace("sec-", "");
@@ -1368,16 +1368,29 @@ function renderAll() {
   }
 
   updateSyncDisplay();
-  renderVisualInventory();
-  renderCharacterWeaponPlanner();
-  Promise.resolve(renderWishesDashboard()).then(() => {
-    renderProfileManager();
-  });
   renderAdsState();
   renderTheorycraftFilters();
-  renderTheorycraft();
-  calculateFullCharacterTheorycraft();
-  renderFarming();
+
+  if (state.activeTab === "inventory") {
+    renderVisualInventory();
+    renderProfileManager();
+  } else if (state.activeTab === "farming") {
+    renderFarming();
+    renderProfileManager();
+  } else if (state.activeTab === "wishes") {
+    Promise.resolve(renderWishesDashboard()).then(() => {
+      renderProfileManager();
+    });
+  } else if (state.activeTab === "theory") {
+    renderTheorycraft();
+    calculateFullCharacterTheorycraft();
+    renderProfileManager();
+  } else if (state.activeTab === "sync") {
+    renderProfileManager();
+  } else {
+    renderCharacterWeaponPlanner();
+    renderProfileManager();
+  }
   calculateAdSenseSim();
 }
 
@@ -3475,7 +3488,7 @@ function renderTheorycraft() {
         return `
           <div class="tc-weapon-item">
             <div class="tc-weap-icon-wrap rar-${meta.rarity || 5}" title="${meta.rarity || 5}★">
-              <img src="${meta.icon}" alt="${dispWName}" class="tc-weap-img" onerror="this.src='${getWeaponFallbackIcon(ch.weaponType)}'" />
+              <img src="${meta.icon}" alt="${dispWName}" class="tc-weap-img" loading="lazy" decoding="async" onerror="this.src='${getWeaponFallbackIcon(ch.weaponType)}'" />
               <span class="tc-weap-stars">${starsStr}</span>
             </div>
             <div class="tc-weap-content">
@@ -3495,7 +3508,7 @@ function renderTheorycraft() {
         return `
           <div class="tc-weapon-item">
             <div class="tc-weap-icon-wrap rar-${meta.rarity || 5}">
-              <img src="${meta.icon}" alt="${dispWName}" class="tc-weap-img" onerror="this.src='${getWeaponFallbackIcon(ch.weaponType)}'" />
+              <img src="${meta.icon}" alt="${dispWName}" class="tc-weap-img" loading="lazy" decoding="async" onerror="this.src='${getWeaponFallbackIcon(ch.weaponType)}'" />
               <span class="tc-weap-stars">${'★'.repeat(meta.rarity || 5)}</span>
             </div>
             <div class="tc-weap-content">
@@ -3521,7 +3534,7 @@ function renderTheorycraft() {
         return `
           <div class="tc-artifact-set-item">
             <div class="tc-arti-icon-wrap" title="${dispASet}">
-              <img src="${aIcon}" alt="${dispASet}" class="tc-arti-img" onerror="this.onerror=null;this.style.display='none'" />
+              <img src="${aIcon}" alt="${dispASet}" class="tc-arti-img" loading="lazy" decoding="async" onerror="this.onerror=null;this.style.display='none'" />
               <span class="tc-arti-piece-badge">${pieceBadge}</span>
             </div>
             <div class="tc-arti-content">
@@ -3543,7 +3556,7 @@ function renderTheorycraft() {
         return `
           <div class="tc-artifact-set-item">
             <div class="tc-arti-icon-wrap">
-              <img src="${aIcon}" alt="${dispASet}" class="tc-arti-img" onerror="this.onerror=null;this.style.display='none'" />
+              <img src="${aIcon}" alt="${dispASet}" class="tc-arti-img" loading="lazy" decoding="async" onerror="this.onerror=null;this.style.display='none'" />
               <span class="tc-arti-piece-badge">${pieceGroups.length === 2 ? "2p+2p" : pieceGroups.length === 1 ? "2p" : "4p"}</span>
             </div>
             <div class="tc-arti-content">
@@ -3626,7 +3639,7 @@ function renderTheorycraft() {
           const dispMem = (typeof getCharacterTranslatedName === "function") ? getCharacterTranslatedName(mem, state.lang) : mem;
           return `
             <div class="tc-team-member" title="${dispMem}">
-              ${avatar ? `<img src="${avatar}" alt="${dispMem}" class="tc-team-avatar" onerror="this.style.display='none'" />` : ''}
+              ${avatar ? `<img src="${avatar}" alt="${dispMem}" class="tc-team-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'" />` : ''}
               <span class="tc-team-mem-name">${dispMem}</span>
             </div>
           `;
@@ -3648,19 +3661,19 @@ function renderTheorycraft() {
     card.innerHTML = `
       <div class="tc-char-header">
         <div class="tc-avatar-group">
-          <img src="${ch.icon}" alt="${cName}" class="tc-avatar" onerror="this.style.display='none'" />
+          <img src="${ch.icon}" alt="${cName}" class="tc-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'" />
           <div>
             <div style="display:flex;align-items:center;gap:0.55rem;flex-wrap:wrap;">
               <span class="book-title" style="font-size:1.35rem;">${cName}</span>
-              <span class="el-badge el-${ch.element}"><img src="assets/elements/${(ch.element || 'Pyro').toLowerCase()}.png" alt="${ch.element}" class="tc-card-el-icon" />${ch.element}</span>
+              <span class="el-badge el-${ch.element}"><img src="assets/elements/${(ch.element || 'Pyro').toLowerCase()}.png" alt="${ch.element}" class="tc-card-el-icon" loading="lazy" decoding="async" />${ch.element}</span>
             </div>
             <div style="font-size:0.84rem;color:var(--text-muted);margin-top:0.15rem;">${cRole}</div>
-            <span class="scaling-pill scale-${ch.scalingType}"><img src="assets/ui/sparkle.svg" style="width:11px;height:11px;vertical-align:-1px;margin-right:4px;" alt="" />${trBuildStr(ch.scalingLabel)}</span>
+            <span class="scaling-pill scale-${ch.scalingType}"><img src="assets/ui/sparkle.svg" style="width:11px;height:11px;vertical-align:-1px;margin-right:4px;" alt="" loading="lazy" decoding="async" />${trBuildStr(ch.scalingLabel)}</span>
           </div>
         </div>
         <div style="display:flex;align-items:center;gap:0.5rem;">
           <span class="tc-card-wpn-badge">
-            <img src="assets/weapon_types/${(ch.weaponType || 'Sword').toLowerCase()}.png" alt="${ch.weaponType}" class="tc-card-wpn-icon" />
+            <img src="assets/weapon_types/${(ch.weaponType || 'Sword').toLowerCase()}.png" alt="${ch.weaponType}" class="tc-card-wpn-icon" loading="lazy" decoding="async" />
             <span>${escapeHtml(weapBadgeText)}</span>
           </span>
         </div>
@@ -5573,7 +5586,7 @@ function renderFarmingCharAvatarBar(activeCharList) {
     const fallback = ch.isWeapon ? "assets/weapon_types/sword.png" : "assets/elements/pyro.png";
     html += `
       <div class="seelie-avatar-chip ${isSelected ? "active" : ""} ${ch.active === false ? "farming-paused" : ""}" data-avatar-key="${escapeHtml(ch.key)}" title="${escapeHtml(ch.name)} · ${escapeHtml(pauseHint[ch.active === false ? 1 : 0])}">
-        <img src="${ch.icon || fallback}" alt="${escapeHtml(ch.name)}" onerror="this.src='${fallback}'" />
+        <img src="${ch.icon || fallback}" alt="${escapeHtml(ch.name)}" loading="lazy" decoding="async" onerror="this.src='${fallback}'" />
       </div>
     `;
   });
@@ -5852,7 +5865,7 @@ function renderSeelieSourceCard(card, currentDayIdx, activeFilterDay) {
 
     return `
       <div class="seelie-mat-box ${rarClass}" title="${escapeHtml(tooltip)}">
-        <img src="${it.icon}" alt="${escapeHtml(it.name)}" onerror="this.src='https://gi.yatta.moe/assets/UI/UI_ItemIcon_202.png'" />
+        <img src="${it.icon}" alt="${escapeHtml(it.name)}" loading="lazy" decoding="async" onerror="this.src='https://gi.yatta.moe/assets/UI/UI_ItemIcon_202.png'" />
         ${checkBadge}
         <span class="seelie-mat-deficit-badge">${escapeHtml(badgeText)}</span>
       </div>
@@ -5867,7 +5880,7 @@ function renderSeelieSourceCard(card, currentDayIdx, activeFilterDay) {
         ${card.characters.map((ch) => {
           const fallback = ch.isWeapon ? "assets/weapon_types/sword.png" : "assets/elements/pyro.png";
           return `
-            <img src="${ch.icon || fallback}" alt="${escapeHtml(ch.name)}" class="seelie-card-avatar" data-char-key="${escapeHtml(ch.key)}" title="Lo necesita: ${escapeHtml(ch.name)} (Haz clic para filtrar)" onerror="this.src='${fallback}'" />
+            <img src="${ch.icon || fallback}" alt="${escapeHtml(ch.name)}" class="seelie-card-avatar" data-char-key="${escapeHtml(ch.key)}" loading="lazy" decoding="async" title="Lo necesita: ${escapeHtml(ch.name)} (Haz clic para filtrar)" onerror="this.src='${fallback}'" />
           `;
         }).join("")}
       </div>
@@ -6009,7 +6022,7 @@ function renderSeelieArtifacts() {
           <span class="farm-resin-cost-badge">${dom.resinCost} ✦</span>
         </div>
         <div style="display:flex;align-items:center;gap:0.6rem;margin:0.4rem 0;">
-          <img src="${getArtifactSetIcon(dom.sets)}" alt="${escapeHtml(dom.sets)}" style="width:38px;height:38px;object-fit:contain;border-radius:6px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.1);" onerror="this.onerror=null;this.style.display='none'" />
+          <img src="${getArtifactSetIcon(dom.sets)}" alt="${escapeHtml(dom.sets)}" loading="lazy" decoding="async" style="width:38px;height:38px;object-fit:contain;border-radius:6px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.1);" onerror="this.onerror=null;this.style.display='none'" />
           <div>
             <div style="font-weight:700;font-size:0.86rem;color:var(--text-main);">${escapeHtml(dom.sets)}</div>
             <div style="font-size:0.75rem;color:var(--gold-primary);">Abierto los 7 días (24/7)</div>
@@ -6274,7 +6287,7 @@ function renderSingleDomainCard(dom) {
       </div>
 
       <div style="display:flex;align-items:center;gap:0.6rem;padding:0.45rem 0;border-bottom:1px solid rgba(255,255,255,0.06);margin-bottom:0.4rem;">
-        <img src="${dom.icon}" alt="${escapeHtml(dom.matName)}" style="width:36px;height:36px;object-fit:contain;border-radius:6px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.1);" onerror="this.style.display='none'" />
+        <img src="${dom.icon}" alt="${escapeHtml(dom.matName)}" loading="lazy" decoding="async" style="width:36px;height:36px;object-fit:contain;border-radius:6px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.1);" onerror="this.style.display='none'" />
         <div>
           <div style="font-weight:700;font-size:0.88rem;color:var(--text-main);">${escapeHtml(dom.matName)}</div>
           <div style="font-size:0.75rem;color:var(--gold-primary);">${escapeHtml(daysText)}</div>
@@ -6565,12 +6578,19 @@ async function handleDeleteActiveProfile() {
 }
 
 function calculateAdSenseSim() {
-  const pv = Math.max(1000, parseInt(document.getElementById("simPageviews").value || "50000", 10));
-  const rpm = parseFloat(document.getElementById("simMarket").value || "7.5");
-  document.getElementById("pvDisplay").textContent = pv.toLocaleString();
+  const pvEl = document.getElementById("simPageviews");
+  const marketEl = document.getElementById("simMarket");
+  const pvDisplay = document.getElementById("pvDisplay");
+  const valMonthly = document.getElementById("valEstMonthly");
+  const valYearly = document.getElementById("valEstYearly");
+  if (!pvEl || !marketEl || !pvDisplay || !valMonthly || !valYearly) return;
+
+  const pv = Math.max(1000, parseInt(pvEl.value || "50000", 10));
+  const rpm = parseFloat(marketEl.value || "7.5");
+  pvDisplay.textContent = pv.toLocaleString();
   const monthlyUsd = (pv / 1000) * rpm;
-  document.getElementById("valEstMonthly").textContent = `$${monthlyUsd.toFixed(0)} USD`;
-  document.getElementById("valEstYearly").textContent = `$${(monthlyUsd * 12).toFixed(0)} USD`;
+  valMonthly.textContent = `$${monthlyUsd.toFixed(0)} USD`;
+  valYearly.textContent = `$${(monthlyUsd * 12).toFixed(0)} USD`;
 }
 
 document.addEventListener("DOMContentLoaded", initApp);

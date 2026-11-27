@@ -146,6 +146,11 @@ async function runTests() {
   const indexHtml = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
   assert.match(indexHtml, /<html lang="es">/i);
   assert.match(indexHtml, /<title>[^<]*Planificador[^<]*Genshin Impact[^<]*<\/title>/i);
+  assert.ok(!/<img[^>]*\bsrc=""/i.test(indexHtml), 'index.html no debe tener etiquetas <img> con src vacío');
+  assert.ok(!indexHtml.includes('Simulador de Ingresos'), 'index.html no debe exponer simulador de ingresos AdSense');
+  assert.ok(!indexHtml.includes('adsToggleBtn'), 'index.html no debe incluir el botón dev adsToggleBtn');
+  const dataJs = fs.readFileSync(path.join(root, 'data.js'), 'utf8');
+  assert.ok(dataJs.includes('siteTitle: "Spirifly — Planificador de Farmeo, Inventario, Deseos y Builds de Genshin Impact"'), 'data.js debe mantener el siteTitle SEO en español');
   const indexLdMatch = indexHtml.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/i);
   assert.ok(indexLdMatch, 'index.html debe incluir application/ld+json');
   JSON.parse(indexLdMatch[1]);
